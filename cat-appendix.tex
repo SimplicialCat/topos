@@ -1,0 +1,469 @@
+\chapter{范畴论基础}
+
+\section{伴随函子}
+
+\subsection{伴随保持极限}
+
+\begin{prop}
+	[label={adjoints-preserve-limits}]
+	{}
+	右伴随保持极限, 左伴随保持余极限.
+\end{prop}
+
+\begin{proof}
+	设有伴随
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7Q30iXSxbMSwwLCJcXG1hdGhzZiB7RH0iXSxbMSwwLCJGIiwyLHsib2Zmc2V0IjoyfV0sWzAsMSwiRyIsMix7Im9mZnNldCI6Mn1dLFsyLDMsIiIsMCx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {C}} \& {\mathsf {D},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+	设 $X \colon I \to \mathsf C$ 是一个图 ($I$ 是小范畴).
+	若极限 $\lim_i X_i$ 存在,
+	则有自然同构
+	\begin{align*}
+		\operatorname{Hom}(-,G\lim_i X_i)
+		&\simeq \operatorname{Hom}(F-,\lim_i X_i)\\
+		&\simeq \lim_i \operatorname{Hom}(F-,X_i)\\
+		&\simeq \lim_i \operatorname{Hom}(-,GX_i)\\
+		&\simeq \operatorname{Hom}(-,\lim_i GX_i).
+	\end{align*}
+	由米田引理, 得同构 $G\lim_i X_i \simeq \lim_i GX_i$,
+	故右伴随保持极限.
+	另一结论由对偶性即证.
+\end{proof}
+
+\begin{example}
+	{}
+	遗忘函子 $\mathsf {Top} \to \mathsf {Set}$ 同时有左伴随和右伴随:
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7VG9wfSJdLFsyLDAsIlxcbWF0aHNmIHtTZXR9Il0sWzAsMSwiXFx0ZXh0e+mBl+W/mH0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MjB9XSxbMSwwLCLnprvmlaMiLDIseyJsYWJlbF9wb3NpdGlvbiI6MjAsIm9mZnNldCI6NX1dLFsxLDAsIuW5s+WHoSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotNX1dLFszLDIsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzIsNCwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {Top}} \&\& {\mathsf {Set}}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\text{遗忘}}"{pos=0.2}, from=1-1, to=1-3]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\text{离散}}"'{pos=0.2}, shift right=5, from=1-3, to=1-1]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\text{平凡}}"{pos=0.2}, shift left=5, from=1-3, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
+	\end{tikzcd}\]
+	因此这个遗忘同时保持极限与余极限; 换言之, 拓扑空间的极限与余极限可用底层集合的极限与余极限来计算.
+\end{example}
+
+\begin{prop}
+	[label={adjoint-full-subcategory-equivalence}]
+	{(伴随产生一对满子范畴的等价)}
+	设有伴随
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7Q30iXSxbMSwwLCJcXG1hdGhzZiB7RH0iXSxbMSwwLCJGIiwyLHsib2Zmc2V0IjoyfV0sWzAsMSwiRyIsMix7Im9mZnNldCI6Mn1dLFsyLDMsIiIsMCx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {C}} \& {\mathsf {D},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+	其单位和余单位分别为
+	$\eta \colon \operatorname{id}_{\mathsf D} \to GF$,
+	$\epsilon \colon FG \to \operatorname{id}_{\mathsf C}$.
+	考虑
+	\begin{itemize}
+		\item $\mathsf C$ 中由使得 $\eta_X \colon X \to GF(X)$ 为同构的 $X$ 构成的满子范畴 $\widetilde {\mathsf C}$,
+		以及
+		\item $\mathsf D$ 中由使得 $\epsilon_Y \colon FG(Y)\to Y$ 为同构的 $Y$ 构成的满子范畴 $\widetilde {\mathsf D}$,
+	\end{itemize}
+	那么 $F$ 与 $G$ 限制为一对互逆的范畴等价
+	$$
+	\widetilde G\colon \widetilde {\mathsf C} \overset{\simeq}{\to} \widetilde {\mathsf D},\quad
+	\widetilde F\colon \widetilde {\mathsf D} \overset{\simeq}{\to} \widetilde {\mathsf C}.
+	$$
+\end{prop}
+
+\begin{proof}
+	由条件, $\eta$ 限制为自然变换
+	$$
+	\widetilde \eta \colon
+	\operatorname{id}_{\widetilde {\mathsf D}} \to \widetilde G \widetilde F,
+	$$
+	且 $\widetilde \eta$ 的每个分量 ${\widetilde \eta}_{X} \colon X \to \widetilde G \widetilde F (X)$ 均为同构.
+	因此 $\widetilde \eta$ 为自然同构. 另一边类似.
+\end{proof}
+\section{预层范畴与米田引理}
+
+固定如下记号: $\mathsf C$ 为小范畴, $\yo\colon \mathsf C \to \widehat {\mathsf C} = \mathsf {Fun}(\mathsf C^{\op},\mathsf {Set})$ 为米田嵌入. 本节参考了 \cite{SGL} I.5 节.
+
+\label{yoneda}
+
+\subsection{可表函子的余极限}
+
+\begin{definition}
+    [label={slice-over-presheaf}]
+    {(元素的范畴)}
+    对 $X\in\widehat {\mathsf C}$, 定义 $X$ 的\emph{元素的范畴} $\displaystyle\int_{\mathsf C}X$ 如下.
+    其对象为 $(c,x)$, $x\in X(c)$,
+    态射 $(c,x)\to (d,y)$ 为 $f\colon c\to d$, 满足 $f(x)=y$.
+    
+    %记 $X$ 的元素的范畴为
+    由定义, 存在 ``投影'' 函子 $\pi_X\colon \displaystyle\int_{\mathsf C}X\to \mathsf C$, $(c,x)\mapsto c$.
+\end{definition}
+
+\begin{definition}
+	{(元素的范畴, 等价定义)}
+	由米田引理, $X$ 的元素的范畴等价于 (甚至同构于) 如下范畴: 其对象为态射 $\yo(c)\to X$, 其态射为形如
+	$\begin{tikzcd}[ampersand replacement=\&,row sep=-1pt,column sep=small]
+		{\yo(c)} \\
+		\& X \\
+		{\yo(d)}
+		\arrow[from=1-1, to=2-2]
+		\arrow[from=1-1, to=3-1]
+		\arrow[from=3-1, to=2-2]
+	\end{tikzcd}$ 的交换图.
+\end{definition}
+
+\begin{remark}
+    {}
+    若将 $X$ 视为 $\mathsf C$ 的 ``广义元素'', 则 $X$ 的元素的范畴可视为``俯范畴'' $\mathsf C /X$.
+    
+    此外, 也有人将这个范畴记作 $(\yo\downarrow X)$, 它还有一个令人迷惑的名称 ``逗号范畴'' (comma category).
+\end{remark}
+
+事实上, 所有态射 $\yo(c)\to X$ 共同将 $X$ 表示为一个余极限.
+
+\begin{prop}
+    {(预层为可表函子的余极限)}
+    $\widehat {\mathsf C}$ 的对象 $X$ 是如下余极限:
+    $$
+    X \simeq \operatorname{colim}\Big(\begin{tikzcd}[ampersand replacement=\&]
+    	{\displaystyle\int_{\mathsf C}X} \& {\mathsf C} \& {\widehat {\mathsf C}}
+    	\arrow["\yo", from=1-2, to=1-3]
+    	\arrow["{\pi_X}", from=1-1, to=1-2]
+    \end{tikzcd}\Big).
+    $$
+    %函子 $\colon \displaystyle\int_{\mathsf C}X \overset{\pi}{\to} \widehat {\mathsf C}$ 的余极限.
+\end{prop}
+
+\begin{proof}
+	任给余锥 $\big(\phi_{c,x}\colon \yo(c)\to Y\big)_{(c,x)}$,
+	定义态射 $\eta\colon X\to Y$,
+	$\eta_c\colon X(c)\to Y(c)$,
+	$x\mapsto\phi_{c,x}$.
+\end{proof}
+
+\begin{example}
+    {(单纯集)}
+    对于 $\mathsf C= \Delta$ (例 \ref{Simplicial-Sets}),
+    $\widehat {\mathsf C}$ 中对象 $X$ 的元素可视为单纯集 $X$ 中的单纯形, 包含退化的单纯形.
+    此时上述命题即是说 $X$ 等同于其所有单纯形的粘合. 这符合了单纯集是由单纯形组成的直观.
+\end{example}
+
+\subsection{自由余完备化}
+
+在上个小节, 我们看到 $\widehat {\mathsf C}$ 是 $\mathsf C$ 经过某种添加余极限的过程得到的余完备范畴. 称 $\widehat {\mathsf C}$ 为 $\mathsf C$ 的\emph{自由余完备化} (free cocompletion); 以下命题解释了这句话中 ``自由'' 的含义, 即余完备范畴到一般范畴的 ``遗忘'' 的左伴随.
+
+\begin{prop}
+	[label={free-cocompletion}]
+    {}
+    设 $\mathsf C$ 是(小)范畴, $\mathsf D$ 是余完备范畴,
+    那么米田嵌入
+    $\yo \colon \mathsf C \to \widehat {\mathsf C}$
+    给出了等价
+    $$
+    \yo^*\colon \mathsf {Fun}^{\text{colim}}(\widehat {\mathsf C},\mathsf D) \overset{\simeq}{\longrightarrow} \mathsf {Fun}(\mathsf C,\mathsf D),
+    $$
+    其中 $\mathsf {Fun}^{\text{colim}}$ 表示\emph{保持余极限的}函子构成的范畴. 换言之, 对任意函子 $F\colon \mathsf C\to\mathsf D$, 存在本质唯一的保持余极限的函子 $L\colon \widehat {\mathsf C} \to \mathsf D$ 使得下图交换.
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXG1hdGhzZiBDIl0sWzEsMCwiXFx3aWRlaGF0IHtcXG1hdGhzZiBDfSJdLFsxLDEsIlxcbWF0aHNmIEQiXSxbMCwyLCJGIiwyXSxbMCwxLCJcXHlvIl0sWzEsMiwiTCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    	{\mathsf C} \& {\widehat {\mathsf C}} \\
+    	\& {\mathsf D}
+    	\arrow["F"', from=1-1, to=2-2]
+    	\arrow["\yo", from=1-1, to=1-2]
+    	\arrow["L", dashed, from=1-2, to=2-2]
+    \end{tikzcd}\]
+\end{prop}
+
+\begin{example}
+    {}
+    $\mathsf {Set}$ 是终范畴 $1$ 的自由余完备化;
+    这就是说, 对任意余完备范畴 $\mathsf D$,
+    一个保持余极限的函子 $F \colon \mathsf {Set}\to \mathsf D$ 由对象 $F(1)$ 唯一确定.
+\end{example}
+
+事实上我们可以具体写出命题 \ref{free-cocompletion} 中的函子 $L$.
+
+\begin{prop}
+	[label={nerve-and-realization}]
+	{}
+	设 $\mathsf C$ 是(小)范畴, $\mathsf D$ 是余完备范畴.
+	对任意函子 $F \colon \mathsf C \to \mathsf D$, 存在一对伴随
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXHdpZGVoYXQge1xcbWF0aHNmIEN9Il0sWzEsMCwiXFxtYXRoc2YgRCJdLFswLDEsIkwiLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiUiIsMCx7Im9mZnNldCI6LTJ9XSxbMiwzLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\widehat {\mathsf C}} \& {\mathsf D,}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "L", shift left=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "R", shift left=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+	其中 $R \colon \mathsf D \to \widehat {\mathsf C}$,
+	$R(d) = \operatorname{Hom}_{\mathsf C}(F-,d)$;
+	其左伴随 $L$ 由如下余极限给出:
+	$$
+	L (X) = \operatorname{colim}\Big(\begin{tikzcd}[ampersand replacement=\&]
+		{\displaystyle\int_{\mathsf C}X} \& {\mathsf C} \& {\mathsf D}
+		\arrow["F", from=1-2, to=1-3]
+		\arrow["{\pi_X}", from=1-1, to=1-2]
+	\end{tikzcd}\Big).
+	$$
+	作为左伴随, $L$ 自然保持余极限 (命题 \ref{adjoints-preserve-limits}).
+\end{prop}
+
+\begin{remark}
+	{}
+	上面的伴随可解读为 ``脉'' (nerve, 函子 $R$) 与 ``几何实现'' (geometric realization, 函子 $L$) 的伴随, 其中 $\mathsf C$ 是某种几何形状的范畴 (如下面例子中的 $\Delta$).
+	脉与几何实现的概念由 Daniel Kan 1958 年的文章 \emph{Functors involving c.s.s complexes} 提出. 这篇文章也首次引入了 Kan 扩张.
+\end{remark}
+
+\begin{remark}
+	{}
+	上面的伴随还可解读为一种张量--同态伴随. 左伴随 $L$ 也记为 ${-}\otimes_{\mathsf C}F\colon \widehat {\mathsf C}\to\mathsf D$.
+\end{remark}
+
+\begin{example}
+	{(单纯集的几何实现)}
+	设 $\mathsf C = \Delta$ (例 \ref{Simplicial-Sets}),
+	$\mathsf D=\mathsf {Top}$ 为拓扑空间范畴.
+	我们知道 $\mathsf {Top}$ 是余完备的.
+	设 $F \colon \Delta \to \mathsf {Top}$ 将 $[n]$ 对应到 $n$-维标准拓扑单形, 也即 $\mathbb{R}^{n+1}$ 中 $(n+1)$ 个基向量的闭包.
+	那么命题 \ref{nerve-and-realization} 给出了单纯集的几何实现
+	$$
+	|{-}|\colon \mathsf {sSet} = \widehat {\Delta} \to \mathsf {Top}.
+	$$
+	其右伴随为 ``拓扑空间的奇异单纯集'' 函子 $\operatorname{Sing}\colon \mathsf {Top}\to \mathsf {sSet}$.
+\end{example}
+
+\begin{example}
+	{(几何空间与函子 $\mathsf {Ring}\to\mathsf {Set}$ 的几何实现)}
+	{\small (本例需要一些背景知识.)} 定义\emph{几何空间} (又称\emph{局部环化空间}) $(X,\mathcal O_X)$ 为拓扑空间 $X$ 配备环层 $\mathcal O_X$, 使得每个茎 $\mathcal O_{X,x}$ (定义 \ref{germ-and-stalk}) 为局部环.
+	我们知道几何空间的范畴 $\mathsf {GeoSp}$ 是余完备的.
+	
+	设 $\mathsf C = \mathsf {Aff}$ 为仿射概形的范畴 (它等价于交换环范畴的对偶 $\mathsf {Ring}^\op$).
+	我们知道仿射概形是几何空间. 因此设 $\mathsf D = \mathsf {GeoSp}$ 为几何空间的范畴, 存在嵌入函子 $F\colon \mathsf {Aff}\to\mathsf {GeoSp}$.
+	对于函子 $X\colon \mathsf {Ring} \to\mathsf {Set}$,
+	命题 \ref{nerve-and-realization} 给出其几何实现 $|X|$, 它是一个几何空间.
+	另外, 命题 \ref{adjoint-full-subcategory-equivalence} 给出的子范畴正是\emph{概形}的范畴. 这表明, 概形既可视为满足某些条件的几何空间, 又可视为满足某些条件的函子 $\mathsf {Ring}\to\mathsf {Set}$.
+	
+	这个例子取自 Demazure 和 Gabriel 的书 \emph{Introduction to Algebraic Geometry and Algebraic Groups} 1.1 节.
+\end{example}
+
+\section{Kan 扩张}
+
+%容易看到, 函子 $F \colon \mathsf A \to \mathsf B$ 诱导预层范畴的函子 $F^* \colon \widehat {\mathsf B} \to \widehat {\mathsf A}$.
+
+本节取自 nLab 页面 \emph{Kan extension}; 另外 \cite{lww2} 1.7 节也介绍了这一概念.
+
+\begin{definition}
+	{(Kan 扩张)}
+	设 $p\colon \mathsf C\to \mathsf C'$ 为函子. 对另一范畴 $\mathsf D$, 记
+	$p^* \colon \mathsf {Fun}(\mathsf C',\mathsf D) \to \mathsf {Fun}(\mathsf C,\mathsf D)$ 为 $p$ 诱导的函子,
+	即 $h\colon \mathsf C'\to \mathsf D$ 对应 $p^*h\colon \mathsf C \overset{p}{\to} \mathsf C' \overset{h}{\to}\mathsf D$.
+	
+	\begin{itemize}
+		\item 若 $p^*$ 有\emph{左伴随} $p_! \colon \mathsf {Fun}(\mathsf C,\mathsf D) \to \mathsf {Fun}(\mathsf C',\mathsf D)$,
+		则称之为沿 $p$ 的\emph{左 Kan 扩张};
+		\item 若 $p^*$ 有\emph{右伴随} $p_* \colon \mathsf {Fun}(\mathsf C,\mathsf D) \to \mathsf {Fun}(\mathsf C',\mathsf D)$,
+		则称之为沿 $p$ 的\emph{右 Kan 扩张}.
+	\end{itemize}
+	
+\end{definition}
+
+对比例 \ref{group-homomorphism-adjoint-triple} 中的记号.
+
+\begin{definition}
+	{(局部 Kan 扩张)}
+	设 $p\colon \mathsf C\to \mathsf C'$ 为函子. 对函子 $F \colon \mathsf C \to \mathsf D$,
+	\begin{itemize}
+		\item 若存在 $p_! F \colon \mathsf C' \to \mathsf D$ 使得有自然同构
+		$$
+		\operatorname{Hom}_{\mathsf {Fun}(\mathsf C,\mathsf D)}(F,p^* -) \simeq \operatorname{Hom}_{\mathsf {Fun}(\mathsf C',\mathsf D)}(p_! F ,-),
+		$$
+		则称 $p_!F$ 为 $F$ 沿 $p$ 的\emph{左 Kan 扩张};
+		\item 若存在 $p_* F \colon \mathsf C' \to \mathsf D$ 使得有自然同构
+		$$
+		\operatorname{Hom}_{\mathsf {Fun}(\mathsf C,\mathsf D)}(p^*-,F) \simeq \operatorname{Hom}_{\mathsf {Fun}(\mathsf C',\mathsf D)}(-,p_*F),
+		$$
+		则称 $p_*F$ 为 $F$ 沿 $p$ 的\emph{右 Kan 扩张}.
+	\end{itemize}
+\end{definition}
+
+\begin{example}
+	{(极限)}
+	设 $\mathsf C'$ 为终范畴 $1$, 那么 $\mathsf {Fun}(\mathsf C',\mathsf D)\simeq\mathsf D$, 函子 $p^*\colon \mathsf D \to \mathsf {Fun}(\mathsf C,\mathsf D)$
+	将 $\mathsf D$ 的对象 $d$ 对应到常值函子 $\operatorname{const}_d \colon \mathsf C \to \mathsf D$.
+	
+	对函子 $F \colon \mathsf C \to \mathsf D$,
+	\begin{itemize}
+		\item $F$ 的左 Kan 扩张是余极限,
+		$$
+		\operatorname{Hom}_{\mathsf {Fun}(\mathsf C,\mathsf D)}(F,\operatorname{const}_d)\simeq \operatorname{Hom}_{\mathsf D}(\operatorname{colim}F,d);
+		$$
+		\item $F$ 的右 Kan 扩张是极限,
+		$$
+		\operatorname{Hom}_{\mathsf {Fun}(\mathsf C,\mathsf D)}(\operatorname{const}_d,F)\simeq \operatorname{Hom}_{\mathsf D}(d,\lim F).
+		$$
+	\end{itemize}
+	
+\end{example}
+
+\begin{example}
+	{(沿米田嵌入的 Kan 扩张)}
+	设 $\mathsf C' = \widehat {\mathsf C}$, $p=\yo\colon \mathsf C \to \widehat {\mathsf C}$ 为米田嵌入.
+	设 $\mathsf D$ 为余完备范畴. 由命题 \ref{free-cocompletion}, 任意函子 $F\colon \mathsf C \to \mathsf D$
+	都有沿 $\yo$ 的唯一的左 Kan 扩张 $\yo$
+\end{example}
+
+\todo{用 Kan 扩张定义预层的逆像}
+
+\section{单子论}
+
+本节参考了 \cite{SGL} IV.4 节和代数学著名教材 \cite{lww2} 的 7.6 节.
+
+\begin{definition}
+    [label={monad-definition}]
+    {(单子)}
+    范畴 $\mathsf C$ 上的一个\emph{单子} (monad) $(T,\eta,\mu)$ 是一个自函子 $T \colon \mathsf C \to \mathsf C$, 以及两个自然变换 $\mu\colon T^2 \to T$, $\eta \colon \operatorname{id}_{\mathsf C} \to T$, 满足自函子范畴 $\mathsf {End}(\mathsf C)$ 中幺半群的条件, 即如下交换图.
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJUXjMiXSxbMSwwLCJUXjIiXSxbMCwxLCJUXjIiXSxbMSwxLCJUIl0sWzIsMCwiXFxvcGVyYXRvcm5hbWV7aWR9X3tcXG1hdGhzZiBDfVQiXSxbNCwwLCJUXFxvcGVyYXRvcm5hbWV7aWR9X3tcXG1hdGhzZiBDfSJdLFszLDAsIlReMiJdLFszLDEsIlQiXSxbMCwxLCJcXG11IFQiXSxbMCwyLCJUXFxtdSIsMl0sWzIsMywiXFxtdSIsMl0sWzEsMywiXFxtdSJdLFs2LDcsIlxcbXUiXSxbNCw3LCJcXG9wZXJhdG9ybmFtZXtpZH1fVCIsMl0sWzUsNywiXFxvcGVyYXRvcm5hbWV7aWR9X1QiXSxbNCw2LCJcXGV0YSBUIl0sWzUsNiwiVFxcZXRhIiwyXV0=
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{T^3} \& {T^2} \& {T} \& {T^2} \& {T} \\
+	{T^2} \& T \&\& T
+	\arrow["{\mu T}", from=1-1, to=1-2]
+	\arrow["T\mu"', from=1-1, to=2-1]
+	\arrow["\mu"', from=2-1, to=2-2]
+	\arrow["\mu", from=1-2, to=2-2]
+	\arrow["\mu", from=1-4, to=2-4]
+	\arrow["{\operatorname{id}_T}"', from=1-3, to=2-4]
+	\arrow["{\operatorname{id}_T}", from=1-5, to=2-4]
+	\arrow["{\eta T}", from=1-3, to=1-4]
+	\arrow["T\eta"', from=1-5, to=1-4]
+\end{tikzcd}\]
+\end{definition}
+
+\begin{propdef}
+    [label={monad-from-adjoint}]
+    {(伴随产生单子)}
+    一对伴随函子
+    % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDIl0sWzEsMCwiXFxtYXRoc2YgRCJdLFsxLDAsIkciLDAseyJvZmZzZXQiOi0yfV0sWzAsMSwiRiIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+    $$
+    \begin{tikzcd}[ampersand replacement=\&]
+    	{\mathsf C} \& {\mathsf D}
+    	\arrow[""{name=0, anchor=center, inner sep=0}, "G", shift left=2, from=1-2, to=1-1]
+    	\arrow[""{name=1, anchor=center, inner sep=0}, "F", shift left=2, from=1-1, to=1-2]
+    	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+    \end{tikzcd}
+    $$
+    确定了一个单子 $(T,\eta,\mu)$, 其中 $T = GF \colon \mathsf C \to \mathsf C$,
+    $\eta \colon \operatorname{id}_{C} \to GF$ 是单位, 而 $\mu \colon T^2 = GFGF \to GF$ 由余单位 $\epsilon \colon FG \to \operatorname{id}_{\mathsf D}$ 给出.
+\end{propdef}
+
+\begin{definition}
+    [label={monad-T-algebra}]
+    {($T$-代数)}
+    设 $T$ 是范畴 $\mathsf C$ 上的单子.
+    定义范畴 $\mathsf C$ 上的 \emph{$T$-代数}为 $\mathsf C$ 的对象 $X$ 配备一个态射 $h \colon TX \to X$,
+    满足如下交换图.
+    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJUXjJYIl0sWzEsMCwiVFgiXSxbMCwxLCJUWCJdLFsxLDEsIlgiXSxbMiwwLCJYIl0sWzMsMCwiVFgiXSxbMywxLCJYIl0sWzAsMSwiVGgiXSxbMCwyLCJcXG11X1giLDJdLFsyLDMsImgiLDJdLFsxLDMsImgiXSxbNSw2LCJoIl0sWzQsNiwiXFxvcGVyYXRvcm5hbWV7aWR9X1giLDJdLFs0LDUsIlxcZXRhX1giXV0=
+    \[
+    \begin{tikzcd}[ampersand replacement=\&]
+    	{T^2X} \& TX \& X \& TX \\
+    	TX \& X \&\& X
+    	\arrow["Th", from=1-1, to=1-2]
+    	\arrow["{\mu_X}"', from=1-1, to=2-1]
+    	\arrow["h"', from=2-1, to=2-2]
+    	\arrow["h", from=1-2, to=2-2]
+    	\arrow["h", from=1-4, to=2-4]
+    	\arrow["{\operatorname{id}_X}"', from=1-3, to=2-4]
+    	\arrow["{\eta_X}", from=1-3, to=1-4]
+    \end{tikzcd}
+    \]
+    $\mathsf C$ 上两个 $T$-代数之间的态射即是 $\mathsf C$ 中保持上述交换图的态射.
+    记 $\mathsf C$ 上 $T$-代数的范畴为 $\mathsf C^{T}$.
+\end{definition}
+
+\begin{propdef}
+    {(比较函子)}
+    在伴随产生的单子 (命题 \ref{monad-from-adjoint}) 中, 存在 $\mathsf D$ 到 $T$-代数范畴的\emph{比较函子} (comparison functor) $K\colon \mathsf D\to\mathsf C^T$,
+    将对象 $d$ 对应到 $T$-代数 $Gd$, 其 $T$-代数结构为
+    $$
+    TGd=GFGd\overset{G\epsilon}{\longrightarrow}Gd.
+    $$
+\end{propdef}
+
+\begin{example}
+    {(集合与 $M$-集合之间的自由--遗忘伴随)}
+    设 $M$ 是 (集合范畴 $\mathsf {Set}$ 中的) 幺半群, 那么 $T \colon X \mapsto M\times X$ 给出了集合范畴上的一个单子,
+    自然变换 $\mu \colon T^2 \to T$ 由 $M$ 的乘法 $M\times M \to M$ 给出. 定义 \ref{monad-definition} 中的交换图对应 $M$ 的结合律和左右单位律.
+
+    记 $\mathsf BM$ 为带有 $M$-作用的集合的范畴, 那么 $\mathsf {Set}$ 与 $\mathsf BM$ 之间有如下的伴随, 其中 ``自由'' 函子将集合 $X$ 对应到 $M\times X$.
+    % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsIlxcbWF0aHNmIEJNIl0sWzAsMSwiXFx0ZXh0e+iHqueUsX0iLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiXFx0ZXh0e+mBl+W/mH0iLDAseyJvZmZzZXQiOi0yfV0sWzIsMywiIiwwLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    	{\mathsf {Set}} \& {\mathsf BM}
+    	\arrow[""{name=0, anchor=center, inner sep=0}, "{\text{自由}}", shift left=2, from=1-1, to=1-2]
+    	\arrow[""{name=1, anchor=center, inner sep=0}, "{\text{遗忘}}", shift left=2, from=1-2, to=1-1]
+    	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+    \end{tikzcd}\]
+    单子 $T$ 正是这对伴随由命题 \ref{monad-from-adjoint} 给出的单子.
+    
+    此时, 一个 $T$-代数 $(X,h)$ 即为一个带有 $M$-作用的集合, $h \colon M\times X \to X$ 为 $M$-作用, 而定义 \ref{monad-T-algebra} 中的交换图则对应 $M$-作用的结合律和单位律.
+    因此, 比较函子 $K\colon \mathsf BM\to \mathsf {Set}^T$ 是范畴的同构.
+\end{example}
+
+\begin{example}
+    {(集合与幺半群之间的自由--遗忘伴随)}
+    以 $\mathsf {Mon}$ 表示幺半群范畴,
+    那么集合范畴 $\mathsf {Set}$ 与 $\mathsf {Mon}$ 之间存在伴随
+    % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsIlxcbWF0aHNmIHtNb259Il0sWzAsMSwiXFx0ZXh0e+iHqueUsX0iLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiXFx0ZXh0e+mBl+W/mH0iLDAseyJvZmZzZXQiOi0yfV0sWzIsMywiIiwwLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\mathsf {Set}} \& {\mathsf {Mon}.}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{\text{自由}}", shift left=2, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\text{遗忘}}", shift left=2, from=1-2, to=1-1]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+\end{tikzcd}\]
+    这对伴随给出的单子 $T\colon \mathsf {Set}\to\mathsf {Set}$ 将集合 $X$ 对应到 $X$ 生成的自由幺半群的底层集合
+    $$TX=\coprod_{n\geq 0} X^n,$$
+    也即 $X$ 上列表的集合.
+    自然变换 $\mu\colon T^2\to T$ 将 ``列表的列表'' 拼接起来变为一个列表.
+    一个 $T$-代数 $X$ 即为一个幺半群. 比较函子 $K\colon \mathsf {Mon} \to\mathsf {Set}^T$ 恰好也是范畴的同构.
+\end{example}
+
+在上述两个例子中, 我们发现 $T$-代数的范畴恰好同构于伴随另一边的范畴; 因此这一对伴随恰好可视为范畴 $\mathsf C$ 与其上的 $T$-代数范畴 $\mathsf C^T$ 之间的自由--遗忘伴随.
+
+%\begin{prop}
+%	{}
+%	
+%\end{prop}
+
+一般地, 我们将同构放宽为等价, 得到如下的定义.
+
+\begin{definition}
+    {(单子性伴随)}
+    设一对伴随函子
+    % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDIl0sWzEsMCwiXFxtYXRoc2YgRCJdLFsxLDAsIkciLDAseyJvZmZzZXQiOi0yfV0sWzAsMSwiRiIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+    $$
+    \begin{tikzcd}[ampersand replacement=\&]
+    	{\mathsf C} \& {\mathsf D}
+    	\arrow[""{name=0, anchor=center, inner sep=0}, "G", shift left=2, from=1-2, to=1-1]
+    	\arrow[""{name=1, anchor=center, inner sep=0}, "F", shift left=2, from=1-1, to=1-2]
+    	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+    \end{tikzcd}
+    $$
+    确定了一个单子 $T = GF \colon \mathsf C \to \mathsf C$.
+    若比较函子 $K\colon \mathsf D\to\mathsf C^T$ 构成范畴等价, 则称这对伴随为\emph{单子性伴随} (monadic adjunction), 称右伴随 $G$ 为\emph{单子性函子}. 换言之, $G$ 可视为 $\mathsf C$ 上某个单子的代数范畴到 $\mathsf C$ 的遗忘函子.
+\end{definition}
+
+\begin{example}
+	{(自反子范畴)}
+	\emph{自反子范畴} (reflective subcategory) 是一种满子范畴, 其嵌入函子有左伴随.
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf D} \& {\mathsf C}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "i"', shift right=2, hook, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "a"', shift right=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\end{tikzcd}\]
+	例如层范畴是预层范畴的满子范畴, 此时 $a$ 为层化 (命题 \ref{sheafification}).
+	
+	自反子范畴的嵌入 $i\colon \mathsf D\to\mathsf C$ 是单子性函子; 也即子范畴 $\mathsf D$ 的对象可视为单子 $ia\colon \mathsf C\to\mathsf C$ 的代数.
+\end{example}

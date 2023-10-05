@@ -1,0 +1,130 @@
+\chapter{分类\topos{}}
+
+\philoquote{
+    The notion of classifying topos really formalizes the notion of ``content'' of a mathematical theory.
+    If you discover that two theories have the same classifying topos, this means that the two theories tell the same story in different languages.
+}{Olivia Caramello}
+
+%分类\topos{}的角色类似于拓扑学中的分类空间:
+对于拓扑群 $G$ 存在分类空间 $BG$,
+使得 (足够好的) 空间 $X$ 上 $G$-主丛的等价类
+一一对应于 $X$ 到 $BG$ 的映射同伦类 (被 $BG$ ``分类''),
+$$
+G\mathsf{-Bund} (X) \simeq [X,BG];
+$$
+从而恒等映射 $\operatorname{id}_{BG}$ 对应着 $BG$ 上一个 ``万有'' 的 $G$-主丛 $EG \to BG$,
+``万有'' 意指任何 $G$-主丛都是通过某个映射 $X \to BG$ 将其拉回得到.
+
+类似地, 在许多情形下, \topos{}上的一种结构可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
+分类\topos{}到自身的恒等态射对应着其上的 ``万有'' 的这种结构.
+
+\section{$G$-旋子的分类\topos{}}
+
+我们将看到, 分类\topos{}不仅仅是分类空间的一个精神上的类比; 它某种意义上是分类空间的推广, 这种推广正是沿着 Grothendieck 的 ``\topos{}作为空间概念的推广'' 的思路.
+
+下面的概念是 ``空间上的 $G$-主丛'' 的推广, 取自 \cite{SGL} VIII.2 节.
+\begin{definition}
+	[label={G-torsors-over-topos}]
+	{(\topos{}上的 $G$-旋子)}
+	设 $G$ 为离散群, 即 $\mathsf {Set}$ 中的群.
+	设 $\gamma\colon \mathsf C\to \mathsf {Set}$ 是 $\mathsf {Set}$ 上的\topos{} (见命题 \ref{global-sections-geometric-morphism}). 定义 $\mathsf C$ 上的一个 $G$-\emph{旋子}\footnotemark (torsor over $\mathsf C$) 为 $\mathsf C$ 的对象 $T$, 以及群对象 $\gamma^*(G)$ 在 $T$ 上的作用 $\mu\colon \gamma^*(G)\times T \to T$, 满足
+	\begin{enumerate}[(i)]
+		\item 映射 $T\to 1$ 为满射;
+		\item 群作用 $\mu$ 诱导同构 $(\mu,\pi_2)\colon \gamma^*(G)\times T \to T\times T$.
+	\end{enumerate}
+\end{definition}
+\footnotetext{Torsor 似乎没有通行的中文译名, 这可能是因为它在拓扑学中一般被称作\emph{主丛}. 这里我跟随我的一位老师译为\emph{旋子}.}
+
+%\begin{remark}
+%	{(条件 ii 的解读)}
+%	群作用 $\mu$ 诱导同构 $(\mu,\pi_2)\colon \gamma^*(G)\times T \to T\times T$ 等价于 $\gamma^*(G)$ 在 $T$ 上的作用是自由且传递的.
+%	
+%\end{remark}
+
+\begin{example}
+	{(集合范畴中的 $G$-旋子)}
+	由于集合范畴 $\mathsf {Set}$ 是一个点上的层范畴,
+	$\mathsf {Set}$ 中的 $G$-旋子即是 ``一个点上的 $G$-主丛'',
+	即一个非空集合 $T$, 带有 $G$-左作用 $\mu\colon G\times T \to T$, 满足 $(\mu,\pi_2)\colon G\times T \to T\times T$ 为双射.
+	后一个条件等价于这个作用是自由且传递的:
+	``自由'' 等价于 $(\mu,\pi_2)\colon G\times T \to T\times T$ 为单射, ``传递'' 等价于其为满射.
+	
+	有趣的是, 两个映射 $\mu,\pi_2\colon G\times T \to T$ 也可视为一个范畴 (具体地, $G$ 在 $T$ 上作用的\emph{作用群胚}) 的箭头集合到对象集合的两个映射, 分别将一个箭头映射到其终点与起点. 那么 $(\mu,\pi_2)\colon G\times T \to T\times T$ 为双射就是说, 作用群胚的任何两个对象 $x,y$ 之间有且仅有一个态射 $x\to y$.
+\end{example}
+
+\begin{example}
+	{(空间上的 $G$-主丛)}
+	仍设 $G$ 为离散群. 拓扑空间 $X$ 上的 $G$-主丛等价于 (或可定义为) 平展映射 $E \to X$, 带有 $X$ 上的 $G$-左作用 $G\times E \to E$, 使得每个纤维 $E_x$ 非空且带有 $G$ 的自由传递作用.
+	
+	可以证明, 这个定义等价于层\topos{} $\operatorname{Sh}(X)$ 上 $G$-旋子的定义.
+\end{example}
+
+\begin{example}
+	{($G\mathsf {Set}$ 上的万有 $G$-旋子)}
+	对于离散群 $G$, 考虑其自身作成的 $G$-右作用集合 $R_G$. 我们断言它是 $G\mathsf {Set}$ 上的 $G$-旋子.
+	
+	首先回忆几何态射 $\gamma\colon G\mathsf {Set} \to \mathsf {Set}$ (例 \ref{group-homomorphism-adjoint-triple-example-G-1}),
+	其逆像函子 $\gamma^*\colon \mathsf {Set} \to G\mathsf {Set}$
+	将集合对应到其自身, 带有平凡 $G$-右作用.
+	群作用 $\mu\colon \gamma^*(G)\times R_G \to R_G$, $(g,h)\mapsto gh$ 是 $G$-集合的态射, 因为 $\mu(g,hk)=ghk=\mu(g,h)k$.
+	映射 $(\mu,\pi_2)\colon \gamma^*(G)\times R_G\to R_G\times R_G$ 为 $(g,h)\mapsto (gh,h)$, 从而为 $G$-集合的同构.
+	%\todo{写完万有 $G$-旋子}
+\end{example}
+
+\topos{}上的旋子是 ``旋子的理论'' 的模型.
+
+\begin{definition}
+	{($G$-旋子的理论)}
+	设 $G$ 为离散群, 定义 $G$-旋子的理论 $\mathbb T_G$.
+	其中只有一个类型 $T$, 对每个元素 $g\in G$ 都有一个一元函数符号 $g$, 公理如下.
+	\begin{itemize}
+		\item (\emph{群作用}) 对任意 $g,h\in G$ 有公理 $\vdash_x g(hx)=(gh)x$ (注意 ``对任意'' \emph{不是}这条公理的一部分, 这里实际上没有用到任意量词 $\forall$);
+		\item (\emph{非空}) $\vdash \exists x. \top$;
+		\item (\emph{自由性}) 对任意不同的 $g,h\in G$ 有公理 $(gx=hx)\vdash_x \bot$ (同上, 这里没有用到 $\forall$);
+		\item (\emph{传递性}) $\displaystyle\vdash_{(x,y)}\bigvee_{g\in G}gx=y$.
+	\end{itemize}
+\end{definition}
+
+理论 $\mathbb T_G$ 是一种几何理论 (定义 \ref{kinds-of-theories}), 因为它用到了 ``真'' $\top$, 存在量词 $\exists$, ``假'' $\bot$ 和无穷析取 $\bigvee$.
+
+\section{环的分类\topos{}, 万有环}
+
+本节以一种有些唐突的方式构造环的分类\topos{}, 以及其中 ``万有'' 的环. %后面我们将看到构造分类\topos{}有更系统的方法.
+
+\begin{definition}
+    {(环)}
+    设范畴 $\mathsf C$ 有有限极限.
+    定义 $\mathsf C$ 中的\emph{环}为对象 $R$,
+    带有元素 $0,1\colon 1 \to R$,
+    加法与乘法 $+,\times \colon R\times R \to R$,
+    满足通常的交换环的条件.
+
+    范畴 $\mathsf C$ 中的环构成一个范畴 $\mathsf {Ring}(\mathsf C)$.
+    进一步, 对于两个这样的范畴 $\mathsf C,\mathsf D$, 保持有限极限的函子 $f \colon \mathsf C \to \mathsf D$ 诱导了函子
+    $\mathsf {Ring}(\mathsf C) \to \mathsf {Ring}(\mathsf D)$.
+
+    特别地, 对于\topos{}间的几何态射 $f \colon \mathsf C \to \mathsf D$, 其逆像部分 (见定义 \ref{geometric-morphism}) $f^* \colon \mathsf D \to \mathsf C$ 诱导了函子 $\mathsf {Ring}(\mathsf D) \to \mathsf {Ring}(\mathsf C)$;
+    这表示 $\mathsf {Ring}(-)$ 是关于\topos{}的反变函子.
+\end{definition}
+
+下面我们将构造一个\topos{} $\mathsf E$, 称为\emph{环的分类\topos{}}, 使得有自然的范畴等价
+$$
+\mathsf {Ring}(\mathsf C) \simeq \mathsf{Hom}(\mathsf C,\mathsf E).
+$$
+
+% 参考 Caramello 的 TST
+
+\todo{群的理论的分类\topos{}}
+
+考虑范畴 $\mathsf A = (\mathsf {Ring}_{\text{fp}})^\op$,
+其中 $\mathsf {Ring}_{\text{fp}}$ 是 ($\mathsf{Set}$ 中) \emph{有限表现} (finitely presented) 环的范畴 (见例 \ref{zariski-site}).
+$\mathsf A$ 中有一个特殊的对象 $A = \mathbb{Z}[x]$,
+也即仿射直线.
+
+\section{几何理论的分类\topos{}}
+
+\begin{definition}
+    {}
+    设 $\mathbb T$ 为一几何理论.
+    
+\end{definition}

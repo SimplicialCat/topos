@@ -1,0 +1,140 @@
+\chapter{\topos{}的内语言: 从语法到语义}
+
+\philoquote{
+    A mathematical statement is just a story you tell about some devices. Some of those stories are clever, some are stupid; some of those stories are true, some others are false. Doing mathematics is telling clever stories which are true.\footnotemark
+}{
+    Francis Borceux, \cite{HCA3}
+}
+\footnotetext{一句数学陈述不过是你对某些东西讲的一个故事. 这些故事有的妙, 有的蠢, 有的真, 有的假. 做数学就是要讲出又妙又真的故事.}
+
+我们曾提到意象中有一种\emph{内语言} (internal language) 可用来进行推理, 本章介绍这种语言, 以及它在综合数学中的应用.
+
+
+\section{Mitchell--B\'enabou 语言}
+
+固定一个意象 $\mathsf C$. 本节描述一种重要的语言, 称作 \emph{Mitchell--B\'enabou 语言}; 它是意象的内语言的一种表述, 其特点是利用子对象分类器 $\Omega$, 将\emph{公式}一视同仁地解释为 $\Omega$ 类型的\emph{项}. 使用这种语言, 可将意象中的对象真正地当作集合一样处理.
+
+\begin{definition}
+    {(类型)}
+    \emph{类型}是 $\mathsf C$ 的对象.
+\end{definition}
+
+\begin{definition}
+    {(项, 公式)}
+    类型 $X$ 的\emph{项}被解释为指向 $X$ 的态射, 而\emph{公式}被解释为 $\Omega$ 类型的项;
+    项 (公式) 的定义域代表此项 (公式) 中自由变量的类型.
+    
+    例如, 当类型 $X$ 的一个项含有自由变量 $y\colon Y, z\colon Z$ 时, 该项解释为一个态射 $Y\times Z \to X$.
+    
+    类型 $X$ 的一个\emph{变量} (可视为含一个自由变量的项) 解释为恒等态射 $\operatorname{id}\colon X \to X$;
+    
+    类型 $X$ 的一个\emph{常量} (可视为不含自由变量的项, 或零元函数) 则是一个态射 $1 \to X$, 也即对象 $X$ 的一个\emph{整体元素}.
+\end{definition}
+
+\begin{definition}
+	{(等式)}
+	对于类型 $X$ 的两个项 $\sigma\colon U \to X$, $\tau\colon V \to X$, \emph{等式} $\sigma = \tau$ 被解释为 $\Omega$ 的项
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJVXFx0aW1lcyBWIl0sWzEsMCwiWFxcdGltZXMgWCJdLFsyLDAsIlxcT21lZ2EiXSxbMCwxLCIoXFxzaWdtYSxcXHRhdSkiXSxbMSwyLCJcXGNoaV97XFxEZWx0YX0iXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{U\times V} \& {X\times X} \& \Omega.
+		\arrow["{(\sigma,\tau)}", from=1-1, to=1-2]
+		\arrow["{\chi_{\Delta}}", from=1-2, to=1-3]
+	\end{tikzcd}\]
+	回忆 $\chi_{\Delta}$ 是对角线 $\Delta\colon X\to X\times X$ 的特征函数 (例 \ref{diagonal}), 它表达的正是 $X$ 上的相等关系.
+\end{definition}
+
+\begin{definition}
+	{(函数符号, 关系符号)}
+	\emph{函数符号} $f\colon A_1\cdots A_n \to B$ 被解释为 $\mathsf C$ 中的态射 (注意到意象中存在乘积)
+	$$f\colon A_1\times\cdots\times A_n\to B,$$
+	而\emph{关系符号} $R\hookrightarrow A_1\cdots A_n$ 被解释为其中指向 $\Omega$ 的态射
+	$$
+	R\colon A_1\times\cdots\times A_n \to \Omega,
+	$$
+	也即 $A_1\times\cdots\times A_n$ 的子对象, 其直观为 ``满足关系 $R$ 的元素构成的子集''.
+	
+	我们看到, 函数符号与项被解释成了同一种东西. 这是有道理的, 因为\emph{项}在这里就是其自由变量的函数.
+	
+	对于函数符号 $f\colon X \to Y$ 与类型 $X$ 的项 $\sigma\colon U \to X$, $f(\sigma)$ 解释为复合 $f\circ\sigma \colon U \to Y$.
+\end{definition}
+
+特别地, 使用取值映射 $\operatorname{ev}\colon Y^X\times X\to Y$ (定义 \ref{evaluation-map}),
+可将 $Y^X$ 类型的项 (内语言中的 ``函数'') $\theta\colon V\to Y^X$
+作用于 $X$ 类型的项 $\sigma \colon U \to X$,
+得到 $Y$ 类型的项
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWXFx0aW1lcyBVIl0sWzEsMCwiWV5YXFx0aW1lcyBYIl0sWzIsMCwiWSJdLFswLDEsIihcXHRoZXRhLFxcc2lnbWEpIl0sWzEsMiwiXFxvcGVyYXRvcm5hbWV7ZXZ9Il1d
+\[\theta(\sigma)\colon
+\begin{tikzcd}[ampersand replacement=\&]
+	{V\times U} \& {Y^X\times X} \& Y.
+	\arrow["{(\theta,\sigma)}", from=1-1, to=1-2]
+	\arrow["{\operatorname{ev}}", from=1-2, to=1-3]
+\end{tikzcd}\]
+
+例如, 考虑成员关系 (例 \ref{membership-relation}) ${\in_X} \colon \Omega^X\times X \to \Omega$,
+可对 $PX=\Omega^X$ 类型的项 (内语言中的 ``子集'') $\eta\colon V \to \Omega^X$ 与 $X$ 类型的项 $\sigma\colon U\to X$ 定义 $\Omega$ 类型的项
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWXFx0aW1lcyBVIl0sWzEsMCwiXFxPbWVnYV5YXFx0aW1lcyBYIl0sWzIsMCwiXFxPbWVnYSJdLFswLDEsIihcXGV0YSxcXHNpZ21hKSJdLFsxLDIsIlxcaW5fWCJdXQ==
+\[
+(\sigma \in \eta) \colon 
+\begin{tikzcd}[ampersand replacement=\&]
+	{V\times U} \& {\Omega^X\times X} \& \Omega.
+	\arrow["{(\eta,\sigma)}", from=1-1, to=1-2]
+	\arrow["{\in_X}", from=1-2, to=1-3]
+\end{tikzcd}\]
+
+\todo{量词的解释}
+
+\todo{把后面逻辑运算搬过来}
+
+\subsection{意象中的逻辑运算}
+
+在一个意象中, $\Omega$ 是代表真值的类型, 从而逻辑运算可表示为与 $\Omega$ 相关的态射. 前面提到的 ``真'' $\top \colon 1 \to \Omega$ 属于此列.
+
+\subsection{假, 非}
+
+\begin{definition}
+	{(假)}
+	\emph{假} (false) $\bot \colon 1 \to \Omega$ 是 子对象 $0\to 1$ 的特征函数, 即下图是子对象的拉回.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIwIl0sWzAsMSwiMSJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCIxIl0sWzAsMV0sWzAsM10sWzEsMiwiXFxib3QiLDJdLFszLDIsIlxcdG9wIl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		0 \& 1 \\
+		1 \& \Omega
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\bot"', from=2-1, to=2-2]
+		\arrow["\top", from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{definition}
+
+\begin{definition}
+	{(非)}
+	\emph{非} (not) $\neg\colon \Omega\to\Omega$ 是\emph{假} $\bot\colon 1 \to\Omega$ 的特征函数, 即下图是子对象的拉回.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIxIl0sWzAsMSwiXFxPbWVnYSJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCIxIl0sWzAsMSwiXFxib3QiLDJdLFswLDNdLFsxLDIsIlxcbmVnIiwyXSxbMywyLCJcXHRvcCJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		1 \& 1 \\
+		\Omega \& \Omega
+		\arrow["\bot"', from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\neg"', from=2-1, to=2-2]
+		\arrow["\top", from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{definition}
+
+\subsection{且}
+
+\begin{definition}
+	{(且)}
+	
+\end{definition}
+
+
+
+\section{几何理论}
+
+
+%\todo{将综合可计算性理论, 综合微分几何, 综合代数几何变成本章的节}
+
+\input{eff}
+
+\input{SDG}
+
+\input{Bohr}

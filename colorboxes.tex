@@ -1,0 +1,93 @@
+% 哲思
+
+\newcommand{\philoquote}[2]{
+\begin{center}
+\begin{minipage}{0.7\linewidth}
+{\quad\sffamily #1}\\
+\begin{flushright}
+\textsf{#2}
+\end{flushright}
+\end{minipage}
+\end{center}~\\~\\
+}
+
+% 彩色方框, 参数的使用有点意思
+
+\usepackage{tcolorbox}
+
+\tcbuselibrary{breakable}
+
+\newtcolorbox[
+    auto counter,
+    number within=section,
+]{remark}[2][]{
+    colback=blue!10!white,
+    colframe=blue!10!white,
+    coltitle=black,
+    breakable,
+    title={\textsf{注~\thetcbcounter} #2},
+    #1
+}
+\newtcolorbox[
+    use counter from=remark,
+    %number within=chapter,
+]{example}[2][]{
+    colback=pink!25!white,
+    colframe=pink!25!white,
+    coltitle=black,
+    breakable,
+    title={\textsf{例~\thetcbcounter} #2},
+    #1
+}
+\newtcolorbox[
+    use counter from=remark,
+    %number within=chapter,
+]{definition}[2][]{
+    colback=red!10!white,
+    colframe=red!10!white,
+    coltitle=black,
+    breakable,
+    title={\textsf{定义~\thetcbcounter} #2},
+    #1
+}
+
+\def\propcolor{green!20!white}
+\newtcolorbox[
+    use counter from=remark,
+]{prop}[2][]{
+    colback=\propcolor,
+    colframe=\propcolor,
+    coltitle=black,
+    breakable,
+    title={\textsf{命题~\thetcbcounter} #2},
+    #1
+}
+\newtcolorbox[
+    use counter from=remark,
+]{propdef}[2][]{
+    colback=orange!20!white,
+    colframe=orange!20!white,
+    coltitle=black,
+    breakable,
+    title={\textsf{命题-定义~\thetcbcounter} #2},
+    #1
+}
+\newtcolorbox[
+    auto counter,
+    number within=chapter
+]{exercise}[2][]{
+    colback=gray!10!white,
+    colframe=gray!10!white,
+    coltitle=black,
+    title={\textsf{习题~\alph{\thetcbcounter}} #2},
+    #1
+}
+\newtcolorbox[
+use counter from=remark,
+]{axiom}[2][]{
+	colback=cyan!30!white,
+	colframe=cyan!30!white,
+	coltitle=black,
+	title={\textsf{公理~\thetcbcounter} #2},
+	#1
+}

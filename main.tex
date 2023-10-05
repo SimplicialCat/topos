@@ -1,0 +1,114 @@
+\documentclass{book}
+\usepackage[UTF8]{ctex}
+\usepackage{fontspec}
+%\usepackage{xeCJK}
+\newCJKfontfamily\mincho{IPAexMincho}
+\setCJKmainfont{SimSun}[ItalicFont=KaiTi, BoldFont=SimHei]
+
+% SimSun
+% STSong
+% SimHei
+% KaiTi
+% DengXian
+
+\def\topos{猫猫}
+
+\title{\textbf{\huge 盲人摸象}\\\emph{\topos{}理论讲义}}
+\author{\emph{王进一}\\\href{我的邮箱}{jin12003@163.com}\\QQ 2917905525}
+\date{2023 年夏至今\\~\\~此版本编译时间: \today{}~\\~\\这是一本正在施工的讲义. 目前我迫切需要读者的意见!
+\\~\\
+在非正式版本中, 我故意将 topos 译为 ``\topos{}''.
+}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+
+%\usepackage{wrapfig}
+
+\usepackage{epigraph}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+\usepackage{enumerate}
+
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+\input{colorboxes}
+
+% 分栏
+\usepackage{multicol}
+
+% 页眉与页脚样式
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[LE,RO]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{第\ \thechapter\ 章\ #1}{}}
+
+% 页边距
+\usepackage{geometry}
+\geometry{
+	b5paper,
+	left=20mm,
+	top=30mm,
+}
+
+% 参考文献
+\usepackage{biblatex}
+\addbibresource{Topos.bib}
+
+% 章节样式
+\usepackage{titlesec}
+\titleformat{\chapter}{\huge\bfseries}{第\, \thechapter\, 章}{1em}{}
+
+% 常用记号
+
+\def\op{\text{op}} % 对偶范畴
+\def\yo{\!\text{{\mincho よ}}} % 米田嵌入
+
+\newcommand{\todo}[1]{{\color{red} [\textbf{未完成: #1}]}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\setcounter{chapter}{-1} % 这样下面一章就是第 0 章
+
+% 第零章 前言
+\input{foreword}
+
+% 第一章 范畴论
+\input{cat}
+
+% 第二章 位象理论
+\input{loc}
+
+% 第三章 Grothendieck \topos{}
+\input{Gro}
+
+% 第四章 内语言
+\input{lan}
+
+% 第五章 分类\topos{}
+\input{cla}
+
+\appendix
+
+% 附录 范畴论
+\input{cat-appendix}
+
+% 附录 形式逻辑
+\input{logic}
+
+%\input{colimit-appendix}
+
+\printbibliography[title=参考文献]
+
+\end{document}

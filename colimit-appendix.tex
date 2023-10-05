@@ -1,0 +1,69 @@
+\section{\topos{}中余极限的构造}
+
+\label{colimit-appendix}
+
+本节从\topos{}的基础定义出发, 证明余极限的存在性.
+
+\subsection{始对象}
+
+始对象 $0$ 是空的余极限. 作为热身, 我们先用一个相对简单的方法构造始对象.
+
+若集合 $Z$ 只有一个子集, 那么 $Z$ 是空集. 类似地有如下命题.
+\begin{prop}
+    {}
+    在\topos{}中, 若对象 $Z$ 只有一个子对象, 也即 $Z$ 到 $\Omega$ 有唯一的态射, 那么 $Z$ 是始对象.
+\end{prop}
+
+\begin{proof}
+    设 $X$ 是任意对象.
+    首先注意到, 单元集映射 $\{-\}_X\colon X \to \Omega^X$ (例 \ref{singleton-map}) 是单射.
+    
+\end{proof}
+
+假设 $0$ 存在, 那么态射 $0\to 1$ 对应 ``假'' $\bot \colon 1 \to \Omega$.
+
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXHdpZGV0aWxkZSAwIl0sWzAsMiwiMSJdLFsyLDAsIjEiXSxbMiwyLCJcXE9tZWdhXlxcT21lZ2EiXSxbMywzLCJcXE9tZWdhIl0sWzEsMywiMSJdLFszLDEsIjEiXSxbMSwxLCJYIl0sWzEsMywiXFxvcGVyYXRvcm5hbWV7aWR9X1xcT21lZ2EiLDIseyJsYWJlbF9wb3NpdGlvbiI6NzB9XSxbMiwzLCJcXHRvcCIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo3MH1dLFswLDFdLFswLDJdLFszLDQsIlxcb3BlcmF0b3JuYW1le2V2fV9YIiwxXSxbNSw0LCJYIiwyXSxbMSw1LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDQsIlxcdG9wIl0sWzIsNiwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw3LCJcXGV4aXN0cyAhIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsNV0sWzcsNl1d
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\widetilde 0} \&\& 1 \\
+	\& X \&\& 1 \\
+	1 \&\& {\Omega^\Omega} \\
+	\& 1 \&\& \Omega
+	\arrow["{\operatorname{id}_\Omega}"'{pos=0.7}, from=3-1, to=3-3]
+	\arrow["\top"{pos=0.7}, from=1-3, to=3-3]
+	\arrow[from=1-1, to=3-1]
+	\arrow[from=1-1, to=1-3]
+	\arrow["{\operatorname{ev}_X}"{description}, from=3-3, to=4-4]
+	\arrow["X"', from=4-2, to=4-4]
+	\arrow[Rightarrow, no head, from=3-1, to=4-2]
+	\arrow["\top", from=2-4, to=4-4]
+	\arrow[Rightarrow, no head, from=1-3, to=2-4]
+	\arrow["{\exists !}"{description}, dashed, from=1-1, to=2-2]
+	\arrow[from=2-2, to=4-2]
+	\arrow[from=2-2, to=2-4]
+\end{tikzcd}\]
+
+
+
+\subsection{幂对象函子}
+
+\begin{prop}
+    {(幂对象函子是自身的伴随)}
+    在一个\topos{} $\mathsf C$ 中, 幂对象函子 (见定义\ref{power-object-functor}) $P \colon \mathsf C^{\op} \to \mathsf C$ 是其对偶函子 $P^{\op} \colon \mathsf C \to \mathsf C^{\op}$ 的右伴随.
+\end{prop}
+
+\begin{proof}
+    这是由于自然同构
+    \begin{equation}
+        \begin{aligned}
+            \operatorname{Hom}_{\mathsf C}(X,PY)
+            &\simeq \operatorname{Hom}_{\mathsf C}(X\times Y,\Omega)\\
+            &\simeq \operatorname{Hom}_{\mathsf C}(Y,PX) \simeq \operatorname{Hom}_{\mathsf C^{\op}}(PX,Y).
+        \end{aligned}
+        \label{power-object-functor-adjoint}
+    \end{equation}
+\end{proof}
+
+在 (\ref{power-object-functor-adjoint}) 中令 $Y=PX$, 考察 $\operatorname{id}_{PX}$ 对应的 $\operatorname{Hom}_{\mathsf C}(X,PPX)$ 的元素,
+我们发现成员关系 (定义\ref{membership-relation}) $\in_Y \hookrightarrow PX \times X$ 给出了这个伴随的\emph{单位} $\eta \colon \operatorname{id}_{\mathsf C} \to PP^{\op}$.
+
+\todo{幂对象函子的单子性}

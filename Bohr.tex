@@ -1,0 +1,133 @@
+\section{量子理论与 Bohr 意象}
+
+
+
+\subsection{$C^*$-代数, 经典语境与 Bohr 景}
+
+一般而言, 量子系统是由 $C^*$-代数表示的.
+
+\begin{remark}
+    {(约定)}
+    约定本章中的 ``代数'' 指含幺结合代数, 且代数的同态保持幺元.
+\end{remark}
+
+\begin{definition}
+    {($C^*$-代数)}
+    \emph{$C^*$-代数}是 $\mathbb{C}$ 上的 Banach 代数 $\big(\mathcal A,\|{-}\|\big)$,
+    带有 ``伴随'' 运算 $(-)^*\colon \mathcal A \to \mathcal A$,
+    满足对任意 $x\in \mathcal A$,
+    \begin{itemize}
+        \item $(x^*)^*=x$,
+        \item $(xy)^*=y^*x^*$,
+        \item $(\lambda x)^*=\bar\lambda x^*\,(\lambda\in\mathbb{C})$,
+        \item $\|x^* x\|=\|x\|\|x^*\|=\|x\|^2$.
+    \end{itemize}
+    $C^*$-代数的 $*$-子代数是指关于 $(-)^*$ 封闭的子代数.
+\end{definition}
+
+\begin{example}
+    {}
+    对于 Hilbert 空间 $H$, $H$ 上的有界线性算子的代数 $\mathcal B(H)$ 是 $C^*$-代数, 其中 $x^*$ 是 $x$ 的伴随算子. 事实上, 每个 $C^*$-代数都同构于某个形如 $\mathcal B(H)$ 的代数的 $*$-子代数, 因此后者也可作为 $C^*$-代数的一种具体定义.
+\end{example}
+
+下面我们固定一个 $C^*$-代数 $\mathcal A$.
+
+\begin{definition}
+    {(可观测量)}
+    $C^*$-代数中的自伴元素是指满足 $x^*=x$ 的元素; 自伴元素又称\emph{可观测量} (observable).
+\end{definition}
+
+Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定, 而一族相交换的可观测量可以同时确定. 因此我们格外关注那些交换的子代数.
+
+\begin{definition}
+    {(经典语境)}
+    称 $\mathcal A$ 的一个交换 $*$-子代数为一个\emph{经典语境} (classical context).
+    记 $\mathsf C(\mathcal A)$ 为 $\mathcal A$ 的交换 $*$-子代数在包含关系下构成的偏序集.
+\end{definition}
+
+\begin{remark}
+    {}
+    语境这个名字的含义是, 一个可观测量只在某些特定的语境 (也就是包含它的那些语境) 下才有确定的值. 在一个固定的语境中, 可观测量的表现无异于一个经典系统.
+\end{remark}
+
+这里我们稍微偏题, 介绍偏序集上的层.
+
+\begin{definition}
+    {(Alexandorff 空间)}
+    若一个拓扑空间中开集的任意交仍是开集, 则称其为 \emph{Alexandorff 空间}.
+\end{definition}
+
+\begin{definition}
+    {(Alexandroff 拓扑)}
+    设 $P$ 为偏序集. 定义 $P$ 上的 \emph{Alexandroff 拓扑}是以向上封闭集为开集的拓扑. 其中, 称 $Q\subset P$ 为\emph{向上封闭集}是指对任意 $x\in Q,y\in P$, 若 $x\leq y$, 则 $y\in Q$.
+\end{definition}
+
+\begin{prop}
+    {}
+    对任意偏序集 $P$, $P$ 上的预层可自然延拓为 $P$ 的 Alexandroff 拓扑上的层.
+\end{prop}
+
+% sheaf vs cosheaf
+
+\begin{definition}
+    {(Bohr 景)}
+    范畴, 也称 \emph{Bohr 景}. Bohr 景上的意象将是我们主要的研究对象.
+\end{definition}
+
+\section{Bohr 意象}
+
+\begin{definition}
+    {(Bohr 意象)}
+    称 $\mathsf C(\mathcal A)$ 上的预层意象为 \emph{Bohr 意象}.
+\end{definition}
+
+
+
+\subsection{状态空间}
+
+\begin{definition}
+    {(Gelfand 谱)}
+    对于交换 $C^*$-代数 $A$, 定义其 \emph{Gelfand 谱}
+$$
+\Sigma(A) := \{C^*\text{-代数同态}\,\lambda\colon A \to\mathbb{C}\},
+$$
+其拓扑为使得所有映射 $\Sigma(A)\to\mathbb{C}, \lambda \mapsto \lambda (x)$ 都连续的最弱拓扑. 由 Gelfand--Mazur 定理, Gelfand 谱 $\Sigma(A)$ 也是 $A$ 的极大理想的集合.
+\end{definition}
+
+$\Sigma(A)$ 上拓扑的定义旨在保证每个元素 $x\in A$ 都对应 $\Sigma(A)$ 上的一个复值连续函数. 如下定理表明这个对应实际上是一个同构; 这是代数--几何对偶的一例.
+
+\begin{prop}
+    {(Gelfand--Naimark 对偶)}
+    记 $\mathsf {CC}^*$ 为交换 $C^*$-代数的范畴, $\mathsf{CHaus}$ 为紧 Hausdorff 空间的范畴,
+    那么 Gelfand 谱给出反变函子 $\Sigma\colon \big(\mathsf {CC}^*\big)^{\op} \to \mathsf {CHaus}$, 且有范畴等价
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    	{\big(\mathsf {CC}^*\big)^{\op}} \& {\mathsf {CHaus},}
+    	\arrow["\Sigma", shift left, from=1-1, to=1-2]
+    	\arrow["{C({-},\mathbb{C})}", shift left, from=1-2, to=1-1]
+    \end{tikzcd}\]
+    其中 $C(X,\mathbb{C})$ 是空间 $X$ 上复值连续函数的 $C^*$-代数.
+\end{prop}
+
+可观测量代数与状态空间互为对偶. 经典力学中, 可观测量是状态空间上的函数; 反过来, 状态空间上的点可视为可观测量代数到 $\mathbb{R}$ 的代数同态.
+完全类似地, 在量子力学中, 给定语境 $A$, 对应的 "状态空间" $\Sigma(A)$ 中的点就是 $A$ 到 $\mathbb{C}$ 的代数同态, 而 $A$ 中的可观测量则可视为状态空间 $\Sigma(A)$ 上的函数.
+
+\begin{definition}
+    {(谱预层)}
+    对于语境 $A_1 \subset A_2$, 有限制映射 $\Sigma(A_2)\to\Sigma(A_1)$. 这定义了 $\mathsf C(\mathcal A)$ 上的预层 $\Sigma$.
+\end{definition}
+
+\begin{remark}
+    {}
+    预层 $\Sigma$ 整合了所有经典语境的几何信息.
+    
+    一般而言, 一个可观测量只能给出预层 $\Sigma$ 的局部截面, 而无法给出整体截面.
+\end{remark}
+
+Bohr 意象中对象 $\Sigma$ 的构造可视为将 Gelfand 谱的构造由交换代数推广到非交换代数, 成为与交换子代数相对偶的空间的系统. 它实际上是 Bohr 意象中的内蕴位象 (internal locale). 而几乎是平凡地, 那些交换子代数的全体构成 Bohr 意象中的一个内蕴代数. 由此, Bohr 意象的内语言允许我们像谈论经典态一样谈论量子态.
+
+\subsection{Bohr 意象中的命题}
+
+
+
+在一个经典系统中, 命题是状态空间的子集, 表示这个命题在何种状态下成立.
+类似地, 量子系统中的命题是预层意象中 $\Sigma$ 的子对象, 或称子函子.

@@ -514,22 +514,24 @@ $u\colon P(X\times Y) \to PX$
     设 $\mathsf C$ 中存在有限极限. 设 $Y\to X,Z\to X$ 是俯范畴 $\mathsf C/X$ 中两个对象.
     那么两个态射 $f,g \colon Y \to Z$ 的等化子就是 $f,g \colon Y \to Z$ 在 $\mathsf C$ 中的等化子配上到 $X$ 明显的态射;
     两个对象 $Y\to X, Z\to X$ 的乘积是 $\mathsf C$ 中的拉回 $Y\times_X Z$.
+    
+    对任意范畴 $\mathsf C$ 的对象 $X$, 俯范畴 $\mathsf C/X$ 都有终对象 $\operatorname{id}_X\colon X\to X$.
 \end{prop}
 
 \begin{prop}
+	[label={subobjects-in-slice-category}]
     {(俯范畴中的子对象)}
     对任何范畴 $\mathsf C$, 俯范畴 $\mathsf C/X$ 中 $Y\to X$ 的子对象
-    $
-    \smash{\begin{tikzcd}[ampersand replacement=\&,column sep=-1pt,row sep=small]
+    $$
+    \begin{tikzcd}[ampersand replacement=\&,column sep=-1pt,row sep=small]
 	W \&\& Y \\
 	\& X
 	\arrow[from=1-1, to=1-3]
 	\arrow[from=1-3, to=2-2]
 	\arrow[from=1-1, to=2-2]
-    \end{tikzcd}}
-    $
+    \end{tikzcd}
+    $$
     等同于 $\mathsf C$ 中 $Y$ 的子对象 $W \hookrightarrow Y$.
-
     因此, 当 $\mathsf C$ 有子对象分类子 $\Omega$ 且存在乘积时,
     $\mathsf C/X$ 有子对象分类子 $\Omega\times X \to X$.
 \end{prop}
@@ -664,15 +666,15 @@ $u\colon P(X\times Y) \to PX$
     对 $\mathsf C$ 的对象 $W$, 有自然同构
     \begin{align*}
         &\operatorname{Hom}_{\mathsf C}(W,\Pi_X(f))
-        \\&\simeq
+        \\\simeq&
         \big\{
         h\colon W\to Z^X \mid f^X \circ h=\operatorname{id}_X\circ W
         \big\}
-        \\&\simeq
+        \\\simeq&
         \big\{
         h\colon W\times X \to Z \mid f \circ h = \operatorname{pr}_2 \colon W\times X \to X
         \big\}
-        \\&\simeq
+        \\\simeq&
         \operatorname{Hom}_{\mathsf C/X}
         (X^*W,f).
     \end{align*}
@@ -1009,89 +1011,6 @@ $$
     由于 $g\circ f = h\circ f$, 等化子的泛性质给出唯一的态射 $e \colon X \to W$.
 \end{proof}
 
-\subsection{子对象的格与 Heyting 代数}
-
-集合的子集可以取交和并, 这使得一个集合的所有子集构成一个\emph{格}; 在\topos{}中, 类似的操作可表达为子对象分类子 $\Omega$ 上的操作.
-
-\begin{propdef}
-	{(子对象的交)}
-	在\topos{}中, 定义子对象 $U\to X$, $V\to X$ 的\emph{交}是子对象
-	$U\times_X V \to X$.
-	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJVXFx0aW1lc19YIFYiXSxbMCwxLCJVIl0sWzEsMCwiViJdLFsxLDEsIlgiXSxbMCwxXSxbMSwzXSxbMCwyXSxbMiwzXV0=
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{U\times_X V} \& V \\
-		U \& X
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=2-1, to=2-2]
-		\arrow[from=1-1, to=1-2]
-		\arrow[from=1-2, to=2-2]
-	\end{tikzcd}\]
-	由拉回的定义, 两个子对象的交是同时包含于两者的最大子对象.
-\end{propdef}
-
-\begin{propdef}
-	{(子对象的并)}
-	在\topos{}中, 定义子对象 $U\to X$, $V\to X$ 的\emph{并}为两者唯一确定的态射 $U+V\to X$ 的像 (定义 \ref{image-definition}).
-	
-	由像的定义, 两个子对象的并是同时包含两者的最小子对象.
-\end{propdef}
-
-由此, \topos{}中一个对象的子对象集合 $\operatorname{Sub}(X)$ 构成一个格.
-
-\begin{prop}
-	{}
-	在\topos{}中, 沿态射 $f\colon X \to Y$ 的拉回 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 是格的同态.
-\end{prop}
-
-
-
-
-
-
-\subsection{自然数对象}
-
-\begin{definition}
-    {(自然数对象)}
-    \topos{} $\mathsf C$ 中的\emph{自然数对象} (natural numbers object) 是一个对象 $N$,
-    以及态射 $0 \colon 1 \to N$ (零),
-    $s \colon N \to N$ (后继),
-    满足如下的泛性质: 对任意对象 $X$,
-    任意态射 $\widetilde 0\colon 1\to X,\widetilde s\colon X\to X$,
-    存在唯一的态射 $f\colon N\to X$ 使得下图交换.
-    % https://q.uiver.app/#q=WzAsNixbMCwwLCIxIl0sWzEsMCwiTiJdLFsyLDAsIk4iXSxbMCwxLCIxIl0sWzEsMSwiWCJdLFsyLDEsIlgiXSxbMCwzXSxbMCwxLCIwIl0sWzEsMiwicyJdLFszLDQsIlxcd2lkZXRpbGRlIDAiLDJdLFs0LDUsIlxcd2lkZXRpbGRlIHMiLDJdLFsxLDQsImYiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
-\[\begin{tikzcd}[ampersand replacement=\&]
-	1 \& N \& N \\
-	1 \& X \& X
-	\arrow[from=1-1, to=2-1]
-	\arrow["0", from=1-1, to=1-2]
-	\arrow["s", from=1-2, to=1-3]
-	\arrow["{\widetilde 0}"', from=2-1, to=2-2]
-	\arrow["{\widetilde s}"', from=2-2, to=2-3]
-	\arrow["f", dashed, from=1-2, to=2-2]
-	\arrow["f", dashed, from=1-3, to=2-3]
-\end{tikzcd}\]
-\end{definition}
-
-\begin{prop}
-	[label={natural-numbers-object-condition}]
-	{}
-	在一个\topos{}中, $0\colon 1\to N$ 与 $s\colon N\to N$ 构成自然数对象的充要条件是 $(0,s)\colon 1+N\to N$ 为同构且 $1,s$ 的余等化子为 $\mathbb{N}\to 1$.
-\end{prop}
-\begin{remark}
-	{}
-	自然数对象是函子 $X\mapsto 1+X$ 的 ``始代数'' \footnotemark(函子 $F\colon \mathsf C\to \mathsf C$ 的代数是一个对象 $X$ 配备一个态射 $FX\to X$). 结论 \ref{natural-numbers-object-condition} 的一部分可由 Lambek 定理得出, 这个定理说对于函子 $F$ 的始代数, $FX\to X$ 必然是同构.
-\end{remark}
-\footnotetext{\url{https://ncatlab.org/nlab/show/initial+algebra+of+an+endofunctor}}
-
-\begin{remark}{}
-	自然数对象的存在性可视为\topos{}中的 Peano 公理.
-\end{remark}
-
-\begin{example}
-    {(自然数对象不一定存在)}
-    有限集范畴 $\mathsf {Fin}$ 中不存在自然数对象.
-\end{example}
-
 \subsection{子终对象}
 
 在数学上, 说一类对象\emph{唯一}, 并不是说\emph{恰好}有一个这类对象, 而是\emph{至多}有一个这类对象; 等价的说法是, 若有两个这类对象, 那么两者相等 (此时这类对象完全有可能不存在).
@@ -1135,8 +1054,9 @@ $$
 \end{example}
 
 \begin{example}
+	[label={subterminal-of-slice-category}]
 	{(俯范畴的子终对象)}
-	俯范畴 $\mathsf C/X$ 的终对象是 $\operatorname{id}_X\colon X\to X$, 因此 $\mathsf C/X$ 的子终对象是 $X$ 的子对象.
+	俯范畴 $\mathsf C/X$ 的终对象是 $\operatorname{id}_X\colon X\to X$, 因此 $\mathsf C/X$ 的子终对象是 $X$ 的子对象 (见命题 \ref{subobjects-in-slice-category}).
 \end{example}
 
 我们给出一个有趣的性质.
@@ -1155,3 +1075,141 @@ $$
 	{}
 	熟悉代数的读者可以看出, 子终对象类似于环论中的\emph{中心幂等元}. 后面 (定义 \ref{ouvert}) 我们将看到子终对象与空间的 ``开子空间'' 概念有关.
 \end{remark}
+
+\subsection{子对象的格与 Heyting 代数}
+
+集合的子集可以取交和并, 这使得一个集合的所有子集构成一个\emph{格}; 在\topos{}中, 类似的操作可表达为子对象分类子 $\Omega$ 上的操作.
+
+\begin{propdef}
+	{(子对象的交)}
+	在\topos{}中, 定义子对象 $U\to X$, $V\to X$ 的\emph{交}是子对象
+	$U\times_X V \to X$.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJVXFx0aW1lc19YIFYiXSxbMCwxLCJVIl0sWzEsMCwiViJdLFsxLDEsIlgiXSxbMCwxXSxbMSwzXSxbMCwyXSxbMiwzXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{U\times_X V} \& V \\
+		U \& X
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=2-1, to=2-2]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=2-2]
+	\end{tikzcd}\]
+	由拉回的定义, 它是同时包含于 $X$ 和 $Y$ 的最大子对象, 也即两个子对象的交.
+\end{propdef}
+
+\begin{propdef}
+	{(子对象的并)}
+	在\topos{}中, 定义子对象 $U\to X$, $V\to X$ 的\emph{并}为两者唯一确定的态射 $U+V\to X$ 的像 (定义 \ref{image-definition}).
+	
+	由像的定义, 它是同时包含 $X$ 和 $Y$ 的最小子对象, 也即两个子对象的并.
+\end{propdef}
+
+由此, \topos{}中一个对象的子对象集合 $\operatorname{Sub}(X)$ 构成一个格.
+
+\begin{prop}
+	{}
+	在\topos{}中, 沿态射 $f\colon X \to Y$ 的拉回 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 是格的同态.
+\end{prop}
+
+
+
+\begin{definition}
+	{(Heyting 代数)}
+	若一个偏序集作为范畴具有有限积和余积, 且为积闭范畴, 则称之为 \emph{Heyting 代数}.
+	换言之, Heyting 代数 $H$ 中有有限交与有限并 (包括 $\top$ 和 $\bot$), 且有一种运算 $\Rightarrow\colon H\times H\to H$, 满足
+	$$
+	z \leq (x\Rightarrow y)\quad \text{当且仅当}\quad (z\wedge x) \leq y.
+	$$
+	这里 $x\Rightarrow y$ 就是指数对象 $y^x$ 换了一个记号, 而上述等价正是定义 \ref{exponential-object} 中的自然同构. 此外, 定义 Heyting 代数 $H$ 上的 ``非'' 运算 $\neg\colon H\to H$,
+	$$
+	\neg x = (x\Rightarrow \bot).
+	$$
+\end{definition}
+
+\begin{remark}
+	{}
+	$x\Rightarrow y$ 是使得 $(z\wedge x)\leq y$ 的 $z$ 的最大值,
+	``由命题 $x$ 想要推出 $y$ 还需要的最弱命题'' (当 $z\leq w$ 时, 我们认为 $z$ 强于 $w$).
+\end{remark}
+
+\begin{example}
+	[label={topological-space-open-Heyting-algebra}]
+	{(拓扑空间的开集代数)}
+	拓扑空间 $X$ 的开集构成的偏序集 $\operatorname{Open}(X)$ 是 Heyting 代数; 其中 $\land$ 与 $\lor$ 是开集的交与并, $\top =X$, $\bot=\varnothing$, 运算 $\Rightarrow$ 为
+	$$
+	(U\Rightarrow V) = \bigcup
+	\bigl\{
+		O\in \operatorname{Open}(X) \bigm| O\cap U\subset V
+	\bigr\},
+	$$
+	可验证 $\neg U$ 是 $U$ 的补集的内部.
+	这个代数是后面介绍的\emph{位象}.
+\end{example}
+
+\begin{remark}
+	{}
+	我们暗示 (明示) 了 Heyting 代数的元素可视为某种命题. 事实上, 它可以作为\emph{直觉主义命题演算} (intuitionistic propositional calculus) 的模型.
+	
+	%定义 Heyting 代数中的 ``非'' 运算 $\neg x = (x\Rightarrow \bot)$.
+	在例 \ref{topological-space-open-Heyting-algebra} 中,
+	$U \lor \neg U$ 和 $(\neg\neg U) \Rightarrow U$ 都不一定等于 $\top$ (仅当 $U$ 既开又闭时它们才等于 $\top$).
+	这体现了直觉主义逻辑中没有\emph{排中律}或\emph{双重否定律}.
+\end{remark}
+
+\begin{prop}
+	{}
+	在\topos{}中, 子对象的格 $\operatorname{Sub}(X)$ 是 Heyting 代数.
+\end{prop}
+
+\begin{proof}
+	由于
+	$\operatorname{Sub}_{\mathsf C}(X) \simeq \operatorname{Sub}_{\mathsf C/X}(1)$
+	(例 \ref{subterminal-of-slice-category}),
+	我们只需对 $X=1$ 的情形证明结论.
+	
+	对于子终对象 $U,V$, 对任意对象 $X$, $\operatorname{Hom}(X,V^U)\simeq \operatorname{Hom}(X\times U,V)$ 至多有一个元素, 故 $V^U$ 也是子终对象. 这说明 $\operatorname{Sub}(1)$ 有指数对象, 从而是 Heyting 代数.
+\end{proof}
+
+\subsection{自然数对象}
+
+\begin{definition}
+    {(自然数对象)}
+    \topos{} $\mathsf C$ 中的\emph{自然数对象} (natural numbers object) 是一个对象 $N$,
+    以及态射 $0 \colon 1 \to N$ (零),
+    $s \colon N \to N$ (后继),
+    满足如下的泛性质: 对任意对象 $X$,
+    任意态射 $\widetilde 0\colon 1\to X,\widetilde s\colon X\to X$,
+    存在唯一的态射 $f\colon N\to X$ 使得下图交换.
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCIxIl0sWzEsMCwiTiJdLFsyLDAsIk4iXSxbMCwxLCIxIl0sWzEsMSwiWCJdLFsyLDEsIlgiXSxbMCwzXSxbMCwxLCIwIl0sWzEsMiwicyJdLFszLDQsIlxcd2lkZXRpbGRlIDAiLDJdLFs0LDUsIlxcd2lkZXRpbGRlIHMiLDJdLFsxLDQsImYiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\[\begin{tikzcd}[ampersand replacement=\&]
+	1 \& N \& N \\
+	1 \& X \& X
+	\arrow[from=1-1, to=2-1]
+	\arrow["0", from=1-1, to=1-2]
+	\arrow["s", from=1-2, to=1-3]
+	\arrow["{\widetilde 0}"', from=2-1, to=2-2]
+	\arrow["{\widetilde s}"', from=2-2, to=2-3]
+	\arrow["f", dashed, from=1-2, to=2-2]
+	\arrow["f", dashed, from=1-3, to=2-3]
+\end{tikzcd}\]
+\end{definition}
+
+\begin{prop}
+	[label={natural-numbers-object-condition}]
+	{}
+	在一个\topos{}中, $0\colon 1\to N$ 与 $s\colon N\to N$ 构成自然数对象的充要条件是 $(0,s)\colon 1+N\to N$ 为同构且 $1,s$ 的余等化子为 $\mathbb{N}\to 1$.
+\end{prop}
+\begin{remark}
+	{}
+	自然数对象是函子 $X\mapsto 1+X$ 的\emph{始代数} \footnotemark(函子 $F\colon \mathsf C\to \mathsf C$ 的代数是一个对象 $X$ 配备一个态射 $FX\to X$). 结论 \ref{natural-numbers-object-condition} 的一部分可由 Lambek 定理得出, 这个定理说对于函子 $F$ 的始代数, $FX\to X$ 必然是同构.
+\end{remark}
+\footnotetext{\url{https://ncatlab.org/nlab/show/initial+algebra+of+an+endofunctor}}
+
+\begin{remark}{}
+	自然数对象的存在性可视为\topos{}中的 Peano 公理.
+\end{remark}
+
+\begin{example}
+    {(自然数对象不一定存在)}
+    有限集范畴 $\mathsf {Fin}$ 中不存在自然数对象.
+\end{example}
+

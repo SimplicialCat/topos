@@ -277,34 +277,38 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 \end{remark}
 
 \begin{example}
+	[label={sieve-from-cover-subfunctor}]
 	{(覆盖产生的筛对应的子函子)}
-	继续例 \ref{sieve-from-cover}, 设 $F$ 为覆盖 $\{U_i\}$ 生成的筛对应的 $\yo(V)$ 的子函子, 那么下图是余等化子.
+	继续例 \ref{sieve-from-cover}, 设 $S$ 为覆盖 $\{U_i\}$ 生成的筛对应的 $\yo(V)$ 的子函子, 那么下图是余等化子.
 	\begin{equation}
 		\label{sieve-coeq}
 		\begin{tikzcd}[ampersand replacement=\&]
-			{\coprod_{i,j}\yo(U_i\cap U_j)} \& {\coprod_i \yo(U_i)} \& F
+			{\coprod_{i,j}\yo(U_i\cap U_j)} \& {\coprod_i \yo(U_i)} \& S
 			\arrow[shift right, from=1-1, to=1-2]
 			\arrow[shift left, from=1-1, to=1-2]
 			\arrow[from=1-2, to=1-3]
 		\end{tikzcd}
 	\end{equation}
-	这是因为, 由 $F$ 的定义, 对 $W\in\operatorname{Open}(X)$, 若存在 $i$, $W\subset U_i$ 则 $F(W)$ 是单元集; 否则 $F(W)$ 是空集. 由此可知下图是集合范畴中的余等化子.
+	这是因为, 由 $S$ 的定义, 对 $W\in\operatorname{Open}(X)$, 若存在 $i$, $W\subset U_i$ 则 $S(W)$ 是单元集; 否则 $S(W)$ 是空集. 由此可知下图是集合范畴中的余等化子.
 	\[\begin{tikzcd}[ampersand replacement=\&, column sep=small]
-		{\coprod_{i,j}\operatorname{Hom}_{\operatorname{Open}(X)}(W,U_i\cap U_j)} \& {\coprod_i \operatorname{Hom}_{\operatorname{Open}(X)}(W,U_i)} \& {F(W)}
+		{\coprod_{i,j}\operatorname{Hom}_{\operatorname{Open}(X)}(W,U_i\cap U_j)} \& {\coprod_i \operatorname{Hom}_{\operatorname{Open}(X)}(W,U_i)} \& {S(W)}
 		\arrow[shift right, from=1-1, to=1-2]
 		\arrow[shift left, from=1-1, to=1-2]
 		\arrow[from=1-2, to=1-3]
 	\end{tikzcd}\]
 	而预层的余极限是 ``逐点'' 的, 于是得 (\ref{sieve-coeq}).
 	
-	对 $X$ 上的任意预层 $G$, 以 $\operatorname{Hom}_{\operatorname{Presh}(X)}(-,G)$ 作用于 (\ref{sieve-coeq}), 可知下图是集合范畴中的等化子.
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\operatorname{Hom}_{\operatorname{Presh}(X)}(F,G)} \& {\prod_i G(U_i)} \& {\prod_{i,j}G(U_i\cap U_j)}
-		\arrow[shift left, from=1-2, to=1-3]
-		\arrow[shift right, from=1-2, to=1-3]
-		\arrow[from=1-1, to=1-2]
-	\end{tikzcd}\]
-	因此态射集合 $\operatorname{Hom}_{\operatorname{Presh}(X)}(F,G)$ 表达了预层 $G$ 关于覆盖 $\{U_i\}$ 的下降资料 (descent data), 由覆盖 $\{U_i\}$ ``下降'' 到 $V$. 若 $G$ 为层, 就应该有 $$\operatorname{Hom}_{\operatorname{Presh}(X)}(F,G) \simeq G(V) \simeq \operatorname{Hom}_{\operatorname{Presh}(X)}(\yo(V),G).$$
+	对 $X$ 上的任意预层 $F$, 以 $\operatorname{Hom}_{\operatorname{Presh}(X)}(-,F)$ 作用于 (\ref{sieve-coeq}), 可知下图是集合范畴中的等化子.
+	\begin{equation}
+		\begin{tikzcd}[ampersand replacement=\&]
+			{\operatorname{Hom}_{\operatorname{Presh}(X)}(S,G)} \& {\prod_i G(U_i)} \& {\prod_{i,j}G(U_i\cap U_j)}
+			\arrow[shift left, from=1-2, to=1-3]
+			\arrow[shift right, from=1-2, to=1-3]
+			\arrow[from=1-1, to=1-2]
+		\end{tikzcd}
+		\label{sieve-subfunctor-equalizer}
+	\end{equation}
+	因此态射集合 $\operatorname{Hom}_{\operatorname{Presh}(X)}(S,F)$ 表达了预层 $F$ 关于覆盖 $\{U_i\}$ 的下降资料 (descent data), 由覆盖 $\{U_i\}$ ``下降'' 到 $V$. 若 $F$ 为层, 就应该有 $$\operatorname{Hom}_{\operatorname{Presh}(X)}(S,F) \simeq F(V) \simeq \operatorname{Hom}_{\operatorname{Presh}(X)}(\yo(V),F).$$
 \end{example}
 
 \begin{example}
@@ -450,10 +454,10 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 
 Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何时被一族进入 $U$ 的态射 (甚至不一定是 $U$ 的子对象) 所\emph{覆盖}.
 
-\subsection{覆盖与 Grothendieck 拓扑}
+\subsection{覆盖与 Grothendieck 覆盖}
 \begin{definition}{(覆盖结构)}
     设范畴 $\mathsf C$ 具有拉回.
-    $\mathsf C$ 上的一个\emph{覆盖结构} (coverage) $T$ 是对每个对象 $c$ 指定一个集合 $T(c)$, 其元素为态射族 $\{f_i \colon c_i \to c\}_{i\in I}$, 称为 $c$ 的 $T$-\emph{覆盖族} (covering family), 满足拉回下的稳定性:
+    $\mathsf C$ 上的一个\emph{覆盖结构} (coverage) $T$ 是对每个对象 $c$ 指定一个集合 $T(c)$, 其元素为态射族 $\{f_i \colon c_i \to c\}_{i\in I}$, 称为 $c$ 的 $T$-\emph{覆盖族} (covering family), 满足\emph{拉回下的稳定性}, 或称\emph{基变换下的稳定性}:
     \begin{center}
     	若 $\{f_i \colon c_i \to c\}_{i\in I}\in T(c)$, $g \colon d \to c$,
     	则 $\{g^*(f_i) \colon d_i \to d\}_{i\in I}\in T(d)$.
@@ -463,11 +467,11 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
     %带有覆盖结构的范畴 $(\mathsf C,T)$ 称为\emph{景} (site).
 \end{definition}
 
-对于拓扑空间的开集范畴, ``拉回下的稳定性'' 相当于若一族开集覆盖了 $U$, 那么它们也覆盖了 $U$ 的任何子集.
+对于拓扑空间的开集范畴, 拉回下的稳定性相当于若一族开集覆盖了 $U$, 那么它们也覆盖了 $U$ 的任何子集.
 
 \begin{remark}
     {}
-    当 $\mathsf C$ 不存在拉回时, 稳定性条件可改为: 若 $\{f_i \colon c_i \to c\}_{i\in I}\in T(c)$, $g \colon d \to c$,
+    当 $\mathsf C$ 不存在拉回时, ``拉回下的稳定性'' 可改为: 若 $\{f_i \colon c_i \to c\}_{i\in I}\in T(c)$, $g \colon d \to c$,
     则存在 $\{h_j \colon d_j \to d\}_{j\in J}\in T(d)$,
     使得每个 $gh_j$ 都穿过某个 $f_i$.
 \end{remark}
@@ -477,15 +481,35 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 %\end{remark}
 
 \begin{definition}
+	[label={sheaf-condition}]
 	{(层条件)}
 	设 $T$ 是范畴 $\mathsf C$ 上的覆盖结构. 对于 $\mathsf C$ 上的预层 $F$, 称 $F$ 满足关于 $T$ 的\emph{层条件}是指:
 	对 $\mathsf C$ 的任意对象 $c$, 任意 $\{f_i\colon c_i\to c\}_{i\in I}\in T(c)$,
 	以及任意一组相容的元素 $(s_i\in F(c_i))_{i\in I}$,
 	存在唯一的 $s\in F(c)$ 满足 $F(f_i)(s)=s_i\,\forall i\in I$.
+	其中, 一组元素 $(s_i\in F(c_i))_{i\in I}$ \emph{相容}是指 对任意态射 $f\colon d \to c_i$, $g\colon d \to c_j$, 有 $F(f)(s_i) = F(g)(s_j) \in F(d)$.
+	
+	在 $\mathsf C$ 具有拉回的条件下, 层条件可简洁地表述为如下等化子,
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJGKGMpIl0sWzEsMCwiXFxwcm9kX3tpfSBGKGNfaSkiXSxbMiwwLCJcXHByb2Rfe2ksan0gRihjX2lcXHRpbWVzX2MgY19qKSJdLFsxLDIsIiIsMCx7Im9mZnNldCI6LTF9XSxbMSwyLCIiLDIseyJvZmZzZXQiOjF9XSxbMCwxXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{F(c)} \& {\prod_{i} F(c_i)} \& {\prod_{i,j} F(c_i\times_c c_j)}
+		\arrow[shift left, from=1-2, to=1-3]
+		\arrow[shift right, from=1-2, to=1-3]
+		\arrow[from=1-1, to=1-2]
+	\end{tikzcd}\]
+	设 $S\to \yo(c)$ 是 $\{f_i\colon c_i\to c\}_{i\in I}$ 生成的筛对应的子函子, 那么层条件也等价于对所有这样的 $S$, 自然变换 $S\to F$ 唯一地穿过 $\yo(c)$, 也即如下映射是同构.
+	$$
+	\operatorname{Hom}_{\widehat {\mathsf C}}(\yo(c),F) \to \operatorname{Hom}_{\widehat {\mathsf C}}(S,F)
+	$$
+	对比例 \ref{sieve-from-cover-subfunctor} 中的式 (\ref{sieve-subfunctor-equalizer}).
 \end{definition}
 
 设 $T$ 是范畴 $\mathsf C$ 上的覆盖结构. 所有 $T$ 中的覆盖族生成的筛 (定义 \ref{sieve}) 定义了一个新的覆盖结构 $\overline{T}$; 可以证明 $T$ 的层条件等价于 $\overline{T}$ 上的层条件. 这就是说, 对于一个覆盖结构, 我们总可以设其中的覆盖族都是筛, 而不改变层条件.
-这样的覆盖结构称为\emph{筛覆盖结构} (sifted coverage). 后面我们将默认讨论筛覆盖.
+这样的覆盖结构称为\emph{筛覆盖结构} (sifted coverage). %后面我们将默认讨论筛覆盖.
+
+% Grothendieck 最初考虑的覆盖在上面定义的 ``覆盖结构'' 之上附加了更多条件.
+
+``覆盖结构'' 是从 \emph{Grothendieck 覆盖}的概念中分离出的一个比较重要的条件. Grothendieck 覆盖的完整概念 (用筛覆盖叙述) 如下.
 
 \begin{definition}
 	[label={Grothendieck-topology}]
@@ -497,10 +521,24 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	\end{itemize}
 \end{definition}
 
-对于拓扑空间的开集范畴, 传递性相当于若一族开集覆盖了 $U$ 的每个局部, 那么它们也覆盖了 $U$.
+对于拓扑空间的开集范畴, ``极大筛是覆盖'' 相当于任何开集 $U$ 都覆盖了自己; 传递性相当于若一族开集覆盖了 $U$ 的每个局部, 那么它们也覆盖了 $U$.
+
+%\begin{definition}
+%	{(Grothendieck 覆盖的基)}
+%	
+%\end{definition}
+
+覆盖可以生成 Grothendieck 覆盖, 就像拓扑基生成拓扑一样:
 
 \begin{definition}
-	{}
+	{(覆盖结构生成的 Grothendieck 覆盖)}
+	一个覆盖结构\emph{生成的 Grothendieck 覆盖}是最小的包含所有极大筛且满足传递性的一族筛.
+	
+%	等价地, 覆盖结构 $T$ 生成的 Grothendieck 覆盖是每个对象 $c$ 上满足如下条件的筛 $S$:
+%	\begin{itemize}
+%		\item 对任意态射 $f\colon b\to c$ 与 $b$ 上的任意筛 $R$,
+%		
+%	\end{itemize}
 \end{definition}
 
 %\todo{澄清 Grothendieck 拓扑与覆盖的关系}
@@ -521,12 +559,17 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 %    定义景 $(\mathsf C,T)$ 上的层范畴 $\operatorname{Sh}(\mathsf C,T)$ 为层在 $\widehat {\mathsf C}$ 中构成的满子范畴.
 %\end{definition}
 
+事实上, 覆盖与 Grothendieck 覆盖有如下的关系.
 
+\begin{prop}
+	{}
+	对范畴 $\mathsf C$ 上任一覆盖 $T$, \emph{存在唯一的 Grothendieck 覆盖} $\widetilde T$ 使得 $(\mathsf C,T)$ 上的层与 $(\mathsf C,\widetilde T)$ 上的层相同.
+\end{prop}
 
-%\begin{prop}
-%	{}
-%	对范畴 $\mathsf C$ 上任一覆盖 $T$, 存在 Grothendieck 覆盖 $\widetilde T$ 使得 $(\mathsf C,T)$ 上的层与 $(\mathsf C,\widetilde T)$ 上的层相同.
-%\end{prop}
+\begin{definition}
+	{(景)}
+	带有覆盖结构或 Grothendieck 覆盖的范畴称为\emph{景}.
+\end{definition}
 
 \subsection{常见的景}
 
@@ -593,6 +636,21 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 \footnotetext{严格地说, 它是本质小 (essentially small) 范畴, 也即它的对象模掉同构之后构成一个集合.}
 
+\subsection{Lawvere--Tierney 拓扑}
+
+回忆筛覆盖结构就是 ``函子性地'' 指定了每个对象上的一些筛, 而 $\widehat {\mathsf C}$ 的子对象分类子 $\Omega$ 是函子 $\Omega(c) = \{\text{$c$ 上的筛}\}$. 因此
+
+\begin{prop}
+	{}
+	设 $\mathsf C$ 为范畴, 函数 $J$ 给每个对象 $c$ 赋予一族筛 $J(c)$, 那么 $J$ 满足传递性 (定义 \ref{Grothendieck-topology}) 当且仅当 $J$ 是 $\widehat {\mathsf C}$ 的子对象分类器 $\Omega$ 的子函子.
+\end{prop}
+
+而由子对象分类子的定义, 子函子 $J$ 进一步对应一个态射 $j\colon \Omega \to \Omega$.
+这个态射可以承载一个覆盖结构的所有信息.
+具体地, 对 $\mathsf C$ 的对象 $c$,
+$$
+j_c(S) = \{f\colon d\to c\mid f^*S \in J(d)\}.
+$$
 
 
 \subsection{拓扑空间上的层, 平展空间}
@@ -643,7 +701,6 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
     对于拓扑空间的映射 $f \colon Y \to X$,
     若对任意 $y\in Y$ 都存在 $y$ 的邻域 $V$ 与 $f(y)$ 的邻域 $U$ 使得 $f|_V \colon V \to U$ 为同胚,
     则称 $f$ 为\emph{平展} (étale) 映射, 又称局部同胚.
-
     到空间 $X$ 的平展态射构成的 $\mathsf {Top}/X$ 的满子范畴记为 $\mathsf {Et}(X)$.
 \end{definition}
 
@@ -824,7 +881,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
     设 $F$ 是 $\mathsf C$ 上的预层.
     对于对象 $c$ 的覆盖 $S \in T(c)$,
     记 $\operatorname{Match}(S,F)$
-    为 $S$ 上相容族的集合 (见定义 \ref{sheaf-on-site}),
+    为 $S$ 上相容族的集合 (定义 \ref{sheaf-condition}),
     定义一个预层 $F^+$,
     $$
     F^+(c):=\operatorname{colim}_{S\in T(c)}\operatorname{Match}(S,F),

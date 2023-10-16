@@ -150,7 +150,9 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 
 下面我们说明小范畴 $\mathsf C$ 上的预层范畴 $\widehat {\mathsf C}$ 是一个\topos{}.
 
-\begin{prop}{(预层范畴完备且余完备)}
+\begin{prop}
+	[label={presheaf-category-complete}]
+	{(预层范畴完备且余完备)}
     $\widehat {\mathsf C}$ 是\emph{完备} (complete) 且\emph{余完备} (cocomplete) 的, 也即具有一切 (小) 极限与余极限.
 \end{prop}
 
@@ -213,6 +215,10 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
     且对每个态射 $c\to d$, 映射 $Y(d) \to Y(c)$ 都是 $X(d) \to X(c)$ 的限制; 此时也称 $Y \to X$ 为\emph{子函子} (subfunctor).
 \end{propdef}
 
+\begin{proof}
+	由单射的拉回刻画 (命题 \ref{mono-epi-pullback-pushout}) 以及 $\widehat {\mathsf C}$ 中极限的逐点计算 (命题 \ref{presheaf-category-complete}) 即证.
+\end{proof}
+
 \emph{筛}的概念可帮助描述预层范畴的子对象分类子.
 
 \begin{definition}
@@ -250,6 +256,7 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 \end{example}
 
 \begin{prop}
+	[label={sieve-and-subfunctor}]
     {(筛与子函子)}
     范畴 $\mathsf C$ 的对象 $c$ 上的筛自然地一一对应于 $\yo(c)$ 的子函子.
 \end{prop}
@@ -372,67 +379,6 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
     事实上, 一个 $G$-集 $X$ 的子对象 $Y$ 是其中 $G$-作用下封闭的子集. 其对应的特征函数 $X\to\{\top,\bot\}$ 就是子集 $Y$ 的特征函数.
 \end{example}
 
-\subsection{预层范畴的俯范畴}
-
-预层范畴的局部积闭性来源于其俯范畴的一个重要性质: 预层范畴的俯范畴仍是预层范畴.
-
-先引入一种 ``广义俯范畴''.
-
-\begin{definition}
-    {(``广义俯范畴'')}
-    设 $X$ 是 $\mathsf C$ 上的预层. 定义 ``广义俯范畴''
-    $\mathsf C / X$ 是如下范畴: 其对象为 $\widehat {\mathsf C}$ 的态射 $\yo(c)\to X$ (也即 $X(c)$ 的元素); 其态射为形如
-    $\begin{tikzcd}[ampersand replacement=\&,row sep=-1pt,column sep=small]
-	{\yo(c)} \\
-	\& X \\
-	{\yo(d)}
-	\arrow[from=1-1, to=2-2]
-	\arrow[from=1-1, to=3-1]
-	\arrow[from=3-1, to=2-2]
-\end{tikzcd}$ 的交换图. 换言之, $\mathsf C/X$ 是 $\widehat {\mathsf C}/X$ 中由\emph{可表函子}到 $X$ 的态射构成的满子范畴.
-\end{definition}
-
-\begin{remark}
-    {}
-    上面定义的范畴 $\mathsf C/F$ 也常记作 $\displaystyle\int_{\mathsf C}X$, 见定义 \ref{slice-over-presheaf}.
-\end{remark}
-
-\begin{prop}
-    {}
-    预层范畴的俯范畴等价于 ``广义俯范畴'' 上的预层范畴:
-    $$
-    \widehat {\mathsf C}/X \simeq \widehat {\mathsf C / X}.
-    $$
-\end{prop}
-
-\begin{proof}
-    在如下证明中, 我们将 $s\in X(c)$ 等同于态射 $s\colon \yo(c) \to X$.
-    
-    对于 $\widehat {\mathsf C}/X$ 的对象 $F \to X$,
-    定义 $\mathsf C/X$ 上的预层 $G$ 如下. 对于 $\mathsf C/X$ 的对象 $s\colon \yo(c)\to X$, 定义 $G(s)$ 为 $s$ 在映射 $F(c) \to X(c)$ 下的原像.
-
-    反过来, 对于 $\mathsf C/X$ 上的预层 $G$, 定义 $\widehat {\mathsf C} /X$ 的对象 $F \to X$ 如下.
-    预层 $F$ 为
-    $$
-    F(c) := \coprod_{s\colon \yo(c)\to X} G(s),
-    $$
-    带有自然的投影 $F(c) \to X(c)$ (将 $G(s)$ 映射到 $s$),
-    也即自然变换 $F \to X$.
-
-    容易验证, 上述两个构造是互逆的范畴等价.
-\end{proof}
-
-\begin{example}
-    {}
-    设 $\mathsf C = \mathsf 1$ 是终范畴,
-    $X$ 是 $\widehat {\mathsf C} \simeq \mathsf {Set}$ 的对象,
-    那么 $\mathsf C/X \simeq X$ (视为离散范畴).
-    此时上述命题化为
-    $$
-    \mathsf {Set}/X \simeq \mathsf {Set}^X.
-    $$
-\end{example}
-
 
 \section{层与景}
 
@@ -497,11 +443,17 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 		\arrow[shift right, from=1-2, to=1-3]
 		\arrow[from=1-1, to=1-2]
 	\end{tikzcd}\]
-	设 $S\to \yo(c)$ 是 $\{f_i\colon c_i\to c\}_{i\in I}$ 生成的筛对应的子函子, 那么层条件也等价于对所有这样的 $S$, 自然变换 $S\to F$ 唯一地穿过 $\yo(c)$, 也即如下映射是同构.
+	
+	设 $S\to \yo(c)$ 是 $\{f_i\colon c_i\to c\}_{i\in I}$ 生成的筛对应的子函子 (命题 \ref{sieve-and-subfunctor}), 那么一组相容的元素等同于自然变换 $S\to F$,	从而 $F$ 的层条件等价于对所有这样的 $S$, 自然变换 $S\to F$ 唯一地穿过 $\yo(c)$, 也即如下映射是同构.
 	$$
 	\operatorname{Hom}_{\widehat {\mathsf C}}(\yo(c),F) \to \operatorname{Hom}_{\widehat {\mathsf C}}(S,F)
 	$$
 	对比例 \ref{sieve-from-cover-subfunctor} 中的式 (\ref{sieve-subfunctor-equalizer}).
+\end{definition}
+
+\begin{definition}
+	{(层范畴)}
+	设 $T$ 是范畴 $\mathsf C$ 上的覆盖结构. 定义\emph{层范畴} $\operatorname{Sh}(\mathsf C,T)$ 为 $\widehat {\mathsf C}$ 中满足关于 $T$ 的层条件的预层构成的满子范畴.
 \end{definition}
 
 设 $T$ 是范畴 $\mathsf C$ 上的覆盖结构. 所有 $T$ 中的覆盖族生成的筛 (定义 \ref{sieve}) 定义了一个新的覆盖结构 $\overline{T}$; 可以证明 $T$ 的层条件等价于 $\overline{T}$ 上的层条件. 这就是说, 对于一个覆盖结构, 我们总可以设其中的覆盖族都是筛, 而不改变层条件.
@@ -532,7 +484,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 \begin{definition}
 	{(覆盖结构生成的 Grothendieck 覆盖)}
-	一个覆盖结构\emph{生成的 Grothendieck 覆盖}是最小的包含所有极大筛且满足传递性的一族筛.
+	覆盖结构 $T$ \emph{生成的 Grothendieck 覆盖}是包含 $T$ 和所有极大筛且满足传递性的最小的一族筛.
 	
 %	等价地, 覆盖结构 $T$ 生成的 Grothendieck 覆盖是每个对象 $c$ 上满足如下条件的筛 $S$:
 %	\begin{itemize}
@@ -563,7 +515,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 \begin{prop}
 	{}
-	对范畴 $\mathsf C$ 上任一覆盖 $T$, \emph{存在唯一的 Grothendieck 覆盖} $\widetilde T$ 使得 $(\mathsf C,T)$ 上的层与 $(\mathsf C,\widetilde T)$ 上的层相同.
+	对范畴 $\mathsf C$ 上任一覆盖 $T$, \emph{存在唯一的 Grothendieck 覆盖} $J$ 使得 $(\mathsf C,T)$ 上的层与 $(\mathsf C,J)$ 上的层相同.
 \end{prop}
 
 \begin{definition}
@@ -652,8 +604,109 @@ $$
 j_c(S) = \{f\colon d\to c\mid f^*S \in J(d)\}.
 $$
 
+\todo{}
 
-\subsection{拓扑空间上的层, 平展空间}
+\subsection{层范畴中的子对象}
+
+回忆预层范畴 $\widehat {\mathsf C}$ 的子对象分类子为 $\Omega(c) = \{\text{$c$ 上的筛}\}$, 因为 $\yo(c)$ 的子对象等同于 $c$ 上的筛. 固定范畴 $\mathsf C$ 上的 Grothendieck 拓扑 $J$, 本小节研究 $\operatorname{Sh}(\mathsf C,J)$ 的子对象 (分类子).
+
+% 由定义, $\operatorname{Sh}(\mathsf C,J)$ 是 $\widehat {\mathsf C}$ 的满子范畴
+
+层范畴中的子对象放在预层范畴中仍是子对象. 这不是显然的, 我们采用如下的思路来证明这个事实.
+%注意到在任何范畴中态射 $f\colon X\to Y$ 是单射当且仅当
+%% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWCJdLFswLDEsIlgiXSxbMSwxLCJZIl0sWzAsMSwiXFxvcGVyYXRvcm5hbWV7aWR9X1giXSxbMSwzLCJmIl0sWzAsMiwiXFxvcGVyYXRvcm5hbWV7aWR9X1giLDJdLFsyLDMsImYiLDJdXQ==
+%$$\begin{tikzcd}[ampersand replacement=\&,sep=scriptsize]
+%	X \& X \\
+%	X \& Y
+%	\arrow["{\operatorname{id}_X}", from=1-1, to=1-2]
+%	\arrow["f", from=1-2, to=2-2]
+%	\arrow["{\operatorname{id}_X}"', from=1-1, to=2-1]
+%	\arrow["f"', from=2-1, to=2-2]
+%\end{tikzcd}$$
+%是拉回\footnote{可直接验证, 也可考虑俯范畴 $\mathsf C/Y$ 中的子终对象, 例 \ref{subterminal-of-slice-category}},
+由单射的拉回刻画 (命题 \ref{mono-epi-pullback-pushout}), 我们只需证明\emph{层的拉回也是预层的拉回}. %一般地有如下命题.
+
+\begin{prop}
+	{}
+	在预层的拉回图
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJYIl0sWzEsMSwiWSJdLFsxLDAsIloiXSxbMCwwLCJXIl0sWzAsMV0sWzIsMV0sWzMsMF0sWzMsMl1d
+	$\begin{tikzcd}[ampersand replacement=\&,sep=1em]
+		W \& Z \\
+		X \& Y
+		\arrow[from=2-1, to=2-2]
+		\arrow[from=1-2, to=2-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+	\end{tikzcd}$
+	中, 若 $X,Y,Z$ 为层, 则 $W$ 为层.
+\end{prop}
+
+\begin{proof}
+	设 $S\in J(c)$ 是任意覆盖筛, 视为 $\yo(c)$ 的子函子.
+	分别以
+	$\operatorname{Hom}_{\widehat {\mathsf C}}(\yo(c),-)$,
+	$\operatorname{Hom}_{\widehat {\mathsf C}}(S,-)$
+	作用于上述拉回图
+	(注意这类函子保持极限),
+	得到立方体
+	% https://q.uiver.app/#q=WzAsOCxbMSwxLCJcXG9wZXJhdG9ybmFtZXtIb219KFxceW8oYyksWCkiXSxbMywxLCJcXG9wZXJhdG9ybmFtZXtIb219KFxceW8oYyksWSkiXSxbMiwwLCJcXG9wZXJhdG9ybmFtZXtIb219KFxceW8oYyksWikiXSxbMCwwLCJcXG9wZXJhdG9ybmFtZXtIb219KFxceW8oYyksVykiXSxbMSwzLCJcXG9wZXJhdG9ybmFtZXtIb219KFMsWCkiXSxbMywzLCJcXG9wZXJhdG9ybmFtZXtIb219KFMsWSkiXSxbMiwyLCJcXG9wZXJhdG9ybmFtZXtIb219KFMsWikiXSxbMCwyLCJcXG9wZXJhdG9ybmFtZXtIb219KFMsVykiXSxbMCwxXSxbMiwxXSxbMywwXSxbMywyXSxbNyw0XSxbNCw1XSxbNyw2XSxbNiw1XSxbMyw3XSxbMCw0XSxbMiw2XSxbMSw1XV0=
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=-2em,row sep=small]
+		{\operatorname{Hom}(\yo(c),W)} \&\& {\operatorname{Hom}(\yo(c),Z)} \\
+		\& {\operatorname{Hom}(\yo(c),X)} \&\& {\operatorname{Hom}(\yo(c),Y)} \\
+		{\operatorname{Hom}(S,W)} \&\& {\operatorname{Hom}(S,Z)} \\
+		\& {\operatorname{Hom}(S,X)} \&\& {\operatorname{Hom}(S,Y),}
+		\arrow[from=2-2, to=2-4]
+		\arrow[from=1-3, to=2-4]
+		\arrow[from=1-1, to=2-2]
+		\arrow[from=1-1, to=1-3]
+		\arrow[from=3-1, to=4-2]
+		\arrow[from=4-2, to=4-4]
+		\arrow[from=3-1, to=3-3]
+		\arrow[from=3-3, to=4-4]
+		\arrow[from=1-1, to=3-1]
+		\arrow[from=2-2, to=4-2]
+		\arrow[from=1-3, to=3-3]
+		\arrow[from=2-4, to=4-4]
+	\end{tikzcd}\]
+	其上下两面均为拉回图.
+	由层条件的等价表述 (定义 \ref{sheaf-condition}),
+	立方体的竖直方向箭头有三个为同构, 从而第四个也为同构, 这证明了 $W$ 是层.
+\end{proof}
+
+上述论证中的拉回图可替换为任何极限. 因此有
+
+\begin{prop}
+	{}
+	层范畴 $\operatorname{Sh}(\mathsf C,J)$ 存在任意极限, 且极限等同于作为预层的极限.
+\end{prop}
+%
+%\begin{proof}
+%	设 $X = \lim _i X_i$ 是预层的极限, 而每个 $X_i$ 是层, 我们证明 $X$ 是层.
+%\end{proof}
+
+回到正题, 我们证明了
+
+\begin{prop}
+	{}
+	层范畴中的子对象即是预层范畴中的子对象.
+\end{prop}
+
+假设 $\operatorname{Sh}(\mathsf C,J)$ 有子对象分类子 $\Omega_J$,
+那么 $\Omega_J(c)$ 等同于 $\yo(c)$
+
+\begin{prop}
+	{}
+	设 $F$ 是 $(\mathsf C,J)$ 上的层.
+	
+\end{prop}
+
+\todo{J-closed}
+
+\subsection{层范畴中的指数对象}
+
+
+
+\section{拓扑空间上的层与平展空间}
 
 在本节中我们暂时将考虑的范围限制在拓扑空间.
 
@@ -705,6 +758,7 @@ $$
 \end{definition}
 
 \begin{propdef}
+	[label={espace-etale}]
     {(平展空间)}
     设 $F$ 是拓扑空间 $X$ 上的预层. 定义预层 $F$ 的\emph{平展空间} (espace étalé)
     $p \colon \Lambda_F \to X$ 如下.
@@ -1309,7 +1363,7 @@ $$
 	``余不动点'' (coinvariant) 将 $G$-集合对应到其 $G$-作用的轨道的集合.
 \end{example}
 
-\section{空间的性质}
+\section{\topos{}的几何性质}
 
 \topos{}及其态射的一些性质得名于拓扑空间及其态射的性质.
 

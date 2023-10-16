@@ -2,25 +2,28 @@
 
 \subsection{综合微分几何的理论}
 
-我们首先在本小节叙述一种偏向语法的, 或 ``公理化'' 的理论, 而暂时不关心这个理论是否存在一个模型. 我们将看到这种理论比通常的微分几何更加符合直观.
+我们首先在本小节叙述一种偏向语法的 (或公理化的) 理论, 而暂时不关心这个理论是否存在一个模型. 我们将看到这种理论比通常的微分几何更加符合直观.
 
-\begin{definition}
+\begin{axiom}
+	{(空间)}
+	综合微分几何所谓的\emph{空间} (或称\emph{集合}) 是一个固定的\topos{} $\mathsf E$ 中的对象; \emph{光滑映射} (或称\emph{映射}) 是 $\mathsf E$ 中的态射.
+\end{axiom}
+
+\begin{axiom}
 	{(直线)}
-	综合微分几何所谓的\emph{直线}是一个固定的环 $R$.
-\end{definition}
+	综合微分几何所谓的\emph{直线}是 $\mathsf E$ 中一个固定的环 $R$.
+\end{axiom}
 
 \begin{remark}
 	{}
-	字母 $R$ 提示了这个对象与通常微分几何的 $\mathbb{R}$ 在直观上的相似性, 但它与 $\mathbb{R}$ 有一些不同的性质, 如 ``幂零无穷小量'' 的存在性.
-	
-	后面在介绍模型时, 我们将定义 $R$ 为某个光滑意象中的环.
+	字母 $R$ 提示了这个对象与通常微分几何的对象 $\mathbb{R}$ 在直观上的相似性, 但它与 $\mathbb{R}$ 有不同的性质, 如 ``幂零无穷小量'' 的存在性. 因此, 我们不能要求 $R$ 是域.
 \end{remark}
 
 \begin{definition}
 	{(直线上原点的一阶无穷小邻域)}
 	定义 $R$ 上 ``原点的一阶无穷小邻域''
 	$$
-	D = \{x \in R \colon x^2 = 0\}.
+	D = \{x \in R \mid x^2 = 0\}.
 	$$
 \end{definition}
 
@@ -47,7 +50,9 @@
 	直观上, 直线与圆相切, 两者在相切处有一条公共的 ``无穷小线段''. 更一般地, 任意两条相切的曲线都有一条公共的形如 $D$ 的无穷小线段, 这便是两条曲线共同的切向量.
 \end{example}
 
-\subsection{Kock--Lawvere 公理}
+\paragraph{Kock--Lawvere 公理与导数}
+
+~
 
 \begin{axiom}
 	{(Kock--Lawvere 公理)}
@@ -55,6 +60,10 @@
 	使得
 	$$
 	f(d) = a + d\cdot b,\quad\forall d\in D.
+	$$
+	换言之, 作为 $R$-代数有
+	$$
+	\operatorname{Hom}(D,R) \simeq R[x]/(x^2).
 	$$
 \end{axiom}
 
@@ -72,6 +81,62 @@ Kock--Lawvere 公理反映了如下的直观: $R$ 上的一个函数在一个很
 
 任何函数都是任意次可导的.
 
+\paragraph{Weil 代数与无穷小几何对象}
+
+~
+
+无穷小线段 $D$ 对应代数 $R[x]/(x^2)$. 一般地, 在代数--几何对偶中与无穷小几何对象相对应的代数是 \emph{Weil 代数}.
+\begin{definition}
+	{(Weil 代数)}
+	Weil 代数是形如 $W = R \oplus J$ 的 $R$-代数,
+	其中 $J$ 是有限生成自由 $R$-模,
+	且为幂零理想.
+\end{definition}
+
+\begin{definition}
+	{(Weil 代数的谱)}
+	对于 Weil 代数 $W$, 定义 $W$ 的\emph{谱}为 $R$-代数同态的空间
+	$$
+	\operatorname{Spec}W = \operatorname{Hom}_{R\mathsf {Alg}}(W,R),
+	$$
+	称之为\emph{无穷小几何对象}.
+\end{definition}
+
+\begin{example}
+	{(常见的无穷小几何对象)}
+	\begin{itemize}
+		\item 点 $$\text{pt} \simeq \{x\in R\mid x=0\} = \operatorname{Spec} R;$$
+		\item 无穷小线段的平方 $$D^2 \simeq \{(x,y)\in R^2 \mid x^2=y^2=0\} = \operatorname{Spec}R[x,y]/(x^2,y^2);$$
+		\item $R^2$ 上原点的一阶无穷小邻域 $$D(2) := \{(x,y)\in R^2\mid x^2=xy=y^2=0\} = \operatorname{Spec}R[x,y]/(x^2,xy,y^2);$$
+		\item 高阶无穷小邻域
+		$$
+		D_k := \{x\in R\mid x^{k+1}=0\} = \operatorname{Spec}R[x]/(x^{k+1})\, (k=1,2,3,\cdots).
+		$$
+	\end{itemize}
+\end{example}
+
+前面介绍的 Kock--Lawvere 公理可表述为 $\operatorname{Hom}(\operatorname{Spec}R[x]/(x^2),R) \simeq R[x]/(x^2)$. 类似地有如下公理.
+
+\begin{axiom}
+	{(Kock--Lawvere 公理)}
+	对于 Weil 代数 $W$, 有
+	$$
+	\operatorname{Hom}(\operatorname{Spec}W,R)\simeq W.
+	$$
+\end{axiom}
+
+\begin{remark}
+	{(Weil 代数与 Kock--Lawvere 公理的直观)}
+	设 $W=R\oplus J$ 是 Weil 代数. 投影 $W \to R$ 对应点 $\text{pt}$ 到无穷小几何对象 $\operatorname{Spec}W$ 的\emph{原点}的嵌入 $$\text{pt} = \operatorname{Spec} R \to \operatorname{Spec}W.$$
+	Kock--Lawvere 公理说的是 Weil 代数 $W$ 等同于 $\operatorname{Spec}W$ 上的函数代数. 投影 $W\to R$ 可视为 $\operatorname{Spec}W$ 上的函数在原点处取值; 理想 $J$ 是投影 $W\to R$ 的核, 可视为在原点取值为 $0$ 的函数的集合.
+	要求 $J$ 为\emph{幂零}理想, 也即要求在原点取值为 $0$ 的函数都幂零, 直观上说明 $\operatorname{Spec}W$ 是 ``无穷小'' 的.
+\end{remark}
+
 \subsection{综合微分几何的模型}
 
-\todo{光滑环}
+
+
+\begin{definition}
+	{}
+	
+\end{definition}

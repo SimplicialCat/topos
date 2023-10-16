@@ -104,21 +104,19 @@
     由定义, 存在 ``投影'' 函子 $\pi_X\colon \displaystyle\int_{\mathsf C}X\to \mathsf C$, $(c,x)\mapsto c$.
 \end{definition}
 
-\begin{definition}
-	{(元素的范畴, 等价定义)}
-	由米田引理, $X$ 的元素的范畴等价于 (甚至同构于) 如下范畴: 其对象为态射 $\yo(c)\to X$, 其态射为形如
-	$\begin{tikzcd}[ampersand replacement=\&,row sep=-1pt,column sep=small]
-		{\yo(c)} \\
-		\& X \\
-		{\yo(d)}
-		\arrow[from=1-1, to=2-2]
-		\arrow[from=1-1, to=3-1]
-		\arrow[from=3-1, to=2-2]
-	\end{tikzcd}$ 的交换图.
-\end{definition}
+
 
 \begin{remark}
-    {}
+    {(元素的范畴同构于 ``广义俯范畴'')}
+    由米田引理, $X$ 的元素的范畴同构于如下范畴: 其对象为态射 $\yo(c)\to X$, 其态射为形如
+    $\begin{tikzcd}[ampersand replacement=\&,row sep=-1pt,column sep=small]
+    	{\yo(c)} \\
+    	\& X \\
+    	{\yo(d)}
+    	\arrow[from=1-1, to=2-2]
+    	\arrow[from=1-1, to=3-1]
+    	\arrow[from=3-1, to=2-2]
+    \end{tikzcd}$ 的交换图; 这是 $\widehat {\mathsf C}/X$ 的满子范畴.
     若将 $X$ 视为 $\mathsf C$ 的 ``广义元素'', 则 $X$ 的元素的范畴可视为``俯范畴'' $\mathsf C /X$.
     
     此外, 也有人将这个范畴记作 $(\yo\downarrow X)$, 它还有一个令人迷惑的名称 ``逗号范畴'' (comma category).
@@ -130,13 +128,13 @@
     {(预层为可表函子的余极限)}
     $\widehat {\mathsf C}$ 的对象 $X$ 是如下余极限:
     $$
-    X \simeq \operatorname{colim}\Big(\begin{tikzcd}[ampersand replacement=\&]
-    	{\displaystyle\int_{\mathsf C}X} \& {\mathsf C} \& {\widehat {\mathsf C}}
-    	\arrow["\yo", from=1-2, to=1-3]
-    	\arrow["{\pi_X}", from=1-1, to=1-2]
-    \end{tikzcd}\Big).
+    X \simeq \operatorname{colim}\Big(\yo\circ\pi_X \colon 
+    {\displaystyle\int_{\mathsf C}X}
+    \to
+    {\widehat {\mathsf C}}\Big),
     $$
     %函子 $\colon \displaystyle\int_{\mathsf C}X \overset{\pi}{\to} \widehat {\mathsf C}$ 的余极限.
+    其万有余锥由所有态射 $\yo(c)\to X$ 给出.
 \end{prop}
 
 \begin{proof}
@@ -144,6 +142,15 @@
 	定义态射 $\eta\colon X\to Y$,
 	$\eta_c\colon X(c)\to Y(c)$,
 	$x\mapsto\phi_{c,x}$.
+	那么下图交换, 并且 $\eta$ 是唯一使得下图交换的态射.
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXHlvKGMpIl0sWzEsMCwiWCJdLFsxLDEsIlkiXSxbMCwxLCJ4Il0sWzAsMiwiXFxwaGlfe2MseH0iLDJdLFsxLDIsIlxcZXRhIl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\yo(c)} \& X \\
+		\& Y
+		\arrow["x", from=1-1, to=1-2]
+		\arrow["{\phi_{c,x}}"', from=1-1, to=2-2]
+		\arrow["\eta", from=1-2, to=2-2]
+	\end{tikzcd}\]
 \end{proof}
 
 \begin{example}
@@ -203,11 +210,10 @@
 	$R(d) = \operatorname{Hom}_{\mathsf C}(F-,d)$;
 	其左伴随 $L$ 由如下余极限给出:
 	$$
-	L (X) = \operatorname{colim}\Big(\begin{tikzcd}[ampersand replacement=\&]
-		{\displaystyle\int_{\mathsf C}X} \& {\mathsf C} \& {\mathsf D}
-		\arrow["F", from=1-2, to=1-3]
-		\arrow["{\pi_X}", from=1-1, to=1-2]
-	\end{tikzcd}\Big).
+	L (X) = \operatorname{colim}\Big(
+	F\circ \pi_X \colon 
+	{\displaystyle\int_{\mathsf C}X} \to {\mathsf D}
+	\Big).
 	$$
 	作为左伴随, $L$ 自然保持余极限 (命题 \ref{adjoints-preserve-limits}).
 \end{prop}
@@ -229,11 +235,18 @@
 	$\mathsf D=\mathsf {Top}$ 为拓扑空间范畴.
 	我们知道 $\mathsf {Top}$ 是余完备的.
 	设 $F \colon \Delta \to \mathsf {Top}$ 将 $[n]$ 对应到 $n$-维标准拓扑单形, 也即 $\mathbb{R}^{n+1}$ 中 $(n+1)$ 个基向量的闭包.
-	那么命题 \ref{nerve-and-realization} 给出了单纯集的几何实现
-	$$
-	|{-}|\colon \mathsf {sSet} = \widehat {\Delta} \to \mathsf {Top}.
-	$$
-	其右伴随为 ``拓扑空间的奇异单纯集'' 函子 $\operatorname{Sing}\colon \mathsf {Top}\to \mathsf {sSet}$.
+	那么命题 \ref{nerve-and-realization} 给出了 ``脉--几何实现伴随''
+%	单纯集的几何实现
+%	$$
+%	|{-}|\colon \mathsf {sSet} = \widehat {\Delta} \to \mathsf {Top}.
+%	$$
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {sSet}} \& {\mathsf {Top},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "|{-}|", shift left=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "\operatorname{Sing}", shift left=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+	其中 ``脉'' 函子 $\operatorname{Sing}$ 给出拓扑空间的\emph{奇异单纯集} (singular simplicial set).
 \end{example}
 
 \begin{example}
@@ -241,14 +254,76 @@
 	{\small (本例需要一些背景知识.)} 定义\emph{几何空间} (又称\emph{局部环化空间}) $(X,\mathcal O_X)$ 为拓扑空间 $X$ 配备环层 $\mathcal O_X$, 使得每个茎 $\mathcal O_{X,x}$ (定义 \ref{germ-and-stalk}) 为局部环.
 	我们知道几何空间的范畴 $\mathsf {GeoSp}$ 是余完备的.
 	
-	设 $\mathsf C = \mathsf {Aff}$ 为仿射概形的范畴 (它等价于交换环范畴的对偶 $\mathsf {Ring}^\op$).
-	我们知道仿射概形是几何空间. 因此设 $\mathsf D = \mathsf {GeoSp}$ 为几何空间的范畴, 存在嵌入函子 $F\colon \mathsf {Aff}\to\mathsf {GeoSp}$.
-	对于函子 $X\colon \mathsf {Ring} \to\mathsf {Set}$,
-	命题 \ref{nerve-and-realization} 给出其几何实现 $|X|$, 它是一个几何空间.
-	另外, 命题 \ref{adjoint-full-subcategory-equivalence} 给出的子范畴正是\emph{概形}的范畴. 这表明, 概形既可视为满足某些条件的几何空间, 又可视为满足某些条件的函子 $\mathsf {Ring}\to\mathsf {Set}$.
+	设 $\mathsf C = \mathsf {Aff}$ 为仿射概形的范畴 (它等价于交换环范畴的对偶 $\mathsf {Ring}^\op$), $\mathsf D = \mathsf {GeoSp}$ 为几何空间的范畴.
+	我们知道仿射概形是几何空间, 即存在嵌入函子 $F\colon \mathsf {Aff}\to\mathsf {GeoSp}$.
+	注意到 $\widehat {\mathsf C} \simeq \mathsf {Fun}(\mathsf {Ring},\mathsf {Set})$.
+	那么命题 \ref{nerve-and-realization} 给出 ``脉--几何实现伴随''
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {Fun}(\mathsf {Ring},\mathsf {Set})} \& {\mathsf {GeoSp},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "|{-}|", shift left=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "R", shift left=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+	%对于 $\widehat {\mathsf C}=\mathsf {Fun}(\mathsf {Ring},\mathsf {Set})$ 的对象 $X$,
+	%其几何实现 $|X|$, 它是一个几何空间.
+	其中右伴随 $R$ 给出几何空间的\emph{点函子} (functor of points), 它是代数几何中表示几何空间的一种方便工具.
+	这对伴随给出两边某个满子范畴的等价 (命题 \ref{adjoint-full-subcategory-equivalence}), 这个满子范畴正是\emph{概形}的范畴. 换言之, 概形既可视为满足某些条件的几何空间, 又可视为满足某些条件的函子 $\mathsf {Ring}\to\mathsf {Set}$.
 	
 	这个例子取自 Demazure 和 Gabriel 的书 \emph{Introduction to Algebraic Geometry and Algebraic Groups} 1.1 节.
 \end{example}
+
+\subsection{预层范畴的俯范畴}
+
+预层范畴的俯范畴仍是预层范畴. 这个事实可证明预层范畴的局部积闭性.
+
+\begin{prop}
+	{}
+	预层范畴的俯范畴等价于 ``广义俯范畴'' 上的预层范畴:
+	$$
+	\widehat {\mathsf C}/X \simeq \widehat {\mathsf C / X}.
+	$$
+\end{prop}
+
+\begin{proof}
+	在如下证明中, 我们将 $s\in X(c)$ 等同于态射 $s\colon \yo(c) \to X$.
+	
+	对于 $\widehat {\mathsf C}/X$ 的对象 $F \to X$,
+	定义 $\mathsf C/X$ 上的预层
+	$$
+	G = \operatorname{Hom}_{\widehat {\mathsf C}/X}(-,F).
+	$$
+	具体地, $G$ 在 $\mathsf C/X$ 的对象 $s\colon \yo(c)\to X$ 上的取值为 $s$ 在映射 $F(c) \to X(c)$ 下的原像.
+	
+	反过来, 对于 $\mathsf C/X$ 上的预层 $G$, 定义 $\widehat {\mathsf C} /X$ 的对象 $F \to X$ 如下.
+	预层 $F$ 为
+	$$
+	F(c) := \coprod_{s\colon \yo(c)\to X} G(s),
+	$$
+	带有自然的投影 $F(c) \to X(c)$ (将 $G(s)$ 映射到 $s$),
+	也即自然变换 $F \to X$.
+	
+	容易验证, 上述两个构造是互逆的范畴等价.
+\end{proof}
+
+\begin{remark}
+	{}
+	将 $\widehat {\mathsf C}$ 的元素 $X$ 视为 (以 $\mathsf C$ 的对象为模型的) 广义空间,
+	态射 $F\to X$ 视为 $X$ 上的 ``广义丛'',
+	则上述命题可视为广义丛与其 ``截面层'' 之间的伴随等价 (对比命题 \ref{etale-section-adjoint} 以及平展空间的构造 \ref{espace-etale}).
+\end{remark}
+
+\begin{example}
+	{}
+	设 $\mathsf C = \mathsf 1$ 是终范畴,
+	$X$ 是 $\widehat {\mathsf C} \simeq \mathsf {Set}$ 的对象,
+	那么 $\mathsf C/X \simeq X$ (视为离散范畴).
+	此时上述命题化为
+	$$
+	\mathsf {Set}/X \simeq \mathsf {Set}^X.
+	$$
+\end{example}
+
+
 
 \section{Kan 扩张}
 
@@ -342,6 +417,12 @@
 \end{tikzcd}\]
 \end{definition}
 
+\begin{remark}
+	{}
+	在历史文献中可见单子的曾用名 ``三元组'' (triple), 这个名字是无趣的.
+	相对有趣的是, 单子被某些作者称为\emph{代数理论} (algebraic theory). 下面我们将说明单子与代数理论 (定义 \ref{kinds-of-theories}) 的关系.
+\end{remark}
+
 \begin{propdef}
     [label={monad-from-adjoint}]
     {(伴随产生单子)}
@@ -405,7 +486,7 @@
     	\arrow[""{name=1, anchor=center, inner sep=0}, "{\text{遗忘}}", shift left=2, from=1-2, to=1-1]
     	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
     \end{tikzcd}\]
-    单子 $T$ 正是这对伴随由命题 \ref{monad-from-adjoint} 给出的单子.
+    单子 $T$ 正是这对伴随由命题 \ref{monad-from-adjoint} 给出的单子 ``$\text{遗忘}\circ \text{自由}$''.
     
     此时, 一个 $T$-代数 $(X,h)$ 即为一个带有 $M$-作用的集合, $h \colon M\times X \to X$ 为 $M$-作用, 而定义 \ref{monad-T-algebra} 中的交换图则对应 $M$-作用的结合律和单位律.
     因此, 比较函子 $K\colon \mathsf BM\to \mathsf {Set}^T$ 是范畴的同构.
@@ -422,14 +503,29 @@
 	\arrow[""{name=1, anchor=center, inner sep=0}, "{\text{遗忘}}", shift left=2, from=1-2, to=1-1]
 	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 \end{tikzcd}\]
-    这对伴随给出的单子 $T\colon \mathsf {Set}\to\mathsf {Set}$ 将集合 $X$ 对应到 $X$ 生成的自由幺半群的底层集合
+    这对伴随给出的单子 $T= \text{遗忘}\circ \text{自由}\colon \mathsf {Set}\to\mathsf {Set}$ 将集合 $X$ 对应到 $X$ 生成的自由幺半群的底层集合
     $$TX=\coprod_{n\geq 0} X^n,$$
     也即 $X$ 上列表的集合.
     自然变换 $\mu\colon T^2\to T$ 将 ``列表的列表'' 拼接起来变为一个列表.
     一个 $T$-代数 $X$ 即为一个幺半群. 比较函子 $K\colon \mathsf {Mon} \to\mathsf {Set}^T$ 恰好也是范畴的同构.
 \end{example}
 
-在上述两个例子中, 我们发现 $T$-代数的范畴恰好同构于伴随另一边的范畴; 因此这一对伴随恰好可视为范畴 $\mathsf C$ 与其上的 $T$-代数范畴 $\mathsf C^T$ 之间的自由--遗忘伴随.
+\begin{example}
+	{(反变幂集函子与其对偶函子的伴随)}
+	反变幂集函子是指 $\mathsf {Set}$ 上的幂对象函子 $P\colon \mathsf {Set}^{\op} \to \mathsf {Set}$ (定义 \ref{power-object-functor}). 考虑其对偶 (即同一个函子, 不过所有箭头反向) $P^\op\colon \mathsf {Set}\to\mathsf {Set}^\op$. 自然同构 $\operatorname{Hom}_{\mathsf {Set}^\op}(P^\op Y,X) = \operatorname{Hom}_{\mathsf {Set}}(X,PY)\simeq \operatorname{Hom}_{\mathsf {Set}}(X\times Y,\Omega) \simeq \operatorname{Hom}_{\mathsf {Set}}(Y,PX)$ 表明有如下伴随.
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsIlxcbWF0aHNmIHtTZXR9Xlxcb3AiXSxbMCwxLCJQXlxcb3AiLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiUCIsMCx7Im9mZnNldCI6LTJ9XSxbMiwzLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {Set}} \& {\mathsf {Set}^\op}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{P^\op}", shift left=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "P", shift left=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+	
+	在代数--几何对偶之下, 集合作为 ``几何'' 对应的 ``代数'' 称为\emph{完备原子型 Boole 代数} (complete atomic Boolean algebra).
+	\todo{}
+\end{example}
+
+在上述几个例子中, 我们发现 $T$-代数的范畴恰好同构于伴随另一边的范畴; 因此这一对伴随恰好可视为范畴 $\mathsf C$ 与其上的 $T$-代数范畴 $\mathsf C^T$ 之间的自由--遗忘伴随.
 
 %\begin{prop}
 %	{}

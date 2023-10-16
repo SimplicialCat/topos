@@ -271,7 +271,7 @@ $$
 \begin{remark}{}
     ``万有子对象'' 中的 ``万有'' 与拓扑学中 ``万有 $G$-主丛'' 中 ``万有'' 的含义相同.
 
-    上述定义中 ``终对象'' 的要求可不用提, 因为它蕴含于后面的泛性质中: 对任何对象 $X$ 考虑子对象 $\operatorname{id}\colon X \to X$, 在拉回图
+    上述定义中 ``$1$ 是终对象'' 的要求可不用提, 因为它蕴含于后面的泛性质中: 对任何对象 $X$ 考虑子对象 $\operatorname{id}\colon X \to X$, 在拉回图
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzAsMSwiWCJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCJcXHdpZGV0aWxkZSAxIl0sWzAsMSwiXFxvcGVyYXRvcm5hbWV7aWR9IiwyXSxbMCwzLCJcXGFscGhhIl0sWzEsMiwiXFxjaGkiLDJdLFszLDIsIlxcdG9wIl1d
     $\begin{tikzcd}[ampersand replacement=\&,sep=small]
 	X \& {\widetilde 1} \\
@@ -283,7 +283,7 @@ $$
     \end{tikzcd}$
     中, 由 $\chi$ 的唯一性以及 $\top$ 是单射可得到 $\alpha$ 的唯一性, 这说明 $\widetilde 1$ 就是\makebox{终对象 $1$.}
     
-    符号 $\top$ (\LaTeX 代码: \verb|\top|) 读作 ``真'', 后面也将用到另一个元素 $\bot$ (\verb|\bot|), 读作 ``假''.
+    符号 $\top$ (\LaTeX 代码: \verb|\top|) 读作 ``真'', 后面也将用到另一个元素 $\bot\colon 1\to\Omega$ (\verb|\bot|), 读作 ``假''. 一般地, 态射 $1\to\Omega$ 称为\emph{真值} (truth value).
 \end{remark}
 
 现在证明子对象分类器两种定义的等价性. 假设第一种定义 (\ref{Subobject-classifier-definition}) 中的对象 $\Omega$ 存在, 我们需要给出第二种定义 (\ref{Subobject-classifier-definition-alternative}) 所要求的单射 $\top\colon 1 \to \Omega$.
@@ -421,7 +421,7 @@ $$
     {(子对象, 谓词与广义元素)}
     集合的函数 $X \to \{\top,\bot\}$ 可视为定义在 $X$ (的元素) 上的一个\emph{谓词}, 也即输入 $X$ 的元素 $x$, 输出 $x$ 是否满足某个命题. %在第三章我们会详细介绍这种观点, 这里仅提供感性的认识:
     $X$ 自身作为子对象, 对应谓词 $\top$ (恒真);
-    对角线 $\Delta X\to X\times X$ 对应谓词 ``$x=y$'';
+    对角线 $\Delta \colon  X\to X\times X$ 对应谓词 ``$x=y$'';
     等化子 $\operatorname{eq}(f,g) \to X$ 对应谓词 ``$f(x)=g(x)$''.
 
     态射 $A \to X$ 可视为 $X$ 的\emph{广义元素}. 设 $X \to \Omega$ 是谓词, 那么复合 $A \to X \to \Omega$ 可视为 $\Omega$ 的广义元素, 表示 ``广义元素 $A \to X$ 满足谓词 $X\to\Omega$''.
@@ -429,8 +429,8 @@ $$
 
 \subsection{幂对象}
 
-集合 $X$ 的幂集 (power set) $P(X)$ 是 $X$ 所有子集的集合. 由于 $X$ 的子集一一对应于 $X$ 到 $\{0,1\}$ 的映射,
-我们有自然同构 $P(X)\simeq \{0,1\}^X$.
+集合 $X$ 的幂集 (power set) $P(X)$ 是 $X$ 所有子集的集合. 由于 $X$ 的子集一一对应于 $X$ 到 $\{\bot,\top\}$ 的映射,
+我们有自然同构 $P(X)\simeq \{\bot,\top\}^X$.
 
 \begin{definition}
     [label={power-object-functor}]{(幂对象函子)}
@@ -532,8 +532,11 @@ $u\colon P(X\times Y) \to PX$
     \end{tikzcd}
     $$
     等同于 $\mathsf C$ 中 $Y$ 的子对象 $W \hookrightarrow Y$.
-    因此, 当 $\mathsf C$ 有子对象分类子 $\Omega$ 且存在乘积时,
-    $\mathsf C/X$ 有子对象分类子 $\Omega\times X \to X$.
+    当 $\mathsf C$ 有子对象分类子 $\Omega$ 且存在乘积时,
+    $$
+    \operatorname{Sub}_{\mathsf C/X}(Y\to X)\simeq\operatorname{Sub}_{\mathsf C}(Y)\simeq\operatorname{Hom}_{\mathsf C}(Y,\Omega)\simeq\operatorname{Hom}_{\mathsf C/X}(Y,\Omega\times X\to X),
+    $$
+    即 $\mathsf C/X$ 有子对象分类子 $\Omega\times X \to X$.
 \end{prop}
 
 俯范畴的性质中, 非常重要的是各俯范畴以及原来的范畴 $\mathsf C$ 之间的关系, 也即\emph{换基} (change of base).
@@ -576,7 +579,7 @@ $u\colon P(X\times Y) \to PX$
     	\arrow[from=1-1, to=1-3]
     	\arrow[from=1-1, to=2-2]
     	\arrow[from=1-3, to=2-2]
-    \end{tikzcd},\ \begin{tikzcd}[ampersand replacement=\&]
+    \end{tikzcd},\ \begin{tikzcd}[ampersand replacement=\&,column sep=1.7em]
     	W \& Z \\
     	X \& Y.
     	\arrow[from=1-1, to=1-2]
@@ -630,6 +633,7 @@ $u\colon P(X\times Y) \to PX$
 前面讨论了 $f^*$ 的左伴随. 令人惊讶的是, $f^*$ 还有一个潜在的右伴随. 首先看绝对 (即 $Y=1$) 的情形; 我们发现它和指数对象有关.
 
 \begin{propdef}
+	[label={pi-functor-absolute}]
     {($\Pi$-函子, 绝对情形)}
     设范畴 $\mathsf C$ 存在有限极限.
     那么 $(-)\times X \colon \mathsf C \to \mathsf C$ 有右伴随 $(-)^X$ 当且仅当
@@ -705,8 +709,66 @@ $u\colon P(X\times Y) \to PX$
 \begin{proof}
     注意到
     $$
-    (\mathsf C/Y)/f \simeq \mathsf C/X.
+    (\mathsf C/Y)/f \simeq \mathsf C/X,
     $$
+    这个命题化为绝对情形 (命题 \ref{pi-functor-absolute}).
+\end{proof}
+
+总结起来, 对于存在有限极限的局部积闭范畴, 对每个态射 $f\colon X\to Y$ 有三元伴随
+% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDL1giXSxbMiwwLCJcXG1hdGhzZiBDL1kiXSxbMSwwLCJmXioiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMCwxLCJcXFNpZ21hX2YiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzAsIm9mZnNldCI6LTV9XSxbMCwxLCJcXFBpX2YiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzAsIm9mZnNldCI6NX1dLFszLDIsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzIsNCwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\mathsf C/X} \&\& {\mathsf C/Y.}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{f^*}"{description, pos=0.3}, from=1-3, to=1-1]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\Sigma_f}"{description, pos=0.3}, shift left=5, from=1-1, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_f}"{description, pos=0.3}, shift right=5, from=1-1, to=1-3]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
+\end{tikzcd}\]
+
+由于 $f^*$ 同时有左右伴随, 我们得到 $f^*$ 同时保持极限和余极限. 拉回也保持子对象分类子, 即 $\Omega\times Y\to Y$ 的拉回是 $\Omega\times X\to X$ (命题 \ref{subobjects-in-slice-category}). 下面我们证明拉回保持指数对象.
+
+\begin{prop}
+	{}
+	对于存在有限极限的局部积闭范畴,
+	拉回 $f^*\colon \mathsf C/Y\to \mathsf C/X$ 保持指数对象; 即对 $\mathsf C/Y$ 的对象 $g\colon Z\to Y, h\colon W\to Y$,
+	$$
+	f^*\big((Z\overset{g}{\to}Y)^{(W\overset{h}{\to}Y)}\big) \simeq \big({f^*(Z\to Y)}\big)^{f^*(W\to Y)}.
+	$$
+\end{prop}
+
+\begin{proof}
+	记 $f^*g$ 为 $g'$, $f^*W$ 为 $W'$. 要证明的是下图的里层方块交换.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXG1hdGhzZiBDL1kiXSxbMiwwLCJcXG1hdGhzZiBDL1kiXSxbMCwyLCJcXG1hdGhzZiBDL1giXSxbMiwyLCJcXG1hdGhzZiBDL1giXSxbMCwxLCIoLSleaCIsMix7Im9mZnNldCI6Mn1dLFsxLDAsIigtKVxcdGltZXNfWSBXIiwyLHsib2Zmc2V0IjoyfV0sWzMsMSwiXFxTaWdtYV9mIiwyLHsib2Zmc2V0IjoyfV0sWzEsMywiZl4qIiwyLHsib2Zmc2V0IjoyfV0sWzAsMiwiZl4qIiwwLHsib2Zmc2V0IjotMn1dLFsyLDMsIigtKV57aCd9IiwwLHsib2Zmc2V0IjotMn1dLFsyLDAsIlxcU2lnbWFfZiIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCIoLSlcXHRpbWVzX1ggVyciLDAseyJvZmZzZXQiOi0yfV0sWzUsNCwiIiwyLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XSxbNiw3LCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMCw4LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMSw5LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
+		{\mathsf C/Y} \&\& {\mathsf C/Y} \\
+		\\
+		{\mathsf C/X} \&\& {\mathsf C/X}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{(-)^h}"', shift right=2, from=1-1, to=1-3]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{(-)\times_Y W}"', shift right=2, from=1-3, to=1-1]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\Sigma_f}"', shift right=2, from=3-3, to=1-3]
+		\arrow[""{name=3, anchor=center, inner sep=0}, "{f^*}"', shift right=2, from=1-3, to=3-3]
+		\arrow[""{name=4, anchor=center, inner sep=0}, "{f^*}", shift left=2, from=1-1, to=3-1]
+		\arrow[""{name=5, anchor=center, inner sep=0}, "{(-)^{h'}}", shift left=2, from=3-1, to=3-3]
+		\arrow[""{name=6, anchor=center, inner sep=0}, "{\Sigma_f}", shift left=2, from=3-1, to=1-1]
+		\arrow[""{name=7, anchor=center, inner sep=0}, "{(-)\times_X W'}", shift left=2, from=3-3, to=3-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+		\arrow["\dashv"{anchor=center, rotate=-180}, draw=none, from=2, to=3]
+		\arrow["\dashv"{anchor=center}, draw=none, from=6, to=4]
+		\arrow["\dashv"{anchor=center, rotate=90}, draw=none, from=7, to=5]
+	\end{tikzcd}\]
+	由伴随的 (同构意义下的) 唯一性, 只需证明外层方块交换. 展开定义, 这就是说对任意 $U\to X$, 下图的大长方形为拉回.
+	% https://q.uiver.app/#q=WzAsNixbMSwxLCJYIl0sWzIsMSwiWSJdLFsyLDAsIlciXSxbMSwwLCJXJyJdLFswLDEsIlUiXSxbMCwwLCJVXFx0aW1lc19YIFcnIl0sWzUsNF0sWzQsMF0sWzAsMSwiZiIsMl0sWzUsM10sWzMsMl0sWzIsMSwiaCJdLFszLDAsImgnIl1d
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=normal]
+		{\hspace{-2em}U\times_X W'} \& {W'} \& W \\
+		U \& X \& Y
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=2-1, to=2-2]
+		\arrow["f"', from=2-2, to=2-3]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=1-3]
+		\arrow["h", from=1-3, to=2-3]
+		\arrow["{h'}", from=1-2, to=2-2]
+	\end{tikzcd}\]
 \end{proof}
 
 \section{\topos{}}
@@ -735,7 +797,7 @@ $u\colon P(X\times Y) \to PX$
 
 %它的证明十分复杂. %感兴趣的读者可阅读\cite{SGL} IV.7 节, 或 \cite{Elephant} A2.3 节.
 
-这两个命题的证明都比较复杂, 感兴趣的读者可阅读 \cite{SGL} IV.5 节, 或附录 \ref{colimit-appendix}.
+这两个命题的证明都比较复杂, 感兴趣的读者可阅读 \cite{SGL} IV.5, IV.7 节.%, 或附录 \ref{colimit-appendix}.
 下面我们将承认这两个命题, 或将其加入\topos{}的定义, 这对后面的理论无伤大雅.
 
 \begin{example}
@@ -747,31 +809,51 @@ $u\colon P(X\times Y) \to PX$
 \begin{example}
     [label={Set_times_Set}]
     {($\mathsf {Set}\times\mathsf {Set}$)}
-    考虑范畴 $\mathsf C = \mathsf {Set}\times\mathsf {Set}$,
+    范畴 $\mathsf C = \mathsf {Set}\times\mathsf {Set}\simeq \mathsf {Set}^{\{1,2\}}$ 是一个\topos{},
     其对象为一对集合 $(X_1,X_2)$,
     态射为一对映射 $\big(f_1\colon X_1\to Y_1,f_2\colon X_2 \to Y_2\big)$,
-    终对象为 $(1,1)$.
-    
-    对象 $(X_1,X_2)$ 的子对象是一对子集 $(U_1\subset X_1,U_2\subset X_2)$, 对应一对特征函数 $\big(\chi_1 \colon X_1 \to \{0,1\},\chi_2 \colon X_2 \to \{0,1\}\big)$.
-    我们看到, 这个范畴的子对象分类子为 $(1,1) \hookrightarrow \{0,1\}\times\{0,1\}$.
+    终对象为 $(1,1)$.    
+    对象 $(X_1,X_2)$ 的子对象是一对子集 $(U_1\subset X_1,U_2\subset X_2)$, 对应一对特征函数 $\big(\chi_1 \colon X_1 \to \{\bot,\top\},\chi_2 \colon X_2 \to \{\bot,\top\}\big)$.
+    我们看到, 这个范畴的子对象分类子为
+    $$(\top\colon 1\to \{\bot,\top\},\top\colon 1\to \{\bot,\top\}).$$
+    %$(\top,\top)\colon (1,1) \hookrightarrow (\{\bot,\top\},\{\bot,\top\})$.
 \end{example}
 
 \begin{example}
+	[label={varying-set-topos}]
     {(变集范畴 $\mathsf {Fun}(\mathsf 2,\mathsf {Set})$)}
-    考虑 ``箭头范畴'' $\mathsf 2 = \{\bullet\longrightarrow\bullet\}$ 到 $\mathsf {Set}$ 的函子范畴 $\mathsf {Fun}(\mathsf 2,\mathsf {Set})$, 其对象为映射 $X_0 \to X_1$, 称之为\emph{变集} (varying set),
-    态射为交换图
-    % https://q.uiver.app/#q=WzAsNCxbMSwwLCJYXzEiXSxbMCwwLCJYXzAiXSxbMCwxLCJZXzAiXSxbMSwxLCJZXzEiXSxbMSwwXSxbMSwyXSxbMiwzXSxbMCwzXV0=
-$\begin{tikzcd}[ampersand replacement=\&,sep=1em]
-	{X_0} \& {X_1} \\
-	{Y_0} \& {Y_1}
-	\arrow[from=1-1, to=1-2]
-	\arrow[from=1-1, to=2-1]
-	\arrow[from=2-1, to=2-2]
-	\arrow[from=1-2, to=2-2]
-\end{tikzcd}$,
-    终对象为 $1\to 1$.
-    
-    这个范畴还有一个特殊的名字叫 \emph{Sierpi\'nski \topos{}}.
+    考虑 ``箭头范畴'' $\mathsf 2 = \{\bullet\longrightarrow\bullet\}$ 到 $\mathsf {Set}$ 的函子范畴 $\mathsf {Fun}(\mathsf 2,\mathsf {Set})$, 其对象为集合映射 $X_0 \to X_1$, 称之为\emph{变集} (varying set),
+    态射为左下图,
+    终对象为 $1\to 1$,
+    子对象分类子为右下图.
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJYXzAiXSxbMSwwLCJYXzEiXSxbMCwxLCJZXzAiXSxbMSwxLCJZXzEiXSxbMiwwLCIxIl0sWzMsMCwiMSJdLFszLDEsIlxce1xcYm90LFxcdG9wXFx9Il0sWzIsMSwiXFx7XFxib3QsXFxzdGFyLFxcdG9wXFx9Il0sWzAsMV0sWzEsM10sWzAsMl0sWzIsM10sWzQsNV0sWzQsN10sWzUsNl0sWzcsNl1d
+    \[\begin{tikzcd}[ampersand replacement=\&,column sep=1.7em]
+    	{X_0} \& {X_1} \& 1 \& 1 \\
+    	{Y_0} \& {Y_1} \& {\{\bot,\star,\top\}} \& {\{\bot,\top\} \ (\star\mapsto\top)\hspace{-4em}}
+    	\arrow[from=1-1, to=1-2]
+    	\arrow[from=1-2, to=2-2]
+    	\arrow[from=1-1, to=2-1]
+    	\arrow[from=2-1, to=2-2]
+    	\arrow[from=1-3, to=1-4]
+    	\arrow["\top"',from=1-3, to=2-3]
+    	\arrow["\top",from=1-4, to=2-4]
+    	\arrow[from=2-3, to=2-4]
+    \end{tikzcd}\]
+	变集 $f\colon X_0\to X_1$ 的子对象 $U_0\to U_1$ 的特征函数 $\chi$ 为
+	$$
+	\chi (x\in X_0)=\begin{cases}
+		\bot & x\notin U_0, f(x)\notin U_1\\
+		\star & x\notin U_0, f(x)\in U_1\\
+		\top & x\in U_0, f(x) \in U_1
+	\end{cases},\quad
+	\chi (x\in X_1)=\begin{cases}
+		\bot & x\notin U_1\\
+		\top & x\in U_1
+	\end{cases}.
+	$$
+	这个\topos{}中有三个真值 $\bot,\star,\top\colon  1 \to \Omega$; 符号 $\star$ 可理解为 ``将要成真'': $\chi(x)=\star$ 表示 $x$ 不属于这个子集, 但将要属于这个子集 (即 $f(x)$ 属于这个子集).
+	
+    %这个范畴还有一个特殊的名字叫 \emph{Sierpi\'nski \topos{}}, 因为它与 Sierpi\'nski 空间有关.
 \end{example}
 
 \begin{example}
@@ -785,10 +867,32 @@ $\begin{tikzcd}[ampersand replacement=\&,sep=1em]
 
 \section{更多范畴论结构}
 
-\subsection{单射, 满射, 等价关系}
+\subsection{单射与满射}
 
+下面是一个常用的引理, 它表明在任何范畴中我们都可以用拉回与推出刻画单射与满射.
 
-%\subsection{正则单射与满射}
+\begin{prop}
+	[label={mono-epi-pullback-pushout}]
+	{(单射与满射的等价刻画)}
+	在任何范畴中, 态射 $f\colon X\to Y$ 是单射当且仅当左下图是拉回, $f$ 是满射当且仅当右下图是推出.
+	% https://q.uiver.app/#q=WzAsOCxbMiwwLCJYIl0sWzMsMCwiWSJdLFsyLDEsIlkiXSxbMywxLCJZIl0sWzAsMCwiWCJdLFswLDEsIlgiXSxbMSwwLCJYIl0sWzEsMSwiWSJdLFswLDEsImYiXSxbMCwyLCJmIiwyXSxbMiwzLCJcXG9wZXJhdG9ybmFtZXtpZH0iLDJdLFsxLDMsIlxcb3BlcmF0b3JuYW1le2lkfSJdLFs0LDYsIlxcb3BlcmF0b3JuYW1le2lkfSJdLFs0LDUsIlxcb3BlcmF0b3JuYW1le2lkfSIsMl0sWzUsNywiZiIsMl0sWzYsNywiZiJdLFszLDAsIiIsMSx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dLFs0LDcsIiIsMSx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1.7em]
+		X \& X \& X \& Y \\
+		X \& Y \& Y \& Y
+		\arrow["f", from=1-3, to=1-4]
+		\arrow["f"', from=1-3, to=2-3]
+		\arrow["{\operatorname{id}}"', from=2-3, to=2-4]
+		\arrow["{\operatorname{id}}", from=1-4, to=2-4]
+		\arrow["{\operatorname{id}}", from=1-1, to=1-2]
+		\arrow["{\operatorname{id}}"', from=1-1, to=2-1]
+		\arrow["f"', from=2-1, to=2-2]
+		\arrow["f", from=1-2, to=2-2]
+		\arrow["\lrcorner"{anchor=center, pos=0.125, rotate=180}, draw=none, from=2-4, to=1-3]
+		\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-1, to=2-2]
+	\end{tikzcd}\]
+\end{prop}
+
+\subsection{正则单射与满射, 等价关系}
 
 集合的单射与满射的概念在一般的范畴中不止有一种推广.
 
@@ -817,8 +921,8 @@ $\begin{tikzcd}[ampersand replacement=\&,sep=1em]
 	{(核偶与余核偶)}
 	设范畴 $\mathsf C$ 存在所需的拉回或推出. 定义
 	\begin{itemize}
-		\item 态射 $f\colon X\to Y$ 的\emph{核偶} (kernel pair) 为左下方拉回图中的态射偶 $(p_1,p_2)$;
-		\item 态射 $f\colon X\to Y$ 的\emph{余核偶} (cokernel pair) $(g,h)$ 为右下方推出图中的态射偶 $(i_1,i_2)$.
+		\item 态射 $f\colon X\to Y$ 的\emph{核偶} (kernel pair) 为左下方拉回图中的态射偶 $(p_1,p_2)$, 也即被 $f$ 余等化的万有态射偶 $\bullet\rightrightarrows X$;
+		\item 态射 $f\colon X\to Y$ 的\emph{余核偶} (cokernel pair) $(g,h)$ 为右下方推出图中的态射偶 $(i_1,i_2)$, 也即被 $f$ 等化的万有态射偶 $Y\rightrightarrows \bullet$.
 	\end{itemize}
 	% https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIl0sWzEsMCwiWCJdLFsxLDEsIlkiXSxbMCwwLCJYXFx0aW1lc19ZIFgiXSxbMiwwLCJYIl0sWzMsMCwiWSJdLFsyLDEsIlkiXSxbMywxLCJZXFxzcWN1cF9YIFkiXSxbMCwyLCJmIiwyXSxbMSwyLCJmIl0sWzMsMSwiZyJdLFszLDAsImgiLDJdLFs0LDUsImYiXSxbNCw2LCJmIiwyXSxbNiw3LCJnIiwyXSxbNSw3LCJoIl1d
 	\[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
@@ -839,10 +943,10 @@ $\begin{tikzcd}[ampersand replacement=\&,sep=1em]
 
 对于集合, 态射 $f\colon X\to Y$ 的核偶为 $X\times X$ 的子集
 $$
-	X\times_Y X = \{(x_1,x_2)\in X\times X \mid f(x_1)=f(x_2)\},
+	X\times_Y X = \{(x_1,x_2)\in X\times X \mid f(x_1)=f(x_2)\}.
 $$
-可视为集合 $X$ 上的一个 (二元) \emph{关系}; 在一般的范畴中, $X\times X$ 的子对象也可视为 $X$ 上的一个关系.
-态射 $f\colon X\to Y$ 的核偶即为 $f$ 诱导的 $X$ 上的等价关系.
+$X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; 在一般的范畴中, $X\times X$ 的子对象也可视为 $X$ 上的一个关系.
+事实上态射 $f\colon X\to Y$ 的核偶恰为 $f$ 诱导的 $X$ 上的\emph{等价关系}.
 
 注意到当 $f\colon X\to Y$ 为集合的满射时, 核偶 $X\times_Y X \rightrightarrows X$ 的余等化子恰为 $f\colon X\to Y$.
 
@@ -855,11 +959,13 @@ $$
 	若一个态射是其核偶的余等化子, 则称之为\emph{有效满射} (effective epimorphism).
 \end{definition}
 
-在具有拉回与推出的范畴中, 正则单射 (满射) 的概念与有效单射 (满射) 的概念等价; 因为某种意义上, $f$ 的余核偶是 ``最有资格'' 让 $f$ 做等化子的两个态射, 而 $f$ 的核偶是 ``最有资格'' 让 $f$ 做余等化子的两个态射.
+在具有拉回与推出的范畴中, 正则单射 (满射) 的概念与有效单射 (满射) 的概念等价.%; 因为某种意义上, $f$ 的余核偶是 ``最有资格'' 让 $f$ 做等化子的两个态射, 而 $f$ 的核偶是 ``最有资格'' 让 $f$ 做余等化子的两个态射.
 
 \begin{prop}
 	{}
-	设某范畴中 $f\colon X\to Y$ 有核偶. 那么 $f$ 是正则满射当且仅当 $f$ 是有效满射.
+	设某范畴中 $f\colon X\to Y$ 有核偶, 那么 $f$ 是正则满射当且仅当 $f$ 是有效满射.
+	
+	对偶地, 设 $f$ 有余核偶, 那么 $f$ 是正则单射当且仅当 $f$ 是有效单射.
 \end{prop}
 
 \begin{proof}
@@ -889,18 +995,9 @@ $$
 \end{prop}
 
 \begin{proof}
-	注意到由满态射的定义, 态射 $e\colon Z \to Y$ 是满射当且仅当下图是推出.
-	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJaIl0sWzEsMCwiWSJdLFswLDEsIlkiXSxbMSwxLCJZIl0sWzAsMSwiZSJdLFswLDIsImUiLDJdLFsyLDMsIlxcb3BlcmF0b3JuYW1le2lkfSIsMl0sWzEsMywiXFxvcGVyYXRvcm5hbWV7aWR9Il1d
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		Z \& Y \\
-		Y \& Y
-		\arrow["e", from=1-1, to=1-2]
-		\arrow["e"', from=1-1, to=2-1]
-		\arrow["{\operatorname{id}}"', from=2-1, to=2-2]
-		\arrow["{\operatorname{id}}", from=1-2, to=2-2]
-	\end{tikzcd}\]
+	%注意到由满态射的定义,
 	
-	由命题 \ref{pullback-has-right-adjoint}, \topos{}中的拉回有右伴随, 从而拉回保持余极限. 故拉回保持满射.
+	由命题 \ref{pullback-has-right-adjoint}, \topos{}中的拉回有右伴随, 从而拉回保持余极限. 由满射的余极限刻画 (命题 \ref{mono-epi-pullback-pushout}), 知拉回保持满射.
 \end{proof}
 
 \todo{顺序?}
@@ -971,22 +1068,23 @@ $$
     $$
 \end{remark}
 
-\begin{remark}{(为什么拉回的左伴随叫做存在)}
+\begin{remark}{(为什么拉回的左伴随叫做 ``存在'')}
     考虑集合范畴中的一个特例. 取 $X = Y \times Z$, $f \colon Y \times Z \to Y$ 为投影.
     将 $Y\times Z$ 的子集视为关于 $y,z$ 的谓词 $P(y,z)$,
-    存在函子 $\exists_f$ 将这个谓词变为关于 $y$ 的谓词 $\exists z \,P(y,z)$, 也即 $Y$ 的子集 $\{y \mid \exists z P(y,z)\}$.
+    那么 ``存在'' 函子 $\exists_f$ 将这个谓词变为关于 $y$ 的谓词 $\exists z \,P(y,z)$ (其中只有 $y$ 一个\emph{自由变量}), 对应 $Y$ 的子集 $\{y \mid \exists z P(y,z)\}$.
 \end{remark}
 
 %现在我们构造\topos{}中的像. 构造中要用到推出, 这是基于前面构造的 (或者定义中要求的) 有限余极限.
 
 \subsection{满--单分解}
 
+\todo{与上一节的关系?}
+
 集合的映射可分解为一个满射后接一个单射, 这称为映射的\emph{满--单分解} (epi--mono factorization). %在一般的范畴中这当然不一定成立; 但在\topos{}中这件事总是成立.
 
 \begin{prop}
     {(满--单分解)}
-    \todo{找出合适的条件}
-    设范畴 $\mathsf C$ (?), 任意态射 $f\colon X \to Y$ 可分解为 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7aW19KGYpIl0sWzIsMCwiWSJdLFswLDEsImUiXSxbMSwyLCJtIl1d
+    在\topos{}中, 任意态射 $f\colon X \to Y$ 可分解为 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7aW19KGYpIl0sWzIsMCwiWSJdLFswLDEsImUiXSxbMSwyLCJtIl1d
 \[\begin{tikzcd}[ampersand replacement=\&]
 	X \& {\operatorname{im}(f)} \& Y,
 	\arrow["e", from=1-1, to=1-2]
@@ -1046,11 +1144,13 @@ $$
 	\end{itemize}
 \end{proof}
 
+在\topos{}中, 子终对象一一对应于态射 $1\to\Omega$, 也即\emph{真值}.
+
 \begin{example}
 	{}
-	$\mathsf {Set}\times\mathsf {Set}$ 的终对象为 $(1,1)$, 有 $4$ 个子终对象 $(0,0),(0,1),(1,0),(1,1)$.
+	$\mathsf {Set}\times\mathsf {Set}$ 的终对象为 $(1,1)$, 有 $4$ 个子终对象 $(0,0),(0,1),(1,0),(1,1)$, 即 $4$ 个真值 $(\bot,\bot),(\bot,\top),(\top,\bot),(\top,\top)$.
 	
-	Sierpi\'nski\topos{} $\mathsf {Fun}(\mathsf 2,\mathsf {Set})$ 的终对象为 $1\to 1$, 有 $3$ 个子终对象 $0\to 0$, $0\to 1$, $1\to 1$.
+	例 \ref{varying-set-topos} 介绍的\topos{} $\mathsf {Fun}(\mathsf 2,\mathsf {Set})$ 的终对象为 $1\to 1$, 有 $3$ 个子终对象 $0\to 0$, $0\to 1$, $1\to 1$, 即 $3$ 个真值 $\bot,\star,\top$; 我们提到过 $\star$ 可理解为 ``将要成真''.
 \end{example}
 
 \begin{example}
@@ -1082,7 +1182,7 @@ $$
 
 \begin{propdef}
 	{(子对象的交)}
-	在\topos{}中, 定义子对象 $U\to X$, $V\to X$ 的\emph{交}是子对象
+	在具有拉回的范畴中, 定义子对象 $U\to X$, $V\to X$ 的\emph{交}是子对象
 	$U\times_X V \to X$.
 	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJVXFx0aW1lc19YIFYiXSxbMCwxLCJVIl0sWzEsMCwiViJdLFsxLDEsIlgiXSxbMCwxXSxbMSwzXSxbMCwyXSxbMiwzXV0=
 	\[\begin{tikzcd}[ampersand replacement=\&]
@@ -1169,6 +1269,8 @@ $$
 	对于子终对象 $U,V$, 对任意对象 $X$, $\operatorname{Hom}(X,V^U)\simeq \operatorname{Hom}(X\times U,V)$ 至多有一个元素, 故 $V^U$ 也是子终对象. 这说明 $\operatorname{Sub}(1)$ 有指数对象, 从而是 Heyting 代数.
 \end{proof}
 
+\todo{内蕴版本}
+
 \subsection{自然数对象}
 
 \begin{definition}
@@ -1212,4 +1314,37 @@ $$
     {(自然数对象不一定存在)}
     有限集范畴 $\mathsf {Fin}$ 中不存在自然数对象.
 \end{example}
+
+\subsection{Boole \topos{}与选择公理}
+
+\topos{}是类似于集合范畴的范畴, 而 Boole \topos{}比一般的\topos{} ``更像'' 集合范畴.\footnote{我尊敬的一位同学 Trebor 提醒大家注意 Boole 不是 Bool.}
+
+% Boole 代数, SGL P270, 为 Cohen 做铺垫
+
+\begin{definition}
+	{(Boole \topos{})}
+	对于\topos{} $\mathsf C$, 若子对象分类子 $\Omega$ 是 $\mathsf C$ 的内蕴 Boole 代数, 则称之为 \emph{Boole \topos{}} (Boolean topos).
+\end{definition}
+
+\begin{example}
+	{}
+	$\mathsf {Set}\times\mathsf {Set}$ 是 Boole \topos{}.
+\end{example}
+
+\begin{prop}
+	{}
+	对于\topos{} $\mathsf C$, 如下条件等价.
+	\begin{itemize}
+		\item $\mathsf C$ 是 Boole \topos{};
+		\item \emph{非}运算 $\neg\colon \Omega\to\Omega$ 满足 $\neg\neg=\operatorname{id}$;
+		\item 对任意对象 $X$, $\operatorname{Sub}(X)$ 为 Boole 代数;
+		\item (``排中律'') 对任意子对象 $U\to X$, 有 $U\vee \neg U = X$;
+		\item $\top,\bot\colon 1\to\Omega$ 共同决定了一个同构 $1+1\to\Omega$.
+	\end{itemize}
+\end{prop}
+
+\begin{remark}
+	{(Boole 与二值性无关)}
+	注意 Boole \topos{}中尽管有 ``排中律'' 以及 $1+1\simeq\Omega$, 却\emph{不一定只有两个真值}. $\mathsf {Set}\times\mathsf {Set}$ 就是一例.
+\end{remark}
 

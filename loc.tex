@@ -129,13 +129,13 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\end{tikzcd}\]
 \end{prop}
 
-上述伴随远远不是范畴等价; 首先, 从拓扑空间对应的位象中不一定能重构出原来的拓扑空间, 例如所有平凡拓扑对应的位象都是 $1$.
+上述伴随远远不是范畴等价; 首先, 从拓扑空间对应的位象中不一定能重构出原来的拓扑空间, 例如所有平凡拓扑对应的位象都是终位象 $1$.
 
 然而, 对于分离性较好的空间, 其对应的位象确实能重构出这个空间:
 \begin{definition}
 	{(清晰空间)}
-	设 $X$ 为拓扑空间. 若伴随 \ref{top-loc-adjunction} 的单位 $X \to \operatorname{Pt}\operatorname{Open}(X)$ 是同胚,
-	则称 $X$ 为\emph{清晰空间} (sober space\footnotemark). 清晰空间的范畴正是上述伴随给出的等价的满子范畴 (命题 \ref{adjoint-full-subcategory-equivalence}).
+	设 $X$ 为拓扑空间. 若命题 \ref{top-loc-adjunction} 中伴随的单位 $X \to \operatorname{Pt}\operatorname{Open}(X)$ 是同胚,
+	则称 $X$ 为\emph{清晰空间} (sober space\footnotemark). 换言之, 清晰空间的范畴是上述伴随给出的等价的满子范畴 (命题 \ref{adjoint-full-subcategory-equivalence}).
 \end{definition}
 \footnotetext{Sober 的原义是清醒, 未喝醉. 直观上一个 sober 空间中的点没有过于 ``糊在一起'', 清晰可辨.}
 
@@ -197,7 +197,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 
 
 
-\section{测度与随机性}
+\subsection{测度与随机性}
 
 本小节介绍 Alex Simpson 的文章 \cite{SIMPSON20121642} 引入的\emph{随机序列的位象}. 它是 $0$ 和 $1$ 组成的所有可数序列的空间的 ``子空间'', 但没有任何一个序列属于这个子空间, 因为 ``一个确定的序列永远不是随机序列''.
 
@@ -235,3 +235,18 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 \philoquote{[A locale is a] propositional geometric theory pretending to be a space.}{Steven Vickers}
 
 建议在阅读本节之前阅读附录 \ref{first-order-languages} 节, 尤其关注几何逻辑的内容.
+
+% frame = complete Heyting algebra (但作为范畴不同构)
+
+我们将建立如下对应.
+
+\begin{itemize}
+	\item 位象 = 命题逻辑理论
+	\item 开集 = 命题
+	\item 点 = 模型
+\end{itemize}
+
+\subsection{经典命题逻辑与 Lindenbaum 代数}
+
+设 $\Sigma$ 是由若干命题符号 $p,q,r,\cdots$ 组成的符号表\footnote{在定义 \ref{def-first-order-signature} 的框架中, 我们可以说 $\Sigma$ 包括 $0$ 个类型, $0$ 个函数符号 (固然, 因为 $\Sigma$ 中没有类型), 以及若干个 $0$ 元关系符号 $p,q,r,\cdots$.}.
+定义 $\mathsf {Sen}_\Sigma$ 为 $\Sigma$ 上由 $\lor,\land,\neg,\Rightarrow,\top,\bot$ 组成的公式\footnote{这里的公式也可以放在定义 \ref{formula} 的框架中, 例如 $(p\land q)\Rightarrow r$, $p\lor\neg p$, $p\Rightarrow\bot$ 等等. 注意, 在这个框架中没有等式 $p=q$, 因为 $p,q$ 不是某个类型的项 ($\Sigma$ 中没有类型), 而是 $0$ 元关系符号.}的集合.

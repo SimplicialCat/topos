@@ -28,12 +28,14 @@
     title={\textsf{注~\thetcbcounter} #2},
     #1
 }
+
+\def\examplecolor{pink!25!white}
 \newtcolorbox[
     use counter from=remark,
     %number within=chapter,
 ]{example}[2][]{
-    colback=pink!25!white,
-    colframe=pink!25!white,
+    colback=\examplecolor,
+    colframe=\examplecolor,
     coltitle=black,
     breakable,
     title={\textsf{例~\thetcbcounter} #2},
@@ -72,6 +74,7 @@
     title={\textsf{命题-定义~\thetcbcounter} #2},
     #1
 }
+
 \newtcolorbox[
     auto counter,
     number within=chapter

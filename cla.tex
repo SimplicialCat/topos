@@ -1,4 +1,82 @@
-\chapter{分类\topos{}}
+\chapter{句法景与分类\topos{}}
+
+\label{cla}
+
+\section{句法范畴: 语法--语义对偶}
+
+\todo{两种不同的 syntactic category}
+
+\todo{写成单独的一章?}
+
+\philoquote{The importance of syntactic categories lies in the fact that they allow us to associate with a theory (in the sense of axiomatic presentation), which is a `linguistic',
+	unstructured kind of entity, a well-structured mathematical object whose `geometry' embodies the syntactic aspects of the theory.}{Olivia Caramello, \cite{TST}}
+
+%  A most notable fact is that the models of the theory can be recovered as functors defined on its syntactic category which respect the ‘logical’ structure on it.
+
+逻辑学上有一个一般性的现象, 即理论 (一阶逻辑, 类型论等等) 与范畴之间的对应. 某些范畴可以为理论提供语义, 某些理论可以作为范畴的语法.
+%
+\todo{}
+
+我们将看到语法--语义对偶也是一种代数--几何对偶\footnote{或许也可以反过来说代数--几何对偶不过是一种语法--语义对偶.}, 语法对应代数, 语义对应几何.
+
+\subsection{类型论的语境范畴}
+
+附录 \ref{appendix-type-theory} 节简单介绍了类型论.
+
+\begin{definition}
+	{}
+	对于一种类型论 $T$, 其\emph{语境范畴} (category of contexts) $\operatorname{Con}(T)$ 定义如下.
+	\begin{itemize}
+		\item $\operatorname{Con}(T)$ 的\emph{对象}为类型论 $T$ 的\emph{语境};
+		\item $\operatorname{Con}(T)$ 中的\emph{态射}为语境之间的\emph{代换}.
+	\end{itemize}
+\end{definition}
+
+
+
+\subsection{一阶理论的句法范畴}
+
+\begin{definition}
+	{(一阶理论的句法范畴)}
+	
+	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论. 定义\emph{句法范畴} (syntactic category) $\mathcal C_{\mathbb T}$, 其中
+	\begin{itemize}
+		\item \emph{对象}是 $\Sigma$ 上带有语境的公式 $(\vec x , \phi)$ 的 $\alpha$-等价类 ($\alpha$ 等价是指两个公式仅有变量名的差异);
+		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的\emph{态射} (其中不妨设语境 $\vec x , \vec y$ 不交) 是公式 $\theta(\vec x,\vec y)$ 的 $\mathbb T$-可证等价类, 满足 $\mathbb T$-可证的\emph{函数性}, 即如下相继式 $\mathbb T$-可证.
+		\begin{itemize}
+			\item $\phi\vdash_{\vec x} \exists \vec y \,\theta$, 含义是 ``对给定的 $\vec x$, 存在 $\vec y$ 满足 $\theta(\vec x,\vec y)$'';
+			\item $\theta\vdash_{\vec x,\vec y} \phi \wedge \psi$,
+			\item $\theta \wedge \theta[\vec z/\vec y] \vdash_{\vec x,\vec y,\vec z} \vec y = \vec z$, 这里 $\theta[\vec z / \vec y]$ 是指将 $\theta$ 中的 $\vec y$ 替换为 $\vec z$, 公式的含义是 ``对给定的 $\vec x$, 至多存在一个 $\vec y$ 满足 $\theta(\vec x,\vec y)$''.
+		\end{itemize}
+	\end{itemize}
+\end{definition}
+
+\begin{remark}
+	{}
+	句法范畴的态射又称\emph{变量代换}.
+\end{remark}
+
+\begin{remark}
+	{}
+	由定义, 一个理论的句法范畴依赖于理论所属的类别 (代数, 正则, 凝聚, $\cdots$). 一个代数理论也可以视为凝聚理论, 但一个代数理论的句法范畴与它作为凝聚理论的句法范畴不同.
+\end{remark}
+
+\subsection{代数理论的句法范畴--Lawvere 理论}
+
+\todo{万有代数}
+
+\begin{prop}
+	{}
+	对于代数理论 $\mathbb T$,
+\end{prop}
+
+\begin{example}
+	[label={Lawvere-theory-CartSp}]
+	{}
+	$\mathsf {CartSp}$
+\end{example}
+
+\section{分类\topos{}}
 
 \philoquote{
     The notion of classifying topos really formalizes the notion of ``content'' of a mathematical theory.
@@ -18,7 +96,7 @@ $$
 类似地, 在许多情形下, \topos{}上的一种结构可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
 分类\topos{}到自身的恒等态射对应着其上的 ``万有'' 的这种结构.
 
-\section{$G$-旋子的分类\topos{}}
+\subsection{$G$-旋子的分类\topos{}}
 
 我们将看到, 分类\topos{}不仅仅是分类空间的一个精神上的类比; 它某种意义上是分类空间的推广, 这种推广正是沿着 Grothendieck 的 ``\topos{}作为空间概念的推广'' 的思路.
 
@@ -87,7 +165,7 @@ $$
 
 理论 $\mathbb T_G$ 是一种几何理论 (定义 \ref{kinds-of-theories}), 因为它用到了 ``真'' $\top$, 存在量词 $\exists$, ``假'' $\bot$ 和无穷析取 $\bigvee$.
 
-\section{子终对象的分类\topos}
+\subsection{子终对象的分类\topos}
 
 考虑范畴 $\mathsf 2 = \{\bullet\longrightarrow\bullet\}$. 例 \ref{varying-set-topos} 介绍的 ``变集范畴'' $\mathsf {Fun}(\mathsf {2},\mathsf {Set})\simeq\widehat {\mathsf {2}}$ 还有一个特殊的名字叫 \emph{Sierpi\'nski \topos{}}, 因为它与 Sierpi\'nski 空间有关.
 
@@ -98,7 +176,7 @@ $$
 
 \todo{}
 
-\section{环的分类\topos{}, 万有环}
+\subsection{环的分类\topos{}, 万有环}
 
 本节以一种有些唐突的方式构造环的分类\topos{}, 以及其中 ``万有'' 的环. %后面我们将看到构造分类\topos{}有更系统的方法.
 
@@ -132,7 +210,7 @@ $$
 $\mathsf A$ 中有一个特殊的对象 $A = \mathbb{Z}[x]$,
 也即仿射直线.
 
-\section{几何理论的分类\topos{}}
+\subsection{几何理论的分类\topos{}}
 
 \begin{definition}
     {}

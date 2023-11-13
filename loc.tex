@@ -147,7 +147,21 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 另一方面, 从一个位象的所有点的信息也无法重构出这个位象: 下面的例子表明一个位象甚至可能没有点!
 
 \begin{example}
-	{(一个没有点的位象的例子)}
+	{(没有点的位象的例子: 完备无原子 Boole 代数)}
+	
+	\emph{Boole 代数}是有二元交, 二元并以及补运算 (满足适当条件) 的偏序集; \emph{完备 Boole 代数}是指存在任意交和任意并的 Boole 代数.
+	由定义, 完备 Boole 代数是\fm.
+	称偏序集中的一个元素为\emph{原子}, 是指除 $\bot$ 以外没有比它更小的元素.
+	对任何完备 Boole 代数 $B$, 设 $P$ 是 $B$ 的完全素滤子,
+	则 $\bigwedge P$ 是 $B$ 的原子. 这是因为, 假设 $x < \bigwedge P$,
+	则 $x\notin P$, 从而由 $\top=x\vee\neg x\in P$, 得 $\neg x \in P$. 这说明 $x<\neg x$, 故 $x=\bot$.
+	因此, 完备无原子 Boole 代数对应没有点的位象.
+	下面是两个完备无原子 Boole 代数的例子.
+	
+	\begin{itemize}
+		\item 设 $(X,\mathcal A,\mu)$ 为 $\sigma$-有限测度空间, $N\subset \mathcal A$ 为零测集的理想,
+		那么商代数 $\mathcal A / N$ 是完备 Boole 代数; 并且当 $\mu$ 无原子 (没有正测度的点) 时, $\mathcal A/N$ 无原子.
+		\item	
 	设 $X$ 为拓扑空间. 对于开集 $U\subset X$, 定义 $\neg U$ 是 $U$ 的补集的内部.
 	考虑偏序集
 	$$
@@ -157,20 +171,13 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	%P\mathbb{N}\big/ \sim,\quadA\sim B \Leftrightarrow A\setminus B, B\setminus A\text{为有限集}.
 	%$$% 是 $\mathbb{N}$ 的子集在相差有限个元素的等价关系下构成的偏序集.
 	$$
-	称为 $X$ 的\emph{正则开集代数} (regular open algebra). 可以证明 $\text{RO}(X)$ 是一个\emph{完备 Boole 代数}\footnotemark (Boole 代数是有交, 并, 补运算的偏序集; 完备是指存在任意交和任意并).
-	例如其中的任意并由下式给出:
+	称为 $X$ 的\emph{正则开集代数} (regular open algebra). 可以证明 $\text{RO}(X)$ 也是一个完备 Boole 代数\footnotemark. 例如其中的任意并由下式给出:
 	$$
 	\bigvee_{i\in I}U_i = \neg\neg\Big(\bigcup_{i\in I}U_i\Big).
 	$$
-	由定义, 完备 Boole 代数是\fm.
 	
-	称偏序集中的一个元素为\emph{原子}, 是指除 $\bot$ 以外没有比它更小的元素. 若取空间 $X$ 为欧氏空间, 则 $\text{RO}(X)$ 没有原子 (任何正则开集内都有一个更小的正则开集).
-	
-	对任何完备 Boole 代数 $B$, 设 $P$ 是 $B$ 的完全素滤子,
-	则 $\bigwedge P$ 是 $B$ 的原子. 这是因为, 假设 $x < \bigwedge P$,
-	则 $x\notin P$, 从而由 $\top=x\vee\neg x\in P$, 得 $\neg x \in P$. 这说明 $x<\neg x$, 故 $x=\bot$.
-	
-	由上述论证, 存在一个完备 Boole 代数 $\text{RO}(X)$ 没有完全素滤子, 故我们得到了一个没有点的位象.
+	若取空间 $X$ 为欧氏空间, 则 $\text{RO}(X)$ 没有原子 (任何正则开集内都有一个更小的正则开集).
+	\end{itemize}
 \end{example}
 \footnotetext{\url{https://planetmath.org/regularopenalgebra}}
 
@@ -228,7 +235,9 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	设 $X$ 为清晰空间, 带有测度 $\mu$, 则 $\operatorname{Ran}_\mu(X)$ 的点一一对应于 $X$ 的原子.
 \end{prop}
 
+\todo{解释原子的含义}
 
+\todo{}
 
 \section{位象与逻辑}
 
@@ -248,5 +257,109 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 
 \subsection{经典命题逻辑与 Lindenbaum 代数}
 
+Lindenbaum 代数是用代数方法研究逻辑的工具, 代数--几何对偶. 粗略地说, 它是一个理论中的 ``命题的代数''; 在经典逻辑的情形, 它就是 \emph{Boole 代数}, 而对应的 ``空间'' 是 \emph{Stone 空间}, 两者的对偶由 \emph{Stone 表示定理}描述.
+
 设 $\Sigma$ 是由若干命题符号 $p,q,r,\cdots$ 组成的符号表\footnote{在定义 \ref{def-first-order-signature} 的框架中, 我们可以说 $\Sigma$ 包括 $0$ 个类型, $0$ 个函数符号 (固然, 因为 $\Sigma$ 中没有类型), 以及若干个 $0$ 元关系符号 $p,q,r,\cdots$.}.
-定义 $\mathsf {Sen}_\Sigma$ 为 $\Sigma$ 上由 $\lor,\land,\neg,\Rightarrow,\top,\bot$ 组成的公式\footnote{这里的公式也可以放在定义 \ref{formula} 的框架中, 例如 $(p\land q)\Rightarrow r$, $p\lor\neg p$, $p\Rightarrow\bot$ 等等. 注意, 在这个框架中没有等式 $p=q$, 因为 $p,q$ 不是某个类型的项 ($\Sigma$ 中没有类型), 而是 $0$ 元关系符号.}的集合.
+定义 $\mathsf {Sen}_\Sigma$ 为 $\Sigma$ 上由 $\lor,\land,\neg,\Rightarrow,\top,\bot$ 组成的公式\footnote{这里的公式也可以放在定义 \ref{formula} 的框架中. 注意, 在这个框架中没有等式 $p=q$, 因为 $p,q$ 不是某个类型的项 ($\Sigma$ 中没有类型), 而是 $0$ 元关系符号.}的集合, 包括 $(p\land q)\Rightarrow r$, $p\lor\neg p$, $p\Rightarrow\bot$ 等等.
+
+\begin{definition}
+	{}
+	在经典逻辑中, 对于符号表 $\Sigma$ 上的命题理论 $\mathbb T$ (即一些公理的集合), 定义 $\mathbb T$ 的 \emph{Lindenbaum 代数} $\text{LA}_{\mathbb T}$ 为 $\Sigma$ 上公式的 $\mathbb T$-\emph{可证等价类}构成的 Boole 代数:
+	$$
+	\text{LA}_{\mathbb T} := \mathsf {Sen}_\Sigma \big/ {\equiv_{\mathbb T}},\quad
+	\text{其中 $\phi\equiv_{\mathbb T} \psi$ 当且仅当 $\mathbb T$ 可证 $\phi\Leftrightarrow\psi$}.
+	$$
+\end{definition}
+
+\begin{definition}
+	{(命题理论之间的态射)}
+	对于两个命题理论 $(\Sigma,\mathbb T)$, $(\Sigma',\mathbb T')$, 定义态射 $f\colon \mathbb T \to \mathbb T'$ 为映射 $f\colon \Sigma \to \mathsf {Sen}_{\Sigma'}$, 它自然诱导映射 $\mathsf {Sen}_\Sigma\to \mathsf {Sen}_{\Sigma'}$, 使得 $f$ 保持公理, 即 $f(\mathbb T)\subset \mathbb T'$. 等价地, $f$ 为 Boole 代数同态 $\text{LA}_{\mathbb T} \to \text{LA}_{\mathbb T'}$.
+\end{definition}
+
+\begin{remark}
+	{}
+	命题理论的态射可类比于环同态: 对于两个环 $R=\mathbb{Z}[x_1,\cdots,x_n]/I$ 与 $R'=\mathbb{Z}[y_1,\cdots,y_m]/J$, 环同态 $f\colon R\to R'$ 为映射 $\{x_1,\cdots,x_n\}\to R'$ (它自然诱导映射 $\mathbb{Z}[x_1,\cdots,x_n]\to \mathbb{Z}[y_1,\cdots,y_m]$), 使得 $f(I)\subset J$.
+\end{remark}
+
+\begin{definition}
+	{(命题理论的模型)}
+	一个命题理论 $(\Sigma,\mathbb T)$ 的\emph{经典模型} (classical model, 又称\emph{解释}, interpretation) 是一个函数 $f\colon \Sigma \to \{\top,\bot\}$, 它自然诱导一个映射 $\bar f\colon \mathsf {Sen}_\Sigma\to\{\top,\bot\}$, 使得 $\bar f(\mathbb T)\subset \{\top\}$. 记 $\mathbb T$ 的经典模型的集合为 $\text{Mod}(T)$.
+	
+	一般地, 对任意 Boole 代数 $A$, $(\Sigma,\mathbb T)$ 的 \emph{$A$-模型}是一个映射 $f\colon \Sigma \to A$, 它自然诱导一个映射 $\bar f\colon \mathsf {Sen}_\Sigma\to A$, 使得 $\bar f(\mathbb T)\subset \{\top\}$. 记 $\mathbb T$ 的 $A$-模型的集合为 $\text{Mod}_A(\mathbb T)$.
+\end{definition}
+
+
+
+\begin{prop}
+	{}
+	命题理论 $(\Sigma,\mathbb T)$ 的 $A$-模型一一对应于 Boole 代数同态 $\text{LA}_{\mathbb T} \to A$.
+\end{prop}
+
+\begin{proof}
+	设 $f\colon \Sigma\to A$ 为 $\mathbb T$ 的 $A$-模型. 我们需要证明 $\bar f\colon \mathsf {Sen}_\Sigma\to A$ 将 $\mathbb T$-等价的公式对应到相同的元素. 若 $\phi \equiv_{\mathbb T} \psi$, 设 $\mathbb T$ 对 $\phi \Leftrightarrow\psi$ 的证明用到了公理 $t_1,\cdots,t_n$, 那么由经典逻辑的性质可知
+	$$
+	\big( \bar f(t_1) \land \cdots \land \bar f (t_n) \big) \leq \big( \bar f(\phi) \Leftrightarrow \bar f(\psi) \big),
+	$$
+	但由 $f$ 是 $\mathbb T$ 的 $A$-模型, $\bar f(t_1)=\cdots = \bar f(t_n) = \top\in A$, 这说明 $\bar f(\phi) = \bar f(\psi)$.
+\end{proof}
+
+\begin{remark}
+	{}
+	上述命题可类比于环同态的如下性质:
+	对于多项式 $f_1,\cdots,f_m\in \mathbb{Z}[x_1,\cdots,x_n]$ 以及任何环 $A$, 集合
+	$$
+	\big\{
+	(a_1,\cdots,a_n)\in A^n\mid f_i(a_1,\cdots,a_n)=0\,(i=1,2,\cdots,m)
+	\big\}
+	$$
+	一一对应于环同态 $\mathbb{Z}[x_1,\cdots,x_n]/(f_1,\cdots,f_m) \to A$.
+\end{remark}
+
+\begin{remark}
+	{}
+	由上述命题, $\mathbb T$ 的经典模型一一对应于 Boole 代数同态 $\text{LA}_{\mathbb T} \to \{\top,\bot\}$, 即 $\text{LA}_{\mathbb T}$ 的\emph{超滤}.
+	回忆位象 $X$ 的点是\fm{}同态 $\mathcal O(X) \to \{\top,\bot\}$, 即 $\mathcal O(X)$ 的完全素滤子. 两种情形的区别在于逻辑规则: Boole 代数中没有任意并, 而有排中律; \fm{}中有任意并, 没有排中律.
+\end{remark}
+
+\begin{prop}
+	{}
+	命题理论的态射 $f\colon (\Sigma,\mathbb T) \to (\Sigma',\mathbb T')$ 诱导模型的映射 $\text{Mod}_A(\mathbb T') \to \text{Mod}_A(\mathbb T)$.
+\end{prop}
+
+注意方向的反转 (这是代数--几何对偶的一部分).
+%集合 $\text{Mod}(\mathbb T)$ 可附加一个拓扑, 以 $\{f\in\text{Mod}(\mathbb T)\mid \bar f(\phi)=\top\}$ 为开集基 ($\phi$ 取所有公式).
+
+\begin{definition}
+	{(Stone 空间)}
+	称紧的完全不连通 (仅有的连通分支为单点集) Hausdorff 空间为 \emph{Stone 空间}. 等价的定义是紧且\emph{完全分离} (任何两个点都能通过把空间分成两个连通分支而分开) 的空间.
+\end{definition}
+
+\begin{propdef}
+	{}
+	对 Boole 代数 $B$, 在集合 $\operatorname{Hom}_{\mathsf {BooleAlg}}(B,\{\top,\bot\})$ 上附加一个拓扑, 以 $\{b\in B\mid f(b)=\top\}$ 为开集基; 那么 $\operatorname{Hom}_{\mathsf {BooleAlg}}(B,\{\top,\bot\})$ 是 Stone 空间.
+\end{propdef}
+
+\begin{proof}
+	首先证明 $\operatorname{Hom}_{\mathsf {BooleAlg}}(B,\{\top,\bot\})$ 是紧空间. 事实上, 它是积空间 $\{\top,\bot\}^{B}$ 的闭子集. 由 Tychonoff 定理, 紧空间的任意乘积是紧空间, 故 $\{\top,\bot\}^{B}$ 是紧空间, 从而 $\operatorname{Hom}_{\mathsf {BooleAlg}}(B,\{\top,\bot\})$ 是紧空间.
+	\todo{}
+\end{proof}
+
+\begin{prop}
+	{(Stone 对偶)}
+	
+	Boole 代数与 Stone 空间之间存在范畴等价
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7Qm9vbGVBbGd9Il0sWzIsMCwiXFxtYXRoc2Yge1N0b25lU3B9Il0sWzAsMSwiXFxvcGVyYXRvcm5hbWV7SG9tfSgtLFxce1xcdG9wLFxcYm90XFx9KSIsMix7Im9mZnNldCI6Mn1dLFsxLDAsIlxcb3BlcmF0b3JuYW1le0hvbX0oLSxcXHtcXHRvcCxcXGJvdFxcfSkiLDIseyJvZmZzZXQiOjJ9XV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {BooleAlg}} \&\& {\mathsf {StoneSp}.}
+		\arrow["{\operatorname{Hom}_{\mathsf {BooleAlg}}(-,\{\top,\bot\})}"', shift right=2, from=1-1, to=1-3]
+		\arrow["{\operatorname{Hom}_{\mathsf {StoneSp}}(-,\{\top,\bot\})}"', shift right=2, from=1-3, to=1-1]
+	\end{tikzcd}\]
+\end{prop}
+
+\begin{proof}
+	
+\end{proof}
+
+\todo{}
+
+% sublocale 与 product locale 对应的理论是什么

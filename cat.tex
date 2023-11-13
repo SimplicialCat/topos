@@ -126,13 +126,18 @@
 
 \begin{example}
     {(紧开拓扑)}
-    在拓扑学中, 可以证明拓扑空间范畴 $\mathsf {Top}$ 中的局部紧空间都是可作指数的.
+    在拓扑空间范畴 $\mathsf {Top}$ 中, 一般的对象不一定可作指数, 但局部紧 Hausdorff 空间都是可作指数的.
     若 $X$ 是局部紧空间, $Y$ 是任意拓扑空间,
     指数对象 $Y^X$ 上的拓扑称为\emph{紧开拓扑} (compact-open topology),
-    因为它可由如下开集生成:
+    这个名字是因为它可由如下开集生成:
     对紧集 $K\subset X$ 与开集 $O\subset Y$,
     取 $X$ 到 $Y$ 所有满足 $f(K) \subset O$ 的映射构成的集合.
+    
+    拓扑学中, 人们常说 ``我们在一个方便的拓扑空间范畴中工作''\footnotemark,
+    即要求所考虑的范畴包含我们感兴趣的空间, 且具有积闭等性质.
+    一个比较方便的范畴是\emph{紧生成弱 Hausdorff 空间范畴} $\mathsf{CGWH}$. Johnstone \cite{Johnstone-OTT} 构造了一个方便的拓扑空间范畴, 且它是\topos{}.
 \end{example}
+\footnotetext{\url{https://ncatlab.org/nlab/show/convenient+category+of+topological+spaces}}
 
 \begin{example}
     {(函子范畴)}
@@ -144,7 +149,7 @@
     对于积闭范畴, 指数对象实际上构成一个\emph{双函子} (也即乘积范畴出发的函子) $\mathsf C^{\op}\times\mathsf C \to \mathsf C$, $(X,Y)\mapsto Y^X$.
 \end{prop}
 
-    指数对象的性质也可表述为函子 . 下面 (\ref{slice-category} 节) 还会介绍更多相关的性质.
+    %指数对象的性质也可表述为函子 . 下面 (\ref{slice-category} 节) 还会介绍更多相关的性质.
     
     %另外, 即使范畴中没有乘积也可定义指数对象: 使用米田嵌入 $\yo \colon \mathsf C \to \mathsf {Fun}(\mathsf C^{\op},\mathsf {Set})$,
     %指数对象 $Y^X$ 是函子 $\yo(Y)^{\yo(X)}$ 的表示对象.
@@ -156,12 +161,65 @@
 \begin{definition}
     [label={evaluation-map}]
     {(取值映射)}
-    在 (\ref{exponential-adjoint}) 中取 $Z=Y^X$, 那么 $\operatorname{id}_{Y^X}\in \operatorname{Hom}_{\mathsf C}(Y^X,Y^X)$ 在另一边对应的态射称作\emph{取值映射} (evaluation map) $\operatorname{ev}\colon Y^X\times X \to Y$.
+    在 (\ref{exponential-adjoint}) 中取 $Z=Y^X$, 那么 $\operatorname{id}_{Y^X}\in \operatorname{Hom}_{\mathsf C}(Y^X,Y^X)$ 在另一边对应的态射称作\emph{取值映射} (evaluation map) $\operatorname{ev}\colon Y^X\times X \to Y$. 换言之, 取值映射 $\operatorname{ev}\colon Y^X\times X \to Y$ 是伴随 $(-)\times X \dashv (-)^X$ 的余单位.
 \end{definition}
 
-由定义, 取值映射 $\operatorname{ev}\colon Y^X\times X \to Y$ 正是伴随 $(-)\times X \dashv (-)^X$ 的余单位.
+指数对象有与数的乘方类似的规律.
+
+\begin{prop}
+	[label={exponential-law}]
+	{(指数律)}
+	在积闭范畴中, 对任意对象 $X,Y,Z$ 有
+	$$
+	(Z^{Y})^X\simeq Z^{Y\times X}.
+	$$
+\end{prop}
+
+\begin{proof}
+	由指数对象的性质, 有自然同构
+	\begin{align*}
+		\operatorname{Hom}(W,(Z^{Y})^X)
+		&\simeq\operatorname{Hom}(W\times X,Z^Y)\\
+		&\simeq\operatorname{Hom}(W\times X\times Y,Z)\simeq\operatorname{Hom}(W,Z^{Y\times X}).
+	\end{align*}
+	由米田引理, 结论得证.
+\end{proof}
+
+\begin{prop}
+	[label={sum-exponential-product}]
+	{}
+	在有二元和的积闭范畴中, 对任意对象 $X,Y,Z$ 有
+	$$
+	Z^{X + Y}\simeq Z^X \times Z^Y.
+	$$
+\end{prop}
+
+\begin{proof}
+	略. 与命题 \ref{exponential-law} 的证明类似, 使用米田引理.
+%	\begin{align*}
+%		\operatorname{Hom}(W,Z^{X+Y})
+%		&\simeq\operatorname{Hom}(W\times (X+Y),Z)\\
+%		&\simeq\operatorname{Hom}(W\times X+W\times Y,Z)\\
+%		&\simeq\operatorname{Hom}(W\times X,Z)+\operatorname{Hom}(W\times Y,Z)\\
+%		&\simeq\operatorname{Hom}(W,Z^X)\times\operatorname{Hom}(W,Z^Y)\\
+%		&\simeq\operatorname{Hom}(W,Z^X\times Z^Y).
+%	\end{align*}
+	其中要用到积闭范畴中的 ``分配律'' $$W\times (X+Y)\simeq W\times X+W\times Y,$$ 这是因为 $(-)\times W$ 作为 $(-)^W$ 的左伴随保持余极限 (命题 \ref{adjoints-preserve-limits}).
+\end{proof}
 
 
+\begin{prop}
+	[label={product-exponential-product}]
+	{}
+	在积闭范畴中,
+	$$
+	(Z\times Y)^X\simeq Z^X\times Y^X.
+	$$
+\end{prop}
+
+\begin{proof}
+	这是因为 $(-)^X$ 作为 $(-)\times X$ 的右伴随保持极限 (命题 \ref{adjoints-preserve-limits}).
+\end{proof}
 
 \subsection{子对象分类子}
 
@@ -169,8 +227,8 @@
 定义其\emph{特征函数} (characteristic function) $\chi_U \colon X \to \{0,1\}$,
 $$
 \chi_U(x) = \begin{cases}
-    1, & x\in U,\\
-    0, & x\notin U.
+    \ 1, & x\in U,\\
+    \ 0, & x\notin U.
 \end{cases}
 $$
 (我们可将特征函数 $\chi_U(x)$ 视为 ``含一个变量 $x$ 的命题'', 当且仅当 $x\in U$ 时命题为真.)
@@ -448,7 +506,7 @@ $$
 
 幂对象还有一种独立于子对象分类子的定义. 注意到 (形式上) 有
 $$
-\{X\times Y\text{ 的子对象}\} \simeq \operatorname{Hom}(X\times Y,\Omega) \simeq \operatorname{Hom}(Y,\Omega^X),
+\{X\times Y\text{ 的子对象}\} \simeq \operatorname{Hom}(X\times Y,\Omega) \simeq \operatorname{Hom}(Y,\Omega^X)\simeq \operatorname{Hom}(Y,PX),
 $$
 这启发了如下定义.
 \begin{definition}{(幂对象, 另一种定义)}
@@ -464,9 +522,9 @@ $$
 \end{tikzcd}\]
 \end{definition}
 
-另一个有趣的事实是, 由幂对象和子对象分类子, 我们可构造所有指数对象. 如下构造取自 \cite{SGL} IV.2 节.
+另一个有趣的事实是, 由幂对象和子对象分类子, 我们可构造所有指数对象; 其思路是将函数表示为图像. 如下构造取自 \cite{SGL} IV.2 节.
 
-集合映射 $f\colon X\to Y$ 可视为 $X\times Y$ 的子集 $\Gamma(f) = \{(x,f(x))\mid x\in X\}$, 即映射的\emph{图像} (graph). $X\times Y$ 的子集 $\Gamma$ 是某个函数 $X\to Y$ 的图像的充要条件是, 对任意 $x\in X$, 存在唯一的 $y$ 使得 $(x,y)\in \Gamma$.
+集合映射 $f\colon X\to Y$ 可视为 $X\times Y$ 的子集 $\Gamma(f) = \{(x,f(x))\mid x\in X\}$, 称为映射的\emph{图像} (graph). $X\times Y$ 的子集 $\Gamma$ 是某个函数 $X\to Y$ 的图像的充要条件是, 对任意 $x\in X$, 存在唯一的 $y$ 使得 $(x,y)\in \Gamma$.
 % $\{y\in Y\mid (x,y)\in\Gamma(f)\}$ 是单元集.
 在\topos{}中我们完全可以模仿这个构造.
 
@@ -477,9 +535,9 @@ $v\colon $
 $u\colon P(X\times Y) \to PX$
 
 % https://q.uiver.app/#q=WzAsNCxbMCwxLCJQKFhcXHRpbWVzIFkpIl0sWzEsMSwiUFgiXSxbMSwwLCIxIl0sWzAsMCwiWV5YIl0sWzMsMl0sWzIsMSwiXFx0b3BfWCJdLFszLDBdLFswLDEsInUiLDJdLFszLDEsIiIsMSx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dXQ==
-\[\begin{tikzcd}[ampersand replacement=\&]
+\[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
 	{Y^X} \& 1 \\
-	{P(X\times Y)} \& PX
+	{\hspace{-2em}P(X\times Y)} \& PX
 	\arrow[from=1-1, to=1-2]
 	\arrow["{\top_X}", from=1-2, to=2-2]
 	\arrow[from=1-1, to=2-1]
@@ -614,7 +672,7 @@ $u\colon P(X\times Y) \to PX$
     特别地,
     $\Sigma_X \colon \mathsf {Set}^X \to \mathsf {Set}$
     可写为
-    $\{A_x \mid x\in X\} \mapsto \sum_{x\in X} A_x$.
+    $\{A_x \mid x\in X\} \mapsto \sum_{x\in X} A_x$, 即对 $X$ 上一族集合求和.
     更多细节可参考 \cite{SGL} I.9 节.
 \end{remark}
 
@@ -685,6 +743,14 @@ $u\colon P(X\times Y) \to PX$
     这证明了 $\Pi_X$ 是 $X^*$ 的伴随.
 \end{proof}
 
+\begin{remark}
+	{}
+	正如 $\Sigma_X\colon \mathsf C/X\to\mathsf C$ 可理解为对 $X$ 上一族对象求和,
+	$\Pi_X\colon \mathsf C/X\to\mathsf C$ 可理解为对 $X$ 上一族对象求积.
+	而 $X^*\colon \mathsf C\to\mathsf C/X$ 是将对象 $Y$ ``复制 $X$ 那么多份'',
+	所以 $\Pi_X\circ X^* (Y)$ 就是将 $X$ 那么多个 $Y$ 相乘, 也就是 $Y^X$.
+\end{remark}
+
 相对的情形引出了\emph{局部积闭范畴}的概念.
 
 \begin{definition}
@@ -714,9 +780,15 @@ $u\colon P(X\times Y) \to PX$
     这个命题化为绝对情形 (命题 \ref{pi-functor-absolute}).
 \end{proof}
 
-总结起来, 对于存在有限极限的局部积闭范畴, 对每个态射 $f\colon X\to Y$ 有三元伴随
+总结起来,
+
+\begin{prop}
+	[label={over-topos-essential-geometric-morphism}]
+	{(俯范畴之间的三元伴随)}
+
+对于存在有限极限的局部积闭范畴, 对每个态射 $f\colon X\to Y$ 有三元伴随
 % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDL1giXSxbMiwwLCJcXG1hdGhzZiBDL1kiXSxbMSwwLCJmXioiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMCwxLCJcXFNpZ21hX2YiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzAsIm9mZnNldCI6LTV9XSxbMCwxLCJcXFBpX2YiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzAsIm9mZnNldCI6NX1dLFszLDIsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzIsNCwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
-\[\begin{tikzcd}[ampersand replacement=\&]
+\[\begin{tikzcd}[ampersand replacement=\&,background color=\propcolor]
 	{\mathsf C/X} \&\& {\mathsf C/Y.}
 	\arrow[""{name=0, anchor=center, inner sep=0}, "{f^*}"{description, pos=0.3}, from=1-3, to=1-1]
 	\arrow[""{name=1, anchor=center, inner sep=0}, "{\Sigma_f}"{description, pos=0.3}, shift left=5, from=1-1, to=1-3]
@@ -724,10 +796,12 @@ $u\colon P(X\times Y) \to PX$
 	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
 	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
 \end{tikzcd}\]
+\end{prop}
 
 由于 $f^*$ 同时有左右伴随, 我们得到 $f^*$ 同时保持极限和余极限. 拉回也保持子对象分类子, 即 $\Omega\times Y\to Y$ 的拉回是 $\Omega\times X\to X$ (命题 \ref{subobjects-in-slice-category}). 下面我们证明拉回保持指数对象.
 
 \begin{prop}
+	[label={pullback-preserve-exponential-objects}]
 	{}
 	对于存在有限极限的局部积闭范畴,
 	拉回 $f^*\colon \mathsf C/Y\to \mathsf C/X$ 保持指数对象; 即对 $\mathsf C/Y$ 的对象 $g\colon Z\to Y, h\colon W\to Y$,
@@ -739,7 +813,7 @@ $u\colon P(X\times Y) \to PX$
 \begin{proof}
 	记 $f^*g$ 为 $g'$, $f^*W$ 为 $W'$. 要证明的是下图的里层方块交换.
 	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXG1hdGhzZiBDL1kiXSxbMiwwLCJcXG1hdGhzZiBDL1kiXSxbMCwyLCJcXG1hdGhzZiBDL1giXSxbMiwyLCJcXG1hdGhzZiBDL1giXSxbMCwxLCIoLSleaCIsMix7Im9mZnNldCI6Mn1dLFsxLDAsIigtKVxcdGltZXNfWSBXIiwyLHsib2Zmc2V0IjoyfV0sWzMsMSwiXFxTaWdtYV9mIiwyLHsib2Zmc2V0IjoyfV0sWzEsMywiZl4qIiwyLHsib2Zmc2V0IjoyfV0sWzAsMiwiZl4qIiwwLHsib2Zmc2V0IjotMn1dLFsyLDMsIigtKV57aCd9IiwwLHsib2Zmc2V0IjotMn1dLFsyLDAsIlxcU2lnbWFfZiIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCIoLSlcXHRpbWVzX1ggVyciLDAseyJvZmZzZXQiOi0yfV0sWzUsNCwiIiwyLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XSxbNiw3LCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMCw4LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMSw5LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
-	\[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
 		{\mathsf C/Y} \&\& {\mathsf C/Y} \\
 		\\
 		{\mathsf C/X} \&\& {\mathsf C/X}
@@ -756,7 +830,7 @@ $u\colon P(X\times Y) \to PX$
 		\arrow["\dashv"{anchor=center}, draw=none, from=6, to=4]
 		\arrow["\dashv"{anchor=center, rotate=90}, draw=none, from=7, to=5]
 	\end{tikzcd}\]
-	由伴随的 (同构意义下的) 唯一性, 只需证明外层方块交换. 展开定义, 这就是说对任意 $U\to X$, 下图的大长方形为拉回.
+	由伴随的复合以及伴随的 (同构意义下的) 唯一性, 只需证明外层方块交换. 展开定义, 这就是说对任意 $U\to X$, 下图的大长方形为拉回.
 	% https://q.uiver.app/#q=WzAsNixbMSwxLCJYIl0sWzIsMSwiWSJdLFsyLDAsIlciXSxbMSwwLCJXJyJdLFswLDEsIlUiXSxbMCwwLCJVXFx0aW1lc19YIFcnIl0sWzUsNF0sWzQsMF0sWzAsMSwiZiIsMl0sWzUsM10sWzMsMl0sWzIsMSwiaCJdLFszLDAsImgnIl1d
 	\[\begin{tikzcd}[ampersand replacement=\&,column sep=normal]
 		{\hspace{-2em}U\times_X W'} \& {W'} \& W \\
@@ -892,6 +966,13 @@ $u\colon P(X\times Y) \to PX$
 	\end{tikzcd}\]
 \end{prop}
 
+由此及 ``伴随保持极限'' (命题 \ref{adjoints-preserve-limits}), 我们就得到
+
+\begin{prop}
+	{}
+	左伴随保持满射, 右伴随保持单射.
+\end{prop}
+
 \subsection{正则单射与满射, 等价关系}
 
 集合的单射与满射的概念在一般的范畴中不止有一种推广.
@@ -945,8 +1026,20 @@ $u\colon P(X\times Y) \to PX$
 $$
 	X\times_Y X = \{(x_1,x_2)\in X\times X \mid f(x_1)=f(x_2)\}.
 $$
-$X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; 在一般的范畴中, $X\times X$ 的子对象也可视为 $X$ 上的一个关系.
-事实上态射 $f\colon X\to Y$ 的核偶恰为 $f$ 诱导的 $X$ 上的\emph{等价关系}.
+$X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
+
+\begin{definition}
+	{(等价关系)}
+	在一般的范畴中, 称 $X\times X$ 的一个子对象 $R$ 为 $X$ 上的一个\emph{关系}.
+	\emph{等价关系}是满足如下条件的关系.
+	\begin{itemize}
+		\item (自反性) $\Delta \leq R$, 其中 $\Delta$ 是对角线 (例 \ref{diagonal});
+		\item (对称性) $R = \sigma R$, 其中 $\sigma$ 为交换两个分量;
+		\item (传递性) 作为 $X\times X\times X$ 的子对象有 $p_{12}^*R \land p_{23}^* R \leq p_{13}^*R$, 其中 $p_{ij}$ 是到第 $i,j$ 分量的投影.
+	\end{itemize}
+\end{definition}
+
+态射 $f\colon X\to Y$ 的核偶是 $X$ 上的等价关系, 称之为 $f$ \emph{诱导}的等价关系.
 
 注意到当 $f\colon X\to Y$ 为集合的满射时, 核偶 $X\times_Y X \rightrightarrows X$ 的余等化子恰为 $f\colon X\to Y$.
 
@@ -1011,7 +1104,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; �
 \end{definition}
 
 \begin{remark}{(像的函子定义)}
-    对固定的对象 $X$, 到 $X$ 态射的\emph{像}是一个函子 $\mathsf C /X \to \operatorname{Sub}_{\mathsf C}(X)$, 它是嵌入函子 $\operatorname{Sub}_{\mathsf C}(X) \to \mathsf C /X$ 的左伴随; 这个伴随表达的含义正是 $\operatorname{im}f$ 是 $f$ 穿过的最小子对象.
+    对固定的对象 $X$, 到 $X$ 态射的\emph{像}是一个函子 $\mathsf C /X \to \operatorname{Sub}_{\mathsf C}(X)$, 它是 ``嵌入'' 函子 $\operatorname{Sub}_{\mathsf C}(X) \to \mathsf C /X$ 的左伴随; 这个伴随表达的含义正是 $\operatorname{im}f$ 是 $f$ 穿过的最小子对象.
 \end{remark}
 
 \begin{prop}
@@ -1068,7 +1161,9 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; �
     $$
 \end{remark}
 
-\begin{remark}{(为什么拉回的左伴随叫做 ``存在'')}
+\begin{remark}
+	[label={quantifier-exists-as-left-adjoint}]
+	{(为什么拉回的左伴随叫做 ``存在'')}
     考虑集合范畴中的一个特例. 取 $X = Y \times Z$, $f \colon Y \times Z \to Y$ 为投影.
     将 $Y\times Z$ 的子集视为关于 $y,z$ 的谓词 $P(y,z)$,
     那么 ``存在'' 函子 $\exists_f$ 将这个谓词变为关于 $y$ 的谓词 $\exists z \,P(y,z)$ (其中只有 $y$ 一个\emph{自由变量}), 对应 $Y$ 的子集 $\{y \mid \exists z P(y,z)\}$.
@@ -1206,16 +1301,19 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; �
 由此, \topos{}中一个对象的子对象集合 $\operatorname{Sub}(X)$ 构成一个格.
 
 \begin{prop}
+	[label={pullback-lattice-morphism}]
 	{}
 	在\topos{}中, 沿态射 $f\colon X \to Y$ 的拉回 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 是格的同态.
 \end{prop}
 
-
+\begin{proof}
+	这是因为 $f^*$ 保持极限和余极限.
+\end{proof}
 
 \begin{definition}
 	{(Heyting 代数)}
 	若一个偏序集作为范畴具有有限积和余积, 且为积闭范畴, 则称之为 \emph{Heyting 代数}.
-	换言之, Heyting 代数 $H$ 中有有限交与有限并 (包括 $\top$ 和 $\bot$), 且有一种运算 $\Rightarrow\colon H\times H\to H$, 满足
+	换言之, Heyting 代数 $H$ 中有有限交与有限并 (包括最大元 $\top$ 和最小元 $\bot$), 且有一种运算 $\Rightarrow\colon H\times H\to H$, 满足
 	$$
 	z \leq (x\Rightarrow y)\quad \text{当且仅当}\quad (z\wedge x) \leq y.
 	$$
@@ -1245,19 +1343,35 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; �
 	这个代数是后面介绍的\emph{位象}.
 \end{example}
 
+\begin{prop}
+	{}
+	在 Heyting 代数中,
+	\begin{enumerate}
+		[(1)]
+		\item $\big(x\Rightarrow (y\Rightarrow z)\big) = (x\land y)\Rightarrow z$;
+		\item $((x\lor y)\Rightarrow z)=\big((x\Rightarrow z)\land(y\Rightarrow z)\big)$;
+		\item $\big(x\Rightarrow (y\land z)\big)= (x\Rightarrow y)\land (x\Rightarrow z)$.
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+	这是指数对象的性质 (命题 \ref{exponential-law}, \ref{sum-exponential-product}, \ref{product-exponential-product}).
+\end{proof}
+
 \begin{remark}
 	{}
 	我们暗示 (明示) 了 Heyting 代数的元素可视为某种命题. 事实上, 它可以作为\emph{直觉主义命题演算} (intuitionistic propositional calculus) 的模型.
 	
 	%定义 Heyting 代数中的 ``非'' 运算 $\neg x = (x\Rightarrow \bot)$.
 	在例 \ref{topological-space-open-Heyting-algebra} 中,
-	$U \lor \neg U$ 和 $(\neg\neg U) \Rightarrow U$ 都不一定等于 $\top$ (仅当 $U$ 既开又闭时它们才等于 $\top$).
+	$U \lor \neg U$ 和 $(\neg\neg U) \Rightarrow U$ 都不一定等于 $\top$. %(仅当 $U$ 既开又闭时它们才等于 $\top$).
 	这体现了直觉主义逻辑中没有\emph{排中律}或\emph{双重否定律}.
 \end{remark}
 
 \begin{prop}
 	{}
-	在\topos{}中, 子对象的格 $\operatorname{Sub}(X)$ 是 Heyting 代数.
+	在\topos{}中, 子对象的格 $\operatorname{Sub}(X)$ 是 Heyting 代数. 进一步, 沿态射 $f\colon X\to Y$ 的拉回
+	$f^*\colon \operatorname{Sub}(Y)\to\operatorname{Sub}(X)$ 是 Heyting 代数的同态.%, 即保持 ``$\Rightarrow$'' 运算.
 \end{prop}
 
 \begin{proof}
@@ -1266,8 +1380,18 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; �
 	(例 \ref{subterminal-of-slice-category}),
 	我们只需对 $X=1$ 的情形证明结论.
 	
-	对于子终对象 $U,V$, 对任意对象 $X$, $\operatorname{Hom}(X,V^U)\simeq \operatorname{Hom}(X\times U,V)$ 至多有一个元素, 故 $V^U$ 也是子终对象. 这说明 $\operatorname{Sub}(1)$ 有指数对象, 从而是 Heyting 代数.
+	对于子终对象 $U,V$, 对任意对象 $X$, $\operatorname{Hom}(X,V^U)\simeq \operatorname{Hom}(X\times U,V)$ 至多有一个元素, 故 $V^U$ 也是子终对象. 这说明 $\operatorname{Sub}(1)$ (作为范畴) 有指数对象, 从而是 Heyting 代数.
+	
+	由命题 \ref{pullback-preserve-exponential-objects}, 拉回保持俯范畴中的指数对象, 从而保持子对象 Heyting 代数中的 ``$\Rightarrow$'' 运算. 结合命题 \ref{pullback-lattice-morphism}, 知 $f^*$ 为 Heyting 代数同态.
 \end{proof}
+
+由上述命题以及子对象分类子的性质, 我们知道 $\operatorname{Sub}(X)\simeq \operatorname{Hom}(X,\Omega)$ 上有\makebox{\emph{自然}}的 Heyting 代数结构; 自然性意味着我们可以开动米田机器, 得到
+$$
+\fbox{$\Omega$ 是\topos{}中的\emph{内蕴} Heyting 代数.}
+$$
+例如 $\operatorname{Hom}(X,\Omega)$ 上的 ``$\vee$'' 运算
+$\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \operatorname{Hom}(X,\Omega)$ (作为自然变换)
+等同于 $\vee\colon \operatorname{Hom}(X,\Omega\times \Omega)\to \operatorname{Hom}(X,\Omega)$, 等同于一个态射 $\vee\colon \Omega\times\Omega\to\Omega$.
 
 \todo{内蕴版本}
 
@@ -1317,6 +1441,8 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; �
 
 \subsection{Boole \topos{}与选择公理}
 
+\label{Boolean-topos}
+
 \topos{}是类似于集合范畴的范畴, 而 Boole \topos{}比一般的\topos{} ``更像'' 集合范畴.\footnote{我尊敬的一位同学 Trebor 提醒大家注意 Boole 不是 Bool.}
 
 % Boole 代数, SGL P270, 为 Cohen 做铺垫
@@ -1345,6 +1471,6 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}; �
 
 \begin{remark}
 	{(Boole 与二值性无关)}
-	注意 Boole \topos{}中尽管有 ``排中律'' 以及 $1+1\simeq\Omega$, 却\emph{不一定只有两个真值}. $\mathsf {Set}\times\mathsf {Set}$ 就是一例.
+	注意 Boole \topos{}中尽管有 ``排中律'' 以及 $1+1\simeq\Omega$, 却\emph{不一定只有两个真值}. $\mathsf {Set}\times\mathsf {Set}$ 就是一例. 反过来, 只有两个真值的\topos{}也不一定是 Boole \topos{}.
 \end{remark}
 

@@ -21,15 +21,22 @@
 
 \begin{definition}
     {(项, 公式)}
-    类型 $X$ 的\emph{项}被解释为指向 $X$ 的态射, 而\emph{公式}被解释为 $\Omega$ 类型的项;
-    项 (公式) 的定义域代表此项 (公式) 中自由变量的类型.
-    
-    例如, 当类型 $X$ 的一个项含有自由变量 $y\colon Y, z\colon Z$ 时, 该项解释为一个态射 $Y\times Z \to X$.
-    
-    类型 $X$ 的一个\emph{变量} (可视为含一个自由变量的项) 解释为恒等态射 $\operatorname{id}\colon X \to X$;
-    
-    类型 $X$ 的一个\emph{常量} (可视为不含自由变量的项, 或零元函数) 则是一个态射 $1 \to X$, 也即对象 $X$ 的一个\emph{整体元素}.
+    \begin{itemize}
+    	\item 类型 $X$ 的\emph{项}被解释为指向 $X$ 的态射, 而\emph{公式}被解释为 $\Omega$ 类型的项;
+    	项 (公式) 的定义域代表此项 (公式) 中自由变量的类型.
+    	例如, 当类型 $X$ 的一个项含有自由变量 $y\colon Y, z\colon Z$ 时, 该项解释为一个态射 $Y\times Z \to X$.
+    	\item 类型 $X$ 的一个\emph{变量} (可视为含一个自由变量的项) 解释为恒等态射 $\operatorname{id}\colon X \to X$;
+    	\item 类型 $X$ 的一个\emph{常量} (可视为不含自由变量的项, 或零元函数) 则是一个态射 $1 \to X$, 也即对象 $X$ 的一个\emph{整体元素}.
+    \end{itemize}
 \end{definition}
+
+\begin{remark}
+	{(一般元素)}
+	设 $x$ 是类型 $X$ 的一个变量.
+	假若我们证明了含变量 $x$ 的公式 $\phi(x)$,
+	那么对 $X$ 的任意具体的项 $x_0$, 就有 $\phi(x_0)$ 成立.
+	在 Mitchell--B\'enabou 语言中, $x\in X$ 被解释为 $\operatorname{id}\colon X\to X$, 它可视为对象 $X$ 的\emph{一般元素} (generic element) (这里元素的含义是广义元素, 即态射 $?\to X$), 因为对任意态射 $f\colon X\to Y$, 只要给定了 $f$ 在广义元素 $\operatorname{id}\colon X\to X$ 上的值 $f\circ\operatorname{id}$, 就确定了 $f$ 在任何广义元素 $x_0\colon U\to X$ 上的值 $f\circ x_0$. 这是平凡的.
+\end{remark}
 
 \begin{definition}
 	{(等式)}
@@ -126,12 +133,22 @@
 	
 \end{definition}
 
+\section{模态与层化}
+
+\begin{definition}
+	{()}
+\end{definition}
+
+\todo{层化}
+
 
 
 %\section{几何理论}
 
 
 %\todo{将综合可计算性理论, 综合微分几何, 综合代数几何变成本章的节}
+
+\input{NSA}
 
 \input{eff}
 

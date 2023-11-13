@@ -55,6 +55,7 @@
 ~
 
 \begin{axiom}
+	[label={Kock--Lawvere-D}]
 	{(Kock--Lawvere 公理)}
 	对任意映射 $f \colon D \to R$, 存在唯一的 $a,b\in R$,
 	使得
@@ -79,19 +80,35 @@ Kock--Lawvere 公理反映了如下的直观: $R$ 上的一个函数在一个很
 	称 $f'$ 为 $f$ 的\emph{导函数}. 归纳地定义 $k$ 阶导数 $f^{(k)}(x)$.
 \end{propdef}
 
-任何函数都是任意次可导的.
+也就是说, 综合微分几何要求任何函数 $R\to R$ 都是任意次可导的.
 
 \paragraph{Weil 代数与无穷小几何对象}
 
 ~
 
-无穷小线段 $D$ 对应代数 $R[x]/(x^2)$. 一般地, 在代数--几何对偶中与无穷小几何对象相对应的代数是 \emph{Weil 代数}.
+无穷小线段 $D$ 对应代数 $R[x]/(x^2)$. 一般地, 在代数--几何对偶中与无穷小几何对象相对应的代数是 $R$ 上的 \emph{Weil 代数}\footnote{Weil 代数有两种含义, 这里所说的不是来自 Lie 代数的那种 Weil 代数.}.
 \begin{definition}
+	[label={SDG-Weil-algebra}]
 	{(Weil 代数)}
 	Weil 代数是形如 $W = R \oplus J$ 的 $R$-代数,
 	其中 $J$ 是有限生成自由 $R$-模,
-	且为幂零理想.
+	且为幂零理想. 等价地,
+	$$
+	W = R[x_1,\cdots,x_n]/I,
+	$$
+	且存在正整数 $N$ 使得 $x_i^N \in I\,(i=1,\cdots,n)$.
 \end{definition}
+
+\begin{remark}
+	{}
+	上面的概念在 ``经典数学'' (经典逻辑) 中对应\emph{局部 Artin 代数}, 其中 Artin 代数是指不存在无限的理想下降链 (这称为\emph{下降链条件}) 的代数.
+	设 $k$ 为域, $A$ 是局部 Artin $k$-代数, $\mathfrak m$ 是 $A$ 的唯一极大理想, 并且额外假设 $k \to A/\mathfrak m$ 是同构.%其剩余域 (residue field).
+	可以证明\footnotemark $A \simeq k\oplus\mathfrak m$, $\mathfrak m$ 是有限维 $k$-线性空间且为幂零理想. 定义 \ref{SDG-Weil-algebra} 即是这个结果的类比.
+	
+	局部 Artin 环在代数几何的形变理论中有重要作用, 这正是因为它对应无穷小几何对象.
+\end{remark}
+
+\footnotetext{由中山 (Nakayama) 引理以及下降链条件可得 $\mathfrak m$ 幂零; 又由下降链条件可得每个 $\mathfrak m^j / \mathfrak m^{j+1}$ 是有限维 $k$-线性空间, 从而 $A$ 是有限维 $k$-线性空间.}
 
 \begin{definition}
 	{(Weil 代数的谱)}
@@ -132,11 +149,229 @@ Kock--Lawvere 公理反映了如下的直观: $R$ 上的一个函数在一个很
 	要求 $J$ 为\emph{幂零}理想, 也即要求在原点取值为 $0$ 的函数都幂零, 直观上说明 $\operatorname{Spec}W$ 是 ``无穷小'' 的.
 \end{remark}
 
+Lawvere 以如下的性质刻画无穷小几何对象.
+
+\begin{definition}
+	{(无穷小对象, 奇妙右伴随)}
+	对于空间 $S$, 若 $(-)^S$ 有右伴随, 则称 $S$ 为\emph{无穷小对象}. 记该右伴随为 $(-)_S$, 称之为\emph{奇妙右伴随} (amazing right adjoint).
+\end{definition}
+
+\begin{example}
+	{}
+	在集合范畴 $\mathsf {Set}$ 中, 只有终对象 $1$ 是无穷小对象.
+\end{example}
+
+\begin{remark}
+	{}
+	回忆对\topos{}中任意对象 $S$, $(-)^S$ 都有左伴随 $(-)\times S$, 而 $(-)^S$ 有右伴随是非常稀奇的事情. 重要的是此时 $(-)^S$ \emph{保持余极限}. 一个直观如下. 设空间 $X$ 被一族空间 $U_i$ 覆盖 ($X$ 可写成 $U_i$ 和 $U_i\times_X U_j$ 的某种余极限), 那么 $X^S$ 也被 $U_i^S$ 覆盖, 即 $S$ 到 $X$ 的任何映射都必须穿过某个 $U_i$; 这是 $S$ 的像 ``太小'' 导致的.
+	
+	类似的性质在不是\topos{}的范畴中也有用处. 例如 Abel 群范畴 $\mathsf {Ab}$ 中, 函子 $\operatorname{Hom}(A,{-})$ 保持余极限当且仅当 $A$ 是有限生成投射 $\mathbb{Z}$-模, 这也是一种 ``小'' 的性质.
+	
+	%映射 $X^D \to Y$ 等同于映射 $X \to Y_D$
+\end{remark}
+
+\todo{使用 SDG 的例子, 如 Riemann 曲率}
+
+\todo{无穷小对象的定义, amazing right adjoint}
+
 \subsection{综合微分几何的模型}
 
+本小节介绍综合微分几何的一些模型. 相对简单的模型就能实现 Kock--Lawvere 公理; 而为了使模型满足更多的公理, 以及更加贴近传统的微分几何 (更加 ``有用''), 我们就需要作越来越复杂的调整.
+构造综合微分几何模型的贯穿始终的思想是\emph{代数--几何对偶}.
 
+\subsubsection{``代数'' 模型}
+
+首先考虑一个最简单的模型.
+\begin{definition}
+	[label={SDG-algebraic-model}]
+	{}
+	考虑有限表现仿射 $\mathbb{R}$-概形范畴 $\mathbb{R}\mathsf{Alg}_{\text{fp}}^\op$.
+	回忆, 有限表现 $\mathbb{R}$-代数即形如 $\mathbb{R}[x_1,\cdots,x_n]/(f_1,\cdots,f_m)$ 的代数; 对于有限表现 $\mathbb{R}$-代数 $A$, 以 $\operatorname{Spec} A$ 表示其在对偶范畴中的化身.
+	
+	所谓\emph{代数模型} (algebraic model) 是 $\mathbb{R}\mathsf{Alg}_{\text{fp}}^\op$ 上的层\topos{} $$\mathsf {Fun}(\mathbb{R}\mathsf{Alg}_{\text{fp}},\mathsf {Set}).$$
+\end{definition}
+
+\begin{definition}
+	{(直线)}
+	定义 \emph{直线}
+	$$
+		R
+		:=\yo(\operatorname{Spec}\mathbb{R}[x]).
+	$$
+\end{definition}
+
+\begin{remark}
+	{}
+	在第 \ref{cla} 章我们将会讲到, 这里考虑的\topos{}是 $\mathbb{R}$-代数理论的\emph{分类\topos{}}, 而 $R$ 是\emph{一般 $\mathbb{R}$-代数} (generic $\mathbb{R}$-algebra).
+	
+	这些结论对有限生成 $\mathbb{R}$-代数范畴同样成立.
+\end{remark}
+
+注意到对 $A\in\mathbb{R}\mathsf {Alg}_{\text{fp}}$,
+$$
+R(A)=\operatorname{Hom}_{\mathbb{R}\mathsf{Alg}_{\text{fp}}^\op}(\operatorname{Spec}A,\operatorname{Spec}\mathbb{R}[x]) = \operatorname{Hom}_{\mathbb{R}\mathsf {Alg}_{\text{fp}}}(\mathbb{R}[x],A) \simeq A\text{ (作为集合)},
+$$
+我们发现, $R$ 正是代数范畴到集合范畴的遗忘函子
+$$
+R\simeq \text{遗忘}
+\colon \mathbb{R}\mathsf{Alg}_{\text{fp}} \to \mathsf {Set}.
+$$
+因此, 使用米田方法, 我们就得到
+\begin{prop}
+	{}
+	$R$ 是交换环.
+\end{prop}
+
+有了 $R$, 我们考虑 ``由方程定义的子流形''
+$$
+M = \{(x_1,\cdots,x_n)\in R^n\mid f_1=\cdots=f_m=0\},
+$$
+其中 $f_1,\cdots,f_m\in \mathbb{R}[x_1,\cdots,x_n]$ 是多项式. 其范畴语义为拉回
+% https://q.uiver.app/#q=WzAsNCxbMSwxLCJSXm0iXSxbMCwxLCJSXm4iXSxbMSwwLCIwIl0sWzAsMCwiTSJdLFsxLDAsIihmXzEsXFxjZG90cyxmX20pIiwyXSxbMywxXSxbMywyXSxbMiwwXV0=
+\[\begin{tikzcd}[ampersand replacement=\&]
+	M \& 0 \\
+	{R^n} \& {R^m,}
+	\arrow["{(f_1,\cdots,f_m)}"', from=2-1, to=2-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=2-2]
+\end{tikzcd}\]
+对应 $\mathbb{R}\mathsf {Alg}$ 中的推出
+% https://q.uiver.app/#q=WzAsNCxbMSwxLCJcXG1hdGhiYntSfVt5XzEsXFxjZG90cyx5X21dIl0sWzAsMSwiXFxtYXRoYmJ7Un1beF8xLFxcY2RvdHMseF9uXSJdLFsxLDAsIlxcbWF0aGJie1J9Il0sWzAsMCwiTSJdLFswLDEsIihmXzEsXFxjZG90cyxmX20pIl0sWzEsM10sWzIsM10sWzAsMl1d
+\[\begin{tikzcd}[ampersand replacement=\&]
+	? \& {\mathbb{R}} \\
+	{\mathbb{R}[x_1,\cdots,x_n]} \& {\mathbb{R}[y_1,\cdots,y_m],}
+	\arrow["{y_i\mapsto f_i}", from=2-2, to=2-1]
+	\arrow[from=2-1, to=1-1]
+	\arrow[from=1-2, to=1-1]
+	\arrow[from=2-2, to=1-2]
+\end{tikzcd}\]
+故
+$$
+M = \yo(\operatorname{Spec}\mathbb{R}[x_1,\cdots,x_n]/(f_1,\cdots,f_m)).
+$$
+
+\begin{definition}
+	{(直线上原点的一阶无穷小邻域)}
+	定义
+	$$
+	D := \{x\in R\mid x^2=0\} =  \yo\big({\operatorname{Spec}\mathbb{R}[x]/(x^2)}\big).
+	$$
+\end{definition}
+
+我们验证它满足公理 \ref{Kock--Lawvere-D}, 以外部语言叙述即
+\begin{prop}
+	{}
+	$$
+	R^D(A) \simeq  A[x]/(x^2).
+	$$
+\end{prop}
+
+\begin{proof}
+	由预层\topos{}指数对象的构造 (命题 \ref{presheaf-category-exponential} 的证明),
+	\begin{align*}
+		R^D(A) &= \operatorname{Hom}(\yo(\operatorname{Spec}A)\times D,R)\\
+		&\simeq \operatorname{Hom}\big(\yo(\operatorname{Spec}A)\times\yo(\operatorname{Spec}\mathbb{R}[x]/(x^2)),
+		\yo(\operatorname{Spec}\mathbb{R}[x])\big)\\
+		&\simeq \operatorname{Hom}\big(\yo(\operatorname{Spec}A\times\operatorname{Spec}\mathbb{R}[x]/(x^2)),
+		\yo(\operatorname{Spec}\mathbb{R}[x])\big)\\
+		&\simeq\operatorname{Hom}_{\mathbb{R}\mathsf{Alg}}(\mathbb{R}[x],A\otimes \mathbb{R}[x]/(x^2))\\
+		&\simeq A\otimes \mathbb{R}[x]/(x^2))\simeq A[x]/(x^2) \text{ (作为集合).}
+	\end{align*}
+	其中用到 $\mathbb{R}$-代数的张量积是 $\mathbb{R}\mathsf{Alg}$ 中的和, 即 $\mathbb{R}\mathsf{Alg}^\op$ 中的积.%; 而 $\yo(A)\times\yo(B) \simeq \yo(A\times B)$.
+\end{proof}
+
+\begin{remark}
+	{}
+	至此, 我感到有必要介绍对待层的一种观点或一套术语. 范畴 $\mathsf{R}$ (这里是某种环范畴) 到 $\mathsf {Set}$ 的函子又称 \emph{$\mathsf {R}$ 上的变集合} (varying set over $\mathsf R$, 见 \cite{SDG-Lavendhomme} 8.3 节, 回忆 ``变集范畴'' \ref{varying-set-topos}),
+	$\mathsf R$ 的每个对象称为一个\emph{阶段} (stage), $\mathsf R$ 的态射称为阶段之间的\emph{转移} (transition), 对于 $\mathsf R$ 的对象 $A$ 与函子 $X\colon \mathsf R\to\mathsf {Set}$, $X(A)$ 的元素称为变集合 $X$ 在阶段 $A$ 的元素.
+	
+	Grothendieck 的\emph{概形}是函子 $\mathsf {Ring}\to\mathsf {Set}$, 也即环范畴上的变集合. 对于环 $A$, 一个概形的 $A$-点即是这个函子在阶段 $A$ 的元素. 例如 Fermat 概形为函子 $A\mapsto \{(x,y,z)\in A^3\mid x^n+y^n=z^n\}$, 它在阶段 $\mathbb{R}$ 当然有点, 而人们关心的是其在阶段 $\mathbb{Q}$ 是否就有点. 因此, 一个概形可理解为同时在所有环上解一个方程组.
+\end{remark}
+
+
+
+\subsubsection{光滑代数}
+
+$\mathbb{R}$-代数上的运算是多项式运算; 若将多项式运算扩充为全体 ``光滑'' 运算, 则可产生一个更接近微分几何的模型.
+
+\begin{definition}
+	{(光滑代数)}
+	\emph{光滑代数} ($C^\infty$-代数) 是指满足如下条件的集合 $A$: 对每个非负整数 $n$ 与每个 $n$ 元光滑函数 $f\in C^\infty (\mathbb{R}^n,\mathbb{R})$ 都有一个 $n$ 元运算, 称为\emph{光滑运算} $A(f)\colon A^n\to A$,
+	使得 $f\mapsto A(f)$ 保持复合, 即对于 $h = g \circ (f_1,\cdots,f_k)$, 有
+	$$A(h) = A(g) \circ (A(f_1),\cdots,A(f_k)).$$ 换言之, 光滑代数是 Lawvere 理论 $\mathsf {CartSp}$ 的模型 (例 \ref{Lawvere-theory-CartSp}). 光滑代数的同态是保持所有光滑运算的映射. 记光滑代数的范畴为 $C^\infty\mathsf{Alg}$.
+\end{definition}
+
+\begin{remark}
+	{}
+	如上定义的 $C^\infty$-代数首先是 $\mathbb{R}$-代数: 考虑 $0$ 元函数 $\mathbb{R}^0\to \mathbb{R}$ 就得到了常量 $A^0\to A$,
+	考虑加法与乘法函数 $+,\times\colon \mathbb{R}^2\to \mathbb{R}$ 就得到 $A$ 上的加法与乘法, 考虑映射 $\mathbb{R}^3\to \mathbb{R}, (x,y,z)\mapsto x(y+z) = xy+xz$, 使用 $f\mapsto A(f)$ 保持复合的条件, 就得到 $A$ 上的分配律, 如此这般.
+\end{remark}
+
+\begin{example}
+	{}
+	设 $M$ 是光滑流形, 那么 $M$ 上的光滑函数空间 $C^\infty (M)$ 构成光滑代数: 对 $f\in C^\infty (\mathbb{R}^n,\mathbb{R})$, 定义 $A(f)(f_1,\cdots,f_n)=f\circ (f_1,\cdots,f_n)$.
+\end{example}
+
+\begin{example}
+	{}
+	$\mathbb{R}[\varepsilon]/(\varepsilon^2)$ 是光滑代数: 对 $f\in C^\infty (\mathbb{R}^n,\mathbb{R})$, 定义 $$
+	A(f)(a_1+b_1 \varepsilon,\cdots,a_n+b_n \varepsilon)
+	=f(a_1,\cdots,a_n)
+	+\sum_i \frac{\partial f}{\partial x_i}\Big|_{(a_1,\cdots,a_n)} b_i \varepsilon.$$
+	$\mathbb{R}[\varepsilon]/(\varepsilon^2)$ 可视为 ``无穷小线段上的光滑函数空间''.
+\end{example}
+
+\begin{example}
+	{}
+	光滑流形上一点处的光滑函数芽 (定义 \ref{germ-and-stalk}) 构成光滑代数.
+\end{example}
+
+我们需要有限生成 $C^\infty$-代数的概念. 类比于 $\mathbb{R}[x_1,\cdots,x_n]$ 是 $n$ 个元素生成的自由 $\mathbb{R}$-代数 (代数是指交换含幺代数), 有如下命题.
+
+\begin{prop}
+	{}
+	$C^\infty (\mathbb{R}^n)$ 是 $n$ 个元素生成的\emph{自由 $C^\infty$-代数}.
+\end{prop}
+
+\begin{proof}
+	要证明的是对任意 $C^\infty$-代数 $A$ 与任意 $n$ 个元素 $a_1,\cdots,a_n \in A$,
+	存在唯一的同态 $\varphi\colon C^\infty (\mathbb{R}^n) \to A$ 将每个坐标函数 (投影) $x_i$ 映射到 $a_i$.
+	由定义, 对任意 $f\in C^\infty (\mathbb{R}^n)$,
+	$\varphi$ 必须把 $f = f\circ (x_1,\cdots,x_n)$ 映射到 $f(a_1,\cdots,a_n)$, 这便唯一确定了 $\varphi$; 而它确实将投影 $x_i$ 映射到 $a_i$: $x_i(a_1,\cdots,a_n) = a_i$.
+\end{proof}
+
+
+
+\begin{example}
+	{}
+\end{example}
+
+\newcommand{\locus}{处所}
+
+\todo{有限表现 vs 有限生成}
+
+\begin{definition}
+	{(光滑\locus{})}
+	定义\emph{光滑\locus{}} (smooth locus, 复数 loci) 的范畴 $\mathbb L$ 为有限生成 $C^\infty$ 代数范畴的对偶,
+	$$
+	\mathbb L:= C^\infty \mathsf {Alg}_{\text{fg}}^{\op},
+	$$
+	此处的记号遵循 Moerdijk 与 Reyes \cite{MSIA}. 对于 $C^\infty$-代数 $A$,
+	记 $\ell A$ 为 $A$ 在对偶范畴中的化身. $\ell$  是 $\operatorname{Spec}$ 在光滑代数范畴中的类比.
+\end{definition}
 
 \begin{definition}
 	{}
-	
+	$$
+	\mathsf {Fun}(C^\infty \mathsf {Alg}_{\text{fg}},\mathsf {Set}).
+	$$
+\end{definition}
+
+\begin{definition}
+	{}
+	定义\emph{直线}
+	$$
+	R := \yo(\ell C^\infty(\mathbb{R})).
+	$$
 \end{definition}

@@ -1,0 +1,25 @@
+\chapter{高阶\topos{}}
+
+\section{$\infty$-范畴}
+
+粗略地说, 一个 $\infty$-范畴含有如下成分: 对象, 对象之间的态射, 态射之间的 $2$-态射, $\cdots$, $k$-态射之间的 $(k+1)$-态射, 以至于无穷. 在实践中, $\infty$-范畴有许多不同而互相等价的模型, 就像一个算法由许多不同的编程语言实现. 单纯集 (定义 \ref{Simplicial-Sets}) 就是一种实用的 ``编程语言''. 如下是用单纯集表达的一种 $\infty$-范畴的模型, 是 Lurie \cite{HTT} 使用的模型, 也是最简单的模型.
+
+\begin{definition}
+	{}
+	定义单纯集 $\Delta^n$ 为米田嵌入的像 $\yo([n])$. 对于单射 $[m]\to [n]$, 设其像为 $J$, 定义单纯集 $\Delta^J$ 为对于 $0\leq k \leq n$, 定义 $\Lambda_k^n$ 为 $\Delta^n$ 包含顶点 $k$ 的各面之并, 称为\emph{角形} (horn).
+\end{definition}
+
+\begin{definition}
+	{($\infty$-范畴)}
+	\emph{$\infty$-范畴}是满足如下条件的单纯集 $X$: 对所有整数 $0<k<n$,
+	$$
+	\operatorname{Hom}(\Delta^n,X) \to \operatorname{Hom}(\Lambda_k^n,X)
+	$$
+	是满射. $\infty$-范畴之间的态射是单纯集的态射.
+\end{definition}
+
+\begin{definition}
+	{($\infty$-群胚)}
+\end{definition}
+
+正如集合范畴 $\mathsf {Set}$ 是范畴的 ``原型'', 在 $\infty$-范畴中, 扮演这个角色的是某种 ``空间的范畴'', 其中各阶态射表达了空间之间映射的同伦.

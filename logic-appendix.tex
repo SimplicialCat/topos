@@ -112,6 +112,16 @@
 \end{example}
 
 \begin{example}
+	[label={Zermelo--Fraenkel-language}]
+	{(Zermelo--Fraenkel 集合论)}
+	Zermelo--Fraenkel (简称 ZF) 集合论的符号表包括
+	\begin{itemize}
+		\item 类型 $S$ (``所有东西都是集合'');
+		\item 二元关系符号 $\in$.
+	\end{itemize}
+\end{example}
+
+\begin{example}
 	[label={group-language}]
 	{(群)}
 	群的语言的符号表包括
@@ -195,7 +205,22 @@
 	\end{itemize}
 \end{definition}
 
-
+\begin{example}
+	{}
+	在环的语言中, ``$x$ 幂零'' 可表达为如下的\emph{几何公式} (使用无穷析取):
+	$$
+	(x=0)\lor (x\cdot x=0) \lor (x\cdot x\cdot x=0)\lor\cdots;
+	$$
+	``$x$ 可逆'' 可表达为如下的几何公式 (使用存在量词):
+	$$
+	\exists y. xy= 1.
+	$$
+	但如下表达 ``非零元都可逆'' 的公式\emph{不是}几何公式:
+	$$
+	\neg(x=0) \Rightarrow \exists y.xy=1,
+	$$
+	因为使用了 ``蕴涵''.
+\end{example}
 
 \begin{remark}
 	{}
@@ -229,6 +254,7 @@
 \end{definition}
 
 \begin{remark}
+	[label={remark-full-first-order-logic-no-need-sequents}]
 	{}
 	在完整的一阶逻辑中不需要一般的相继式, 因为
 	$\phi \vdash_{(x_1,\cdots,x_n)} \psi$ 可表示为
@@ -372,7 +398,7 @@ $$
 		\item \emph{正则逻辑} (regular logic), 有限合取, 存在量词, Frobenius 公理.
 		\item \emph{凝聚逻辑} (coherent logic), 有限合取与析取, 存在量词, 分配公理, Frobenius 公理.
 		\item \emph{几何逻辑} (geometric logic), 有限合取, 无限析取, 存在量词, 无限分配公理, Frobenius 公理.
-		\item \emph{直觉主义一阶逻辑} (intuitionistic first-order logic), 所有有限规则除去排中律.
+		\item \emph{直觉主义一阶逻辑} (intuitionistic first-order logic), \emph{除排中律以外的}所有有限规则.
 		\item \emph{经典一阶逻辑} (classical first-order logic), 所有有限规则.
 	\end{itemize}
 \end{definition}
@@ -400,6 +426,23 @@ $$
 \end{example}
 
 \begin{example}
+	{(Zermelo--Fraenkel 集合论)}
+	继续例 \ref{Zermelo--Fraenkel-language}, ZF 有如下的公理 (我们将 $\forall y.y\in x\Rightarrow\cdots$ 简记为 $\forall y\in x.\cdots$, 将 $\exists y.y\in x\land\cdots$ 简记为 $\exists y\in x.\cdots$, 将 $\forall z\in x.z\in y$ 简记为 $x\subset y$, 并且参考注 \ref{remark-full-first-order-logic-no-need-sequents} 省略符号 $\vdash_{\cdots}$):
+	\begin{itemize}
+		\item (外延) $\forall x.\forall y.\forall z. (z\in x  \Leftrightarrow z\in y) \Rightarrow x=y$;
+		\item (配对) $\forall x.\forall y.\exists z.\forall w.\big(w\in z \Leftrightarrow (w=x \lor w=y)\big)$;
+		\item (并) $\forall x.\exists y.\forall z. (z\in y \Leftrightarrow \exists w\in x. z\in w)$;
+		\item (幂集) $\forall x.\exists y.\forall z. (z\in y \Leftrightarrow z\subset x)$;
+		\item (无穷) $\exists x.\exists y\in x.\forall z\in x.\exists t\in x.z\subset t\land z\neq t$;
+		\item (良基) $\forall x. \forall y\in x. \exists z\in x. \forall w\in x.(\neg w\in z)$;
+		\item (分离公理模式) 对每个公式 $\phi$ (不含自由变量 $y$), 有一条公理 $\forall x.\exists y.\forall z. (z\in x\Leftrightarrow z\in x\land \phi)$;
+		\item (替换公理模式) 对每个公式 $\phi$ (不含自由变量 $w$), 有一条公理 $\forall x.\big[(\forall y\in x.\exists ! z. \phi)
+		\Rightarrow \exists w.\forall y\in x. \Rightarrow \exists z\in w.\phi)\big]$, 其中 $\exists ! z.\phi$ 是指 $\exists z.\phi \land\big( \forall z.\forall z'. (\phi\land\phi[z'/z])\Rightarrow z'=z\big)$.
+	\end{itemize}
+	ZF 是一种\emph{经典一阶理论}.
+\end{example}
+
+\begin{example}
 	[label={theory-of-groups}]
 	{(群的理论)}
 	继续例 \ref{group-language}, 群的理论有如下的公理:
@@ -410,7 +453,7 @@ $$
 	\end{itemize}
 	群的理论是一种代数理论 (定义 \ref{kinds-of-theories}).
 	
-	类似地, 读者可写出环的理论的公理. 环的理论也是一种代数理论.
+	类似地, 读者可写出环的理论的公理. 环的理论也是一种\emph{代数理论}.
 \end{example}
 
 %\begin{example}
@@ -432,7 +475,7 @@ $$
 \begin{example}
 	{(局部环的理论)}
 	
-	在代数中, \emph{局部环}是指满足如下条件的环 $R$:
+	在代数中, \emph{局部环}\footnotemark{}是指满足如下条件的环 $R$:
 	\begin{itemize}
 		\item $0\neq 1$,
 		\item 对任意 $x,y\in R$, 若 $x+y=1$, 则 $x$ 与 $y$ 至少有一个可逆.
@@ -444,9 +487,35 @@ $$
 		\item $x+y=1\vdash_{(x,y)} (\exists z. xz=1)\vee (\exists z. yz=1)$.
 	\end{itemize}
 	
-	由于使用了 $\bot$, $\vee$ 和存在量词 $\exists$, 局部环的理论\emph{不是}一种代数理论; 但它是一种\emph{凝聚理论}, 因为所用的公式都是\emph{凝聚公式} (定义 \ref{kinds-of-formulae}).
+	由于使用了 $\bot$, $\vee$ 和存在量词 $\exists$, 这个理论\emph{不是}代数理论; 但它是一种\emph{凝聚理论}, 因为所用的公式都是\emph{凝聚公式} (定义 \ref{kinds-of-formulae}).
 	
 	读者还可试着写出\emph{整环}的理论, 并说明它也是一种凝聚理论.
+\end{example}
+
+\footnotetext{局部环还有一种使用极大理想的定义, 但它难以用一阶理论表达.}
+
+\begin{example}
+	{(域的理论)}
+	
+	\emph{域}是指非零元均可逆的环. 在环的理论中加入公理
+	\begin{itemize}
+		\item $\vdash_x (x=0) \lor (\exists y. xy=1)$
+	\end{itemize}
+	就得到了一种域的理论\footnotemark. 它也是一种\emph{凝聚理论}.
+\end{example}
+
+\footnotetext{在构造主义数学中, 域有不止一种理论, 它们只是恰好在集合范畴 (Boole \topos{}) 中有相同的模型.}
+
+\begin{example}
+	{($K$-代数的理论)}
+	设 $K$ 是一个固定的环. 回忆 \emph{$K$-代数}是带有 $K$ 的数乘作用的环. 定义 $K$-代数的理论: 在环的理论中加入 \emph{$K$ 的每个元素 $a$ 作为一个函数符号 $m_a$}, 且\emph{对每组元素 $a,b$ 加入如下公理},
+	\begin{itemize}
+		\item $\vdash_x m_a(x+y) = m_a(x) + m_a(y)$;
+		\item $\vdash_{(x,y)} m_am_b (x) = m_{ab}(x)$;
+		\item $\vdash_x m_{a+b}(a) = m_a(x) + m_b(x)$.
+	\end{itemize}
+	这样, 对于每个多项式 $p\in K[x_1,\cdots,x_n]$, 我们就可以在 $K$-代数的理论中谈论公式 $p(x_1,\cdots,x_n) = 0$; 反之, 这个理论中的原子公式都等价于这种形式的公式.
+	由定义, 对固定的环 $K$, $K$-代数的理论是一种\emph{代数理论}.
 \end{example}
 
 \begin{remark}
@@ -498,45 +567,100 @@ $$
 	若一个\emph{正则范畴}中所有对象的子对象格都存在\emph{任意并}, 且被拉回保持, 则称之为\emph{几何范畴} (geometric category).
 \end{definition}
 
-\section{句法范畴}
+\section{高阶逻辑}
 
-\philoquote{The importance of syntactic categories lies in the fact that they allow us to associate with a theory (in the sense of axiomatic presentation), which is a `linguistic',
-	unstructured kind of entity, a well-structured mathematical object whose `geometry' embodies the syntactic aspects of the theory.}{Olivia Caramello, \cite{TST}}
+\todo{}
 
-%  A most notable fact is that the models of the theory can be recovered as functors defined on its syntactic category which respect the ‘logical’ structure on it.
+\section{类型论}
 
+\label{appendix-type-theory}
 
+\philoquote{A logic is always a logic over a type theory.}{Bart Jacobs, \emph{Categorical Logic and Type Theory}}
+
+类型论是一种做数学的视角. 类型论中的一切对象, 包括命题 (甚至命题的证明) 都有一个合适的类型. 仅仅通过检查一个对象的类型, 就能验证推理的正确性. 关于类型论的更详细介绍见 \cite{Trebor-History}.
+
+很难给类型论下一个精确的定义. 我们先来看两种风味的类型论.
+
+\begin{example}
+	{(简单类型论)}
+	\emph{简单类型论} (simple type theory, STT) 的风格:
+	\begin{itemize}
+		\item $n\colon \mathbb{N}$ (``$n$ 是类型 $\mathbb{N}$ 的项'');
+		\item $\mathsf {succ}\colon \mathbb{N}\to\mathbb{N}$ (``后继 $\mathsf {succ}$ 是函数类型 $\mathbb{N}\to\mathbb{N}$ 的项'');
+		\item $n\colon \mathbb{N},m\colon \mathbb{N} \vdash n+m \colon \mathbb{N}$ (``设有类型 $\mathbb{N}$ 的项 $n,m$, 则可以构造类型 $\mathbb{N}$ 的项 $n+m$''), 这里的符号 $\vdash$ 与一阶逻辑中的符号 $\vdash$ 含义不同, 它的左边 $n\colon \mathbb{N},m\colon \mathbb{N}$ 是一列变量的声明, 称为\emph{语境};
+		\item
+	\end{itemize}
+	
+	\todo{简单类型论与高阶逻辑的关系}
+\end{example}
+
+\begin{example}
+	{(依值类型论)}
+	\begin{itemize}
+		\item ``$n$ 维向量空间'' 是依赖于 $n\colon \mathbb{N}$ 的一族类型. 
+	\end{itemize}
+	这种风味的类型论叫\emph{依值类型论} (dependent type theory, DTT).
+\end{example}
+
+范畴论与类型论有深刻的联系, 本节的目的即是介绍这种联系.
+
+在类型论的学者眼中, 任何逻辑的基础都是一种类型论, 一种对所考虑的类型的项作演算的方法.
 
 \begin{definition}
-	{(句法范畴)}
-	
-	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论. 定义\emph{句法范畴} (syntactic category) $\mathcal C_{\mathbb T}$, 其中
+	{(类型论, 粗略定义)}
+	一般地, 一种类型论由如下要件组成:
 	\begin{itemize}
-		\item \emph{对象}是 $\Sigma$ 上带有语境的公式 $(\vec x , \phi)$ 的 $\alpha$-等价类 ($\alpha$ 等价是指两个公式仅有变量名的差异);
-		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的\emph{态射} (其中不妨设语境 $\vec x , \vec y$ 不交) 是公式 $\theta(\vec x,\vec y)$ 的 $\mathbb T$-可证等价类, 满足 $\mathbb T$-可证的\emph{函数性}, 即如下相继式 $\mathbb T$-可证.
-		\begin{itemize}
-			\item $\phi\vdash_{\vec x} \exists \vec y \,\theta$, 含义是 ``对给定的 $\vec x$, 存在 $\vec y$ 满足 $\theta(\vec x,\vec y)$'';
-			\item $\theta\vdash_{\vec x,\vec y} \phi \wedge \psi$,
-			\item $\theta \wedge \theta[\vec z/\vec y] \vdash_{\vec x,\vec y,\vec z} \vec y = \vec z$, 这里 $\theta[\vec z / \vec y]$ 是指将 $\theta$ 中的 $\vec y$ 替换为 $\vec z$, 公式的含义是 ``对给定的 $\vec x$, 至多存在一个 $\vec y$ 满足 $\theta(\vec x,\vec y)$''.
-		\end{itemize}
+		\item 类型的\emph{形成法则} (formulation rules), 即 (从已有类型) 构造新类型的方法;
+		\item 项的\emph{引入法则} (introduction rules), 即构造一个类型的项的方法;
+		\item 项的\emph{消去法则} (elimination rules), 即使用一个类型的项的方法;
+		\item \emph{计算法则} (computation rules), 以\emph{等式}表示将\emph{消去法则}作用于\emph{引入法则}上的结果.
 	\end{itemize}
 \end{definition}
 
-\begin{remark}
-	{}
-	句法范畴的态射又称\emph{变量代换}.
-\end{remark}
+\begin{example}
+	{(Martin-L\"of 类型论)}
+	\paragraph{空类型}
+	\begin{itemize}
+		\item 形成法则 $0\colon \mathsf {Type}$
+	\end{itemize}
+	
+	\paragraph{}
+\end{example}
 
-\begin{remark}
-	{}
-	由定义, 一个理论的句法范畴依赖于理论所属的类别 (代数, 正则, 凝聚, $\cdots$). 一个代数理论也可以视为凝聚理论, 但一个代数理论的句法范畴与它作为凝聚理论的句法范畴不同.
-\end{remark}
+\begin{example}
+	{(群的理论)}
+	
+\end{example}
 
-\subsection{代数理论的句法范畴--Lawvere 理论}
+\section{模态逻辑}
 
-\todo{万有代数}
+在形式逻辑中, \emph{模态} (modality) 或\emph{模态算子} (modal operator) 是一种将命题变为命题的算子, 通常用 $\square$, $\lozenge$, $\bigcirc$ 等符号表示. 直觉上, 一个模态算子 $\square$ 的含义是
+$$\square p = \text{``$p$ 以某种方式成立''}.$$
 
-\begin{prop}
-	{}
-	对于代数理论 $\mathbb T$,
-\end{prop}
+\begin{example}
+	{(可能性与必然性)}
+	在许多文献中, $\square$ 表示 ``必然性'', $\lozenge$ 表示 ``可能性''. 如下是两者的一些性质:
+	\begin{itemize}
+		\item $\square p \Rightarrow p$ (必然成立蕴涵实际上成立), $p\Rightarrow \lozenge p$ (实际上成立蕴涵可能成立);
+		\item $\square (p \land q) = \square p \land \square q$, $\lozenge (p\lor q) = \lozenge p \lor \lozenge q$;
+		\item $\square\square p = \square p$, $\lozenge\lozenge p =\lozenge p$;
+		\item ...
+	\end{itemize}
+	可能性与必然性模态的一种实现方式是考虑 ``所有可能世界的集合'', 或 ``所有可能观测结果的集合''. 一个命题\emph{可能}成立就是说\emph{存在}一个可能世界使得该命题成立; 一个命题\emph{必然}成立就是说在\emph{任意}可能世界中该命题都成立.
+	考虑一个\topos{} $\mathsf C$ 中对象 $X$ 产生的三元伴随 (命题 \ref{over-topos-essential-geometric-morphism}, 注 \ref{quantifier-exists-as-left-adjoint}),
+	想象 $X$ 为 ``所有可能世界的集合''.
+	\[\begin{tikzcd}[ampersand replacement=\&,background color=\examplecolor]
+		{\mathsf C/X} \&\& {\mathsf C,}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{X^*}"{description, pos=0.3}, from=1-3, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\Sigma_X}"{description, pos=0.3}, shift left=5, from=1-1, to=1-3]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_X}"{description, pos=0.3}, shift right=5, from=1-1, to=1-3]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
+	\end{tikzcd}\]
+	令
+	$$
+	\lozenge = X^*\Sigma_X,\quad
+	\square = X^*\Pi_X.
+	$$
+	在此种实现下, 可能性 $\lozenge$ (存在) 是必然性 $\square$ (任意) 的左伴随.
+\end{example}

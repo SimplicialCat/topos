@@ -35,6 +35,7 @@
 \end{proof}
 
 \begin{example}
+	%[label={top-complete-cocomplete}]
 	{}
 	遗忘函子 $\mathsf {Top} \to \mathsf {Set}$ 同时有左伴随和右伴随:
 	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7VG9wfSJdLFsyLDAsIlxcbWF0aHNmIHtTZXR9Il0sWzAsMSwiXFx0ZXh0e+mBl+W/mH0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MjB9XSxbMSwwLCLnprvmlaMiLDIseyJsYWJlbF9wb3NpdGlvbiI6MjAsIm9mZnNldCI6NX1dLFsxLDAsIuW5s+WHoSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotNX1dLFszLDIsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzIsNCwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
@@ -420,7 +421,7 @@
 \begin{remark}
 	{}
 	在历史文献中可见单子的曾用名 ``三元组'' (triple), 这个名字是无趣的.
-	相对有趣的是, 单子被某些作者称为\emph{代数理论} (algebraic theory). 下面我们将说明单子与代数理论 (定义 \ref{kinds-of-theories}) 的关系.
+	相对有趣的是, 单子被某些作者称为\emph{代数理论} (algebraic theory). 后面我们将说明单子与代数理论 (定义 \ref{kinds-of-theories}) 的关系.
 \end{remark}
 
 \begin{propdef}
@@ -551,6 +552,7 @@
 \end{definition}
 
 \begin{example}
+	[label={reflective-subcategory}]
 	{(自反子范畴)}
 	\emph{自反子范畴} (reflective subcategory) 是一种满子范畴, 其嵌入函子有左伴随.
 	\[\begin{tikzcd}[ampersand replacement=\&]
@@ -563,3 +565,7 @@
 	
 	自反子范畴的嵌入 $i\colon \mathsf D\to\mathsf C$ 是单子性函子; 也即子范畴 $\mathsf D$ 的对象可视为单子 $ia\colon \mathsf C\to\mathsf C$ 的代数.
 \end{example}
+
+% the Eilenberg-Moore category of ultrafilter monad is the category of compact Hausdorff spaces with its obvious forgetful functor to Set.
+
+\todo{单子与代数理论}

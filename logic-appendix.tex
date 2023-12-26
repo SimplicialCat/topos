@@ -185,7 +185,7 @@
 
 \begin{remark}
 	{}
-	在\emph{语法}的层面, 项与公式是两种不同的东西; 但后面将会介绍, 在意象的内语言中公式不过是 $\Omega$ 类型的项.
+	在\emph{语法}的层面, 项与公式是两种不同的东西; 但项与公式可以有相同的\emph{语义}: Mitchell--B\'enabou 语言 (\ref{Mitchell--Benabou-language} 节) 中的公式不过是 $\Omega$ 类型的项.
 \end{remark}
 
 
@@ -270,7 +270,8 @@
 	[label={kinds-of-theories}]
 	{(几类不同的理论)}
 	\begin{itemize}
-		\item 称理论 $\mathbb T$ 为\emph{代数理论}, 是指其符号表中没有关系符号 (等号除外), 且其公理形如 $\vdash_{\vec x}\phi$, $\phi$ 为形如 $s=t$ 的原子公式.
+		\item 称理论 $\mathbb T$ 为\emph{命题理论} (propositional theory), 是指其符号表中没有类型.
+		\item 称理论 $\mathbb T$ 为\emph{代数理论}, 是指其符号表中没有关系符号 (等号除外), 且仅包含形如 $\vdash_{\vec x} (s=t)$ 的公理.
 		\item 称理论 $\mathbb T$ 为\emph{正则} (\emph{凝聚}, \emph{几何}, $\cdots$) \emph{理论}, 是指其公理只涉及正则 (凝聚, 几何, $\cdots$) 公式.
 	\end{itemize}
 \end{definition}
@@ -391,13 +392,14 @@ $$
 几种常见的推理系统如下.
 
 \begin{definition}
+	[label={inference-rules}]
 	{}
-	在结构性规则的基础上, 几种常见的推理系统有如下规则.
+	在结构性规则的基础上, 几种常见的推理系统有如下\emph{推理规则} (inference rules).
 	\begin{itemize}
 		\item \emph{代数逻辑} (algebraic logic), 没有附加规则.
-		\item \emph{正则逻辑} (regular logic), 有限合取, 存在量词, Frobenius 公理.
-		\item \emph{凝聚逻辑} (coherent logic), 有限合取与析取, 存在量词, 分配公理, Frobenius 公理.
-		\item \emph{几何逻辑} (geometric logic), 有限合取, 无限析取, 存在量词, 无限分配公理, Frobenius 公理.
+		\item \emph{正则逻辑} (regular logic), 有限合取规则, 存在量词规则, Frobenius 公理.
+		\item \emph{凝聚逻辑} (coherent logic), 有限合取与析取规则, 存在量词规则, 分配公理, Frobenius 公理.
+		\item \emph{几何逻辑} (geometric logic), 有限合取规则, 无限析取规则, 存在量词规则, 无限分配公理, Frobenius 公理.
 		\item \emph{直觉主义一阶逻辑} (intuitionistic first-order logic), \emph{除排中律以外的}所有有限规则.
 		\item \emph{经典一阶逻辑} (classical first-order logic), 所有有限规则.
 	\end{itemize}
@@ -524,9 +526,12 @@ $$
 	另外, 在域的一阶理论中, 不存在一个公式表达 ``$x$ 是单位根''. 参见 \cite{Lurie-Categorical-Logic} 第一讲.
 \end{remark}
 
-\subsection{范畴语义}
+\section{范畴语义}
 
-一阶逻辑可在具体的范畴中获得\emph{解释} (interpretation), 又称\emph{范畴语义} (categorical semantics).
+\subsection{一阶理论在范畴中的模型}
+
+一阶逻辑可在具有合适结构的范畴中获得\emph{解释} (interpretation), 又称\emph{范畴语义} (categorical semantics).
+由此我们可以谈论一阶理论在范畴中的模型.
 
 \begin{definition}
 	{(范畴中的 $\Sigma$-结构)}
@@ -550,7 +555,7 @@ $$
 	$\Sigma\text{-}\mathsf{Str}(F)\colon \Sigma\text{-}\mathsf{Str}(\mathsf C) \to \Sigma\text{-}\mathsf{Str}(\mathsf D)$.
 \end{prop}
 
-不同逻辑的范畴语义需要范畴上不同的结构.
+不同种类的逻辑需要范畴上不同的结构.
 
 \begin{definition}
 	{(正则范畴)}
@@ -558,13 +563,66 @@ $$
 \end{definition}
 
 \begin{definition}
+	[label={coherent-category}]
 	{(凝聚范畴)}
 	若一个\emph{正则范畴}中所有对象的子对象格都存在\emph{有限并}, 且被拉回保持, 则称之为\emph{凝聚范畴} (coherent category).
 \end{definition}
 
 \begin{definition}
+	[label={Heyting-category}]
+	{(Heyting 范畴)}
+	若一个\emph{正则范畴}中所有态射 $f\colon X\to Y$ 对子对象的拉回 $f^*\colon \operatorname{Sub}(Y)\to\operatorname{Sub}(X)$ 有右伴随 $\forall_f\colon \operatorname{Sub}(X)\to \operatorname{Sub}(Y)$, 则称之为 \emph{Heyting 范畴}.
+\end{definition}
+
+由命题 \ref{forall}, \topos{}是 Heyting 范畴.
+
+\begin{definition}
 	{(几何范畴)}
 	若一个\emph{正则范畴}中所有对象的子对象格都存在\emph{任意并}, 且被拉回保持, 则称之为\emph{几何范畴} (geometric category).
+\end{definition}
+
+有了对应的结构, 我们就可以给出各种一阶公式在范畴中的解释. 如下定义来自 \cite{TST} 1.3 节.
+
+\begin{definition}
+	{(公式的解释)}
+	设 $M$ 是范畴 $\mathsf C$ 中的 $\Sigma$-结构.
+	我们归纳地 $\Sigma$ 上的一个带语境的公式 $\vec x.\phi$ (其中 $\vec x= (x_1,\cdots,x_n)$, $x_i\colon A_i$) 解释为一个子对象
+	$$
+	[[\vec x.\phi]]_M \hookrightarrow MA_1 \times \cdots \times MA_n.
+	$$
+	\begin{itemize}
+		\item (关系) 若 $\phi(\vec x)$ 形如 $R(t_1,\cdots,t_m)$, $R$ 为类型 $B_1\cdots B_m$ 的关系符号, $t_i$ 为公式, 则
+		$[[\vec x.\phi]]_M$ 为如下拉回.
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJbW1xcdmVjIHguXFxwaGldXV9NIl0sWzEsMCwiTVIiXSxbMSwxLCJNQl8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1CX20iXSxbMCwxLCJNQV8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1BX24iXSxbMywyLCIoW1tcXHZlYyB4LnRfMV1dLFxcY2RvdHMsW1tcXHZlYyB4LnRfbV1dKSJdLFswLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsMV0sWzEsMiwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
+		\[\begin{tikzcd}[ampersand replacement=\&,column sep=6em]
+			{[[\vec x.\phi]]_M} \& MR \\
+			{MA_1\times\cdots\times MA_n} \& {MB_1\times\cdots\times MB_m}
+			\arrow["{([[\vec x.t_1]],\cdots,[[\vec x.t_m]])}", from=2-1, to=2-2]
+			\arrow[hook, from=1-1, to=2-1]
+			\arrow[from=1-1, to=1-2]
+			\arrow[hook, from=1-2, to=2-2]
+		\end{tikzcd}\]
+		\item (等式) 若 $\phi(\vec x)$ 形如 $(s=t)$, $s,t$ 为类型 $B$ 的项, 则 $[[\vec x.\phi]]$ 为两个态射 $[[\vec x.s]],[[\vec x.t]]\colon MA_1\times\cdots\times MA_n \to MB$ 的等化子.
+		\item (真) 若 $\phi = \top$, 则 $[[\vec x.\phi]]$ 是 $MA_1\times\cdots\times MA_n$ 作为自身的子对象.
+		\item (且) 若 $\phi = \phi \wedge \chi$, 则 $[[\vec x.\phi]]$ 是子对象 $[[\vec x.\phi]]$ 与 $[[\vec x.\chi]]$ 的交 (拉回).
+		\item (假) 若 $\phi = \bot$, 则 $[[\vec x.\phi]]$ 是 $MA_1\times\cdots\times MA_n$ 的子对象 $\bot$.
+		\item (或) 若 $\phi = \phi \lor \chi$ 且 $\mathsf C$ 是\emph{凝聚范畴} (定义 \ref{coherent-category}),
+		则 $[[\vec x.\phi]]$ 是子对象 $[[\vec x.\phi]]$ 与 $[[\vec x.\chi]]$ 的并.
+		\item (蕴涵)
+		\item (存在量词)
+		\item (任意量词)
+		\item (无穷析取)
+		\item (无穷合取)
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	{(模型)}
+	% TST p.37
+	设 $\mathbb T$ 是符号表 $\Sigma$ 上的理论, $M$ 是范畴 $\mathsf C$ 上的 $\Sigma$-结构,
+	且 $\mathbb T$ 的公理在 $\mathsf C$ 中可解释.
+	若 $\mathbb T$ 的公理在 $M$ 中均被满足, 则称 $M$ 为 $\mathbb T$ 在 $\mathsf C$ 中的一个\emph{模型} (model).
+	记 $\mathbb T$ 的模型在 $\Sigma\text{-}\mathsf{Str}(\mathsf C)$ 中构成的满子范畴为 $\mathbb T\text{-Mod}(\mathsf C)$.
 \end{definition}
 
 \section{高阶逻辑}
@@ -633,6 +691,8 @@ $$
 \end{example}
 
 \section{模态逻辑}
+
+\label{appendix-modal-logic}
 
 在形式逻辑中, \emph{模态} (modality) 或\emph{模态算子} (modal operator) 是一种将命题变为命题的算子, 通常用 $\square$, $\lozenge$, $\bigcirc$ 等符号表示. 直觉上, 一个模态算子 $\square$ 的含义是
 $$\square p = \text{``$p$ 以某种方式成立''}.$$

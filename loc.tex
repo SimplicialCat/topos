@@ -241,6 +241,8 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 
 \section{位象与逻辑}
 
+\label{locales-and-logic}
+
 \philoquote{[A locale is a] propositional geometric theory pretending to be a space.}{Steven Vickers}
 
 建议在阅读本节之前阅读附录 \ref{first-order-languages} 节, 尤其关注几何逻辑的内容.
@@ -255,7 +257,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\item 点 = 模型
 \end{itemize}
 
-\subsection{经典命题逻辑与 Lindenbaum 代数}
+\subsection{经典命题逻辑与 Boole 代数}
 
 Lindenbaum 代数是用代数方法研究逻辑的工具, 代数--几何对偶. 粗略地说, 它是一个理论中的 ``命题的代数''; 在经典逻辑的情形, 它就是 \emph{Boole 代数}, 而对应的 ``空间'' 是 \emph{Stone 空间}, 两者的对偶由 \emph{Stone 表示定理}描述.
 
@@ -316,6 +318,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具, 代数--几何对偶. 
 \end{remark}
 
 \begin{remark}
+	[label={model-and-ultrafilter}]
 	{}
 	由上述命题, $\mathbb T$ 的经典模型一一对应于 Boole 代数同态 $\text{LA}_{\mathbb T} \to \{\top,\bot\}$, 即 $\text{LA}_{\mathbb T}$ 的\emph{超滤}.
 	回忆位象 $X$ 的点是\fm{}同态 $\mathcal O(X) \to \{\top,\bot\}$, 即 $\mathcal O(X)$ 的完全素滤子. 两种情形的区别在于逻辑规则: Boole 代数中没有任意并, 而有排中律; \fm{}中有任意并, 没有排中律.
@@ -361,5 +364,9 @@ Lindenbaum 代数是用代数方法研究逻辑的工具, 代数--几何对偶. 
 \end{proof}
 
 \todo{}
+
+\subsection{几何逻辑与\fm{}}
+
+回忆 (定义 \ref{kinds-of-formulae}, \ref{inference-rules}) \emph{几何逻辑}是
 
 % sublocale 与 product locale 对应的理论是什么

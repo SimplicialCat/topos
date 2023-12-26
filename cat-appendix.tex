@@ -35,9 +35,9 @@
 \end{proof}
 
 \begin{example}
-	%[label={top-complete-cocomplete}]
+	[label={Top-Set-adjunction}]
 	{}
-	遗忘函子 $\mathsf {Top} \to \mathsf {Set}$ 同时有左伴随和右伴随:
+	遗忘函子 $\mathsf {Top} \to \mathsf {Set}$ 同时有左伴随和右伴随.
 	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7VG9wfSJdLFsyLDAsIlxcbWF0aHNmIHtTZXR9Il0sWzAsMSwiXFx0ZXh0e+mBl+W/mH0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MjB9XSxbMSwwLCLnprvmlaMiLDIseyJsYWJlbF9wb3NpdGlvbiI6MjAsIm9mZnNldCI6NX1dLFsxLDAsIuW5s+WHoSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotNX1dLFszLDIsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzIsNCwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
 	\[\begin{tikzcd}[ampersand replacement=\&]
 		{\mathsf {Top}} \&\& {\mathsf {Set}}
@@ -48,6 +48,24 @@
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
 	\end{tikzcd}\]
 	因此这个遗忘同时保持极限与余极限; 换言之, 拓扑空间的极限与余极限可用底层集合的极限与余极限来计算.
+\end{example}
+
+
+\begin{example}
+	[label={Gpd-Cat-adjunction}]
+	{}
+	群胚是一种特殊的范畴, 即有嵌入 $i\colon \mathsf {Gpd} \to \mathsf {Cat}$. 这个函子同时有左伴随和右伴随.
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7VG9wfSJdLFsyLDAsIlxcbWF0aHNmIHtTZXR9Il0sWzAsMSwiXFx0ZXh0e+mBl+W/mH0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MjB9XSxbMSwwLCLnprvmlaMiLDIseyJsYWJlbF9wb3NpdGlvbiI6MjAsIm9mZnNldCI6NX1dLFsxLDAsIuW5s+WHoSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotNX1dLFszLDIsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzIsNCwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {Gpd}} \&\& {\mathsf {Cat}}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{i}"{pos=0.2}, from=1-1, to=1-3]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\pi_1}"'{pos=0.2}, shift right=5, from=1-3, to=1-1]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\text{极大子群胚}}"{pos=0.35}, shift left=5, from=1-3, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
+	\end{tikzcd}\]
+	(其中 $\pi_1$ 给出范畴的基本群胚, 即一个范畴中 ``形式地加入所有态射的逆'' 得到的群胚.)
+	因此 $i$ 同时保持极限与余极限.
 \end{example}
 
 \begin{prop}
@@ -86,11 +104,140 @@
 	且 $\widetilde \eta$ 的每个分量 ${\widetilde \eta}_{X} \colon X \to \widetilde G \widetilde F (X)$ 均为同构.
 	因此 $\widetilde \eta$ 为自然同构. 另一边类似.
 \end{proof}
-\section{预层范畴与米田引理}
+
+\section{自反子范畴与局部化}
+
+\begin{definition}
+	[label={reflective-subcategory}]
+	{(自反子范畴)}
+	若一个满子范畴的嵌入有左伴随, 则称之为\emph{自反子范畴} (reflective subcategory).
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf D} \& {\mathsf C}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "i"', shift right=2, hook, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "a"', shift right=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\end{tikzcd}\]
+	对于 $\mathsf C$ 的对象 $c$, $a(c)$ 称作 $c$ 的\emph{反映} (reflection).
+\end{definition}
+
+由定义, 每个对象 $c$ 到其反映有典范的态射 $c \to a(c)$, 来自上述伴随的单位 $\operatorname{id}_{\mathsf C}\to i\circ a$;
+而且 $c$ 到 $\mathsf D$ 的任何对象的态射都穿过这个态射.
+
+\begin{example}
+	{}
+	Abel 群范畴 $\mathsf {Ab}$ 是群范畴 $\mathsf {Grp}$ 的自反子范畴, 群 $G$ 的反映是其 Abel 化 (abelianization) $G/[G,G]$.
+\end{example}
+
+\begin{example}
+	{}
+	设 $R$ 为环, 子集 $S\subset R$ 包含 $1$ 且对乘法封闭. $R$ 关于 $S$ 的局部化 $S^{-1}R$ 是
+	在 $R$ 中 ``强行使得 $S$ 的元素都可逆'' 得到的环,
+	可构造为 ``分式环'' $$
+	\Big\{\frac{x}{s} \Bigm| x\in R, s\in S\Big\}\Big/
+	\Big(
+	\frac{x}{s}\sim\frac{x'}{s'}\Leftrightarrow\exists
+	t\in S, t(xs'-x's)=0
+	\Big).$$
+	$(S^{-1}R)$-模范畴可视为 $R$-模范畴的满子范畴,
+	即
+	\[
+	(S^{-1}R)\mathsf {Mod}=\{ M\in R\mathsf {Mod} \mid \forall s\in S,
+	\text{$s$ 在 $M$ 上的作用可逆} \}.
+	\]
+	那么 $(S^{-1}R)\mathsf {Mod}$ 是 $R\mathsf {Mod}$ 的自反子范畴,
+	其嵌入与反映恰为张量--同态伴随
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{(S^{-1}R)\mathsf {Mod}} \& {R\mathsf {Mod}.}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\operatorname{Hom}(S^{-1}R,-)}"', shift right=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{S^{-1}R\otimes -}"', shift right=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\end{tikzcd}\]
+	容易证明 $S^{-1}R\otimes -$ 保持有限极限; 人们称 $S^{-1}R$ 为平坦 $R$-代数.
+	在代数--几何对偶中, 局部化可类比为向量丛限制到子空间上的过程.
+\end{example}
+
+\begin{definition}
+	[label={reflective-localization}]
+	{(自反局部化)}
+	对于自反子范畴 (\ref{reflective-subcategory}) $$
+	\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf D} \& {\mathsf C,}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "i"', shift right=2, hook, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "a"', shift right=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\end{tikzcd}
+	$$
+	若左伴随 $a$ 保持有限极限, 则称之为\emph{自反局部化} (reflective localization), 简称\emph{局部化}.
+\end{definition}
+
+\begin{example}
+	{}
+	拓扑空间上的层范畴是预层范畴的自反局部化, 预层的反映为其层化 (命题 \ref{sheafification}).
+\end{example}
+
+\todo{澄清不同的局部化概念}
+
+\begin{definition}
+	{(局部化)}
+	设 $\mathsf C$ 为范畴, $W$ 为 $\mathsf C$ 中的一族态射.
+	定义 $\mathsf C$ 关于 $W$ 的\emph{局部化}为范畴 $\mathsf C[W^{-1}]$ 与函子 $a\colon \mathsf C\to \mathsf C[W^{-1}]$,
+	满足
+	\begin{itemize}
+		\item 对任意 $w\in W$, $a(w)$ 为同构;
+		\item 对任意范畴 $\mathsf E$ 与函子 $F\colon \mathsf C\to\mathsf E$, 若 $F$ 将 $W$ 的元素变为同构,
+		则 $F$ ``唯一地穿过'' $\mathsf C[W^{-1}]$; 严格地说, 记 $\mathsf {Fun}_W(\mathsf C,\mathsf E)$ 为
+		$\mathsf {Fun}(\mathsf C,\mathsf E)$ 中由将 $W$ 的元素变为同构的函子 $F$ 构成的满子范畴,
+		则函子 $$(-\circ a)\colon \mathsf {Fun}(\mathsf C[W^{-1}],E) \to \mathsf {Fun}_W(\mathsf C,\mathsf E)$$
+		为范畴等价.
+	\end{itemize}
+\end{definition}
+
+%\begin{remark}
+%	{(局部化的概念)}
+%	一般的局部化 $\mathsf C \to \mathsf C[W^{-1}]$ 是指使一族态射 $W$ 变为同构的 ``万有'' 过程; 此处的局部化是其特例 (令 $W$ 为所有被 $a$ 变为同构的态射).
+%\end{remark}
+
+\section{预层范畴}
 
 固定如下记号: $\mathsf C$ 为小范畴, $\yo\colon \mathsf C \to \widehat {\mathsf C} = \mathsf {Fun}(\mathsf C^{\op},\mathsf {Set})$ 为米田嵌入. 本节参考了 \cite{SGL} I.5 节.
 
 \label{yoneda}
+
+\subsection{米田引理}
+
+由 $\mathsf C$ 的对象 $c$, 可得 $\mathsf C$ 上的预层 $\operatorname{Hom}_{\mathsf C}(-,c)$. 这事实上是 $\mathsf C$ 到 $\widehat {\mathsf C}$ 的嵌入.
+\begin{definition}
+	{(米田嵌入)}
+	小范畴 $\mathsf C$ 的\emph{米田嵌入}是指函子
+	$\yo\colon \mathsf C \to \widehat{\mathsf C}$,
+	$c\mapsto \yo(c) := \operatorname{Hom}_{\mathsf C}(-,c)$. 米田嵌入的像 $\yo(c)$ 称为\emph{可表函子} (representable functor).
+\end{definition}
+
+\begin{remark}
+	[label={Yoneda-embedding-adjoint-Hom}]
+	{}
+	米田嵌入是 $\operatorname{Hom}$ 函子 $\operatorname{Hom}\colon \mathsf C^{\op}\times\mathsf C \to \mathsf {Set}$ 对应的函子
+	$\mathsf C \to \mathsf {Fun}(\mathsf C^{\op},\mathsf {Set})$. 这是因为 $\widehat {\mathsf {C}}$ 是 ``范畴的范畴'' $\mathsf {Cat}$ 中的指数对象.
+\end{remark}
+
+一个自然变换 $\yo(c) \to F$ 由其中 $\operatorname{id}_c \in \yo(c)(c)$ 的像 ($F(c)$ 的元素) 唯一决定, 因此有如下的结论.
+\begin{prop}{(米田引理)}
+	对任意 $F \in \widehat {\mathsf C}$, 有自然同构
+	$$
+	\operatorname{Hom}_{\widehat {\mathsf C}}(\yo(c),F) \simeq F(c),
+	$$
+	其两个方向的映射分别为
+	\[
+	\begin{array}{rcl}
+		(\alpha\colon \yo(c)\to F) &\mapsto& \alpha_c(\operatorname{id}_c)\in F(c),\\
+		 \big((f\colon d\to c)\mapsto (F(f)(a)\in F(d))\big) & \mapsfrom & (a\in F(c))
+	\end{array}
+	\]
+\end{prop}
+
+\begin{remark}{}
+	米田引理在逻辑上是平凡的; 它带给我们的\emph{观点}, 即 $\mathsf C$ 的对象 $c$ 可\emph{等同于}函子 $\yo(c)$, 比命题本身更重要.
+\end{remark}
 
 \subsection{可表函子的余极限}
 
@@ -222,15 +369,16 @@
 \begin{remark}
 	{}
 	上面的伴随可解读为 ``脉'' (nerve, 函子 $R$) 与 ``几何实现'' (geometric realization, 函子 $L$) 的伴随, 其中 $\mathsf C$ 是某种几何形状的范畴 (如下面例子中的 $\Delta$).
-	脉与几何实现的概念由 Daniel Kan 1958 年的文章 \emph{Functors involving c.s.s complexes} 提出. 这篇文章也首次引入了 Kan 扩张.
+	脉与几何实现的概念由 Daniel Kan 1958 年的文章 \emph{Functors involving c.s.s complexes} 提出. 这篇文章也首次引入了 Kan 扩张. 事实上, \emph{几何实现是沿米田嵌入的左 Kan 扩张}.
 \end{remark}
 
 \begin{remark}
 	{}
-	上面的伴随还可解读为一种张量--同态伴随. 左伴随 $L$ 也记为 ${-}\otimes_{\mathsf C}F\colon \widehat {\mathsf C}\to\mathsf D$.
+	上面的伴随还是一种张量--同态伴随. 若将右伴随 $R$ 理解为 ``同态集'' (它是定义 \ref{category-action-hom} 的进一步推广); 则左伴随 $L$ 也可记为 ``张量积'' ${-}\otimes_{\mathsf C}F\colon \widehat {\mathsf C}\to\mathsf D$.
 \end{remark}
 
 \begin{example}
+	[label={sset-geometric-realization}]
 	{(单纯集的几何实现)}
 	设 $\mathsf C = \Delta$ (例 \ref{Simplicial-Sets}),
 	$\mathsf D=\mathsf {Top}$ 为拓扑空间范畴.
@@ -242,12 +390,34 @@
 %	|{-}|\colon \mathsf {sSet} = \widehat {\Delta} \to \mathsf {Top}.
 %	$$
 	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\mathsf {sSet}} \& {\mathsf {Top},}
+		{\mathsf {sSet}} \& {\mathsf {Top}}
 		\arrow[""{name=0, anchor=center, inner sep=0}, "|{-}|", shift left=2, from=1-1, to=1-2]
 		\arrow[""{name=1, anchor=center, inner sep=0}, "\operatorname{Sing}", shift left=2, from=1-2, to=1-1]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
-	\end{tikzcd}\]
-	其中 ``脉'' 函子 $\operatorname{Sing}$ 给出拓扑空间的\emph{奇异单纯集} (singular simplicial set).
+	\end{tikzcd},\quad
+	\operatorname{Sing}(X)_n = \operatorname{Hom}_{\mathsf {Top}}(\Delta^n,X),\]
+	其中 ``脉'' 函子 $\operatorname{Sing}$ 给出拓扑空间的\emph{奇异单纯集} (singular simplicial set), 而几何实现 $|{-}|$ 将单纯集 $X$ 对应到一个 CW 复形 $|X|$, 它是 $X$ 的所有单形 $\Delta^n\to X$ 的几何实现 ``粘起来'' (取余极限) 的结果.
+	
+	在以上讨论中, 可将 $\mathsf {Top}$ 改为小范畴的范畴 $\mathsf {Cat}$ ($F\colon \Delta \to \mathsf {Cat}$ 将 $[n]$ 对应到范畴 $0 \to 1 \to \cdots \to n$), 得到范畴版本的脉--几何实现伴随
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {sSet}} \& {\mathsf {Cat}}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "|{-}|", shift left=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "\operatorname{N}", shift left=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd},\quad
+	\operatorname{N}(\mathsf C)_n := \mathsf {Fun}(0\to 1\to\cdots\to n,\mathsf C).
+	\]
+	
+	在 $\infty$-范畴理论中我们还会用到单纯集与单纯范畴的脉--几何实现伴随
+	\[
+	\begin{tikzcd}[ampersand replacement=\&]
+			{\mathsf {sSet}} \& {\mathsf {sCat}}
+			\arrow[""{name=0, anchor=center, inner sep=0}, "{\mathfrak {C}[{-}]}", shift left=2, from=1-1, to=1-2]
+			\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{N}^{\text{c}}}", shift left=2, from=1-2, to=1-1]
+			\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd},
+	\]
+	见定义 \ref{coherent-nerve}.
 \end{example}
 
 \begin{example}
@@ -389,7 +559,7 @@
 	{(沿米田嵌入的 Kan 扩张)}
 	设 $\mathsf C' = \widehat {\mathsf C}$, $p=\yo\colon \mathsf C \to \widehat {\mathsf C}$ 为米田嵌入.
 	设 $\mathsf D$ 为余完备范畴. 由命题 \ref{free-cocompletion}, 任意函子 $F\colon \mathsf C \to \mathsf D$
-	都有沿 $\yo$ 的唯一的左 Kan 扩张 $\yo$
+	都有沿 $\yo$ 的唯一的左 Kan 扩张 $\yo_{!} F \colon \widehat {\mathsf C} \to \mathsf D$.
 \end{example}
 
 \todo{用 Kan 扩张定义预层的逆像}
@@ -552,20 +722,50 @@
 \end{definition}
 
 \begin{example}
-	[label={reflective-subcategory}]
-	{(自反子范畴)}
-	\emph{自反子范畴} (reflective subcategory) 是一种满子范畴, 其嵌入函子有左伴随.
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\mathsf D} \& {\mathsf C}
-		\arrow[""{name=0, anchor=center, inner sep=0}, "i"', shift right=2, hook, from=1-1, to=1-2]
-		\arrow[""{name=1, anchor=center, inner sep=0}, "a"', shift right=2, from=1-2, to=1-1]
-		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
-	\end{tikzcd}\]
-	例如层范畴是预层范畴的满子范畴, 此时 $a$ 为层化 (命题 \ref{sheafification}).
-	
-	自反子范畴的嵌入 $i\colon \mathsf D\to\mathsf C$ 是单子性函子; 也即子范畴 $\mathsf D$ 的对象可视为单子 $ia\colon \mathsf C\to\mathsf C$ 的代数.
+	{}
+	自反子范畴的嵌入 $i\colon \mathsf D\to\mathsf C$ 是单子性的; 也即 $\mathsf D$ 的对象可视为单子 $ia\colon \mathsf C\to\mathsf C$ 的代数.
 \end{example}
 
 % the Eilenberg-Moore category of ultrafilter monad is the category of compact Hausdorff spaces with its obvious forgetful functor to Set.
 
 \todo{单子与代数理论}
+
+\section{万有代数}
+
+\label{universal-algebra}
+
+万有代数可视为群, 环, 模, Boole 代数等概念的共同推广, 又称\emph{等式逻辑} (equational logic), 是一阶逻辑的简单例子. 本节介绍 William Lawvere 1963 年的博士论文 \emph{Functorial Semantics of Algebraic Theories} 引入的研究万有代数的范畴论方法.
+
+\begin{definition}
+	{(Lawvere 理论)}
+	一个 \emph{Lawvere 理论} $\mathbb T$ 是一个具有有限乘积 (包括始对象 $1$) 的范畴,
+	其中存在一个对象 $x$, 使得 $\mathbb T$ 的每个对象都同构于 $x$ 的若干次幂 $x^n$ ($n\geq 0$).
+\end{definition}
+
+Lawvere 理论的意图是将一个代数理论的运算记录在范畴 $T$ 的态射中, 其中态射 $x^n \to x$ 为 $n$ 元运算. 例如在群的理论中, 乘法是一个态射 $x^2 \to x$.
+
+
+\begin{definition}
+	{(模型)}
+	对于 Lawvere 理论 $\mathbb T$ 以及具有有限乘积的范畴 $\mathsf C$, $\mathbb T$ 在范畴 $\mathsf C$ 中的\emph{模型}是一个保持乘积的函子
+	$$
+	A \colon \mathbb T \to \mathsf {C},
+	$$
+	而模型之间的同态即是这样两个函子之间的自然变换.
+	称 $A(x)$ 为 $A$ 的\emph{底集} (underlying set).
+\end{definition}
+
+我们形象地称对象 $x$ 为理论 $\mathbb T$ 的\emph{游走模型} (walking model), 因为理论 $\mathbb T$ 的任何模型都是 $x$ 在相应范畴中的一个化身.
+例如对于群的理论 $\mathbb T_{\text{Grp}}$, 其在拓扑空间范畴 $\mathsf {Top}$ 中的模型 $\mathbb T_{\text{Grp}} \to \mathsf {Top}$ 即为拓扑群,
+在光滑流形范畴 $\mathsf {Man}$ 中的模型 $\mathbb T_{\text{Grp}} \to \mathsf {Man}$ 即为 Lie 群.
+
+我们可以具体写出群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$. 记 $F(n)$ 为 $n$ 个元素生成的自由群,
+那么 $\mathbb T_{\text{Grp}}$ 可定义为所有 $F(n)$ 在 $\mathsf {Grp}$ 中构成的满子范畴的对偶范畴. 注意到群范畴中 $F(n)$ 与 $F(m)$ 的余积 (群的自由积) 为 $F(n+m)$,
+而取对偶范畴使得余积变为积, 所以在 $\mathbb T_{\text{Grp}}$ 中有 $F(n) \simeq x^n$ ($x=F(1)$).
+
+设 $A \colon \mathbb T_{\text{Grp}} \to \mathsf {Set}$ 为群理论的一个模型 (即一个群), 记 $G=A(x)$ 为其底集, 我们可以具体写出 $G$ 上的乘法映射;
+它就是
+$$
+G\times G = A(x) \times A(x) \simeq A(x^2) \overset{A(m)}{\longrightarrow} A(x) = G,
+$$
+其中 $m \colon x^2 \to x$ 是群同态 $F(1) \to F(2)$, 将 $F(1)$ 的生成元映射到 $F(2)$ 两个生成元的乘积.

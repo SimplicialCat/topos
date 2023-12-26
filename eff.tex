@@ -1,4 +1,95 @@
 \section{可计算性理论与有效意象}
 
-有效意象 (effective topos) $\mathsf {Eff}$ 是用于研究可计算性理论的范畴, 或用一种诗意的表达, 是 ``可计算数学的世界'' (相对于 $\mathsf {Set}$ 是 ``通常数学的世界'').
+有编程经验的读者知道, 通常数学中可定义的函数不一定能编程计算, 其中最著名的是停机问题: 不存在一个程序能够判断任何程序是否停机. 研究类似问题的学科称作\emph{可计算性理论}. 有效\topos{} (effective topos) $\mathsf {Eff}$ 是一个可用内语言研究可计算性理论的\topos{}, 或用一种诗意的表达, 是 ``可计算数学的世界'' (相对于 $\mathsf {Set}$ 是 ``通常数学的世界'').
 
+\subsection{基础知识}
+
+首先我们需要用形式化的语言描述\emph{计算}的概念. 我们知道, 通用的\emph{计算机}是这样工作的:
+\begin{itemize}
+	\item 计算机可以执行一些 (有限个) 基本\emph{指令} (instructions); \emph{程序} (program) 是有限个指令的序列 (特别地, 这意味着只有可数个程序);
+	\item 计算机可以存储, 输入或输出\emph{数据} (data)\footnote{我们假设储存空间是无限的.}, 程序也是一种数据;
+	\item 计算机一次只执行一条指令\footnote{并行计算机可一次执行多条指令, 但它不改变计算的能力, 只是增加计算的效率.}.
+\end{itemize}
+
+数据是多种多样的, 例如一个程序可以作为数据输入另一个程序, 两个数据可以放在一起成为一个数据. 为了将所有数据表示为同一种东西, 我们需要\emph{编码} (code). 一种常用的编码是 \emph{G\"odel 数}, 它将任何一个数据对应到一个确定的自然数; 我们不需要其细节, 而只要知道如下性质:
+\begin{itemize}
+	\item 
+	\item 对于两个自然数 $n,m$, 数对 $(n,m)$ 可编码为一个自然数, 记为 $\langle n,m \rangle$;
+\end{itemize}
+
+若以 G\"odel 数来编码所有数据, 则我们考虑的程序是 $\mathbb{N}$ 到 $\mathbb{N}$ 的某种函数; 它在可计算性理论中称为\emph{部分递归函数} (partial recursive function).
+
+\begin{definition}
+	{(部分递归函数)}
+	对于集合 $X,Y$, \emph{部分函数} $f\colon X \to Y$ 是指定义在 $X$ 的一个子集上取值于 $Y$ 的函数. 对于 $x\in X$, 以符号 $f(x)\downarrow$ 表示 $f(x)$ 有定义.
+	在部分函数 $\mathbb{N}^k \to \mathbb{N} (k\geq 0)$ 中, 归纳地定义\emph{基础递归函数} (primitive recursive function):
+	\begin{itemize}
+		\item 常值函数 $\bar n\colon (x_1,\cdots,x_k)\mapsto n$ 是基础递归函数;
+		\item 后继 $\mathsf {succ} \colon n\mapsto n+1$ 是基础递归函数;
+		\item 投影 $(x_1,\cdots,x_k)\mapsto x_i$ 是基础递归函数;
+		\item 基础递归函数的复合是基础递归函数;
+		\item 给定基础递归函数 $g\colon \mathbb{N}^k\to \mathbb{N}$ 以及 $h\colon \mathbb{N}^{k+2}\to\mathbb{N}$, 如下定义的函数 $f$ 也是基础递归函数, 这个过程称作\emph{基础递归} (primitive recursion):
+		$$
+		\begin{aligned}
+			f(0,x_1,\cdots,x_k) &= g(x_1,\cdots,x_k),
+			\\
+			f(n+1,x_1,\cdots,x_k) &= h(n,f(n,x_1,\cdots,x_k),x_1,\cdots,x_k).
+		\end{aligned}
+		$$
+		%由 ``$\mathtt{for}$ 循环'' 定义的函数是基础递归函数.
+	\end{itemize}
+	若子集 $A\subset\mathbb{N}$ 的特征函数 $1_A$ 是基础递归函数, 则称之为\emph{基础递归谓词}.
+\end{definition}
+
+\begin{example}
+	{(常见的基础递归函数)}
+	很多函数都是基础递归函数.
+	\begin{multicols}
+		{2}
+		\begin{itemize}
+			\item 加法 $+\colon \mathbb{N}^2\to \mathbb{N}$ 是基础递归函数, 因为它有如下定义:
+			$$
+			\begin{aligned}
+				0+x &= x,
+				\\
+				(n+1)+x &= \mathsf {succ}(n+x).
+			\end{aligned}
+			$$
+			\item 乘法, 幂, 阶乘都是基础递归函数.
+			\item 前驱 $\mathsf {pred}\colon n\mapsto
+			\begin{cases}
+				0 & n=0\\
+				n-1 & n>0
+			\end{cases}
+			$ 是基础递归函数.
+			\item 谓词 ``等于零'' 是基础递归谓词:
+			$$
+			\begin{aligned}
+				\text{等于零}(0) &= 1,
+				\\
+				\text{等于零}(n+1) &= 0.
+			\end{aligned}
+			$$
+			\item 谓词 ``大于等于'', ``等于'', ``是素数'' 都是基础递归谓词.
+		\end{itemize}
+	\end{multicols}
+\end{example}
+
+\begin{definition}
+	{(部分递归函数)}
+	\emph{部分递归函数}的定义是在基础递归函数的基础上增加如下操作: 给定
+\end{definition}
+
+%其中\emph{部分函数}是可能对某些输入没有输出的函数, 而\emph{递归} (recursion) 是可计算函数的一种形式化的定义方法.
+
+\begin{definition}
+	{(实现)}
+	归纳地定义 ``自然数 $n$ 实现公式 $\varphi$'' 如下 (关于公式, 见定义 \ref{formula}, \ref{kinds-of-formulae}):
+	\begin{itemize}
+		\item $\varphi$ 为原子公式 (关系或等式). 当 $\varphi$ 取值为真时, 我们称 $0$ 实现 $\varphi$;
+		\item $\varphi = (\psi \land \chi)$. 当 $m$ 实现 $\psi$ 且 $n$ 实现 $\chi$ 时, 我们称 $\langle m,n\rangle$ 实现 $\varphi$;
+		\item $\varphi = (\psi \lor \chi)$. 当 $m$ 实现 $\psi$ 时, 我们称 $\langle 0,m\rangle$ 实现 $\varphi$, 当 $n$ 实现 $\chi$ 时, 我们称 $\langle 1,n\rangle$ 实现 $\varphi$; (注意: $\psi\lor\chi$ 要被实现, 必须要明确指出 $\psi,\chi$ 中的某一个被实现)
+		\item $\varphi = (\psi \Rightarrow \chi)$. 若每当 $m$ 实现 $\varphi$ 时, 都有 $n(m)$ 良定义且 $n(m)$ 实现 $\chi$, 我们称 $n$ 实现 $\varphi$;
+		\item 
+	\end{itemize}
+\end{definition}

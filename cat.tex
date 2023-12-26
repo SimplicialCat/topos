@@ -115,7 +115,7 @@
         \operatorname{Hom}_{\mathsf C}(Z,Y^X)  \simeq \operatorname{Hom}_{\mathsf C}(Z\times X,Y),
         \label{exponential-adjoint}
     \end{equation}
-    则称 $X$ \emph{可作指数} (exponentiable), 称 $Y^X$ 为\emph{指数对象} (exponential object), 或称\emph{内蕴态射对象} (internal hom-objects).
+    则称 $X$ \emph{可作指数} (exponentiable), 称 $Y^X$ 为\emph{指数对象} (exponential object), 或称\emph{内蕴态射对象} (internal hom-object).
     
     若 $\mathsf C$ 的所有对象均可作指数, 则称 $\mathsf C$ 为\emph{积闭范畴} (cartesian closed category), 其中 ``闭'' 即指数对象的存在性.
 \end{definition}
@@ -686,6 +686,7 @@ $u\colon P(X\times Y) \to PX$
         	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
     \end{tikzcd}\]
     到 $1$ 的态射的拉回为二元乘积, 故函子 $X^* \colon \mathsf C \to \mathsf C/X$ 将对象 $Z$ 对应到投影 $\text{pr}_2 \colon Z\times X \to X$ (直观: $X$ 的每个点上都有一个 $Z$). 那么这对伴随的余单位为 $(-)\times X$.
+    
 \end{example}
 
 前面讨论了 $f^*$ 的左伴随. 令人惊讶的是, $f^*$ 还有一个潜在的右伴随. 首先看绝对 (即 $Y=1$) 的情形; 我们发现它和指数对象有关.
@@ -969,9 +970,20 @@ $u\colon P(X\times Y) \to PX$
 由此及 ``伴随保持极限'' (命题 \ref{adjoints-preserve-limits}), 我们就得到
 
 \begin{prop}
+	[label={adjoints-preserve-mono-epi}]
 	{}
 	左伴随保持满射, 右伴随保持单射.
 \end{prop}
+
+例如, 对\topos{} $\mathsf C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathsf C/X \to \mathsf C/Y$ 是 $f^*\colon \mathsf C/Y \to \mathsf C/X$ 的右伴随 (命题 \ref{over-topos-essential-geometric-morphism}), 从而保持单射; 因此有如下结论.
+
+\begin{prop}
+	[label={forall}]
+	{}
+	对\topos{} $\mathsf C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathsf C/X \to \mathsf C/Y$ 限制为一个函子 $\forall_f\colon \operatorname{Sub}(X) \to \operatorname{Sub}(Y)$, 且为 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 的右伴随.
+\end{prop}
+
+关于函子 $\forall_f$ 的名称见注 \ref{quantifier-exists-as-left-adjoint}.
 
 \subsection{正则单射与满射, 等价关系}
 
@@ -983,7 +995,7 @@ $u\colon P(X\times Y) \to PX$
 	%对于范畴 $\mathsf C$ 中的态射 $i\colon U\to X$, 若存在态射 $f,g\colon X\to Y$ 使得 $i$ 是 $f,g$ 的等化子, 则称 $i$ 为\emph{正则单射} (regular monomorphism).
 	
 	%对于范畴 $\mathsf C$ 中的态射 $j\colon Y\to Z$, 若存在态射 $f,g\colon X\to Y$ 使得 $j$ 是 $f,g$ 的余等化子, 则称 $j$ 为\emph{正则满射} (regular epimorphism).
-	定义范畴中可作等化子的态射为\emph{正则单射} (regular monomorphism), 可作余等化子的态射为\emph{正则满射} (regular epimorphism).
+	定义范畴中可做为等化子的态射为\emph{正则单射} (regular monomorphism), 可做为余等化子的态射为\emph{正则满射} (regular epimorphism).
 \end{definition}
 
 \begin{example}
@@ -993,7 +1005,7 @@ $u\colon P(X\times Y) \to PX$
 
 \begin{example}
 	{}
-	环范畴 $\mathsf {Ring}$ 中的正则满射正是那些底层集合上是满射的环同态. $\mathsf {Ring}$ 中一般的满射未必是正则满射, 例如 $\mathbb{Z} \to \mathbb{Q}$.
+	环范畴 $\mathsf {Ring}$ 中的正则满射正是那些底层集合上是满射的环同态. $\mathsf {Ring}$ 中一般的满射未必是正则满射, 例如整数到有理数的嵌入 $\mathbb{Z} \to \mathbb{Q}$.
 \end{example}
 
 
@@ -1034,8 +1046,8 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	\emph{等价关系}是满足如下条件的关系.
 	\begin{itemize}
 		\item (自反性) $\Delta \leq R$, 其中 $\Delta$ 是对角线 (例 \ref{diagonal});
-		\item (对称性) $R = \sigma R$, 其中 $\sigma$ 为交换两个分量;
-		\item (传递性) 作为 $X\times X\times X$ 的子对象有 $p_{12}^*R \land p_{23}^* R \leq p_{13}^*R$, 其中 $p_{ij}$ 是到第 $i,j$ 分量的投影.
+		\item (对称性) $R \leq \sigma R$, 其中 $\sigma$ 为交换两个分量;
+		\item (传递性) 作为 $X\times X\times X$ 的子对象有 $p_{12}^*R \land p_{23}^* R \leq p_{13}^*R$, 其中 $p_{ij}$ 是到第 $i,j$ 分量的投影, $\land$ 是子对象的交, 也即拉回.
 	\end{itemize}
 \end{definition}
 
@@ -1080,7 +1092,17 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	此时若态射 $X\to W$ 余等化 $p_1,p_2$, 那么它也余等化 $g,h$, 从而 (由 $f$ 的性质) 穿过 $Y$. 这说明了 $f$ 是其核偶的余等化子.
 \end{proof}
 
-\todo{Giraud 公理, 不交和}
+% \todo{Giraud 公理, 不交和}
+
+\begin{prop}
+	[label={topos-mono-regular}]
+	{}
+	在\topos{}中单射都是正则单射.
+\end{prop}
+\begin{proof}
+	由子对象分类子的定义 \ref{Subobject-classifier-definition-alternative},
+	单射 $U\hookrightarrow X$ 是 $\chi_U\colon X\to \Omega$ 与 $X\to 1\overset{\top}{\to}\Omega$ 的等化子.
+\end{proof}
 
 \begin{prop}
 	{}
@@ -1093,7 +1115,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	由命题 \ref{pullback-has-right-adjoint}, \topos{}中的拉回有右伴随, 从而拉回保持余极限. 由满射的余极限刻画 (命题 \ref{mono-epi-pullback-pushout}), 知拉回保持满射.
 \end{proof}
 
-\todo{顺序?}
+% \todo{顺序?}
 
 \subsection{像}
 
@@ -1166,42 +1188,63 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	{(为什么拉回的左伴随叫做 ``存在'')}
     考虑集合范畴中的一个特例. 取 $X = Y \times Z$, $f \colon Y \times Z \to Y$ 为投影.
     将 $Y\times Z$ 的子集视为关于 $y,z$ 的谓词 $P(y,z)$,
-    那么 ``存在'' 函子 $\exists_f$ 将这个谓词变为关于 $y$ 的谓词 $\exists z \,P(y,z)$ (其中只有 $y$ 一个\emph{自由变量}), 对应 $Y$ 的子集 $\{y \mid \exists z P(y,z)\}$.
+    那么 ``存在'' 函子 $\exists_f$ 将这个谓词变为关于 $y$ 的谓词 $\exists z \,P(y,z)$ (其中只有 $y$ 一个\emph{自由变量}), 对应 $Y$ 的子集 $\{y \mid \exists z P(y,z)\}$. 类似地, 拉回 $f^*$ 的右伴随是 ``任意'' $\forall_f$,
+    将谓词 $P(y,z)$ 变为关于 $y$ 的谓词 $\forall z\, P(y,z)$,
+    对应 $Y$ 的子集 $\{y\mid \forall z P(y,z)\}$.
 \end{remark}
+
+%\begin{prop}
+%	{}
+%	
+%\end{prop}
 
 %现在我们构造\topos{}中的像. 构造中要用到推出, 这是基于前面构造的 (或者定义中要求的) 有限余极限.
 
 \subsection{满--单分解}
 
-\todo{与上一节的关系?}
+% \todo{与上一节的关系?}
 
 集合的映射可分解为一个满射后接一个单射, 这称为映射的\emph{满--单分解} (epi--mono factorization). %在一般的范畴中这当然不一定成立; 但在\topos{}中这件事总是成立.
 
 \begin{prop}
     {(满--单分解)}
-    在\topos{}中, 任意态射 $f\colon X \to Y$ 可分解为 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7aW19KGYpIl0sWzIsMCwiWSJdLFswLDEsImUiXSxbMSwyLCJtIl1d
+    在\topos{}中, 任意态射 $f\colon X \to Y$ 的余核偶的等化子等于它的像 $\operatorname{im}(f)\to Y$. 进而 $f$ 可分解为一个满射 $e$ 与一个单射 $m$: % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7aW19KGYpIl0sWzIsMCwiWSJdLFswLDEsImUiXSxbMSwyLCJtIl1d
 \[\begin{tikzcd}[ampersand replacement=\&]
-	X \& {\operatorname{im}(f)} \& Y,
+	X \& {\operatorname{im}(f)} \& Y.
 	\arrow["e", from=1-1, to=1-2]
 	\arrow["m", from=1-2, to=1-3]
 \end{tikzcd}\]
-    且 $e$ 是满射.
 \end{prop}
 
 \begin{proof}
-    作 $f$ 与 $f$ 的推出,
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWSJdLFswLDEsIlkiXSxbMSwxLCJaIl0sWzAsMiwiZiIsMl0sWzIsMywiaCIsMl0sWzAsMSwiZiJdLFsxLDMsImciXSxbMywwLCIiLDEseyJzdHlsZSI6eyJuYW1lIjoiY29ybmVyIn19XV0=
-\[\begin{tikzcd}[ampersand replacement=\&]
-	X \& Y \\
-	Y \& Z
-	\arrow["f"', from=1-1, to=2-1]
-	\arrow["h"', from=2-1, to=2-2]
-	\arrow["f", from=1-1, to=1-2]
-	\arrow["g", from=1-2, to=2-2]
-	\arrow["\lrcorner"{anchor=center, pos=0.125, rotate=180}, draw=none, from=2-2, to=1-1]
-\end{tikzcd}\]
-    再作 $g$ 与 $h$ 的等化子 $m \colon W \to Y$.
-    由于 $g\circ f = h\circ f$, 等化子的泛性质给出唯一的态射 $e \colon X \to W$.
+    设 $f\colon X \to Y$ 的余核偶的等化子为 $M\hookrightarrow Y$, 给出分解 $X\overset{e}{\to}M\overset{m}{\to}Y$.
+    
+    我们先证明 $M$ 是 $f$ 的像.
+    对任意子对象 $N\hookrightarrow Y$, 由命题 \ref{topos-mono-regular} 可设 $N$ 是等化子 $\operatorname{eq}(s,t\colon Y\to Z)$; 若 $f$ 穿过 $N$, 则 $f$ 也等化 $s,t$, 于是存在唯一的 $u\colon Y\sqcup_X Y \to Z$ 使下图交换,
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    	\&\& Y \\
+    	M \& N \&\& {\hspace{-1.6em}Y\sqcup_X Y} \& Z \\
+    	\&\& Y
+    	\arrow["s"', from=3-3, to=2-5]
+    	\arrow["t", from=1-3, to=2-5]
+    	\arrow[from=3-3, to=2-4]
+    	\arrow["{\exists! u}", dashed, from=2-4, to=2-5]
+    	\arrow[from=1-3, to=2-4]
+    	\arrow[from=2-1, to=3-3]
+    	\arrow[from=2-1, to=1-3]
+    	\arrow[from=2-2, to=3-3]
+    	\arrow[from=2-2, to=1-3]
+    	\arrow["{\exists!}", dashed, from=2-1, to=2-2]
+    \end{tikzcd}\]
+	这说明 $M\hookrightarrow Y$ 也等化 $s,t$, 由 $N$ 的泛性质得 $M\leq N$. 这证明了 $M$ 是 $f$ 的像.
+	
+	下面证明 $X\overset{e}{\to} M$ 为满射.
+	首先注意到, 对任意态射 $f\colon X\to Y$, 若 $\operatorname{im}(f)\to Y$ 是同构, 则 $f$ 的余核偶是两个相同的态射, 因而 $f$ 是满射.
+	现在考虑 $e\colon X\to M$ 的像, 得到分解
+	$$
+	X \to M' \overset{m'}{\to} M \overset{m}{\to} Y,
+	$$
+	则 $f$ 穿过 $Y$ 的子对象 $M'$, 但 $M$ 是被 $f$ 穿过的最小子对象, 故 $M' \overset{m'}{\to} M$ 为同构, $e$ 为满射.
 \end{proof}
 
 \subsection{子终对象}
@@ -1294,8 +1337,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \begin{propdef}
 	{(子对象的并)}
 	在\topos{}中, 定义子对象 $U\to X$, $V\to X$ 的\emph{并}为两者唯一确定的态射 $U+V\to X$ 的像 (定义 \ref{image-definition}).
-	
-	由像的定义, 它是同时包含 $X$ 和 $Y$ 的最小子对象, 也即两个子对象的并.
+	由像的定义, 它是同时包含 $X$ 和 $Y$ 的最小子对象.
 \end{propdef}
 
 由此, \topos{}中一个对象的子对象集合 $\operatorname{Sub}(X)$ 构成一个格.
@@ -1369,6 +1411,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \end{remark}
 
 \begin{prop}
+	[label={subobject-lattice-Heyting-algebra}]
 	{}
 	在\topos{}中, 子对象的格 $\operatorname{Sub}(X)$ 是 Heyting 代数. 进一步, 沿态射 $f\colon X\to Y$ 的拉回
 	$f^*\colon \operatorname{Sub}(Y)\to\operatorname{Sub}(X)$ 是 Heyting 代数的同态.%, 即保持 ``$\Rightarrow$'' 运算.
@@ -1385,15 +1428,52 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	由命题 \ref{pullback-preserve-exponential-objects}, 拉回保持俯范畴中的指数对象, 从而保持子对象 Heyting 代数中的 ``$\Rightarrow$'' 运算. 结合命题 \ref{pullback-lattice-morphism}, 知 $f^*$ 为 Heyting 代数同态.
 \end{proof}
 
-由上述命题以及子对象分类子的性质, 我们知道 $\operatorname{Sub}(X)\simeq \operatorname{Hom}(X,\Omega)$ 上有\makebox{\emph{自然}}的 Heyting 代数结构; 自然性意味着我们可以开动米田机器, 得到
+值得一提的是, 命题 \ref{subobject-lattice-Heyting-algebra} 对更一般的 Heyting 范畴 (Heyting 范畴是指子对象的拉回 $f^*$ 有右伴随 $\forall_f$, 见定义 \ref{Heyting-category}) 都成立. 对于子对象 $i\colon U\hookrightarrow X$ 与 $V\hookrightarrow X$, 可定义 $U\Rightarrow V$ 为 $\forall_i(U\cap V)\in\operatorname{Sub}(X)$.
+
+由命题 \ref{subobject-lattice-Heyting-algebra} 以及子对象分类子的性质, 我们知道 $\operatorname{Sub}(X)\simeq \operatorname{Hom}(X,\Omega)$ 上有\makebox{\emph{自然}}的 Heyting 代数结构; 自然性意味着我们可以开动米田机器, 得到
 $$
 \fbox{$\Omega$ 是\topos{}中的\emph{内蕴} Heyting 代数.}
 $$
 例如 $\operatorname{Hom}(X,\Omega)$ 上的 ``$\vee$'' 运算
 $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \operatorname{Hom}(X,\Omega)$ (作为自然变换)
 等同于 $\vee\colon \operatorname{Hom}(X,\Omega\times \Omega)\to \operatorname{Hom}(X,\Omega)$, 等同于一个态射 $\vee\colon \Omega\times\Omega\to\Omega$.
+这个命题还有如下 ``更加内蕴'' 的版本.
+\begin{prop}
+	{}
+	对\topos{}中的任意对象 $X$, 幂对象 $PX$ 为内蕴 Heyting 代数.
+\end{prop}
 
-\todo{内蕴版本}
+我们还可以具体写出内蕴 Heyting 代数 $\Omega$ 的结构态射.
+
+\begin{prop}
+	{}
+	内蕴 Heyting 代数 $\Omega$ 上的 ``且'' 运算 $\land\colon \Omega\times\Omega\to \Omega$ 是子对象 $(\top,\top)\colon 1 \to \Omega\times\Omega$
+	的特征函数.
+\end{prop}
+\begin{proof}
+%	注意到下图为拉回,
+%	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIxXFx0aW1lcyAxIl0sWzEsMCwiMVxcdGltZXNcXE9tZWdhIl0sWzAsMSwiXFxPbWVnYVxcdGltZXMgMSJdLFsxLDEsIlxcT21lZ2FcXHRpbWVzXFxPbWVnYSJdLFswLDIsIihcXHRvcCxcXG9wZXJhdG9ybmFtZXtpZH0pIiwyXSxbMiwzLCIoXFxvcGVyYXRvcm5hbWV7aWR9LFxcdG9wKSIsMl0sWzAsMSwiKFxcb3BlcmF0b3JuYW1le2lkfSxcXHRvcCkiXSxbMSwzLCIoXFx0b3AsXFxvcGVyYXRvcm5hbWV7aWR9KSJdXQ==
+%	\[\begin{tikzcd}[ampersand replacement=\&]
+%		{1\times 1} \& 1\times\Omega \\
+%		{\Omega\times 1} \& \Omega\times\Omega
+%		\arrow["{(\top,\operatorname{id})}"', from=1-1, to=2-1]
+%		\arrow["{(\operatorname{id},\top)}"', from=2-1, to=2-2]
+%		\arrow["{(\operatorname{id},\top)}", from=1-1, to=1-2]
+%		\arrow["{(\top,\operatorname{id})}", from=1-2, to=2-2]
+%	\end{tikzcd}\]
+%	这张图实际上是 ``万有'' 的 ``子对象的交'', 即任何子对象的交都可以通过这张图的拉回得到. 对任意两个子对象 $U\to X$,
+%	$V\to X$,
+%	\todo{证明} % Elephant p.58 Lemma 1.6.3
+	使用米田嵌入, $\yo(\Omega) = \operatorname{Sub}$, $\yo(\Omega\times\Omega) = \operatorname{Sub}(-) \times \operatorname{Sub}(-)$.
+	由定义, $\land\colon \Omega\times\Omega\to\Omega$ 是自然变换 $\land\colon \yo(\Omega\times\Omega) \to \yo(\Omega)$ 根据米田引理对应的态射,
+	而这就是 $\operatorname{id}_{\Omega\times\Omega}$ 在这个自然变换下的像.
+\end{proof}
+
+\begin{prop}
+	{}
+	内蕴 Heyting 代数 $\Omega$ 上的 ``蕴涵'' 运算 $\Rightarrow \colon \Omega\times\Omega\to \Omega$ 是等化子 $\operatorname{eq}(\land,\pi_1)\colon ? \to \Omega\times\Omega$
+	的特征函数.
+\end{prop}
 
 \subsection{自然数对象}
 
@@ -1474,3 +1554,4 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	注意 Boole \topos{}中尽管有 ``排中律'' 以及 $1+1\simeq\Omega$, 却\emph{不一定只有两个真值}. $\mathsf {Set}\times\mathsf {Set}$ 就是一例. 反过来, 只有两个真值的\topos{}也不一定是 Boole \topos{}.
 \end{remark}
 
+\todo{选择公理}

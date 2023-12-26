@@ -13,14 +13,14 @@
 % KaiTi
 % DengXian
 
-\def\topos{猫猫}
+\def\topos{意象}
 \def\nlab{$n$Lab}
 
 \title{\textbf{\huge 盲人摸象}\\\emph{\topos{}理论讲义}}
 \author{\emph{王进一}\\\href{我的邮箱}{jin12003@163.com}\\QQ 2917905525}
 \date{2023 年夏至今\\~\\~此版本编译时间: \today{}~\\~\\这是一本正在施工的讲义. 目前我迫切需要读者的意见!
 \\~\\
-在非正式版本中, 我故意将 topos 译为 ``\topos{}''.
+%在非正式版本中, 我故意将 topos 译为 ``\topos{}''.
 }
 
 \usepackage{amsthm}
@@ -28,6 +28,7 @@
 \usepackage{amssymb}
 \usepackage{mathrsfs}
 \usepackage{hyperref}
+\usepackage{stmaryrd}
 
 %\usepackage{wrapfig}
 
@@ -35,13 +36,30 @@
 
 \usepackage{tikz}
 \usetikzlibrary{cd}
+\usetikzlibrary{decorations.pathmorphing}
 
 \usepackage{enumerate}
 
 \setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{1}
 
-\input{colorboxes}
+% 哲思
+
+\newcommand{\philoquote}[2]{
+	~\\
+	\begin{center}
+		\begin{minipage}{0.7\linewidth}
+			{\quad\sffamily #1}\\
+			\begin{flushright}
+				\textsf{#2}
+			\end{flushright}
+		\end{minipage}
+	\end{center}
+	~\\
+}
+
+% 彩色方框
+\input{colorboxes-printing}
 
 % 分栏
 \usepackage{multicol}
@@ -57,9 +75,11 @@
 \usepackage{geometry}
 \geometry{
 	b5paper,
-	left=20mm,
-	top=30mm,
+	left=15mm,
+	top=25mm,
+	bottom=20mm
 }
+%\renewcommand{\baselinestretch}{0.9}
 
 % 参考文献
 \usepackage{biblatex}

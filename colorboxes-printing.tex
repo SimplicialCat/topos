@@ -1,0 +1,95 @@
+
+
+% 彩色方框, 参数的使用有点意思
+% 这是打印版的参数 (用于省墨)
+
+\usepackage{tcolorbox}
+
+\tcbuselibrary{breakable}
+
+\newcommand{\framecolor}{gray!50!white}
+
+\newtcolorbox[
+auto counter,
+number within=section,
+]{remark}[2][]{
+	colback=white,
+	colbacktitle=white,
+	colframe=\framecolor,
+	coltitle=black,
+	breakable,
+	title={\textsf{注~\thetcbcounter} #2},
+	#1
+}
+
+\def\examplecolor{white}
+\newtcolorbox[
+use counter from=remark,
+%number within=chapter,
+]{example}[2][]{
+	colback=white,
+	colbacktitle=white,
+	colframe=\framecolor,
+	coltitle=black,
+	breakable,
+	title={\textsf{例~\thetcbcounter} #2},
+	#1
+}
+\newtcolorbox[
+use counter from=remark,
+%number within=chapter,
+]{definition}[2][]{
+	colback=white,
+	colbacktitle=white,
+	colframe=\framecolor,
+	coltitle=black,
+	breakable,
+	title={\textsf{定义~\thetcbcounter} #2},
+	#1
+}
+
+\def\propcolor{white}
+\newtcolorbox[
+use counter from=remark,
+]{prop}[2][]{
+	colback=white,
+	colbacktitle=white,
+	colframe=\framecolor,
+	coltitle=black,
+	breakable,
+	title={\textsf{命题~\thetcbcounter} #2},
+	#1
+}
+\newtcolorbox[
+use counter from=remark,
+]{propdef}[2][]{
+	colback=white,
+	colbacktitle=white,
+	colframe=\framecolor,
+	coltitle=black,
+	breakable,
+	title={\textsf{命题-定义~\thetcbcounter} #2},
+	#1
+}
+
+\newtcolorbox[
+auto counter,
+number within=chapter
+]{exercise}[2][]{
+	colback=white,
+	colbacktitle=white,
+	colframe=\framecolor,
+	coltitle=black,
+	title={\textsf{习题~\alph{\thetcbcounter}} #2},
+	#1
+}
+\newtcolorbox[
+use counter from=remark,
+]{axiom}[2][]{
+	colback=white,
+	colbacktitle=white,
+	colframe=\framecolor,
+	coltitle=black,
+	title={\textsf{公理~\thetcbcounter} #2},
+	#1
+}

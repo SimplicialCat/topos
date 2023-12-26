@@ -6,7 +6,7 @@
 
 \todo{两种不同的 syntactic category}
 
-\todo{写成单独的一章?}
+%\todo{写成单独的一章?}
 
 \philoquote{The importance of syntactic categories lies in the fact that they allow us to associate with a theory (in the sense of axiomatic presentation), which is a `linguistic',
 	unstructured kind of entity, a well-structured mathematical object whose `geometry' embodies the syntactic aspects of the theory.}{Olivia Caramello, \cite{TST}}
@@ -37,6 +37,7 @@
 \subsection{一阶理论的句法范畴}
 
 \begin{definition}
+	[label={first-order-theory-syntactic-category}]
 	{(一阶理论的句法范畴)}
 	
 	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论. 定义\emph{句法范畴} (syntactic category) $\mathcal C_{\mathbb T}$, 其中
@@ -84,7 +85,7 @@
 }{Olivia Caramello}
 
 %分类\topos{}的角色类似于拓扑学中的分类空间:
-对于拓扑群 $G$ 存在分类空间 $BG$,
+有代数拓扑背景的读者知道, 对于拓扑群 $G$ 存在 ``分类空间'' $BG$,
 使得 (足够好的) 空间 $X$ 上 $G$-主丛的等价类
 一一对应于 $X$ 到 $BG$ 的映射同伦类 (被 $BG$ ``分类''),
 $$
@@ -92,20 +93,26 @@ G\mathsf{-Bund} (X) \simeq [X,BG];
 $$
 从而恒等映射 $\operatorname{id}_{BG}$ 对应着 $BG$ 上一个 ``万有'' 的 $G$-主丛 $EG \to BG$,
 ``万有'' 意指任何 $G$-主丛都是通过某个映射 $X \to BG$ 将其拉回得到.
+分类\topos{}不仅仅是分类空间的一个精神上的类比; 它某种意义上是分类空间的推广, 这种推广正是沿着 Grothendieck 的 ``\topos{}作为空间概念的推广'' 的思路.
 
-类似地, 在许多情形下, \topos{}上的一种结构可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
-分类\topos{}到自身的恒等态射对应着其上的 ``万有'' 的这种结构.
+类似地, 在许多情形下, \topos{}上的一种结构 $T$ 可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
+某种结构 $T$ 的分类\topos{}应当视为 ``所有 $T$ 构成的空间'', 术语叫做\emph{模空间}.
+若将\topos{} $\mathsf C$ 视为空间, 那么 $\mathsf C$ 上的一个结构 $T$ 可视为空间的 ``每一点'' 上都有一个结构 $T$,
+从而这给出 $\mathsf C$ 到模空间的一个几何态射.
+例如, 设 $\mathsf E$ 为环的分类\topos{}, 那么 $\mathsf E$ 应当视为 ``所有环构成的空间'' (上的层范畴), 拓扑空间 $X$ 上的一个环层即是 $X$ 的 ``每一点'' 上都有一个环,
+这等同于 $\text{Sh}(X)$ 到 $\mathsf E$ 的一个几何态射.
+
+分类\topos{}到自身的恒等态射对应着其上的 ``万有'' 的 $T$ 结构, 又称\emph{重言} (tautological) $T$ 结构.
 
 \subsection{$G$-旋子的分类\topos{}}
 
-我们将看到, 分类\topos{}不仅仅是分类空间的一个精神上的类比; 它某种意义上是分类空间的推广, 这种推广正是沿着 Grothendieck 的 ``\topos{}作为空间概念的推广'' 的思路.
 
 下面的概念是 ``空间上的 $G$-主丛'' 的推广, 取自 \cite{SGL} VIII.2 节.
 \begin{definition}
 	[label={G-torsors-over-topos}]
 	{(\topos{}上的 $G$-旋子)}
 	设 $G$ 为离散群, 即 $\mathsf {Set}$ 中的群.
-	设 $\gamma\colon \mathsf C\to \mathsf {Set}$ 是 $\mathsf {Set}$ 上的\topos{} (见命题 \ref{global-sections-geometric-morphism}). 定义 $\mathsf C$ 上的一个 $G$-\emph{旋子}\footnotemark (torsor over $\mathsf C$) 为 $\mathsf C$ 的对象 $T$, 以及群对象 $\gamma^*(G)$ 在 $T$ 上的作用 $\mu\colon \gamma^*(G)\times T \to T$, 满足
+	设 $\gamma\colon \mathsf C\to \mathsf {Set}$ 是 $\mathsf {Set}$ 上的\topos{} (见命题 \ref{global-sections-geometric-morphism}). 定义 $\mathsf C$ 上的一个 $G$-\emph{旋子}\footnotemark (torsor) 为 $\mathsf C$ 的对象 $T$, 以及群对象 $\gamma^*(G)$ 在 $T$ 上的作用 $\mu\colon \gamma^*(G)\times T \to T$, 满足
 	\begin{enumerate}[(i)]
 		\item 映射 $T\to 1$ 为满射;
 		\item 群作用 $\mu$ 诱导同构 $(\mu,\pi_2)\colon \gamma^*(G)\times T \to T\times T$.
@@ -156,9 +163,9 @@ $$
 	设 $G$ 为离散群, 定义 $G$-旋子的理论 $\mathbb T_G$.
 	其中只有一个类型 $T$, 对每个元素 $g\in G$ 都有一个一元函数符号 $g$, 公理如下.
 	\begin{itemize}
-		\item (\emph{群作用}) 对任意 $g,h\in G$ 有公理 $\vdash_x g(hx)=(gh)x$ (注意 ``对任意'' \emph{不是}这条公理的一部分, 这里实际上没有用到任意量词 $\forall$);
+		\item (\emph{群作用}) 对每一对 $g,h\in G$ 有一条公理 $\vdash_x g(hx)=(gh)x$ (注意这里没有用到任意量词 $\forall$);
 		\item (\emph{非空}) $\vdash \exists x. \top$;
-		\item (\emph{自由性}) 对任意不同的 $g,h\in G$ 有公理 $(gx=hx)\vdash_x \bot$ (同上, 这里没有用到 $\forall$);
+		\item (\emph{自由性}) 对每一对不同的 $g,h\in G$ 有一条公理 $(gx=hx)\vdash_x \bot$ (同上, 这里没有用到 $\forall$);
 		\item (\emph{传递性}) $\displaystyle\vdash_{(x,y)}\bigvee_{g\in G}gx=y$.
 	\end{itemize}
 \end{definition}
@@ -176,44 +183,61 @@ $$
 
 \todo{}
 
-\subsection{环的分类\topos{}, 万有环}
+\subsection{群的分类\topos{}}
 
-本节以一种有些唐突的方式构造环的分类\topos{}, 以及其中 ``万有'' 的环. %后面我们将看到构造分类\topos{}有更系统的方法.
+本节构造群的分类\topos{}. 群是一种 Lawvere 理论 (附录 \ref{universal-algebra} 节); 下面的论述适用于一般的 Lawvere 理论, 从而逐字逐句地替换可得到环, Boole 代数等结构的分类\topos{}.
+%
+% 回忆范畴中的群对象的概念. 设范畴 $\mathsf C$ 有有限积 (包括始对象 $1$), 那么 $\mathsf C$ 中的\emph{群}为对象 $G$, 带有元素 $e \colon 1 \to G$, 乘法 $\cdot \colon G\times G \to G$, 满足群的交换图.
 
-\begin{definition}
-    {(环)}
-    设范畴 $\mathsf C$ 有有限极限.
-    定义 $\mathsf C$ 中的\emph{环}为对象 $R$,
-    带有元素 $0,1\colon 1 \to R$,
-    加法与乘法 $+,\times \colon R\times R \to R$,
-    满足通常的交换环的条件.
+%满足通常的交换环的图表, 例如分配律 $x(y+z)=xy+xz$ 对应交换图
+%% https://q.uiver.app/#q=WzAsNCxbMCwwLCJSXFx0aW1lcyBSXFx0aW1lcyBSIl0sWzEsMCwiUlxcdGltZXMgUiJdLFsxLDEsIlIiXSxbMCwxLCJSXFx0aW1lcyBSIl0sWzAsMSwiKHgseSx6KVxcbWFwc3RvICh4LHkreikiXSxbMSwyLCJcXHRpbWVzIl0sWzAsMywiKHgseSx6KVxcbWFwc3RvICh4eSx4eikiLDJdLFszLDIsIisiLDJdXQ==
+%\[\begin{tikzcd}[ampersand replacement=\&]
+%	{R\times R\times R} \& {R\times R} \\
+%	{R\times R} \& R.
+%	\arrow["{(x,y+z)}", from=1-1, to=1-2]
+%	\arrow["\times", from=1-2, to=2-2]
+%	\arrow["{(xy,xz)}"', from=1-1, to=2-1]
+%	\arrow["{+}"', from=2-1, to=2-2]
+%\end{tikzcd}\]
+%(这里使用了 \ref{Mitchell--Benabou-language} 节介绍的 Mitchell--B\'enabou 语言.)
 
-    范畴 $\mathsf C$ 中的环构成一个范畴 $\mathsf {Ring}(\mathsf C)$.
-    进一步, 对于两个这样的范畴 $\mathsf C,\mathsf D$, 保持有限极限的函子 $f \colon \mathsf C \to \mathsf D$ 诱导了函子
-    $\mathsf {Ring}(\mathsf C) \to \mathsf {Ring}(\mathsf D)$.
+设范畴 $\mathsf C$ 有有限积. $\mathsf C$ 中的群对象构成一个范畴 $\mathsf {Grp}(\mathsf C)$.
+\ref{universal-algebra} 节提到它等同于群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$ 到 $\mathsf C$ 的保持有限积的函子的范畴.
+进一步, 对于两个具有有限积的范畴 $\mathsf C,\mathsf D$, 以及保持有限积的函子 $f \colon \mathsf C \to \mathsf D$, 有对应的函子
+$\mathsf {Grp}(\mathsf C) \to \mathsf {Grp}(\mathsf D)$.% $\mathsf {Ring}(\mathsf C) \to \mathsf {Ring}(\mathsf D)$.
 
-    特别地, 对于\topos{}间的几何态射 $f \colon \mathsf C \to \mathsf D$, 其逆像部分 (见定义 \ref{geometric-morphism}) $f^* \colon \mathsf D \to \mathsf C$ 诱导了函子 $\mathsf {Ring}(\mathsf D) \to \mathsf {Ring}(\mathsf C)$;
-    这表示 $\mathsf {Ring}(-)$ 是关于\topos{}的反变函子.
-\end{definition}
+对于\topos{}间的几何态射 $f \colon \mathsf C \to \mathsf D$, 其逆像部分 (见定义 \ref{geometric-morphism}) $f^* \colon \mathsf D \to \mathsf C$ 保持有限极限, 故保持有限积, 从而诱导了函子 $\mathsf {Grp}(\mathsf D) \to \mathsf {Grp}(\mathsf C)$;
+这表示 $\mathsf {Grp}(-)$ 关于\topos{}是 ``反变'' 的.
 
-下面我们将构造一个\topos{} $\mathsf E$, 称为\emph{环的分类\topos{}}, 使得有自然的范畴等价
+下面我们将构造一个\topos{} $\mathsf E$, 称为\emph{群的分类\topos{}}, 使得有自然的范畴等价
 $$
-\mathsf {Ring}(\mathsf C) \simeq \mathsf{Hom}(\mathsf C,\mathsf E).
+\mathsf {Grp}(\mathsf C) \simeq \mathsf{Hom}(\mathsf C,\mathsf E).
 $$
+
+\subsection{环的分类\topos{}}
+
+\todo{单独讲一下和代数几何的关系}
 
 % 参考 Caramello 的 TST
 
-\todo{群的理论的分类\topos{}}
-
-考虑范畴 $\mathsf A = (\mathsf {Ring}_{\text{fp}})^\op$,
-其中 $\mathsf {Ring}_{\text{fp}}$ 是 ($\mathsf{Set}$ 中) \emph{有限表现} (finitely presented) 环的范畴 (见例 \ref{zariski-site}).
-$\mathsf A$ 中有一个特殊的对象 $A = \mathbb{Z}[x]$,
-也即仿射直线.
+%\paragraph{群}
+%
+%考虑范畴 $\mathsf A = (\mathsf {Grp}_{\text{f}})^\op$,
+%
+%\paragraph{环}
+%
+%考虑范畴 $\mathsf A = (\mathsf {Ring}_{\text{fp}})^\op$,
+%其中 $\mathsf {Ring}_{\text{fp}}$ 是 ($\mathsf{Set}$ 中) \emph{有限表现} (finitely presented) 环的范畴 (见例 \ref{zariski-site}).
+%$\mathsf A$ 中有一个特殊的对象 $A = \mathbb{Z}[x]$,
+%也即仿射直线.
 
 \subsection{几何理论的分类\topos{}}
 
 \begin{definition}
-    {}
+    {(几何理论的句法景和分类\topos{})}
     设 $\mathbb T$ 为一几何理论.
     
+    $\text{Sh}(\mathcal C_{\mathbb T},)$
 \end{definition}
+
+\todo{torsor 的}

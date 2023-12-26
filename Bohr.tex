@@ -1,42 +1,90 @@
 \section{量子理论与 Bohr 意象}
 
-
+对于经典力学与量子力学系统, 最核心的对象是其中的\emph{状态}与\emph{可观测量}.
+量子理论有多种不同的公理化. 粗略地说, 我们考虑的一个量子系统由一个 $C^*$-代数 $\mathcal A$ 表示, 可观测量是这个 $C^*$-代数中的自伴元素, 而系统的状态是这个代数到 $\mathbb{C}$ 的某种映射 $$\rho\colon \mathcal A \to \mathbb{C}.$$ 人们常常以一个 Hilbert 空间 $H$ 表示系统中的纯态 (pure states), 而可观测量则被表示为 $H$ 上的自伴算子, 即有表示 $$\pi\colon \mathcal A \to \operatorname{End}(H).$$ 纯态 $\psi\in H$ 对应的映射则是
+$$
+\rho\colon A\mapsto \langle\psi | A | \psi \rangle := \langle\psi,\pi(A)\psi\rangle,
+$$
+它给出状态 $\psi$ 下可观测量 $A$ 的 ``期望值''.
 
 \subsection{$C^*$-代数, 经典语境与 Bohr 景}
-
-一般而言, 量子系统是由 $C^*$-代数表示的.
 
 \begin{definition}
     {($C^*$-代数)}
     \emph{$C^*$-代数}是 $\mathbb{C}$ 上的 Banach 代数 $\big(\mathcal A,\|{-}\|\big)$,
     带有 ``伴随'' 运算 $(-)^*\colon \mathcal A \to \mathcal A$,
     满足对任意 $x\in \mathcal A$,
-    \begin{itemize}
-        \item $(x^*)^*=x$,
-        \item $(xy)^*=y^*x^*$,
-        \item $(\lambda x)^*=\bar\lambda x^*\,(\lambda\in\mathbb{C})$,
-        \item $\|x^* x\|=\|x\|\|x^*\|=\|x\|^2$.
-    \end{itemize}
+    \begin{multicols}
+    	{2}
+    	\begin{itemize}
+    		\item $(a^*)^*=a$,
+    		\item $(ab)^*=b^*a^*$,
+    		\item $(\lambda a)^*=\bar\lambda a^*\,(\lambda\in\mathbb{C})$,
+    		\item $\|a^* a\|=\|a\|\|a^*\|=\|a\|^2$.
+    	\end{itemize}
+    \end{multicols}
     $C^*$-代数的 $*$-子代数是指关于 $(-)^*$ 封闭的子代数.
 \end{definition}
 
 \begin{example}
     {}
-    对于 Hilbert 空间 $H$, $H$ 上的有界线性算子的代数 $\mathcal B(H)$ 是 $C^*$-代数, 其中 $x^*$ 是 $x$ 的伴随算子. 事实上, 每个 $C^*$-代数都同构于某个形如 $\mathcal B(H)$ 的代数的 $*$-子代数, 因此后者也可作为 $C^*$-代数的一种具体定义.
+    对于 Hilbert 空间 $H$, $H$ 上的有界线性算子的代数 $\mathcal B(H)$ 是 $C^*$-代数, 其中 $a^*$ 是 $a$ 的伴随算子. 事实上, 每个 $C^*$-代数都同构于某个形如 $\mathcal B(H)$ 的代数的 $*$-子代数, 因此后者也可作为 $C^*$-代数的一种具体定义.
 \end{example}
 
-下面我们固定一个 $C^*$-代数 $\mathcal A$.
+\begin{definition}
+	{(量子力学系统, 可观测量)}
+	\begin{itemize}
+		\item 一个\emph{量子力学系统} (quantum mechanical system) 是一个 $C^*$-代数 $\mathcal A$;
+		\item 系统中的\emph{可观测量} (observable) 是 $\mathcal A$ 中的自伴元素, 即满足 $a^*=a$ 的元素;
+		\item 系统中的\emph{状态} (state) 是线性函数 $\rho\colon \mathcal A\to \mathbb{C}$, 满足
+		\begin{itemize}
+			\item (正性) $\rho(aa^*)\geq 0$;
+			\item (归一性) $\rho(1)=1$.
+		\end{itemize}
+	\end{itemize}
+\end{definition}
+
+我们给出经典力学系统的一种定义. 注意经典与量子系统的相似性.
 
 \begin{definition}
-    {(可观测量)}
-    $C^*$-代数中的自伴元素是指满足 $x^*=x$ 的元素; 自伴元素又称\emph{可观测量} (observable).
+	{(Poisson 代数)}
+	\emph{Poisson 代数}是 $\mathbb{R}$ 上的含幺交换结合代数 $\mathcal A$ 配备一个运算 $\{-,-\}\colon \mathcal A\otimes \mathcal A\to \mathcal A$, 称为 \emph{Poisson 括号}, 满足
+	\begin{itemize}
+		\item $(\mathcal A,\{-,-\})$ 是 Lie 代数;
+		\item 对任意 $a\in A$, $\{a,-\}\colon A\to A$ 是导子, 也即 $\{a,xy\}=\{a,x\}y+x\{a,y\}$.
+	\end{itemize}
 \end{definition}
+
+\begin{example}
+	{}
+	熟悉经典力学的读者知道, 辛流形 $(X,\omega)$ 上的光滑函数代数 $C^\infty (X)$ 有自然的 Poisson 代数结构: 对 $f\in C^\infty (X)$ 定义向量场 $v_f$ 满足 $\omega(v_f,-) = df$, 则 $\{f,g\}:=\omega(v_f,v_g)$ 给出 $C^\infty (X)$ 上的 Poisson 代数结构.
+\end{example}
+
+\begin{definition}
+	[label={classical-mechanical-system}]
+	{(经典力学系统)}
+	\begin{itemize}
+		\item 一个\emph{经典力学系统} (classical mechanical system) 是一个 Poisson 代数 $(\mathcal A,\{-,-\})$;
+		\item 系统中的\emph{可观测量} (observable) 是 $\mathcal A$ 中的元素;
+		\item 系统中的\emph{状态} (state) 是线性函数 $\rho\colon \mathcal A\to \mathbb{R}$, 满足
+		\begin{itemize}
+			\item (正性) $\rho(a^2)\geq 0$;
+			\item (归一性) $\rho(1)=1$.
+		\end{itemize}
+		\item 系统中的\emph{纯态} (pure state) 是满足上面条件的\emph{代数同态} $\mathcal A\to\mathbb{R}$.
+	\end{itemize}
+\end{definition}
+
+\begin{example}
+	{}
+	由定义 \ref{classical-mechanical-system}, 对于辛流形 $(X,\omega)$, $X$ 上的一个点 $p$ 对应一个纯态 $C^\infty (X)\to\mathbb{R},f\mapsto f(p)$.
+\end{example}
 
 Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定, 而一族相交换的可观测量可以同时确定. 因此我们格外关注那些交换的子代数.
 
 \begin{definition}
     {(经典语境)}
-    称 $\mathcal A$ 的一个交换 $*$-子代数为一个\emph{经典语境} (classical context).
+    对于量子力学系统 $\mathcal A$, 称 $\mathcal A$ 的一个交换 $*$-子代数为一个\emph{经典语境} (classical context).
     记 $\mathsf C(\mathcal A)$ 为 $\mathcal A$ 的交换 $*$-子代数在包含关系下构成的偏序集.
 \end{definition}
 
@@ -47,6 +95,8 @@ Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定,
 
 这里我们稍微偏题, 介绍偏序集上的层.
 
+\todo{移到层论那一章}
+
 \begin{definition}
     {(Alexandorff 空间)}
     若一个拓扑空间中开集的任意交仍是开集, 则称其为 \emph{Alexandorff 空间}.
@@ -54,7 +104,10 @@ Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定,
 
 \begin{definition}
     {(Alexandroff 拓扑)}
-    设 $P$ 为偏序集. 定义 $P$ 上的 \emph{Alexandroff 拓扑}是以向上封闭集为开集的拓扑. 其中, 称 $Q\subset P$ 为\emph{向上封闭集}是指对任意 $x\in Q,y\in P$, 若 $x\leq y$, 则 $y\in Q$.
+    设 $P$ 为偏序集. 定义 $P$ 上的 \emph{Alexandroff 拓扑}是以向上封闭集为开集的拓扑. 其中, 称 $Q\subset P$ 为\emph{向上封闭集}是指对任意 $x\in Q,y\in P$, 若 $x\leq y$, 则 $y\in Q$. 这给出了函子
+    \[
+    \operatorname{Alex}\colon \mathsf {Poset} \to \mathsf {Top}.
+    \]
 \end{definition}
 
 \begin{prop}
@@ -69,16 +122,14 @@ Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定,
 %    范畴, 也称 \emph{Bohr 景}. Bohr 景上的意象将是我们主要的研究对象.
 %\end{definition}
 
-\section{Bohr 意象}
+\subsection{Bohr 意象}
 
 \begin{definition}
     {(Bohr 意象)}
     称 $\mathsf C(\mathcal A)$ 上的预层意象为 \emph{Bohr 意象}.
 \end{definition}
 
-
-
-\subsection{状态空间}
+一个量子系统的\emph{状态} (state) 是一个线性映射 $A \to \mathbb{C}$
 
 \begin{definition}
     {(Gelfand 谱)}

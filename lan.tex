@@ -7,27 +7,68 @@
 }
 \footnotetext{一句数学陈述不过是你对某些东西讲的一个故事. 这些故事有的妙, 有的蠢, 有的真, 有的假. 做数学就是要讲出又妙又真的故事.}
 
-我们曾提到意象中有一种\emph{内语言} (internal language) 可用来进行推理, 本章介绍这种语言, 以及它在各个数学分支中的应用.
+我们曾提到\topos{}中有一种\emph{内语言} (internal language) 可用来进行推理, 本章介绍这种语言, 以及它在各个数学分支中的应用.
 建议不熟悉数理逻辑的读者在本章之前先阅读附录 \ref{logic-appendix}.
 
 \section{Mitchell--B\'enabou 语言}
 
-固定一个意象 $\mathsf C$. 本节描述一种重要的语言, 称作 \emph{Mitchell--B\'enabou 语言}; 它是意象的内语言的一种表述, 其特点是利用子对象分类器 $\Omega$, 将\emph{公式}一视同仁地解释为 $\Omega$ 类型的\emph{项}. 使用这种语言, 可将意象中的对象真正地当作集合一样处理.
+\label{Mitchell--Benabou-language}
+
+本节描述一种重要的语言, 称作 \emph{Mitchell--B\'enabou 语言}; 它是由给定的\topos{} $\mathsf C$ 定义出的一种一阶语言, 其特点是利用子对象分类器 $\Omega$, 将\emph{公式}一视同仁地解释为 $\Omega$ 类型的\emph{项}. 使用这种语言, 可将\topos{}中的对象在语法上当作集合一样处理.
 
 \begin{definition}
     {(类型)}
-    \emph{类型}是 $\mathsf C$ 的对象.
+    Mitchell--B\'enabou 语言中的\emph{类型}是 $\mathsf C$ 的对象.
 \end{definition}
 
+
+%\begin{itemize}
+%	\item 类型 $X$ 的\emph{项}被解释为指向 $X$ 的态射, 而\emph{公式}被解释为 $\Omega$ 类型的项;
+%	项 (公式) 的定义域代表此项 (公式) 中自由变量的类型.
+%	例如, 当类型 $X$ 的一个项含有自由变量 $y\colon Y, z\colon Z$ 时, 该项解释为一个态射 $Y\times Z \to X$.
+%	\item 
+%	\item 
+%\end{itemize}
+
+
 \begin{definition}
-    {(项, 公式)}
-    \begin{itemize}
-    	\item 类型 $X$ 的\emph{项}被解释为指向 $X$ 的态射, 而\emph{公式}被解释为 $\Omega$ 类型的项;
-    	项 (公式) 的定义域代表此项 (公式) 中自由变量的类型.
-    	例如, 当类型 $X$ 的一个项含有自由变量 $y\colon Y, z\colon Z$ 时, 该项解释为一个态射 $Y\times Z \to X$.
-    	\item 类型 $X$ 的一个\emph{变量} (可视为含一个自由变量的项) 解释为恒等态射 $\operatorname{id}\colon X \to X$;
-    	\item 类型 $X$ 的一个\emph{常量} (可视为不含自由变量的项, 或零元函数) 则是一个态射 $1 \to X$, 也即对象 $X$ 的一个\emph{整体元素}.
-    \end{itemize}
+	{(函数符号, 关系符号)}
+	Mitchell--B\'enabou 语言中的\emph{函数符号} $f\colon A_1\cdots A_n \to B$ 是 $\mathsf C$ 中的态射
+	$$f\colon A_1\times\cdots\times A_n\to B.$$
+	特别地, 类型 $X$ 的\emph{常量} (零元函数) 是态射 $1 \to X$, 也即对象 $X$ 的\emph{整体元素}.
+	
+	Mitchell--B\'enabou 语言中的\emph{关系符号} $R\hookrightarrow A_1\cdots A_n$ 是 $\mathsf C$ 中的态射
+	$$
+	R\colon A_1\times\cdots\times A_n \to \Omega,
+	$$
+	也即 $A_1\times\cdots\times A_n$ 的子对象, 其直观为 ``满足关系 $R$ 的元素构成的子集''.
+	特别地, 原子命题 (零元关系) 是态射 $1\to\Omega$, 也即\emph{真值}.
+	
+	%我们看到, 函数符号与项被解释成了同一种东西. 这是有道理的, 因为\emph{项}在这里就是其自由变量的函数.
+\end{definition}
+
+至此, Mitchell--B\'enabou 语言已经定义完成. 接下来我们归纳地给出这种语言中的项和公式的\emph{解释} (interpretation).
+
+%\begin{definition}
+%    {(变量的解释)}
+%    
+%\end{definition}
+
+
+%\begin{definition}
+%	{(等式)}
+%	
+%\end{definition}
+
+
+\begin{definition}
+	{(项的解释)}
+	\begin{itemize}
+		\item (变量)
+		类型 $X$ 的一个\emph{变量} (可视为含一个自由变量的项) 解释为恒等态射 $\operatorname{id}\colon X \to X$.
+		\item (函数取值)
+		对于函数符号 $f\colon X \to Y$ 与类型 $X$ 的项 $\sigma\colon U \to X$, $f(\sigma)$ 解释为复合 $f\circ\sigma \colon U \to Y$.
+	\end{itemize}
 \end{definition}
 
 \begin{remark}
@@ -37,33 +78,6 @@
 	那么对 $X$ 的任意具体的项 $x_0$, 就有 $\phi(x_0)$ 成立.
 	在 Mitchell--B\'enabou 语言中, $x\in X$ 被解释为 $\operatorname{id}\colon X\to X$, 它可视为对象 $X$ 的\emph{一般元素} (generic element) (这里元素的含义是广义元素, 即态射 $?\to X$), 因为对任意态射 $f\colon X\to Y$, 只要给定了 $f$ 在广义元素 $\operatorname{id}\colon X\to X$ 上的值 $f\circ\operatorname{id}$, 就确定了 $f$ 在任何广义元素 $x_0\colon U\to X$ 上的值 $f\circ x_0$. 这是平凡的.
 \end{remark}
-
-\begin{definition}
-	{(等式)}
-	对于类型 $X$ 的两个项 $\sigma\colon U \to X$, $\tau\colon V \to X$, \emph{等式} $\sigma = \tau$ 被解释为 $\Omega$ 的项
-	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJVXFx0aW1lcyBWIl0sWzEsMCwiWFxcdGltZXMgWCJdLFsyLDAsIlxcT21lZ2EiXSxbMCwxLCIoXFxzaWdtYSxcXHRhdSkiXSxbMSwyLCJcXGNoaV97XFxEZWx0YX0iXV0=
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{U\times V} \& {X\times X} \& \Omega.
-		\arrow["{(\sigma,\tau)}", from=1-1, to=1-2]
-		\arrow["{\chi_{\Delta}}", from=1-2, to=1-3]
-	\end{tikzcd}\]
-	回忆 $\chi_{\Delta}$ 是对角线 $\Delta\colon X\to X\times X$ 的特征函数 (例 \ref{diagonal}), 它表达的正是 $X$ 上的相等关系.
-\end{definition}
-
-\begin{definition}
-	{(函数符号, 关系符号)}
-	\emph{函数符号} $f\colon A_1\cdots A_n \to B$ 被解释为 $\mathsf C$ 中的态射 (注意到意象中存在乘积)
-	$$f\colon A_1\times\cdots\times A_n\to B,$$
-	而\emph{关系符号} $R\hookrightarrow A_1\cdots A_n$ 被解释为其中指向 $\Omega$ 的态射
-	$$
-	R\colon A_1\times\cdots\times A_n \to \Omega,
-	$$
-	也即 $A_1\times\cdots\times A_n$ 的子对象, 其直观为 ``满足关系 $R$ 的元素构成的子集''.
-	
-	我们看到, 函数符号与项被解释成了同一种东西. 这是有道理的, 因为\emph{项}在这里就是其自由变量的函数.
-	
-	对于函数符号 $f\colon X \to Y$ 与类型 $X$ 的项 $\sigma\colon U \to X$, $f(\sigma)$ 解释为复合 $f\circ\sigma \colon U \to Y$.
-\end{definition}
 
 特别地, 使用取值映射 $\operatorname{ev}\colon Y^X\times X\to Y$ (定义 \ref{evaluation-map}),
 可将 $Y^X$ 类型的项 (内语言中的 ``函数'') $\theta\colon V\to Y^X$
@@ -88,11 +102,37 @@
 	\arrow["{\in_X}", from=1-2, to=1-3]
 \end{tikzcd}\]
 
-\todo{量词的解释}
+\begin{definition}
+	{(公式)}
+	\begin{itemize}
+		\item
+		(等式) 对于类型 $X$ 的两个项 $\sigma\colon U \to X$, $\tau\colon V \to X$, \emph{等式} $\sigma = \tau$ 被解释为 $\Omega$ 的项
+		% https://q.uiver.app/#q=WzAsMyxbMCwwLCJVXFx0aW1lcyBWIl0sWzEsMCwiWFxcdGltZXMgWCJdLFsyLDAsIlxcT21lZ2EiXSxbMCwxLCIoXFxzaWdtYSxcXHRhdSkiXSxbMSwyLCJcXGNoaV97XFxEZWx0YX0iXV0=
+		\[\begin{tikzcd}[ampersand replacement=\&]
+			{U\times V} \& {X\times X} \& \Omega.
+			\arrow["{(\sigma,\tau)}", from=1-1, to=1-2]
+			\arrow["{\chi_{\Delta}}", from=1-2, to=1-3]
+		\end{tikzcd}\]
+		回忆 $\chi_{\Delta}$ 是对角线 $\Delta\colon X\to X\times X$ 的特征函数 (例 \ref{diagonal}), 它表达的正是 $X$ 上的相等关系.
+	\end{itemize}
+\end{definition}
 
-\todo{逻辑运算}
+\begin{definition}
+	{(公式确定的子对象)}
+	对公式 $\phi(x)$, 设其解释为 $p\colon X\to\Omega$, 定义 $X$ 的子对象 $\{x\in X \mid \phi(x)\}$ (或简记为 $\{x\mid \phi(x)\}$) 为如下的拉回.
+	\[
+	\begin{tikzcd}
+		\{x\mid \phi(x)\}\ar[r]\ar[d] & 1\ar[d] \\
+		X \ar[r,"p"'] & \Omega
+	\end{tikzcd}
+	\]
+\end{definition}
 
-\subsection{\topos{}中的逻辑运算}
+
+
+\subsection{内语言中的逻辑}
+
+\todo{挪到第一章}
 
 在一个\topos{}中, $\Omega$ 是代表真值的类型, 从而逻辑运算可表示为与 $\Omega$ 相关的态射. 前面提到的 ``真'' $\top \colon 1 \to \Omega$ 属于此列.
 
@@ -133,18 +173,65 @@
 	
 \end{definition}
 
+\begin{definition}
+	{(真值, 内语言定义)}
+	公式 $\varphi$ 的\emph{真值}是集合
+	$$
+	\{x:1 \mid \varphi\} \in \Omega,
+	$$
+	其中 $x$ 是不出现在 $\varphi$ 中的变量.
+\end{definition}
+
 \section{模态与层化}
 
+本节讨论模态 (\ref{appendix-modal-logic}), Lawvere--Tierney 拓扑与层化.
+
+首先我们重新定义 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}).
+
 \begin{definition}
-	{()}
+	{(Lawvere--Tierney 拓扑, 内语言定义)}
+	满足如下条件的映射 $\square\colon \Omega\to\Omega$ 称作\emph{Lawvere--Tierney 拓扑}, 或\emph{模态}:
+	\begin{itemize}
+		\item $\varphi\Rightarrow \square \varphi$;
+		\item $\square\square\varphi \Rightarrow \square\varphi$;
+		\item $\square(\varphi \land \psi) \Leftrightarrow \square\varphi\land \square\psi$.
+	\end{itemize}
 \end{definition}
+
+\begin{example}
+	{}
+	如下映射都是 Lawvere--Tierney 拓扑:
+	\begin{itemize}
+		\item $\square\varphi = (\mu\Rightarrow\varphi)$;
+		\item $\square\varphi = (\nu\lor\varphi)$;
+		\item $\square\varphi = \neg\neg\varphi$.
+	\end{itemize}
+\end{example}
+
+\begin{definition}
+	{(分离性与层条件, 内语言定义)}
+	对于给定的Lawvere--Tierney 拓扑 $\square$, 称集合 $F$ $\square$-\emph{分离}是指
+	$$
+	\forall x,y:F. \square (x=y) \Rightarrow x=y.
+	$$
+	称集合 $F$ 为\emph{层}是指 $F$ 分离, 且
+	$$
+	\forall S \subset F. \square (\text{$S$ 是单元集}) \Rightarrow \exists x:F.\square(x\in S).
+	$$
+\end{definition}
+
+一个集合 $\square$-分离
 
 \todo{层化}
 
 
-
 %\section{几何理论}
 
+\section{层语义}
+
+\todo{stack semantics}
+
+% https://ncatlab.org/nlab/show/stack+semantics
 
 %\todo{将综合可计算性理论, 综合微分几何, 综合代数几何变成本章的节}
 
@@ -157,3 +244,5 @@
 \input{Bohr}
 
 \input{Cohen}
+
+\input{condensed}

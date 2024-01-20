@@ -1,0 +1,338 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  15 JAN 2024 21:09
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**cohesion.tex
+(./cohesion.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-03-30>
+! Undefined control sequence.
+l.1 \chapter
+            {凝聚\topos{}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter{凝
+              聚\topos{}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+! Undefined control sequence.
+l.1 \chapter{凝聚\topos
+                     {}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[] 
+ []
+
+! Undefined control sequence.
+l.3 \section
+            {凝聚的动机, 基本概念}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \section{凝
+              聚的动机, 基本概念}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 动 ("52A8) in font nullfont!
+Missing character: There is no 机 ("673A) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 基 ("57FA) in font nullfont!
+Missing character: There is no 本 ("672C) in font nullfont!
+Missing character: There is no 概 ("6982) in font nullfont!
+Missing character: There is no 念 ("5FF5) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 3--4
+[]
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \begin{definition}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 ^^I{(
+         凝聚\topos{})}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+! Undefined control sequence.
+l.6 ^^I{(凝聚\topos
+                 {})}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+! Undefined control sequence.
+l.7 ^^I凝聚\topos
+               {}是指一个\topos{} $\mathsf E$ 带有如下伴随四元组,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 指 ("6307) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+! Undefined control sequence.
+l.7 ^^I凝聚\topos{}是指一个\topos
+                           {} $\mathsf E$ 带有如下伴随四元组,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 7.
+Missing character: There is no 带 ("5E26) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 如 ("5982) in font nullfont!
+Missing character: There is no 下 ("4E0B) in font nullfont!
+Missing character: There is no 伴 ("4F34) in font nullfont!
+Missing character: There is no 随 ("968F) in font nullfont!
+Missing character: There is no 四 ("56DB) in font nullfont!
+Missing character: There is no 元 ("5143) in font nullfont!
+Missing character: There is no 组 ("7EC4) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--9
+[]
+ []
+
+
+Overfull \hbox (5.97223pt too wide) in paragraph at lines 6--9
+\OT1/cmss/m/n/10 E$
+ []
+
+
+! LaTeX Error: Environment tikzcd undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ^^I\[\begin{tikzcd}
+                       [ampersand replacement=\&]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.11 ^^I^^I\arrow
+                 [""{name=0, anchor=center, inner sep=0}, "\Gamma"{descripti...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.12 ^^I^^I\arrow
+                 [""{name=1, anchor=center, inner sep=0}, "{\operatorname{di...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.12 ...chor=center, inner sep=0}, "{\operatorname
+                                                  {disc}}"{description, pos=...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.13 ^^I^^I\arrow
+                 [""{name=2, anchor=center, inner sep=0}, "{\Pi_0}"{descript...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.14 ^^I^^I\arrow
+                 [""{name=3, anchor=center, inner sep=0}, "{\operatorname{co...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.14 ...chor=center, inner sep=0}, "{\operatorname
+                                                  {codisc}}"{description, po...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.15 ^^I^^I\arrow
+                 ["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=1]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.16 ^^I^^I\arrow
+                 ["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.17 ^^I^^I\arrow
+                 ["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=3]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{tikzcd}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 ^^I\end{tikzcd}
+                    \]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (3042.05971pt too wide) detected at line 18
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 ampersandreplacement \OT1/cmr/m/n/10 = &]\OT1
+/cmss/m/n/10 E\OT1/cmr/m/n/10 &&[][""[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 "^^@"
+[]\OML/cmm/m/it/10 ; shiftright \OT1/cmr/m/n/10 = 2\OML/cmm/m/it/10 ; from \OT1
+/cmr/m/n/10 = 1 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; to \OT
+1/cmr/m/n/10 = 1 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 3][""[]\OML/cmm/m/it/10 ;
+ \OT1/cmr/m/n/10 "[]"[]\OML/cmm/m/it/10 ; shiftright \OT1/cmr/m/n/10 = 2\OML/cm
+m/m/it/10 ; from \OT1/cmr/m/n/10 = 1 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 3\OML
+/cmm/m/it/10 ; to \OT1/cmr/m/n/10 = 1 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1]["
+"[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 "[]"[]\OML/cmm/m/it/10 ; shiftleft \OT1/c
+mr/m/n/10 = 6\OML/cmm/m/it/10 ; from \OT1/cmr/m/n/10 = 1 \OMS/cmsy/m/n/10 ^^@ \
+OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; to \OT1/cmr/m/n/10 = 1 \OMS/cmsy/m/n/10 ^^@ 
+\OT1/cmr/m/n/10 3][""[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 "[]"[]\OML/cmm/m/it/1
+0 ; shiftleft \OT1/cmr/m/n/10 = 6\OML/cmm/m/it/10 ; from \OT1/cmr/m/n/10 = 1 \O
+MS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; to \OT1/cmr/m/n/10 = 1 \
+OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1][" \OMS/cmsy/m/n/10 a \OT1/cmr/m/n/10 "[]
+\OML/cmm/m/it/10 ; draw \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 none; from \OT1/cmr/
+m/n/10 = 2\OML/cmm/m/it/10 ; to \OT1/cmr/m/n/10 = 1][" \OMS/cmsy/m/n/10 a \OT1/
+cmr/m/n/10 "[]\OML/cmm/m/it/10 ; draw \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 none; 
+from \OT1/cmr/m/n/10 = 1\OML/cmm/m/it/10 ; to \OT1/cmr/m/n/10 = 0][" \OMS/cmsy/
+m/n/10 a \OT1/cmr/m/n/10 "[]\OML/cmm/m/it/10 ; draw \OT1/cmr/m/n/10 = \OML/cmm/
+m/it/10 none; from \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 ; to \OT1/cmr/m/n/10 = 3
+]
+ []
+
+Missing character: There is no 使 ("4F7F) in font nullfont!
+Missing character: There is no 得 ("5F97) in font nullfont!
+Missing character: There is no 保 ("4FDD) in font nullfont!
+Missing character: There is no 持 ("6301) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 限 ("9650) in font nullfont!
+Missing character: There is no 乘 ("4E58) in font nullfont!
+Missing character: There is no 积 ("79EF) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 \end{definition}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+! Emergency stop.
+<*> cohesion.tex
+                
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 24 strings out of 476675
+ 405 string characters out of 5807327
+ 1844290 words of memory out of 5000000
+ 20378 multiletter control sequences out of 15000+600000
+ 513192 words of font info for 35 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 18i,3n,15p,629b,63s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

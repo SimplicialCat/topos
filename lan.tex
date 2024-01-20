@@ -128,51 +128,6 @@
 	\]
 \end{definition}
 
-
-
-\subsection{内语言中的逻辑}
-
-\todo{挪到第一章}
-
-在一个\topos{}中, $\Omega$ 是代表真值的类型, 从而逻辑运算可表示为与 $\Omega$ 相关的态射. 前面提到的 ``真'' $\top \colon 1 \to \Omega$ 属于此列.
-
-\subsection{假, 非}
-
-\begin{definition}
-	{(假)}
-	\emph{假} (false) $\bot \colon 1 \to \Omega$ 是 子对象 $0\to 1$ 的特征函数, 即下图是子对象的拉回.
-	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIwIl0sWzAsMSwiMSJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCIxIl0sWzAsMV0sWzAsM10sWzEsMiwiXFxib3QiLDJdLFszLDIsIlxcdG9wIl1d
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		0 \& 1 \\
-		1 \& \Omega
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=1-1, to=1-2]
-		\arrow["\bot"', from=2-1, to=2-2]
-		\arrow["\top", from=1-2, to=2-2]
-	\end{tikzcd}\]
-\end{definition}
-
-\begin{definition}
-	{(非)}
-	\emph{非} (not) $\neg\colon \Omega\to\Omega$ 是\emph{假} $\bot\colon 1 \to\Omega$ 的特征函数, 即下图是子对象的拉回.
-	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIxIl0sWzAsMSwiXFxPbWVnYSJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCIxIl0sWzAsMSwiXFxib3QiLDJdLFswLDNdLFsxLDIsIlxcbmVnIiwyXSxbMywyLCJcXHRvcCJdXQ==
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		1 \& 1 \\
-		\Omega \& \Omega
-		\arrow["\bot"', from=1-1, to=2-1]
-		\arrow[from=1-1, to=1-2]
-		\arrow["\neg"', from=2-1, to=2-2]
-		\arrow["\top", from=1-2, to=2-2]
-	\end{tikzcd}\]
-\end{definition}
-
-\subsection{且}
-
-\begin{definition}
-	{(且)}
-	
-\end{definition}
-
 \begin{definition}
 	{(真值, 内语言定义)}
 	公式 $\varphi$ 的\emph{真值}是集合

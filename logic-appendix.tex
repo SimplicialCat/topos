@@ -3,6 +3,8 @@
 \label{logic-appendix}
 %\todo{整理本章}
 
+\philoquote{Mathematicians are committed to rigorous reasoning, but they usually shy away from formal logic.}{William M. Farmer, \textit{The seven virtues of simple type theory}}
+
 \section{一阶语言}
 
 \label{first-order-languages}
@@ -534,6 +536,7 @@ $$
 由此我们可以谈论一阶理论在范畴中的模型.
 
 \begin{definition}
+	[label={sigma-structures-in-category}]
 	{(范畴中的 $\Sigma$-结构)}
 	固定符号表 $\Sigma$. 设范畴 $\mathsf C$ 有有限乘积.
 	定义 $\mathsf C$ 中的一个 \emph{$\Sigma$-结构} $M$ 为如下信息:
@@ -635,34 +638,35 @@ $$
 
 \philoquote{A logic is always a logic over a type theory.}{Bart Jacobs, \emph{Categorical Logic and Type Theory}}
 
-类型论是一种做数学的视角. 类型论中的一切对象, 包括命题 (甚至命题的证明) 都有一个合适的类型. 仅仅通过检查一个对象的类型, 就能验证推理的正确性. 关于类型论的更详细介绍见 \cite{Trebor-History}.
-
-很难给类型论下一个精确的定义. 我们先来看两种风味的类型论.
+类型论是一种做数学的视角; 不同于一阶逻辑中的 ``类型'', 类型论中的一切对象, 包括函数, 命题, 甚至证明, 都有一个确定的类型. 仅仅通过检查一个对象的类型, 就能验证推理的正确性. 关于类型论的更详细介绍见 \cite{Trebor-History}. 本节的目的是介绍类型论与范畴论的联系.
+由于 ``类型论'' 有许多变种和风味, 很难给它下一个精确而完整的定义. 我们从例子开始.
 
 \begin{example}
 	{(简单类型论)}
-	\emph{简单类型论} (simple type theory, STT) 的风格:
+	一种\emph{简单类型论} (simple type theory, STT, 又称 \emph{Church 类型论}) 包含如下的陈述:
 	\begin{itemize}
 		\item $n\colon \mathbb{N}$ (``$n$ 是类型 $\mathbb{N}$ 的项'');
 		\item $\mathsf {succ}\colon \mathbb{N}\to\mathbb{N}$ (``后继 $\mathsf {succ}$ 是函数类型 $\mathbb{N}\to\mathbb{N}$ 的项'');
-		\item $n\colon \mathbb{N},m\colon \mathbb{N} \vdash n+m \colon \mathbb{N}$ (``设有类型 $\mathbb{N}$ 的项 $n,m$, 则可以构造类型 $\mathbb{N}$ 的项 $n+m$''), 这里的符号 $\vdash$ 与一阶逻辑中的符号 $\vdash$ 含义不同, 它的左边 $n\colon \mathbb{N},m\colon \mathbb{N}$ 是一列变量的声明, 称为\emph{语境};
-		\item
+		\item $n\colon \mathbb{N},m\colon \mathbb{N} \vdash (n+m) \colon \mathbb{N}$ (``设有类型 $\mathbb{N}$ 的项 $n,m$, 则可以构造类型 $\mathbb{N}$ 的项 $n+m$''), 这里的符号 $\vdash$ 与一阶逻辑中的符号 $\vdash$ 含义不同, 它的左边 $n\colon \mathbb{N},m\colon \mathbb{N}$ 是一列变量的声明, 称为\emph{语境};
+%		\item 函数的复合
+%		$$
+%		\sqc{x\colon X\vdash f(x)\colon Y\quad y\colon Y\vdash g(y)\colon Z}{x\colon X\vdash g(f(x))\colon Z}.
+%		$$
 	\end{itemize}
 	
 	\todo{简单类型论与高阶逻辑的关系}
 \end{example}
 
+简单类型论中没有一个类型依赖于某个变量, 而这是\emph{依值类型论}的特点.
+
 \begin{example}
 	{(依值类型论)}
 	\begin{itemize}
-		\item ``$n$ 维向量空间'' 是依赖于 $n\colon \mathbb{N}$ 的一族类型. 
+		\item $n\colon \mathbb{N}\vdash n\mathsf {Vect}\colon \mathsf {Type}$ (``$n$ 维向量空间'' 是依赖于自然数 $n$ 的一族类型).
+		\item 
 	\end{itemize}
-	这种风味的类型论叫\emph{依值类型论} (dependent type theory, DTT).
+	这种风味的类型论叫\emph{依值类型论} (dependent type theory, DTT). 一种更加丰富的类型论允许类型依赖于一个\emph{类型变量}, 这称为\emph{多态类型论} (polymorphic type theory).
 \end{example}
-
-范畴论与类型论有深刻的联系, 本节的目的即是介绍这种联系.
-
-在类型论的学者眼中, 任何逻辑的基础都是一种类型论, 一种对所考虑的类型的项作演算的方法.
 
 \begin{definition}
 	{(类型论, 粗略定义)}

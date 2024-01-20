@@ -503,7 +503,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 对于拓扑空间的开集范畴, ``极大筛是覆盖'' 相当于任何开集 $U$ 都覆盖了自己; 传递性相当于若一族开集覆盖了 $U$ 的每个局部, 那么它们也覆盖了 $U$.
 
 \begin{remark}
-	{}
+	{(关于饱和性条件)}
 	Grothendieck 拓扑的定义中, 要求覆盖族是筛且满足 ``极大筛'' 和 ``传递性'', 这些都是\emph{饱和性条件} (saturation condition), 我们随时可以关于这些条件 ``取闭包''; 而有没有这些条件对层条件不产生任何影响:
 	\begin{itemize}
 		\item (筛) 一族态射 $M= \{f_i\colon c_i \to c\}_{i\in I}$ 的层条件等价于其生成的筛的层条件;
@@ -1130,7 +1130,7 @@ $j$-层是层条件 (\ref{sheaf-condition}) 的推广.
 
 \begin{prop}
 	{(由层\topos{}重构位象)}
-	位象 $X$ 上的层\topos{} $\operatorname{Sh}(X)$ 的子终对象一一对应于 $X$ 的开子集. 换言之, $X$ 作为\fm{} 同构于 $\operatorname{Sh}(X)$ 的子终对象的格:
+	位象 $X$ 上的层\topos{} $\operatorname{Sh}(X)$ 的子终对象一一对应于 $X$ 的开子集. 换言之, $X$ 作为\fm{}同构于 $\operatorname{Sh}(X)$ 的子终对象的格:
 	$$
 	X \simeq \operatorname{Sub}_{\operatorname{Sh}(X)}(1).
 	$$
@@ -1546,6 +1546,7 @@ $j$-层是层条件 (\ref{sheaf-condition}) 的推广.
 不出意外地, 上面定义的两个函子是一对伴随.
 
 \begin{prop}
+	[label={group-action-tensor-hom}]
     {(张量--同态伴随)}
     设 $X$ 上有 $G$-右作用, $Y$ 上有 $H$-右作用,
     $Z$ 上有互相交换的 $G$-左作用与 $H$-右作用, 那么有自然同构
@@ -1609,6 +1610,7 @@ $$
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=0]
 	\end{tikzcd}\]
+	其中 $X^H$ 表示 $H$ 的阶数个 $X$ 相乘, 带有明显的 $H$-右作用.
 \end{example}
 
 \begin{example}

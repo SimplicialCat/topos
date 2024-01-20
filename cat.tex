@@ -268,7 +268,7 @@ $$
 上述定义的合法性来自如下命题.
 
 \begin{prop}{}
-    拉回保持子对象; 即对任意态射 $f \colon X \to Y$ 以及子对象 $i \colon V \to Y$, 只要存在拉回 $U = X\times_{Y} V$, 就有 $j=f^* i\colon U\to X$ 是 $X$ 的子对象.
+    在任何范畴中拉回保持子对象; 即对任意态射 $f \colon X \to Y$ 以及子对象 $i \colon V \to Y$, 只要存在拉回 $U = X\times_{Y} V$, 就有 $j=f^* i\colon U\to X$ 是 $X$ 的子对象.
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJYIl0sWzEsMSwiWSJdLFsxLDAsIlYiXSxbMCwwLCJVIl0sWzAsMSwiZiIsMl0sWzMsMCwiaiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoiYm90dG9tIn19fV0sWzMsMiwicCJdLFsyLDEsImkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6ImJvdHRvbSJ9fX1dXQ==
 \[\begin{tikzcd}[ampersand replacement=\&]
 	U \& V \\
@@ -280,11 +280,11 @@ $$
 \end{tikzcd}\]
 \end{prop}
 \begin{proof}
-    设 $\alpha,\beta \colon Z \to U$ 满足 $j \alpha = j \beta$.
-    那么 $fj\alpha = fj\beta$; 由交换图, $ip\alpha=ip\beta$.
-    由 $i$ 为单态射, 知 $p\alpha=p\beta$.
+    设 $j$ 余等化 $\alpha,\beta \colon Z \to U$.% 满足 $j \alpha = j \beta$.
+    那么 $fj=ip$ 也余等化 $\alpha,\beta$.
+    由 $i$ 为单态射, 知 $p$ 余等化 $\alpha,\beta$.
     由拉回的性质, 知 $\alpha = \beta$.
-    这说明 $j$ 为单态射.
+    这说明 $j$ 为单射.
 \end{proof}
 
 
@@ -526,14 +526,17 @@ $$
 
 集合映射 $f\colon X\to Y$ 可视为 $X\times Y$ 的子集 $\Gamma(f) = \{(x,f(x))\mid x\in X\}$, 称为映射的\emph{图像} (graph). $X\times Y$ 的子集 $\Gamma$ 是某个函数 $X\to Y$ 的图像的充要条件是, 对任意 $x\in X$, 存在唯一的 $y$ 使得 $(x,y)\in \Gamma$.
 % $\{y\in Y\mid (x,y)\in\Gamma(f)\}$ 是单元集.
-在\topos{}中我们完全可以模仿这个构造.
+在\topos{}中我们完全可以模仿这个构造. 在以下陈述中, 引号中的内容是 $\mathsf {Set}$ 中的事实.
 
-考虑例 \ref{singleton} 定义的函数 $\sigma_Y\colon PY\to\Omega$, 表示 ``存在唯一的 $y$''.
+\begin{itemize}
+	\item 考虑例 \ref{singleton} 定义的函数 $\sigma_Y\colon PY\to\Omega$. ``对于 $p\in PY$, $\sigma_Y (p)$ 表示 $p$ 为单元集.''
+	\item 由成员关系 (例 \ref{membership-relation}) $\in_{X\times Y}\colon X\times Y \times P(X\times Y) \to \Omega$ 可构造映射
+	$v\colon X\times P(X\times Y)\to PY$; ``对于 $x\in X$ 与 $p\in P(X\times Y)$, $v(x,p)$ 表示 $\{y\mid p(x,y)\}\in PY$.''
+	\item 考虑复合映射 $\sigma_Y v\colon X\times P(X\times Y)\to\Omega$, ``对于 $x\in X$ 与谓词 $p\in P(X,Y)$, $\sigma_Y v (p,x)$ 表示存在唯一的 $y$ 满足命题 $p(x,y)$.''
+	\item 进一步定义 $u\colon P(X\times Y) \to PX$ 为 $\sigma_Y v$ 对应的映射, ``对于谓词 $p$, $u(p)$ 表示 $\{x\mid \text{存在唯一的 $y$ 满足命题 $p(x,y)$}\}$''. 
+\end{itemize}
 
-由成员关系 (例 \ref{membership-relation}) $\in_{X\times Y}\colon X\times Y \times P(X\times Y) \to \Omega$ 可构造映射
-$v\colon $
-$u\colon P(X\times Y) \to PX$
-
+定义 $Y^X$ 为如下拉回, 这便完成了指数对象的构造.
 % https://q.uiver.app/#q=WzAsNCxbMCwxLCJQKFhcXHRpbWVzIFkpIl0sWzEsMSwiUFgiXSxbMSwwLCIxIl0sWzAsMCwiWV5YIl0sWzMsMl0sWzIsMSwiXFx0b3BfWCJdLFszLDBdLFswLDEsInUiLDJdLFszLDEsIiIsMSx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dXQ==
 \[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
 	{Y^X} \& 1 \\
@@ -545,7 +548,6 @@ $u\colon P(X\times Y) \to PX$
 	\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-1, to=2-2]
 \end{tikzcd}\]
 
-\todo{构造}
 
 \subsection{俯范畴与局部积闭性}
 
@@ -677,6 +679,7 @@ $u\colon P(X\times Y) \to PX$
 \end{remark}
 
 \begin{example}
+	[label={over-category-Sigma-adjunction}]
     {}
     在命题 \ref{sigma-adjoint} 中令 $Y=1$, 以 $X$ 表示唯一的态射 $X\to 1$, 得到伴随
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -942,6 +945,59 @@ $u\colon P(X\times Y) \to PX$
 
 \section{更多范畴论结构}
 
+\subsection{0 和 1}
+
+本节记录\topos{}的始对象 $0$ 与终对象 $1$ 的若干性质.
+
+\begin{prop}
+	{(0 和 1 的乘法与指数)}
+	对任何对象 $X$, 有 $X\times 0\simeq 0$, $X\times 1\simeq X$, $X^0\simeq 1$, $X^1\simeq X$,
+	$1^X\simeq 1$.
+\end{prop}
+
+%$0^X\simeq \begin{cases}
+%	0, & X\not\simeq 0\\
+%	1, & X\simeq 0
+%\end{cases}$,
+
+\begin{proof}
+	我们使用米田引理. 对任何对象 $Y$, 有自然同构
+	\begin{itemize}
+		\item $\operatorname{Hom}(X\times 0,Y)\simeq \operatorname{Hom}(0,Y^X)\simeq 1$, 故 $X\times 0\simeq 0$;
+		\item $\operatorname{Hom}(Y,X\times 1)\simeq\operatorname{Hom}(Y,X)\times\operatorname{Hom}(Y,1)\simeq\operatorname{Hom}(Y,X)$, 故 $X\times 1\simeq 1$;
+		\item $\operatorname{Hom}(Y,X^0)\simeq \operatorname{Hom}(Y\times 0,X)\simeq \operatorname{Hom}(0,X)\simeq 1$,
+		故 $X^0\simeq 1$;
+		\item $\operatorname{Hom}(Y,X^1)\simeq \operatorname{Hom}(Y\times 1,X)\simeq\operatorname{Hom}(Y,X)$,
+		故 $X^1\simeq X$;
+		\item $\operatorname{Hom}(Y,1^X)\simeq \operatorname{Hom}(X\times Y,1)\simeq 1$,
+		故 $1^X\simeq 1$.
+	\end{itemize}
+\end{proof}
+
+注意上面没有列出 $0^X$, 我们仅能得到两个特例 $0^0\simeq 1, 0^1\simeq 0$. 后面将会讲到, 当 $X$ 代表真值时, $0^X$ 代表 ``非 $X$'' (定义 \ref{Heyting-algebra-definition}).
+
+\begin{prop}
+	[label={topos-strict-initial-object}]
+	{(\topos{}具有严格始对象)}
+	在\topos{}中任何态射 $X\to 0$ 都是同构; 在范畴论中我们称这样的始对象为\emph{严格始对象} (strict initial object).
+\end{prop}
+
+\begin{proof}
+	假设有态射 $f\colon X\to 0$. 因为 $(f,\operatorname{id}_X)\colon X\to 0\times X$ 是单射,
+	而 $0\times X\simeq 0$, 故 $X$ 可作为 $0$ 的子对象. 而 $0$ 只有一个子对象 $0$ (因为 $0$ 到 $\Omega$ 有唯一的态射), 故 $X\simeq 0$, $f$ 是 $X$ 到 $0$ 唯一的同构.
+\end{proof}
+
+\begin{prop}
+	[label={bottom-subobject}]
+	{}
+	在\topos{}中, 态射 $0\to X$ 总是单射, 且是对象 $X$ 的最小子对象.
+\end{prop}
+\begin{proof}
+	假设 $0\to X$ 余等化 $f_1,f_2\colon Y\to 0$, 则由命题 \ref{topos-strict-initial-object}, $f_1,f_2$ 均为同构, $f_1^{-1},f_2^{-1}$ 均为 (唯一的) 态射 $0\to Y$, 故 $f_1=f_2$. 这证明了 $0\to X$ 为单射. 因为 $0$ 为始对象, $0\to X$ 当然是 $X$ 的最小子对象.
+\end{proof}
+
+
+
 \subsection{单射与满射}
 
 下面是一个常用的引理, 它表明在任何范畴中我们都可以用拉回与推出刻画单射与满射.
@@ -979,11 +1035,22 @@ $u\colon P(X\times Y) \to PX$
 
 \begin{prop}
 	[label={forall}]
-	{}
-	对\topos{} $\mathsf C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathsf C/X \to \mathsf C/Y$ 限制为一个函子 $\forall_f\colon \operatorname{Sub}(X) \to \operatorname{Sub}(Y)$, 且为 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 的右伴随.
+	{(子对象拉回的右伴随)}
+	对\topos{} $\mathsf C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathsf C/X \to \mathsf C/Y$ 限制为一个函子 $\forall_f\colon \operatorname{Sub}(X) \to \operatorname{Sub}(Y)$ (关于函子 $\forall_f$ 的名称见注 \ref{quantifier-exists-as-left-adjoint}), 且为 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 的右伴随.
 \end{prop}
 
-关于函子 $\forall_f$ 的名称见注 \ref{quantifier-exists-as-left-adjoint}.
+\begin{prop}
+	[label={pullback-preserve-epis}]
+	{}
+	在\topos{}中拉回保持满射; 即对任意态射 $f\colon X \to Y$ 以及满射 $e\colon Z \to Y$, 就有 $f^*e\colon X\times_Y Z \to X$ 是满射.
+\end{prop}
+
+%\begin{proof}
+%	%注意到由满态射的定义,
+%	
+%	由命题 \ref{pullback-has-right-adjoint}, \topos{}中的拉回有右伴随, 从而拉回保持余极限. 由满射的余极限刻画 (命题 \ref{mono-epi-pullback-pushout}), 知拉回保持满射.
+%\end{proof}
+
 
 \subsection{正则单射与满射, 等价关系}
 
@@ -1105,17 +1172,22 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \end{proof}
 
 \begin{prop}
+	[label={topos-epi-mono-iso}]
 	{}
-	在\topos{}中拉回保持满射; 即对任意态射 $f\colon X \to Y$ 以及满射 $e\colon Z \to Y$, 就有 $f^*e\colon X\times_Y Z \to X$ 是满射.
+	在\topos{}中, 既单又满的态射是同构.
 \end{prop}
-
 \begin{proof}
-	%注意到由满态射的定义,
-	
-	由命题 \ref{pullback-has-right-adjoint}, \topos{}中的拉回有右伴随, 从而拉回保持余极限. 由满射的余极限刻画 (命题 \ref{mono-epi-pullback-pushout}), 知拉回保持满射.
+	设 $f\colon X\to Y$ 既单又满, 由命题 \ref{topos-mono-regular}, $f$ 为等化子 $\operatorname{eq}(g,h\colon Y\rightrightarrows Z)$.
+	而 $f$ 满说明 $g=h$, 从而 $f$ 为同构.
 \end{proof}
 
-% \todo{顺序?}
+\begin{prop}
+	{}
+	在\topos{}中满射都是正则满射.
+\end{prop}
+\begin{proof}
+	由命题 \ref{epi--mono-factorization} 后的另证, 满射 $f\colon X\to Y$ 可分解为 $X\overset{q}{\twoheadrightarrow} Q \overset{i}{\to} Y$, 且 $q$ 为某个余等化子, $i$ 为单射. 但 $f$ 为满射推出 $i$ 为满射, 从而由命题 \ref{topos-epi-mono-iso}, $i$ 为同构.
+\end{proof}
 
 \subsection{像}
 
@@ -1207,6 +1279,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 集合的映射可分解为一个满射后接一个单射, 这称为映射的\emph{满--单分解} (epi--mono factorization). %在一般的范畴中这当然不一定成立; 但在\topos{}中这件事总是成立.
 
 \begin{prop}
+	[label={epi--mono-factorization}]
     {(满--单分解)}
     在\topos{}中, 任意态射 $f\colon X \to Y$ 的余核偶的等化子等于它的像 $\operatorname{im}(f)\to Y$. 进而 $f$ 可分解为一个满射 $e$ 与一个单射 $m$: % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7aW19KGYpIl0sWzIsMCwiWSJdLFswLDEsImUiXSxbMSwyLCJtIl1d
 \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1217,7 +1290,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \end{prop}
 
 \begin{proof}
-    设 $f\colon X \to Y$ 的余核偶的等化子为 $M\hookrightarrow Y$, 给出分解 $X\overset{e}{\to}M\overset{m}{\to}Y$.
+    设 $f\colon X \to Y$ 的余核偶的等化子为 $M\hookrightarrow Y$, 给出分解 $X\overset{e}{\to}M\overset{m}{\hookrightarrow}Y$.
     
     我们先证明 $M$ 是 $f$ 的像.
     对任意子对象 $N\hookrightarrow Y$, 由命题 \ref{topos-mono-regular} 可设 $N$ 是等化子 $\operatorname{eq}(s,t\colon Y\to Z)$; 若 $f$ 穿过 $N$, 则 $f$ 也等化 $s,t$, 于是存在唯一的 $u\colon Y\sqcup_X Y \to Z$ 使下图交换,
@@ -1245,6 +1318,39 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	X \to M' \overset{m'}{\to} M \overset{m}{\to} Y,
 	$$
 	则 $f$ 穿过 $Y$ 的子对象 $M'$, 但 $M$ 是被 $f$ 穿过的最小子对象, 故 $M' \overset{m'}{\to} M$ 为同构, $e$ 为满射.
+\end{proof}
+
+满--单分解还有一种证法, 从核偶的余等化子开始, 但与上面的证明并非完全对偶.
+
+\begin{proof}
+	(满--单分解另证)
+	对任意态射 $f\colon X\to Y$, 设 $a,b\colon R\rightrightarrows X$ 是 $f$ 的核偶, 而 $(q\colon X\to Q)=\operatorname{coeq}(a,b)$, 这给出分解 $X\overset{q}{\twoheadrightarrow}Q\overset{i}{\to}Y$.
+	我们需要证明 $Q\overset{i}{\to}Y$ 为单射.
+	假设 $i$ 余等化 $c,d\colon T\to Q$, 作如下拉回,
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJYXFx0aW1lcyBYIl0sWzEsMSwiUVxcdGltZXMgUSJdLFswLDAsIlMiXSxbMSwwLCJUIl0sWzAsMSwicVxcdGltZXMgcSIsMl0sWzMsMSwiKGMsZCkiXSxbMiwwLCIoZyxoKSIsMl0sWzIsMywiZSJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		S \& T \\
+		{X\times X} \& {Q\times Q}
+		\arrow["{q\times q}"', from=2-1, to=2-2]
+		\arrow["{(c,d)}", from=1-2, to=2-2]
+		\arrow["{(g,h)}"', from=1-1, to=2-1]
+		\arrow["e", from=1-1, to=1-2]
+	\end{tikzcd}\]
+	那么 $f$ 余等化 $g,h$.
+	根据核偶的定义, 这说明 $(g,h)\colon S\to X\times X$ 穿过 $(a,b)\colon R\to X\times X$,
+	那么由 $q$ 的定义, $q$ 余等化 $g,h$.
+	观察上图, 这说明 $e$ 等化 $c,d$.
+	而 $e$ 为满射 $q\times q$ 的拉回, 从而为满射 (命题 \ref{pullback-preserve-epis}), 故 $c=d$.
+\end{proof}
+
+\begin{prop}
+	{(满--单分解的唯一性)}
+	\topos{}中任意态射 $f\colon X\to Y$ 的满--单分解唯一 (在唯一同构的意义下).
+\end{prop}
+\begin{proof}
+	设 $f$ 有两个满--单分解 $f=me=ng$, 其中 $m,n$ 为单射, $e,g$ 为满射.
+	由单射是正则单射 (命题 \ref{topos-mono-regular}), 可将 $m$ 写成等化子 $\operatorname{eq}(p,q)$.
+	因为 $f$ 等化 $p,q$ 而 $g$ 为满射, 所以 $n$ 等化 $p,q$. 由等化子的泛性质, $n$ 唯一地穿过 $m$. 结论得证.
 \end{proof}
 
 \subsection{子终对象}
@@ -1314,6 +1420,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	熟悉代数的读者可以看出, 子终对象类似于环论中的\emph{中心幂等元}. 后面 (定义 \ref{ouvert}) 我们将看到子终对象与空间的 ``开子空间'' 概念有关.
 \end{remark}
 
+
 \subsection{子对象的格与 Heyting 代数}
 
 集合的子集可以取交和并, 这使得一个集合的所有子集构成一个\emph{格}; 在\topos{}中, 类似的操作可表达为子对象分类子 $\Omega$ 上的操作.
@@ -1337,7 +1444,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \begin{propdef}
 	{(子对象的并)}
 	在\topos{}中, 定义子对象 $U\to X$, $V\to X$ 的\emph{并}为两者唯一确定的态射 $U+V\to X$ 的像 (定义 \ref{image-definition}).
-	由像的定义, 它是同时包含 $X$ 和 $Y$ 的最小子对象.
+	由像的定义, 它是同时包含 $X$ 和 $Y$ 的最小子对象. 类似地可定义子对象的有限并.
 \end{propdef}
 
 由此, \topos{}中一个对象的子对象集合 $\operatorname{Sub}(X)$ 构成一个格.
@@ -1353,6 +1460,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \end{proof}
 
 \begin{definition}
+	[label={Heyting-algebra-definition}]
 	{(Heyting 代数)}
 	若一个偏序集作为范畴具有有限积和余积, 且为积闭范畴, 则称之为 \emph{Heyting 代数}.
 	换言之, Heyting 代数 $H$ 中有有限交与有限并 (包括最大元 $\top$ 和最小元 $\bot$), 且有一种运算 $\Rightarrow\colon H\times H\to H$, 满足
@@ -1366,8 +1474,9 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \end{definition}
 
 \begin{remark}
+	[label={implication-universal-property}]
 	{}
-	$x\Rightarrow y$ 是使得 $(z\wedge x)\leq y$ 的 $z$ 的最大值,
+	$x\Rightarrow y$ 的万有性质可叙述如下: 它是使得 $(z\wedge x)\leq y$ 的 $z$ 的最大值,
 	``由命题 $x$ 想要推出 $y$ 还需要的最弱命题'' (当 $z\leq w$ 时, 我们认为 $z$ 强于 $w$).
 \end{remark}
 
@@ -1381,8 +1490,8 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 		O\in \operatorname{Open}(X) \bigm| O\cap U\subset V
 	\bigr\},
 	$$
-	可验证 $\neg U$ 是 $U$ 的补集的内部.
-	这个代数是后面介绍的\emph{位象}.
+	特别地, $\neg U = \bigcup\{O\in\operatorname{Open}(X)\mid O\cap U=\varnothing\}$ 是 $U$ 的补集的内部.
+	这个 Heyting 代数是后面介绍的\emph{位象}的例子.
 \end{example}
 
 \begin{prop}
@@ -1437,43 +1546,216 @@ $$
 例如 $\operatorname{Hom}(X,\Omega)$ 上的 ``$\vee$'' 运算
 $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \operatorname{Hom}(X,\Omega)$ (作为自然变换)
 等同于 $\vee\colon \operatorname{Hom}(X,\Omega\times \Omega)\to \operatorname{Hom}(X,\Omega)$, 等同于一个态射 $\vee\colon \Omega\times\Omega\to\Omega$.
-这个命题还有如下 ``更加内蕴'' 的版本.
-\begin{prop}
-	{}
-	对\topos{}中的任意对象 $X$, 幂对象 $PX$ 为内蕴 Heyting 代数.
-\end{prop}
+类似地, 可证明对\topos{}中的任意对象 $X$, 幂对象 $PX$ 为内蕴 Heyting 代数.
 
 我们还可以具体写出内蕴 Heyting 代数 $\Omega$ 的结构态射.
 
-\begin{prop}
-	{}
-	内蕴 Heyting 代数 $\Omega$ 上的 ``且'' 运算 $\land\colon \Omega\times\Omega\to \Omega$ 是子对象 $(\top,\top)\colon 1 \to \Omega\times\Omega$
-	的特征函数.
-\end{prop}
-\begin{proof}
-%	注意到下图为拉回,
-%	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIxXFx0aW1lcyAxIl0sWzEsMCwiMVxcdGltZXNcXE9tZWdhIl0sWzAsMSwiXFxPbWVnYVxcdGltZXMgMSJdLFsxLDEsIlxcT21lZ2FcXHRpbWVzXFxPbWVnYSJdLFswLDIsIihcXHRvcCxcXG9wZXJhdG9ybmFtZXtpZH0pIiwyXSxbMiwzLCIoXFxvcGVyYXRvcm5hbWV7aWR9LFxcdG9wKSIsMl0sWzAsMSwiKFxcb3BlcmF0b3JuYW1le2lkfSxcXHRvcCkiXSxbMSwzLCIoXFx0b3AsXFxvcGVyYXRvcm5hbWV7aWR9KSJdXQ==
-%	\[\begin{tikzcd}[ampersand replacement=\&]
-%		{1\times 1} \& 1\times\Omega \\
-%		{\Omega\times 1} \& \Omega\times\Omega
-%		\arrow["{(\top,\operatorname{id})}"', from=1-1, to=2-1]
-%		\arrow["{(\operatorname{id},\top)}"', from=2-1, to=2-2]
-%		\arrow["{(\operatorname{id},\top)}", from=1-1, to=1-2]
-%		\arrow["{(\top,\operatorname{id})}", from=1-2, to=2-2]
-%	\end{tikzcd}\]
-%	这张图实际上是 ``万有'' 的 ``子对象的交'', 即任何子对象的交都可以通过这张图的拉回得到. 对任意两个子对象 $U\to X$,
-%	$V\to X$,
-%	\todo{证明} % Elephant p.58 Lemma 1.6.3
-	使用米田嵌入, $\yo(\Omega) = \operatorname{Sub}$, $\yo(\Omega\times\Omega) = \operatorname{Sub}(-) \times \operatorname{Sub}(-)$.
-	由定义, $\land\colon \Omega\times\Omega\to\Omega$ 是自然变换 $\land\colon \yo(\Omega\times\Omega) \to \yo(\Omega)$ 根据米田引理对应的态射,
-	而这就是 $\operatorname{id}_{\Omega\times\Omega}$ 在这个自然变换下的像.
-\end{proof}
+%\begin{prop}
+%	{}
+%	内蕴 Heyting 代数 $\Omega$ 上的 ``且'' 运算 $\land\colon \Omega\times\Omega\to \Omega$ 是子对象 $(\top,\top)\colon 1 \to \Omega\times\Omega$
+%	的特征函数.
+%\end{prop}
+%\begin{proof}
+%%	注意到下图为拉回,
+%%	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIxXFx0aW1lcyAxIl0sWzEsMCwiMVxcdGltZXNcXE9tZWdhIl0sWzAsMSwiXFxPbWVnYVxcdGltZXMgMSJdLFsxLDEsIlxcT21lZ2FcXHRpbWVzXFxPbWVnYSJdLFswLDIsIihcXHRvcCxcXG9wZXJhdG9ybmFtZXtpZH0pIiwyXSxbMiwzLCIoXFxvcGVyYXRvcm5hbWV7aWR9LFxcdG9wKSIsMl0sWzAsMSwiKFxcb3BlcmF0b3JuYW1le2lkfSxcXHRvcCkiXSxbMSwzLCIoXFx0b3AsXFxvcGVyYXRvcm5hbWV7aWR9KSJdXQ==
+%%	\[\begin{tikzcd}[ampersand replacement=\&]
+%%		{1\times 1} \& 1\times\Omega \\
+%%		{\Omega\times 1} \& \Omega\times\Omega
+%%		\arrow["{(\top,\operatorname{id})}"', from=1-1, to=2-1]
+%%		\arrow["{(\operatorname{id},\top)}"', from=2-1, to=2-2]
+%%		\arrow["{(\operatorname{id},\top)}", from=1-1, to=1-2]
+%%		\arrow["{(\top,\operatorname{id})}", from=1-2, to=2-2]
+%%	\end{tikzcd}\]
+%%	这张图实际上是 ``万有'' 的 ``子对象的交'', 即任何子对象的交都可以通过这张图的拉回得到. 对任意两个子对象 $U\to X$,
+%%	$V\to X$,
+%%	\todo{证明} % Elephant p.58 Lemma 1.6.3
+%	
+%	使用米田嵌入, $\yo(\Omega) = \operatorname{Sub}$, $\yo(\Omega\times\Omega) = \operatorname{Sub}(-) \times \operatorname{Sub}(-)$.
+%	由定义, $\land\colon \Omega\times\Omega\to\Omega$ 是自然变换 $\land\colon \yo(\Omega\times\Omega) \to \yo(\Omega)$ 根据米田引理对应的态射,
+%	而这就是 $\operatorname{id}_{\Omega\times\Omega}$ 在这个自然变换下的像.
+%\end{proof}
+%
+%\begin{prop}
+%	{}
+%	内蕴 Heyting 代数 $\Omega$ 上的 ``蕴涵'' 运算 $\Rightarrow \colon \Omega\times\Omega\to \Omega$ 是等化子 $\operatorname{eq}(\land,\pi_1)\colon ? \to \Omega\times\Omega$
+%	的特征函数.
+%\end{prop}
+
+%\subsection{逻辑运算}
+
+% 在一个\topos{}中, $\Omega$ 是代表真值的类型, 从而逻辑运算可表示为与 $\Omega$ 相关的态射. 前面提到的 ``真'' $\top \colon 1 \to \Omega$ 属于此列.
+
+\begin{definition}
+	{(假)}
+	\emph{假} (false) $\bot \colon 1 \to \Omega$ 是子对象 $0\to 1$ 的特征函数, 即下图是子对象的拉回.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIwIl0sWzAsMSwiMSJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCIxIl0sWzAsMV0sWzAsM10sWzEsMiwiXFxib3QiLDJdLFszLDIsIlxcdG9wIl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		0 \& 1 \\
+		1 \& \Omega
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\bot"', from=2-1, to=2-2]
+		\arrow["\top", from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{definition}
 
 \begin{prop}
+	[label={zero-char-function}]
 	{}
-	内蕴 Heyting 代数 $\Omega$ 上的 ``蕴涵'' 运算 $\Rightarrow \colon \Omega\times\Omega\to \Omega$ 是等化子 $\operatorname{eq}(\land,\pi_1)\colon ? \to \Omega\times\Omega$
-	的特征函数.
+	对象 $X$ 的最小子对象 $0\to X$ (命题 \ref{bottom-subobject}) 的特征函数是 $$\bot_X\colon X\to 1\overset{\bot}{\to}\Omega.$$
 \end{prop}
+\begin{proof}
+	在下图中, 两个小方块均为拉回, 从而长方形为拉回.
+	% https://q.uiver.app/#q=WzAsNixbMCwwLCIwIl0sWzEsMCwiMCJdLFsyLDAsIjEiXSxbMCwxLCJYIl0sWzEsMSwiMSJdLFsyLDEsIlxcT21lZ2EiXSxbMCwzXSxbMyw0XSxbNCw1LCJcXGJvdCIsMl0sWzAsMV0sWzEsMl0sWzIsNSwiXFx0b3AiXSxbMSw0XV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		0 \& 0 \& 1 \\
+		X \& 1 \& \Omega
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=2-1, to=2-2]
+		\arrow["\bot"', from=2-2, to=2-3]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=1-3]
+		\arrow["\top", from=1-3, to=2-3]
+		\arrow[from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{proof}
+
+\begin{definition}
+	{(非)}
+	\emph{非} (not) $\neg\colon \Omega\to\Omega$ 是\emph{假} $\bot\colon 1 \to\Omega$ 的特征函数, 即下图是子对象的拉回.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIxIl0sWzAsMSwiXFxPbWVnYSJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCIxIl0sWzAsMSwiXFxib3QiLDJdLFswLDNdLFsxLDIsIlxcbmVnIiwyXSxbMywyLCJcXHRvcCJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		1 \& 1 \\
+		\Omega \& \Omega
+		\arrow["\bot"', from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\neg"', from=2-1, to=2-2]
+		\arrow["\top", from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{definition}
+\begin{prop}
+	[label={bot-neg-top}]
+	{}
+	作为 $\Omega$ 的子对象有 $(\bot\colon 1\to\Omega) = \neg (\top\colon 1\to\Omega)$.
+\end{prop}
+\begin{proof}
+	对任何子对象 $f\colon X\to\Omega$, 若 $X\land (\top\colon 1\to\Omega)=0$, 即下图为拉回, 由命题 \ref{zero-char-function} 有分解 $f=X\to 1 \overset{\bot}{\to}\Omega$, 也即 $X \leq (\bot\colon 1\to\Omega)$. 这证明了 $(\bot\colon 1\to\Omega) = \neg (\top\colon 1\to\Omega)$.
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJYIl0sWzEsMSwiXFxPbWVnYSJdLFswLDAsIjAiXSxbMSwwLCIxIl0sWzAsMV0sWzIsMF0sWzIsM10sWzMsMSwiXFx0b3AiXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		0 \& 1 \\
+		X \& \Omega
+		\arrow[from=2-1, to=2-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\top", from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{proof}
+\begin{prop}
+	{}
+	设子对象 $U\hookrightarrow X$ 的特征函数是 $\chi\colon X\to\Omega$, 则 $\neg U$ 的特征函数是 $X\overset{\chi}{\to}\Omega\overset{\neg}{\to}\Omega$.
+\end{prop}
+\begin{proof}
+	拉回 $\chi^*\colon \operatorname{Sub}(\Omega)\to\operatorname{Sub}(X)$ 保持 ``$\Rightarrow$'' 运算 (命题 \ref{subobject-lattice-Heyting-algebra}), 也保持 $0$ (最小子对象), 从而保持 ``$\neg$'' 运算.
+	由命题 \ref{bot-neg-top},
+	我们证明了下图中左边的方块为拉回, 从而长方形为拉回.
+	% https://q.uiver.app/#q=WzAsNixbMCwxLCJYIl0sWzEsMSwiXFxPbWVnYSJdLFsyLDEsIlxcT21lZ2EiXSxbMCwwLCJcXG5lZyBVIl0sWzEsMCwiMSJdLFsyLDAsIjEiXSxbMywwXSxbMCwxLCJcXGNoaSIsMl0sWzEsMiwiXFxuZWciLDJdLFszLDRdLFs0LDEsIlxcYm90Il0sWzQsNV0sWzUsMiwiXFx0b3AiXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\neg U} \& 1 \& 1 \\
+		X \& \Omega \& \Omega
+		\arrow[from=1-1, to=2-1]
+		\arrow["\chi"', from=2-1, to=2-2]
+		\arrow["\neg"', from=2-2, to=2-3]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\bot", from=1-2, to=2-2]
+		\arrow[from=1-2, to=1-3]
+		\arrow["\top", from=1-3, to=2-3]
+	\end{tikzcd}\]
+\end{proof}
+%\begin{proof}
+%	(另证)
+%	回忆 $\neg U\hookrightarrow X$ 是与 $U$ 交为 $0$ 的最大子对象 (注 \ref{implication-universal-property}).
+%	
+%\end{proof}
+
+%\subsection{且}
+
+\begin{definition}
+	{(且)}
+	\emph{且} (and, 又叫\emph{合取}, conjunction) $\land\colon\Omega\times\Omega\to\Omega$ 是 $(\top,\top)\colon 1\to\Omega\times\Omega$ 的特征函数, 即下图是子对象的拉回.
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		1 \& 1 \\
+		{\Omega\times\Omega} \& \Omega
+		\arrow["{(\top,\top)}"', from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\land"', from=2-1, to=2-2]
+		\arrow["\top", from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{definition}
+\begin{prop}
+	{}
+	设子对象 $U\to X$, $V\to X$ 的特征函数分别是 $\chi_U,\chi_V\colon X\to\Omega$, 则 $U\land V$ 的特征函数是 $X \overset{(\chi_U,\chi_V)}{\longrightarrow}\Omega\times\Omega\overset{\land}{\to}\Omega$.
+\end{prop}
+\begin{proof}
+	首先注意到下图为拉回,
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCIxXFx0aW1lc1xcT21lZ2EiXSxbMSwxLCJcXE9tZWdhXFx0aW1lc1xcT21lZ2EiXSxbMSwwLCJcXE9tZWdhXFx0aW1lcyAxIl0sWzAsMCwiMVxcdGltZXMgMSJdLFszLDAsIlxcb3BlcmF0b3JuYW1le2lkfV97MX1cXHRpbWVzXFx0b3AiLDJdLFswLDEsIlxcdG9wXFx0aW1lc1xcb3BlcmF0b3JuYW1le2lkfV97XFxPbWVnYX0iLDJdLFszLDIsIlxcdG9wXFx0aW1lc1xcb3BlcmF0b3JuYW1le2lkfV97MX0iXSxbMiwxLCJcXG9wZXJhdG9ybmFtZXtpZH1fe1xcT21lZ2F9XFx0aW1lc1xcdG9wIl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{1\times 1} \& {\Omega\times 1} \\
+		1\times\Omega \& \Omega\times\Omega
+		\arrow["{\operatorname{id}_{1}\times\top}"', from=1-1, to=2-1]
+		\arrow["{\top\times\operatorname{id}_{\Omega}}"', from=2-1, to=2-2]
+		\arrow["{\top\times\operatorname{id}_{1}}", from=1-1, to=1-2]
+		\arrow["{\operatorname{id}_{\Omega}\times\top}", from=1-2, to=2-2]
+	\end{tikzcd}\]
+	(这张图实际上是万有的 ``两个子对象的交'', 即任何 ``两个子对象的交'' 都可以通过这张图的拉回得到)
+	并且在下图中, 由右边方块及长方形为拉回可得左边方块为拉回.
+	% https://q.uiver.app/#q=WzAsNixbMSwxLCJcXE9tZWdhXFx0aW1lc1xcT21lZ2EiXSxbMCwxLCJYIl0sWzIsMSwiXFxPbWVnYSJdLFswLDAsIlUiXSxbMSwwLCIxXFx0aW1lc1xcT21lZ2EiXSxbMiwwLCIxIl0sWzEsMCwiKFxcY2hpX1UsXFxjaGlfVikiLDJdLFswLDIsIlxccGlfMSIsMl0sWzMsMV0sWzUsMiwiXFx0b3AiXSxbMyw0XSxbNCwwLCJcXHRvcFxcdGltZXNcXG9wZXJhdG9ybmFtZXtpZH1fe1xcT21lZ2F9Il0sWzQsNV1d
+	\[\begin{tikzcd}[ampersand replacement=\&,row sep=3em]
+		U \& 1\times\Omega \& 1 \\
+		X \& \Omega\times\Omega \& \Omega
+		\arrow["{(\chi_U,\chi_V)}"', from=2-1, to=2-2]
+		\arrow["{\pi_1}"', from=2-2, to=2-3]
+		\arrow[from=1-1, to=2-1]
+		\arrow["\top", from=1-3, to=2-3]
+		\arrow[from=1-1, to=1-2]
+		\arrow["{\top\times\operatorname{id}_{\Omega}}", from=1-2, to=2-2]
+		\arrow[from=1-2, to=1-3]
+	\end{tikzcd}\]
+	由拉回 $(\chi_U,\chi_V)^*\colon \operatorname{Sub}(\Omega\times\Omega)\to\operatorname{Sub}(X)$ 保持 ``$\land$'' 运算 (命题 \ref{subobject-lattice-Heyting-algebra}),
+	知 $U\land V = (\chi_U,\chi_V)^* \big((\top,\top)\colon 1\to\Omega\times\Omega\big)$.
+\end{proof}
+
+\begin{definition}
+	{(蕴涵)}
+	\emph{蕴涵} $\Rightarrow \colon \Omega\times\Omega\to \Omega$ 是等化子 $\operatorname{eq}(\land,\pi_1) \to \Omega\times\Omega$
+	的特征函数.
+\end{definition}
+\begin{prop}
+	{}
+	设子对象 $U\to X$, $V\to X$ 的特征函数分别是 $\chi_U,\chi_V\colon X\to\Omega$, 则 $U\Rightarrow V$ 的特征函数是 $X \overset{(\chi_U,\chi_V)}{\longrightarrow}\Omega\times\Omega\overset{\Rightarrow}{\to}\Omega$.
+\end{prop}
+\begin{proof}
+	对任意子对象 $W\to X$,
+	\begin{align*}
+		W\leq (U\Rightarrow V)
+		&\Leftrightarrow (W\land U) \leq V\\
+		&\Leftrightarrow (W\land U)=(W\land U\land V)\\
+		&\Leftrightarrow (W\land U)=(W\land U)\land (W\land V)\\
+		&\Leftrightarrow\text{$W\to X\overset{(\chi_U,\chi_V)}{\longrightarrow}\Omega\times\Omega$ 等化 $\land,\pi_1$}&(*)\\
+		&\Leftrightarrow\,\text{有交换图}\,\begin{tikzcd}[ampersand replacement=\&]
+			W \& {\operatorname{eq}(\land,\pi_1)} \& 1 \\
+			X \& \Omega\times\Omega \& \Omega
+			\arrow[from=1-2, to=1-3]
+			\arrow["\top", from=1-3, to=2-3]
+			\arrow[from=1-2, to=2-2]
+			\arrow["\Rightarrow"', from=2-2, to=2-3]
+			\arrow[from=1-1, to=1-2]
+			\arrow[from=1-1, to=2-1]
+			\arrow["{(\chi_U,\chi_V)}"', from=2-1, to=2-2]
+		\end{tikzcd}
+	\end{align*}
+	这证明了 $U\Rightarrow V$ 的特征函数是 $X \overset{(\chi_U,\chi_V)}{\longrightarrow}\Omega\times\Omega\overset{\Rightarrow}{\to}\Omega$.
+	其中 $(*)$ 使用了如下事实: $W\land U$ 作为 $W$ 的子对象, 其特征函数为 $W\to X\overset{\chi_U}{\to}\Omega$.
+\end{proof}
 
 \subsection{自然数对象}
 
@@ -1549,9 +1831,192 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	\end{itemize}
 \end{prop}
 
+%\begin{proof}
+%	
+%\end{proof}
+
 \begin{remark}
 	{(Boole 与二值性无关)}
 	注意 Boole \topos{}中尽管有 ``排中律'' 以及 $1+1\simeq\Omega$, 却\emph{不一定只有两个真值}. $\mathsf {Set}\times\mathsf {Set}$ 就是一例. 反过来, 只有两个真值的\topos{}也不一定是 Boole \topos{}.
 \end{remark}
 
-\todo{选择公理}
+\begin{propdef}
+	{(选择公理)}
+	设 $\mathsf C$ 为范畴,
+	那么以下条件等价,
+	\begin{itemize}
+		\item $\mathsf C$ 的每个对象 $Y$ 都满足 $\operatorname{Hom}(Y,-)\colon \mathsf C\to\mathsf {Set}$ 保持满射; 此时我们称 $Y$ 是\emph{投射}的. (熟悉同调代数的读者会知道这个名字.)
+		\item $\mathsf C$ 中的每个满射都存在截面, 即对任意满射 $p\colon X\to I$ (类比于 ``集合族''), 存在 $s\colon I\to X$ 使得 $ps=\operatorname{id}_I$ (``在集合族的每个成员中选择一个元素'').
+	\end{itemize}
+	称上述条件为\emph{选择公理}.
+\end{propdef}
+
+\begin{proof}
+	假设 $\mathsf C$ 的每个对象都是投射的. 对于满射 $p\colon X\to I$, 由于 $I$ 是投射的, 有 $p_*\colon \operatorname{Hom}(I,X)\to \operatorname{Hom}(I,I)$ 为满射, 故存在 $s\in\operatorname{Hom}(I,X)$ 使得 $ps=\operatorname{id}_I$.
+	
+	假设 $\mathsf C$ 中的每个满射都存在截面. 有截面的映射在任何函子作用下仍是满射, 故任何函子 $\operatorname{Hom}(Y,-)$ 都保持满射.
+\end{proof}
+
+\begin{propdef}
+	{(内蕴选择公理)}
+	设 $\mathsf C$ 为\topos{}. 称 $\mathsf C$ 满足\emph{内蕴选择公理}是指对任何对象 $Y$, 函子 $(-)^Y\colon \mathsf C\to\mathsf C$ 保持满射 (此时称 $Y$ 是\emph{内蕴投射}的).
+\end{propdef}
+
+容易证明选择公理可以推出内蕴选择公理, 但反之不然.
+
+\begin{example}
+	{(不满足选择公理的例子)}
+	为了说明选择公理不是理所当然的性质, 我们举两个最简单的\topos{}中满射没有截面的例子.
+	
+	第一个例子是变集范畴 (例 \ref{varying-set-topos}),
+	态射
+	\begin{center}
+		\begin{minipage}
+			{0.5\textwidth}
+			% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHswLDFcXH0iXSxbMCwxLCJcXHswLDFcXH0iXSxbMSwwLCJcXHswLDFcXH0iXSxbMSwxLCJcXHsqXFx9Il0sWzAsMSwiXFxvcGVyYXRvcm5hbWV7aWR9IiwyXSxbMSwzXSxbMCwyLCJcXG9wZXJhdG9ybmFtZXtpZH0iXSxbMiwzXV0=
+			\[\begin{tikzcd}[ampersand replacement=\&]
+				{\{0,1\}} \& {\{0,1\}} \\
+				{\{0,1\}} \& {\{*\}}
+				\arrow["{\operatorname{id}}"', from=1-1, to=2-1]
+				\arrow[from=2-1, to=2-2]
+				\arrow["{\operatorname{id}}", from=1-1, to=1-2]
+				\arrow[from=1-2, to=2-2]
+			\end{tikzcd}\]
+		\end{minipage}
+		\begin{minipage}
+			{0.3\textwidth}
+			\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+			\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.7,xscale=0.7]
+				%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+				%Shape: Square [id:dp8926747085287872] 
+				\draw   (70,100) -- (100,100) -- (100,130) -- (70,130) -- cycle ;
+				%Shape: Square [id:dp7911928154788817] 
+				\draw   (110,100) -- (140,100) -- (140,130) -- (110,130) -- cycle ;
+				%Shape: Circle [id:dp7972097445752802] 
+				\draw   (80,115) .. controls (80,112.24) and (82.24,110) .. (85,110) .. controls (87.76,110) and (90,112.24) .. (90,115) .. controls (90,117.76) and (87.76,120) .. (85,120) .. controls (82.24,120) and (80,117.76) .. (80,115) -- cycle ;
+				%Shape: Circle [id:dp2798464482392615] 
+				\draw   (120,115) .. controls (120,112.24) and (122.24,110) .. (125,110) .. controls (127.76,110) and (130,112.24) .. (130,115) .. controls (130,117.76) and (127.76,120) .. (125,120) .. controls (122.24,120) and (120,117.76) .. (120,115) -- cycle ;
+				%Straight Lines [id:da13754401873028943] 
+				\draw    (152.11,108.89) -- (180,108.89) ;
+				\draw [shift={(182,108.89)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				%Straight Lines [id:da986017380068096] 
+				\draw    (154.11,119.89) -- (182,119.89) ;
+				\draw [shift={(152.11,119.89)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				%Straight Lines [id:da5414382618735807] 
+				\draw    (169.44,115) -- (179.44,125) ;
+				%Straight Lines [id:da5354101657295061] 
+				\draw    (169.44,125) -- (179.44,115) ;
+				%Shape: Rectangle [id:dp9448845358260181] 
+				\draw   (192,100) -- (242,100) -- (242,130) -- (192,130) -- cycle ;
+				%Shape: Circle [id:dp5531546897679429] 
+				\draw   (202,115) .. controls (202,112.24) and (204.24,110) .. (207,110) .. controls (209.76,110) and (212,112.24) .. (212,115) .. controls (212,117.76) and (209.76,120) .. (207,120) .. controls (204.24,120) and (202,117.76) .. (202,115) -- cycle ;
+				%Shape: Circle [id:dp9053407831799309] 
+				\draw   (222,115) .. controls (222,112.24) and (224.24,110) .. (227,110) .. controls (229.76,110) and (232,112.24) .. (232,115) .. controls (232,117.76) and (229.76,120) .. (227,120) .. controls (224.24,120) and (222,117.76) .. (222,115) -- cycle ;
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	是满射, 但没有截面. 采用例 \ref{cohesion-family-of-sets} 对集合族的直观, 这就是说两个粘在一起的点无法分开 (右图).
+	
+	第二个例子是 $\mathsf {Fun}(B\mathbb{N},\mathsf {Set})$, 其中 $B\mathbb N$ 是将半群 $\mathbb N$ 视为单对象范畴. 这个范畴的对象是集合 $X$ 配备一个映射 $f\colon X\to X$. 态射
+	\begin{center}
+		\begin{minipage}
+			{0.5\textwidth}
+			% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHswLDFcXH0iXSxbMSwwLCJcXHsqXFx9Il0sWzEsMSwiXFx7KlxcfSJdLFswLDEsIlxcezAsMVxcfSJdLFswLDFdLFsxLDJdLFswLDMsIjBcXG1hcHN0byAxXFxhdG9wIDFcXG1hcHN0byAwIiwyXSxbMywyXV0=
+			\[\begin{tikzcd}[ampersand replacement=\&]
+				{\{0,1\}} \& {\{*\}} \\
+				{\{0,1\}} \& {\{*\}}
+				\arrow[from=1-1, to=1-2]
+				\arrow[from=1-2, to=2-2]
+				\arrow["{0\mapsto 1\atop 1\mapsto 0}"', from=1-1, to=2-1]
+				\arrow[from=2-1, to=2-2]
+			\end{tikzcd}
+			\]
+		\end{minipage}
+		\begin{minipage}
+			{0.3\textwidth}
+			\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+			\hspace{-2em}\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.7,xscale=0.7]
+				%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+				%Curve Lines [id:da5256174669964437] 
+				\draw    (57.33,121.78) .. controls (65.67,102.78) and (122.33,100.11) .. (137.33,123.11) ;
+				%Curve Lines [id:da047957165101484955] 
+				\draw    (55.33,126.78) .. controls (38.83,170.22) and (143.67,139.56) .. (141.83,116.67) .. controls (140,93.78) and (101,88.72) .. (80,93.11) .. controls (59,97.5) and (49.83,111.17) .. (55.83,123.17) .. controls (61.83,135.17) and (79.67,141.78) .. (96.67,143.78) ;
+				%Curve Lines [id:da12392233177287926] 
+				\draw    (106,145.44) .. controls (127.67,147.56) and (148.5,146.72) .. (139,126.44) ;
+				%Shape: Ellipse [id:dp3575392941798332] 
+				\draw   (191.33,125.33) .. controls (191.33,115.64) and (210.59,107.78) .. (234.33,107.78) .. controls (258.08,107.78) and (277.33,115.64) .. (277.33,125.33) .. controls (277.33,135.03) and (258.08,142.89) .. (234.33,142.89) .. controls (210.59,142.89) and (191.33,135.03) .. (191.33,125.33) -- cycle ;
+				%Straight Lines [id:da8062516844631029] 
+				\draw    (151.67,117.89) -- (179.56,117.89) ;
+				\draw [shift={(181.56,117.89)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				%Straight Lines [id:da3938685457393487] 
+				\draw    (153.67,128.89) -- (181.56,128.89) ;
+				\draw [shift={(151.67,128.89)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				%Straight Lines [id:da45301762856536665] 
+				\draw    (169,124) -- (179,134) ;
+				%Straight Lines [id:da41762886315511905] 
+				\draw    (169,134) -- (179,124) ;
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	是满射, 但没有截面. 一个类似的例子是 $\operatorname{Sh}(S^1)$ 中 $S^1$ 的非平凡二重覆叠没有截面 (右图).
+\end{example}
+
+%
+%\begin{proof}
+%	假设\topos{} $\mathsf C$ 满足选择公理. 对任意满射 $p\colon X\to I$, 取截面 $s\colon I\to X$, 那么 $p^Y\colon X^Y\to I^Y$ 有截面 $s^Y\colon I^Y\to X^Y$, 从而 $X^Y\to I^Y$ 为满射, 即 $(-)^Y$ 保持满射.
+%\end{proof}
+
+\begin{prop}
+	[label={IAC-technical-lemma}]
+	{}
+	假设\topos{} $\mathsf C$ 满足内蕴选择公理, 那么对其中任意满射 $f\colon Z\to X$, 都有 $\Pi_X(f) \to 1$ 是满射. 进一步, 记 $S=\Pi_X(f)$,
+	则 $S^*Z\to S^*X$ (作为\topos{} $\mathsf C/S$ 中的映射, 定义见例 \ref{over-category-Sigma-adjunction}) 有截面.
+\end{prop}
+
+\begin{proof}
+	回忆 $\Pi_X(f)$ 是 $f^X\colon Z^X\to X^X$ 沿 $\operatorname{id}_X\colon 1\to X^X$ 的拉回 (命题 \ref{pi-functor-absolute} 的证明), 而拉回保持满射 (命题 \ref{pullback-preserve-epis}), 故 $\Pi_X(f) \to 1$ 是满射. 映射 $S^*Z\to S^*X$ 的截面由取值映射 $S\times X\hookrightarrow Z^X\times X\overset{\operatorname{ev}}{\to} Z$ 给出.
+\end{proof}
+
+$\Pi_X(f)$ 是 ``$f$ 的截面的集合'', 所以内蕴选择公理是说满射在某种内蕴的意义上有截面.
+
+\begin{prop}
+	{(Diaconescu 定理)}
+	满足内蕴选择公理的\topos{}一定是 Boole 的.
+\end{prop}
+
+\begin{proof}
+	考虑任意子对象 $U\hookrightarrow X$. 由于单射是余核偶的等化子 (命题 \ref{topos-mono-regular}), 有 $U = \operatorname{eq}(X \rightrightarrows X \sqcup_U X)$. 我们的思路是考虑满射 $(X\sqcup X) \to (X\sqcup_U X)$ 的 ``截面'', 从而得到 $U\lor\neg U$.
+	假设它有截面 $s\colon (X\sqcup_U X) \to (X\sqcup X)$, 如左图,
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
+		V \& X \&\& {X\sqcup X} \& {1+1} \\
+		\&\& {X\sqcup_U X}
+		\arrow["t", from=1-4, to=1-5]
+		\arrow["s"', hook, from=2-3, to=1-4]
+		\arrow["{i_1}"{pos=0.7}, hook, from=1-2, to=2-3]
+		\arrow["{si_1}"{pos=0.7}, shift left=2, hook', from=1-2, to=1-4]
+		\arrow["{si_2}"'{pos=0.7}, hook', from=1-2, to=1-4]
+		\arrow["{i_2}"'{pos=0.7}, shift right=2, hook, from=1-2, to=2-3]
+		\arrow["f", from=1-1, to=1-2]
+	\end{tikzcd}\quad
+	\begin{tikzcd}[ampersand replacement=\&,column sep=small]
+		V \& {X\sqcup X} \& {1+1} \\
+		\& X
+		\arrow["t",from=1-2, to=1-3]
+		\arrow["{si_1f}", shift left=2, from=1-1, to=1-2]
+		\arrow["f"', shift right=2, from=1-1, to=2-2]
+		\arrow[from=1-2, to=2-2]
+		\arrow["{si_2f}"', from=1-1, to=1-2]
+	\end{tikzcd}\]
+	那么 $s$ 为单射, 故对任何映射 $f\colon V\to X$, $f$ 等化 $i_1,i_2$ 当且仅当 $f$ 等化 $si_1,si_2$.
+	而 $X\sqcup X \simeq X\times (1+1)$, 如右图,
+	故 $f$ 等化 $si_1,si_2$ 等价于 $f$ 等化 $tsi_1,tsi_2$.
+	这说明 $(U\hookrightarrow X)=\operatorname{eq}(tsi_1,tsi_2\colon X\rightrightarrows 1+1)$.
+	
+	由命题 \ref{IAC-technical-lemma}, 存在满射 $S\twoheadrightarrow 1$ 使得 $S^*(X\sqcup X)\to S^*(X\sqcup_U X)$ 有截面.
+	
+	\todo{}
+	由于拉回是子对象 Heyting 代数的同态 (命题 \ref{subobject-lattice-Heyting-algebra}),
+	
+\end{proof}
+
+另外, Bauer 的文章 (讲座) \cite{FSCM} 给出了 (外蕴) 选择公理推出排中律的一种证明.

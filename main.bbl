@@ -1,0 +1,615 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{SGA4}{book}{}
+      \name{author}{3}{}{%
+        {{hash=69a473a63b6a5b334a00dacc5c3ef319}{%
+           family={Artin},
+           familyi={A\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fb0e3184fdd2fcd28fa74ca67d7cdcc1}{%
+           family={Grothendieck},
+           familyi={G\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=988565fd6f279c5f5305b5a685a10e8f}{%
+           family={Verdier},
+           familyi={V\bibinitperiod},
+           given={Jean-Louis},
+           giveni={J\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c4c7924d9701b712dfd0f6d113cedb95}
+      \strng{fullhash}{c4c7924d9701b712dfd0f6d113cedb95}
+      \strng{bibnamehash}{c4c7924d9701b712dfd0f6d113cedb95}
+      \strng{authorbibnamehash}{c4c7924d9701b712dfd0f6d113cedb95}
+      \strng{authornamehash}{c4c7924d9701b712dfd0f6d113cedb95}
+      \strng{authorfullhash}{c4c7924d9701b712dfd0f6d113cedb95}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Lecture Notes in Mathematics}
+      \field{title}{Theorie de Topos et Cohomologie Etale des Schemas {I}, {II}, {III}}
+      \field{volume}{269, 270, 305}
+      \field{year}{1971}
+    \endentry
+    \entry{FSCM}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3d00839a7d4e4ff29f609b74c7a30980}{%
+           family={Bauer},
+           familyi={B\bibinitperiod},
+           given={Andrej},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3d00839a7d4e4ff29f609b74c7a30980}
+      \strng{fullhash}{3d00839a7d4e4ff29f609b74c7a30980}
+      \strng{bibnamehash}{3d00839a7d4e4ff29f609b74c7a30980}
+      \strng{authorbibnamehash}{3d00839a7d4e4ff29f609b74c7a30980}
+      \strng{authornamehash}{3d00839a7d4e4ff29f609b74c7a30980}
+      \strng{authorfullhash}{3d00839a7d4e4ff29f609b74c7a30980}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bull. Amer. Math. Soc.}
+      \field{title}{Five stages of accepting constructive mathematics}
+      \field{year}{2017}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1090/bull/1556
+      \endverb
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=21qPOReu4FI
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=21qPOReu4FI
+      \endverb
+    \endentry
+    \entry{HCA3}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c9259674b0e31a3252b2a81d66e21923}{%
+           family={Borceux},
+           familyi={B\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge Univrsity Press}%
+      }
+      \strng{namehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{fullhash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{bibnamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authorbibnamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authornamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authorfullhash}{c9259674b0e31a3252b2a81d66e21923}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Handbook of Categorical Algebra 3}
+      \field{year}{2008}
+    \endentry
+    \entry{TST}{book}{}
+      \name{author}{1}{}{%
+        {{hash=72b1a90b5eb08948711405b0b6a81840}{%
+           family={Caramello},
+           familyi={C\bibinitperiod},
+           given={Olivia},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{72b1a90b5eb08948711405b0b6a81840}
+      \strng{fullhash}{72b1a90b5eb08948711405b0b6a81840}
+      \strng{bibnamehash}{72b1a90b5eb08948711405b0b6a81840}
+      \strng{authorbibnamehash}{72b1a90b5eb08948711405b0b6a81840}
+      \strng{authornamehash}{72b1a90b5eb08948711405b0b6a81840}
+      \strng{authorfullhash}{72b1a90b5eb08948711405b0b6a81840}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theories, Sites, Toposes}
+      \field{year}{2018}
+    \endentry
+    \entry{QFT}{book}{}
+      \name{editor}{8}{}{%
+        {{hash=876d32ddd7383ddfb7c5ca89662b261d}{%
+           family={Deligne},
+           familyi={D\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=be28db80608303b7712664f9468017f1}{%
+           family={Etingof},
+           familyi={E\bibinitperiod},
+           given={Pavel},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6172692e2a6b0df98708c08725cff3c2}{%
+           family={Freed},
+           familyi={F\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8f6cf057d1f4a56377153b6f136321ab}{%
+           family={Jeffrey},
+           familyi={J\bibinitperiod},
+           given={Lisa},
+           giveni={L\bibinitperiod}}}%
+        {{hash=baf453c51d52c87ae66e4630ec09866a}{%
+           family={Kazhdan},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=85e50c7efdcbdb453fc86e19b5802615}{%
+           family={Morgan},
+           familyi={M\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c68e15e8e0be16d793449aae3d582084}{%
+           family={Morrison},
+           familyi={M\bibinitperiod},
+           given={David\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=499139cc4d3fda9ba3955fa766a07270}{%
+           family={Witten},
+           familyi={W\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{e1f0ddec8300ed301211ba9ef5cd66c2}
+      \strng{fullhash}{6523de273a90e9ed6877bdb2635a98c2}
+      \strng{bibnamehash}{e1f0ddec8300ed301211ba9ef5cd66c2}
+      \strng{editorbibnamehash}{e1f0ddec8300ed301211ba9ef5cd66c2}
+      \strng{editornamehash}{e1f0ddec8300ed301211ba9ef5cd66c2}
+      \strng{editorfullhash}{6523de273a90e9ed6877bdb2635a98c2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{title}{Quantum Fields and Strings: A Course for Mathematicians}
+      \field{year}{1999}
+      \verb{urlraw}
+      \verb http://www.math.ias.edu/qft
+      \endverb
+      \verb{url}
+      \verb http://www.math.ias.edu/qft
+      \endverb
+    \endentry
+    \entry{Trebor-History}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=fa2efee6b36d73a62be6655935c25015}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Trebor},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{fa2efee6b36d73a62be6655935c25015}
+      \strng{fullhash}{fa2efee6b36d73a62be6655935c25015}
+      \strng{bibnamehash}{fa2efee6b36d73a62be6655935c25015}
+      \strng{authorbibnamehash}{fa2efee6b36d73a62be6655935c25015}
+      \strng{authornamehash}{fa2efee6b36d73a62be6655935c25015}
+      \strng{authorfullhash}{fa2efee6b36d73a62be6655935c25015}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/Trebor-Huang/history}}
+      \field{journaltitle}{GitHub repository}
+      \field{title}{类型论简史}
+      \field{year}{2023}
+    \endentry
+    \entry{CLTT}{book}{}
+      \name{author}{1}{}{%
+        {{hash=bf424ec58729aa7d35e9d57ec1c7d40d}{%
+           family={Jacobs},
+           familyi={J\bibinitperiod},
+           given={Bart},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{bf424ec58729aa7d35e9d57ec1c7d40d}
+      \strng{fullhash}{bf424ec58729aa7d35e9d57ec1c7d40d}
+      \strng{bibnamehash}{bf424ec58729aa7d35e9d57ec1c7d40d}
+      \strng{authorbibnamehash}{bf424ec58729aa7d35e9d57ec1c7d40d}
+      \strng{authornamehash}{bf424ec58729aa7d35e9d57ec1c7d40d}
+      \strng{authorfullhash}{bf424ec58729aa7d35e9d57ec1c7d40d}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Categorical Logic and Type Theory}
+      \field{year}{1999}
+    \endentry
+    \entry{Johnstone-OTT}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0fd3c6c701987f321528f4265c0c3449}{%
+           family={Johnstone},
+           familyi={J\bibinitperiod},
+           given={Peter\bibnamedelima T.},
+           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{fullhash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{bibnamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authorbibnamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authornamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authorfullhash}{0fd3c6c701987f321528f4265c0c3449}
+      \field{extraname}{1}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proc. London Math. Soc.}
+      \field{title}{On a Topological Topos}
+      \field{year}{1979}
+      \verb{doi}
+      \verb https://doi.org/10.1112/plms/s3-38.2.237
+      \endverb
+    \endentry
+    \entry{Elephant}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0fd3c6c701987f321528f4265c0c3449}{%
+           family={Johnstone},
+           familyi={J\bibinitperiod},
+           given={Peter\bibnamedelima T.},
+           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{fullhash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{bibnamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authorbibnamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authornamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authorfullhash}{0fd3c6c701987f321528f4265c0c3449}
+      \field{extraname}{2}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sketches of an Elephant}
+      \field{year}{2002}
+    \endentry
+    \entry{Joyal-Crash-Course}{online}{}
+      \name{author}{1}{}{%
+        {{hash=879e6f70ccf8d5999602c642fcda57b3}{%
+           family={Joyal},
+           familyi={J\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IHES}%
+      }
+      \strng{namehash}{879e6f70ccf8d5999602c642fcda57b3}
+      \strng{fullhash}{879e6f70ccf8d5999602c642fcda57b3}
+      \strng{bibnamehash}{879e6f70ccf8d5999602c642fcda57b3}
+      \strng{authorbibnamehash}{879e6f70ccf8d5999602c642fcda57b3}
+      \strng{authornamehash}{879e6f70ccf8d5999602c642fcda57b3}
+      \strng{authorfullhash}{879e6f70ccf8d5999602c642fcda57b3}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A crash course in topos theory : the big picture}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=Ro8KoFFdtS4
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=Ro8KoFFdtS4
+      \endverb
+    \endentry
+    \entry{SGL}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ee7e692312c310fd33fbfdd5f0ce2799}{%
+           family={Lane},
+           familyi={L\bibinitperiod},
+           given={Saunders\bibnamedelima Mac},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1fc4bc57ad663c84359227240f5bc42f}{%
+           family={Moerdijk},
+           familyi={M\bibinitperiod},
+           given={Ieke},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{f5af45341c8ebf4344d2f3c622072a6c}
+      \strng{fullhash}{f5af45341c8ebf4344d2f3c622072a6c}
+      \strng{bibnamehash}{f5af45341c8ebf4344d2f3c622072a6c}
+      \strng{authorbibnamehash}{f5af45341c8ebf4344d2f3c622072a6c}
+      \strng{authornamehash}{f5af45341c8ebf4344d2f3c622072a6c}
+      \strng{authorfullhash}{f5af45341c8ebf4344d2f3c622072a6c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sheaves in Geometry and Logic}
+      \field{year}{1994}
+    \endentry
+    \entry{SDG-Lavendhomme}{book}{}
+      \name{author}{1}{}{%
+        {{hash=561738f42d7a27e3061195f72a968645}{%
+           family={Lavendhomme},
+           familyi={L\bibinitperiod},
+           given={René},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York, NY}%
+      }
+      \strng{namehash}{561738f42d7a27e3061195f72a968645}
+      \strng{fullhash}{561738f42d7a27e3061195f72a968645}
+      \strng{bibnamehash}{561738f42d7a27e3061195f72a968645}
+      \strng{authorbibnamehash}{561738f42d7a27e3061195f72a968645}
+      \strng{authornamehash}{561738f42d7a27e3061195f72a968645}
+      \strng{authorfullhash}{561738f42d7a27e3061195f72a968645}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Basic Concepts of Synthetic Differential Geometry}
+      \field{year}{1996}
+    \endentry
+    \entry{177894}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1c1281ea50f12458506ad6baa08123d4}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c1281ea50f12458506ad6baa08123d4}
+      \strng{fullhash}{1c1281ea50f12458506ad6baa08123d4}
+      \strng{bibnamehash}{1c1281ea50f12458506ad6baa08123d4}
+      \strng{authorbibnamehash}{1c1281ea50f12458506ad6baa08123d4}
+      \strng{authornamehash}{1c1281ea50f12458506ad6baa08123d4}
+      \strng{authorfullhash}{1c1281ea50f12458506ad6baa08123d4}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Mathematics Stack Exchange}
+      \field{title}{What is a Lawvere--Tierney topology?}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/177894
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/177894
+      \endverb
+    \endentry
+    \entry{Lurie-Categorical-Logic}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+           family={Lurie},
+           familyi={L\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Categorical Logic (278x)}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.math.ias.edu/~lurie/278x.html
+      \endverb
+      \verb{url}
+      \verb https://www.math.ias.edu/~lurie/278x.html
+      \endverb
+    \endentry
+    \entry{HTT}{book}{}
+      \name{author}{1}{}{%
+        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+           family={Lurie},
+           familyi={L\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Higher Topos Theory}
+      \field{year}{2009}
+    \endentry
+    \entry{MSIA}{book}{}
+      \name{author}{2}{}{%
+        {{hash=1fc4bc57ad663c84359227240f5bc42f}{%
+           family={Moerdijk},
+           familyi={M\bibinitperiod},
+           given={Ieke},
+           giveni={I\bibinitperiod}}}%
+        {{hash=d36ee7db4f3786477083ecd5d16e4707}{%
+           family={Reyes},
+           familyi={R\bibinitperiod},
+           given={Gonzalo\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York, NY}%
+      }
+      \strng{namehash}{e50b58a5620febbe5cff32bfaba2a57c}
+      \strng{fullhash}{e50b58a5620febbe5cff32bfaba2a57c}
+      \strng{bibnamehash}{e50b58a5620febbe5cff32bfaba2a57c}
+      \strng{authorbibnamehash}{e50b58a5620febbe5cff32bfaba2a57c}
+      \strng{authornamehash}{e50b58a5620febbe5cff32bfaba2a57c}
+      \strng{authorfullhash}{e50b58a5620febbe5cff32bfaba2a57c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Models for Smooth Infinitesimal Analysis}
+      \field{year}{1990}
+    \endentry
+    \entry{HTTP}{article}{}
+      \name{author}{1}{}{%
+        {{hash=22bb4311878b35b2db2b84b4f2ade791}{%
+           family={Schreiber},
+           familyi={S\bibinitperiod},
+           given={Urs},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{fullhash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{bibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authorbibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authornamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authorfullhash}{22bb4311878b35b2db2b84b4f2ade791}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Higher Topos Theory in Physics}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://ncatlab.org/schreiber/show/Higher+Topos+Theory+in+Physics
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/schreiber/show/Higher+Topos+Theory+in+Physics
+      \endverb
+    \endentry
+    \entry{SIMPSON20121642}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cc9647d73dc394bd5705733781cb9b90}{%
+           family={Simpson},
+           familyi={S\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc9647d73dc394bd5705733781cb9b90}
+      \strng{fullhash}{cc9647d73dc394bd5705733781cb9b90}
+      \strng{bibnamehash}{cc9647d73dc394bd5705733781cb9b90}
+      \strng{authorbibnamehash}{cc9647d73dc394bd5705733781cb9b90}
+      \strng{authornamehash}{cc9647d73dc394bd5705733781cb9b90}
+      \strng{authorfullhash}{cc9647d73dc394bd5705733781cb9b90}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper investigates aspects of measure and randomness in the context of locale theory (point-free topology). We prove that every measure (σ-continuous valuation) μ, on the σ-frame of opens of a fitted σ-locale X, extends to a measure on the lattice of all σ-sublocales of X (Theorem 1). Furthermore, when μ is a finite measure with μ(X)=M, the σ-locale X has a smallest σ-sublocale of measure M (Theorem 2). In particular, when μ is a probability measure, X has a smallest σ-sublocale of measure 1. All σ prefixes can be dropped from these statements whenever X is a strongly Lindelöf locale, as is the case in the following applications. When μ is the Lebesgue measure on the Euclidean space Rn, Theorem 1 produces an isometry-invariant measure that, via the inclusion of the powerset P(Rn) in the lattice of sublocales, assigns a weight to every subset of Rn. (Contradiction is avoided because disjoint subsets need not be disjoint as sublocales.) When μ is the uniform probability measure on Cantor space {0,1}ω, the smallest measure-1 sublocale, given by Theorem 2, provides a canonical locale of random sequences, where randomness means that all probabilistic laws (measure-1 properties) are satisfied.}
+      \field{issn}{0168-0072}
+      \field{journaltitle}{Annals of Pure and Applied Logic}
+      \field{note}{Kurt Goedel Research Prize Fellowships 2010}
+      \field{number}{11}
+      \field{title}{Measure, randomness and sublocales}
+      \field{volume}{163}
+      \field{year}{2012}
+      \field{pages}{1642\bibrangedash 1659}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apal.2011.12.014
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0168007211001874
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0168007211001874
+      \endverb
+      \keyw{Locale theory,Foundations of measure theory,Foundations of probability theory}
+    \endentry
+    \entry{stacks-project}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a3dbcb9991f2a884f2c608ad2335af9f}{%
+           family={{Stacks project authors}},
+           familyi={S\bibinitperiod},
+           given={The},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3dbcb9991f2a884f2c608ad2335af9f}
+      \strng{fullhash}{a3dbcb9991f2a884f2c608ad2335af9f}
+      \strng{bibnamehash}{a3dbcb9991f2a884f2c608ad2335af9f}
+      \strng{authorbibnamehash}{a3dbcb9991f2a884f2c608ad2335af9f}
+      \strng{authornamehash}{a3dbcb9991f2a884f2c608ad2335af9f}
+      \strng{authorfullhash}{a3dbcb9991f2a884f2c608ad2335af9f}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://stacks.math.columbia.edu}}
+      \field{title}{The Stacks project}
+      \field{year}{2023}
+    \endentry
+    \entry{lww2}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6a7395f743b0b952e965e0e08c07d825}{%
+           family={李文威},
+           familyi={李\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {高等教育出版社 (尚未出版)}%
+      }
+      \strng{namehash}{6a7395f743b0b952e965e0e08c07d825}
+      \strng{fullhash}{6a7395f743b0b952e965e0e08c07d825}
+      \strng{bibnamehash}{6a7395f743b0b952e965e0e08c07d825}
+      \strng{authorbibnamehash}{6a7395f743b0b952e965e0e08c07d825}
+      \strng{authornamehash}{6a7395f743b0b952e965e0e08c07d825}
+      \strng{authorfullhash}{6a7395f743b0b952e965e0e08c07d825}
+      \field{sortinit}{李}
+      \field{sortinithash}{87a9fd4641bb616da89b0f1e084fa281}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{代数学方法: 卷二}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.wwli.asia/downloads/books/Al-jabr-2.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.wwli.asia/downloads/books/Al-jabr-2.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

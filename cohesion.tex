@@ -1,0 +1,75 @@
+\chapter{凝聚\topos{}}
+
+\section{凝聚的动机, 基本概念}
+
+拓扑空间范畴 $\mathsf {Top}$ 与集合范畴 $\mathsf {Set}$ 之间存在如下的伴随四元组,
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\mathsf{Top}} \&\& {\mathsf {Set}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "\Gamma"{description, pos=0.7}, shift right=2, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{disc}}"{description, pos=0.7}, shift right=2, from=1-3, to=1-1]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_0}"{description, pos=0.7}, shift left=6, from=1-1, to=1-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{\operatorname{codisc}}"{description, pos=0.7}, shift left=6, from=1-3, to=1-1]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=1]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=3]
+\end{tikzcd}\]
+其中
+\begin{itemize}
+	\item $\Pi_0$ 给出拓扑空间的\emph{连通分支的集合};
+	\item $\operatorname{disc}$ 将集合对应到\emph{离散空间};
+	\item $\Gamma$ 将拓扑空间遗忘为其\emph{底层集合};
+	\item $\operatorname{codisc}$ 将集合对应到\emph{余离散空间} (即只有空集和全集两个开集的拓扑空间).
+\end{itemize}
+
+
+
+\begin{definition}
+	{(凝聚\topos{})}
+	\emph{凝聚\topos{}} (cohesive topos) 是指一个\topos{} $\mathsf E$ 带有如下伴随四元组,
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBFIl0sWzIsMCwiXFxtYXRoc2Yge1NldH0iXSxbMCwxLCJcXEdhbW1hIiwxLHsibGFiZWxfcG9zaXRpb24iOjcwLCJvZmZzZXQiOjF9XSxbMSwwLCJcXG9wZXJhdG9ybmFtZXtkaXNjfSIsMSx7ImxhYmVsX3Bvc2l0aW9uIjo3MCwib2Zmc2V0IjoyfV0sWzAsMSwiXFxQaV8wIiwxLHsibGFiZWxfcG9zaXRpb24iOjcwLCJvZmZzZXQiOi01fV0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7Y29kaXNjfSIsMSx7ImxhYmVsX3Bvc2l0aW9uIjo3MCwib2Zmc2V0IjotNH1dLFs0LDMsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzMsMiwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XSxbMiw1LCIiLDEseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf E} \&\& {\mathsf {Set}}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "\Gamma"{description, pos=0.7}, shift right=2, from=1-1, to=1-3]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{disc}}"{description, pos=0.7}, shift right=2, from=1-3, to=1-1]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_0}"{description, pos=0.7}, shift left=6, from=1-1, to=1-3]
+		\arrow[""{name=3, anchor=center, inner sep=0}, "{\operatorname{codisc}}"{description, pos=0.7}, shift left=6, from=1-3, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=3]
+	\end{tikzcd}\]
+	使得 $\Pi_0$ 保持有限乘积.
+\end{definition}
+
+\begin{example}
+	[label={cohesion-family-of-sets}]
+	{(集合族)}
+	考虑集合族范畴 $\mathsf {Fam}$ (例 \ref{family-of-sets-fibration}), 又称变集范畴 (例 \ref{varying-set-topos}), Sierpi\'nski \topos{} (定义 \ref{Sierpinski-space}). 这里, 我们将一个集合族 $W\to X$ 想象为一个大集合 $W$ 分成了 $X$ 那么多组, 于是有凝聚的直观. $\mathsf {Fam}$ 是一个凝聚\topos{}, 其中
+	\begin{itemize}
+		\item $\Pi_0\colon \mathsf {Fam}\to\mathsf {Set}$, $(W\to X)\mapsto X$;
+		\item $\operatorname{disc}\colon\mathsf {Set}\to\mathsf {Fam}, X\mapsto (\operatorname{id}\colon X\to X)$, 一个集合 $X$ 可以完全拆散分成 $X$ 那么多组;
+		\item $\Gamma \colon \mathsf {Fam}\to\mathsf {Set}$, $(W\to X)\mapsto W$;
+		\item $\operatorname{codisc}\colon \mathsf {Set}\to \mathsf {Fam}$, $X\mapsto (X\to \{*\})$, 一个集合 $X$ 可以完全不拆, 分成 $1$ 组.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	{(单纯集)}
+	单纯集范畴 $\mathsf {sSet}$ 是一个凝聚\topos{}, 其中
+	\begin{itemize}
+		\item $\Pi_0\colon \mathsf {sSet}\to\mathsf {Set}$, $X\mapsto \operatorname{coeq}(X_1\rightrightarrows X_0)$, 即 $X$ 的连通分支的集合;
+		\item $\operatorname{disc}\colon\mathsf {Set}\to\mathsf {sSet}$, 将集合 $X$ 对应到常值单纯集 (也就是离散单纯集) $X$;
+		\item $\Gamma \colon \mathsf {sSet}\to\mathsf {Set}$, $X\mapsto X_0 = \operatorname{Hom}(\Delta^0,X)$;
+		\item $\operatorname{codisc}\colon \mathsf {Set}\to \mathsf {sSet}$, $\operatorname{codisc}(X)_n := X^{n+1}$.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	{(光滑空间)}
+	光滑空间范畴 $\operatorname{Sh}(\mathsf {CartSp})$ (例 \ref{cartsp-site}) 是一个凝聚\topos{}, 其中
+	\begin{itemize}
+		\item $\Pi_0\colon \mathsf {sSet}\to\mathsf {Set}$, $X\mapsto \operatorname{coeq}(X_1\rightrightarrows X_0)$, 即 $X$ 的连通分支的集合;
+		\item $\operatorname{disc}\colon\mathsf {Set}\to\mathsf {sSet}$, 将集合 $X$ 对应到常值单纯集 (也就是离散单纯集) $X$;
+		\item $\Gamma \colon \mathsf {sSet}\to\mathsf {Set}$, $X\mapsto X_0 = \operatorname{Hom}(\Delta^0,X)$;
+		\item $\operatorname{codisc}\colon \mathsf {Set}\to \mathsf {sSet}$, $\operatorname{codisc}(X)_n := X^{n+1}$.
+	\end{itemize}
+\end{example}

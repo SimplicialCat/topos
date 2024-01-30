@@ -91,8 +91,18 @@
 
 % 常用记号
 
-\def\op{\text{op}} % 对偶范畴
-\def\yo{\!\text{{\mincho よ}}} % 米田嵌入
+\newcommand{\op}{\text{op}} % 对偶范畴
+\newcommand{\yo}{\!\text{{\mincho よ}}} % 米田嵌入
+\newcommand{\Top}{\mathcal T\!op}
+
+% sequent calculus
+\newcommand{\sqc}[2]{\frac{\quad #1 \quad}{\quad #2 \quad}}
+\newcommand{\sqqc}[2]{
+	\begin{array}
+		{c}
+		#1 \\ \hline \hline #2
+	\end{array}
+}
 
 \newcommand{\todo}[1]{{\color{red} [\textbf{未完成: #1}]}}
 
@@ -122,10 +132,13 @@
 % 第五章 分类\topos{}
 \input{cla}
 
-% 第六章 高阶范畴与高阶\topos{}
+% 第六章 相对\topos{}
+\input{rel}
+
+% 第七章 高阶范畴与高阶\topos{}
 \input{higher}
 
-% 第七章 凝聚\topos{}
+% 第八章 凝聚\topos{}
 \input{cohesion}
 
 \appendix

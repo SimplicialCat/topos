@@ -320,7 +320,7 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 	对 $X$ 上的任意预层 $F$, 以 $\operatorname{Hom}_{\operatorname{Presh}(X)}(-,F)$ 作用于 (\ref{sieve-coeq}), 可知下图是集合范畴中的等化子.
 	\begin{equation}
 		\begin{tikzcd}[ampersand replacement=\&]
-			{\operatorname{Hom}_{\operatorname{Presh}(X)}(S,G)} \& {\prod_i G(U_i)} \& {\prod_{i,j}G(U_i\cap U_j)}
+			{\operatorname{Hom}_{\operatorname{Presh}(X)}(S,F)} \& {\prod_i F(U_i)} \& {\prod_{i,j}F(U_i\cap U_j)}
 			\arrow[shift left, from=1-2, to=1-3]
 			\arrow[shift right, from=1-2, to=1-3]
 			\arrow[from=1-1, to=1-2]
@@ -874,16 +874,17 @@ $j$-层是层条件 (\ref{sheaf-condition}) 的推广.
 	立方体的竖直方向箭头有三个为同构, 从而第四个也为同构, 这证明了 $W$ 是层.
 \end{proof}
 
-上述论证中的拉回图可替换为任何极限. 因此有
+上述论证中的拉回图可替换为任何极限.
 
 \begin{prop}
 	{}
 	层范畴 $\operatorname{Sh}(\mathsf C,J)$ 存在任意极限, 且极限等同于作为预层的极限.
 \end{prop}
-%
-%\begin{proof}
-%	设 $X = \lim _i X_i$ 是预层的极限, 而每个 $X_i$ 是层, 我们证明 $X$ 是层.
-%\end{proof}
+
+\begin{proof}
+	设 $X = \lim _i X_i$ 是预层的极限, 而每个 $X_i$ 是层, 我们证明 $X$ 是层.
+	设 $S\in J(c)$ 是任意覆盖筛, 则由
+\end{proof}
 
 回到正题, 我们证明了
 

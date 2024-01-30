@@ -40,6 +40,7 @@
 \newlabel{self-as-subobject}{{1.1.16}{14}{子对象分类子}{tcb@cnt@remark.1.1.16}{}}
 \newlabel{diagonal}{{1.1.18}{14}{子对象分类子}{tcb@cnt@remark.1.1.18}{}}
 \newlabel{singleton}{{1.1.19}{14}{子对象分类子}{tcb@cnt@remark.1.1.19}{}}
+\newlabel{singleton-map-injection}{{1.1.20}{14}{子对象分类子}{tcb@cnt@remark.1.1.20}{}}
 \newlabel{equalizer-as-subobject}{{1.1.21}{15}{子对象分类子}{tcb@cnt@remark.1.1.21}{}}
 \newlabel{membership-relation}{{1.1.22}{15}{子对象分类子}{tcb@cnt@remark.1.1.22}{}}
 \@writefile{toc}{\contentsline {subsection}{幂对象}{15}{tcb@cnt@remark.1.1.23}\protected@file@percent }
@@ -78,6 +79,7 @@
 \newlabel{pullback-preserve-epis}{{1.3.7}{25}{单射与满射}{tcb@cnt@remark.1.3.7}{}}
 \@writefile{toc}{\contentsline {subsection}{正则单射与满射, 等价关系}{25}{tcb@cnt@remark.1.3.7}\protected@file@percent }
 \newlabel{regular-epi-and-mono}{{1.3.8}{26}{正则单射与满射, 等价关系}{tcb@cnt@remark.1.3.8}{}}
+\newlabel{kernel-pair}{{1.3.11}{26}{正则单射与满射, 等价关系}{tcb@cnt@remark.1.3.11}{}}
 \newlabel{topos-mono-regular}{{1.3.15}{27}{正则单射与满射, 等价关系}{tcb@cnt@remark.1.3.15}{}}
 \newlabel{topos-epi-mono-iso}{{1.3.16}{28}{正则单射与满射, 等价关系}{tcb@cnt@remark.1.3.16}{}}
 \@writefile{toc}{\contentsline {subsection}{像}{28}{tcb@cnt@remark.1.3.17}\protected@file@percent }
@@ -95,314 +97,342 @@
 \newlabel{topological-space-open-Heyting-algebra}{{1.3.36}{33}{子对象的格与 Heyting 代数}{tcb@cnt@remark.1.3.36}{}}
 \newlabel{subobject-lattice-Heyting-algebra}{{1.3.39}{34}{子对象的格与 Heyting 代数}{tcb@cnt@remark.1.3.39}{}}
 \newlabel{zero-char-function}{{1.3.41}{35}{子对象的格与 Heyting 代数}{tcb@cnt@remark.1.3.41}{}}
-\newlabel{bot-neg-top}{{1.3.43}{35}{子对象的格与 Heyting 代数}{tcb@cnt@remark.1.3.43}{}}
-\@writefile{toc}{\contentsline {subsection}{自然数对象}{38}{tcb@cnt@remark.1.3.48}\protected@file@percent }
-\newlabel{natural-numbers-object-condition}{{1.3.50}{38}{自然数对象}{tcb@cnt@remark.1.3.50}{}}
-\@writefile{toc}{\contentsline {subsection}{Boole 意象{}与选择公理}{38}{tcb@cnt@remark.1.3.53}\protected@file@percent }
-\newlabel{Boolean-topos}{{1.3}{38}{Boole \topos {}与选择公理}{tcb@cnt@remark.1.3.53}{}}
-\newlabel{IAC-technical-lemma}{{1.3.61}{40}{Boole \topos {}与选择公理}{tcb@cnt@remark.1.3.61}{}}
+\newlabel{bot-neg-top}{{1.3.43}{36}{子对象的格与 Heyting 代数}{tcb@cnt@remark.1.3.43}{}}
+\newlabel{union-of-disjoint-subobjects}{{1.3.49}{38}{子对象的格与 Heyting 代数}{tcb@cnt@remark.1.3.49}{}}
+\@writefile{toc}{\contentsline {subsection}{自然数对象}{38}{tcb@cnt@remark.1.3.49}\protected@file@percent }
+\newlabel{natural-numbers-object-condition}{{1.3.51}{38}{自然数对象}{tcb@cnt@remark.1.3.51}{}}
+\@writefile{toc}{\contentsline {subsection}{无交和}{39}{tcb@cnt@remark.1.3.54}\protected@file@percent }
+\newlabel{sums-are-disjoint}{{1.3.56}{40}{无交和}{tcb@cnt@remark.1.3.56}{}}
+\@writefile{toc}{\contentsline {subsection}{Boole 意象{}与选择公理}{40}{tcb@cnt@remark.1.3.57}\protected@file@percent }
+\newlabel{Boolean-topos}{{1.3}{40}{Boole \topos {}与选择公理}{tcb@cnt@remark.1.3.57}{}}
+\newlabel{Boolean-algebra}{{1.3.58}{41}{Boole \topos {}与选择公理}{tcb@cnt@remark.1.3.58}{}}
+\newlabel{IAC-technical-lemma}{{1.3.66}{43}{Boole \topos {}与选择公理}{tcb@cnt@remark.1.3.66}{}}
 \abx@aux@cite{0}{FSCM}
 \abx@aux@segm{0}{0}{FSCM}
 \abx@aux@cite{0}{Joyal-Crash-Course}
 \abx@aux@segm{0}{0}{Joyal-Crash-Course}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}位象: 无点拓扑学}{43}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}位象: 无点拓扑学}{45}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}基本概念}{43}{section.2.1}\protected@file@percent }
-\newlabel{locale-definition}{{2.1.3}{44}{基本概念}{tcb@cnt@remark.2.1.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}基本概念}{45}{section.2.1}\protected@file@percent }
+\newlabel{locale-definition}{{2.1.3}{46}{基本概念}{tcb@cnt@remark.2.1.3}{}}
+\newlabel{morphism-of-locales-as-adjunction}{{2.1.5}{46}{基本概念}{tcb@cnt@remark.2.1.5}{}}
 \abx@aux@cite{0}{FSCM}
 \abx@aux@segm{0}{0}{FSCM}
-\newlabel{points-of-locale}{{2.1.8}{45}{基本概念}{tcb@cnt@remark.2.1.8}{}}
-\newlabel{top-loc-adjunction}{{2.1.10}{45}{基本概念}{tcb@cnt@remark.2.1.10}{}}
+\newlabel{points-of-locale}{{2.1.10}{48}{基本概念}{tcb@cnt@remark.2.1.10}{}}
+\newlabel{completely-prime-filter-vs-prime-ideal}{{2.1.11}{48}{基本概念}{tcb@cnt@remark.2.1.11}{}}
+\newlabel{top-loc-adjunction}{{2.1.12}{48}{基本概念}{tcb@cnt@remark.2.1.12}{}}
+\newlabel{complete-atomless-Boolean-algebra}{{2.1.15}{49}{基本概念}{tcb@cnt@remark.2.1.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}位象的几何性质}{50}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{子位象与内核}{50}{section.2.2}\protected@file@percent }
+\newlabel{sublocales}{{2.2.1}{50}{子位象与内核}{tcb@cnt@remark.2.2.1}{}}
 \abx@aux@cite{0}{SIMPSON20121642}
 \abx@aux@segm{0}{0}{SIMPSON20121642}
-\@writefile{toc}{\contentsline {subsection}{子位象}{47}{tcb@cnt@remark.2.1.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{测度与随机性}{47}{tcb@cnt@remark.2.1.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}位象与逻辑}{48}{section.2.2}\protected@file@percent }
-\newlabel{locales-and-logic}{{2.2}{48}{位象与逻辑}{section.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{经典命题逻辑与 Boole 代数}{49}{section.2.2}\protected@file@percent }
-\newlabel{model-and-ultrafilter}{{2.2.7}{50}{经典命题逻辑与 Boole 代数}{tcb@cnt@remark.2.2.7}{}}
-\@writefile{toc}{\contentsline {subsection}{几何逻辑与位格{}}{51}{tcb@cnt@remark.2.2.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Grothendieck 意象{}与空间的概念}{53}{chapter.3}\protected@file@percent }
+\newlabel{locale-map-triangular-identities}{{2.2.6}{52}{子位象与内核}{tcb@cnt@remark.2.2.6}{}}
+\newlabel{nuclei}{{2.2.7}{52}{子位象与内核}{tcb@cnt@remark.2.2.7}{}}
+\newlabel{nucleus-to-sublocale}{{2.2.8}{53}{子位象与内核}{tcb@cnt@remark.2.2.8}{}}
+\@writefile{toc}{\contentsline {subsection}{位象的满射}{53}{tcb@cnt@remark.2.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{开映射}{54}{Item.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}位象与逻辑}{54}{section.2.3}\protected@file@percent }
+\newlabel{locales-and-logic}{{2.3}{54}{位象与逻辑}{section.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{经典命题逻辑与 Boole 代数}{55}{section.2.3}\protected@file@percent }
+\newlabel{model-boolealg-homomorphism}{{2.3.5}{56}{经典命题逻辑与 Boole 代数}{tcb@cnt@remark.2.3.5}{}}
+\newlabel{model-and-ultrafilter}{{2.3.7}{57}{经典命题逻辑与 Boole 代数}{tcb@cnt@remark.2.3.7}{}}
+\newlabel{Stone-duality}{{2.3.13}{58}{经典命题逻辑与 Boole 代数}{tcb@cnt@remark.2.3.13}{}}
+\@writefile{toc}{\contentsline {subsection}{几何逻辑与位格{}}{59}{tcb@cnt@remark.2.3.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Grothendieck 意象{}与空间的概念}{61}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter-grothendieck-toposes}{{3}{53}{Grothendieck \topos {}与空间的概念}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}预层}{54}{section.3.1}\protected@file@percent }
-\newlabel{remark-probe}{{3.1.2}{54}{预层}{tcb@cnt@remark.3.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{常见的预层范畴}{55}{tcb@cnt@remark.3.1.4}\protected@file@percent }
-\newlabel{Simplicial-Sets}{{3.1.6}{55}{常见的预层范畴}{tcb@cnt@remark.3.1.6}{}}
-\newlabel{G-set-presheaf-category}{{3.1.8}{56}{常见的预层范畴}{tcb@cnt@remark.3.1.8}{}}
-\@writefile{toc}{\contentsline {subsection}{预层范畴是意象{}}{56}{tcb@cnt@remark.3.1.8}\protected@file@percent }
-\newlabel{presheaf-category-complete}{{3.1.9}{56}{预层范畴是\topos {}}{tcb@cnt@remark.3.1.9}{}}
-\newlabel{presheaf-category-exponential}{{3.1.10}{56}{预层范畴是\topos {}}{tcb@cnt@remark.3.1.10}{}}
-\@writefile{toc}{\contentsline {subsection}{筛与预层范畴中的子对象}{57}{tcb@cnt@remark.3.1.10}\protected@file@percent }
-\newlabel{presheaf-category-subobject-classifier}{{3.1.11}{57}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.11}{}}
-\newlabel{subfunctor-description}{{3.1.12}{57}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.12}{}}
-\newlabel{sieve}{{3.1.13}{57}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.13}{}}
-\newlabel{sieve-from-cover}{{3.1.15}{58}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.15}{}}
-\newlabel{sieve-and-subfunctor}{{3.1.16}{58}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.16}{}}
-\newlabel{sieve-from-cover-subfunctor}{{3.1.17}{59}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.17}{}}
-\newlabel{sieve-coeq}{{3.1}{59}{筛与预层范畴中的子对象}{equation.3.1.1}{}}
-\newlabel{sieve-subfunctor-equalizer}{{3.2}{59}{筛与预层范畴中的子对象}{equation.3.1.2}{}}
-\newlabel{maximal-sieve}{{3.1.18}{59}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.18}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}层与景}{60}{section.3.2}\protected@file@percent }
-\newlabel{sheaf-condition}{{3.3}{60}{层与景}{equation.3.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{从覆盖到 Grothendieck 拓扑}{61}{equation.3.2.3}\protected@file@percent }
-\newlabel{sheaf-condition}{{3.2.4}{61}{从覆盖到 Grothendieck 拓扑}{tcb@cnt@remark.3.2.4}{}}
-\newlabel{Grothendieck-topology}{{3.2.8}{62}{从覆盖到 Grothendieck 拓扑}{tcb@cnt@remark.3.2.8}{}}
+\newlabel{chapter-grothendieck-toposes}{{3}{61}{Grothendieck \topos {}与空间的概念}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}预层}{62}{section.3.1}\protected@file@percent }
+\newlabel{remark-probe}{{3.1.2}{62}{预层}{tcb@cnt@remark.3.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{常见的预层范畴}{63}{tcb@cnt@remark.3.1.4}\protected@file@percent }
+\newlabel{Simplicial-Sets}{{3.1.6}{63}{常见的预层范畴}{tcb@cnt@remark.3.1.6}{}}
+\newlabel{G-set-presheaf-category}{{3.1.8}{64}{常见的预层范畴}{tcb@cnt@remark.3.1.8}{}}
+\@writefile{toc}{\contentsline {subsection}{预层范畴是意象{}}{64}{tcb@cnt@remark.3.1.8}\protected@file@percent }
+\newlabel{presheaf-category-complete}{{3.1.9}{64}{预层范畴是\topos {}}{tcb@cnt@remark.3.1.9}{}}
+\newlabel{presheaf-category-exponential}{{3.1.10}{64}{预层范畴是\topos {}}{tcb@cnt@remark.3.1.10}{}}
+\@writefile{toc}{\contentsline {subsection}{筛与预层范畴中的子对象}{65}{tcb@cnt@remark.3.1.10}\protected@file@percent }
+\newlabel{presheaf-category-subobject-classifier}{{3.1.11}{65}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.11}{}}
+\newlabel{subfunctor-description}{{3.1.12}{65}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.12}{}}
+\newlabel{sieve}{{3.1.13}{65}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.13}{}}
+\newlabel{sieve-from-cover}{{3.1.15}{66}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.15}{}}
+\newlabel{sieve-and-subfunctor}{{3.1.16}{66}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.16}{}}
+\newlabel{sieve-from-cover-subfunctor}{{3.1.17}{67}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.17}{}}
+\newlabel{sieve-coeq}{{3.1}{67}{筛与预层范畴中的子对象}{equation.3.1.1}{}}
+\newlabel{sieve-subfunctor-equalizer}{{3.2}{67}{筛与预层范畴中的子对象}{equation.3.1.2}{}}
+\newlabel{maximal-sieve}{{3.1.18}{67}{筛与预层范畴中的子对象}{tcb@cnt@remark.3.1.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}层与景}{68}{section.3.2}\protected@file@percent }
+\newlabel{sheaf-condition}{{3.3}{68}{层与景}{equation.3.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{从覆盖到 Grothendieck 拓扑}{69}{equation.3.2.3}\protected@file@percent }
+\newlabel{sheaf-condition}{{3.2.4}{69}{从覆盖到 Grothendieck 拓扑}{tcb@cnt@remark.3.2.4}{}}
+\newlabel{Grothendieck-topology}{{3.2.8}{70}{从覆盖到 Grothendieck 拓扑}{tcb@cnt@remark.3.2.8}{}}
 \abx@aux@cite{0}{Elephant}
 \abx@aux@segm{0}{0}{Elephant}
-\newlabel{coverage-generated-Grothendieck-topology}{{3.2.10}{63}{从覆盖到 Grothendieck 拓扑}{tcb@cnt@remark.3.2.10}{}}
+\newlabel{coverage-generated-Grothendieck-topology}{{3.2.10}{71}{从覆盖到 Grothendieck 拓扑}{tcb@cnt@remark.3.2.10}{}}
 \abx@aux@cite{0}{SGA4}
 \abx@aux@segm{0}{0}{SGA4}
-\@writefile{toc}{\contentsline {paragraph}{注意.}{64}{tcb@cnt@remark.3.2.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{常见的景}{65}{tcb@cnt@remark.3.2.15}\protected@file@percent }
-\newlabel{topological-space-as-site}{{3.2.17}{65}{常见的景}{tcb@cnt@remark.3.2.17}{}}
-\newlabel{locale-as-site}{{3.2.19}{65}{常见的景}{tcb@cnt@remark.3.2.19}{}}
-\newlabel{cartsp-site}{{3.2.20}{65}{常见的景}{tcb@cnt@remark.3.2.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{注意.}{72}{tcb@cnt@remark.3.2.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{常见的景}{73}{tcb@cnt@remark.3.2.15}\protected@file@percent }
+\newlabel{topological-space-as-site}{{3.2.17}{73}{常见的景}{tcb@cnt@remark.3.2.17}{}}
+\newlabel{locale-as-site}{{3.2.19}{73}{常见的景}{tcb@cnt@remark.3.2.19}{}}
+\newlabel{cartsp-site}{{3.2.20}{73}{常见的景}{tcb@cnt@remark.3.2.20}{}}
 \abx@aux@cite{0}{HTTP}
 \abx@aux@segm{0}{0}{HTTP}
 \abx@aux@cite{0}{QFT}
 \abx@aux@segm{0}{0}{QFT}
-\newlabel{zariski-site}{{3.2.22}{67}{常见的景}{tcb@cnt@remark.3.2.22}{}}
-\newlabel{small-etale-site}{{3.2.23}{67}{常见的景}{tcb@cnt@remark.3.2.23}{}}
-\@writefile{toc}{\contentsline {subsection}{Lawvere--Tierney 拓扑}{67}{tcb@cnt@remark.3.2.23}\protected@file@percent }
+\newlabel{zariski-site}{{3.2.22}{75}{常见的景}{tcb@cnt@remark.3.2.22}{}}
+\newlabel{small-etale-site}{{3.2.23}{75}{常见的景}{tcb@cnt@remark.3.2.23}{}}
+\@writefile{toc}{\contentsline {subsection}{Lawvere--Tierney 拓扑}{75}{tcb@cnt@remark.3.2.23}\protected@file@percent }
 \abx@aux@cite{0}{177894}
 \abx@aux@segm{0}{0}{177894}
-\newlabel{Lawvere--Tierney-topology}{{3.2.25}{68}{Lawvere--Tierney 拓扑}{tcb@cnt@remark.3.2.25}{}}
-\@writefile{toc}{\contentsline {subsection}{局部化}{69}{tcb@cnt@remark.3.2.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{层范畴中的子对象}{69}{tcb@cnt@remark.3.2.30}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{层范畴中的指数对象}{71}{tcb@cnt@remark.3.2.34}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}层与平展空间}{71}{section.3.3}\protected@file@percent }
-\newlabel{germ-and-stalk}{{3.3.3}{71}{层与平展空间}{tcb@cnt@remark.3.3.3}{}}
-\newlabel{espace-etale}{{3.3.5}{72}{层与平展空间}{tcb@cnt@remark.3.3.5}{}}
-\newlabel{etale-section-adjoint}{{3.3.6}{72}{层与平展空间}{tcb@cnt@remark.3.3.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{单位}{72}{tcb@cnt@remark.3.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{余单位}{73}{tcb@cnt@remark.3.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{第一个复合}{73}{tcb@cnt@remark.3.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{第二个复合}{73}{tcb@cnt@remark.3.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}层意象{}}{73}{section.3.4}\protected@file@percent }
-\newlabel{Grothendieck-topos-definition}{{3.4.3}{74}{层\topos {}}{tcb@cnt@remark.3.4.3}{}}
+\newlabel{Lawvere--Tierney-topology}{{3.2.25}{76}{Lawvere--Tierney 拓扑}{tcb@cnt@remark.3.2.25}{}}
+\@writefile{toc}{\contentsline {subsection}{局部化}{77}{tcb@cnt@remark.3.2.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{层范畴中的子对象}{77}{tcb@cnt@remark.3.2.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{层范畴中的指数对象}{79}{tcb@cnt@remark.3.2.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}层与平展空间}{79}{section.3.3}\protected@file@percent }
+\newlabel{germ-and-stalk}{{3.3.3}{79}{层与平展空间}{tcb@cnt@remark.3.3.3}{}}
+\newlabel{espace-etale}{{3.3.5}{80}{层与平展空间}{tcb@cnt@remark.3.3.5}{}}
+\newlabel{etale-section-adjoint}{{3.3.6}{80}{层与平展空间}{tcb@cnt@remark.3.3.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{单位}{80}{tcb@cnt@remark.3.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{余单位}{81}{tcb@cnt@remark.3.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{第一个复合}{81}{tcb@cnt@remark.3.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{第二个复合}{81}{tcb@cnt@remark.3.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}层意象{}}{81}{section.3.4}\protected@file@percent }
+\newlabel{Grothendieck-topos-definition}{{3.4.3}{82}{层\topos {}}{tcb@cnt@remark.3.4.3}{}}
 \abx@aux@cite{0}{SGA4}
 \abx@aux@segm{0}{0}{SGA4}
-\newlabel{ouvert}{{3.4.9}{75}{层\topos {}}{tcb@cnt@remark.3.4.9}{}}
-\@writefile{toc}{\contentsline {subsection}{层化}{75}{tcb@cnt@remark.3.4.9}\protected@file@percent }
-\newlabel{sheafification}{{3.4.10}{75}{层化}{tcb@cnt@remark.3.4.10}{}}
-\@writefile{toc}{\contentsline {subsection}{景与层意象{}的态射: 直像与逆像}{76}{tcb@cnt@remark.3.4.10}\protected@file@percent }
+\newlabel{ouvert}{{3.4.9}{83}{层\topos {}}{tcb@cnt@remark.3.4.9}{}}
+\@writefile{toc}{\contentsline {subsection}{层化}{83}{tcb@cnt@remark.3.4.9}\protected@file@percent }
+\newlabel{sheafification}{{3.4.10}{83}{层化}{tcb@cnt@remark.3.4.10}{}}
+\@writefile{toc}{\contentsline {subsection}{景与层意象{}的态射: 直像与逆像}{84}{tcb@cnt@remark.3.4.10}\protected@file@percent }
 \abx@aux@cite{0}{stacks-project}
 \abx@aux@segm{0}{0}{stacks-project}
-\newlabel{inverse-direct-adjoint}{{3.4.15}{77}{景与层\topos {}的态射: 直像与逆像}{tcb@cnt@remark.3.4.15}{}}
-\newlabel{global-sections}{{3.4.16}{77}{景与层\topos {}的态射: 直像与逆像}{tcb@cnt@remark.3.4.16}{}}
-\newlabel{topological-space-point-stalk-skyscraper}{{3.4.17}{78}{景与层\topos {}的态射: 直像与逆像}{tcb@cnt@remark.3.4.17}{}}
-\@writefile{toc}{\contentsline {subsection}{景的态射}{78}{tcb@cnt@remark.3.4.17}\protected@file@percent }
-\newlabel{morphism-of-sites}{{3.4.18}{78}{景的态射}{tcb@cnt@remark.3.4.18}{}}
-\@writefile{toc}{\contentsline {subsection}{层与平展空间: 意象{}版本}{79}{tcb@cnt@remark.3.4.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}几何态射}{79}{section.3.5}\protected@file@percent }
-\newlabel{geometric-morphism}{{3.5.1}{79}{几何态射}{tcb@cnt@remark.3.5.1}{}}
-\newlabel{global-sections-geometric-morphism}{{3.5.3}{79}{几何态射}{tcb@cnt@remark.3.5.3}{}}
-\@writefile{toc}{\contentsline {subsection}{群作用与张量--同态伴随}{80}{tcb@cnt@remark.3.5.3}\protected@file@percent }
-\newlabel{group-action-tensor}{{3.5.4}{80}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.4}{}}
-\newlabel{tensor-coeq}{{3.4}{80}{群作用与张量--同态伴随}{equation.3.5.4}{}}
-\newlabel{group-action-tensor-general}{{3.5.5}{81}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.5}{}}
-\newlabel{group-action-hom}{{3.5.6}{81}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.6}{}}
-\newlabel{hom-equalizer}{{3.5}{81}{群作用与张量--同态伴随}{equation.3.5.5}{}}
-\newlabel{group-action-hom-general}{{3.5.7}{81}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.7}{}}
-\newlabel{group-action-tensor-hom}{{3.5.8}{82}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.8}{}}
-\newlabel{group-homomorphism-adjoint-triple}{{3.5.9}{82}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.9}{}}
-\newlabel{group-homomorphism-adjoint-triple-example-1-H}{{3.5.11}{83}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.11}{}}
-\newlabel{group-homomorphism-adjoint-triple-example-G-1}{{3.5.12}{83}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.12}{}}
-\newlabel{presheaf-topos-essential-geometric-morphism}{{3.5.13}{83}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.13}{}}
-\newlabel{category-action-hom}{{3.5.15}{84}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.15}{}}
-\@writefile{toc}{\contentsline {subsection}{意象{}的点}{85}{tcb@cnt@remark.3.5.16}\protected@file@percent }
-\newlabel{presheaf-category-essential-point}{{3.5.20}{85}{\topos {}的点}{tcb@cnt@remark.3.5.20}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}意象{}的几何性质}{85}{section.3.6}\protected@file@percent }
+\newlabel{inverse-direct-adjoint}{{3.4.15}{85}{景与层\topos {}的态射: 直像与逆像}{tcb@cnt@remark.3.4.15}{}}
+\newlabel{global-sections}{{3.4.16}{85}{景与层\topos {}的态射: 直像与逆像}{tcb@cnt@remark.3.4.16}{}}
+\newlabel{topological-space-point-stalk-skyscraper}{{3.4.17}{86}{景与层\topos {}的态射: 直像与逆像}{tcb@cnt@remark.3.4.17}{}}
+\@writefile{toc}{\contentsline {subsection}{景的态射}{86}{tcb@cnt@remark.3.4.17}\protected@file@percent }
+\newlabel{morphism-of-sites}{{3.4.18}{86}{景的态射}{tcb@cnt@remark.3.4.18}{}}
+\@writefile{toc}{\contentsline {subsection}{层与平展空间: 意象{}版本}{87}{tcb@cnt@remark.3.4.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}几何态射}{87}{section.3.5}\protected@file@percent }
+\newlabel{geometric-morphism}{{3.5.1}{87}{几何态射}{tcb@cnt@remark.3.5.1}{}}
+\newlabel{global-sections-geometric-morphism}{{3.5.3}{87}{几何态射}{tcb@cnt@remark.3.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{群作用与张量--同态伴随}{88}{tcb@cnt@remark.3.5.3}\protected@file@percent }
+\newlabel{group-action-tensor}{{3.5.4}{88}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.4}{}}
+\newlabel{tensor-coeq}{{3.4}{88}{群作用与张量--同态伴随}{equation.3.5.4}{}}
+\newlabel{group-action-tensor-general}{{3.5.5}{89}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.5}{}}
+\newlabel{group-action-hom}{{3.5.6}{89}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.6}{}}
+\newlabel{hom-equalizer}{{3.5}{89}{群作用与张量--同态伴随}{equation.3.5.5}{}}
+\newlabel{group-action-hom-general}{{3.5.7}{89}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.7}{}}
+\newlabel{group-action-tensor-hom}{{3.5.8}{90}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.8}{}}
+\newlabel{group-homomorphism-adjoint-triple}{{3.5.9}{90}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.9}{}}
+\newlabel{group-homomorphism-adjoint-triple-example-1-H}{{3.5.11}{91}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.11}{}}
+\newlabel{group-homomorphism-adjoint-triple-example-G-1}{{3.5.12}{91}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.12}{}}
+\newlabel{presheaf-topos-essential-geometric-morphism}{{3.5.13}{91}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.13}{}}
+\newlabel{category-action-hom}{{3.5.15}{92}{群作用与张量--同态伴随}{tcb@cnt@remark.3.5.15}{}}
+\@writefile{toc}{\contentsline {subsection}{意象{}的点}{93}{tcb@cnt@remark.3.5.16}\protected@file@percent }
+\newlabel{presheaf-category-essential-point}{{3.5.20}{93}{\topos {}的点}{tcb@cnt@remark.3.5.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}意象{}的几何性质}{93}{section.3.6}\protected@file@percent }
 \abx@aux@cite{0}{Elephant}
 \abx@aux@segm{0}{0}{Elephant}
-\@writefile{toc}{\contentsline {subsection}{连通性}{86}{section.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{嵌入与满射}{86}{tcb@cnt@remark.3.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{本质几何态射与局部连通意象{}}{87}{tcb@cnt@remark.3.6.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Giraud 公理}{88}{section.3.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{局部可表现范畴}{88}{section.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{连通性}{94}{section.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{嵌入与满射}{94}{tcb@cnt@remark.3.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{本质几何态射与局部连通意象{}}{95}{tcb@cnt@remark.3.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Giraud 公理}{96}{section.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{局部可表现范畴}{96}{section.3.7}\protected@file@percent }
 \abx@aux@cite{0}{HCA3}
 \abx@aux@segm{0}{0}{HCA3}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}意象{}的内语言: 从语法到语义}{89}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}意象{}的内语言: 从语法到语义}{97}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Mitchell--B\'enabou 语言}{89}{section.4.1}\protected@file@percent }
-\newlabel{Mitchell--Benabou-language}{{4.1}{89}{Mitchell--B\'enabou 语言}{section.4.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}模态与层化}{91}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}层语义}{92}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}非标准分析, 滤商与超滤范畴}{92}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{基本概念}{93}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{滤商}{93}{tcb@cnt@remark.4.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{超滤范畴}{93}{tcb@cnt@remark.4.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}可计算性理论与有效意象}{93}{section.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{基础知识}{93}{section.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}综合微分几何与光滑无穷小分析}{95}{section.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{综合微分几何的理论}{95}{section.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Kock--Lawvere 公理与导数}{96}{tcb@cnt@remark.4.6.5}\protected@file@percent }
-\newlabel{Kock--Lawvere-D}{{4.6.6}{97}{Kock--Lawvere 公理与导数}{tcb@cnt@remark.4.6.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{Weil 代数与无穷小几何对象}{97}{tcb@cnt@remark.4.6.7}\protected@file@percent }
-\newlabel{SDG-Weil-algebra}{{4.6.8}{97}{Weil 代数与无穷小几何对象}{tcb@cnt@remark.4.6.8}{}}
-\@writefile{toc}{\contentsline {subsection}{综合微分几何的模型}{100}{tcb@cnt@remark.4.6.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{``代数'' 模型}{100}{tcb@cnt@remark.4.6.16}\protected@file@percent }
-\newlabel{SDG-algebraic-model}{{4.6.17}{100}{``代数'' 模型}{tcb@cnt@remark.4.6.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Mitchell--B\'enabou 语言}{97}{section.4.1}\protected@file@percent }
+\newlabel{Mitchell--Benabou-language}{{4.1}{97}{Mitchell--B\'enabou 语言}{section.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}模态与层化}{99}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}层语义}{100}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}非标准分析, 滤商与超滤范畴}{100}{section.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{基本概念}{101}{section.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{滤商}{101}{tcb@cnt@remark.4.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{超滤范畴}{101}{tcb@cnt@remark.4.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}可计算性理论与有效意象}{101}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{基础知识}{101}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}综合微分几何与光滑无穷小分析}{103}{section.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{综合微分几何的理论}{103}{section.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Kock--Lawvere 公理与导数}{104}{tcb@cnt@remark.4.6.5}\protected@file@percent }
+\newlabel{Kock--Lawvere-D}{{4.6.6}{105}{Kock--Lawvere 公理与导数}{tcb@cnt@remark.4.6.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Weil 代数与无穷小几何对象}{105}{tcb@cnt@remark.4.6.7}\protected@file@percent }
+\newlabel{SDG-Weil-algebra}{{4.6.8}{105}{Weil 代数与无穷小几何对象}{tcb@cnt@remark.4.6.8}{}}
+\@writefile{toc}{\contentsline {subsection}{综合微分几何的模型}{108}{tcb@cnt@remark.4.6.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{``代数'' 模型}{108}{tcb@cnt@remark.4.6.16}\protected@file@percent }
+\newlabel{SDG-algebraic-model}{{4.6.17}{108}{``代数'' 模型}{tcb@cnt@remark.4.6.17}{}}
 \abx@aux@cite{0}{SDG-Lavendhomme}
 \abx@aux@segm{0}{0}{SDG-Lavendhomme}
-\@writefile{toc}{\contentsline {subsubsection}{光滑代数}{102}{tcb@cnt@remark.4.6.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{光滑代数}{110}{tcb@cnt@remark.4.6.23}\protected@file@percent }
 \abx@aux@cite{0}{MSIA}
 \abx@aux@segm{0}{0}{MSIA}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}量子理论与 Bohr 意象}{104}{section.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{$C^*$-代数, 经典语境与 Bohr 景}{105}{section.4.7}\protected@file@percent }
-\newlabel{classical-mechanical-system}{{4.7.6}{106}{$C^*$-代数, 经典语境与 Bohr 景}{tcb@cnt@remark.4.7.6}{}}
-\@writefile{toc}{\contentsline {subsection}{Bohr 意象}{107}{tcb@cnt@remark.4.7.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{Bohr 意象中的命题}{108}{tcb@cnt@remark.4.7.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.8}Cohen 力迫法}{109}{section.4.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.9}凝聚态数学}{109}{section.4.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}量子理论与 Bohr 意象}{112}{section.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{$C^*$-代数, 经典语境与 Bohr 景}{113}{section.4.7}\protected@file@percent }
+\newlabel{classical-mechanical-system}{{4.7.6}{114}{$C^*$-代数, 经典语境与 Bohr 景}{tcb@cnt@remark.4.7.6}{}}
+\@writefile{toc}{\contentsline {subsection}{Bohr 意象}{115}{tcb@cnt@remark.4.7.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Bohr 意象中的命题}{116}{tcb@cnt@remark.4.7.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.8}Cohen 力迫法}{117}{section.4.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.9}凝聚态数学}{117}{section.4.9}\protected@file@percent }
 \abx@aux@cite{0}{TST}
 \abx@aux@segm{0}{0}{TST}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}句法景与分类意象{}}{111}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}句法景与分类意象{}}{119}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{cla}{{5}{111}{句法景与分类\topos {}}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}句法范畴: 语法--语义对偶}{111}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{类型论的语境范畴}{111}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{一阶理论的句法范畴}{112}{tcb@cnt@remark.5.1.1}\protected@file@percent }
-\newlabel{first-order-theory-syntactic-category}{{5.1.2}{112}{一阶理论的句法范畴}{tcb@cnt@remark.5.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{代数理论的句法范畴--Lawvere 理论}{112}{tcb@cnt@remark.5.1.4}\protected@file@percent }
+\newlabel{cla}{{5}{119}{句法景与分类\topos {}}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}句法范畴: 语法--语义对偶}{119}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{类型论的语境范畴}{119}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{一阶理论的句法范畴}{120}{tcb@cnt@remark.5.1.1}\protected@file@percent }
+\newlabel{first-order-theory-syntactic-category}{{5.1.2}{120}{一阶理论的句法范畴}{tcb@cnt@remark.5.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{代数理论的句法范畴--Lawvere 理论}{120}{tcb@cnt@remark.5.1.4}\protected@file@percent }
 \abx@aux@cite{0}{SGL}
 \abx@aux@segm{0}{0}{SGL}
-\newlabel{Lawvere-theory-CartSp}{{5.1.6}{113}{代数理论的句法范畴--Lawvere 理论}{tcb@cnt@remark.5.1.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}分类意象{}}{113}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{$G$-旋子的分类意象{}}{114}{section.5.2}\protected@file@percent }
-\newlabel{G-torsors-over-topos}{{5.2.1}{114}{$G$-旋子的分类\topos {}}{tcb@cnt@remark.5.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{子终对象的分类意象}{115}{tcb@cnt@remark.5.2.5}\protected@file@percent }
-\newlabel{Sierpinski-space}{{5.2.6}{115}{子终对象的分类\topos }{tcb@cnt@remark.5.2.6}{}}
-\@writefile{toc}{\contentsline {subsection}{群的分类意象{}}{116}{tcb@cnt@remark.5.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{环的分类意象{}}{116}{tcb@cnt@remark.5.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{几何理论的分类意象{}}{116}{tcb@cnt@remark.5.2.6}\protected@file@percent }
+\newlabel{Lawvere-theory-CartSp}{{5.1.6}{121}{代数理论的句法范畴--Lawvere 理论}{tcb@cnt@remark.5.1.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}分类意象{}}{121}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{$G$-旋子的分类意象{}}{122}{section.5.2}\protected@file@percent }
+\newlabel{G-torsors-over-topos}{{5.2.1}{122}{$G$-旋子的分类\topos {}}{tcb@cnt@remark.5.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{子终对象的分类意象}{123}{tcb@cnt@remark.5.2.5}\protected@file@percent }
+\newlabel{Sierpinski-space}{{5.2.6}{123}{子终对象的分类\topos }{tcb@cnt@remark.5.2.6}{}}
+\@writefile{toc}{\contentsline {subsection}{群的分类意象{}}{124}{tcb@cnt@remark.5.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{环的分类意象{}}{124}{tcb@cnt@remark.5.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{几何理论的分类意象{}}{124}{tcb@cnt@remark.5.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}相对意象{}}{125}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
 \abx@aux@cite{0}{HTTP}
 \abx@aux@segm{0}{0}{HTTP}
 \abx@aux@cite{0}{HTT}
 \abx@aux@segm{0}{0}{HTT}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}高阶意象{}}{117}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}高阶意象{}}{127}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}$\infty $-范畴}{117}{section.6.1}\protected@file@percent }
-\newlabel{infinity-category-definition}{{6.1.2}{118}{$\infty $-范畴}{tcb@cnt@remark.6.1.2}{}}
-\newlabel{equivalence-contractible}{{6.1.9}{120}{$\infty $-范畴}{tcb@cnt@remark.6.1.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}$\infty $-范畴}{127}{section.7.1}\protected@file@percent }
+\newlabel{infinity-category-definition}{{7.1.2}{128}{$\infty $-范畴}{tcb@cnt@remark.7.1.2}{}}
+\newlabel{equivalence-contractible}{{7.1.9}{130}{$\infty $-范畴}{tcb@cnt@remark.7.1.9}{}}
 \abx@aux@cite{0}{HTT}
 \abx@aux@segm{0}{0}{HTT}
-\@writefile{toc}{\contentsline {subsection}{同伦}{121}{tcb@cnt@remark.6.1.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{更多范畴论操作}{122}{tcb@cnt@remark.6.1.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{单纯范畴}{123}{tcb@cnt@remark.6.1.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{同伦}{131}{tcb@cnt@remark.7.1.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{更多范畴论操作}{132}{tcb@cnt@remark.7.1.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{单纯范畴}{133}{tcb@cnt@remark.7.1.19}\protected@file@percent }
 \abx@aux@cite{0}{HTT}
 \abx@aux@segm{0}{0}{HTT}
-\newlabel{coherent-nerve}{{6.1.27}{125}{单纯范畴}{tcb@cnt@remark.6.1.27}{}}
-\@writefile{toc}{\contentsline {subsection}{$\operatorname  {Hom}$ 函子, 预层与 $\infty $-米田引理}{126}{tcb@cnt@remark.6.1.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}$\infty $-意象{}}{126}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}$\infty $-层 $\infty $-意象{}及其表现}{127}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{Grothendieck 拓扑与层}{127}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}上同调}{127}{section.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{例}{128}{tcb@cnt@remark.6.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}凝聚意象{}}{129}{chapter.7}\protected@file@percent }
+\newlabel{coherent-nerve}{{7.1.27}{135}{单纯范畴}{tcb@cnt@remark.7.1.27}{}}
+\@writefile{toc}{\contentsline {subsection}{$\operatorname  {Hom}$ 函子, 预层与 $\infty $-米田引理}{136}{tcb@cnt@remark.7.1.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}$\infty $-意象{}}{136}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}$\infty $-层 $\infty $-意象{}及其表现}{137}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Grothendieck 拓扑与层}{137}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}上同调}{137}{section.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{例}{138}{tcb@cnt@remark.7.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}凝聚意象{}}{139}{chapter.8}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}凝聚的动机, 基本概念}{129}{section.7.1}\protected@file@percent }
-\newlabel{cohesion-family-of-sets}{{7.1.2}{129}{凝聚的动机, 基本概念}{tcb@cnt@remark.7.1.2}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}范畴论基础}{131}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}凝聚的动机, 基本概念}{139}{section.8.1}\protected@file@percent }
+\newlabel{cohesion-family-of-sets}{{8.1.2}{139}{凝聚的动机, 基本概念}{tcb@cnt@remark.8.1.2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}范畴论基础}{141}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}$2$-范畴}{131}{section.A.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}伴随函子}{131}{section.A.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{伴随保持极限}{132}{tcb@cnt@remark.A.2.2}\protected@file@percent }
-\newlabel{adjoints-preserve-limits}{{A.2.3}{132}{伴随保持极限}{tcb@cnt@remark.A.2.3}{}}
-\newlabel{Top-Set-adjunction}{{A.2.4}{133}{伴随保持极限}{tcb@cnt@remark.A.2.4}{}}
-\newlabel{Gpd-Cat-adjunction}{{A.2.5}{133}{伴随保持极限}{tcb@cnt@remark.A.2.5}{}}
-\newlabel{adjoint-full-subcategory-equivalence}{{A.2.6}{133}{伴随保持极限}{tcb@cnt@remark.A.2.6}{}}
-\@writefile{toc}{\contentsline {subsection}{伴随三元组}{134}{tcb@cnt@remark.A.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}自反子范畴与局部化}{135}{section.A.3}\protected@file@percent }
-\newlabel{reflective-subcategory}{{A.3.1}{135}{自反子范畴与局部化}{tcb@cnt@remark.A.3.1}{}}
-\newlabel{reflective-localization}{{A.3.4}{136}{自反子范畴与局部化}{tcb@cnt@remark.A.3.4}{}}
-\newlabel{localization-by-universally-inverting}{{A.3.6}{136}{自反子范畴与局部化}{tcb@cnt@remark.A.3.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}$2$-范畴}{141}{section.A.1}\protected@file@percent }
+\newlabel{2-categories}{{A.1.1}{141}{$2$-范畴}{tcb@cnt@remark.A.1.1}{}}
+\newlabel{locally-discrete-2-category}{{A.1.7}{144}{$2$-范畴}{tcb@cnt@remark.A.1.7}{}}
+\newlabel{2-functor}{{A.1.9}{145}{$2$-范畴}{tcb@cnt@remark.A.1.9}{}}
+\@writefile{toc}{\contentsline {subsection}{$2$-范畴中的万有性质}{146}{tcb@cnt@remark.A.1.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{伴随与伴随函子}{146}{tcb@cnt@remark.A.1.11}\protected@file@percent }
+\newlabel{adjoints-in-2-categories}{{A.1.12}{146}{伴随与伴随函子}{tcb@cnt@remark.A.1.12}{}}
+\@writefile{toc}{\contentsline {subsection}{伴随保持极限}{148}{tcb@cnt@remark.A.1.14}\protected@file@percent }
+\newlabel{adjoints-preserve-limits}{{A.1.15}{148}{伴随保持极限}{tcb@cnt@remark.A.1.15}{}}
+\newlabel{Top-Set-adjunction}{{A.1.16}{148}{伴随保持极限}{tcb@cnt@remark.A.1.16}{}}
+\newlabel{Gpd-Cat-adjunction}{{A.1.17}{148}{伴随保持极限}{tcb@cnt@remark.A.1.17}{}}
+\newlabel{adjoint-full-subcategory-equivalence}{{A.1.18}{149}{伴随保持极限}{tcb@cnt@remark.A.1.18}{}}
+\@writefile{toc}{\contentsline {subsection}{伴随三元组}{149}{tcb@cnt@remark.A.1.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}自反子范畴与局部化}{150}{section.A.2}\protected@file@percent }
+\newlabel{reflective-subcategory}{{A.2.1}{150}{自反子范畴与局部化}{tcb@cnt@remark.A.2.1}{}}
+\newlabel{reflective-localization}{{A.2.5}{151}{自反子范畴与局部化}{tcb@cnt@remark.A.2.5}{}}
+\newlabel{localization-by-universally-inverting}{{A.2.7}{151}{自反子范畴与局部化}{tcb@cnt@remark.A.2.7}{}}
 \abx@aux@cite{0}{SGL}
 \abx@aux@segm{0}{0}{SGL}
-\@writefile{toc}{\contentsline {section}{\numberline {A.4}预层范畴}{137}{section.A.4}\protected@file@percent }
-\newlabel{yoneda}{{A.4}{137}{预层范畴}{section.A.4}{}}
-\@writefile{toc}{\contentsline {subsection}{米田引理}{137}{section.A.4}\protected@file@percent }
-\newlabel{Yoneda-embedding-adjoint-Hom}{{A.4.2}{137}{米田引理}{tcb@cnt@remark.A.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{可表函子的余极限}{138}{tcb@cnt@remark.A.4.4}\protected@file@percent }
-\newlabel{slice-over-presheaf}{{A.4.5}{138}{可表函子的余极限}{tcb@cnt@remark.A.4.5}{}}
-\@writefile{toc}{\contentsline {subsection}{自由余完备化}{139}{tcb@cnt@remark.A.4.8}\protected@file@percent }
-\newlabel{free-cocompletion}{{A.4.9}{139}{自由余完备化}{tcb@cnt@remark.A.4.9}{}}
-\newlabel{nerve-and-realization}{{A.4.11}{140}{自由余完备化}{tcb@cnt@remark.A.4.11}{}}
-\newlabel{generalized-tensor-hom}{{A.4.13}{140}{自由余完备化}{tcb@cnt@remark.A.4.13}{}}
-\newlabel{sset-geometric-realization}{{A.4.14}{140}{自由余完备化}{tcb@cnt@remark.A.4.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}预层范畴}{152}{section.A.3}\protected@file@percent }
+\newlabel{yoneda}{{A.3}{152}{预层范畴}{section.A.3}{}}
+\@writefile{toc}{\contentsline {subsection}{米田引理}{152}{section.A.3}\protected@file@percent }
+\newlabel{Yoneda-embedding-adjoint-Hom}{{A.3.2}{153}{米田引理}{tcb@cnt@remark.A.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{可表函子的余极限}{153}{tcb@cnt@remark.A.3.4}\protected@file@percent }
+\newlabel{slice-over-presheaf}{{A.3.5}{153}{可表函子的余极限}{tcb@cnt@remark.A.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{自由余完备化}{154}{tcb@cnt@remark.A.3.8}\protected@file@percent }
+\newlabel{free-cocompletion}{{A.3.9}{155}{自由余完备化}{tcb@cnt@remark.A.3.9}{}}
+\newlabel{nerve-and-realization}{{A.3.11}{155}{自由余完备化}{tcb@cnt@remark.A.3.11}{}}
+\newlabel{generalized-tensor-hom}{{A.3.13}{156}{自由余完备化}{tcb@cnt@remark.A.3.13}{}}
+\newlabel{sset-geometric-realization}{{A.3.14}{156}{自由余完备化}{tcb@cnt@remark.A.3.14}{}}
+\@writefile{toc}{\contentsline {subsection}{预层范畴的俯范畴}{157}{tcb@cnt@remark.A.3.15}\protected@file@percent }
 \abx@aux@cite{0}{lww2}
 \abx@aux@segm{0}{0}{lww2}
-\@writefile{toc}{\contentsline {subsection}{预层范畴的俯范畴}{142}{tcb@cnt@remark.A.4.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.5}Kan 扩张}{142}{section.A.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A.4}Kan 扩张}{158}{section.A.4}\protected@file@percent }
 \abx@aux@cite{0}{SGL}
 \abx@aux@segm{0}{0}{SGL}
 \abx@aux@cite{0}{lww2}
 \abx@aux@segm{0}{0}{lww2}
-\@writefile{toc}{\contentsline {section}{\numberline {A.6}单子论}{144}{section.A.6}\protected@file@percent }
-\newlabel{monad-definition}{{A.6.1}{144}{单子论}{tcb@cnt@remark.A.6.1}{}}
-\newlabel{monad-from-adjoint}{{A.6.3}{144}{单子论}{tcb@cnt@remark.A.6.3}{}}
-\newlabel{monad-T-algebra}{{A.6.4}{145}{单子论}{tcb@cnt@remark.A.6.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.5}单子论}{159}{section.A.5}\protected@file@percent }
+\newlabel{monad-definition}{{A.5.1}{159}{单子论}{tcb@cnt@remark.A.5.1}{}}
+\newlabel{monad-from-adjoint}{{A.5.3}{160}{单子论}{tcb@cnt@remark.A.5.3}{}}
+\newlabel{monad-T-algebra}{{A.5.4}{161}{单子论}{tcb@cnt@remark.A.5.4}{}}
 \abx@aux@cite{0}{lww2}
 \abx@aux@segm{0}{0}{lww2}
-\newlabel{change-of-rings}{{A.6.9}{147}{单子论}{tcb@cnt@remark.A.6.9}{}}
-\@writefile{toc}{\contentsline {subsection}{单子与代数理论}{148}{tcb@cnt@remark.A.6.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.7}万有代数}{148}{section.A.7}\protected@file@percent }
-\newlabel{universal-algebra}{{A.7}{148}{万有代数}{section.A.7}{}}
-\newlabel{Lawvere-theory}{{A.7.1}{149}{万有代数}{tcb@cnt@remark.A.7.1}{}}
+\newlabel{change-of-rings}{{A.5.9}{162}{单子论}{tcb@cnt@remark.A.5.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.6}万有代数}{164}{section.A.6}\protected@file@percent }
+\newlabel{universal-algebra}{{A.6}{164}{万有代数}{section.A.6}{}}
+\newlabel{Lawvere-theory}{{A.6.1}{164}{万有代数}{tcb@cnt@remark.A.6.1}{}}
+\newlabel{presentation-of-an-algebraic-theory}{{A.6.3}{164}{万有代数}{tcb@cnt@remark.A.6.3}{}}
+\newlabel{finitely-generated-free-model}{{A.6.6}{165}{万有代数}{tcb@cnt@remark.A.6.6}{}}
+\@writefile{toc}{\contentsline {subsection}{单子与代数理论}{167}{tcb@cnt@remark.A.6.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A.7}纤维范畴与索引范畴}{168}{section.A.7}\protected@file@percent }
+\newlabel{family-of-sets-fibration}{{A.7.2}{168}{纤维范畴与索引范畴}{tcb@cnt@remark.A.7.2}{}}
 \abx@aux@cite{0}{CLTT}
 \abx@aux@segm{0}{0}{CLTT}
-\@writefile{toc}{\contentsline {section}{\numberline {A.8}纤维范畴}{150}{section.A.8}\protected@file@percent }
-\newlabel{family-of-sets-fibration}{{A.8.2}{150}{纤维范畴}{tcb@cnt@remark.A.8.2}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}形式逻辑基础}{153}{appendix.B}\protected@file@percent }
+\newlabel{over-category-fibration}{{A.7.3}{169}{纤维范畴与索引范畴}{tcb@cnt@remark.A.7.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}形式逻辑基础}{173}{appendix.B}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{logic-appendix}{{B}{153}{形式逻辑基础}{appendix.B}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}一阶语言}{153}{section.B.1}\protected@file@percent }
-\newlabel{first-order-languages}{{B.1}{153}{一阶语言}{section.B.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{符号表}{154}{tcb@cnt@remark.B.1.4}\protected@file@percent }
-\newlabel{def-first-order-signature}{{B.1.5}{155}{符号表}{tcb@cnt@remark.B.1.5}{}}
-\newlabel{natural-numbers-language}{{B.1.7}{155}{符号表}{tcb@cnt@remark.B.1.7}{}}
-\newlabel{Zermelo--Fraenkel-language}{{B.1.8}{156}{符号表}{tcb@cnt@remark.B.1.8}{}}
-\newlabel{group-language}{{B.1.9}{156}{符号表}{tcb@cnt@remark.B.1.9}{}}
-\newlabel{small-category-language}{{B.1.10}{156}{符号表}{tcb@cnt@remark.B.1.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{项, 公式}{157}{tcb@cnt@remark.B.1.10}\protected@file@percent }
-\newlabel{formula}{{B.1.12}{157}{项, 公式}{tcb@cnt@remark.B.1.12}{}}
-\newlabel{kinds-of-formulae}{{B.1.14}{158}{项, 公式}{tcb@cnt@remark.B.1.14}{}}
-\@writefile{toc}{\contentsline {subsection}{相继式, 理论}{159}{tcb@cnt@remark.B.1.16}\protected@file@percent }
-\newlabel{sequents}{{B.1.18}{159}{相继式, 理论}{tcb@cnt@remark.B.1.18}{}}
-\newlabel{remark-full-first-order-logic-no-need-sequents}{{B.1.19}{159}{相继式, 理论}{tcb@cnt@remark.B.1.19}{}}
-\newlabel{kinds-of-theories}{{B.1.21}{160}{相继式, 理论}{tcb@cnt@remark.B.1.21}{}}
-\newlabel{inference-rules}{{B.1.25}{162}{相继式, 理论}{tcb@cnt@remark.B.1.25}{}}
+\newlabel{logic-appendix}{{B}{173}{形式逻辑基础}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}一阶语言}{173}{section.B.1}\protected@file@percent }
+\newlabel{first-order-languages}{{B.1}{173}{一阶语言}{section.B.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{符号表}{174}{tcb@cnt@remark.B.1.4}\protected@file@percent }
+\newlabel{def-first-order-signature}{{B.1.5}{175}{符号表}{tcb@cnt@remark.B.1.5}{}}
+\newlabel{natural-numbers-language}{{B.1.7}{175}{符号表}{tcb@cnt@remark.B.1.7}{}}
+\newlabel{Zermelo--Fraenkel-language}{{B.1.8}{176}{符号表}{tcb@cnt@remark.B.1.8}{}}
+\newlabel{group-language}{{B.1.9}{176}{符号表}{tcb@cnt@remark.B.1.9}{}}
+\newlabel{small-category-language}{{B.1.10}{176}{符号表}{tcb@cnt@remark.B.1.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{项, 公式}{177}{tcb@cnt@remark.B.1.10}\protected@file@percent }
+\newlabel{formula}{{B.1.12}{177}{项, 公式}{tcb@cnt@remark.B.1.12}{}}
+\newlabel{kinds-of-formulae}{{B.1.14}{178}{项, 公式}{tcb@cnt@remark.B.1.14}{}}
+\@writefile{toc}{\contentsline {subsection}{相继式, 理论}{179}{tcb@cnt@remark.B.1.16}\protected@file@percent }
+\newlabel{sequents}{{B.1.18}{179}{相继式, 理论}{tcb@cnt@remark.B.1.18}{}}
+\newlabel{remark-full-first-order-logic-no-need-sequents}{{B.1.19}{179}{相继式, 理论}{tcb@cnt@remark.B.1.19}{}}
+\newlabel{theory-on-signature}{{B.1.20}{179}{相继式, 理论}{tcb@cnt@remark.B.1.20}{}}
+\newlabel{kinds-of-theories}{{B.1.21}{180}{相继式, 理论}{tcb@cnt@remark.B.1.21}{}}
+\newlabel{inference-rules}{{B.1.25}{182}{相继式, 理论}{tcb@cnt@remark.B.1.25}{}}
 \abx@aux@cite{0}{TST}
 \abx@aux@segm{0}{0}{TST}
-\newlabel{theory-of-groups}{{B.1.29}{163}{相继式, 理论}{tcb@cnt@remark.B.1.29}{}}
+\newlabel{theory-of-groups}{{B.1.29}{183}{相继式, 理论}{tcb@cnt@remark.B.1.29}{}}
 \abx@aux@cite{0}{Lurie-Categorical-Logic}
 \abx@aux@segm{0}{0}{Lurie-Categorical-Logic}
-\@writefile{toc}{\contentsline {section}{\numberline {B.2}范畴语义}{165}{section.B.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{一阶理论在范畴中的模型}{165}{section.B.2}\protected@file@percent }
-\newlabel{sigma-structures-in-category}{{B.2.1}{165}{一阶理论在范畴中的模型}{tcb@cnt@remark.B.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}范畴语义}{185}{section.B.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{一阶理论在范畴中的模型}{185}{section.B.2}\protected@file@percent }
+\newlabel{sigma-structures-in-category}{{B.2.1}{185}{一阶理论在范畴中的模型}{tcb@cnt@remark.B.2.1}{}}
 \abx@aux@cite{0}{TST}
 \abx@aux@segm{0}{0}{TST}
-\newlabel{coherent-category}{{B.2.4}{166}{一阶理论在范畴中的模型}{tcb@cnt@remark.B.2.4}{}}
-\newlabel{Heyting-category}{{B.2.5}{166}{一阶理论在范畴中的模型}{tcb@cnt@remark.B.2.5}{}}
+\newlabel{coherent-category}{{B.2.4}{186}{一阶理论在范畴中的模型}{tcb@cnt@remark.B.2.4}{}}
+\newlabel{Heyting-category}{{B.2.5}{186}{一阶理论在范畴中的模型}{tcb@cnt@remark.B.2.5}{}}
 \abx@aux@cite{0}{Trebor-History}
 \abx@aux@segm{0}{0}{Trebor-History}
-\@writefile{toc}{\contentsline {section}{\numberline {B.3}高阶逻辑}{168}{section.B.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B.4}类型论}{168}{section.B.4}\protected@file@percent }
-\newlabel{appendix-type-theory}{{B.4}{168}{类型论}{section.B.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{空类型}{169}{tcb@cnt@remark.B.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{}{169}{tcb@cnt@remark.B.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B.5}模态逻辑}{169}{section.B.5}\protected@file@percent }
-\newlabel{appendix-modal-logic}{{B.5}{169}{模态逻辑}{section.B.5}{}}
-\abx@aux@read@bbl@mdfivesum{648E59F3D656A80EFE176B386D1D33DD}
+\@writefile{toc}{\contentsline {section}{\numberline {B.3}高阶逻辑}{188}{section.B.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B.4}类型论}{188}{section.B.4}\protected@file@percent }
+\newlabel{appendix-type-theory}{{B.4}{188}{类型论}{section.B.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{空类型}{189}{tcb@cnt@remark.B.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{}{189}{tcb@cnt@remark.B.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B.5}模态逻辑}{189}{section.B.5}\protected@file@percent }
+\newlabel{appendix-modal-logic}{{B.5}{189}{模态逻辑}{section.B.5}{}}
+\abx@aux@read@bbl@mdfivesum{38471BDA0BA8F9FB2E18B358A4009289}
+\abx@aux@read@bblrerun
 \abx@aux@defaultrefcontext{0}{SGA4}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{FSCM}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{HCA3}{nty/global//global/global}
@@ -413,6 +443,7 @@
 \abx@aux@defaultrefcontext{0}{Johnstone-OTT}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{Elephant}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{Joyal-Crash-Course}{nty/global//global/global}
+\abx@aux@defaultrefcontext{0}{CWM}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{SGL}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{SDG-Lavendhomme}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{177894}{nty/global//global/global}
@@ -423,4 +454,4 @@
 \abx@aux@defaultrefcontext{0}{SIMPSON20121642}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{stacks-project}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{lww2}{nty/global//global/global}
-\gdef \@abspage@last{172}
+\gdef \@abspage@last{192}

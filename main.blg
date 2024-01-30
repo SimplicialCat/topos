@@ -2,14 +2,14 @@
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
 [84] biber-MSWIN64:340> INFO - === 
 [117] Biber.pm:419> INFO - Reading 'main.bcf'
-[196] Biber.pm:979> INFO - Found 20 citekeys in bib section 0
-[204] Biber.pm:4419> INFO - Processing section 0
-[214] Biber.pm:4610> INFO - Looking for bibtex file 'Topos.bib' for section 0
-[261] bibtex.pm:1713> INFO - LaTeX decoding ...
-[275] bibtex.pm:1519> INFO - Found BibTeX data source 'Topos.bib'
-[335] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[335] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[335] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[335] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[350] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[355] bbl.pm:763> INFO - Output to main.bbl
+[189] Biber.pm:979> INFO - Found 21 citekeys in bib section 0
+[199] Biber.pm:4419> INFO - Processing section 0
+[207] Biber.pm:4610> INFO - Looking for bibtex file 'Topos.bib' for section 0
+[253] bibtex.pm:1713> INFO - LaTeX decoding ...
+[268] bibtex.pm:1519> INFO - Found BibTeX data source 'Topos.bib'
+[328] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[328] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[328] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[328] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[342] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[347] bbl.pm:763> INFO - Output to main.bbl

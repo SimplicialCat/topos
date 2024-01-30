@@ -1,0 +1,366 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  29 JAN 2024 09:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**rel.tex
+(./rel.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-03-30>
+! Undefined control sequence.
+l.1 \chapter
+            {相对\topos{}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter{相
+              对\topos{}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 相 ("76F8) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+! Undefined control sequence.
+l.1 \chapter{相对\topos
+                     {}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[] 
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \begin{definition}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 ^^I{(
+         旋子)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 旋 ("65CB) in font nullfont!
+Missing character: There is no 子 ("5B50) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+Missing character: There is no 为 ("4E3A) in font nullfont!
+! Undefined control sequence.
+l.5 ^^I设 $\mathsf S$ 为\topos
+                            {}, $\mathcal C$ 为 $\mathsf S$ 的内蕴范畴, $p\colon \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 内 ("5185) in font nullfont!
+Missing character: There is no 蕴 ("8574) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 相 ("76F8) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+! Undefined control sequence.
+l.5 ..., $p\colon \mathsf E\to\mathsf S$ 为相对\topos
+                                                  {}. 定义 $\mathsf E$ 中的 $\ma...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 旋 ("65CB) in font nullfont!
+Missing character: There is no 子 ("5B50) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 索 ("7D22) in font nullfont!
+Missing character: There is no 引 ("5F15) in font nullfont!
+Missing character: There is no 函 ("51FD) in font nullfont!
+Missing character: There is no 子 ("5B50) in font nullfont!
+! Undefined control sequence.
+l.5 ...为 $\mathsf S$-索引函子 $F\colon \mathcal C^{\op
+                                                  }\to\mathsf E$, 使得
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 使 ("4F7F) in font nullfont!
+Missing character: There is no 得 ("5F97) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \end{definition}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--7
+[]
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--7
+\OT1/cmss/m/n/10 S$
+ []
+
+
+Overfull \hbox (5.84865pt too wide) in paragraph at lines 4--7
+\OMS/cmsy/m/n/10 C$
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--7
+\OT1/cmss/m/n/10 S$
+ []
+
+
+Overfull \hbox (28.22562pt too wide) in paragraph at lines 4--7
+\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 : \OT1/cmss/m/n/10 E \OMS/cmsy/m/n/10 !
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--7
+\OT1/cmss/m/n/10 S$
+ []
+
+
+Overfull \hbox (5.97223pt too wide) in paragraph at lines 4--7
+\OT1/cmss/m/n/10 E$
+ []
+
+
+Overfull \hbox (5.84865pt too wide) in paragraph at lines 4--7
+\OMS/cmsy/m/n/10 C$
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--7
+\OT1/cmss/m/n/10 S$
+ []
+
+
+Overfull \hbox (31.39024pt too wide) in paragraph at lines 4--7
+\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 : \OMS/cmsy/m/n/10 C[] !
+ []
+
+
+Overfull \hbox (5.97223pt too wide) in paragraph at lines 4--7
+\OT1/cmss/m/n/10 E$
+ []
+
+
+! LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \begin{prop}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ^^I{(
+         Diaconescu 定理)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no D ("44) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no u ("75) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 理 ("7406) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+! Undefined control sequence.
+l.10 ^^I设 $\mathsf S$ 为\topos
+                             {}, $\mathcal C$ 为 $\mathsf S$ 的内蕴范畴, $p\colon ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 内 ("5185) in font nullfont!
+Missing character: There is no 蕴 ("8574) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 相 ("76F8) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+! Undefined control sequence.
+l.10 ... $p\colon \mathsf E\to\mathsf S$ 为相对\topos
+                                                  {}. 那么有范畴等价
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 那 ("90A3) in font nullfont!
+Missing character: There is no 么 ("4E48) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 等 ("7B49) in font nullfont!
+Missing character: There is no 价 ("4EF7) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 9--11
+[]
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 9--11
+\OT1/cmss/m/n/10 S$
+ []
+
+
+Overfull \hbox (5.84865pt too wide) in paragraph at lines 9--11
+\OMS/cmsy/m/n/10 C$
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 9--11
+\OT1/cmss/m/n/10 S$
+ []
+
+
+Overfull \hbox (28.22562pt too wide) in paragraph at lines 9--11
+\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 : \OT1/cmss/m/n/10 E \OMS/cmsy/m/n/10 !
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 9--11
+\OT1/cmss/m/n/10 S$
+ []
+
+! Undefined control sequence.
+l.12 ^^I\operatorname
+                     {Hom}_{\Top/\mathsf S}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.12 ^^I\operatorname{Hom}_{\Top
+                                /\mathsf S}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (147.15105pt too wide) detected at line 15
+[][]\OT1/cmr/m/n/10 (\OT1/cmss/m/n/10 E\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\O
+MS/cmsy/m/n/10 C\OML/cmm/m/it/10 ; \OT1/cmss/m/n/10 S\OT1/cmr/m/n/10 )) \OMS/cm
+sy/m/n/10 ' []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 C\OML/cmm/m/it/10 ; \OT1/cmss/m
+/n/10 E\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \end{prop}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+! Emergency stop.
+<*> rel.tex
+           
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 24 strings out of 476675
+ 383 string characters out of 5807327
+ 1843290 words of memory out of 5000000
+ 20378 multiletter control sequences out of 15000+600000
+ 513192 words of font info for 35 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 18i,3n,15p,225b,63s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

@@ -2,27 +2,388 @@
 
 \section{$2$-范畴}
 
+假设读者已经熟悉范畴, 函子, 自然变换的概念.
+
 \begin{definition}
-	{($2$-范畴)}
-	一个 $2$-范畴 $\mathcal C$ 包含如下资料:
+	[label={2-categories}]
+	{(严格 $2$-范畴)}
+	\emph{严格 $2$-范畴}是指 $\mathsf {Cat}$-充实范畴, 其中 $\mathsf {Cat}$ 是 (小) 范畴的范畴. 具体地说, 一个严格 $2$-范畴 $\mathcal C$ 包含如下资料,
 	\begin{itemize}
-		\item 
-		\item
+		\item 一族\emph{对象} $A,B,C,\cdots$;
+		\item 对每两个对象 $A,B$ 有一个\emph{范畴} $\operatorname{Hom}_{\mathcal C}(A,B)$, 其中的对象称为 $\mathcal C$ 的\emph{态射}, 态射称为 $\mathcal C$ 的 \emph{$2$-态射};
+		\item 对每三个对象 $A,B,C$ 有一个函子 ``复合'' $\circ\colon \operatorname{Hom}_{\mathcal C}(B,C)\times \operatorname{Hom}_{\mathcal C}(A,B) \to \operatorname{Hom}_{\mathcal C}(A,C)$;
+		\item 对每个对象 $A$ 有一个对象 ``恒等'' $i_A\colon 1\to \operatorname{Hom}_{\mathcal C}(A,A)$;
 	\end{itemize}
-	通常人们所说的 $2$-范畴是弱 $2$-范畴.
+	满足如下严格的结合律,\footnotemark{}
+	% https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXG9wZXJhdG9ybmFtZXtIb219KEIsRClcXHRpbWVzXFxvcGVyYXRvcm5hbWV7SG9tfShBLEIpIl0sWzAsMCwiXFxvcGVyYXRvcm5hbWV7SG9tfShDLEQpXFx0aW1lc1xcb3BlcmF0b3JuYW1le0hvbX0oQixDKVxcdGltZXNcXG9wZXJhdG9ybmFtZXtIb219KEEsQikiXSxbMCwxLCJcXG9wZXJhdG9ybmFtZXtIb219KEMsRClcXHRpbWVzXFxvcGVyYXRvcm5hbWV7SG9tfShBLEMpIl0sWzEsMSwiXFxvcGVyYXRvcm5hbWV7SG9tfShBLEQpIl0sWzEsMiwiXFxjaXJjX3tBLEIsQ30iLDJdLFsyLDMsIlxcY2lyY197QSxDLER9IiwyXSxbMSwwLCJcXGNpcmNfe0IsQyxEfSJdLFswLDMsIlxcY2lyY197QSxCLER9Il1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\operatorname{Hom}(C,D)\times\operatorname{Hom}(B,C)\times\operatorname{Hom}(A,B)} \& {\operatorname{Hom}(B,D)\times\operatorname{Hom}(A,B)} \\
+		{\operatorname{Hom}(C,D)\times\operatorname{Hom}(A,C)} \& {\operatorname{Hom}(A,D)}
+		\arrow["{\circ_{A,B,C}}"', from=1-1, to=2-1]
+		\arrow["{\circ_{A,C,D}}"', from=2-1, to=2-2]
+		\arrow["{\circ_{B,C,D}}", from=1-1, to=1-2]
+		\arrow["{\circ_{A,B,D}}", from=1-2, to=2-2]
+	\end{tikzcd}\]
+	以及如下严格的单位律.
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\operatorname{Hom}(A,B)} \&\& {\operatorname{Hom}(A,B)} \\
+		{\operatorname{Hom}(B,B)\times\operatorname{Hom}(A,B)} \& {\operatorname{Hom}(A,B)} \& {\operatorname{Hom}(A,B)\times\operatorname{Hom}(A,A)}
+		\arrow["{\operatorname{id}}", from=1-1, to=2-2]
+		\arrow["{i_B\times \operatorname{id}}"', from=1-1, to=2-1]
+		\arrow["{\circ_{A,B,B}}"', from=2-1, to=2-2]
+		\arrow["{\circ_{A,A,B}}", from=2-3, to=2-2]
+		\arrow["{\operatorname{id}}"', from=1-3, to=2-2]
+		\arrow["{\operatorname{id}\times i_A}", from=1-3, to=2-3]
+	\end{tikzcd}\]
+\end{definition}
+\footnotetext{``严格'' 的含义是, 这张图中两条路径给出的函子严格相等 (也即构成 $1$-范畴 $\mathsf {Cat}$ 中的交换图). 图中我使用了 ``三个范畴的乘积'', 而更严格的写法应该分别写出两种顺序的乘积 $(-\times -)\times -$ 与 $-\times (-\times -)$, 并以幺半范畴 $\mathsf {Cat}$ 中的结合子相连接. 类似地, 后面的图中我使用了 $\operatorname{Hom}(A,B)\times 1$ 与 $\operatorname{Hom}(A,B)$ 的同构, 而这也应该理解为幺半范畴中的单位子.}
+
+严格 $2$-范畴的概念不够好, 因为我们不应该要求两个函子\emph{相等}, 而是应该要求指定一个\emph{自然同构}.\footnote{在范畴的 $2$-范畴 $\mathcal Cat$ 中, $1$-态射 (函子) 之间不能谈论相等, 只能谈论自然同构; 而 $2$-态射 (自然变换) 之间可以谈论相等. 一般地, 对于 $n$-范畴 (无论何种模型) 中小于 $n$ 阶的态射, 我们都不能谈论相等, 只能谈论等价; 而对于 $n$-范畴中的 $n$-态射则有相等的概念, 如集合中的元素, 范畴中的态射, $2$-范畴中的 $2$-态射等等.}
+
+\begin{definition}
+	{(弱 $2$-范畴)}
+	一个弱 $2$-范畴 (以下简称 \emph{$2$-范畴}, 又叫 \emph{bicategory}) $\mathcal C$ 包含如下资料,
+	\begin{itemize}
+		\item 一族\emph{对象} $A,B,C,\cdots$;
+		\item 对每两个对象 $A,B$ 有一个\emph{范畴} $\operatorname{Hom}_{\mathcal C}(A,B)$, 其中的对象称为 $\mathcal C$ 的\emph{态射}, 态射称为 $\mathcal C$ 的 \emph{$2$-态射};
+		\item 对每三个对象 $A,B,C$ 有一个函子 ``复合'' $\circ\colon \operatorname{Hom}_{\mathcal C}(B,C)\times \operatorname{Hom}_{\mathcal C}(A,B) \to \operatorname{Hom}_{\mathcal C}(A,C)$;
+		\item 对每个对象 $A$ 有一个对象 ``恒等'' $i_A\colon 1\to \operatorname{Hom}_{\mathcal C}(A,A)$;
+		\item 对每两个对象 $A,B$ 有两个\emph{自然同构} ``\emph{单位子} (unitor)''
+		$$\rho_{A,B}\colon (-\circ i_A)  \overset{\simeq}{\to}  (-),\ 
+		\lambda_{A,B} (\colon i_B\circ -) \overset{\simeq}{\to}  (-);$$
+		\item 对每四个对象 $A,B,C,D$ 有一个\emph{自然同构} ``\emph{结合子} (associator)''
+		$$\alpha_{A,B,C,D}\colon \big((-\circ -) \circ {-}\big) \overset{\simeq}{\to} \big({-}\circ (- \circ -)\big);$$%\colon \operatorname{Hom}(C,D)\times\operatorname{Hom}(B,C)\times\operatorname{Hom}(A,B)\to \operatorname{Hom}(A,D);$
+	\end{itemize}
+	满足\emph{五边形恒等式}, 又叫结合律的\emph{融贯性} (coherence),
+	% https://q.uiver.app/#q=WzAsNSxbMCwxLCIoKGZnKWgpayJdLFsyLDIsIihmKGdoKSlrIl0sWzQsMiwiZigoZ2gpaykiXSxbNiwxLCJmKGcoaGspKSJdLFszLDAsIihmZykoaGspIl0sWzAsNF0sWzAsMV0sWzEsMl0sWzQsM10sWzIsM11d
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=-1.7em,row sep=2em]
+		\&\&\& {(-\circ -)\circ(-\circ -)} \\
+		{((-\circ -)\circ -)\circ -} \&\&\&\&\&\& {-\circ(-\circ(-\circ -))} \\
+		\&\& {(-\circ (-\circ -))\circ -} \&\& {-\circ((-\circ -)\circ -)}
+		\arrow["\alpha", from=2-1, to=1-4]
+		\arrow["\alpha"', from=2-1, to=3-3]
+		\arrow["\alpha"', from=3-3, to=3-5]
+		\arrow["\alpha", from=1-4, to=2-7]
+		\arrow["\alpha"', from=3-5, to=2-7]
+	\end{tikzcd}\]
+	以及\emph{三角形恒等式}, 又叫单位律的融贯性.
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCIoZmkpZyJdLFsxLDAsImYoaWcpIl0sWzEsMSwiZmciXSxbMCwxLCJcXGFscGhhIl0sWzAsMiwiXFxyaG8iLDJdLFsxLDIsIlxcbGFtYmRhIl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{(-\circ i)\circ -} \& {-\circ (i\circ -)} \\
+		\& -\circ -
+		\arrow["\alpha", from=1-1, to=1-2]
+		\arrow["\rho"', from=1-1, to=2-2]
+		\arrow["\lambda", from=1-2, to=2-2]
+	\end{tikzcd}\]
 \end{definition}
 
-\section{伴随函子}
+\begin{example}
+	{(范畴的 $2$-范畴)}
+	范畴, 函子以及自然变换构成一个严格 $2$-范畴 $\mathcal Cat$.
+\end{example}
 
-谈论伴随的一个自然的语境是 $2$-范畴.
+\begin{example}
+	{(群的 $2$-范畴)}
+	群等同于仅有一个对象, 且所有态射均为同构的范畴. 群构成 $\mathcal Cat$ 的子 $2$-范畴 $\mathcal Grp$.
+	我们具体写出 $\mathcal Grp$ 中的 $2$-态射. 对于群同态 $\varphi,\psi\colon G\to H$,
+	一个 $2$-态射 $\alpha\colon \varphi\to\psi$ 是一个元素 $h\in H$,
+	满足如下交换图, 即 $\psi(g) = h\varphi(g)h^{-1}$.
+	$$\begin{tikzcd}[ampersand replacement=\&]
+		\bullet \& \bullet \\
+		\bullet \& \bullet
+		\arrow["h"', from=1-1, to=2-1]
+		\arrow["{\varphi(g)}", from=1-1, to=1-2]
+		\arrow["h", from=1-2, to=2-2]
+		\arrow["{\psi(g)}"', from=2-1, to=2-2]
+	\end{tikzcd}$$
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFswLDEsIlxcYnVsbGV0Il0sWzEsMCwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFswLDEsImgiLDJdLFswLDIsIlxcdmFycGhpKGcpIl0sWzIsMywiaCJdLFsxLDMsIlxccHNpKGcpIiwyXV0=
+\end{example}
+
+\begin{example}
+	{(幺半范畴)}
+	\emph{幺半范畴} 是一个范畴 $\mathsf M$ 带有运算 $\otimes\colon \mathsf M\times\mathsf M\to\mathsf M$, 满足若干条件; 例如模范畴 $R\mathsf {Mod}$ 带有张量积 $\otimes_R$, 范畴的范畴 $\mathsf {Cat}$ 带有范畴的乘积 $\times$, 带点拓扑空间范畴带有压缩积 (smash product) $\wedge$. 幺半范畴 $\mathsf M$ 等同于仅有一个对象的 $2$-范畴 $\mathcal B\mathsf M$.
+	$\mathsf M$ 的对象是 $\mathcal B\mathsf M$ 中的 $1$-态射, 运算 $\otimes$ 是 $\mathcal B\mathsf M$ 中 $1$-态射的复合. 幺半范畴中的五边形恒等式正是 $2$-范畴中的五边形恒等式.
+\end{example}
+
+\begin{example}
+	{(基本 $2$-群胚)}
+	记 $I=[0,1]$ 为单位区间.
+	设 $X$ 为拓扑空间,
+	定义 $X$ 的\emph{基本 $2$-群胚} $\Pi_2(X)$ 为如下的 $2$-范畴,
+	\begin{itemize}
+		\item 对象为 $X$ 的点;
+		\item 态射为 $X$ 中的道路; 对两点 $p,q$, 由 $p$ 到 $q$ 的道路 $f\colon p\to q$ 是连续映射 $f\colon I \to X$, 满足 $f(0)=p,f(1)=q$;
+		\item $2$-态射为道路之间的定端点同伦, 再模掉更高阶的同伦; 具体地, 对于道路 $f,g\colon p\to q$, $f,g\colon I\to X$, 一个定端点同伦 $\alpha\colon f\to g$ 是连续映射 $\alpha\colon I\times I \to X$, 如图所示.
+		我们将相对于正方形的四条边同伦的两个映射 $\alpha,\alpha'\colon I\times I\to X$ 视为等价, 所得的等价类即是 $\Pi_2(X)$ 的 $2$-态射.
+		\vspace{-4pt}
+		$$\begin{tikzpicture}[x=0.45pt,y=0.45pt,yscale=-1,xscale=1]
+			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+			
+			%Straight Lines [id:da9493509620608491] 
+			\draw    (40,40) -- (40,100) ;
+			%Straight Lines [id:da8479191614730477] 
+			\draw    (100,40) -- (100,100) ;
+			%Straight Lines [id:da17087159934558604] 
+			\draw    (40,40) -- (100,40) ;
+			%Straight Lines [id:da17472272621664064] 
+			\draw    (40,100) -- (100,100) ;
+			
+			% Text Node
+			\draw (62,77) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle \alpha$};
+			% Text Node
+			\draw (24,80) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle p$};
+			% Text Node
+			\draw (100,79.17) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle q$};
+			% Text Node
+			\draw (62,38) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle f$};
+			% Text Node
+			\draw (62,120) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle g$};
+			
+			
+		\end{tikzpicture}
+		$$
+		\item 对每三个点 $p,q,r$, 复合 $\cdot\colon \operatorname{Hom}(q,r)\times \operatorname{Hom}(p,q)\to\operatorname{Hom}(p,r)$ 的定义为
+		\[
+		(f\cdot g)(t) = \begin{cases}
+			g(2t) & 0\leq t \leq 1/2\\
+			f(2t-1) & 1/2 < t \leq 1
+		\end{cases}.
+		\]
+		这个复合不满足严格的结合律, 但存在如左下图显式的同伦 $\alpha\colon (f\cdot g)\cdot h \to f\cdot (g\cdot h)$.
+		五边形公理体现为如右下图两个同伦之间的同伦.
+		$$
+		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+			
+			%Straight Lines [id:da9493509620608491] 
+			\draw    (40,40) -- (40,120) ;
+			%Straight Lines [id:da8479191614730477] 
+			\draw    (120,40) -- (120,120) ;
+			%Straight Lines [id:da17087159934558604] 
+			\draw    (40,40) -- (120,40) ;
+			%Straight Lines [id:da17472272621664064] 
+			\draw    (40,120) -- (120,120) ;
+			%Straight Lines [id:da7159459773623977] 
+			\draw    (80,40) -- (60,120) ;
+			%Straight Lines [id:da7936546950580412] 
+			\draw    (100,40) -- (80,120) ;
+			
+			% Text Node
+			\draw (61,38) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle h$};
+			% Text Node
+			\draw (108,38) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle f$};
+			% Text Node
+			\draw (91,38) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle g$};
+			% Text Node
+			\draw (41,138) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle h$};
+			% Text Node
+			\draw (61,138) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle g$};
+			% Text Node
+			\draw (91,138) node [anchor=south west] [inner sep=0.75pt]   [align=left] {$\displaystyle f$};
+			
+			
+		\end{tikzpicture}
+		\hspace{3em}
+		\begin{tikzpicture}[x=0.4pt,y=0.4pt,yscale=-1,xscale=1]
+			\path (0,250); %set diagram left start at 0, and has height of 398
+			
+			%Straight Lines [id:da9493509620608491] 
+			\draw    (80,160) -- (80,200) ;
+			%Straight Lines [id:da8479191614730477] 
+			\draw    (120,160) -- (120,200) ;
+			%Straight Lines [id:da17087159934558604] 
+			\draw    (80,160) -- (120,160) ;
+			%Straight Lines [id:da17472272621664064] 
+			\draw    (80,200) -- (120,200) ;
+			%Straight Lines [id:da7159459773623977] 
+			\draw    (100,160) -- (90,200) ;
+			%Straight Lines [id:da7936546950580412] 
+			\draw    (110,160) -- (100,200) ;
+			%Straight Lines [id:da4333538566743742] 
+			\draw    (120,160) -- (160,160) ;
+			%Straight Lines [id:da2622244602659338] 
+			\draw    (120,200) -- (160,200) ;
+			%Straight Lines [id:da757640719712422] 
+			\draw    (160,160) -- (160,200) ;
+			%Straight Lines [id:da03544386120728049] 
+			\draw    (80,120) -- (80,160) ;
+			%Straight Lines [id:da7869492013227473] 
+			\draw    (140,120) -- (120,160) ;
+			%Straight Lines [id:da8440391323636871] 
+			\draw    (160,120) -- (160,160) ;
+			%Straight Lines [id:da7142265089887094] 
+			\draw    (80,120) -- (120,120) ;
+			%Straight Lines [id:da8471771371965053] 
+			\draw    (120,120) -- (160,120) ;
+			%Straight Lines [id:da0029227351176372984] 
+			\draw    (120,120) -- (100,160) ;
+			%Straight Lines [id:da5130194977669473] 
+			\draw    (130,120) -- (110,160) ;
+			%Straight Lines [id:da9722497425689605] 
+			\draw    (120,80) -- (120,120) ;
+			%Straight Lines [id:da5819252574569287] 
+			\draw    (160,80) -- (160,120) ;
+			%Straight Lines [id:da5253151554633011] 
+			\draw    (140,80) -- (130,120) ;
+			%Straight Lines [id:da3466940271955081] 
+			\draw    (150,80) -- (140,120) ;
+			%Straight Lines [id:da482698942279874] 
+			\draw    (80,80) -- (80,120) ;
+			%Straight Lines [id:da577335771369911] 
+			\draw    (80,80) -- (120,80) ;
+			%Straight Lines [id:da7062554999319648] 
+			\draw    (120,80) -- (160,80) ;
+			%Straight Lines [id:da7500750753354499] 
+			\draw    (180,80) -- (220,80) ;
+			%Straight Lines [id:da5909396267956115] 
+			\draw    (220,80) -- (260,80) ;
+			%Straight Lines [id:da6903461495201051] 
+			\draw    (240,80) -- (220,140) ;
+			%Straight Lines [id:da43860842476035544] 
+			\draw    (220,80) -- (200,140) ;
+			%Straight Lines [id:da8119236706978197] 
+			\draw    (180,140) -- (220,140) ;
+			%Straight Lines [id:da2477824013991532] 
+			\draw    (220,140) -- (260,140) ;
+			%Straight Lines [id:da10431419778749929] 
+			\draw    (260,80) -- (260,140) ;
+			%Straight Lines [id:da18509591125007274] 
+			\draw    (180,80) -- (180,140) ;
+			%Straight Lines [id:da21868267714023193] 
+			\draw    (250,80) -- (240,140) ;
+			%Straight Lines [id:da7712321706522733] 
+			\draw    (260,200) -- (220,200) ;
+			%Straight Lines [id:da7593643747347198] 
+			\draw    (220,200) -- (180,200) ;
+			%Straight Lines [id:da3540632371960386] 
+			\draw    (200,200) -- (220,140) ;
+			%Straight Lines [id:da0004735495623144903] 
+			\draw    (220,200) -- (240,140) ;
+			%Straight Lines [id:da9486324379201228] 
+			\draw    (180,200) -- (180,140) ;
+			%Straight Lines [id:da5967097776139811] 
+			\draw    (260,200) -- (260,140) ;
+			%Straight Lines [id:da7096217720274685] 
+			\draw    (190,200) -- (200,140) ;
+			
+			
+			
+			
+		\end{tikzpicture}
+		$$
+	\end{itemize}
+	考虑点 $p$ 处的恒等态射, 即常值道路 $i_p$; 它到自身的 $2$-态射构成一个群, 即 $X$ 的第二阶同伦群 $\pi_2(X,p)$.
+\end{example}
+
+\begin{example}
+	[label={locally-discrete-2-category}]
+	{(局部离散 $2$-范畴)}
+	一个普通范畴 $\mathsf C$ 可视为 $2$-范畴: 其态射范畴 $\operatorname{Hom}(A,B)$ 为离散范畴, 即 $2$-态射仅有恒等.
+	称这样的 $2$-范畴为\emph{局部离散 $2$-范畴} (locally discrete $2$-category).
+\end{example}
 
 \begin{definition}
+	{(对偶)}
+	一个 $2$-范畴 $\mathcal C$ 不仅有一种 ``对偶'', 而是有三种:
+	\begin{itemize}
+		\item $\mathcal C^{\op}$, 反转 $1$-态射的方向;
+		\item $\mathcal C^{\text{co}}$, 反转 $2$-态射的方向;
+		\item $\mathcal C^{\text{co}\op}$, 同时反转 $1$-态射和 $2$-态射的方向.
+	\end{itemize}
+	%我们较常使用的是 $\mathcal C^{\op}$.
+\end{definition}
+
+\begin{definition}
+	[label={2-functor}]
+	{($2$-函子)}
+	$2$-范畴之间一种合适的函子概念是 \emph{$2$-函子} (又称\emph{伪函子}, pseudofunctor\footnotemark{}), 它的定义是将严格 $2$-函子的定义中的等式改为自然同构.
+	具体地, 对于 $2$-范畴 $\mathcal C,\mathcal D$,
+	一个 $2$-函子 $F\colon \mathcal C\to\mathcal D$ 包含如下资料,
+	\begin{itemize}
+		\item 对 $\mathcal C$ 的每个对象 $A$, 有一个 $\mathcal D$ 的对象 $F(A)$;
+		\item 对 $\mathcal C$ 的每两个对象 $A,B$, 有一个函子 $F_{A,B}\colon \operatorname{Hom}_{\mathcal C}(A,B) \to \operatorname{Hom}_{\mathcal D} (F(A),F(B))$;
+		\item (\emph{保持态射的复合}) 对 $\mathcal C$ 的每三个对象 $A,B,C$, 有一个自然同构
+		$$\gamma_{A,B,C}\colon F_{A,C}(-\circ -) \overset{\simeq}{\to} F_{B,C}(-)\circ F_{A,B}(-);$$
+		\item (\emph{保持恒等态射}) 对 $\mathcal C$ 的每个对象 $A$, 有一个自然同构
+		$$\iota_A\colon F_{A,A}\circ i_A \overset{\simeq}{\to} i_{F(A)}; $$
+	\end{itemize}
+	满足如下融贯性等式.
+	\vspace{-5pt}%\footnotemark{}.
+	% https://q.uiver.app/#q=WzAsNixbMCwxLCJGKGZcXGNpcmMgKGdcXGNpcmMgaCkpIl0sWzMsMCwiRihmXFxjaXJjIGcpXFxjaXJjIEYoaCkiXSxbMCwzLCJGKGYpXFxjaXJjIEYoZ1xcY2lyYyBoKSJdLFsyLDMsIkYoZilcXGNpcmMgKEYoZylcXGNpcmMgRihoKSkiXSxbMywyLCIoRihmKVxcY2lyYyBGKGcpKVxcY2lyYyBGKGgpIl0sWzEsMCwiRigoZlxcY2lyYyBnKVxcY2lyYyBoKSJdLFswLDIsIlxcZ2FtbWEiLDJdLFsyLDMsIlxcZ2FtbWEiLDIseyJzaG9ydGVuIjp7InRhcmdldCI6MzB9fV0sWzEsNCwiXFxnYW1tYSJdLFs1LDEsIlxcZ2FtbWEiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MzB9fV0sWzUsMCwiXFxhbHBoYSIsMl0sWzQsMywiXFxhbHBoYSJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&,sep=tiny]
+		\& {F((-\circ -)\circ -)\hspace{-3em}} \&\& {F(-\circ -)\circ F(-)} \\
+		{F(-\circ (-\circ -))} \\
+		\&\&\& {(F(-)\circ F(-))\circ F(-)} \\
+		{F(-)\circ F(-\circ -)} \&\& {\hspace{-2em}F(-)\circ (F(-)\circ F(-))}
+		\arrow["\gamma"', from=2-1, to=4-1]
+		\arrow["\gamma"'{pos=0.3}, shorten >=22pt, from=4-1, to=4-3]
+		\arrow["\gamma", from=1-4, to=3-4]
+		\arrow["\gamma"{pos=0.7}, shorten <=32pt, from=1-2, to=1-4]
+		\arrow["\alpha"', from=1-2, to=2-1]
+		\arrow["\alpha", from=3-4, to=4-3]
+	\end{tikzcd}\]
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJGKC0pXFxjaXJjIEYoaSkiXSxbMSwwLCJGKC0pXFxjaXJjIGkiXSxbMSwxLCJGKC0pIl0sWzAsMSwiRigtXFxjaXJjIGkpIl0sWzAsMSwiXFxpb3RhIl0sWzEsMiwiXFxyaG8iXSxbMywwLCJcXGdhbW1hIl0sWzMsMiwiXFxyaG8iLDJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{F(-)\circ F(i)} \& {F(-)\circ i} \\
+		{F(-\circ i)} \& {F(-)}
+		\arrow["\iota", from=1-1, to=1-2]
+		\arrow["\rho", from=1-2, to=2-2]
+		\arrow["\gamma", from=2-1, to=1-1]
+		\arrow["\rho"', from=2-1, to=2-2]
+	\end{tikzcd}\]
+\end{definition}
+%\addtocounter{footnote}{-1}
+\footnotetext{注意我们所说的 $2$-范畴均为弱 $2$-范畴. 此外有若干种不同的 $2$-函子的概念, 但 ``伪函子'' 这个名字不好听, 故以 $2$-函子称呼这种概念.}
+%\addtocounter{footnote}{1}
+%\footnotetext{图中省略了 $\circ$ 的结合子.}
+
+\begin{example}
+	{(Hom 函子)}
+	对于 $2$-范畴 $\mathcal C$ 中的对象 $X$, 有 $2$-函子 $\operatorname{Hom}_{\mathcal C}(X,-)\colon \mathcal C\to\mathcal Cat$:
+	\begin{itemize}
+		\item 在对象层面, $\operatorname{Hom}_{\mathcal C}(X,A)$ 即 $\mathcal C$ 本身的资料;
+		\item 对两个对象 $A,B$, 函子 $\operatorname{Hom}_{\mathcal C}(A,B)\to\operatorname{Hom}_{\mathcal Cat}\big({\operatorname{Hom}(X,A),\operatorname{Hom}(X,B)}\big)$ 来自于复合函子 $\circ\colon \operatorname{Hom}_{\mathcal C}(A,B)\times \operatorname{Hom}_{\mathcal C}(X,A) \to \operatorname{Hom}_{\mathcal C}(X,B)$;
+		\item $2$-函子的定义中其它结构和性质皆出自 $2$-范畴 $\mathcal C$ 的结构和性质.
+	\end{itemize}
+	类似地, 有 $2$-函子 $\operatorname{Hom}_{\mathcal C}(-,X)\colon \mathcal C^{\op}\to \mathcal Cat$.
+\end{example}
+
+\subsection{$2$-范畴中的万有性质}
+
+\begin{propdef}
+	{($2$-范畴的终对象)}
+	设 $\mathcal C$ 为 $2$-范畴, 称 $\mathcal C$ 的对象 $1$ 为\emph{终对象}是指对任何对象 $X$,
+	$\operatorname{Hom}(X,1)$ 等价于终范畴.
+	展开所有定义, 这意味着对任何对象 $X$ 存在 $1$-态射 $X\to 1$,
+	且对任何两个 $1$-态射 $f,g\colon X\to 1$, 存在唯一的 $2$-态射 $\alpha\colon f\to g$,
+	且 $\alpha$ 为同构.
+	
+	与普通范畴中类似, 终对象 (乃至一般的极限) 可定义为函子 $\mathcal C^{\op}\to\mathcal Cat$ 的表示对象.
+\end{propdef}
+
+
+
+\subsection{伴随与伴随函子}
+
+$2$-范畴是谈论伴随的自然的语境.
+
+\newcommand{\adj}[4]{
+\begin{tikzcd}[ampersand replacement=\&]
+	{#3} \& {#4}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "#1"', shift right=2, from=1-2, to=1-1]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "#2"', shift right=2, from=1-1, to=1-2]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+\end{tikzcd}
+}
+
+\begin{definition}
+	[label={adjoints-in-2-categories}]
 	{(伴随)}
-	一个 $2$-范畴中的一组\emph{伴随}是
+	一个 $2$-范畴中的一组\emph{伴随} $\adj{F}{G}{D}{C}$ 是如下资料:
 	\begin{itemize}
 		\item 两个对象 $C,D$,
-		\item 两个态射 $F\colon C\to D$, $G\colon D\to C$,
-		\item 两个 $2$-态射 $\eta\colon \operatorname{id}_C\to GF$, $\varepsilon\colon FG\to\operatorname{id}_D$;
+		\item 两个态射 $F\colon C\to D$ (称为\emph{左伴随}), $G\colon D\to C$ (称为\emph{右伴随}),
+		\item 两个 $2$-态射 $\eta\colon \operatorname{id}_C\to GF$ (称为\emph{单位}), $\varepsilon\colon FG\to\operatorname{id}_D$ (称为\emph{余单位});
 	\end{itemize}
 	满足如下 $2$-态射的等式,
 	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
@@ -48,7 +409,7 @@
 		\arrow["\eta"', shorten <=3pt, shorten >=3pt, Rightarrow, from=1, to=2-3]
 	\end{tikzcd}\hspace{-1em}=\operatorname{id}_{G}.\]
 
-	这个条件也可用线图表示为
+	这个条件也可用线图\footnotemark{}表示为
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 \begin{center}
@@ -126,10 +487,10 @@
 \end{center}
 
 \end{definition}
-
+\footnotetext{线图是表示一些 $2$-范畴结构的工具. 在一个图中, 平面区域表示 $2$-范畴的对象, 平面区域之间的分界线表示 $1$-态射, 分界线上的分段点表示 $2$-态射.}
 \begin{example}
 	{(伴随函子)}
-	$2$-范畴 $\mathsf {Cat}$ 中的伴随就是熟知的伴随函子. 对于伴随函子 $F\colon \mathsf C\to\mathsf D$, $G\colon \mathsf D\to\mathsf C$, 如下的线图给出了映射
+	$2$-范畴 $\mathcal {C}at$ 中的伴随就是熟知的伴随函子. 对于伴随函子 $F\colon \mathsf C\to\mathsf D$, $G\colon \mathsf D\to\mathsf C$, 如下的线图给出了映射
 	$$
 	\operatorname{Hom}(Fc,d) \to \operatorname{Hom}(c,Gd).
 	$$
@@ -209,7 +570,16 @@
 	的线图, 我们得到上述映射为同构.
 \end{example}
 
+\begin{example}
+	{(终点)}
+	设一个 $2$-范畴 $\mathcal C$ 有终对象 $1$.
+	对于 $\mathcal C$ 的对象 $X$, 若 $1$-态射 $X\to 1$ 有右伴随, 则称 $X$ 有\emph{终点}.
+	例如 $\mathcal {C}at$ 的对象 $\mathsf C$ 有终点就是说范畴 $\mathsf C$ 有终对象. 这个例子想要表达的是, 范畴 $\mathsf C$ 的终对象这一结构可用 $\mathcal {C}at$ 中纯粹 $2$-范畴的语言表达, 而无需提到范畴 $C$ 中的对象和态射.
+\end{example}
+
 \subsection{伴随保持极限}
+
+现在我们谈论范畴之间的伴随函子.
 
 \begin{prop}
 	[label={adjoints-preserve-limits}]
@@ -219,14 +589,13 @@
 
 \begin{proof}
 	设有伴随
-	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7Q30iXSxbMSwwLCJcXG1hdGhzZiB7RH0iXSxbMSwwLCJGIiwyLHsib2Zmc2V0IjoyfV0sWzAsMSwiRyIsMix7Im9mZnNldCI6Mn1dLFsyLDMsIiIsMCx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV1d
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\mathsf {C}} \& {\mathsf {D},}
+	$\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {D}} \& {\mathsf {C},}
 		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
 		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
-	\end{tikzcd}\]
-	设 $X \colon I \to \mathsf C$ 是一个图 ($I$ 是小范畴).
+	\end{tikzcd}$
+	设 $X \colon I \to \mathsf D$ 是任意图表 ($I$ 是小范畴).
 	若极限 $\lim_i X_i$ 存在,
 	则有自然同构
 	\begin{align*}
@@ -281,24 +650,24 @@
 	设有伴随
 	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7Q30iXSxbMSwwLCJcXG1hdGhzZiB7RH0iXSxbMSwwLCJGIiwyLHsib2Zmc2V0IjoyfV0sWzAsMSwiRyIsMix7Im9mZnNldCI6Mn1dLFsyLDMsIiIsMCx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV1d
 	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\mathsf {C}} \& {\mathsf {D},}
+		{\mathsf {D}} \& {\mathsf {C},}
 		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
 		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 	\end{tikzcd}\]
 	其单位和余单位分别为
-	$\eta \colon \operatorname{id}_{\mathsf D} \to GF$,
-	$\epsilon \colon FG \to \operatorname{id}_{\mathsf C}$.
+	$\eta \colon \operatorname{id}_{\mathsf C} \to GF$,
+	$\epsilon \colon FG \to \operatorname{id}_{\mathsf D}$.
 	考虑
 	\begin{itemize}
-		\item $\mathsf C$ 中由使得 $\eta_X \colon X \to GF(X)$ 为同构的 $X$ 构成的满子范畴 $\widetilde {\mathsf C}$,
+		\item $\mathsf D$ 中由使得 $\eta_X \colon X \to GF(X)$ 为同构的 $X$ 构成的满子范畴 $\widetilde {\mathsf D}$,
 		以及
-		\item $\mathsf D$ 中由使得 $\epsilon_Y \colon FG(Y)\to Y$ 为同构的 $Y$ 构成的满子范畴 $\widetilde {\mathsf D}$,
+		\item $\mathsf C$ 中由使得 $\epsilon_Y \colon FG(Y)\to Y$ 为同构的 $Y$ 构成的满子范畴 $\widetilde {\mathsf C}$,
 	\end{itemize}
 	那么 $F$ 与 $G$ 限制为一对互逆的范畴等价
 	$$
-	\widetilde G\colon \widetilde {\mathsf C} \overset{\simeq}{\to} \widetilde {\mathsf D},\quad
-	\widetilde F\colon \widetilde {\mathsf D} \overset{\simeq}{\to} \widetilde {\mathsf C}.
+	\widetilde G\colon \widetilde {\mathsf D} \overset{\simeq}{\to} \widetilde {\mathsf C},\quad
+	\widetilde F\colon \widetilde {\mathsf C} \overset{\simeq}{\to} \widetilde {\mathsf D}.
 	$$
 \end{prop}
 
@@ -337,7 +706,7 @@
 \end{prop}
 \begin{proof}
 	对于伴随函子, 结论很容易验证. 对一般的 $2$-范畴中的伴随, 其证明 (的一部分) 可用线图表示如下.
-	\vspace{-1em}\begin{center}
+	\begin{center}
 		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 		
 		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.7,xscale=0.7]
@@ -454,6 +823,25 @@
 由定义, 每个对象 $c$ 到其反映有典范的态射 $c \to a(c)$, 来自上述伴随的单位 $\operatorname{id}_{\mathsf C}\to i\circ a$;
 而且 $c$ 到 $\mathsf D$ 的任何对象的态射都穿过这个态射.
 
+\begin{prop}
+	{}
+	一对伴随 $\adj{a}{i}{\mathsf {D}}{\mathsf {C}}$%$a\dashv i\colon \mathsf D\leftrightarrows \mathsf C$
+	构成自反子范畴当且仅当对 $\mathsf D$ 的所有对象 $d$, 余单位 $\varepsilon_d\colon ai(d)\to d$ 为同构.
+\end{prop}
+\begin{proof}
+	%证明取自 \cite{CWM} IV.3 节.
+	考虑自然变换
+	\[
+	\operatorname{Hom}_{\mathsf D}(d,-)\overset{i}{\to}\operatorname{Hom}_{\mathsf C}(i(d),i(-))
+	\overset{\simeq}{\to} \operatorname{Hom}_{\mathsf D}(ai(d),-).
+	\]
+	一方面, $i$ 为满子范畴的嵌入当且仅当这个自然变换为同构;
+	另一方面, 注意到
+	$\operatorname{id}_d\in\operatorname{Hom}_{\mathsf D}(d,d)$ 的像为 $\varepsilon_d$,
+	由 (对偶范畴中的) 米田引理, 这个自然变换为同构当且仅当 $\varepsilon_d$ 为同构.
+\end{proof}
+
+
 \begin{example}
 	{}
 	Abel 群范畴 $\mathsf {Ab}$ 是群范畴 $\mathsf {Grp}$ 的自反子范畴, 群 $G$ 的反映是其 Abel 化 (abelianization) $G/[G,G]$.
@@ -506,7 +894,11 @@
 	拓扑空间上的层范畴是预层范畴的自反局部化, 预层的反映为其层化 (命题 \ref{sheafification}).
 \end{example}
 
-\todo{澄清不同的局部化概念}
+%\todo{澄清不同的局部化概念}
+% nLab : https://ncatlab.org/nlab/show/localization+of+a+category
+% 
+
+自反局部化是如下一般的局部化概念的特例.
 
 \begin{definition}
 	[label={localization-by-universally-inverting}]
@@ -516,13 +908,15 @@
 	满足
 	\begin{itemize}
 		\item 对任意 $w\in W$, $a(w)$ 为同构;
-		\item 对任意范畴 $\mathsf E$ 与函子 $F\colon \mathsf C\to\mathsf E$, 若 $F$ 将 $W$ 的元素变为同构,
-		则 $F$ ``唯一地穿过'' $\mathsf C[W^{-1}]$; 严格地说, 记 $\mathsf {Fun}_W(\mathsf C,\mathsf E)$ 为
-		$\mathsf {Fun}(\mathsf C,\mathsf E)$ 中由将 $W$ 的元素变为同构的函子 $F$ 构成的满子范畴,
-		则函子 $$(-\circ a)\colon \mathsf {Fun}(\mathsf C[W^{-1}],\mathsf E) \to \mathsf {Fun}_W(\mathsf C,\mathsf E)$$
-		为范畴等价.
+		\item (\emph{万有性质}) 对任意范畴 $\mathsf E$ 与函子 $b\colon \mathsf C\to\mathsf E$, 若 $b$ 将 $W$ 的元素变为同构,
+		则 $b$ 唯一地穿过 $a$, 两种分解\footnotemark{}至多差一个唯一的自然同构.
+		%严格地说, 记 $\mathsf {Fun}_W(\mathsf C,\mathsf E)$ 为 $\mathsf {Fun}(\mathsf C,\mathsf E)$ 中由将 $W$ 的元素变为同构的函子 $b$ 构成的满子范畴,
+		%则函子
+		%$$(-\circ a)\colon \mathsf {Fun}(\mathsf C[W^{-1}],\mathsf E) \to \mathsf {Fun}_W(\mathsf C,\mathsf E)$$
+		%为范畴等价.
 	\end{itemize}
 \end{definition}
+\footnotetext{这里, $b$ 穿过 $a$ 的分解是指一个函子 $f$ 以及一个自然同构 $b \overset{\simeq}{\to} fa$.}
 
 %\begin{remark}
 %	{(局部化的概念)}
@@ -530,7 +924,7 @@
 %\end{remark}
 
 \begin{prop}
-	{(自反子范畴与局部化的关系)}
+	{(自反子范畴是局部化)}
 	对于自反子范畴 (\ref{reflective-subcategory}) $$
 	\begin{tikzcd}[ampersand replacement=\&]
 		{\mathsf D} \& {\mathsf C,}
@@ -576,6 +970,7 @@
 		\arrow["\varepsilon"', shorten <=3pt, shorten >=3pt, Rightarrow, from=1-2, to=1]
 		\arrow[shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=2-3]
 	\end{tikzcd}\]
+	\todo{证明过程}
 	我们得到自然同构 $bi\overset{\simeq}{\to}b'$.
 \end{proof}
 
@@ -648,8 +1043,9 @@
     	\arrow[from=3-1, to=2-2]
     \end{tikzcd}$ 的交换图; 这是 $\widehat {\mathsf C}/X$ 的满子范畴.
     若将 $X$ 视为 $\mathsf C$ 的 ``广义元素'', 则 $X$ 的元素的范畴可视为``俯范畴'' $\mathsf C /X$.
+    特别地, 当 $X=\yo(c)$ 时, $X$ 的元素的范畴同构于 $\mathsf C/c$.
     
-    此外, 也有人将这个范畴记作 $(\yo\downarrow X)$, 它还有一个令人迷惑的名称 ``逗号范畴'' (comma category).
+    此外, 也有人将这个范畴记作 $(\yo\downarrow X)$, 它是所谓 ``逗号范畴'' (comma category) 的特例.
 \end{remark}
 
 事实上, 所有态射 $\yo(c)\to X$ 共同将 $X$ 表示为一个余极限.
@@ -989,7 +1385,10 @@
 \begin{remark}
 	{}
 	在历史文献中可见单子的曾用名 ``三元组'' (triple), 这个名字是无趣的.
-	相对有趣的是, 单子被某些作者称为\emph{代数理论} (algebraic theory). 后面我们将说明单子与代数理论 (定义 \ref{kinds-of-theories}) 的关系.
+	相对有趣的是, 单子被某些作者称为\emph{代数理论} (algebraic theory). 后面我们将说明单子与代数理论 (定义 \ref{kinds-of-theories}) 的关系. 直观上, $TX$ 的元素是某种代数理论中以 $X$ 中元素为变量的项. 对于单子 $T$ 以及两个态射 $X\to TY$, $Y\to TZ$, 可以指定一个 ``代数复合'' $X\to TZ$:
+	\[
+	X\to TY \to TTZ\to TZ.
+	\]
 \end{remark}
 
 \begin{propdef}
@@ -1013,6 +1412,156 @@
     	$\rho \colon FG\to\operatorname{id}_{\mathsf D}$ 是余单位, 而 $\delta\colon S= FG\to FGFG = S^2$ 来自单位 $\operatorname{id}_{\mathsf C}\to GF$.
     \end{itemize}
 \end{propdef}
+
+\begin{proof}
+	下图描绘了验证 $T$ 为单子所需的幺元律和结合律.
+	\begin{center}
+		
+		
+		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+		
+		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.5,xscale=0.5]
+			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+			
+			%Shape: Arc [id:dp6748354158364842] 
+			\draw  [draw opacity=0] (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (70,185.52) and (65.52,190) .. (60,190) .. controls (54.48,190) and (50,185.52) .. (50,180) -- (60,180) -- cycle ; \draw   (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (70,185.52) and (65.52,190) .. (60,190) .. controls (54.48,190) and (50,185.52) .. (50,180) ;  
+			%Straight Lines [id:da30328109674550197] 
+			\draw    (50,120) -- (50,180) ;
+			%Straight Lines [id:da6276580027075187] 
+			\draw    (70,150) -- (70,180) ;
+			%Shape: Arc [id:dp8665893305935193] 
+			\draw  [draw opacity=0] (70,150) .. controls (70,144.48) and (74.48,140) .. (80,140) .. controls (85.52,140) and (90,144.48) .. (90,150) -- (80,150) -- cycle ; \draw   (70,150) .. controls (70,144.48) and (74.48,140) .. (80,140) .. controls (85.52,140) and (90,144.48) .. (90,150) ;  
+			%Straight Lines [id:da7863421858296449] 
+			\draw    (90,150) -- (90,200) ;
+			%Straight Lines [id:da3459195879084249] 
+			\draw    (30,120) -- (30,200) ;
+			%Shape: Arc [id:dp8748547741090917] 
+			\draw  [draw opacity=0] (40,210) .. controls (40,210) and (40,210) .. (40,210) .. controls (40,210) and (40,210) .. (40,210) .. controls (34.48,210) and (30,205.52) .. (30,200) -- (40,200) -- cycle ; \draw   (40,210) .. controls (40,210) and (40,210) .. (40,210) .. controls (40,210) and (40,210) .. (40,210) .. controls (34.48,210) and (30,205.52) .. (30,200) ;  
+			%Shape: Arc [id:dp1379517603769318] 
+			\draw  [draw opacity=0] (40,210) .. controls (40,210) and (40,210) .. (40,210) .. controls (45.52,210) and (50,214.48) .. (50,220) -- (40,220) -- cycle ; \draw   (40,210) .. controls (40,210) and (40,210) .. (40,210) .. controls (45.52,210) and (50,214.48) .. (50,220) ;  
+			%Straight Lines [id:da4885891795530013] 
+			\draw    (50,220) -- (50,260) ;
+			%Straight Lines [id:da9163027979285694] 
+			\draw    (70,220) -- (70,260) ;
+			%Shape: Arc [id:dp7957131684514858] 
+			\draw  [draw opacity=0] (70,220) .. controls (70,214.48) and (74.48,210) .. (80,210) -- (80,220) -- cycle ; \draw   (70,220) .. controls (70,214.48) and (74.48,210) .. (80,210) ;  
+			%Shape: Arc [id:dp9374819416671043] 
+			\draw  [draw opacity=0] (90,200) .. controls (90,200) and (90,200) .. (90,200) .. controls (90,200) and (90,200) .. (90,200) .. controls (90,205.52) and (85.52,210) .. (80,210) -- (80,200) -- cycle ; \draw   (90,200) .. controls (90,200) and (90,200) .. (90,200) .. controls (90,200) and (90,200) .. (90,200) .. controls (90,205.52) and (85.52,210) .. (80,210) ;  
+			%Straight Lines [id:da37935123830952877] 
+			\draw    (130,120) -- (130,260) ;
+			%Straight Lines [id:da5449144780510815] 
+			\draw    (150,120) -- (150,260) ;
+			
+%			% Text Node
+%			\draw (118,122) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle F$};
+%			% Text Node
+%			\draw (151,122) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle G$};
+%			% Text Node
+%			\draw (18,122) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle F$};
+%			% Text Node
+%			\draw (51,122) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle G$};
+			% Text Node
+			\draw (96,182) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle =$};
+		\end{tikzpicture}\hspace{5em}	
+		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.5,xscale=0.5]
+			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+			
+			%Straight Lines [id:da23613834151160362] 
+			\draw    (60,110) -- (60,170) ;
+			%Straight Lines [id:da9604875201085867] 
+			\draw    (80,110) -- (80,150) ;
+			%Straight Lines [id:da5764239342985473] 
+			\draw    (100,110) -- (100,150) ;
+			%Shape: Arc [id:dp2287987043326274] 
+			\draw  [draw opacity=0] (100,150) .. controls (100,150) and (100,150) .. (100,150) .. controls (100,150) and (100,150) .. (100,150) .. controls (100,155.52) and (95.52,160) .. (90,160) .. controls (84.48,160) and (80,155.52) .. (80,150) -- (90,150) -- cycle ; \draw   (100,150) .. controls (100,150) and (100,150) .. (100,150) .. controls (100,150) and (100,150) .. (100,150) .. controls (100,155.52) and (95.52,160) .. (90,160) .. controls (84.48,160) and (80,155.52) .. (80,150) ;  
+			%Shape: Arc [id:dp7721100718238127] 
+			\draw  [draw opacity=0] (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (64.48,180) and (60,175.52) .. (60,170) -- (70,170) -- cycle ; \draw   (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (64.48,180) and (60,175.52) .. (60,170) ;  
+			%Shape: Arc [id:dp9407575809888729] 
+			\draw  [draw opacity=0] (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (75.52,180) and (80,184.48) .. (80,190) -- (70,190) -- cycle ; \draw   (70,180) .. controls (70,180) and (70,180) .. (70,180) .. controls (75.52,180) and (80,184.48) .. (80,190) ;  
+			%Shape: Arc [id:dp6454565332414952] 
+			\draw  [draw opacity=0] (100,190) .. controls (100,184.48) and (104.48,180) .. (110,180) -- (110,190) -- cycle ; \draw   (100,190) .. controls (100,184.48) and (104.48,180) .. (110,180) ;  
+			%Shape: Arc [id:dp8673772468248326] 
+			\draw  [draw opacity=0] (120,170) .. controls (120,170) and (120,170) .. (120,170) .. controls (120,170) and (120,170) .. (120,170) .. controls (120,175.52) and (115.52,180) .. (110,180) -- (110,170) -- cycle ; \draw   (120,170) .. controls (120,170) and (120,170) .. (120,170) .. controls (120,170) and (120,170) .. (120,170) .. controls (120,175.52) and (115.52,180) .. (110,180) ;  
+			%Shape: Arc [id:dp2598241437990816] 
+			\draw  [draw opacity=0] (90,220) .. controls (90,220) and (90,220) .. (90,220) .. controls (90,220) and (90,220) .. (90,220) .. controls (84.48,220) and (80,215.52) .. (80,210) -- (90,210) -- cycle ; \draw   (90,220) .. controls (90,220) and (90,220) .. (90,220) .. controls (90,220) and (90,220) .. (90,220) .. controls (84.48,220) and (80,215.52) .. (80,210) ;  
+			%Shape: Arc [id:dp544256142462509] 
+			\draw  [draw opacity=0] (110,220) .. controls (110,220) and (110,220) .. (110,220) .. controls (115.52,220) and (120,224.48) .. (120,230) -- (110,230) -- cycle ; \draw   (110,220) .. controls (110,220) and (110,220) .. (110,220) .. controls (115.52,220) and (120,224.48) .. (120,230) ;  
+			%Straight Lines [id:da8903362260377092] 
+			\draw    (120,110) -- (120,170) ;
+			%Straight Lines [id:da7438160797901054] 
+			\draw    (140,110) -- (140,190) ;
+			%Straight Lines [id:da03724352459412028] 
+			\draw    (160,110) -- (160,210) ;
+			%Shape: Arc [id:dp9831488201521568] 
+			\draw  [draw opacity=0] (110,200) .. controls (110,200) and (110,200) .. (110,200) .. controls (110,200) and (110,200) .. (110,200) .. controls (104.48,200) and (100,195.52) .. (100,190) -- (110,190) -- cycle ; \draw   (110,200) .. controls (110,200) and (110,200) .. (110,200) .. controls (110,200) and (110,200) .. (110,200) .. controls (104.48,200) and (100,195.52) .. (100,190) ;  
+			%Straight Lines [id:da05884826487291028] 
+			\draw    (110,200) -- (130,200) ;
+			%Shape: Arc [id:dp9170131358019777] 
+			\draw  [draw opacity=0] (140,190) .. controls (140,190) and (140,190) .. (140,190) .. controls (140,190) and (140,190) .. (140,190) .. controls (140,195.52) and (135.52,200) .. (130,200) -- (130,190) -- cycle ; \draw   (140,190) .. controls (140,190) and (140,190) .. (140,190) .. controls (140,190) and (140,190) .. (140,190) .. controls (140,195.52) and (135.52,200) .. (130,200) ;  
+			%Straight Lines [id:da3690258778575557] 
+			\draw    (80,190) -- (80,210) ;
+			%Straight Lines [id:da6476490596841975] 
+			\draw    (90,220) -- (110,220) ;
+			%Shape: Arc [id:dp2534445747495919] 
+			\draw  [draw opacity=0] (160,210) .. controls (160,210) and (160,210) .. (160,210) .. controls (160,210) and (160,210) .. (160,210) .. controls (160,215.52) and (155.52,220) .. (150,220) -- (150,210) -- cycle ; \draw   (160,210) .. controls (160,210) and (160,210) .. (160,210) .. controls (160,210) and (160,210) .. (160,210) .. controls (160,215.52) and (155.52,220) .. (150,220) ;  
+			%Shape: Arc [id:dp2618365391702757] 
+			\draw  [draw opacity=0] (140,230) .. controls (140,224.48) and (144.48,220) .. (150,220) -- (150,230) -- cycle ; \draw   (140,230) .. controls (140,224.48) and (144.48,220) .. (150,220) ;  
+			%Straight Lines [id:da36204815454282646] 
+			\draw    (120,230) -- (120,270) ;
+			%Straight Lines [id:da4578878839800886] 
+			\draw    (140,230) -- (140,270) ;
+			%Straight Lines [id:da07342481946917778] 
+			\draw    (300,110) -- (300,170) ;
+			%Straight Lines [id:da4757244672529106] 
+			\draw    (280,110) -- (280,150) ;
+			%Straight Lines [id:da4235497747706327] 
+			\draw    (260,110) -- (260,150) ;
+			%Shape: Arc [id:dp40270286179170967] 
+			\draw  [draw opacity=0] (260,150) .. controls (260,150) and (260,150) .. (260,150) .. controls (260,150) and (260,150) .. (260,150) .. controls (260,155.52) and (264.48,160) .. (270,160) .. controls (275.52,160) and (280,155.52) .. (280,150) -- (270,150) -- cycle ; \draw   (260,150) .. controls (260,150) and (260,150) .. (260,150) .. controls (260,150) and (260,150) .. (260,150) .. controls (260,155.52) and (264.48,160) .. (270,160) .. controls (275.52,160) and (280,155.52) .. (280,150) ;  
+			%Shape: Arc [id:dp09165014142522976] 
+			\draw  [draw opacity=0] (290,180) .. controls (290,180) and (290,180) .. (290,180) .. controls (290,180) and (290,180) .. (290,180) .. controls (295.52,180) and (300,175.52) .. (300,170) -- (290,170) -- cycle ; \draw   (290,180) .. controls (290,180) and (290,180) .. (290,180) .. controls (290,180) and (290,180) .. (290,180) .. controls (295.52,180) and (300,175.52) .. (300,170) ;  
+			%Shape: Arc [id:dp5864275574018558] 
+			\draw  [draw opacity=0] (290,180) .. controls (290,180) and (290,180) .. (290,180) .. controls (284.48,180) and (280,184.48) .. (280,190) -- (290,190) -- cycle ; \draw   (290,180) .. controls (290,180) and (290,180) .. (290,180) .. controls (284.48,180) and (280,184.48) .. (280,190) ;  
+			%Shape: Arc [id:dp5344581648323541] 
+			\draw  [draw opacity=0] (260,190) .. controls (260,184.48) and (255.52,180) .. (250,180) -- (250,190) -- cycle ; \draw   (260,190) .. controls (260,184.48) and (255.52,180) .. (250,180) ;  
+			%Shape: Arc [id:dp9129836518752186] 
+			\draw  [draw opacity=0] (240,170) .. controls (240,170) and (240,170) .. (240,170) .. controls (240,170) and (240,170) .. (240,170) .. controls (240,175.52) and (244.48,180) .. (250,180) -- (250,170) -- cycle ; \draw   (240,170) .. controls (240,170) and (240,170) .. (240,170) .. controls (240,170) and (240,170) .. (240,170) .. controls (240,175.52) and (244.48,180) .. (250,180) ;  
+			%Shape: Arc [id:dp16629270276658215] 
+			\draw  [draw opacity=0] (270,220) .. controls (270,220) and (270,220) .. (270,220) .. controls (270,220) and (270,220) .. (270,220) .. controls (275.52,220) and (280,215.52) .. (280,210) -- (270,210) -- cycle ; \draw   (270,220) .. controls (270,220) and (270,220) .. (270,220) .. controls (270,220) and (270,220) .. (270,220) .. controls (275.52,220) and (280,215.52) .. (280,210) ;  
+			%Shape: Arc [id:dp7129929613687838] 
+			\draw  [draw opacity=0] (250,220) .. controls (250,220) and (250,220) .. (250,220) .. controls (244.48,220) and (240,224.48) .. (240,230) -- (250,230) -- cycle ; \draw   (250,220) .. controls (250,220) and (250,220) .. (250,220) .. controls (244.48,220) and (240,224.48) .. (240,230) ;  
+			%Straight Lines [id:da40396451740325046] 
+			\draw    (240,110) -- (240,170) ;
+			%Straight Lines [id:da7773248064662102] 
+			\draw    (220,110) -- (220,190) ;
+			%Straight Lines [id:da29936944563790013] 
+			\draw    (200,110) -- (200,210) ;
+			%Shape: Arc [id:dp8203787022969811] 
+			\draw  [draw opacity=0] (250,200) .. controls (250,200) and (250,200) .. (250,200) .. controls (250,200) and (250,200) .. (250,200) .. controls (255.52,200) and (260,195.52) .. (260,190) -- (250,190) -- cycle ; \draw   (250,200) .. controls (250,200) and (250,200) .. (250,200) .. controls (250,200) and (250,200) .. (250,200) .. controls (255.52,200) and (260,195.52) .. (260,190) ;  
+			%Straight Lines [id:da05810339025763622] 
+			\draw    (250,200) -- (230,200) ;
+			%Shape: Arc [id:dp6061241961744019] 
+			\draw  [draw opacity=0] (220,190) .. controls (220,190) and (220,190) .. (220,190) .. controls (220,190) and (220,190) .. (220,190) .. controls (220,195.52) and (224.48,200) .. (230,200) -- (230,190) -- cycle ; \draw   (220,190) .. controls (220,190) and (220,190) .. (220,190) .. controls (220,190) and (220,190) .. (220,190) .. controls (220,195.52) and (224.48,200) .. (230,200) ;  
+			%Straight Lines [id:da15539630606768684] 
+			\draw    (280,190) -- (280,210) ;
+			%Straight Lines [id:da4663847440503588] 
+			\draw    (270,220) -- (250,220) ;
+			%Shape: Arc [id:dp766835997294987] 
+			\draw  [draw opacity=0] (200,210) .. controls (200,210) and (200,210) .. (200,210) .. controls (200,210) and (200,210) .. (200,210) .. controls (200,215.52) and (204.48,220) .. (210,220) -- (210,210) -- cycle ; \draw   (200,210) .. controls (200,210) and (200,210) .. (200,210) .. controls (200,210) and (200,210) .. (200,210) .. controls (200,215.52) and (204.48,220) .. (210,220) ;  
+			%Shape: Arc [id:dp3852774880550862] 
+			\draw  [draw opacity=0] (220,230) .. controls (220,224.48) and (215.52,220) .. (210,220) -- (210,230) -- cycle ; \draw   (220,230) .. controls (220,224.48) and (215.52,220) .. (210,220) ;  
+			%Straight Lines [id:da865092931126576] 
+			\draw    (240,230) -- (240,270) ;
+			%Straight Lines [id:da5959752980974766] 
+			\draw    (220,230) -- (220,270) ;
+			
+			% Text Node
+			\draw (166,182) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle =$};
+			
+			
+		\end{tikzpicture}
+	\end{center}
+\end{proof}
 
 \begin{definition}
     [label={monad-T-algebra}]
@@ -1052,6 +1601,7 @@
     \end{tikzcd}
     \]
 \end{definition}
+
 
 \begin{prop}
 	{($T$-代数的自由--遗忘伴随)}
@@ -1146,10 +1696,12 @@
 		\end{tikzcd}\]
 	\end{itemize}
 \end{example}
-
-\begin{example}
-	{}
-\end{example}
+%
+%\begin{example}
+%	{(矩阵)}
+%	固定含幺交换环 $R$.
+%	对于集合 $B$, 
+%\end{example}
 
 \begin{example}
 	{(反变幂集函子与其对偶函子的伴随)}
@@ -1162,8 +1714,7 @@
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 	\end{tikzcd}\]
 	
-	在代数--几何对偶之下, 集合作为 ``几何'' 对应的 ``代数'' 称为\emph{完备原子型 Boole 代数} (complete atomic Boolean algebra).
-	\todo{}
+	在代数--几何对偶 (参考 Stone 对偶, 命题 \ref{Stone-duality}) 之下, 集合作为 ``几何'' 对应的 ``代数'' 称为\emph{完备原子型 Boole 代数} (complete atomic Boolean algebra).
 \end{example}
 
 对于某些伴随产生的单子 $T$, 我们发现 $T$-代数的范畴恰好等价于伴随另一边的范畴; 因此这一对伴随可视为范畴 $\mathsf C$ 与其上的 $T$-代数范畴 $\mathsf C^T$ 之间的自由--遗忘伴随. 于是有如下的定义.
@@ -1196,18 +1747,6 @@
 
 % the Eilenberg-Moore category of ultrafilter monad is the category of compact Hausdorff spaces with its obvious forgetful functor to Set.
 
-\subsection{单子与代数理论}
-
-\ref{universal-algebra} 节介绍的 Lawvere 理论也可视为单子, Lawvere 理论的模型即使对应单子的代数.
-
-\begin{definition}
-	{(Lawvere 理论对应的单子)}
-	设 $\mathbb T$ 是 Lawvere 理论 (定义 \ref{Lawvere-theory}).
-	其对应的单子是
-	\[
-	TX = \coprod_{n\geq 0} \operatorname{Hom}_{\mathbb T}(n,1)\times X^n.
-	\]
-\end{definition}
 
 
 
@@ -1220,42 +1759,148 @@
 \begin{definition}
 	[label={Lawvere-theory}]
 	{(Lawvere 理论)}
-	一个 \emph{Lawvere 理论} $\mathbb T$ 是一个具有有限乘积 (包括始对象 $1$) 的范畴,
-	其中存在一个对象 $x$, 使得 $\mathbb T$ 的每个对象都同构于 $x$ 的若干次幂 $x^n$ ($n\geq 0$).
+	一个\emph{Lawvere 理论}是一个保积函子 $\mathbb{N}^{\op}\to\mathbb T$ ($\mathbb{N}$ 是有限集 $0,1,2,\cdots$ 构成的范畴), 在对象集上为双射. 我们将 $\mathbb{N}$ 的对象 $n$ 在这个函子下的像仍记为 $n$.
 \end{definition}
 
-Lawvere 理论的意图是将一个代数理论的运算记录在范畴 $T$ 的态射中, 其中态射 $x^n \to x$ 为 $n$ 元运算. 例如在群的理论中, 乘法是一个态射 $x^2 \to x$.
-
+Lawvere 理论将一个代数理论的运算记录在范畴 $T$ 的态射中, 态射 $n \to 1$ 为 $n$ 元运算. 例如在群的理论中, 乘法是一个态射 $2 \to 1$, 而取逆是一个态射 $1\to 1$.
+范畴 $\mathbb T$ 是一种句法范畴.
 
 \begin{definition}
 	{(Lawvere 理论的模型)}
-	对于 Lawvere 理论 $\mathbb T$ 以及具有有限乘积的范畴 $\mathsf C$, $\mathbb T$ 在范畴 $\mathsf C$ 中的\emph{模型}是一个保持乘积的函子
+	对于 Lawvere 理论 $\mathbb T$ 以及具有有限乘积的范畴 $\mathsf C$, 定义 $\mathbb T$ 在范畴 $\mathsf C$ 中的\emph{模型}为保积函子
 	$$
 	A \colon \mathbb T \to \mathsf {C},
 	$$
-	而模型之间的同态即是这样两个函子之间的自然变换.
+	而模型之间的同态为保积函子之间的自然变换.
 	称 $A(x)$ 为 $A$ 的\emph{底集} (underlying set).
+	记 $\mathbb T$ 在 $\mathsf {Set}$ 中的模型的范畴为 $\mathbb T\mathsf {Mod}$.
 \end{definition}
+
+%\todo{代数理论的表现, Borceux 3.2.9}
+\begin{definition}
+	[label={presentation-of-an-algebraic-theory}]
+	{(代数理论的表现)}
+	一个\emph{代数理论的表现} (presentation of an algebraic theory) $\mathcal T$ 是如下资料,
+	\begin{itemize}
+		\item 任意多个\emph{变量};
+		\item 一些\emph{运算符号}, 每一个运算符号对应一个固定的非负整数, 称为其\emph{元数} (arity);
+		\item 一些\emph{公理}, 其中每个公理形如 $s=t$, $s,t$ 为\emph{项} (terms)\footnotemark{}, 而项的归纳定义如下:
+		\begin{itemize}
+			\item 每个变量是一项;
+			\item 若 $f$ 是 $n$ 元运算符号, $t_1,\cdots,t_n$ 各是一项, 则 $f(t_1,\cdots,t_n)$ 是一项. (特别地, 每个零元运算是一项, 即一个常数.)
+		\end{itemize}
+	\end{itemize}
+\end{definition}
+\footnotetext{为了严谨, 我们应该补充说明: 对每一条公理 $s=t$, 改变 $s,t$ 中某个变量的名称仍是一条公理. 但这种事情是不重要的.}
+
+\begin{remark}
+	{}
+	这里 ``代数理论的表现'' 须理解为一个整体术语. 它是定义 \ref{kinds-of-theories} 中的代数理论的特例, 其中只有一个类型. 此处这样称呼的理由是, 我们必须把它与 Lawvere 理论区分开. Lawvere 理论与 ``代数理论之表现'' 的关系正如群与 ``群的表现'' 的关系.
+\end{remark}
+
+\begin{definition}
+	{(``代数理论之表现'' 的模型)}
+	设 $\mathcal T$ 是代数理论的表现 (定义 \ref{presentation-of-an-algebraic-theory}). 定义一个 \emph{$\mathcal T$-模型} $M$ 为如下资料:
+	\begin{itemize}
+		\item 集合 $M$ (称作该模型的\emph{底层集合}),
+		\item 对每个非负整数 $n$ 以及 $n$ 元运算符号 $f$, 一个映射 $[[f]]\colon M^n\to M$;
+	\end{itemize}
+	满足所有的公理, 也即当 $\mathcal T$ 中的变量取值为 $M$ 的任何元素时, 公理 $s=t$ 的两端总是取相等的值. 其中, 一个项 $t$ 的取值 $[[t]]$ 归纳定义如下:
+	\begin{itemize}
+		\item 每个变量 $x$ 可取 $M$ 中任意的值, $[[x]]\in M$;
+		\item 若 $f$ 是 $n$ 元运算符号, $t_1,\cdots,t_n$ 各是一项, 则 $f(t_1,\cdots,t_n)$ 的取值是 $[[f]]([[t_1]],\cdots, [[t_n]])$. (特别地, 每个零元运算取 $M$ 中一个固定的值.)
+	\end{itemize}
+	所有 $\mathcal T$-模型构成一个范畴 $\mathcal T\mathsf {Mod}$, 其中的态射为保持所有运算的映射.
+\end{definition}
+
+\begin{propdef}
+	[label={finitely-generated-free-model}]
+	{(有限生成自由模型)}
+	设 $\mathcal T$ 为代数理论的表现, $n\geq 0$. 记 $T(n)$ 为其中仅涉及 $n$ 个变量 $x_1,\cdots,x_n$ 的项的集合. 在 $T(n)$ 上定义等价关系 $\sim$ 由如下条件生成:
+	\begin{itemize}
+		\item 对于公理 $s=t$, 有 $s\sim t$;
+		\item 对于 $n$ 元运算符号 $f$, 若 $s_i\sim t_i\,(i=1,\cdots,n)$, 则有 $f(s_1,\cdots,s_n)\sim f(t_1,\cdots,t_n)$.
+	\end{itemize}
+	则商集 $F(n):=T(n)/\sim$ 是 \emph{$n$ 个元素生成的自由 $\mathcal T$-模型}, 也即对任意 $\mathcal T$-模型 $M$, 集合映射 $\{x_1,\cdots,x_n\}\to M$ 唯一地延拓为 $\mathcal T$-模型态射 $F(n)\to M$.
+\end{propdef}
+
+由上述命题, 对任意 $\mathcal T$-模型 $M$ 有自然同构
+\[
+\operatorname{Hom}_{\mathcal T\mathsf {Mod}}(F(n),M)\simeq \operatorname{Hom}_{\mathcal T\mathsf {Mod}}(F(1),M)^n.
+\]
+这表明 $F(n)$ 在范畴 $\mathcal T\mathsf {Mod}$ 中同构于 $n$ 个 $F(1)$ 的和. 特别地, $F(0)$ 是 $0$ 个对象的和, 也即 $\mathcal T\mathsf {Mod}$ 的始对象.
+
+\begin{propdef}
+	{(Lawvere 理论及其表现)}
+	设 $\mathcal T$ 是代数理论的表现 (定义 \ref{presentation-of-an-algebraic-theory}). 那么 $\mathcal T\mathsf {Mod}$ 中由有限生成自由模型构成的满子范畴的对偶范畴构成一个 Lawvere 理论 $\mathbb T$, 且有范畴等价\[\mathcal T\mathsf {Mod} \simeq \mathbb T\mathsf {Mod}.\]
+	此时称 $\mathcal T$ 为 $\mathbb T$ 的一个\emph{表现}.
+\end{propdef}
+\begin{proof}
+	首先证明 $\mathbb T$ 为 Lawvere 理论.
+	前面提到 $F(n)$ 在 $\mathcal T\mathsf {Mod}$ 中同构于 $n$ 个 $F(1)$ 的和, 因此 $F(n)$ 在 $\mathbb T$ 中同构于 $n$ 个 $F(1)$ 的积.
+	
+	给定保积函子 $A\colon \mathbb T\to\mathsf {Set}$, 我们构造一个 $\mathcal T$-模型 $M$ 如下.
+	令底层集合 $M=A(F(1))$. 对 $\mathcal T$ 中每个 $n$ 元运算符号 $f$, 有一个元素 $[f(x_1,\cdots,x_n)]\in F(n)$ (方括号表示 $\sim$-等价类), 对应一个 $\mathcal T$-模型态射 $\bar{f}\colon F(1)\to F(n)$, 即对偶范畴 $\mathbb T$ 中的态射 $F(n)\to F(1)$. 而 $A$ 为保积函子, 故 $M^n\simeq A(F(n))$. 定义
+	$$
+	[[f]] := A(\bar f)\colon M^n\simeq A(F(n)) \to A(F(1)) = M.
+	$$
+	下面说明 $M$ 是 $\mathcal T$-模型.
+	对每条公理 $s=t$ (其中仅含有变量 $x_1,\cdots,x_n$),
+	由 $\sim$ 的定义有 $[s]=[t]\in F(n)$, 从而有 $\bar s = \bar t\colon F(1)\to F(n)$, $[[s]]=[[t]]\colon M^n\to M$.
+	
+	反之, 给定 $\mathcal T$-模型 $M$, 我们构造保积函子 $A\colon \mathbb T\to\mathsf {Set}$.
+	令 $A(F(n)) = M^n$, 由积的性质我们只需要指定态射 $F(n)\to F(1)$ 对应的映射 $M^n\to M$.
+	而态射 $F(n)\to F(1)$ 等同于变量 $x_1,\cdots,x_n$ 构成的一个项 (的等价类) $[t]\in F(n)$, 项的取值 $([[x_1]],\cdots,[[x_n]])\mapsto [[t]]$ 便给出了映射 $M^n\to M$. 由 $[[-]]$ 的定义, 这确实给出了一个函子 $\mathbb T\to\mathsf {Set}$.
+	
+	容易说明如上构造的函子性. 它们给出了范畴等价 $\mathcal T\mathsf {Mod} \simeq \mathbb T\mathsf {Mod}$.
+\end{proof}
+
+需要注意的是, 一个 ``代数理论的表现'' $\mathcal T$ 唯一确定了一个 Lawvere 理论, 而一个 Lawvere 理论对应的表现远不是唯一的.
 
 \begin{example}
 	{(群的 Lawvere 理论)}
-	直观上, 群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$ 是由 $m\colon x^2\to x$, $i\colon x\to x$, $e\colon 1\to x$ 以及三者满足的关系 ``自由生成'' 的范畴. 如下是一种具体的构造. 记 $F(n)$ 为 $n$ 个元素生成的自由群,
-	那么 $\mathbb T_{\text{Grp}}$ 可定义为所有 $F(n)$ 在 $\mathsf {Grp}$ 中构成的满子范畴的对偶范畴. 注意到群范畴中 $F(n)$ 与 $F(m)$ 的余积 (群的自由积) 为 $F(n+m)$,
-	而取对偶范畴使得余积变为积, 所以在 $\mathbb T_{\text{Grp}}$ 中有 $F(n) \simeq x^n$ ($x=F(1)$).
+	群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$ 由二元运算 $m$, 一元运算 $i$, 零元运算 $e$ 以及三者满足的关系所表现.
 	
-	设 $A \colon \mathbb T_{\text{Grp}} \to \mathsf {Set}$ 为群理论的一个模型 (即一个群), 记 $G=A(x)$ 为其底集, 我们可以具体写出 $G$ 上的乘法映射;
-	它就是
+	定义 $F(n)$ 为 $n$ 个元素生成的自由群, $\mathbb T_{\text{Grp}}$ 为所有 $F(n)$ 在 $\mathsf {Grp}$ 中构成的满子范畴的对偶范畴. 群范畴中 $F(n)$ 与 $F(m)$ 的余积 (群的自由积) 为 $F(n+m)$, 所以在 $\mathbb T_{\text{Grp}}$ 中有 $F(n) \simeq F(1)^n$.
+	
+	设 $A \colon \mathbb T_{\text{Grp}} \to \mathsf {Set}$ 为保积函子, 记 $G=A(F(1))$, 我们可以具体写出 $G$ 上的乘法映射:
 	$$
-	G\times G = A(x) \times A(x) \simeq A(x^2) \overset{A(m)}{\longrightarrow} A(x) = G,
+	G\times G \simeq A(F(2)) \overset{A(m)}{\longrightarrow} A(F(1)) = G,
 	$$
-	其中 $m \colon x^2 \to x$ 是群同态 $F(1) \to F(2)$, 将 $F(1)$ 的生成元映射到 $F(2)$ 两个生成元的乘积.
+	其中群同态 $F(1) \to F(2)$ 将 $F(1)$ 的生成元映射到 $F(2)$ 两个生成元的乘积.
 \end{example}
 
-我们形象地称对象 $x$ 为理论 $\mathbb T$ 的\emph{游走模型} (walking model), 因为理论 $\mathbb T$ 的任何模型都是 $x$ 在相应范畴中的一个化身.
+我们形象地称对象 $F(1)$ 为理论 $\mathbb T$ 的\emph{游走模型} (walking model), 因为理论 $\mathbb T$ 的任何模型都是 $F(1)$ 在相应范畴中的一个化身.
 例如对于群的理论 $\mathbb T_{\text{Grp}}$, 其在拓扑空间范畴 $\mathsf {Top}$ 中的模型 $\mathbb T_{\text{Grp}} \to \mathsf {Top}$ 即为拓扑群,
 在光滑流形范畴 $\mathsf {Man}$ 中的模型 $\mathbb T_{\text{Grp}} \to \mathsf {Man}$ 即为 Lie 群.
 
-\section{纤维范畴}
+\begin{example}
+	{(格的 Lawvere 理论)}
+	%\todo{Borceux 3.3.5d}
+	格的 Lawvere 理论 $\mathbb T_{\text{Lat}}$ 由二元运算 $\land,\lor$ 以及如下关系所表现:
+	\begin{align*}
+		x\land (y\land z) &= (x\land y)\land z,&
+		x\lor (y\lor z) &= (x\lor y)\lor z,\\
+		x\land y &= y \land x, & x\lor y &= y \lor x,\\
+		x\land x &= x, & x\lor x &= x,\\
+		x\land (x\lor y) &= x, & x\lor (x\land y) &= x.
+	\end{align*}
+\end{example}
+
+\subsection{单子与代数理论}
+
+一个 Lawvere 理论给出了 $\mathsf {Set}$ 上的一个单子, 使得该理论的模型即是对应单子的代数.
+遗忘函子 $\mathbb T\mathsf {Mod}\to\mathsf {Set}$ 总有左伴随, 即 ``一个集合生成的自由 $\mathbb T$-模型''. 这对自由--遗忘伴随生成 $\mathsf {Set}$ 上的单子 $T$, 且使得集合上的 $\mathbb T$-模型结构 (包括其间的态射) 一一对应于 $T$-代数结构.
+单子 $T$ 可以表示为
+\[
+	TX = \coprod_{n\geq 0} \operatorname{Hom}_{\mathbb T}(n,1)\times X^n\Bigg/ \sim,
+\]
+其中 $\sim$ 是由范畴 $\mathbb{N}$ 的投影及对角映射决定的一些需要等同的元素, 例如对于群的理论 $\mathbb T_{\text{Grp}}$,
+考虑 ``对角映射'' $\delta\colon 1\to 2$ 以及 ``乘法'' $m\colon 2\to 1$, 我们需要将 $(m\delta,x)\in \mathbb T_{\text{Grp}}(1,1)\times X$ 等同于 $(m,x,x)\in T_{\text{Grp}}(2,1)\times X^2$.
+若 Lawvere 理论 $\mathbb T$ 具有某个表现 $\mathcal T$,
+那么单子 $T$ 也可由自由模型的构造 (定义 \ref{finitely-generated-free-model}) 得出, 即所有项的集合商掉由公理可证的等价关系. 这与自由群的构造是完全类似的.
+
+\section{纤维范畴与索引范畴}
 
 纤维范畴是 ``相对'' 版本的范畴 (正如概形态射是相对版本的概形), 即一个底范畴的每个对象上有一个范畴 (``纤维'') , 且这些纤维以适当的方式相联系.
 与纤维范畴相近的一个概念是索引范畴 (indexed category).
@@ -1289,6 +1934,7 @@ Lawvere 理论的意图是将一个代数理论的运算记录在范畴 $T$ 的�
 \end{example}
 
 \begin{example}
+	[label={over-category-fibration}]
 	{(俯范畴)}
 	考虑 ``箭头范畴'' $\bullet\longrightarrow\bullet$,
 	前面的例子 $\mathsf {Fam}\to\mathsf {Set}$ 可推广为函子 $t\colon \mathsf C^{\bullet\longrightarrow\bullet}\to\mathsf C$, 将一个箭头对应到它的终点. 此时对象 $c$ 上的纤维正是俯范畴 $\mathsf C/c$, 当 $\mathsf C$ 有拉回时, 对于态射 $f\colon c\to d$ 有函子 $f^*\colon \mathsf C/d \to \mathsf C/c$. 事实上, $t$ 是纤维范畴当且仅当 $\mathsf C$ 有拉回 (见 \cite{CLTT} 命题 1.1.6).
@@ -1325,7 +1971,161 @@ Lawvere 理论的意图是将一个代数理论的运算记录在范畴 $T$ 的�
 	设 $\Sigma$ 为符号表, 定义 $\Sigma$ 的\emph{模型} $M$ 是将类型实现为具体的集合, 将函数符号实现为具体的函数的方法, 详见定义 \ref{sigma-structures-in-category}.
 \end{example}
 
+%在陈述纤维范畴的定义之前, 我们先定义索引范畴.
+在上面的许多例子中我们看到这样的结构: 一个范畴 $\mathsf S$ 的每个对象 $i$ 上各自有一个范畴 $\mathcal C(i)$, 并且这些范畴之间沿着 $\mathsf S$ 的态射存在着联系. 于是我们得到\emph{索引范畴}的概念.
+
+\begin{definition}
+	{(索引范畴)}
+	设 $\mathsf S$ 为范畴. 定义一个 \emph{$\mathsf S$-索引范畴} ($\mathsf {S}$-indexed category) 为一个 $2$-函子%\footnotemark{} 
+	$\mathcal C\colon \mathsf S^{\op}\to\mathcal Cat$, 其中 $\mathsf S$ 视为局部离散 $2$-范畴 (例 \ref{locally-discrete-2-category}). $\mathsf S$-索引范畴构成一个 $2$-范畴 $\mathcal Cat_{\mathsf S}$.
+\end{definition}
+%\footnotetext{由于使用中的索引范畴不是小范畴, 这里的 $\mathcal Cat$ 碰到集合论的大小问题. 人们创造出 ``元 $2$-范畴'' (meta-category) 来绕过这一限制, 但我们暂且不关心.}
+
+\begin{definition}
+	{(Grothendieck 构造)}
+	设 $\mathcal C\colon \mathsf S^{\op}\to\mathcal Cat$ 是 $\mathsf S$-索引范畴. 对于 $\mathsf S$ 的态射 $f\colon i\to j$, 记函子 $\mathcal C(f)\colon \mathcal C(j)\to\mathcal C(i)$ 为 $f^*$, 则由 $2$-函子的定义 (\ref{2-functor}), 对 $f\colon i\to j$, $g\colon j\to k$, 有自然同构 $\gamma_{i,j,k}\colon (gf)^*\overset{\simeq}{\to} f^*g^*$. 定义 $\mathcal C$ 的 \emph{Grothendieck 范畴} $\mathsf G(\mathcal C)$ 如下:
+	\vspace{1em}
+	
+	\begin{minipage}
+		{0.5\textwidth}
+		\begin{itemize}
+			\item 其对象 $(i,A)$ 为 $\mathsf S$ 的对象 $i$ 搭配 $\mathcal C(i)$ 的对象 $A$;
+			\item 态射 $(f,\varphi)\colon (i,A) \to (j,B)$ 为 $\mathsf S$ 的态射 $f\colon i\to j$ 搭配 $\mathcal C(i)$ 的态射 $$\varphi\colon A \to f^*(B).$$
+			\item 态射 $(f,\varphi)\colon (i,A)\to (j,B)$, $(g,\psi)\colon (j,B)\to (k,C)$ 的复合为
+		\end{itemize}
+	\end{minipage}
+	\quad
+	\begin{minipage}
+		{0.4\textwidth}
+		\begin{center}
+			\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+			
+			\begin{tikzpicture}[x=0.6pt,y=0.6pt,yscale=-1,xscale=1]
+				%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+				
+				%Rounded Rect [id:dp7645727072634361] 
+				\draw   (60,57.96) .. controls (60,42.52) and (72.52,30) .. (87.96,30) -- (262.04,30) .. controls (277.48,30) and (290,42.52) .. (290,57.96) -- (290,159.93) .. controls (290,175.38) and (277.48,187.89) .. (262.04,187.89) -- (87.96,187.89) .. controls (72.52,187.89) and (60,175.38) .. (60,159.93) -- cycle ;
+				%Rounded Rect [id:dp04913454848840337] 
+				\draw   (60,251.71) .. controls (60,236.09) and (72.67,223.42) .. (88.29,223.42) -- (261.71,223.42) .. controls (277.33,223.42) and (290,236.09) .. (290,251.71) -- (290,251.71) .. controls (290,267.33) and (277.33,280) .. (261.71,280) -- (88.29,280) .. controls (72.67,280) and (60,267.33) .. (60,251.71) -- cycle ;
+				%Shape: Ellipse [id:dp6766601997173525] 
+				\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (205.79,251.38) .. controls (205.79,249.38) and (207.41,247.76) .. (209.41,247.76) .. controls (211.41,247.76) and (213.03,249.38) .. (213.03,251.38) .. controls (213.03,253.38) and (211.41,255) .. (209.41,255) .. controls (207.41,255) and (205.79,253.38) .. (205.79,251.38) -- cycle ;
+				%Straight Lines [id:da4121051063328982] 
+				\draw    (147.89,251.71) -- (195.89,251.71) ;
+				\draw [shift={(197.89,251.71)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				%Rounded Rect [id:dp07729214311167198] 
+				\draw   (138.68,30) .. controls (149.58,30) and (158.42,38.84) .. (158.42,49.74) -- (158.42,168.16) .. controls (158.42,179.06) and (149.58,187.89) .. (138.68,187.89) -- (138.68,187.89) .. controls (127.78,187.89) and (118.95,179.06) .. (118.95,168.16) -- (118.95,49.74) .. controls (118.95,38.84) and (127.78,30) .. (138.68,30) -- cycle ;
+				%Shape: Ellipse [id:dp389633265007308] 
+				\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (135.39,251.38) .. controls (135.39,249.38) and (137.01,247.76) .. (139.01,247.76) .. controls (141.01,247.76) and (142.63,249.38) .. (142.63,251.38) .. controls (142.63,253.38) and (141.01,255) .. (139.01,255) .. controls (137.01,255) and (135.39,253.38) .. (135.39,251.38) -- cycle ;
+				%Rounded Rect [id:dp15413565880932678] 
+				\draw   (209.74,30) .. controls (220.64,30) and (229.47,38.84) .. (229.47,49.74) -- (229.47,168.16) .. controls (229.47,179.06) and (220.64,187.89) .. (209.74,187.89) -- (209.74,187.89) .. controls (198.84,187.89) and (190,179.06) .. (190,168.16) -- (190,49.74) .. controls (190,38.84) and (198.84,30) .. (209.74,30) -- cycle ;
+				%Shape: Ellipse [id:dp15402457161842187] 
+				\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (135.39,85.59) .. controls (135.39,83.59) and (137.01,81.97) .. (139.01,81.97) .. controls (141.01,81.97) and (142.63,83.59) .. (142.63,85.59) .. controls (142.63,87.59) and (141.01,89.21) .. (139.01,89.21) .. controls (137.01,89.21) and (135.39,87.59) .. (135.39,85.59) -- cycle ;
+				%Shape: Ellipse [id:dp4979251025439946] 
+				\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (206.45,85.59) .. controls (206.45,83.59) and (208.07,81.97) .. (210.07,81.97) .. controls (212.06,81.97) and (213.68,83.59) .. (213.68,85.59) .. controls (213.68,87.59) and (212.06,89.21) .. (210.07,89.21) .. controls (208.07,89.21) and (206.45,87.59) .. (206.45,85.59) -- cycle ;
+				%Shape: Ellipse [id:dp9026796796050416] 
+				\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (135.39,152.7) .. controls (135.39,150.7) and (137.01,149.08) .. (139.01,149.08) .. controls (141.01,149.08) and (142.63,150.7) .. (142.63,152.7) .. controls (142.63,154.7) and (141.01,156.32) .. (139.01,156.32) .. controls (137.01,156.32) and (135.39,154.7) .. (135.39,152.7) -- cycle ;
+				%Straight Lines [id:da2600694132285619] 
+				\draw    (138.68,140.53) -- (138.68,99.11) ;
+				\draw [shift={(138.68,97.11)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				%Straight Lines [id:da9777401765397118] 
+				\draw    (196.68,87.09) -- (162.63,87.09)(196.68,84.09) -- (162.63,84.09) ;
+				\draw [shift={(154.63,85.59)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				%Straight Lines [id:da8835007806054442] 
+				\draw  [dash pattern={on 4.5pt off 4.5pt}]  (148.11,143.9) -- (199.45,96.06) ;
+				\draw [shift={(200.91,94.7)}, rotate = 137.02] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+				
+				% Text Node
+				\draw (311,241) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \mathsf{S}$};
+				% Text Node
+				\draw (311,61) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \mathsf{G}(\mathcal{C})$};
+				% Text Node
+				\draw (115.26,244.2) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle i$};
+				% Text Node
+				\draw (228.42,244.86) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle j$};
+				% Text Node
+				\draw (123,156.6) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle A$};
+				% Text Node
+				\draw (122.2,60.6) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f^{*} B$};
+				% Text Node
+				\draw (205.4,62.2) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle B$};
+				% Text Node
+				\draw (167,256.6) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f$};
+				% Text Node
+				\draw (169,61.4) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f^{*}$};
+				
+			\end{tikzpicture}
+		\end{center}
+	\end{minipage}
+	$$\big(gf,A\overset{\varphi}{\to}f^*B\overset{f^*(\psi)}{\to} f^*g^* C\overset{\gamma^{-1}}{\to} (gf)^* C\big)\colon (i,A)\to (k,C).$$
+	$\gamma$ 的融贯性保证了上述复合的结合律, 使得 $\mathsf G(\mathcal C)$ 构成一个 $1$-范畴.
+	$\mathsf G(\mathcal C)$ 到 $\mathsf S$ 有明显的投影函子 $(i,A)\mapsto i$, 这是一个纤维范畴. 将索引范畴对应到此纤维范畴的过程称为 \emph{Grothendieck 构造}, 它是一个 $2$-函子
+	\[
+	\mathsf G \colon \mathcal Cat_{\mathsf S} \to \mathcal Cat/\mathsf S.
+	\]
+\end{definition}
+
+\begin{example}
+	{(俯范畴作为索引范畴)}
+	设范畴 $\mathsf C$ 有拉回, 即对态射 $f\colon c_1\to c_2$ 有俯范畴之间的函子 $f^*\colon \mathsf C/c_2 \to \mathsf C/c_1$. 进一步, 有 $2$-函子 $\mathsf C^{\op}\to\mathcal Cat$, 将对象 $c$ 对应到俯范畴 $\mathsf C/c$.
+	其 Grothendieck 范畴为 $\mathsf C^{\bullet\to\bullet}$, 见例 \ref{over-category-fibration}.
+\end{example}
+
+Grothendieck 范畴的直观是 ``纤维丛的全空间''. 在一个 Grothendieck 范畴 $\mathsf G(\mathcal C)$ 中, 与 (带联络的) 纤维丛相似地, 我们可以定义\emph{垂直}和\emph{水平}的态射: 态射 $(\operatorname{id}_i,\varphi)$ 是垂直的 (即 ``纤维方向'' 的), 而 $(f,\operatorname{id}_A)$ 是水平的.
+很明显, 任何态射 $(f,\varphi)\colon (i,A) \to (j,B)$ 都可分解为先来一个垂直态射
+$(\operatorname{id}_i,\varphi)$
+后跟一个水平态射 $(f,\operatorname{id}_{f^*B})$.
+
+熟悉几何的读者知道, 一个纤维丛的联络等同于在全空间上对每个点指定一些水平方向. 有了联络, 就可在纤维之间作平行移动. 要在范畴之间做类似的事情, 就需要将水平态射的概念抽象到一般的 ``纤维范畴'' $\pi\colon \mathsf C\to\mathsf S$, 而这将解释纤维范畴定义的动机.
+
+\begin{definition}
+	{(水平态射)}
+	设 $\mathsf C,\mathsf S$ 为 $1$-范畴, $\pi\colon \mathsf C\to\mathsf S$ 为函子.
+	对于态射 $h\colon c'\to c$, 若以下条件成立, 则称之为 $\pi$-\emph{水平态射} (prone morphism, 又称 Cartesian morphism):
+	对任意态射 $k\colon c''\to c$ 以及任意分解 $\pi(k) = \pi(h)x$, 存在唯一的态射 $\ell\colon c''\to c$ 满足 $k=h\ell$ 且 $x=\pi(\ell)$.
+	% https://q.uiver.app/#q=WzAsNixbMSwyLCJcXHBpKGMnKSJdLFsyLDIsIlxccGkoYykiXSxbMCwzLCJcXGJ1bGxldCJdLFsxLDAsImMnIl0sWzAsMSwiYycnIl0sWzIsMCwiYyJdLFswLDEsIlxccGkoaCkiXSxbMiwwLCJ4Il0sWzQsMywiXFxleGlzdHMgISBcXGVsbCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDUsImgiXSxbNCw1LCJrIiwyXSxbMywwLCIiLDIseyJzaG9ydGVuIjp7InNvdXJjZSI6NjAsInRhcmdldCI6MTB9LCJsZXZlbCI6Mn1dLFsyLDEsIlxccGkoaykiLDJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		\& {c'} \& c \\
+		{c''} \\
+		\& {\pi(c')} \& {\pi(c)} \\
+		\bullet
+		\arrow["{\pi(h)}", from=3-2, to=3-3]
+		\arrow["x", from=4-1, to=3-2]
+		\arrow["{\exists ! \ell}", dashed, from=2-1, to=1-2]
+		\arrow["h", from=1-2, to=1-3]
+		\arrow["k"', from=2-1, to=1-3]
+		\arrow[shorten <=19pt, shorten >=3pt, Rightarrow, from=1-2, to=3-2]
+		\arrow["{\pi(k)}"', from=4-1, to=3-3]
+	\end{tikzcd}\]
+\end{definition}
+
+\begin{example}
+	{(向量丛范畴的纤维化的水平态射)}
+	考虑向量丛范畴 $\mathsf {VBun}$ 以及流形范畴 $\mathsf {Man}$, 函子 $\pi\colon \mathsf {VBun} \to \mathsf {Man}$ 将向量丛 $E\to M$ 对应到 $M$.
+	考虑沿映射 $f^*\colon N\to M$ 拉回向量丛 $E\to M$.
+	% https://q.uiver.app/#q=WzAsNixbMSwxLCJOIl0sWzIsMSwiTSJdLFsyLDAsIkUiXSxbMSwwLCJmXipFIl0sWzAsMiwiTCJdLFswLDEsIksiXSxbMCwxLCJmIiwyXSxbMywwXSxbMywyXSxbMiwxXSxbNSw0XSxbNCwxXSxbNSwyXSxbNCwwXSxbNSwzLCJcXGV4aXN0cyAhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		\& {f^*E} \& E \\
+		K \& N \& M \\
+		L
+		\arrow["f"', from=2-2, to=2-3]
+		\arrow[from=1-2, to=2-2]
+		\arrow[from=1-2, to=1-3]
+		\arrow[from=1-3, to=2-3]
+		\arrow[from=2-1, to=3-1]
+		\arrow[from=3-1, to=2-3]
+		\arrow[from=2-1, to=1-3]
+		\arrow[from=3-1, to=2-2]
+		\arrow["{\exists !}", dashed, from=2-1, to=1-2]
+	\end{tikzcd}\]
+	对任意如图向量丛态射 $K\to E$, 由拉回的泛性质存在唯一的向量丛态射 $K\to f^*E$ 使上图交换.
+	这说明向量丛的拉回构成 $\pi\colon \mathsf {VBun} \to \mathsf {Man}$ 的水平态射.
+\end{example}
+
 \begin{definition}
 	{(纤维范畴)}
-	
+	对于函子 $\pi\colon \mathsf C\to \mathsf S$,
+	若如下条件成立, 则称之为\emph{纤维范畴}:
+	对 $\mathsf C$ 的任意对象 $c$ 以及 $\mathsf S$ 中任意态射 $f\colon s\to \pi(c)$,
+	都存在 $\pi$-水平态射 $\widetilde f\colon c'\to c$ 使得 $\pi(\widetilde f)= f$.
+	换言之, \emph{若一个态射 $f$ 的终点有提升, 则该态射有水平提升 $\widetilde f$}.
 \end{definition}

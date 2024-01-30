@@ -430,6 +430,7 @@ $\begin{tikzcd}[ampersand replacement=\&,sep=small]
 \end{example}
 
 \begin{prop}
+	[label={singleton-map-injection}]
 	{(单元集映射是单射)}
 	对任意对象 $X$, 单元集映射 $\{-\}_X\colon X \to \Omega^X$ 是单射.
 \end{prop}
@@ -976,6 +977,8 @@ $$
 
 注意上面没有列出 $0^X$, 我们仅能得到两个特例 $0^0\simeq 1, 0^1\simeq 0$. 后面将会讲到, 当 $X$ 代表真值时, $0^X$ 代表 ``非 $X$'' (定义 \ref{Heyting-algebra-definition}).
 
+
+
 \begin{prop}
 	[label={topos-strict-initial-object}]
 	{(\topos{}具有严格始对象)}
@@ -1078,6 +1081,7 @@ $$
 
 
 \begin{definition}
+	[label={kernel-pair}]
 	{(核偶与余核偶)}
 	设范畴 $\mathsf C$ 存在所需的拉回或推出. 定义
 	\begin{itemize}
@@ -1462,8 +1466,8 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \begin{definition}
 	[label={Heyting-algebra-definition}]
 	{(Heyting 代数)}
-	若一个偏序集作为范畴具有有限积和余积, 且为积闭范畴, 则称之为 \emph{Heyting 代数}.
-	换言之, Heyting 代数 $H$ 中有有限交与有限并 (包括最大元 $\top$ 和最小元 $\bot$), 且有一种运算 $\Rightarrow\colon H\times H\to H$, 满足
+	若一个偏序集作为范畴具有有限积和有限余积, 且为积闭范畴, 则称之为 \emph{Heyting 代数}.
+	换言之, Heyting 代数 $H$ 中有有限交 $\land$ 与有限并 $\lor$ (包括最大元 $\top$ 和最小元 $\bot$), 且有一种运算 $\Rightarrow\colon H\times H\to H$, 满足
 	$$
 	z \leq (x\Rightarrow y)\quad \text{当且仅当}\quad (z\wedge x) \leq y.
 	$$
@@ -1471,6 +1475,8 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	$$
 	\neg x = (x\Rightarrow \bot).
 	$$
+	
+	Heyting 代数的同态是保持有限积, 有限余积和指数对象的函子, 也即保持上述所有结构 $\land,\lor,\top,\bot,\Rightarrow,\neg$ 的偏序集映射.
 \end{definition}
 
 \begin{remark}
@@ -1499,7 +1505,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	在 Heyting 代数中,
 	\begin{enumerate}
 		[(1)]
-		\item $\big(x\Rightarrow (y\Rightarrow z)\big) = (x\land y)\Rightarrow z$;
+		\item $\big(x\Rightarrow (y\Rightarrow z)\big) = \big((x\land y)\Rightarrow z\big)$;
 		\item $((x\lor y)\Rightarrow z)=\big((x\Rightarrow z)\land(y\Rightarrow z)\big)$;
 		\item $\big(x\Rightarrow (y\land z)\big)= (x\Rightarrow y)\land (x\Rightarrow z)$.
 	\end{enumerate}
@@ -1757,6 +1763,32 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	其中 $(*)$ 使用了如下事实: $W\land U$ 作为 $W$ 的子对象, 其特征函数为 $W\to X\overset{\chi_U}{\to}\Omega$.
 \end{proof}
 
+关于子对象的并还有如下实用的结论.
+\begin{prop}
+	[label={union-of-disjoint-subobjects}]
+	{}
+	在\topos{} $\mathsf C$ 中, 设 $i\colon U\to X, j \colon V \to X$ 为不相交的子对象 (即 $U\land V = 0$).
+	那么两者的并为 $(i,j)\colon U+V\to X$.
+\end{prop}
+\begin{proof}
+	考虑沿 $i\colon U\to X$ 的拉回 $i^*\mathsf C/X \to \mathsf C/U$, 有 $i^*(U) = U, i^*(V) = 0$.
+	由拉回保持和, 知 $i^*(U+V) = U$, 即下图为拉回.
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJVIl0sWzAsMCwiVSJdLFsxLDEsIlgiXSxbMSwwLCJVK1YiXSxbMSwwLCJcXG9wZXJhdG9ybmFtZXtpZH1fVSIsMl0sWzAsMiwiaSIsMl0sWzEsMywiXFxpb3RhXzEiXSxbMywyLCIoaSxqKSJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		U \& {U+V} \\
+		U \& X
+		\arrow["{\operatorname{id}_U}"', from=1-1, to=2-1]
+		\arrow["i"', from=2-1, to=2-2]
+		\arrow["{\iota_1}", from=1-1, to=1-2]
+		\arrow["{(i,j)}", from=1-2, to=2-2]
+	\end{tikzcd}\]
+	此图亦可理解为, 对于沿 $(i,j)\colon U+V\to X$ 的拉回 $(i,j)^*\colon \mathsf C/X \to \mathsf C/(U+V)$, 有
+	$(i,j)^* (U) = U$.
+	同理, $(i,j)^*(V)=V$.
+	由拉回保持和, 知 $(i,j)^*(U+V) = U+V$.
+	而这说明 $U+V\to X$ 为子对象 (命题 \ref{mono-epi-pullback-pushout}), 从而为两个子对象 $U,V$ 的并.
+\end{proof}
+
 \subsection{自然数对象}
 
 \begin{definition}
@@ -1801,52 +1833,198 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
     有限集范畴 $\mathsf {Fin}$ 中不存在自然数对象.
 \end{example}
 
+\subsection{无交和}
+
+%SGL p195
+
+% SGL IV.10.4, IV.10.5
+
+在\topos{}中一个重要而不平凡的性质是 ``和无交''.
+%为了证明这一性质, 我们使用类似同调代数中内射消解的方法, 将\topos{}中的对象嵌入内射对象.
+%
+%\begin{definition}
+%	{(内射对象)}
+%	设 $\mathsf C$ 为范畴, 称对象 $X$ 为\emph{内射对象}是指
+%	$\operatorname{Hom}(-,X)\colon \mathsf C\to\mathsf {Set}$ 将单射变为满射.
+%	换言之, 对任意子对象 $V\hookrightarrow U$,
+%	态射 $V\to X$ 总能延拓为 $U\to X$.
+%\end{definition}
+%
+%\begin{prop}
+%	{}
+%	\topos{}中任何对象都可嵌入内射对象.
+%\end{prop}
+%\begin{proof}
+%	证明分三步.
+%	\begin{itemize}
+%		\item $\Omega$ 是内射对象.
+%		这是因为, 对任意子对象 $V\to U$,
+%		态射 $\chi\colon V\to\Omega$ 等同于子对象 $W\to V$,
+%		从而也可视为 $U$ 的子对象, 其特征函数即为 $\chi$ 的延拓.
+%		\item 任意幂对象 $PX$ 是内射对象.
+%		这是因为, 态射 $V\to PX$ 等同于态射 $V\times X\to\Omega$, 而 $\Omega$ 是内射对象.
+%		\item 对任意对象 $X$, 有嵌入 $X\hookrightarrow PX$.
+%		这是命题 \ref{singleton-map-injection}.
+%	\end{itemize}
+%\end{proof}
+%
+
+\begin{prop}
+	{}
+	在\topos{}中, 设下图为\emph{推出}, 且 $f$ 为单射,
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzAsMSwiWSJdLFsxLDAsIloiXSxbMSwxLCJXIl0sWzAsMSwiZiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsMiwiZSJdLFsyLDMsImciXSxbMSwzLCJoIiwyXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		X \& Z \\
+		Y \& W
+		\arrow["f"', hook, from=1-1, to=2-1]
+		\arrow["g", from=1-1, to=1-2]
+		\arrow["i", from=1-2, to=2-2]
+		\arrow["j"', from=2-1, to=2-2]
+	\end{tikzcd}\]
+	那么 $i$ 亦为单射, 且该图同时为拉回.
+\end{prop}
+\begin{proof}
+	由 $f$ 为单射, 知 $(f,g)\colon X\to Y\times Z$ 为单射,
+	设其对应映射 $h\colon Y\to PZ$.
+	我们首先说明
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzAsMSwiWSJdLFsxLDAsIloiXSxbMSwxLCJQWiJdLFswLDEsImYiLDJdLFsxLDMsImgiLDJdLFswLDIsImciXSxbMiwzLCJcXHstXFx9X1oiXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		X \& Z \\
+		Y \& PZ
+		\arrow["f"', from=1-1, to=2-1]
+		\arrow["h"', from=2-1, to=2-2]
+		\arrow["g", from=1-1, to=1-2]
+		\arrow["{\{-\}_Z}", from=1-2, to=2-2]
+	\end{tikzcd}\]
+	为拉回. 其中 $\{-\}_Z$ 是 ``单元集'' 映射 (定义 \ref{singleton}). 这是因为自然同构 $\operatorname{Hom}(-,PZ)\simeq\operatorname{Sub}(-\times Z)$ 以及有如下的子对象的拉回 (斜向箭头为子对象).
+		% https://q.uiver.app/#q=WzAsNixbMiwxLCJaXFx0aW1lcyBaIl0sWzEsMiwiWVxcdGltZXMgWiJdLFsxLDEsIlhcXHRpbWVzIFoiXSxbMSwwLCJaIl0sWzAsMCwiWCJdLFswLDEsIlgiXSxbMiwxLCJmXFx0aW1lc1xcb3BlcmF0b3JuYW1le2lkfV9aIl0sWzIsMCwiZ1xcdGltZXNcXG9wZXJhdG9ybmFtZXtpZH1fWiIsMl0sWzMsMCwiXFxEZWx0YV9aIiwxXSxbNCwyLCIoXFxvcGVyYXRvcm5hbWV7aWR9X1gsZykiLDFdLFs0LDMsImciXSxbNSwxLCIoZixnKSIsMV0sWzQsNSwiXFxvcGVyYXRvcm5hbWV7aWR9X1giLDJdXQ==
+		\[\begin{tikzcd}[ampersand replacement=\&]
+			X \& Z \\
+			X \& {X\times Z} \& {Z\times Z} \\
+			\& {Y\times Z}
+			\arrow["{f\times\operatorname{id}_Z}", from=2-2, to=3-2]
+			\arrow["{g\times\operatorname{id}_Z}"', from=2-2, to=2-3]
+			\arrow["{\Delta_Z}"{description}, from=1-2, to=2-3]
+			\arrow["{(\operatorname{id}_X,g)}"{description}, from=1-1, to=2-2]
+			\arrow["g", from=1-1, to=1-2]
+			\arrow["{(f,g)}"{description}, from=2-1, to=3-2]
+			\arrow["{\operatorname{id}_X}"', from=1-1, to=2-1]
+		\end{tikzcd}\]
+	然后考虑下图. 由 $\{-\}_Z$ 为单射, 知 $i$ 为单射. 由外圈为拉回知原图亦为拉回.
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		X \& Z \\
+		Y \& W \\
+		\&\& PZ
+		\arrow["f"', hook, from=1-1, to=2-1]
+		\arrow["g", from=1-1, to=1-2]
+		\arrow["i", from=1-2, to=2-2]
+		\arrow["j"', from=2-1, to=2-2]
+		\arrow["h"', bend right, from=2-1, to=3-3]
+		\arrow["{\{-\}_Z}", bend left, from=1-2, to=3-3]
+		\arrow[dashed, from=2-2, to=3-3]
+	\end{tikzcd}\]
+\end{proof}
+
+考虑\topos{}中的单射 $0\to X$, 我们得到如下推论.
+\begin{prop}
+	[label={sums-are-disjoint}]
+	{(和无交)}
+	对于\topos{}中任意两个对象 $X,Y$, 推出图
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIwIl0sWzAsMSwiWCJdLFsxLDAsIlkiXSxbMSwxLCJYK1kiXSxbMCwxXSxbMSwzXSxbMCwyXSxbMiwzXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		0 \& Y \\
+		X \& {X+Y}
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=2-1, to=2-2]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=2-2]
+	\end{tikzcd}\]
+	同时为拉回, 且图中态射均为单射. 换言之, $X,Y$ 作为 $X+Y$ 的子对象不相交.
+\end{prop}
+
+\begin{prop}
+	{(\topos{}为广延范畴)}
+	对于\topos{} $\mathsf C$ 中任意两个对象 $X,Y$, 典范的函子
+		\[
+		\mathsf C/X \times \mathsf C/Y \to \mathsf C/(X+Y)
+		\]
+	为等价.
+	人们称满足该性质的范畴为\emph{广延范畴} (extensive category).
+\end{prop}
+
+\begin{proof}
+	对俯范畴 $\mathsf C/(X+Y)$ 的对象 $f\colon Z\to (X+Y)$,
+	令 $Z_1=f^*(X)$, $Z_2=f^*(Y)$. 由于拉回保持和,
+	有 $Z=Z_1+Z_2$.
+\end{proof}
 \subsection{Boole \topos{}与选择公理}
 
 \label{Boolean-topos}
 
-\topos{}是类似于集合范畴的范畴, 而 Boole \topos{}比一般的\topos{} ``更像'' 集合范畴.\footnote{我尊敬的一位同学 Trebor 提醒大家注意 Boole 不是 Bool.}
+\topos{}是类似于集合范畴的范畴, 而 Boole \topos{}由于排中律的存在而比一般的\topos{} 更像是 (经典逻辑意义下的) 集合范畴.\footnote{我尊敬的一位同学 Trebor 提醒大家注意 Boole 不是 Bool. 后者只是一个常见缩写.}
+
+\begin{definition}
+	[label={Boolean-algebra}]
+	{(Boole 代数)}
+	满足排中律
+	$\neg\neg x = x$
+	(或等价地 $x\lor\neg x = \top$)
+	的 Heyting 代数称为 \emph{Boole 代数}.
+	Boole 代数的同态即为对应的 Heyting 代数的同态.
+\end{definition}
 
 % Boole 代数, SGL P270, 为 Cohen 做铺垫
 
-\begin{definition}
+\begin{propdef}
 	{(Boole \topos{})}
-	对于\topos{} $\mathsf C$, 若子对象分类子 $\Omega$ 是 $\mathsf C$ 的内蕴 Boole 代数, 则称之为 \emph{Boole \topos{}} (Boolean topos).
-\end{definition}
+	对于\topos{} $\mathsf C$, 如下条件等价.
+	\begin{enumerate}[(1)]
+		\item 子对象分类子 $\Omega$ 是 $\mathsf C$ 的内蕴 Boole 代数, 即\emph{非}运算 $\neg\colon \Omega\to\Omega$ 满足 $\neg\neg=\operatorname{id}_{\Omega}$, $\lor\circ (\operatorname{id}_{\Omega},\neg) = \top_{\Omega}$;
+		\item (``排中律'') 对任意对象 $X$, $\operatorname{Sub}(X)$ 为 Boole 代数, 即对任意子对象 $U\to X$, 有 $\neg\neg U = U$, $U\vee \neg U = X$;
+		\item 态射 $(\top,\bot)\colon 1+1\to\Omega$ 为同构.
+	\end{enumerate}
+	称满足上述条件的\topos{}为 \emph{Boole \topos{}} (Boolean topos).
+\end{propdef}
+
+
+\begin{proof}
+	由米田引理, $(1)$ 等价于 $(2)$.
+	\begin{itemize}
+		\item $(2)\Rightarrow (3)$.
+		由于 $\top,\bot\colon 1\to\Omega$ 是两个不相交的子对象,
+		两者的并为 $(\top,\bot)\colon 1+1\to\Omega$ (命题 \ref{union-of-disjoint-subobjects}).
+		假设排中律 $(2)$ 成立, 那么子对象 $\top,\bot\colon 1\to\Omega$ 的并等于 $\Omega$.
+		\item $(3)\Rightarrow (1)$.
+		条件 $(3)$ 说的正是 $1+1$ 为子对象分类子, 而 $\top\colon 1\to 1+1$ 为万有子对象.
+		此时, 非运算 $\neg\colon 1+1$ 不过是交换两个分量.
+	\end{itemize}
+\end{proof}
 
 \begin{example}
 	{}
 	$\mathsf {Set}\times\mathsf {Set}$ 是 Boole \topos{}.
 \end{example}
 
-\begin{prop}
-	{}
-	对于\topos{} $\mathsf C$, 如下条件等价.
-	\begin{itemize}
-		\item $\mathsf C$ 是 Boole \topos{};
-		\item \emph{非}运算 $\neg\colon \Omega\to\Omega$ 满足 $\neg\neg=\operatorname{id}$;
-		\item 对任意对象 $X$, $\operatorname{Sub}(X)$ 为 Boole 代数;
-		\item (``排中律'') 对任意子对象 $U\to X$, 有 $U\vee \neg U = X$;
-		\item $\top,\bot\colon 1\to\Omega$ 共同决定了一个同构 $1+1\to\Omega$.
-	\end{itemize}
-\end{prop}
-
-%\begin{proof}
-%	
-%\end{proof}
-
 \begin{remark}
 	{(Boole 与二值性无关)}
-	注意 Boole \topos{}中尽管有 ``排中律'' 以及 $1+1\simeq\Omega$, 却\emph{不一定只有两个真值}. $\mathsf {Set}\times\mathsf {Set}$ 就是一例. 反过来, 只有两个真值的\topos{}也不一定是 Boole \topos{}.
+	注意 Boole \topos{}中尽管有 ``排中律'', 但不一定只有两个真值 (后者称为\topos{}的\emph{二值性}). 例如 $\mathsf {Set}\times\mathsf {Set}$ 是 Boole 的, 但有 $4$ 个真值. 反过来, 只有两个真值的\topos{}也不一定是 Boole \topos{}.
 \end{remark}
+
+为了陈述选择公理, 我们需要投射对象的概念. 它与同调代数中的概念类似.
+
+\begin{definition}
+	{(投射对象)}
+	设 $\mathsf C$ 为范畴, 称对象 $X$ 为\emph{投射对象}是指
+	$\operatorname{Hom}(X,-)\colon \mathsf C\to\mathsf {Set}$ 保持满射.
+\end{definition}
 
 \begin{propdef}
 	{(选择公理)}
 	设 $\mathsf C$ 为范畴,
 	那么以下条件等价,
 	\begin{itemize}
-		\item $\mathsf C$ 的每个对象 $Y$ 都满足 $\operatorname{Hom}(Y,-)\colon \mathsf C\to\mathsf {Set}$ 保持满射; 此时我们称 $Y$ 是\emph{投射}的. (熟悉同调代数的读者会知道这个名字.)
-		\item $\mathsf C$ 中的每个满射都存在截面, 即对任意满射 $p\colon X\to I$ (类比于 ``集合族''), 存在 $s\colon I\to X$ 使得 $ps=\operatorname{id}_I$ (``在集合族的每个成员中选择一个元素'').
+		\item $\mathsf C$ 的每个对象都是投射对象.
+		\item $\mathsf C$ 中的每个满射都存在截面, 即对任意满射 $p\colon X\to I$ (类比于 ``以 $I$ 为指标的集合族''), 存在 $s\colon I\to X$ 使得 $ps=\operatorname{id}_I$ (``在集合族的每个成员中选择一个元素'').
 	\end{itemize}
 	称上述条件为\emph{选择公理}.
 \end{propdef}
@@ -1980,7 +2158,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 $\Pi_X(f)$ 是 ``$f$ 的截面的集合'', 所以内蕴选择公理是说满射在某种内蕴的意义上有截面.
 
 \begin{prop}
-	{(Diaconescu 定理)}
+	{(Diaconescu)}
 	满足内蕴选择公理的\topos{}一定是 Boole 的.
 \end{prop}
 
@@ -2012,11 +2190,25 @@ $\Pi_X(f)$ 是 ``$f$ 的截面的集合'', 所以内蕴选择公理是说满射�
 	故 $f$ 等化 $si_1,si_2$ 等价于 $f$ 等化 $tsi_1,tsi_2$.
 	这说明 $(U\hookrightarrow X)=\operatorname{eq}(tsi_1,tsi_2\colon X\rightrightarrows 1+1)$.
 	
-	由命题 \ref{IAC-technical-lemma}, 存在满射 $S\twoheadrightarrow 1$ 使得 $S^*(X\sqcup X)\to S^*(X\sqcup_U X)$ 有截面.
+	我们说明若子对象 $U\to X$ 是两个映射 $f,g\colon X\to 1+1$ 的等化子, 则 $U\lor\neg U = X$. 考虑下图, 其中 $1_\top,1_\bot$ 均代表终对象 $1$,
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		U \& {1_{\top}+1_{\bot}} \& 1 \\
+		X \& {(1_\top+1_\bot)\times (1_\top+1_\bot)} \& {1_{\top}+1_{\bot}}
+		\arrow["{(f,g)}"', from=2-1, to=2-2]
+		\arrow["\Delta", from=1-2, to=2-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow["\top", from=1-3, to=2-3]
+		\arrow[from=1-2, to=1-3]
+		\arrow["\delta"', from=2-2, to=2-3]
+	\end{tikzcd}\]
+	$U$ 为等化子等价于左边方块为拉回. 而由于和无交 (\ref{sums-are-disjoint}),
+	图中的 $\Delta$ 作为 $(1_\top+1_\bot)\times (1_\top+1_\bot)$
+	的子对象满足排中律, 也即右边方块为拉回.
+	这意味着大长方形为拉回, 故 $U$ 满足 $U\lor \neg U = X$.
 	
-	\todo{}
-	由于拉回是子对象 Heyting 代数的同态 (命题 \ref{subobject-lattice-Heyting-algebra}),
-	
+	上述讨论是在满射 $(X\sqcup X) \to (X\sqcup_U X)$ 有截面的前提下进行的. 但是由命题 \ref{IAC-technical-lemma}, 存在满射 $S\twoheadrightarrow 1$ 使得 $S^*(X\sqcup X)\to S^*(X\sqcup_U X)$ 有截面. 而拉回是子对象 Heyting 代数的同态 (命题 \ref{subobject-lattice-Heyting-algebra}),
+	所以一般情况下也有 $U\lor \neg U = X$.
 \end{proof}
 
 另外, Bauer 的文章 (讲座) \cite{FSCM} 给出了 (外蕴) 选择公理推出排中律的一种证明.

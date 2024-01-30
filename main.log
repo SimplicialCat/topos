@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  21 JAN 2024 02:14
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  30 JAN 2024 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1233,83 +1233,84 @@ LaTeX Warning: Label `sheaf-condition' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 99.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 99.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 99.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 99.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 99.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 99.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 99.
-LaTeX Font Info:    Redeclaring math accent \check on input line 99.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 99.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 99.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 99.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 99.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 99.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 109.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 109.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 109.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 109.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 109.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 109.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 109.
+LaTeX Font Info:    Redeclaring math accent \check on input line 109.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 109.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 109.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 109.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 109.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 99.
+(Font)              `operators' in the math version `normal' on input line 109.
+
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 99.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 109.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 99.
+(Font)              `operators' in the math version `bold' on input line 109.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 99.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 109.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 99.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 99.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 99.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 99.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 99.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 109.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 99.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 99.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 99.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 99.
-Package hyperref Info: Link coloring OFF on input line 99.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 109.
+Package hyperref Info: Link coloring OFF on input line 109.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1363,28 +1364,28 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 99.
-Package biblatex Info: Reference segment=0 on input line 99.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 102
+Package biblatex Info: Reference section=0 on input line 109.
+Package biblatex Info: Reference segment=0 on input line 109.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 112
 .
 
 (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 102
+LaTeX Font Info:    Trying to load font information for U+msb on input line 112
 .
 
 (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
 2.
 
 (d:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-02.
+12.
 
 (d:/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
@@ -1413,7 +1414,7 @@ Chapter 0.
 [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
 
  []
 
@@ -1444,25 +1445,25 @@ Package fontspec Info: Font family 'MicrosoftYaHei(0)' created for font
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
 
  []
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 21.
+(Font)              size <8> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 21.
+(Font)              size <8> substituted on input line 22.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
 
  []
 
@@ -1531,7 +1532,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
 [24]
-Underfull \hbox (badness 1226) in paragraph at lines 1039--1040
+Underfull \hbox (badness 1226) in paragraph at lines 1042--1043
 []\TU/SimSun(0)/m/n/10.53937 对 意 象 $[]$ 中 的 态 射 $\OML/cmm/m/it/10.53937 f [] []
  X \OMS/cmsy/m/n/10.53937 ! \OML/cmm/m/it/10.53937 Y$\TU/lmr/m/n/10.53937 , $\O
 T1/cmr/m/n/10.53937 ^^E[] [] [] []/\OML/cmm/m/it/10.53937 X \OMS/cmsy/m/n/10.53
@@ -1540,55 +1541,47 @@ T1/cmr/m/n/10.53937 ^^E[] [] [] []/\OML/cmm/m/it/10.53937 X \OMS/cmsy/m/n/10.53
  []
 
 [25] [26] [27] [28] [29] [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1375--1376
+Underfull \hbox (badness 10000) in paragraph at lines 1379--1380
 
  []
 
-[31] [32] [33] [34] [35]
-Underfull \vbox (badness 4254) has occurred while \output is active []
+[31] [32]
+Underfull \vbox (badness 2698) has occurred while \output is active []
 
- [36]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37]
-[38] [39]
+ [33]
+[34] [35] [36] [37] [38] [39] [40] [41]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1932.
+(amsmath)                 on input line 2110.
 
-[40]) (./loc.tex [41] [42
-
-]
+[42] [43]) (./loc.tex [44]
 Chapter 2.
-[43] [44]
-Overfull \hbox (14.8822pt too wide) in paragraph at lines 106--108
-[]\TU/SimSun(0)/m/n/10.53937 在 位 格 的 层 面\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/
-n/10.53937 位 象 $\OML/cmm/m/it/10.53937 X$ \TU/SimSun(0)/m/n/10.53937 的 一 个 点 $\
-OML/cmm/m/it/10.53937 p [] [] \OT1/cmr/m/n/10.53937 1 \OMS/cmsy/m/n/10.53937 ! 
-\OML/cmm/m/it/10.53937 X$ \TU/SimSun(0)/m/n/10.53937 是 保 持 有 限 交 与 任 意 并 的 态 射 
-$\OML/cmm/m/it/10.53937 p[] [] [] \OMS/cmsy/m/n/10.53937 O\OT1/cmr/m/n/10.53937
- (\OML/cmm/m/it/10.53937 X\OT1/cmr/m/n/10.53937 ) \OMS/cmsy/m/n/10.53937 !
- []
+[45
 
-[45] [46] [47]
-Underfull \hbox (badness 10000) in paragraph at lines 246--246
+] [46] [47]
+Underfull \vbox (badness 2351) has occurred while \output is active []
 
- []
+ [48]
+[49] [50] [51] [52]
+Underfull \vbox (badness 4108) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 246--246
+ [53]
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
 
  []
 
-[48] [49] [50]) (./Gro.tex [51] [52
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
-]
+ []
+
+[55] [56] [57] [58] [59]) (./Gro.tex [60]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
@@ -1610,7 +1603,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--13
 
  []
 
-[53]
+[61
+
+]
 
 Package fontspec Info: Could not resolve font "IPAexMincho/BI" (it probably
 (fontspec)             doesn't exist).
@@ -1634,11 +1629,11 @@ Package fontspec Info: Font family 'IPAexMincho(0)' created for font
 (fontspec)             <->"IPAexMincho/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [54] [55] [56] (./figure-sieve.tex) [57]
+ [62] [63] [64] (./figure-sieve.tex) [65]
 Underfull \vbox (badness 3989) has occurred while \output is active []
 
- [58]
-[59] [60] [61]
+ [66]
+[67] [68] [69]
 Overfull \hbox (32.25912pt too wide) in paragraph at lines 489--490
 []\TU/lmr/m/n/10.53937 “\TU/SimSun(0)/m/n/10.53937 覆 盖 结 构\TU/lmr/m/n/10.53937 
 ” \TU/SimSun(0)/m/n/10.53937 是 从 \TU/lmr/m/it/10.53937 Grothendieck \TU/SimSun(
@@ -1646,16 +1641,16 @@ Overfull \hbox (32.25912pt too wide) in paragraph at lines 489--490
  件\TU/lmr/m/n/10.53937 . Grothendieck
  []
 
-[62] [63] [64] [65]
+[70] [71] [72] [73]
 Underfull \vbox (badness 4217) has occurred while \output is active []
 
- [66]
-[67]
+ [74]
+[75]
 Underfull \vbox (badness 5119) has occurred while \output is active []
 
- [68]
-[69] [70] [71] [72]
-Overfull \hbox (7.20825pt too wide) in paragraph at lines 1027--1033
+ [76]
+[77] [78] [79] [80]
+Overfull \hbox (7.20825pt too wide) in paragraph at lines 1028--1034
 [] []\TU/SimSun(0)/b/n/10.53937 第 一 个 复 合[] \TU/SimSun(0)/m/n/10.53937 对 任 意 平 
 展 映 射 $\OML/cmm/m/it/10.53937 p [] [] Y \OMS/cmsy/m/n/10.53937 ! \OML/cmm/m/it/
 10.53937 X$ \TU/SimSun(0)/m/n/10.53937 与 截 面 $\OML/cmm/m/it/10.53937 s \OMS/cms
@@ -1667,12 +1662,12 @@ t/10.53937 ^^Q$ \TU/SimSun(0)/m/n/10.53937 的 定 义 有 $\OT1/cmr/m/n/10.5393
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1041--1042
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1043
 
  []
 
-[73] [74] [75] [76]
-Overfull \hbox (5.3899pt too wide) in paragraph at lines 1311--1312
+[81] [82] [83] [84]
+Overfull \hbox (5.3899pt too wide) in paragraph at lines 1312--1313
 []\TU/SimSun(0)/m/n/10.53937 态 射 $\OML/cmm/m/it/10.53937 G \OMS/cmsy/m/n/10.539
 37 ! \OML/cmm/m/it/10.53937 f[]F$ \TU/SimSun(0)/m/n/10.53937 按 定 义 就 是 与 限 制 映 
 射 相 容 的 映 射 族 $[]\OML/cmm/m/it/10.53937 ^^X[] [] [] G\OT1/cmr/m/n/10.53937 (\OM
@@ -1682,15 +1677,15 @@ m/it/10.53937 F\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 f[]\OT1/cmr/m/n/10
 37 .
  []
 
-[77]
+[85]
 Underfull \vbox (badness 2277) has occurred while \output is active []
 
- [78]
-[79] [80] [81]
+ [86]
+[87] [88] [89]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [82]
-[83] [84] [85] [86] [87]) (./lan.tex [88]
+ [90]
+[91] [92] [93] [94] [95]) (./lan.tex [96]
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
@@ -1702,7 +1697,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--7
 
  []
 
-[89
+[97
 
 ]
 
@@ -1713,35 +1708,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.69003pt}.
 
-[90] [91] (./NSA.tex
+[98] [99] (./NSA.tex
 Underfull \vbox (badness 2134) has occurred while \output is active []
 
- [92])
-(./eff.tex [93]
+ [100])
+(./eff.tex [101]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [94])
+ [102])
 (./SDG.tex
 Underfull \vbox (badness 3098) has occurred while \output is active []
 
- [95]
+ [103]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [96]
+ [104]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 105
 .
 
 (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [97]
+) [105]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [98]
-[99] [100] [101]
+ [106]
+[107] [108] [109]
 Underfull \vbox (badness 1297) has occurred while \output is active []
 
- [102]
-[103]) (./Bohr.tex
+ [110]
+[111]) (./Bohr.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
 
  []
@@ -1756,15 +1751,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[104] [105] [106]
+[112] [113] [114]
 Underfull \vbox (badness 1571) has occurred while \output is active []
 
- [107])
+ [115])
 (./Cohen.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [108])
-(./condensed.tex)) (./cla.tex [109] [110
+ [116])
+(./condensed.tex)) (./cla.tex [117] [118
 
 ]
 Chapter 5.
@@ -1783,7 +1778,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
-[111] [112]
+[119] [120]
 Underfull \hbox (badness 10000) in paragraph at lines 85--85
 
  []
@@ -1798,12 +1793,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
-[113] [114]
+[121] [122]
 Underfull \vbox (badness 6252) has occurred while \output is active []
 
- [115])
-(./higher.tex [116]
+ [123])
+(./rel.tex [124]
 Chapter 6.
+) (./higher.tex [125
+
+] [126
+
+]
+Chapter 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
 
@@ -1839,9 +1840,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 13.
 
-[117
-
-] [118] [119] [120] [121] [122] [123] [124] [125]
+[127] [128] [129] [130] [131] [132] [133] [134] [135]
 Underfull \hbox (badness 10000) in paragraph at lines 457--457
 
  []
@@ -1868,7 +1867,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 473.
 
-[126]
+[136]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 499.
@@ -1896,12 +1895,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Underfull \vbox (badness 1708) has occurred while \output is active []
 
- [127])
-(./cohesion.tex [128]
-Chapter 7.
-[129
+ [137])
+(./cohesion.tex [138]
+Chapter 8.
+[139
 
-]) (./cat-appendix.tex [130]
+]) (./cat-appendix.tex [140]
 附录 A.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1911,43 +1910,29 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-[131
+[141
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [132]
-[133]
-Underfull \vbox (badness 2213) has occurred while \output is active []
+ [142]
+[143] [144]
+Underfull \hbox (badness 5388) in paragraph at lines 304--305
+[]\TU/SimSun(0)/m/n/10.53937 对 $\OMS/cmsy/m/n/10.53937 C$ \TU/SimSun(0)/m/n/10.
+53937 的 每 两 个 对 象 $\OML/cmm/m/it/10.53937 A; B$\TU/lmr/m/n/10.53937 , \TU/SimSu
+n(0)/m/n/10.53937 有 一 个 函 子 $\OML/cmm/m/it/10.53937 F[] [] []  [][]\OT1/cmr/m/n
+/10.53937 (\OML/cmm/m/it/10.53937 A; B\OT1/cmr/m/n/10.53937 ) \OMS/cmsy/m/n/10.
+53937 !
+ []
 
- [134]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [135]
-[136] [137]
-Underfull \vbox (badness 1005) has occurred while \output is active []
+ [145]
+Underfull \vbox (badness 4531) has occurred while \output is active []
 
- [138]
-[139]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [140]
-Underfull \vbox (badness 5607) has occurred while \output is active []
-
- [141]
-[142]
-Underfull \vbox (badness 2057) has occurred while \output is active []
-
- [143]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 12.03754pt, for example:
-(fancyhdr)                \setlength{\headheight}{12.03754pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.03754pt}.
-
-[144]
+ [146]
+[147] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1959,10 +1944,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.03754pt}.
 
-[145]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[159]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.03754pt, for example:
@@ -1971,7 +1953,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.03754pt}.
 
-[146]
+[160]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.03754pt, for example:
@@ -1980,16 +1962,58 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.03754pt}.
 
-[147] [148]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[161]
 
- [149]
-Underfull \vbox (badness 3612) has occurred while \output is active []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.03754pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.03754pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
- [150])
-(./logic-appendix.tex [151] [152
+(fancyhdr)                \addtolength{\topmargin}{-0.03754pt}.
 
-]
+[162]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.03754pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.03754pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.03754pt}.
+
+[163] [164] [165]
+Overfull \hbox (1.81363pt too wide) in paragraph at lines 1851--1854
+\TU/SimSun(0)/m/n/10.53937 同 于 变 量 $\OML/cmm/m/it/10.53937 x[]; []  ; x[]$ \TU/
+SimSun(0)/m/n/10.53937 构 成 的 一 个 项 \TU/lmr/m/n/10.53937 (\TU/SimSun(0)/m/n/10.5
+3937 的 等 价 类\TU/lmr/m/n/10.53937 ) $\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.539
+37 t\OT1/cmr/m/n/10.53937 ] \OMS/cmsy/m/n/10.53937 2 \OML/cmm/m/it/10.53937 F\O
+T1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 n\OT1/cmr/m/n/10.53937 )$\TU/lmr/m/
+n/10.53937 , \TU/SimSun(0)/m/n/10.53937 项 的 取 值 $\OT1/cmr/m/n/10.53937 ([[\OML/
+cmm/m/it/10.53937 x[]\OT1/cmr/m/n/10.53937 ]]\OML/cmm/m/it/10.53937 ; []  ; \OT
+1/cmr/m/n/10.53937 [[\OML/cmm/m/it/10.53937 x[]\OT1/cmr/m/n/10.53937 ]]) \OMS/c
+msy/m/n/10.53937 7!
+ []
+
+[166] [167] [168] [169]
+Underfull \hbox (badness 4543) in paragraph at lines 1994--1995
+[]\TU/SimSun(0)/m/n/10.53937 态 射 $\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937
+ f; '\OT1/cmr/m/n/10.53937 ) [] [] (\OML/cmm/m/it/10.53937 i; A\OT1/cmr/m/n/10.
+53937 ) \OMS/cmsy/m/n/10.53937 ! \OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 
+j; B\OT1/cmr/m/n/10.53937 )$\TU/lmr/m/n/10.53937 ,
+ []
+
+
+Overfull \hbox (27.56549pt too wide) in paragraph at lines 2056--2057
+ [] 
+ []
+
+
+Underfull \vbox (badness 3428) has occurred while \output is active []
+
+ [170]
+Underfull \vbox (badness 5161) has occurred while \output is active []
+
+ [171])
+(./logic-appendix.tex [172]
 附录 B.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--6
@@ -2006,81 +2030,91 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[153] [154]
+[173
+
+] [174]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [155]
+ [175]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [156]
-[157] [158]
+ [176]
+[177] [178]
 Underfull \vbox (badness 1762) has occurred while \output is active []
 
- [159]
+ [179]
 Underfull \vbox (badness 4752) has occurred while \output is active []
 
- [160]
-[161]
+ [180]
+[181]
 Underfull \vbox (badness 6094) has occurred while \output is active []
 
- [162]
+ [182]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [163]
+ [183]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [164]
-[165]
+ [184]
+[185]
 Underfull \vbox (badness 4846) has occurred while \output is active []
 
- [166]
+ [186]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [167]
-Underfull \hbox (badness 10000) in paragraph at lines 639--639
+ [187]
+Underfull \hbox (badness 10000) in paragraph at lines 633--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--639
+Underfull \hbox (badness 10000) in paragraph at lines 633--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
 
  []
 
-[168] [169]) [170] [171
+[188] [189]) [190] [191
 
 ]
-Overfull \hbox (3.43181pt too wide) in paragraph at lines 141--141
+Overfull \hbox (3.43181pt too wide) in paragraph at lines 154--154
 []\TU/lmr/m/n/10.53937 The Stacks project authors. \TU/lmr/m/it/10.53937 The St
 acks project\TU/lmr/m/n/10.53937 . []$[][][][][] [] [] [] [][][][][][] [] [][][
 ][] [] [][][][][][][][] []
  []
 
-[172] (./main.aux)
+[192] (./main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65625pt have occurred.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1383917B15CBD593FC1CBBFD520B9E9D;5232.
+(rerunfilecheck)             Checksum: 5111B50CC08543C8006E68ABE0AB9E2F;5371.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45227 strings out of 476675
- 998972 string characters out of 5807327
- 1886290 words of memory out of 5000000
- 64747 multiletter control sequences out of 15000+600000
- 533149 words of font info for 193 fonts, out of 8000000 for 9000
+ 46361 strings out of 476675
+ 1028156 string characters out of 5807327
+ 1887290 words of memory out of 5000000
+ 65875 multiletter control sequences out of 15000+600000
+ 533165 words of font info for 195 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 100i,22n,104p,1316b,4862s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,22n,104p,1316b,4860s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (172 pages).
+Output written on main.pdf (192 pages).

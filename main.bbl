@@ -331,6 +331,31 @@
       \verb https://www.youtube.com/watch?v=Ro8KoFFdtS4
       \endverb
     \endentry
+    \entry{CWM}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ee7e692312c310fd33fbfdd5f0ce2799}{%
+           family={Lane},
+           familyi={L\bibinitperiod},
+           given={Saunders\bibnamedelima Mac},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{ee7e692312c310fd33fbfdd5f0ce2799}
+      \strng{fullhash}{ee7e692312c310fd33fbfdd5f0ce2799}
+      \strng{bibnamehash}{ee7e692312c310fd33fbfdd5f0ce2799}
+      \strng{authorbibnamehash}{ee7e692312c310fd33fbfdd5f0ce2799}
+      \strng{authornamehash}{ee7e692312c310fd33fbfdd5f0ce2799}
+      \strng{authorfullhash}{ee7e692312c310fd33fbfdd5f0ce2799}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{第二版}
+      \field{title}{Categories for the Working Mathematician}
+      \field{year}{1978}
+    \endentry
     \entry{SGL}{book}{}
       \name{author}{2}{}{%
         {{hash=ee7e692312c310fd33fbfdd5f0ce2799}{%

@@ -1,6 +1,8 @@
 \chapter{形式逻辑基础}
 
 \label{logic-appendix}
+
+\minitoc
 %\todo{整理本章}
 
 \philoquote{Mathematicians are committed to rigorous reasoning, but they usually shy away from formal logic.}{William M. Farmer, \textit{The seven virtues of simple type theory}}
@@ -659,7 +661,7 @@ $$
 		\item $n\colon \mathbb{N}\vdash n\mathsf {Vect}\colon \mathsf {Type}$ (``$n$ 维向量空间'' 是依赖于自然数 $n$ 的一族类型).
 		\item 
 	\end{itemize}
-	这种风味的类型论叫\emph{依值类型论} (dependent type theory, DTT). 一种更加丰富的类型论允许类型依赖于一个\emph{类型变量}, 这称为\emph{多态类型论} (polymorphic type theory).
+	这种风味的类型论叫\emph{依值类型论} (dependent type theory, DTT). 它的核心思想是 ``类型是值'', 也即有类型的类型 $\mathsf {Type}$, 而依值类型不过是一个类型到 $\mathsf {Type}$ 的函数. %另一种类型论允许类型依赖于一个\emph{类型变量}, 这称为\emph{多态类型论} (polymorphic type theory).
 \end{example}
 
 \begin{definition}

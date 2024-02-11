@@ -19,6 +19,38 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{LPAC}{book}{}
+      \name{author}{2}{}{%
+        {{hash=458563ee2b48166433d05399be31e2a5}{%
+           family={Adámek},
+           familyi={A\bibinitperiod},
+           given={Jiří},
+           giveni={J\bibinitperiod}}}%
+        {{hash=476c804db97ea01dc928504f3e662a2d}{%
+           family={Rosický},
+           familyi={R\bibinitperiod},
+           given={Jiří},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{c6cfcf79ded0999e82c05729a3bac7a1}
+      \strng{fullhash}{c6cfcf79ded0999e82c05729a3bac7a1}
+      \strng{bibnamehash}{c6cfcf79ded0999e82c05729a3bac7a1}
+      \strng{authorbibnamehash}{c6cfcf79ded0999e82c05729a3bac7a1}
+      \strng{authornamehash}{c6cfcf79ded0999e82c05729a3bac7a1}
+      \strng{authorfullhash}{c6cfcf79ded0999e82c05729a3bac7a1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Locally Presentable and Accessible Categories}
+      \field{year}{1994}
+      \verb{doi}
+      \verb https://doi.org/10.1017/CBO9780511600579
+      \endverb
+    \endentry
     \entry{SGA4}{book}{}
       \name{author}{3}{}{%
         {{hash=69a473a63b6a5b334a00dacc5c3ef319}{%
@@ -331,31 +363,6 @@
       \verb https://www.youtube.com/watch?v=Ro8KoFFdtS4
       \endverb
     \endentry
-    \entry{CWM}{book}{}
-      \name{author}{1}{}{%
-        {{hash=ee7e692312c310fd33fbfdd5f0ce2799}{%
-           family={Lane},
-           familyi={L\bibinitperiod},
-           given={Saunders\bibnamedelima Mac},
-           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer New York}%
-      }
-      \strng{namehash}{ee7e692312c310fd33fbfdd5f0ce2799}
-      \strng{fullhash}{ee7e692312c310fd33fbfdd5f0ce2799}
-      \strng{bibnamehash}{ee7e692312c310fd33fbfdd5f0ce2799}
-      \strng{authorbibnamehash}{ee7e692312c310fd33fbfdd5f0ce2799}
-      \strng{authornamehash}{ee7e692312c310fd33fbfdd5f0ce2799}
-      \strng{authorfullhash}{ee7e692312c310fd33fbfdd5f0ce2799}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{第二版}
-      \field{title}{Categories for the Working Mathematician}
-      \field{year}{1978}
-    \endentry
     \entry{SGL}{book}{}
       \name{author}{2}{}{%
         {{hash=ee7e692312c310fd33fbfdd5f0ce2799}{%
@@ -583,28 +590,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0168007211001874
       \endverb
       \keyw{Locale theory,Foundations of measure theory,Foundations of probability theory}
-    \endentry
-    \entry{stacks-project}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=a3dbcb9991f2a884f2c608ad2335af9f}{%
-           family={{Stacks project authors}},
-           familyi={S\bibinitperiod},
-           given={The},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{a3dbcb9991f2a884f2c608ad2335af9f}
-      \strng{fullhash}{a3dbcb9991f2a884f2c608ad2335af9f}
-      \strng{bibnamehash}{a3dbcb9991f2a884f2c608ad2335af9f}
-      \strng{authorbibnamehash}{a3dbcb9991f2a884f2c608ad2335af9f}
-      \strng{authornamehash}{a3dbcb9991f2a884f2c608ad2335af9f}
-      \strng{authorfullhash}{a3dbcb9991f2a884f2c608ad2335af9f}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://stacks.math.columbia.edu}}
-      \field{title}{The Stacks project}
-      \field{year}{2023}
     \endentry
     \entry{lww2}{book}{}
       \name{author}{1}{}{%

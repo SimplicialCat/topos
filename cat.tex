@@ -6,6 +6,8 @@
     ``right'' generalization for the category of abelian groups. So topoi serve for---no less---the category of sets.
 }{Peter Freyd, \textit{Aspects of Topoi}}
 
+\minitoc
+
 范畴是一个广泛应用的概念, 然而它的结构比较单薄, 在一般的范畴中能做的事情十分有限. 为了让范畴更有用, 我们就要要求合适的性质. Lawvere 在范畴论的层面研究了这样一个问题: 集合范畴 $\mathsf {Set}$ 具有什么样的性质, 使得它能作为数学的基础. 他将这些性质提炼成为\topos{} (topos) 的概念.
 
 本章的目的是展现集合范畴中的许多构造实际上具有范畴论上的一般性, 也为形式上统一这些构造的 ``\topos{}的内语言'' 埋下伏笔.
@@ -566,6 +568,8 @@ $$
     	\arrow[from=1-1, to=2-2]
     	\arrow[from=1-3, to=2-2]
     \end{tikzcd}\]
+	与俯范畴对偶的概念是\emph{仰范畴} (under category) $X\backslash \mathsf C$, 即由对象 $X$ 出发的态射构成的范畴.
+	另一种记号是将俯范畴与仰范畴分别记作 $\mathsf C_{/X},\mathsf C_{X/}$.
 \end{definition}
 
 俯范畴中极限, 子对象等结构与原来的范畴密切相关.
@@ -1112,19 +1116,20 @@ $$
 $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 
 \begin{definition}
+	[label={equivalence-relation}]
 	{(等价关系)}
 	在一般的范畴中, 称 $X\times X$ 的一个子对象 $R$ 为 $X$ 上的一个\emph{关系}.
 	\emph{等价关系}是满足如下条件的关系.
 	\begin{itemize}
-		\item (自反性) $\Delta \leq R$, 其中 $\Delta$ 是对角线 (例 \ref{diagonal});
-		\item (对称性) $R \leq \sigma R$, 其中 $\sigma$ 为交换两个分量;
+		\item (自反性) $\Delta \leq R$, 其中 $\Delta\colon X\to X\times X$ 是对角线 (例 \ref{diagonal});
+		\item (对称性) $R \leq \sigma R$, 其中 $\sigma\colon X\times X\to X\times X$ 为交换两个分量;
 		\item (传递性) 作为 $X\times X\times X$ 的子对象有 $p_{12}^*R \land p_{23}^* R \leq p_{13}^*R$, 其中 $p_{ij}$ 是到第 $i,j$ 分量的投影, $\land$ 是子对象的交, 也即拉回.
 	\end{itemize}
+	等价关系 $R\hookrightarrow X\times X$ 确定的\emph{商}即为两个投影映射 $R\to X$ 的余等化子.
+	态射 $f\colon X\to Y$ 可以确定一种等价关系 $x_1\sim x_2 \Leftrightarrow f(x_1)=f(x_2)$. 它是态射 $f\colon X\to Y$ 的核偶. 称这种等价关系为\emph{有效等价关系} (effective equivalence relation).
 \end{definition}
 
-态射 $f\colon X\to Y$ 的核偶是 $X$ 上的等价关系, 称之为 $f$ \emph{诱导}的等价关系.
-
-注意到当 $f\colon X\to Y$ 为集合的满射时, 核偶 $X\times_Y X \rightrightarrows X$ 的余等化子恰为 $f\colon X\to Y$.
+注意到当 $f\colon X\to Y$ 为集合的满射时, 核偶 $X\times_Y X \rightrightarrows X$ 的余等化子恰为 $f\colon X\to Y$, 即 $Y$ 恰为 $X$ 关于 $f$ 诱导的等价关系的商. 我们将这种映射的性质抽象为\emph{有效满射}. 与之对偶的概念称为\emph{有效单射}.
 
 \begin{definition}
 	{(有效单射与满射)}
@@ -1198,12 +1203,19 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \begin{definition}
     [label={image-definition}]
     {(像)}
-    对于范畴 $\mathsf C$ 中的态射 $f\colon X \to Y$, 若存在 $f$ 穿过的最小子对象 $\operatorname{im}f\hookrightarrow Y$, 则称其为 $f$ 的\emph{像} (image).
+    对于范畴 $\mathsf C$ 中的态射 $f\colon W \to X$, 若存在 $f$ 穿过的最小子对象 $U\hookrightarrow X$, 则称其为 $f$ 的\emph{像} (image), 记作 $\operatorname{im}f$.
 \end{definition}
 
-\begin{remark}{(像的函子定义)}
-    对固定的对象 $X$, 到 $X$ 态射的\emph{像}是一个函子 $\mathsf C /X \to \operatorname{Sub}_{\mathsf C}(X)$, 它是 ``嵌入'' 函子 $\operatorname{Sub}_{\mathsf C}(X) \to \mathsf C /X$ 的左伴随; 这个伴随表达的含义正是 $\operatorname{im}f$ 是 $f$ 穿过的最小子对象.
+\begin{remark}{(像作为函子)}
+    对固定的对象 $X$, 假设到 $X$ 态射都有像, 则有一个函子 $\operatorname{im}\colon \mathsf C /X \to \operatorname{Sub}_{\mathsf C}(X)$, 它是嵌入函子\footnotemark{} $\operatorname{Sub}_{\mathsf C}(X) \to \mathsf C /X$ 的左伴随;
+    对任意态射 $f\colon W\to X$ 与子对象 $U\hookrightarrow X$,
+    \[
+    \operatorname{im}(f\colon W\to X) \leq U\quad\Leftrightarrow\quad
+    \text{$f\colon W\to X$ 穿过 $U$}.
+    \]
+    %这个伴随表达的含义正是 $\operatorname{im}f$ 是 $f$ 穿过的最小子对象.
 \end{remark}
+\footnotetext{注意 $\operatorname{Sub}_{\mathsf C}(X)$ 的对象是单态射的等价类, 但这里为了构造函子, 可任取每个等价类中的一个代表元. 对于子对象 $U\to X$ 与 $V\to X$, 即使视为 $\mathsf C/X$ 的对象, 两者之间也至多只有一个态射; 故 $\operatorname{Sub}_{\mathsf C}(X)$ 可视为 $\mathsf C/X$ 的满子范畴.}
 
 \begin{prop}
     {(像与存在)}
@@ -1946,16 +1958,64 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	{(\topos{}为广延范畴)}
 	对于\topos{} $\mathsf C$ 中任意两个对象 $X,Y$, 典范的函子
 		\[
-		\mathsf C/X \times \mathsf C/Y \to \mathsf C/(X+Y)
+		+\,\colon\, \mathsf C/X \times \mathsf C/Y \to \mathsf C/(X+Y),
+		\quad
+		\Big(\begin{tikzcd}[sep=small]
+			Z_1\ar[d,"f_1"]\\X
+		\end{tikzcd},\begin{tikzcd}[sep=small]
+		Z_2\ar[d,"f_2"]\\Y
+	\end{tikzcd}\Big)\mapsto \begin{tikzcd}[sep=small]
+	Z_1+Z_2\ar[d,"f_1+f_2"]\\X+Y
+\end{tikzcd}
 		\]
 	为等价.
 	人们称满足该性质的范畴为\emph{广延范畴} (extensive category).
 \end{prop}
 
 \begin{proof}
-	对俯范畴 $\mathsf C/(X+Y)$ 的对象 $f\colon Z\to (X+Y)$,
-	令 $Z_1=f^*(X)$, $Z_2=f^*(Y)$. 由于拉回保持和,
-	有 $Z=Z_1+Z_2$.
+	记 $i_1\colon X\to X+Y$, $i_2\colon Y\to X+Y$ 为嵌入,
+	我们断言两个拉回函子的乘积
+	$$(i_1^*,i_2^*)\colon \mathsf C/(X+Y) \to \mathsf C/X \times \mathsf C/Y$$
+	是 $+$ 的逆.
+	
+	一方面, 对任意态射 $\begin{tikzcd}[sep=small]
+		Z\ar[d,"f"]\\X+Y
+	\end{tikzcd}$,
+	考虑如下两个拉回,
+	% https://q.uiver.app/#q=WzAsNixbMCwxLCJYIl0sWzEsMSwiWCtZIl0sWzIsMSwiWSJdLFsxLDAsIloiXSxbMCwwLCJaXzEiXSxbMiwwLCJaXzIiXSxbMywxLCJmIl0sWzQsMF0sWzAsMSwiaV8xIiwyXSxbNCwzXSxbNSwzXSxbMiwxLCJpXzIiXSxbNSwyXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{Z_1} \& Z \& {Z_2} \\
+		X \& {X+Y} \& Y
+		\arrow["f", from=1-2, to=2-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow["{i_1}"', from=2-1, to=2-2]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-3, to=1-2]
+		\arrow["{i_2}", from=2-3, to=2-2]
+		\arrow[from=1-3, to=2-3]
+	\end{tikzcd}\]
+	此图亦可视为沿 $f$ 的拉回. 由于拉回保持和, 有 $Z=Z_1+Z_2$.
+	
+	另一方面,
+	对任意两个态射 $\begin{tikzcd}[sep=small]
+		Z_1\ar[d,"f_1"]\\X
+	\end{tikzcd},\begin{tikzcd}[sep=small]
+		Z_2\ar[d,"f_2"]\\Y
+	\end{tikzcd}$,
+	由于以下两图为拉回 (其中右图为拉回是由于命题 \ref{sums-are-disjoint}), 以及拉回保持和, 知 $i_1^*(Z_1+Z_2) = Z_1$.
+	% https://q.uiver.app/#q=WzAsOCxbMCwxLCJYIl0sWzEsMSwiWCtZIl0sWzEsMCwiWl8xIl0sWzAsMCwiWl8xIl0sWzIsMCwiMCJdLFszLDAsIlpfMiJdLFsyLDEsIlgiXSxbMywxLCJYK1kiXSxbMiwxLCJpXzEgZl8xIl0sWzMsMCwiZl8xIiwyXSxbMCwxLCJpXzEiLDJdLFszLDIsIlxcb3BlcmF0b3JuYW1le2lkfV97Wl8xfSJdLFs0LDZdLFs2LDcsImlfMSIsMl0sWzQsNV0sWzUsNywiaV8yIGZfMiJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{Z_1} \& {Z_1} \& 0 \& {Z_2} \\
+		X \& {X+Y} \& X \& {X+Y}
+		\arrow["{i_1 f_1}", from=1-2, to=2-2]
+		\arrow["{f_1}"', from=1-1, to=2-1]
+		\arrow["{i_1}"', from=2-1, to=2-2]
+		\arrow["{\operatorname{id}_{Z_1}}", from=1-1, to=1-2]
+		\arrow[from=1-3, to=2-3]
+		\arrow["{i_1}"', from=2-3, to=2-4]
+		\arrow[from=1-3, to=1-4]
+		\arrow["{i_2 f_2}", from=1-4, to=2-4]
+	\end{tikzcd}\]
 \end{proof}
 \subsection{Boole \topos{}与选择公理}
 

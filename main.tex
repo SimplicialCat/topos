@@ -89,6 +89,9 @@
 \usepackage{titlesec}
 \titleformat{\chapter}{\huge\bfseries}{第\, \thechapter\, 章}{1em}{}
 
+\usepackage{minitoc}
+\renewcommand{\mtctitle}{}
+
 % 常用记号
 
 \newcommand{\op}{\text{op}} % 对偶范畴
@@ -107,6 +110,7 @@
 \newcommand{\todo}[1]{{\color{red} [\textbf{未完成: #1}]}}
 
 \begin{document}
+\dominitoc
 
 \maketitle
 

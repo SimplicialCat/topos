@@ -2375,36 +2375,42 @@
     <bcf:citekey order="12" intorder="1">SGA4</bcf:citekey>
     <bcf:citekey order="13" intorder="1">HTTP</bcf:citekey>
     <bcf:citekey order="14" intorder="1">QFT</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">177894</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">SGA4</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">Elephant</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">HCA3</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">SDG-Lavendhomme</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">MSIA</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">TST</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">SGL</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">HTTP</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">HTT</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">HTT</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">HTT</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">LPAC</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">LPAC</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">SGL</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">LPAC</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">FSAG</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">nlab:sheafification</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">SGA4</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">177894</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">HCA1</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Elephant</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">HCA3</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">SDG-Lavendhomme</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">MSIA</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">TST</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">SGL</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">HTTP</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">HTT</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">HTT</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">HTT</bcf:citekey>
     <bcf:citekey order="32" intorder="1">LPAC</bcf:citekey>
     <bcf:citekey order="33" intorder="1">LPAC</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">LPAC</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">HTT</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">SGL</bcf:citekey>
     <bcf:citekey order="36" intorder="1">LPAC</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">SGL</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">lww2</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">lww2</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">CLTT</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">TST</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">Lurie-Categorical-Logic</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">TST</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">Trebor-History</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">LPAC</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">SGL</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">lww2</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">lww2</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">CLTT</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">TST</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">Lurie-Categorical-Logic</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">TST</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">Trebor-History</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

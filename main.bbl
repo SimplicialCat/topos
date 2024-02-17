@@ -166,6 +166,48 @@
       \field{title}{Theories, Sites, Toposes}
       \field{year}{2018}
     \endentry
+    \entry{FSAG}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=0d5c393259c865f31cde5e48fc94160c}{%
+           family={Cherubini},
+           familyi={C\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+        {{hash=9a0915de15d028e82e7de497c09fe93c}{%
+           family={Coquand},
+           familyi={C\bibinitperiod},
+           given={Thierry},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c493d0f9ca1e7c303801645753b172db}{%
+           family={Hutzler},
+           familyi={H\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6822427a8dd2ff18816f2a3bd91c4639}
+      \strng{fullhash}{6822427a8dd2ff18816f2a3bd91c4639}
+      \strng{bibnamehash}{6822427a8dd2ff18816f2a3bd91c4639}
+      \strng{authorbibnamehash}{6822427a8dd2ff18816f2a3bd91c4639}
+      \strng{authornamehash}{6822427a8dd2ff18816f2a3bd91c4639}
+      \strng{authorfullhash}{6822427a8dd2ff18816f2a3bd91c4639}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.AG}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Foundation for Synthetic Algebraic Geometry}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2307.00073
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2307.00073
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2307.00073
+      \endverb
+    \endentry
     \entry{QFT}{book}{}
       \name{editor}{8}{}{%
         {{hash=876d32ddd7383ddfb7c5ca89662b261d}{%
@@ -525,7 +567,29 @@
       \field{title}{Models for Smooth Infinitesimal Analysis}
       \field{year}{1990}
     \endentry
-    \entry{HTTP}{article}{}
+    \entry{nlab:sheafification}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5c61cc0c29f93f36a5bbdae36df1a81b}{%
+           family={{nLab authors}},
+           familyi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{fullhash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{bibnamehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{authorbibnamehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{authornamehash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \strng{authorfullhash}{5c61cc0c29f93f36a5bbdae36df1a81b}
+      \field{sortinit}{n}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://ncatlab.org/nlab/show/sheafification}}
+      \field{month}{2}
+      \field{note}{\href{https://ncatlab.org/nlab/revision/sheafification/35}{Revision 35}}
+      \field{title}{sheafification}
+      \field{year}{2024}
+    \endentry
+    \entry{HTTP}{misc}{}
       \name{author}{1}{}{%
         {{hash=22bb4311878b35b2db2b84b4f2ade791}{%
            family={Schreiber},

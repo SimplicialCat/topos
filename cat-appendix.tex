@@ -852,6 +852,7 @@ $2$-范畴是谈论伴随的自然的语境.
 
 
 \section{自反子范畴与局部化}
+\label{reflective-subcategory-and-localization}
 
 \begin{definition}
 	[label={reflective-subcategory}]
@@ -960,7 +961,7 @@ $2$-范畴是谈论伴随的自然的语境.
 	若存在范畴 $\mathsf C[W^{-1}]$ 与函子 $a\colon \mathsf C\to \mathsf C[W^{-1}]$ 满足如下条件, 则称之为 $\mathsf C$ 关于 $W$ 的\emph{局部化}.
 	\begin{itemize}
 		\item 对任意 $w\in W$, $a(w)$ 为同构;
-		\item (\emph{万有性质}\footnotemark{}) 对任意范畴 $\mathsf E$ 与函子 $b\colon \mathsf C\to\mathsf E$, 若 $b$ 将 $W$ 的元素变为同构,
+		\item (\emph{万有性质}) 对任意范畴 $\mathsf E$ 与函子 $b\colon \mathsf C\to\mathsf E$, 若 $b$ 将 $W$ 的元素变为同构,
 		则 $b$ 穿过 $a$ 有 ``唯一'' 的分解, ``唯一'' 是指两种分解至多差一个唯一的自然同构. 更具体地说, 存在函子 $f\colon \mathsf C[W^{-1}]\to\mathsf E$ 以及自然同构 $\rho\colon b \overset{\simeq}{\to} fa$, 且对任意两个自然同构 $\rho\colon b \overset{\simeq}{\to} fa, \rho'\colon b \overset{\simeq}{\to} f'a$ 都存在唯一的自然同构 $\kappa\colon f\to f'$, 满足 $\rho' = (\kappa\cdot a)\rho$.
 		%严格地说, 记 $\mathsf {Fun}_W(\mathsf C,\mathsf E)$ 为 $\mathsf {Fun}(\mathsf C,\mathsf E)$ 中由将 $W$ 的元素变为同构的函子 $b$ 构成的满子范畴,
 		%则函子
@@ -968,12 +969,13 @@ $2$-范畴是谈论伴随的自然的语境.
 		%为范畴等价.
 	\end{itemize}
 \end{definition}
-\footnotetext{这个性质可表达为 $2$-范畴中的始对象, 见定义 \ref{terminal-object-2-category}.}
 
 %\begin{remark}
 %	{(局部化的概念)}
 %	一般的局部化 $\mathsf C \to \mathsf C[W^{-1}]$ 是指使一族态射 $W$ 变为同构的 ``万有'' 过程; 此处的局部化是其特例 (令 $W$ 为所有被 $a$ 变为同构的态射).
 %\end{remark}
+
+注意局部化的万有性质是 $2$-范畴中的始对象 (定义 \ref{terminal-object-2-category}), 故 $\mathsf C[W^{-1}]$ 是在范畴等价 (而非范畴同构) 的意义下唯一确定的.
 
 \begin{prop}
 	[label={reflective-subcategories-are-localizations}]
@@ -1179,17 +1181,32 @@ $2$-范畴是谈论伴随的自然的语境.
 %对于 $S_c$ 的终对象 $c\to d$, 我们说明 $d$ 为 $S$-局部对象.
 %
 %\end{proof}
-\todo{LPAC 1.36, 1.37, 1.38, 1.39}
+
+%\todo{LPAC 1.36, 1.37, 1.38, 1.39}
 
 上面说明自反子范畴是局部对象的子范畴; 另一方面, 我们希望局部对象的子范畴是自反子范畴, 从而通过自反子范畴的 ``反映'' $c\to a(c)$, 每个对象 $c$ 都被一个尽可能接近的 $S$-局部对象替代.
 这不总是可行的 (例 \ref{frame-cBa-local-object} 的完备 Boole 代数范畴不是自反子范畴), 但对于可表现范畴有一些部分的结论.
 
 \begin{prop}
+	[label={local-object-reflective-subcategory}]
 	{}
 	设 $S$ 是可表现范畴 $\mathsf C$ 中的一族态射构成的\emph{小}集合. 那么 $\mathsf C_S\hookrightarrow \mathsf C$ 为自反子范畴.
 \end{prop}
 
 见 \cite{LPAC} 命题 1.36.
+
+\begin{remark}
+	[label={strongly-saturated-class-of-morphisms}]
+	{(强饱和态射族)}
+	对于余完备范畴 $\mathsf C$ 中的一族态射 $S$,
+	称其为\emph{强饱和态射族} (strongly saturated class of morphisms) 是指
+	$S$ 关于沿 $\mathsf C$ 中任何态射的推出封闭, 关于箭头范畴 $\mathsf {Fun}(\bullet{\to}\bullet,\mathsf C)$ 中的余极限封闭, 且满足三选二性质: 若三个态射 $f,g,h$ 满足 $f=gh$, 只要其中两个属于 $S$, 则三个都属于 $S$.
+	
+	任何一族态射 $S$ 都生成一个最小的强饱和态射族 $\overline{S}$.
+	可以证明, 在命题 \ref{local-object-reflective-subcategory} 中, 对于 $S$-局部对象的子范畴 $\mathsf C_S \hookrightarrow\mathsf C$ 的左伴随 $a\colon \mathsf C\to\mathsf C_S$,
+	被 $a$ 变为同构的态射的族恰为 $\overline{S}$.
+	\cite{HTT} 5.5.4.15 证明了这一命题的 $\infty$-范畴版本, 当然它可以逐字翻译为普通范畴的版本.
+\end{remark}
 
 \begin{prop}
 	{(正合局部化的判定)}
@@ -1252,6 +1269,38 @@ $2$-范畴是谈论伴随的自然的语境.
 	\end{itemize}
 \end{proof}
 
+\begin{prop}
+	[label={exponential-ideal-cartesian-closed-reflective-subcategory}]
+	{(指数理想的判定)}
+	设 $\mathsf C$ 为积闭范畴, $\mathsf D$ 为自反子范畴, 反映函子为 $a$.
+	称 $\mathsf D$ 为\emph{指数理想} (exponential ideal) 是指对任意 $\mathsf C$ 的对象 $X$ 与 $\mathsf D$ 的对象 $Y$, 都有 $Y^X$ 为 $\mathsf D$ 的对象 (至多相差一个同构).
+	那么 $\mathsf D$ 为指数理想当且仅当 $a$ 保持有限积.
+\end{prop}
+\begin{proof}
+	由于 $a$ 保持有限积且 $aa=a$, 有自然同构
+	$a(Z\times X)\simeq a(Z)\times a(X)\simeq a(a(Z)\times X)$,
+	\begin{align*}
+		\operatorname{Hom}_{ {\mathsf C}} (Z,Y^X)&\simeq
+		\operatorname{Hom}_{ {\mathsf C}} (Z\times X,Y)\\
+		&\simeq \operatorname{Hom}_{ {\mathsf C}} (a(Z\times X),Y)\\
+		&\simeq \operatorname{Hom}_{ {\mathsf C}} (a(a(Z)\times X),Y)\\
+		&\simeq \operatorname{Hom}_{ {\mathsf C}} (a(Z)\times X,Y)\simeq \operatorname{Hom}_{ {\mathsf C}} (a(Z),Y^X),
+	\end{align*}
+	故任何态射 $Z\to Y^X$ 唯一地穿过 $Z\to a(Z)$, 这说明 $Y^X$ 是 $\mathsf D$ 的对象.
+	
+	另一方面, 假设对任意 $\mathsf C$ 的对象 $X$ 与 $\mathsf D$ 的对象 $Y$, 都有 $Y^X$ 为 $\mathsf D$ 的对象.
+	那么有自然同构
+	\begin{align*}
+		\operatorname{Hom}_{ {\mathsf C}}(Z\times X, Y)&\simeq
+		\operatorname{Hom}_{ {\mathsf C}}(Z, Y^X)\\
+		&\simeq \operatorname{Hom}_{ {\mathsf C}}(a(Z), Y^X)\\
+		&\simeq \operatorname{Hom}_{ {\mathsf C}}(a(Z)\times X, Y)\simeq \operatorname{Hom}_{ {\mathsf C}}(a(Z)\times a(X), Y).
+	\end{align*}
+	故任何态射 $Z\times X\to Y$ 唯一地穿过 $Z\times X \to a(Z)\times a(X)$,
+	这说明 $a(Z)\times a(X)\simeq a(Z\times X)$.
+\end{proof}
+
+% Elephant 4.3.1
 
 \subsection{分式计算}
 
@@ -1505,10 +1554,15 @@ $2$-范畴是谈论伴随的自然的语境.
     {(元素的范畴)}
     对 $X\in\widehat {\mathsf C}$, 定义 $X$ 的\emph{元素的范畴} $\displaystyle\int_{\mathsf C}X$ 如下.
     其对象为 $(c,x)$, $x\in X(c)$,
-    态射 $(c,x)\to (d,y)$ 为 $f\colon c\to d$, 满足 $f(x)=y$.
-    
+    态射 $(c,x)\to (d,y)$ 为 $\mathsf C$ 中的态射 $f\colon c\to d$, 满足 $X(f)(y)=x$.
     %记 $X$ 的元素的范畴为
     由定义, 存在 ``投影'' 函子 $\pi_X\colon \displaystyle\int_{\mathsf C}X\to \mathsf C$, $(c,x)\mapsto c$.
+    
+    与之对偶, 设 $X\in\mathsf {Fun}(\mathsf C,\mathsf {Set})$,
+    定义 $X$ 的元素的范畴 $\displaystyle\int^{\mathsf C}X$ 如下.
+    其对象为 $(c,x)$, $x\in X(c)$,
+    态射 $(c,x)\to (d,y)$ 为 $\mathsf C$ 中的态射 $f\colon c\to d$, 满足 $X(f)(x)=y$.
+    此时存在投影函子 $\pi_X\colon \displaystyle\int^{\mathsf C}X\to \mathsf C$, $(c,x)\mapsto c$.
 \end{definition}
 
 
@@ -1540,7 +1594,8 @@ $2$-范畴是谈论伴随的自然的语境.
     X \simeq \operatorname{colim}\Big(\yo\circ\pi_X \colon 
     {\displaystyle\int_{\mathsf C}X}
     \to
-    {\widehat {\mathsf C}}\Big),
+    {\widehat {\mathsf C}}\Big)
+    =\operatorname{colim}_{\yo(c)\to X}\yo(c),
     $$
     %函子 $\colon \displaystyle\int_{\mathsf C}X \overset{\pi}{\to} \widehat {\mathsf C}$ 的余极限.
     其万有余锥由所有态射 $\yo(c)\to X$ 给出.
@@ -1623,15 +1678,16 @@ $2$-范畴是谈论伴随的自然的语境.
 	L (X) = \operatorname{colim}\Big(
 	F\circ \pi_X \colon 
 	{\displaystyle\int_{\mathsf C}X} \to {\mathsf D}
-	\Big).
+	\Big)
+	=\operatorname{colim}_{\yo(c) \to X} F(c).
 	$$
-	作为左伴随, $L$ 自然保持余极限 (命题 \ref{adjoints-preserve-limits}).
+	作为左伴随, $L$ 自然保持余极限 (命题 \ref{adjoints-preserve-limits}). 我们有时称 $L$ 为 $F$ 的\emph{米田扩张}.
 \end{prop}
 
 \begin{remark}
 	{}
-	上面的伴随可解读为 ``脉'' (nerve, 函子 $R$) 与 ``几何实现'' (geometric realization, 函子 $L$) 的伴随, 其中 $\mathsf C$ 是某种几何形状的范畴 (如下面例子中的 $\Delta$).
-	脉与几何实现的概念由 Daniel Kan 1958 年的文章 \emph{Functors involving c.s.s complexes} 提出. 这篇文章也首次引入了 Kan 扩张. 事实上, \emph{几何实现是沿米田嵌入的左 Kan 扩张}.
+	上面的伴随可解读为\emph{脉} (nerve, 函子 $R$) 与\emph{几何实现} (geometric realization, 函子 $L$) 的伴随, 其中 $\mathsf C$ 是某种几何图形构成的范畴 (如下面例子中的 $\Delta$).
+	脉与几何实现的概念由 Daniel Kan 1958 年的文章 \emph{Functors involving c.s.s complexes} 提出. 这篇文章也首次引入了 \emph{Kan 扩张} (定义 \ref{Kan-extension-definition}). 事实上, \emph{几何实现是沿米田嵌入的左 Kan 扩张}.
 \end{remark}
 
 \begin{remark}
@@ -1659,7 +1715,7 @@ $2$-范畴是谈论伴随的自然的语境.
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 	\end{tikzcd},\quad
 	\operatorname{Sing}(X)_n = \operatorname{Hom}_{\mathsf {Top}}(\Delta^n,X),\]
-	其中 ``脉'' 函子 $\operatorname{Sing}$ 给出拓扑空间的\emph{奇异单纯集} (singular simplicial set), 而几何实现 $|{-}|$ 将单纯集 $X$ 对应到一个 CW 复形 $|X|$, 它是 $X$ 的所有单形 $\Delta^n\to X$ 的几何实现 ``粘起来'' (取余极限) 的结果.
+	其中 ``脉'' 函子 $\operatorname{Sing}$ 给出拓扑空间的\emph{奇异单纯集} (singular simplicial set), 而几何实现 $|{-}|$ 将单纯集 $X$ 对应到一个 CW 复形 $$|X| = \operatorname{colim}_{\Delta^n\to X}|\Delta^n|,$$ 它是 $X$ 的所有单形 $\Delta^n\to X$ 的几何实现 ``粘起来'' (取余极限) 的结果.
 	
 	在以上讨论中, 可将 $\mathsf {Top}$ 改为小范畴的范畴 $\mathsf {Cat}$ ($F\colon \Delta \to \mathsf {Cat}$ 将 $[n]$ 对应到范畴 $0 \to 1 \to \cdots \to n$), 得到范畴版本的脉--几何实现伴随
 	\[\begin{tikzcd}[ampersand replacement=\&]
@@ -1702,8 +1758,7 @@ $2$-范畴是谈论伴随的自然的语境.
 	%其几何实现 $|X|$, 它是一个几何空间.
 	其中右伴随 $R$ 给出几何空间的\emph{点函子} (functor of points), 它是代数几何中表示几何空间的一种方便工具.
 	这对伴随给出两边某个满子范畴的等价 (命题 \ref{adjoint-full-subcategory-equivalence}), 这个满子范畴正是\emph{概形}的范畴. 换言之, 概形既可视为满足某些条件的几何空间, 又可视为满足某些条件的函子 $\mathsf {Ring}\to\mathsf {Set}$.
-	
-	这个例子取自 Demazure 和 Gabriel 的书 \emph{Introduction to Algebraic Geometry and Algebraic Groups} 1.1 节.
+	本例取自 Demazure 和 Gabriel 的 \emph{Introduction to Algebraic Geometry and Algebraic Groups} 1.1 节.
 \end{example}
 
 \subsection{预层范畴的俯范畴}
@@ -1711,6 +1766,7 @@ $2$-范畴是谈论伴随的自然的语境.
 预层范畴的俯范畴仍是预层范畴. 这个事实可证明预层范畴的局部积闭性.
 
 \begin{prop}
+	[label={slice-of-presheaf-is-presheaf-over-slice}]
 	{}
 	预层范畴的俯范畴等价于 ``广义俯范畴'' 上的预层范畴:
 	$$
@@ -1758,6 +1814,7 @@ $2$-范畴是谈论伴随的自然的语境.
 \end{example}
 
 \section{可表现范畴}
+\label{appendix-presentable-categories}
 
 可表现范畴在范畴论中具有重要的地位, 因为有如下粗略的类比:
 % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXHRleHR7KOaciemZkCnpm4Z9Il0sWzAsMSwiXFx0ZXh0e+WkmumhueW8j+eOr30iXSxbMCwyLCJcXHRleHR7KOaciemZkOihqOeOsCnnjq99Il0sWzIsMCwiXFx0ZXh0eyjlsI8p6IyD55W0fSJdLFsyLDEsIlxcdGV4dHvpooTlsYLojIPnlbR9Il0sWzIsMiwiXFx0ZXh0e+WPr+ihqOeOsOiMg+eVtH0iXSxbMCwxLCJcXHRleHR76Ieq55Sx55Sf5oiQfSIsMl0sWzEsMiwiXFx0ZXh0e+WVhn0iLDJdLFszLDQsIlxcdGV4dHvoh6rnlLHkvZnlrozlpIfljJZ9Il0sWzQsNSwiXFx0ZXh0e+WxgOmDqOWMln0iXV0=
@@ -1786,6 +1843,7 @@ $2$-范畴是谈论伴随的自然的语境.
 
 设 $\lambda$ 为正则基数, 那么小于 $\lambda$ 的集合构成的范畴具有较好的封闭性, 称之为一个\emph{宇宙} (但尚未构成 Grothendieck 宇宙).
 在承认选择公理的前提下, 存在任意大的正则基数. 换言之, ``小'' 等价于 ``小于某个正则基数''.
+``小于正则基数 $\lambda$'' 的性质可视为 ``有限性'' 的推广.
 
 \begin{example}
 	{}
@@ -1798,9 +1856,14 @@ $2$-范畴是谈论伴随的自然的语境.
 \end{definition}
 
 \begin{definition}
+	[label={filtered-category}]
 	{($\lambda$-滤范畴, $\lambda$-滤余极限)}
+	回忆对于范畴 $\mathsf C$ 中的图 $X\colon I\to \mathsf C$, 其上的\emph{锥}是 $\mathsf C$ 的对象 $c$ (称为\emph{顶点}) 以及一族相容的态射 $c\to X(i)$. 余锥是 $\mathsf C$ 的对象 $c$ 以及一族相容的态射 $X(i) \to c$.
+	
 	设 $\lambda$ 为正则基数. 若一个范畴中任意 $\lambda$-小的图都存在余锥, 则称之为 \emph{$\lambda$-滤范畴} ($\lambda$-filtered category). 对偏序集而言, 这个条件即是说任意基数小于 $\lambda$ 的子集都有上界, 称这样的偏序集为 \emph{$\lambda$-正向集} ($\lambda$-directed set).
 	以 $\lambda$-滤范畴为指标范畴的余极限称为 \emph{$\lambda$-滤余极限} ($\lambda$-filtered colimit).
+	
+	\emph{滤范畴} (filtered category) 是指 $\aleph_0$-滤范畴, 即每个有限图都有余锥的范畴. 滤范畴的对偶称为\emph{余滤范畴} (cofiltered category), 即每个有限图都有锥的范畴.
 \end{definition}
 
 注意, $\lambda$-滤范畴中对象的多少没有限制, 但我们默认谈论\emph{小余极限}, 也即默认指标范畴的对象构成一个小集合 (从而是 $\kappa$-小的, $\kappa$ 为某个正则基数).
@@ -2087,7 +2150,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	
 \end{definition}
 
-对比例 \ref{group-homomorphism-adjoint-triple} 中的记号.
+%对比例 \ref{group-homomorphism-adjoint-triple} 中的记号.
 
 \begin{definition}
 	{(局部 Kan 扩张)}
@@ -2128,8 +2191,8 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \begin{example}
 	{(沿米田嵌入的 Kan 扩张)}
 	设 $\mathsf C' = \widehat {\mathsf C}$, $p=\yo\colon \mathsf C \to \widehat {\mathsf C}$ 为米田嵌入.
-	设 $\mathsf D$ 为余完备范畴. 由命题 \ref{free-cocompletion}, 任意函子 $F\colon \mathsf C \to \mathsf D$
-	都有沿 $\yo$ 的唯一的左 Kan 扩张 $\yo_{!} F \colon \widehat {\mathsf C} \to \mathsf D$.
+	设 $\mathsf D$ 为余完备范畴. 命题 \ref{free-cocompletion} 给出了任意函子 $F\colon \mathsf C \to \mathsf D$
+	沿 $\yo$ 的唯一的左 Kan 扩张 $\yo_{!} F \colon \widehat {\mathsf C} \to \mathsf D$, 命题 \ref{nerve-and-realization} 给出了它的具体表达式.
 \end{example}
 
 \begin{example}
@@ -2144,16 +2207,18 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=0]
 	\end{tikzcd}\]
-	即当定义 \ref{Kan-extension-definition} 中的 $\mathsf D$ 取 $\mathsf {Set}$ 时, 左右 Kan 扩张总存在.
 	展开定义, 得
 	\begin{itemize}
 		\item 对 $F\in \widehat {\mathsf C}$,
 		$
-		p_!(F)(c') = \coprod_{c\in\mathsf C} F(c)\times\operatorname{Hom}_{\mathsf C'}(c',pc)\Big/\sim \ = \operatorname{colim}_{c'\to pc} F(c);
-		$
+		p_!(F)(c') = \operatorname{colim}_{c'\to pc} F(c)
+		$ (一个特例: 拓扑空间上预层的\emph{逆像});
 		\item 对 $F\in \widehat {\mathsf C'}$,
-		$p^*(F)(c) = F(pc)$.% 这是预层的\emph{直像}\footnotemark{};
+		$p^*(F)(c) = F(pc)$ (一个特例: 拓扑空间上预层的\emph{直像});% 这是预层的\emph{直像}\footnotemark{};
+		\item 对 $F\in \widehat {\mathsf C}$,
+		$p_*(F)(c') = \operatorname{lim}_{pc\to c'} F(c)$.
 	\end{itemize}
+	这说明当定义 \ref{Kan-extension-definition} 中的 $\mathsf D$ 取 $\mathsf {Set}$ 时, 左右 Kan 扩张总存在. 更一般地, 当 $\mathsf D$ 余完备时左 Kan 扩张 $p_!$ 存在, 当 $\mathsf D$ 完备时右 Kan 扩张 $p_*$ 存在.
 \end{example}
 %\footnotetext{关于方向观念的注解. 函子 $p$ 通常对应着一个反方向的态射, 例如拓扑空间的映射 $X\to Y$ 是反方向的函子 $\operatorname{Open}(Y)\to\operatorname{Open}(X)$. 因此}
 %\todo{用 Kan 扩张定义预层的逆像}

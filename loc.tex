@@ -327,6 +327,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 			i^*(V)&\leq (U\Rightarrow W).
 		\end{align*}
 		令 $V=(U\Rightarrow W)$, 知 $i^*(U\Rightarrow W) = (U\Rightarrow W)$, 故 $(U\Rightarrow W)\in \mathcal O(Y)$.
+		这个命题是指数理想的判定 (命题 \ref{exponential-ideal-cartesian-closed-reflective-subcategory}) 的特例.
 	\end{enumerate}
 \end{proof}
 
@@ -533,7 +534,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\overline{W} \simeq X\setminus U,\quad U= \bigvee \{V\in\mathcal O(X)\mid i^*(V) =\bot\}.
 	\]
 	若 $\overline{W} = X$, 则称 $W$ 为\emph{稠密子位象}.
-	设 $j\colon \mathcal O(X)\to\mathcal O(X)$ 为子位象 $W$ 对应的内核, 则 $W$ 为稠密子位象当且仅当 $j(\bot) = \bot$.
+	设 $j\colon \mathcal O(X)\to\mathcal O(X)$ 为子位象 $W$ 对应的内核, 则 $W$ 为稠密子位象当且仅当 $j(\bot) = \bot$, 也即 $\bot\in\mathcal O(W)$.
 \end{propdef}
 
 \subsection{Boole 位象}
@@ -612,17 +613,18 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\[
 	U\land V\leq W \quad\Leftrightarrow \quad U\leq (V\Rightarrow W),
 	\]
-	因此 $V$ 与 $V\Rightarrow W$ 是 Boole 代数 $\mathcal O(Y)$ 中的互补元素, $V\in\mathcal O(\booleansublocale{W})$.
+	因此 $V$ 与 $V\Rightarrow W$ 是 Boole 代数 $\mathcal O(Y)$ 中的互补元素, 这证明了 $\mathcal O(Y)\subset\mathcal O(\booleansublocale{W})$.
 	而 $(-\Rightarrow W)$ 的像落在 $\mathcal O(Y)$ 内 (命题 \ref{sublocale-exponential-ideal}),
 	故有 $Y = \booleansublocale{W}$.
 \end{proof}
 由上述证明可知, 对任何子位象 $i\colon Y\to X$, 将 $\mathcal O(Y)$ 通过 $i_*$ 视为 $\mathcal O(X)$ 的子集,
-对任意 $W\in\mathcal O(Y)$, 有 $\mathcal O(\booleansublocale{W}) \subset\mathcal O(Y)$.
+对任意 $W\in\mathcal O(Y)$, 有 $\mathcal O(\booleansublocale{W}) \subset\mathcal O(Y)$,
+即 ``$\booleansublocale{W}$ 是包含 $W$ 的最小子位象'', 其中子位象按照上述方式视为 $\mathcal O(X)$ 的子集.
 
 \begin{example}
 	[label={double-negation-sublocale}]
 	{(双重否定子位象)}
-	在定义 \ref{Boolean-sublocale} 中取 $W=\bot$ 就得到\emph{双重否定子位象}.
+	在定义 \ref{Boolean-sublocale} 中取 $W=\bot$ 就得到\emph{双重否定子位象},
 %	设 $\mathcal O(X)$ 是\fm{}, \emph{双重否定} (double negation) $\neg\neg\colon \mathcal O(X)\to\mathcal O(X)$ 是一个内核, 因为它是伴随
 %	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhjYWwgTyhYKV57XFxvcH0iXSxbMSwwLCJcXG1hdGhjYWwgTyhYKSJdLFswLDEsIlxcbmVnIiwyLHsib2Zmc2V0IjoyfV0sWzEsMCwiXFxuZWciLDIseyJvZmZzZXQiOjJ9XSxbMywyLCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
 %	\[\begin{tikzcd}
@@ -632,12 +634,11 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 %		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
 %	\end{tikzcd}\]
 %	对应的单子, $\neg\neg\neg\neg = \neg\neg$. (这个伴随的道理与幂集函子类似, 见例 \ref{contravariant-power-set-self-adjunction}.)
-	记 $\neg\neg$ 对应的子位象为 $X_{\neg\neg}\hookrightarrow X$.
+	即内核 $\neg\neg$ 对应的子位象, 记之为 $X_{\neg\neg}\hookrightarrow X$.
 	% $X_{\neg\neg}$ 是 $X$ 的最大 Boole 子位象吗?
 	称 $\mathcal O(X_{\neg\neg}) = \{U\in\mathcal O(X)\mid U = \neg\neg U\}$ 的元素为 $\mathcal O(X)$ 的\emph{正则元素} (见例 \ref{complete-atomless-Boolean-algebra}).
-	$X_{\neg\neg}$ 是 $X$ 的最小稠密子位象.
-	在\topos{}的层面, 双重否定作为 Lawvere--Tierney 拓扑给出一个 Boole 子\topos{}.
-	\todo{与力迫法的联系}
+	由前面的讨论, $X_{\neg\neg}$ 是 $X$ 的最小稠密子位象.
+	在\topos{}的层面, 双重否定作为 Lawvere--Tierney 拓扑给出一个 Boole 子\topos{}, 在力迫法中有重要的应用 (见 \ref{Cohen-forcing} 节).
 \end{example}
 
 \subsection{位象的满射}

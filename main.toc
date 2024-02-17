@@ -1,141 +1,147 @@
-\contentsline {chapter}{\numberline {0}前言}{5}{chapter.0}%
-\contentsline {chapter}{\numberline {1}意象{}的范畴论性质}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}范畴论基本概念}{8}{section.1.1}%
-\contentsline {subsection}{极限与余极限}{8}{section.1.1}%
-\contentsline {subsection}{指数对象与积闭范畴}{9}{tcb@cnt@remark.1.1.1}%
-\contentsline {subsection}{子对象分类子}{12}{tcb@cnt@remark.1.1.9}%
-\contentsline {subsection}{幂对象}{16}{tcb@cnt@remark.1.1.23}%
-\contentsline {subsection}{俯范畴与局部积闭性}{18}{tcb@cnt@remark.1.1.25}%
-\contentsline {section}{\numberline {1.2}意象{}}{23}{section.1.2}%
-\contentsline {section}{\numberline {1.3}更多范畴论结构}{24}{section.1.3}%
-\contentsline {subsection}{0 和 1}{24}{section.1.3}%
-\contentsline {subsection}{单射与满射}{25}{tcb@cnt@remark.1.3.3}%
-\contentsline {subsection}{正则单射与满射, 等价关系}{26}{tcb@cnt@remark.1.3.7}%
-\contentsline {subsection}{像}{29}{tcb@cnt@remark.1.3.17}%
-\contentsline {subsection}{满--单分解}{30}{tcb@cnt@remark.1.3.22}%
-\contentsline {subsection}{子终对象}{32}{tcb@cnt@remark.1.3.24}%
-\contentsline {subsection}{子对象的格与 Heyting 代数}{33}{tcb@cnt@remark.1.3.30}%
+\contentsline {chapter}{\numberline {0}前言}{7}{chapter.0}%
+\contentsline {chapter}{\numberline {1}意象{}的范畴论性质}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}范畴论基本概念}{10}{section.1.1}%
+\contentsline {subsection}{极限与余极限}{10}{section.1.1}%
+\contentsline {subsection}{指数对象与积闭范畴}{11}{tcb@cnt@remark.1.1.1}%
+\contentsline {subsection}{子对象分类子}{13}{tcb@cnt@remark.1.1.9}%
+\contentsline {subsection}{幂对象}{18}{tcb@cnt@remark.1.1.23}%
+\contentsline {subsection}{俯范畴与局部积闭性}{19}{tcb@cnt@remark.1.1.25}%
+\contentsline {section}{\numberline {1.2}意象{}}{24}{section.1.2}%
+\contentsline {section}{\numberline {1.3}更多范畴论结构}{26}{section.1.3}%
+\contentsline {subsection}{0 和 1}{26}{section.1.3}%
+\contentsline {subsection}{单射与满射}{27}{tcb@cnt@remark.1.3.3}%
+\contentsline {subsection}{正则单射与满射, 等价关系}{28}{tcb@cnt@remark.1.3.7}%
+\contentsline {subsection}{像}{30}{tcb@cnt@remark.1.3.17}%
+\contentsline {subsection}{满--单分解}{32}{tcb@cnt@remark.1.3.22}%
+\contentsline {subsection}{子终对象}{33}{tcb@cnt@remark.1.3.24}%
+\contentsline {subsection}{子对象的格与 Heyting 代数}{34}{tcb@cnt@remark.1.3.30}%
 \contentsline {subsection}{自然数对象}{40}{tcb@cnt@remark.1.3.49}%
-\contentsline {subsection}{无交和}{40}{tcb@cnt@remark.1.3.54}%
+\contentsline {subsection}{无交和}{41}{tcb@cnt@remark.1.3.54}%
 \contentsline {subsection}{Boole 意象{}与选择公理}{43}{tcb@cnt@remark.1.3.57}%
 \contentsline {chapter}{\numberline {2}位象: 无点拓扑学}{47}{chapter.2}%
 \contentsline {section}{\numberline {2.1}基本概念}{48}{section.2.1}%
-\contentsline {section}{\numberline {2.2}位象的几何性质}{53}{section.2.2}%
-\contentsline {subsection}{子位象与内核}{53}{section.2.2}%
-\contentsline {subsection}{开子位象与闭子位象}{55}{Item.20}%
-\contentsline {subsection}{Boole 位象}{58}{tcb@cnt@remark.2.2.12}%
+\contentsline {section}{\numberline {2.2}位象的几何性质}{52}{section.2.2}%
+\contentsline {subsection}{子位象与内核}{52}{section.2.2}%
+\contentsline {subsection}{开子位象与闭子位象}{54}{Item.20}%
+\contentsline {subsection}{Boole 位象}{57}{tcb@cnt@remark.2.2.12}%
 \contentsline {subsection}{位象的满射}{59}{tcb@cnt@remark.2.2.16}%
-\contentsline {subsection}{开映射}{60}{Item.23}%
+\contentsline {subsection}{开映射}{59}{Item.23}%
 \contentsline {section}{\numberline {2.3}位象与逻辑}{60}{section.2.3}%
-\contentsline {subsection}{经典命题逻辑与 Boole 代数}{61}{section.2.3}%
+\contentsline {subsection}{经典命题逻辑与 Boole 代数}{60}{section.2.3}%
 \contentsline {subsection}{几何逻辑与位格{}}{64}{tcb@cnt@remark.2.3.13}%
 \contentsline {chapter}{\numberline {3}Grothendieck 意象{}与空间的概念}{67}{chapter.3}%
 \contentsline {section}{\numberline {3.1}预层}{69}{section.3.1}%
 \contentsline {subsection}{常见的预层范畴}{70}{tcb@cnt@remark.3.1.4}%
 \contentsline {subsection}{预层范畴是意象{}}{71}{tcb@cnt@remark.3.1.8}%
 \contentsline {subsection}{筛与预层范畴中的子对象}{72}{tcb@cnt@remark.3.1.10}%
-\contentsline {section}{\numberline {3.2}层与景}{76}{section.3.2}%
-\contentsline {subsection}{从覆盖到 Grothendieck 拓扑}{76}{equation.3.2.3}%
-\contentsline {paragraph}{注意.}{80}{tcb@cnt@remark.3.2.15}%
-\contentsline {subsection}{常见的景}{81}{tcb@cnt@remark.3.2.16}%
-\contentsline {subsection}{Lawvere--Tierney 拓扑}{83}{tcb@cnt@remark.3.2.24}%
-\contentsline {subsection}{层化与局部化}{86}{tcb@cnt@remark.3.2.30}%
-\contentsline {section}{\numberline {3.3}层与平展空间}{86}{section.3.3}%
-\contentsline {section}{\numberline {3.4}层意象{}}{89}{section.3.4}%
-\contentsline {subsection}{层范畴中的极限与余极限}{89}{section.3.4}%
-\contentsline {subsection}{层范畴中的子对象}{90}{tcb@cnt@remark.3.4.1}%
-\contentsline {subsection}{层范畴中的指数对象}{90}{tcb@cnt@remark.3.4.2}%
-\contentsline {subsection}{层意象{}之间的态射: 直像与逆像}{91}{tcb@cnt@remark.3.4.10}%
-\contentsline {subsection}{景的态射}{94}{tcb@cnt@remark.3.4.17}%
-\contentsline {subsection}{层与平展空间: 意象{}版本}{94}{tcb@cnt@remark.3.4.20}%
-\contentsline {section}{\numberline {3.5}几何态射}{94}{section.3.5}%
-\contentsline {subsection}{群作用与张量--同态伴随}{96}{tcb@cnt@remark.3.5.3}%
-\contentsline {subsection}{意象{}的点}{100}{tcb@cnt@remark.3.5.16}%
-\contentsline {section}{\numberline {3.6}意象{}的几何性质}{101}{section.3.6}%
-\contentsline {subsection}{连通性}{101}{section.3.6}%
-\contentsline {subsection}{嵌入与满射}{102}{tcb@cnt@remark.3.6.2}%
-\contentsline {subsection}{本质几何态射与局部连通意象{}}{103}{tcb@cnt@remark.3.6.7}%
-\contentsline {section}{\numberline {3.7}Giraud 公理}{103}{section.3.7}%
-\contentsline {chapter}{\numberline {4}意象{}的内语言: 从语法到语义}{105}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Mitchell--B\'enabou 语言}{106}{section.4.1}%
-\contentsline {section}{\numberline {4.2}模态与层化}{108}{section.4.2}%
-\contentsline {section}{\numberline {4.3}层语义}{109}{section.4.3}%
-\contentsline {section}{\numberline {4.4}非标准分析, 滤商与超滤范畴}{109}{section.4.4}%
-\contentsline {subsection}{基本概念}{109}{section.4.4}%
-\contentsline {subsection}{滤商}{109}{tcb@cnt@remark.4.4.2}%
-\contentsline {subsection}{超滤范畴}{109}{tcb@cnt@remark.4.4.2}%
-\contentsline {section}{\numberline {4.5}可计算性理论与有效意象}{109}{section.4.5}%
-\contentsline {subsection}{基础知识}{110}{section.4.5}%
-\contentsline {section}{\numberline {4.6}综合微分几何与光滑无穷小分析}{112}{section.4.6}%
-\contentsline {subsection}{综合微分几何的理论}{112}{section.4.6}%
-\contentsline {paragraph}{Kock--Lawvere 公理与导数}{113}{tcb@cnt@remark.4.6.5}%
-\contentsline {paragraph}{Weil 代数与无穷小几何对象}{113}{tcb@cnt@remark.4.6.7}%
-\contentsline {subsection}{综合微分几何的模型}{116}{tcb@cnt@remark.4.6.16}%
-\contentsline {subsubsection}{``代数'' 模型}{116}{tcb@cnt@remark.4.6.16}%
-\contentsline {subsubsection}{光滑代数}{118}{tcb@cnt@remark.4.6.23}%
-\contentsline {section}{\numberline {4.7}量子理论与 Bohr 意象}{120}{section.4.7}%
-\contentsline {subsection}{$C^*$-代数, 经典语境与 Bohr 景}{121}{section.4.7}%
-\contentsline {subsection}{Bohr 意象}{123}{tcb@cnt@remark.4.7.12}%
-\contentsline {subsection}{Bohr 意象中的命题}{124}{tcb@cnt@remark.4.7.17}%
-\contentsline {section}{\numberline {4.8}Cohen 力迫法}{125}{section.4.8}%
-\contentsline {section}{\numberline {4.9}凝聚态数学}{125}{section.4.9}%
-\contentsline {chapter}{\numberline {5}句法景与分类意象{}}{127}{chapter.5}%
-\contentsline {section}{\numberline {5.1}句法范畴: 语法--语义对偶}{127}{section.5.1}%
-\contentsline {subsection}{类型论的语境范畴}{128}{section.5.1}%
-\contentsline {subsection}{一阶理论的句法范畴}{128}{tcb@cnt@remark.5.1.1}%
-\contentsline {subsection}{代数理论的句法范畴--Lawvere 理论}{129}{tcb@cnt@remark.5.1.4}%
-\contentsline {section}{\numberline {5.2}分类意象{}}{129}{section.5.2}%
-\contentsline {subsection}{$G$-旋子的分类意象{}}{130}{section.5.2}%
-\contentsline {subsection}{子终对象的分类意象}{132}{tcb@cnt@remark.5.2.5}%
-\contentsline {subsection}{群的分类意象{}}{132}{tcb@cnt@remark.5.2.6}%
-\contentsline {subsection}{环的分类意象{}}{132}{tcb@cnt@remark.5.2.6}%
-\contentsline {subsection}{几何理论的分类意象{}}{132}{tcb@cnt@remark.5.2.6}%
-\contentsline {chapter}{\numberline {6}相对意象{}}{133}{chapter.6}%
-\contentsline {chapter}{\numberline {7}高阶意象{}}{135}{chapter.7}%
-\contentsline {section}{\numberline {7.1}$\infty $-范畴}{136}{section.7.1}%
-\contentsline {subsection}{同伦}{139}{tcb@cnt@remark.7.1.12}%
-\contentsline {subsection}{更多范畴论操作}{140}{tcb@cnt@remark.7.1.14}%
-\contentsline {subsection}{单纯范畴}{141}{tcb@cnt@remark.7.1.19}%
-\contentsline {subsection}{$\operatorname {Hom}$ 函子, 预层与 $\infty $-米田引理}{144}{tcb@cnt@remark.7.1.29}%
-\contentsline {section}{\numberline {7.2}$\infty $-意象{}}{145}{section.7.2}%
-\contentsline {section}{\numberline {7.3}$\infty $-层 $\infty $-意象{}及其表现}{145}{section.7.3}%
-\contentsline {subsection}{Grothendieck 拓扑与层}{145}{section.7.3}%
-\contentsline {section}{\numberline {7.4}上同调}{146}{section.7.4}%
-\contentsline {subsection}{例}{146}{tcb@cnt@remark.7.4.1}%
-\contentsline {chapter}{\numberline {8}凝聚意象{}}{147}{chapter.8}%
-\contentsline {section}{\numberline {8.1}凝聚的动机, 基本概念}{147}{section.8.1}%
-\contentsline {chapter}{\numberline {A}范畴论基础}{149}{appendix.A}%
-\contentsline {section}{\numberline {A.1}$2$-范畴}{149}{section.A.1}%
-\contentsline {subsection}{$2$-范畴中的万有性质}{155}{tcb@cnt@remark.A.1.11}%
-\contentsline {section}{\numberline {A.2}伴随}{155}{section.A.2}%
-\contentsline {subsection}{伴随保持极限}{157}{tcb@cnt@remark.A.2.3}%
-\contentsline {subsection}{伴随三元组}{158}{tcb@cnt@remark.A.2.7}%
-\contentsline {section}{\numberline {A.3}自反子范畴与局部化}{159}{section.A.3}%
-\contentsline {subsection}{局部对象}{162}{tcb@cnt@remark.A.3.6}%
-\contentsline {subsection}{分式计算}{165}{tcb@cnt@remark.A.3.15}%
-\contentsline {section}{\numberline {A.4}预层范畴与米田嵌入}{168}{section.A.4}%
-\contentsline {subsection}{米田引理}{168}{section.A.4}%
-\contentsline {subsection}{可表函子的余极限}{169}{tcb@cnt@remark.A.4.4}%
-\contentsline {subsection}{自由余完备化}{170}{tcb@cnt@remark.A.4.8}%
-\contentsline {subsection}{预层范畴的俯范畴}{172}{tcb@cnt@remark.A.4.15}%
-\contentsline {section}{\numberline {A.5}可表现范畴}{173}{section.A.5}%
-\contentsline {subsection}{可表现对象}{173}{section.A.5}%
-\contentsline {subsection}{稠密子范畴}{177}{tcb@cnt@remark.A.5.14}%
-\contentsline {subsection}{可表现范畴的性质与判定}{179}{tcb@cnt@remark.A.5.21}%
-\contentsline {section}{\numberline {A.6}Kan 扩张}{179}{section.A.6}%
-\contentsline {section}{\numberline {A.7}单子论}{181}{section.A.7}%
-\contentsline {section}{\numberline {A.8}万有代数}{185}{section.A.8}%
-\contentsline {subsection}{单子与代数理论}{189}{tcb@cnt@remark.A.8.9}%
-\contentsline {section}{\numberline {A.9}纤维范畴与索引范畴}{189}{section.A.9}%
-\contentsline {chapter}{\numberline {B}形式逻辑基础}{195}{appendix.B}%
-\contentsline {section}{\numberline {B.1}一阶语言}{195}{section.B.1}%
-\contentsline {subsubsection}{符号表}{197}{tcb@cnt@remark.B.1.4}%
-\contentsline {subsubsection}{项, 公式}{199}{tcb@cnt@remark.B.1.10}%
-\contentsline {subsection}{相继式, 理论}{201}{tcb@cnt@remark.B.1.16}%
-\contentsline {section}{\numberline {B.2}范畴语义}{207}{section.B.2}%
-\contentsline {subsection}{一阶理论在范畴中的模型}{207}{section.B.2}%
-\contentsline {section}{\numberline {B.3}高阶逻辑}{210}{section.B.3}%
-\contentsline {section}{\numberline {B.4}类型论}{210}{section.B.4}%
-\contentsline {paragraph}{空类型}{211}{tcb@cnt@remark.B.4.4}%
-\contentsline {paragraph}{}{211}{tcb@cnt@remark.B.4.4}%
-\contentsline {section}{\numberline {B.5}模态逻辑}{211}{section.B.5}%
+\contentsline {section}{\numberline {3.2}景}{75}{section.3.2}%
+\contentsline {subsection}{从覆盖到 Grothendieck 拓扑}{75}{section.3.2}%
+\contentsline {paragraph}{注意.}{79}{tcb@cnt@remark.3.2.14}%
+\contentsline {subsection}{常见的景}{80}{tcb@cnt@remark.3.2.15}%
+\contentsline {section}{\numberline {3.3}层化的 Grothendieck $+$构造}{82}{section.3.3}%
+\contentsline {section}{\numberline {3.4}层意象{}的范畴论性质}{84}{section.3.4}%
+\contentsline {subsection}{层范畴中的极限与余极限}{84}{section.3.4}%
+\contentsline {subsection}{层范畴中的子对象}{85}{tcb@cnt@remark.3.4.2}%
+\contentsline {subsection}{层范畴中的指数对象}{87}{tcb@cnt@remark.3.4.6}%
+\contentsline {subsection}{Grothendieck 意象{}}{87}{tcb@cnt@remark.3.4.8}%
+\contentsline {subsection}{层意象{}之间的态射: 直像与逆像}{89}{tcb@cnt@remark.3.4.17}%
+\contentsline {section}{\numberline {3.5}Lawvere--Tierney 拓扑, 内蕴层化与局部化}{92}{section.3.5}%
+\contentsline {subsection}{Lawvere--Tierney 拓扑}{92}{section.3.5}%
+\contentsline {subsection}{一般意象{}的局部化}{94}{tcb@cnt@remark.3.5.6}%
+\contentsline {section}{\numberline {3.6}层与平展空间}{95}{section.3.6}%
+\contentsline {subsection}{层与平展空间: 意象{}版本}{98}{tcb@cnt@remark.3.6.8}%
+\contentsline {section}{\numberline {3.7}意象{}的几何态射与景的态射}{98}{section.3.7}%
+\contentsline {subsection}{几何态射}{98}{section.3.7}%
+\contentsline {subsection}{群作用与张量--同态伴随}{99}{tcb@cnt@remark.3.7.3}%
+\contentsline {subsection}{意象{}的点}{103}{tcb@cnt@remark.3.7.16}%
+\contentsline {subsection}{景的态射, 左正合与平坦函子}{105}{tcb@cnt@remark.3.7.22}%
+\contentsline {section}{\numberline {3.8}意象{}的几何性质}{106}{section.3.8}%
+\contentsline {subsection}{连通性}{107}{section.3.8}%
+\contentsline {subsection}{嵌入与满射}{107}{tcb@cnt@remark.3.8.2}%
+\contentsline {subsection}{本质几何态射与局部连通意象{}}{108}{tcb@cnt@remark.3.8.7}%
+\contentsline {section}{\numberline {3.9}Giraud 公理}{109}{section.3.9}%
+\contentsline {chapter}{\numberline {4}意象{}的内语言: 从语法到语义}{111}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Mitchell--B\'enabou 语言}{112}{section.4.1}%
+\contentsline {section}{\numberline {4.2}模态与层化}{114}{section.4.2}%
+\contentsline {section}{\numberline {4.3}层语义}{115}{section.4.3}%
+\contentsline {section}{\numberline {4.4}非标准分析, 滤商与超滤范畴}{115}{section.4.4}%
+\contentsline {subsection}{基本概念}{115}{section.4.4}%
+\contentsline {subsection}{滤商}{115}{tcb@cnt@remark.4.4.2}%
+\contentsline {subsection}{超滤范畴}{115}{tcb@cnt@remark.4.4.2}%
+\contentsline {section}{\numberline {4.5}可计算性理论与有效意象}{115}{section.4.5}%
+\contentsline {subsection}{基础知识}{116}{section.4.5}%
+\contentsline {section}{\numberline {4.6}综合微分几何与光滑无穷小分析}{118}{section.4.6}%
+\contentsline {subsection}{综合微分几何的理论}{118}{section.4.6}%
+\contentsline {paragraph}{Kock--Lawvere 公理与导数}{119}{tcb@cnt@remark.4.6.5}%
+\contentsline {paragraph}{Weil 代数与无穷小几何对象}{119}{tcb@cnt@remark.4.6.7}%
+\contentsline {subsection}{综合微分几何的模型}{121}{tcb@cnt@remark.4.6.16}%
+\contentsline {subsubsection}{``代数'' 模型}{122}{tcb@cnt@remark.4.6.16}%
+\contentsline {subsubsection}{光滑代数}{124}{tcb@cnt@remark.4.6.23}%
+\contentsline {section}{\numberline {4.7}量子理论与 Bohr 意象}{126}{section.4.7}%
+\contentsline {subsection}{$C^*$-代数, 经典语境与 Bohr 景}{127}{section.4.7}%
+\contentsline {subsection}{Bohr 意象}{129}{tcb@cnt@remark.4.7.12}%
+\contentsline {subsection}{Bohr 意象中的命题}{130}{tcb@cnt@remark.4.7.17}%
+\contentsline {section}{\numberline {4.8}Cohen 力迫法}{130}{section.4.8}%
+\contentsline {section}{\numberline {4.9}凝聚态数学}{131}{section.4.9}%
+\contentsline {chapter}{\numberline {5}句法景与分类意象{}}{133}{chapter.5}%
+\contentsline {section}{\numberline {5.1}句法范畴: 语法--语义对偶}{133}{section.5.1}%
+\contentsline {subsection}{类型论的语境范畴}{134}{section.5.1}%
+\contentsline {subsection}{一阶理论的句法范畴}{134}{tcb@cnt@remark.5.1.1}%
+\contentsline {subsection}{代数理论的句法范畴--Lawvere 理论}{135}{tcb@cnt@remark.5.1.4}%
+\contentsline {section}{\numberline {5.2}分类意象{}}{135}{section.5.2}%
+\contentsline {subsection}{$G$-旋子的分类意象{}}{136}{section.5.2}%
+\contentsline {subsection}{子终对象的分类意象}{137}{tcb@cnt@remark.5.2.5}%
+\contentsline {subsection}{群的分类意象{}}{138}{tcb@cnt@remark.5.2.6}%
+\contentsline {subsection}{环的分类意象{}}{138}{tcb@cnt@remark.5.2.6}%
+\contentsline {subsection}{几何理论的分类意象{}}{138}{tcb@cnt@remark.5.2.6}%
+\contentsline {chapter}{\numberline {6}相对意象{}}{139}{chapter.6}%
+\contentsline {chapter}{\numberline {7}高阶意象{}}{141}{chapter.7}%
+\contentsline {section}{\numberline {7.1}$\infty $-范畴}{142}{section.7.1}%
+\contentsline {subsection}{同伦}{145}{tcb@cnt@remark.7.1.12}%
+\contentsline {subsection}{更多范畴论操作}{146}{tcb@cnt@remark.7.1.14}%
+\contentsline {subsection}{单纯范畴}{147}{tcb@cnt@remark.7.1.19}%
+\contentsline {subsection}{$\operatorname {Hom}$ 函子, 预层与 $\infty $-米田引理}{150}{tcb@cnt@remark.7.1.29}%
+\contentsline {section}{\numberline {7.2}$\infty $-意象{}}{150}{section.7.2}%
+\contentsline {section}{\numberline {7.3}$\infty $-层 $\infty $-意象{}及其表现}{151}{section.7.3}%
+\contentsline {subsection}{Grothendieck 拓扑与层}{151}{section.7.3}%
+\contentsline {section}{\numberline {7.4}上同调}{151}{section.7.4}%
+\contentsline {subsection}{例}{152}{tcb@cnt@remark.7.4.1}%
+\contentsline {section}{\numberline {7.5}$n$-范畴}{152}{section.7.5}%
+\contentsline {subsection}{东西, 结构, 性质}{152}{section.7.5}%
+\contentsline {chapter}{\numberline {8}凝聚意象{}}{153}{chapter.8}%
+\contentsline {section}{\numberline {8.1}凝聚的动机, 基本概念}{153}{section.8.1}%
+\contentsline {chapter}{\numberline {A}范畴论基础}{155}{appendix.A}%
+\contentsline {section}{\numberline {A.1}$2$-范畴}{155}{section.A.1}%
+\contentsline {subsection}{$2$-范畴中的万有性质}{161}{tcb@cnt@remark.A.1.11}%
+\contentsline {section}{\numberline {A.2}伴随}{161}{section.A.2}%
+\contentsline {subsection}{伴随保持极限}{162}{tcb@cnt@remark.A.2.3}%
+\contentsline {subsection}{伴随三元组}{164}{tcb@cnt@remark.A.2.7}%
+\contentsline {section}{\numberline {A.3}自反子范畴与局部化}{165}{section.A.3}%
+\contentsline {subsection}{局部对象}{167}{tcb@cnt@remark.A.3.6}%
+\contentsline {subsection}{分式计算}{171}{tcb@cnt@remark.A.3.17}%
+\contentsline {section}{\numberline {A.4}预层范畴与米田嵌入}{174}{section.A.4}%
+\contentsline {subsection}{米田引理}{174}{section.A.4}%
+\contentsline {subsection}{可表函子的余极限}{175}{tcb@cnt@remark.A.4.4}%
+\contentsline {subsection}{自由余完备化}{176}{tcb@cnt@remark.A.4.8}%
+\contentsline {subsection}{预层范畴的俯范畴}{179}{tcb@cnt@remark.A.4.15}%
+\contentsline {section}{\numberline {A.5}可表现范畴}{180}{section.A.5}%
+\contentsline {subsection}{可表现对象}{180}{section.A.5}%
+\contentsline {subsection}{稠密子范畴}{184}{tcb@cnt@remark.A.5.14}%
+\contentsline {subsection}{可表现范畴的性质与判定}{185}{tcb@cnt@remark.A.5.21}%
+\contentsline {section}{\numberline {A.6}Kan 扩张}{186}{section.A.6}%
+\contentsline {section}{\numberline {A.7}单子论}{187}{section.A.7}%
+\contentsline {section}{\numberline {A.8}万有代数}{192}{section.A.8}%
+\contentsline {subsection}{单子与代数理论}{195}{tcb@cnt@remark.A.8.9}%
+\contentsline {section}{\numberline {A.9}纤维范畴与索引范畴}{195}{section.A.9}%
+\contentsline {chapter}{\numberline {B}形式逻辑基础}{201}{appendix.B}%
+\contentsline {section}{\numberline {B.1}一阶语言}{201}{section.B.1}%
+\contentsline {subsubsection}{符号表}{203}{tcb@cnt@remark.B.1.4}%
+\contentsline {subsubsection}{项, 公式}{205}{tcb@cnt@remark.B.1.10}%
+\contentsline {subsection}{相继式, 理论}{207}{tcb@cnt@remark.B.1.16}%
+\contentsline {section}{\numberline {B.2}范畴语义}{213}{section.B.2}%
+\contentsline {subsection}{一阶理论在范畴中的模型}{213}{section.B.2}%
+\contentsline {section}{\numberline {B.3}高阶逻辑}{215}{section.B.3}%
+\contentsline {section}{\numberline {B.4}类型论}{215}{section.B.4}%
+\contentsline {paragraph}{空类型}{216}{tcb@cnt@remark.B.4.4}%
+\contentsline {paragraph}{}{216}{tcb@cnt@remark.B.4.4}%
+\contentsline {section}{\numberline {B.5}模态逻辑}{217}{section.B.5}%

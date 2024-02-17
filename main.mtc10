@@ -1,22 +1,22 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}$2$-范畴}{\reset@font\mtcSfont 149}{section.A.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $2$-范畴中的万有性质}{\reset@font\mtcSSfont 155}{tcb@cnt@remark.A.1.11}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}伴随}{\reset@font\mtcSfont 155}{section.A.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 伴随保持极限}{\reset@font\mtcSSfont 157}{tcb@cnt@remark.A.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 伴随三元组}{\reset@font\mtcSSfont 158}{tcb@cnt@remark.A.2.7}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}自反子范畴与局部化}{\reset@font\mtcSfont 159}{section.A.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 局部对象}{\reset@font\mtcSSfont 162}{tcb@cnt@remark.A.3.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 分式计算}{\reset@font\mtcSSfont 165}{tcb@cnt@remark.A.3.15}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.4}预层范畴与米田嵌入}{\reset@font\mtcSfont 168}{section.A.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 米田引理}{\reset@font\mtcSSfont 168}{section.A.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 可表函子的余极限}{\reset@font\mtcSSfont 169}{tcb@cnt@remark.A.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 自由余完备化}{\reset@font\mtcSSfont 170}{tcb@cnt@remark.A.4.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 预层范畴的俯范畴}{\reset@font\mtcSSfont 172}{tcb@cnt@remark.A.4.15}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.5}可表现范畴}{\reset@font\mtcSfont 173}{section.A.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 可表现对象}{\reset@font\mtcSSfont 173}{section.A.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 稠密子范畴}{\reset@font\mtcSSfont 177}{tcb@cnt@remark.A.5.14}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 可表现范畴的性质与判定}{\reset@font\mtcSSfont 179}{tcb@cnt@remark.A.5.21}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.6}Kan 扩张}{\reset@font\mtcSfont 179}{section.A.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.7}单子论}{\reset@font\mtcSfont 181}{section.A.7}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.8}万有代数}{\reset@font\mtcSfont 185}{section.A.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 单子与代数理论}{\reset@font\mtcSSfont 189}{tcb@cnt@remark.A.8.9}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.9}纤维范畴与索引范畴}{\reset@font\mtcSfont 189}{section.A.9}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}$2$-范畴}{\reset@font\mtcSfont 155}{section.A.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $2$-范畴中的万有性质}{\reset@font\mtcSSfont 161}{tcb@cnt@remark.A.1.11}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}伴随}{\reset@font\mtcSfont 161}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 伴随保持极限}{\reset@font\mtcSSfont 162}{tcb@cnt@remark.A.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 伴随三元组}{\reset@font\mtcSSfont 164}{tcb@cnt@remark.A.2.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}自反子范畴与局部化}{\reset@font\mtcSfont 165}{section.A.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 局部对象}{\reset@font\mtcSSfont 167}{tcb@cnt@remark.A.3.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 分式计算}{\reset@font\mtcSSfont 171}{tcb@cnt@remark.A.3.17}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.4}预层范畴与米田嵌入}{\reset@font\mtcSfont 174}{section.A.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 米田引理}{\reset@font\mtcSSfont 174}{section.A.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 可表函子的余极限}{\reset@font\mtcSSfont 175}{tcb@cnt@remark.A.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 自由余完备化}{\reset@font\mtcSSfont 176}{tcb@cnt@remark.A.4.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 预层范畴的俯范畴}{\reset@font\mtcSSfont 179}{tcb@cnt@remark.A.4.15}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.5}可表现范畴}{\reset@font\mtcSfont 180}{section.A.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 可表现对象}{\reset@font\mtcSSfont 180}{section.A.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 稠密子范畴}{\reset@font\mtcSSfont 184}{tcb@cnt@remark.A.5.14}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 可表现范畴的性质与判定}{\reset@font\mtcSSfont 185}{tcb@cnt@remark.A.5.21}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.6}Kan 扩张}{\reset@font\mtcSfont 186}{section.A.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.7}单子论}{\reset@font\mtcSfont 187}{section.A.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.8}万有代数}{\reset@font\mtcSfont 192}{section.A.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 单子与代数理论}{\reset@font\mtcSSfont 195}{tcb@cnt@remark.A.8.9}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.9}纤维范畴与索引范畴}{\reset@font\mtcSfont 195}{section.A.9}}

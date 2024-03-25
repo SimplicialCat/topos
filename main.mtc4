@@ -1,30 +1,35 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}预层}{\reset@font\mtcSfont 69}{section.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 常见的预层范畴}{\reset@font\mtcSSfont 70}{tcb@cnt@remark.3.1.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 预层范畴是意象{}}{\reset@font\mtcSSfont 71}{tcb@cnt@remark.3.1.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 筛与预层范畴中的子对象}{\reset@font\mtcSSfont 72}{tcb@cnt@remark.3.1.10}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}景}{\reset@font\mtcSfont 75}{section.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 从覆盖到 Grothendieck 拓扑}{\reset@font\mtcSSfont 75}{section.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode 注意.}{\reset@font\mtcPfont 79}{tcb@cnt@remark.3.2.14}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 常见的景}{\reset@font\mtcSSfont 80}{tcb@cnt@remark.3.2.15}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}层化的 Grothendieck $+$构造}{\reset@font\mtcSfont 82}{section.3.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}层意象{}的范畴论性质}{\reset@font\mtcSfont 84}{section.3.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层范畴中的极限与余极限}{\reset@font\mtcSSfont 84}{section.3.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层范畴中的子对象}{\reset@font\mtcSSfont 85}{tcb@cnt@remark.3.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层范畴中的指数对象}{\reset@font\mtcSSfont 87}{tcb@cnt@remark.3.4.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Grothendieck 意象{}}{\reset@font\mtcSSfont 87}{tcb@cnt@remark.3.4.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层意象{}之间的态射: 直像与逆像}{\reset@font\mtcSSfont 89}{tcb@cnt@remark.3.4.17}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Lawvere--Tierney 拓扑, 内蕴层化与局部化}{\reset@font\mtcSfont 92}{section.3.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Lawvere--Tierney 拓扑}{\reset@font\mtcSSfont 92}{section.3.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 一般意象{}的局部化}{\reset@font\mtcSSfont 94}{tcb@cnt@remark.3.5.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.6}层与平展空间}{\reset@font\mtcSfont 95}{section.3.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层与平展空间: 意象{}版本}{\reset@font\mtcSSfont 98}{tcb@cnt@remark.3.6.8}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.7}意象{}的几何态射与景的态射}{\reset@font\mtcSfont 98}{section.3.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 几何态射}{\reset@font\mtcSSfont 98}{section.3.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 群作用与张量--同态伴随}{\reset@font\mtcSSfont 99}{tcb@cnt@remark.3.7.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 意象{}的点}{\reset@font\mtcSSfont 103}{tcb@cnt@remark.3.7.16}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 景的态射, 左正合与平坦函子}{\reset@font\mtcSSfont 105}{tcb@cnt@remark.3.7.22}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.8}意象{}的几何性质}{\reset@font\mtcSfont 106}{section.3.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 连通性}{\reset@font\mtcSSfont 107}{section.3.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 嵌入与满射}{\reset@font\mtcSSfont 107}{tcb@cnt@remark.3.8.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 本质几何态射与局部连通意象{}}{\reset@font\mtcSSfont 108}{tcb@cnt@remark.3.8.7}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.9}Giraud 公理}{\reset@font\mtcSfont 109}{section.3.9}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}拓扑空间上的层与平展空间}{\reset@font\mtcSfont 73}{section.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 拓扑空间上层的直像与逆像}{\reset@font\mtcSSfont 77}{tcb@cnt@remark.3.1.13}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}范畴上的预层}{\reset@font\mtcSfont 81}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 筛与预层范畴中的子对象}{\reset@font\mtcSSfont 83}{tcb@cnt@remark.3.2.8}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}景}{\reset@font\mtcSfont 87}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 从覆盖到 Grothendieck 拓扑}{\reset@font\mtcSSfont 87}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 常见的景}{\reset@font\mtcSSfont 92}{tcb@cnt@remark.3.3.15}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}层化的 Grothendieck $+$构造}{\reset@font\mtcSfont 94}{section.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Grothendieck 意象{}}{\reset@font\mtcSfont 97}{section.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层范畴的性质}{\reset@font\mtcSSfont 97}{section.3.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 层范畴的子对象分类子}{\reset@font\mtcSSSfont 97}{tcb@cnt@remark.3.5.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 层范畴中的指数对象}{\reset@font\mtcSSSfont 99}{tcb@cnt@remark.3.5.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Grothendieck 意象{}}{\reset@font\mtcSSfont 100}{tcb@cnt@remark.3.5.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 位象型意象{}}{\reset@font\mtcSSfont 101}{tcb@cnt@remark.3.5.15}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.6}Lawvere--Tierney 拓扑, 内蕴层化与局部化}{\reset@font\mtcSfont 102}{section.3.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Lawvere--Tierney 拓扑}{\reset@font\mtcSSfont 102}{section.3.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层范畴的性质}{\reset@font\mtcSSfont 105}{tcb@cnt@remark.3.6.7}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 层范畴中的子对象}{\reset@font\mtcSSSfont 105}{tcb@cnt@remark.3.6.7}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 层范畴中的指数对象}{\reset@font\mtcSSSfont 106}{tcb@cnt@remark.3.6.10}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层化与局部化}{\reset@font\mtcSSfont 106}{tcb@cnt@remark.3.6.11}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.7}意象{}之间的态射}{\reset@font\mtcSfont 107}{section.3.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 几何态射}{\reset@font\mtcSSfont 107}{section.3.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 逻辑态射}{\reset@font\mtcSSfont 109}{tcb@cnt@remark.3.7.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 嵌入与满射}{\reset@font\mtcSSfont 109}{tcb@cnt@remark.3.7.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 满--单分解}{\reset@font\mtcSSfont 110}{tcb@cnt@remark.3.7.11}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 群作用与张量--同态伴随}{\reset@font\mtcSSfont 112}{tcb@cnt@remark.3.7.13}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 左正合与平坦函子}{\reset@font\mtcSSfont 116}{tcb@cnt@remark.3.7.26}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 意象{}的点}{\reset@font\mtcSSfont 119}{tcb@cnt@remark.3.7.30}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 景的态射}{\reset@font\mtcSSfont 120}{Item.39}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.8}意象{}的几何性质}{\reset@font\mtcSfont 120}{section.3.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 平展性}{\reset@font\mtcSSfont 121}{section.3.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 连通性}{\reset@font\mtcSSfont 121}{tcb@cnt@remark.3.8.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 开几何态射}{\reset@font\mtcSSfont 122}{tcb@cnt@remark.3.8.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 本质几何态射与局部连通意象{}}{\reset@font\mtcSSfont 122}{tcb@cnt@remark.3.8.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.9}Giraud 公理}{\reset@font\mtcSfont 122}{section.3.9}}

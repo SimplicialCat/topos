@@ -7,12 +7,11 @@
 
 \philoquote{Mathematicians are committed to rigorous reasoning, but they usually shy away from formal logic.}{William M. Farmer, \textit{The seven virtues of simple type theory}}
 
-\section{一阶语言}
+\section{一阶逻辑}
 
 \label{first-order-languages}
 
-为了把讨论的话题放在一般的框架中, 我们需要先引入逻辑学中的若干基本概念.
-这些概念可以视为 ``数学语言由什么构成'' 这个问题的一种完全形式化的回答. 写出语言的形式定义之前, 我们先从日常的数学语言中最熟悉的例子开始, 对语言的每个成分建立感性的认知.
+我们即将引入的逻辑学中的若干基本概念可以视为 ``数学语言由什么构成'' 这个问题的一种完全形式化的回答. 写出语言的形式定义之前, 我们先从日常的数学语言中最熟悉的例子开始, 对语言的每个成分建立感性的认知.
 
 %下面的例子中, $\Omega$ 是二元集合 $\{\top,\bot\}$, 其两个元素分别代表真和假.
 
@@ -23,7 +22,7 @@
 	$1+1=2$ 是一个公式, 其中
 	\begin{itemize}
 		\item $1,2$ 是自然数, 即是\emph{类型} (type) $\mathbb{N}$ 的\emph{项} (terms);
-		\item 加法 $+ \colon \mathbb{N}\times\mathbb{N} \to \mathbb{N}$ 是一个映射;
+		\item 加号 $+ \colon \mathbb{N}\times\mathbb{N} \to \mathbb{N}$ 是一个\emph{函数符号} (function symbol);
 		\item 将两个 $1$ 放在一起得到 $(1,1)$, 它的类型是 $\mathbb{N}\times\mathbb{N}$;
 		\item 以 $+$ 作用于 $(1,1)$, 得到 $1+1$, 类型为 $\mathbb{N}$;
 		\item 以 $=$ 连接类型 $\mathbb{N}$ 的两个项 $1+1$ 与 $2$, 得到公式 $1+1=2$. %它是类型 $\Omega$ 的项, 且这个项等于 $\top$ (``真'').
@@ -37,7 +36,7 @@
 	$y=x^2$ 是一个带\emph{自由变量} (free variables) 的公式, 其中
 	\begin{itemize}
 		\item $x,y$ 是类型 $\mathbb{R}$ 的\emph{变量}, 变量是\emph{项}的一种, 所以 $x,y$ 也是类型 $\mathbb{R}$ 的项;
-		\item $(-)^2 \colon \mathbb{R} \to \mathbb{R}$ 是一个映射, 以 $(-)^2$ 作用于 $x$ 得到 $x^2$, 它是类型 $\mathbb{R}$ 的项, 带一个\emph{自由变量} $x$;
+		\item 平方 $(-)^2 \colon \mathbb{R} \to \mathbb{R}$ 是一个函数符号, 以 $(-)^2$ 作用于 $x$ 得到 $x^2$, 它是类型 $\mathbb{R}$ 的项, 带一个\emph{自由变量} $x$;
 		\item 以 $=$ 连接类型 $\mathbb{R}$ 的两个项 $y$ 与 $x^2$, 得到公式 $y=x^2$. %它是类型 $\Omega$ 的项, 带两个自由变量 $x,y$.
 	\end{itemize}
 \end{example}
@@ -77,6 +76,8 @@
 %\end{definition}
 
 % 下面给出我们使用的 ``语言'' 概念的形式化定义\footnote{这些定义还可以更加形式化, 但那样就会牺牲可读性.}; 请注意这只是 ``语言'' 的众多定义中适合本讲义的一种; 我们的目的是引入意象的内语言.
+
+\subsection{一阶语言的基本要件}
 
 \subsubsection{符号表}
 
@@ -158,6 +159,7 @@
 \subsubsection{项, 公式}
 
 \begin{definition}
+	[label={definition-terms}]
 	{(项)}
 	设 $\Sigma$ 为一符号表, 其上的\emph{项} (terms) 由如下条款归纳定义.
 	\begin{itemize}
@@ -175,13 +177,13 @@
 		\item (关系) 对于关系符号 $R \hookrightarrow A_1\cdots A_n$, 若 $x_1,\cdots,x_n$ 分别是类型 $A_1,\cdots,A_n$ 的项, 则 $f(x_1,\cdots,x_n)$ 是公式, 其中的自由变量是所有在某个 $x_i$ 中出现的变量;
 		\item (等式) 对于\emph{相同类型}的项 $x,y$, $(x=y)$ 是公式, 其中的自由变量是所有出现在 $x$ 或 $y$ 中 (或两者兼有) 的变量;
 		\item (真) $\top$ 是公式, 其中没有自由变量;
-		\item (且, 又叫\emph{合取}) 对于公式 $\phi,\psi$, $(\phi\wedge\psi)$ 是公式, 其中自由变量是 $\phi$ 与 $\psi$ 的自由变量的并;
+		\item (且, 又叫\emph{合取}, conjunction) 对于公式 $\phi,\psi$, $(\phi\wedge\psi)$ 是公式, 其中自由变量是 $\phi$ 与 $\psi$ 的自由变量的并;
 		\item (假) $\bot$ 是公式, 其中没有自由变量;
-		\item (或, 又叫\emph{析取}) 对于公式 $\phi,\psi$, $(\phi\vee\psi)$ 是公式, 其中自由变量是 $\phi$ 与 $\psi$ 的自由变量的并;
+		\item (或, 又叫\emph{析取}, disjunction) 对于公式 $\phi,\psi$, $(\phi\vee\psi)$ 是公式, 其中自由变量是 $\phi$ 与 $\psi$ 的自由变量的并;
 		\item (蕴含) 对于公式 $\phi,\psi$, $(\phi\Rightarrow \psi)$ 是公式, 其中自由变量是 $\phi$ 与 $\psi$ 的自由变量的并;
 		\item (否定) 对于公式 $\phi$, $\neg\phi$ 是公式, 其中自由变量即为 $\phi$ 的自由变量;
-		\item (存在量词) 对于公式 $\phi$ 以及变量 $x$, $\exists x.\phi$ 是公式, 其中的自由变量为 $\phi$ 的自由变量\emph{去掉} $x$ (我们允许 $\phi$ 中\emph{不含} $x$);
-		\item (任意量词) 对于公式 $\phi$ 以及变量 $x$, $\forall x.\phi$ 是公式, 其中的自由变量为 $\phi$ 的自由变量去掉 $x$;
+		\item (存在量词) 对于公式 $\phi$ 以及变量 $x$, $(\exists x\,\phi)$ 是公式, 其中的自由变量为 $\phi$ 的自由变量\emph{去掉} $x$ (我们允许 $\phi$ 中\emph{不含} $x$);
+		\item (全称量词) 对于公式 $\phi$ 以及变量 $x$, $(\forall x\,\phi)$ 是公式, 其中的自由变量为 $\phi$ 的自由变量去掉 $x$;
 		\item (无穷析取) 对于公式 $\phi_i\, (i\in I)$, 若其中的自由变量有限, 则 $\bigvee_{i\in I}\phi_i$ 是公式 (包括 $\bot$), 其中的自由变量为 $\phi_i$ 的自由变量的并;
 		\item (无穷合取) 对于公式 $\phi_i\, (i\in I)$, 若其中的自由变量有限, 则 $\bigwedge_{i\in I}\phi_i$ 是公式 (包括 $\top$), 其中的自由变量为 $\phi_i$ 的自由变量的并.
 	\end{enumerate}
@@ -196,18 +198,20 @@
 
 \begin{definition}
 	[label={kinds-of-formulae}]
-	{}
+	{(几类公式)}
 	对于固定的符号表 $\Sigma$,
 	几类公式由如下形成规则定义.
 	\begin{itemize}
-		\item \emph{原子公式} (atomic formulae), 关系与等式.
-		\item \emph{正则公式} (regular formulae), 关系与等式, 真, 二元合取, 存在量词.
-		\item \emph{凝聚公式} (coherent formulae), 关系与等式, 真, 二元合取, 存在量词, 假, 二元析取.
-		\item \emph{一阶公式} (first-order formulae), 所有有限规则.
-		\item \emph{几何公式} (geometric formulae), 关系与等式, 真, 二元合取, 存在量词, 假, 无穷析取.
-		\item \emph{无限一阶公式} (infinitary first-order formulae), 所有规则.
+		\item \emph{原子公式} (atomic formulae) : 关系与等式.
+		\item \emph{Horn 公式}\footnotemark{} : 原子公式, 真, 二元合取 (有限合取).
+		\item \emph{正则公式} (regular formulae) : 原子公式, 真, 二元合取, 存在量词.
+		\item \emph{凝聚公式} (coherent formulae) : 原子公式, 真, 二元合取, 存在量词, 假, 二元析取.
+		\item \emph{一阶公式} (first-order formulae) : 所有由有限规则 (定义 \ref{formula} 去掉最后两条) 构造的公式.
+		\item \emph{几何公式} (geometric formulae) : 原子公式, 真, 二元合取, 存在量词, 假, 以及\emph{无穷析取}.
+		\item \emph{无限一阶公式} (infinitary first-order formulae) : 所有由定义 \ref{formula} 的规则构造的公式.
 	\end{itemize}
 \end{definition}
+\footnotetext{Alfred Horn (1918-2001), 美国数学家, 以格论与万有代数方面的工作闻名.}
 
 \begin{example}
 	{}
@@ -217,11 +221,11 @@
 	$$
 	``$x$ 可逆'' 可表达为如下的几何公式 (使用存在量词):
 	$$
-	\exists y. xy= 1.
+	\exists y\, xy= 1.
 	$$
 	但如下表达 ``非零元都可逆'' 的公式\emph{不是}几何公式:
 	$$
-	\neg(x=0) \Rightarrow \exists y.xy=1,
+	\neg(x=0) \Rightarrow \exists y\,xy=1,
 	$$
 	因为使用了 ``蕴涵''.
 \end{example}
@@ -233,13 +237,15 @@
 	由于几何公式可能涉及无穷析取, 它不再属于 (有限的) 一阶逻辑.
 \end{remark}
 
-\subsection{相继式, 理论}
+\subsection{一阶理论}
 
 \begin{definition}
+	[label={definition-context}]
 	{(语境)}
-	\emph{语境} (context) 是一列有限个互不相同的变量\footnotemark $\vec x = (x_1,\cdots,x_n)$.
+	\emph{语境} (context) 是一列有限个互不相同的变量\footnotemark $\vec x = (x_1,\cdots,x_n)$. 其中每个变量 $x_i$ 有确定的类型 $A_i$, 这些类型可能相同也可能不同.
 	
-	对于公式 $\phi$ (定义 \ref{formula}) 与语境 $\vec x$, 若 $\vec x$ 包含了 $\phi$ 的所有自由变量, 则称 $\vec x$ \emph{适合于} (is suitable for) $\phi$.
+	设 $\vec x$ 是一个语境. 对于项 $t$ (定义 \ref{definition-terms}) 或公式 $\phi$ (定义 \ref{formula}), 若 $\vec x$ 包含了其中的所有自由变量, 则称 $\vec x$ \emph{适合于} (is suitable for) 项 $t$ 或公式 $\phi$.
+	此时, 我们也以 $\vec x.\phi$, $\vec x.t$ 表示\emph{带语境的公式} (formula-in-context), \emph{带语境的项} (term-in-context).
 \end{definition}
 
 \footnotetext{注意这里 ``互不相同'' 是指变量的名称不同, 而不是 ``值'' 不同; 变量是一个形式的记号, 没有 ``值''.}
@@ -276,8 +282,8 @@
 	{(几类不同的理论)}
 	\begin{itemize}
 		\item 称理论 $\mathbb T$ 为\emph{命题理论} (propositional theory), 是指其符号表中没有类型.
-		\item 称理论 $\mathbb T$ 为\emph{代数理论}, 是指其符号表中没有关系符号 (等号除外), 且仅包含形如 $\vdash_{\vec x} (s=t)$ 的公理.
-		\item 称理论 $\mathbb T$ 为\emph{正则} (\emph{凝聚}, \emph{几何}, $\cdots$) \emph{理论}, 是指其公理只涉及正则 (凝聚, 几何, $\cdots$) 公式.
+		\item 称理论 $\mathbb T$ 为\emph{代数理论} (algebraic theory), 是指其符号表中没有关系符号 (等号除外), 且仅包含形如 $\vdash_{\vec x} (s=t)$ 的公理. 这是定义 \ref{presentation-of-an-algebraic-theory}.
+		\item 称理论 $\mathbb T$ 为 \emph{Horn} (\emph{正则}, \emph{凝聚}, \emph{几何}, $\cdots$) \emph{理论}, 是指其公理只涉及 Horn (正则, 凝聚, 几何, $\cdots$) 公式. 几类公式的定义见 \ref{kinds-of-formulae}.
 	\end{itemize}
 \end{definition}
 
@@ -295,9 +301,10 @@ $$
 的推理规则, 表示由若干相继式 $\Gamma$ 可以得到相继式 $\sigma$.
 双横线表示上下两个相继式由任何一个可得另一个.
 
-首先是\emph{相继式演算} (sequent calculus) 的结构性规则 (structural rules).
+首先是\emph{相继式演算} (sequent calculus) 的结构性规则 (structural rules). 这些规则在
 
 \begin{definition}
+	[label={first-order-structural-rules}]
 	{(相继式演算的结构性规则)}
 	\begin{itemize}
 		\item \emph{恒等公理} (identity axiom),
@@ -323,11 +330,10 @@ $$
 	\end{itemize}
 \end{definition}
 
-在结构性规则的基础上, 一阶逻辑还可能包含如下规则.
-
 \begin{definition}
+	[label={deduction-system-first-order-logic}]
 	{(一阶逻辑的推理系统)}
-	一个\emph{一阶逻辑推理系统}由如下规则的一部分构成.
+	在结构性规则 (定义 \ref{first-order-structural-rules}) 的基础上, 一阶逻辑的\emph{推理系统}还可能包含如下公理与规则.
 	\begin{itemize}
 		\item \emph{有限合取规则}, 包含公理
 		$$
@@ -363,7 +369,7 @@ $$
 		\sqqc{\phi \vdash_{\vec x,y} \psi}{(\exists y.\phi)\vdash_{\vec x} \psi},
 		$$
 		其中 $\psi$ 不含自由变量 $y$.
-		\item \emph{任意量词规则}, 有公理
+		\item \emph{全称量词规则}, 有公理
 		$$
 		\sqqc{\phi \vdash_{\vec x,y} \psi}{\phi\vdash_{\vec x} (\forall y.\psi)}.
 		$$
@@ -385,16 +391,18 @@ $$
 \begin{remark}
 	{}
 	上述的规则是纯粹形式的, 不具有任何含义.
+	注意这些规则由逻辑连接词 (或量词) 的\emph{引入规则}和\emph{消去规则}构成. 所谓引入规则就是如何得到一个公式, 消去规则就是如何使用一个公式.
 \end{remark}
 
-几种常见的推理系统如下.
+%几种常见的推理系统如下.
 
 \begin{definition}
 	[label={inference-rules}]
 	{}
-	在结构性规则的基础上, 几种常见的推理系统有如下\emph{推理规则} (inference rules).
+	在结构性规则的基础上, 几种逻辑有如下\emph{推理规则} (inference rules).
 	\begin{itemize}
 		\item \emph{代数逻辑} (algebraic logic), 没有附加规则.
+		\item \emph{Horn 逻辑}, 有限合取规则.
 		\item \emph{正则逻辑} (regular logic), 有限合取规则, 存在量词规则, Frobenius 公理.
 		\item \emph{凝聚逻辑} (coherent logic), 有限合取与析取规则, 存在量词规则, 分配公理, Frobenius 公理.
 		\item \emph{几何逻辑} (geometric logic), 有限合取规则, 无限析取规则, 存在量词规则, 无限分配公理, Frobenius 公理.
@@ -404,10 +412,38 @@ $$
 \end{definition}
 
 \begin{definition}
+	[label={first-order-provability}]
 	{}
-	称相继式 $\sigma$ 在代数 (正则, 凝聚, $\cdots$) 理论 $\mathbb T$ 下\emph{可证},
-	就是指在对应的推理系统中, 由 $\mathbb T$ 的公理可以推导出 $\sigma$.
+	称相继式 $\sigma$ 在代数 (Horn, 正则, 凝聚, $\cdots$) 理论 $\mathbb T$ 下\emph{可证},
+	是指存在一个形如下图的\emph{树} (读者可自行补充树的严格定义),
+	%在对应的推理系统中, 由 $\mathbb T$ 的公理可以推导出 $\sigma$.
+	\begin{center}
+		\begin{tabular}{llll}
+			$\sigma_1$ &            & $\sigma_2$ &            \\ \cline{1-3}
+			& $\sigma_3$ &            & $\sigma_4$ \\ \cline{2-4} 
+			&            & $\sigma$ &           
+		\end{tabular}
+	\end{center}
+	其中上方无横线的相继式 (图中为 $\sigma_1,\sigma_2,\sigma_4$) 为 $\mathbb T$ 中的\emph{公理}, 且每条横线的上方与下方均来自相应逻辑的某条推理规则.
 \end{definition}
+
+\begin{example}
+	{}
+	在经典一阶逻辑中, 分配公理 $\phi\wedge(\psi\vee\chi)\vdash_{\vec{x}}(\phi\wedge\psi)\vee(\phi\wedge\chi)$ 有如下的证明.
+	简便起见, 记 $p=(\phi\wedge\psi)\vee(\phi\wedge\chi)$.
+	\begin{center}
+		\begin{tabular}{lll}
+			$\phi\land\psi \vdash_{\vec{x}}  p$&&$\phi\land\chi \vdash_{\vec{x}}  p$  \\ \cline{1-1} \cline{3-3} 
+			$\psi \vdash_{\vec{x}} \phi\Rightarrow p$
+			&&
+			$\chi \vdash_{\vec{x}} \phi\Rightarrow p$
+			\\ \hline
+			& $\psi\lor\chi \vdash_{\vec{x}} \phi\Rightarrow p$ &  \\ \cline{2-2}
+			& $\phi\wedge(\psi\vee\chi)\vdash_{\vec{x}}p$&
+		\end{tabular}
+	\end{center}
+	其中四行使用的规则依次为: 有限析取规则, 蕴涵规则, 有限析取规则, 蕴涵规则. 然而在凝聚逻辑 (定义 \ref{inference-rules}) 中缺少蕴涵规则, 故需要分配公理. 类似地, 凝聚逻辑也需要 Frobenius 公理.
+\end{example}
 
 \begin{example}
 	{(初等算术的理论)}
@@ -452,8 +488,7 @@ $$
 		\item $\vdash_x 1\cdot x = x\cdot 1 = x$.
 	\end{itemize}
 	群的理论是一种代数理论 (定义 \ref{kinds-of-theories}).
-	
-	类似地, 读者可写出环的理论的公理. 环的理论也是一种\emph{代数理论}.
+	类似地, 读者可写出环的理论的公理. 环的理论也是一种\emph{代数理论}. 每一种 Lawvere 理论 (\ref{universal-algebra} 节) 都可以视为这里定义的代数理论.
 \end{example}
 
 %\begin{example}
@@ -462,14 +497,16 @@ $$
 %\end{example}
 
 \begin{example}
+	[label={small-category-theory}]
 	{(小范畴的理论)}
 	继续例 \ref{small-category-language}, 小范畴的理论有如下的公理:
-	$$
-	s(f)=t(g)\vdash_{(f,g)}\exists h\, C(f,g,h),
-	$$
-	表示首尾相接的两个态射可以复合.
-	
-	这个例子取自 \cite{TST} 1.2.1 节.
+	\begin{itemize}
+		\item (首尾相接的两个态射可以复合) $s(f)=t(g)\vdash_{(f,g)}\exists h\, C(f,g,h)$,
+		\item (复合唯一)
+		$C(f,g,h)\land C(f,g,k) \vdash_{(f,g,h,k)} h=k$.
+	\end{itemize}
+	%这个例子取自 \cite{TST} 1.2.1 节.
+	小范畴的理论是\emph{正则理论} (定义 \ref{kinds-of-theories}), 因为其公理只涉及原子公式, 二元合取, 以及存在量词.
 \end{example}
 
 \begin{example}
@@ -480,15 +517,13 @@ $$
 		\item $0\neq 1$,
 		\item 对任意 $x,y\in R$, 若 $x+y=1$, 则 $x$ 与 $y$ 至少有一个可逆.
 	\end{itemize}
-	
-	局部环的理论是环的理论加上两条公理
+	根据这种定义, 我们写出局部环的理论, 即环的理论加上两条公理
 	\begin{itemize}
 		\item $(0=1)\vdash \bot$,
 		\item $x+y=1\vdash_{(x,y)} (\exists z. xz=1)\vee (\exists z. yz=1)$.
 	\end{itemize}
-	
-	由于使用了 $\bot$, $\vee$ 和存在量词 $\exists$, 这个理论\emph{不是}代数理论; 但它是一种\emph{凝聚理论}, 因为所用的公式都是\emph{凝聚公式} (定义 \ref{kinds-of-formulae}).
-	
+	%由于使用了 $\bot$, $\vee$ 和存在量词 $\exists$, 这个理论\emph{不是}代数理论; 但它
+	局部环的理论是一种\emph{凝聚理论} (定义 \ref{kinds-of-theories}), 因为其公理只涉及原子公式, 假, 二元析取, 以及存在量词.
 	读者还可试着写出\emph{整环}的理论, 并说明它也是一种凝聚理论.
 \end{example}
 
@@ -506,127 +541,364 @@ $$
 
 \footnotetext{在构造主义数学中, 域有不止一种理论, 它们只是恰好在集合范畴 (Boole \topos{}) 中有相同的模型.}
 
-\begin{example}
-	{($K$-代数的理论)}
-	设 $K$ 是一个固定的环. 回忆 \emph{$K$-代数}是带有 $K$ 的数乘作用的环. 定义 $K$-代数的理论: 在环的理论中加入 \emph{$K$ 的每个元素 $a$ 作为一个函数符号 $m_a$}, 且\emph{对每组元素 $a,b$ 加入如下公理},
-	\begin{itemize}
-		\item $\vdash_x m_a(x+y) = m_a(x) + m_a(y)$;
-		\item $\vdash_{(x,y)} m_am_b (x) = m_{ab}(x)$;
-		\item $\vdash_x m_{a+b}(a) = m_a(x) + m_b(x)$.
-	\end{itemize}
-	这样, 对于每个多项式 $p\in K[x_1,\cdots,x_n]$, 我们就可以在 $K$-代数的理论中谈论公式 $p(x_1,\cdots,x_n) = 0$; 反之, 这个理论中的原子公式都等价于这种形式的公式.
-	由定义, 对固定的环 $K$, $K$-代数的理论是一种\emph{代数理论}.
-\end{example}
+%\begin{example}
+%	{($K$-代数的理论)}
+%	设 $K$ 是一个固定的环. 回忆 \emph{$K$-代数}是带有 $K$ 的数乘作用的环. 定义 $K$-代数的理论: 在环的理论中加入 \emph{$K$ 的每个元素 $a$ 作为一个函数符号 $m_a$}, 且\emph{对每组元素 $a,b$ 加入如下公理},
+%	\begin{itemize}
+%		\item $\vdash_x m_a(x+y) = m_a(x) + m_a(y)$;
+%		\item $\vdash_{(x,y)} m_am_b (x) = m_{ab}(x)$;
+%		\item $\vdash_x m_{a+b}(a) = m_a(x) + m_b(x)$.
+%	\end{itemize}
+%	这样, 对于每个多项式 $p\in K[x_1,\cdots,x_n]$, 我们就可以在 $K$-代数的理论中谈论公式 $p(x_1,\cdots,x_n) = 0$; 反之, 这个理论中的原子公式都等价于这种形式的公式.
+%	由定义, 对固定的环 $K$, $K$-代数的理论是一种\emph{代数理论}.
+%\end{example}
 
 \begin{remark}
 	{}
-	一阶逻辑能够表达的理论是有限的. 例如\emph{挠群} (torsion group, 即所有元素都是有限阶元素的群) 没有一阶理论.
+	一阶逻辑能够表达的理论是有限制的. 例如\emph{挠群} (torsion group, 即所有元素都是有限阶元素的群) 没有一阶理论.
 	另外, 在域的一阶理论中, 不存在一个公式表达 ``$x$ 是单位根''. 参见 \cite{Lurie-Categorical-Logic} 第一讲.
 \end{remark}
 
-\section{范畴语义}
+\section{一阶逻辑的范畴语义}
 
-\subsection{一阶理论在范畴中的模型}
+\subsection{一阶语言在范畴中的解释}
 
-一阶逻辑可在具有合适结构的范畴中获得\emph{解释} (interpretation), 又称\emph{范畴语义} (categorical semantics).
-由此我们可以谈论一阶理论在范畴中的模型.
+一阶语言可在具有合适结构的范畴中获得\emph{解释} (interpretation), 又称\emph{范畴语义} (categorical semantics).
+由此我们可以谈论这种语言上的理论在范畴中的模型.
 
 \begin{definition}
 	[label={sigma-structures-in-category}]
 	{(范畴中的 $\Sigma$-结构)}
-	固定符号表 $\Sigma$. 设范畴 $\mathsf C$ 有有限乘积.
-	定义 $\mathsf C$ 中的一个 \emph{$\Sigma$-结构} $M$ 为如下信息:
+	固定符号表 $\Sigma$. 设范畴 $\mathcal C$ 有有限乘积.
+	定义 $\mathcal C$ 中的一个 \emph{$\Sigma$-结构} $M$ 为如下信息:
 	\begin{itemize}
-		\item 对 $\Sigma$ 中的每个类型 $A$, 指定 $\mathsf C$ 的对象 $MA$;
-		\item 对 $\Sigma$ 中的每个函数符号 $f\colon A_1\cdots A_n \to B$, 指定 $\mathsf C$ 的态射
+		\item 对 $\Sigma$ 中的每个类型 $A$, 指定 $\mathcal C$ 的对象 $MA$;
+		\item 对 $\Sigma$ 中的每个函数符号 $f\colon A_1\cdots A_n \to B$, 指定 $\mathcal C$ 的态射
 		$Mf \colon MA_1\times\cdots\times MA_n \to MB$;
-		\item 对 $\Sigma$ 中的每个关系符号 $R \hookrightarrow A_1\cdots A_n$, 指定 $\mathsf C$ 中的子对象
+		\item 对 $\Sigma$ 中的每个关系符号 $R \hookrightarrow A_1\cdots A_n$, 指定 $\mathcal C$ 中的子对象
 		$MR \hookrightarrow MA_1\times\cdots\times MA_n$.
 	\end{itemize}
 	
-	范畴 $\mathsf C$ 中两个 $\Sigma$-结构之间的态射 $h\colon M\to N$ 是一族态射 $h_A \colon MA \to NA$, 满足合适的交换图. 所有 $\Sigma$-结构构成一个范畴 $\Sigma\text{-}\mathsf{Str}(\mathsf C)$.
+	范畴 $\mathcal C$ 中两个 $\Sigma$-结构之间的态射 $h\colon M\to N$ 是一族态射 $h_A \colon MA \to NA$, 满足合适的交换图. 所有 $\Sigma$-结构构成一个范畴 $\Sigma\text{-}\mathsf{Str}(\mathcal C)$.
+	
+%	定义符号表 $\Sigma$ 的\emph{分类范畴} (classifying category) $\operatorname{Cl}(\Sigma)$ 如下:
+%	\begin{itemize}
+%		\item 其对象为语境 (定义 \ref{definition-context});
+%		\item \todo{}
+%	\end{itemize}
 \end{definition}
 
 \begin{prop}
 	{}
-	设 $\mathsf C,\mathsf D$ 是具有有限乘积的范畴,
-	$F \colon \mathsf C \to \mathsf D$ 是保持有限乘积与子对象的函子. 那么 $F$ 诱导了函子
-	$\Sigma\text{-}\mathsf{Str}(F)\colon \Sigma\text{-}\mathsf{Str}(\mathsf C) \to \Sigma\text{-}\mathsf{Str}(\mathsf D)$.
+	设 $\mathcal C,\mathcal D$ 是具有有限乘积的范畴,
+	$F \colon \mathcal C \to \mathcal D$ 是保持有限乘积与单射的函子. 那么 $F$ 诱导了函子
+	$\Sigma\text{-}\mathsf{Str}(F)\colon \Sigma\text{-}\mathsf{Str}(\mathcal C) \to \Sigma\text{-}\mathsf{Str}(\mathcal D)$.
 \end{prop}
 
-不同种类的逻辑需要范畴上不同的结构.
+
+\begin{definition}
+	[label={term-interpretation}]
+	{($\Sigma$-结构对项的解释)}
+	给定范畴 $\mathcal C$ 中的一个 $\Sigma$-结构 $M$, 我们将 $\Sigma$ 上的项 (定义 \ref{definition-terms}) \emph{解释为} $M$ 中的态射.
+	具体地, 设 $\vec x = (x_1,\cdots,x_n)$ 是一个语境 (定义 \ref{definition-context}), $x_i\colon A_i$,
+	$\vec x.t$ 是带语境的项, $t\colon B$, 则 $\interpretation{\vec x.t}_M$ 是如下定义的态射 $MA_1\times\cdots\times MA_n\to MB$:
+	\begin{itemize}
+		\item 若 $t=x_i$, 则 $\interpretation{\vec x.t} = \pi_i$ 是第 $i$ 分量的投影;
+		\item 若 $t = f(t_1,\cdots,t_m)$, 则
+		$\interpretation{\vec x.t} = Mf \circ \big(\interpretation{\vec x.t_1},\cdots,\interpretation{\vec x.t_m}\big)$.
+	\end{itemize}
+\end{definition}
+
+设 $\vec x$ 是适合于项 $t$ 的语境, 那么 $\vec x$ 添加一个与 $t$ 无关的变量 $y$ 后仍是适合于 $t$ 的语境.
+根据上述定义, 两个带语境的项 $\vec x.t$ 与 $(\vec x,y).t$ 的解释不同 (因为定义域不同), 但仅仅相差一个投影. 一般的这种现象可总结为如下命题.
+
+\begin{prop}
+	[label={term-substitution-property}]
+	{(项的代换性质)}
+	设 $\vec y.t$ 是符号表 $\Sigma$ 上带语境的项, 在范畴 $\mathcal C$ 中可解释,
+	其中 $\vec y = (y_1,\cdots,y_m), y_i\colon B_i$, $t\colon C$.
+	设 $\vec s = (s_1,\cdots,s_m), s_i\colon B_i$ 是任意的项, $\vec x=(x_1,\cdots,x_n)\,(x_i\colon A_i)$ 是适合于 $\vec s$ 的语境.
+	那么, 对 $\mathcal C$ 上任意 $\Sigma$-结构 $M$,
+	有如下交换图.
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJNQV8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1BX24iXSxbMSwwLCJNQl8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1CX20iXSxbMSwxLCJNQyJdLFswLDEsIihcXGludGVycHJldGF0aW9ue1xcdmVjIHguc18xfSxcXGNkb3RzLFxcaW50ZXJwcmV0YXRpb257XFx2ZWMgeC5zX219KSJdLFsxLDIsIlxcaW50ZXJwcmV0YXRpb257XFx2ZWMgeS4gdH0iXSxbMCwyLCJcXGludGVycHJldGF0aW9ue1xcdmVjIHguIHRbXFx2ZWMgcy8gXFx2ZWMgeV19IiwyLHsibGFiZWxfcG9zaXRpb24iOjB9XV0=
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=6em]
+		{MA_1\times\cdots\times MA_n} \& {MB_1\times\cdots\times MB_m} \\
+		\& MC
+		\arrow["{(\interpretation{\vec x.s_1},\cdots,\interpretation{\vec x.s_m})}", from=1-1, to=1-2]
+		\arrow["{\interpretation{\vec y. t}}", from=1-2, to=2-2]
+		\arrow["{\interpretation{\vec x. t[\vec s/ \vec y]}}"'{pos=0.35}, from=1-1, to=2-2]
+	\end{tikzcd}\]
+	这称为项的\emph{代换性质} (substitution property).
+\end{prop}
+
+\begin{proof}
+	对 $t$ 的 ``复杂度'' 归纳, 由定义直接验证.
+\end{proof}
+
+\begin{example}
+	{(弱化)}
+	项的代换性质 (\ref{term-substitution-property}) 的一个常见的特例是 $\vec s = \vec y\subset \vec x$ 的情形.
+	此时 $(\interpretation{\vec x.s_1},\cdots,\interpretation{\vec x.s_m})$ 是一个投影映射 $\pi$,
+	性质 $\interpretation{\vec x.t} = \interpretation{\vec y.t}\circ \pi$ 称为项的\emph{弱化性质} (weakening property).
+\end{example}
+
+%不同种类的逻辑需要范畴上不同的结构.
+
+下面定义公式的解释所需的几种范畴.
 
 \begin{definition}
 	{(正则范畴)}
 	若一个范畴中存在有限极限和像 (定义 \ref{image-definition}), 且拉回保持像, 则称之为\emph{正则范畴} (regular category).
+	由命题 \ref{image-vs-exists}, 正则范畴中态射 $f\colon X\to Y$ 的拉回 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 有左伴随 $\exists_f$.
+	正则范畴之间的\emph{正则函子} (regular functor) 是指保持有限极限与像的函子.
 \end{definition}
 
 \begin{definition}
 	[label={coherent-category}]
 	{(凝聚范畴)}
-	若一个\emph{正则范畴}中所有对象的子对象格都存在\emph{有限并}, 且被拉回保持, 则称之为\emph{凝聚范畴} (coherent category).
+	若一个\emph{正则范畴}中所有对象的子对象格都存在\emph{有限并}, 且拉回保持有限并, 则称之为\emph{凝聚范畴} (coherent category).
+	凝聚范畴之间的\emph{凝聚函子}是指保持有限并的\emph{正则函子}.
 \end{definition}
 
 \begin{definition}
 	[label={Heyting-category}]
 	{(Heyting 范畴)}
-	若一个\emph{正则范畴}中所有态射 $f\colon X\to Y$ 对子对象的拉回 $f^*\colon \operatorname{Sub}(Y)\to\operatorname{Sub}(X)$ 有右伴随 $\forall_f\colon \operatorname{Sub}(X)\to \operatorname{Sub}(Y)$, 则称之为 \emph{Heyting 范畴}.
+	若一个\emph{凝聚范畴}中所有态射 $f\colon X\to Y$ 对子对象的拉回 $f^*\colon \operatorname{Sub}(Y)\to\operatorname{Sub}(X)$ 有右伴随 $\forall_f\colon \operatorname{Sub}(X)\to \operatorname{Sub}(Y)$, 则称之为 \emph{Heyting 范畴}.
+	Heyting 范畴之间的函子是保持所有 $\forall_f$ 的\emph{凝聚函子}.
 \end{definition}
 
-由命题 \ref{forall}, \topos{}是 Heyting 范畴.
+由第一章, \topos{}是正则范畴, 凝聚范畴, Heyting 范畴.
 
 \begin{definition}
 	{(几何范畴)}
 	若一个\emph{正则范畴}中所有对象的子对象格都存在\emph{任意并}, 且被拉回保持, 则称之为\emph{几何范畴} (geometric category).
 \end{definition}
 
-有了对应的结构, 我们就可以给出各种一阶公式在范畴中的解释. 如下定义来自 \cite{TST} 1.3 节.
+由偏序集的伴随函子定理 (\ref{adjoint-functor-theorem-poset}), 几何范畴一定是 Heyting 范畴.
+
+\topos{}不一定是几何范畴, 但 Grothendieck \topos{}一定是几何范畴.
+
+由定义 \ref{frame-definition}, \fm{}等同于构成几何范畴的偏序集.
+
+%有了对应的结构, 我们就可以给出各种一阶公式在范畴中的解释. 如下定义参考 \cite{Elephant} D1.2 节, \cite{TST} 1.3 节.
 
 \begin{definition}
-	{(公式的解释)}
-	设 $M$ 是范畴 $\mathsf C$ 中的 $\Sigma$-结构.
-	我们归纳地 $\Sigma$ 上的一个带语境的公式 $\vec x.\phi$ (其中 $\vec x= (x_1,\cdots,x_n)$, $x_i\colon A_i$) 解释为一个子对象
+	[label={interpretation-formolae}]
+	{($\Sigma$-结构对公式的解释)}
+	设 $M$ 是范畴 $\mathcal C$ 中的 $\Sigma$-结构.
+	我们归纳地将 $\Sigma$ 上的一个带语境的公式 $\vec x.\phi$ (其中 $\vec x= (x_1,\cdots,x_n)$, $x_i\colon A_i$) 解释为一个子对象
 	$$
-	[[\vec x.\phi]]_M \hookrightarrow MA_1 \times \cdots \times MA_n.
+	\interpretation{\vec x.\phi}_M \hookrightarrow MA_1 \times \cdots \times MA_n.
 	$$
 	\begin{itemize}
 		\item (关系) 若 $\phi(\vec x)$ 形如 $R(t_1,\cdots,t_m)$, $R$ 为类型 $B_1\cdots B_m$ 的关系符号, $t_i$ 为公式, 则
-		$[[\vec x.\phi]]_M$ 为如下拉回.
+		$\interpretation{\vec x.\phi}_M$ 为如下拉回.
 		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJbW1xcdmVjIHguXFxwaGldXV9NIl0sWzEsMCwiTVIiXSxbMSwxLCJNQl8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1CX20iXSxbMCwxLCJNQV8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1BX24iXSxbMywyLCIoW1tcXHZlYyB4LnRfMV1dLFxcY2RvdHMsW1tcXHZlYyB4LnRfbV1dKSJdLFswLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsMV0sWzEsMiwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
 		\[\begin{tikzcd}[ampersand replacement=\&,column sep=6em]
-			{[[\vec x.\phi]]_M} \& MR \\
+			{\interpretation{\vec x.\phi}_M} \& MR \\
 			{MA_1\times\cdots\times MA_n} \& {MB_1\times\cdots\times MB_m}
-			\arrow["{([[\vec x.t_1]],\cdots,[[\vec x.t_m]])}", from=2-1, to=2-2]
+			\arrow["{(\interpretation{\vec x.t_1},\cdots,\interpretation{\vec x.t_m})}", from=2-1, to=2-2]
 			\arrow[hook, from=1-1, to=2-1]
 			\arrow[from=1-1, to=1-2]
 			\arrow[hook, from=1-2, to=2-2]
 		\end{tikzcd}\]
-		\item (等式) 若 $\phi(\vec x)$ 形如 $(s=t)$, $s,t$ 为类型 $B$ 的项, 则 $[[\vec x.\phi]]$ 为两个态射 $[[\vec x.s]],[[\vec x.t]]\colon MA_1\times\cdots\times MA_n \to MB$ 的等化子.
-		\item (真) 若 $\phi = \top$, 则 $[[\vec x.\phi]]$ 是 $MA_1\times\cdots\times MA_n$ 作为自身的子对象.
-		\item (且) 若 $\phi = \phi \wedge \chi$, 则 $[[\vec x.\phi]]$ 是子对象 $[[\vec x.\phi]]$ 与 $[[\vec x.\chi]]$ 的交 (拉回).
-		\item (假) 若 $\phi = \bot$, 则 $[[\vec x.\phi]]$ 是 $MA_1\times\cdots\times MA_n$ 的子对象 $\bot$.
-		\item (或) 若 $\phi = \phi \lor \chi$ 且 $\mathsf C$ 是\emph{凝聚范畴} (定义 \ref{coherent-category}),
-		则 $[[\vec x.\phi]]$ 是子对象 $[[\vec x.\phi]]$ 与 $[[\vec x.\chi]]$ 的并.
-		\item (蕴涵)
-		\item (存在量词)
-		\item (任意量词)
-		\item (无穷析取)
-		\item (无穷合取)
+		\item (等式) 若 $\phi(\vec x)$ 形如 $(s=t)$, $s,t$ 为类型 $B$ 的项, 则 $\interpretation{\vec x.\phi}$ 为两个态射 $\interpretation{\vec x.s},\interpretation{\vec x.t}\colon MA_1\times\cdots\times MA_n \to MB$ 的等化子.
+		\item (真) 若 $\phi = \top$, 则 $\interpretation{\vec x.\phi}$ 是 $MA_1\times\cdots\times MA_n$ 作为自身的子对象.
+		\item (且) 若 $\phi = \psi \wedge \chi$, 则 $\interpretation{\vec x.\phi}$ 是子对象 $\interpretation{\vec x.\psi}$ 与 $\interpretation{\vec x.\chi}$ 的交 (拉回).
+		\item (假) 若 $\phi = \bot$, 则 $\interpretation{\vec x.\phi}$ 是 $MA_1\times\cdots\times MA_n$ 的子对象 $\bot$.
+		\item (或) 若 $\phi = \psi \lor \chi$ 且 $\mathcal C$ 是\emph{凝聚范畴} (定义 \ref{coherent-category}),
+		则 $\interpretation{\vec x.\phi}$ 是子对象 $\interpretation{\vec x.\psi}$ 与 $\interpretation{\vec x.\chi}$ 的并.
+		\item (蕴涵) 若 $\phi = (\psi \Rightarrow \chi)$, 且 $\mathcal C$ 是 \emph{Heyting 范畴}, 则
+		$\interpretation{\vec x.\phi}$ 是 $\interpretation{\vec x.\psi} \Rightarrow \interpretation{\vec x.\chi}$.
+		\item (存在量词) 若 $\phi = \exists y. \psi$ 且 $\mathcal C$ 是\emph{正则范畴}, 则 $\interpretation{\vec x.\phi} = \exists_{\pi} (\interpretation{(\vec x,y).\psi})$,
+		其中 $\pi$ 为 $MA_1\times\cdots\times MA_n \times MB$ 到前 $n$ 分量的投影.
+		\item (全称量词) 若 $\phi = \forall y. \psi$ 且 $\mathcal C$ 是 \emph{Heyting 范畴}, 则 $\interpretation{\vec x.\phi} = \forall_{\pi} (\interpretation{(\vec x,y).\psi})$, 其中 $\pi$ 同上.
+		\item (无穷析取) 若 $\phi = \bigvee_i \psi_i$ 且 $\mathcal C$ 是\emph{几何范畴}, 则 $\interpretation{\vec x.\phi}$ 是所有 $\interpretation{\vec x.\psi_i}$ 的并.
+		\item (无穷合取) 若 $\phi = \bigwedge_i \psi_i$ 且 $\mathcal C$ 具有子对象的任意交, 则 $\interpretation{\vec x.\phi}$ 是所有 $\interpretation{\vec x.\psi_i}$ 的交.
+	\end{itemize}
+\end{definition}
+
+回忆几类公式的定义 (\ref{kinds-of-formulae}), 我们发现在正则范畴中可以解释正则公式, 在凝聚范畴中可以解释凝聚公式, 在几何范畴中可以解释几何公式, 凡此种种, 不一而足. 任何逻辑公式都有适当的范畴结构可以解释之.
+
+\begin{prop}
+	{(公式的代换性质)}
+	% Elephant D1.2.7
+	设 $\vec y.\phi$ 是符号表 $\Sigma$ 上带语境的公式, 在范畴 $\mathcal C$ 中可解释,
+	其中 $\vec y = (y_1,\cdots,y_m), y_i\colon B_i$.
+	设 $\vec s = (s_1,\cdots,s_m), s_i\colon B_i$ 是任意的项, $\vec x=(x_1,\cdots,x_n)\,(x_i\colon A_i)$ 是适合于 $\vec s$ 的语境.
+	那么, 对 $\mathcal C$ 上任意 $\Sigma$-结构 $M$,
+	有如下拉回.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGludGVycHJldGF0aW9ue1xcdmVjIHguXFxwaGlbXFx2ZWMgcyAvIFxcdmVjIHldfSJdLFsxLDAsIlxcaW50ZXJwcmV0YXRpb257XFx2ZWMgeS5cXHBoaX0iXSxbMCwxLCJNQV8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1BX24iXSxbMSwxLCJNQl8xXFx0aW1lc1xcY2RvdHNcXHRpbWVzIE1CX20iXSxbMCwyXSxbMiwzLCIoXFxpbnRlcnByZXRhdGlvbntcXHZlYyB4LnNfMX0sXFxjZG90cyxcXGludGVycHJldGF0aW9ue1xcdmVjIHguc19tfSkiXSxbMCwxXSxbMSwzXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=6em]
+		{\interpretation{\vec x.\phi[\vec s / \vec y]}} \& {\interpretation{\vec y.\phi}} \\
+		{MA_1\times\cdots\times MA_n} \& {MB_1\times\cdots\times MB_m}
+		\arrow[from=1-1, to=2-1]
+		\arrow["{(\interpretation{\vec x.s_1},\cdots,\interpretation{\vec x.s_m})}", from=2-1, to=2-2]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{prop}
+\begin{proof}
+	对 $\phi$ 的 ``复杂度'' 归纳, 由定义直接验证.
+\end{proof}
+
+\subsection{一阶理论在范畴中的模型}
+
+\begin{definition}
+	{($\Sigma$-结构对相继式的满足)}
+	设 $M$ 是范畴 $\mathcal C$ 上的 $\Sigma$-结构, $\phi\vdash_{\vec x}\psi$ 是一个相继式.
+	称 $M$ \emph{满足} $\phi\vdash_{\vec x}\psi$ (记作 $M\models(\phi\vdash_{\vec x}\psi)$) 是指 $\interpretation{\vec x.\phi}_M \leq \interpretation{\vec x.\psi}_M$.
+\end{definition}
+
+\begin{definition}
+	{(一阶理论在范畴中的模型)}
+	% TST p.37
+	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论, $M$ 是范畴 $\mathcal C$ 上的 $\Sigma$-结构,
+	且 $\mathbb T$ 的公理在 $\mathcal C$ 中可解释.
+	若 $M$ 满足 $\mathbb T$ 的所有公理, 则称 $M$ 为 $\mathbb T$ 在 $\mathcal C$ 中的一个\emph{模型} (model).
+	记 $\mathbb T$ 的模型在 $\Sigma\text{-}\mathsf{Str}(\mathcal C)$ 中构成的满子范畴为 $\mathbb T\text{-Mod}(\mathcal C)$.
+\end{definition}
+
+一阶逻辑的推理系统可以证明关于其模型的命题, 这个性质称为一阶逻辑的\emph{可靠性} (soundness).
+
+\begin{prop}
+	[label={soundness-first-order-logic}]
+	{(可靠性)}
+	设 $\mathbb T$ 为符号表 $\Sigma$ 上的 Horn (正则, 凝聚, 几何, $\cdots$) 理论, $M$ 为 $\mathbb T$ 在合适的范畴 $\mathcal C$ 中的模型, 则对任何 $\mathbb T$-可证 (定义 \ref{first-order-provability}) 的相继式 $\sigma$, 都有 $M\models\sigma$.
+\end{prop}
+\begin{proof}
+	我们只需对定义 \ref{deduction-system-first-order-logic} 的每种规则 $\displaystyle\sqc{\Gamma}{\sigma}$ 验证若 $M\models\Gamma$, 则 $M\models\sigma$. 这基本上是平凡的. 例如, 存在量词规则的可靠性正是由于存在量词的解释是拉回的左伴随 (定义 \ref{interpretation-formolae}). 又如, 分配公理的可靠性是由于相应的范畴中子对象的运算 $A\land {-}$ 保持二元并.
+\end{proof}
+
+\begin{remark}
+	{}
+	反之, 只要找到一个模型 $M$ \emph{不满足} $\sigma$, 就说明 $\sigma$ 在理论 $\mathbb T$ 中\emph{不可证}.
+\end{remark}
+
+\section{高阶逻辑}
+
+高阶逻辑相比一阶逻辑拥有表达能力更强的语义, 如允许将存在量词和全称量词用于函数与子集. 相应地, 其范畴语义需要范畴上更多的结构.
+
+\subsection{高阶语言的基本要件}
+
+% Elephant 4.1.1
+
+\begin{definition}
+	{(符号表)}
+	高阶逻辑的一个符号表 $\Sigma$ 由如下内容构成:
+	\begin{itemize}
+		\item 一族\emph{基本类型} (basic types);
+		% 其中任意有限个类型可作乘积得到一个新的类型 (包括 $0$ 个类型的乘积, 记之为 $1$),
+		\item 一些\emph{函数符号} (function symbols);
+		\item 一些\emph{关系符号} (relation symbols);
+	\end{itemize}
+	并且我们归纳地定义 $\Sigma$ 上的\emph{类型}:
+	\begin{itemize}
+		\item 每个基本类型都是一个类型;
+		\item (零元积) $1$ 是一个类型;
+		\item (二元积) 对任意两个类型 $A,B$, 有一个类型 $A\times B$;
+		\item (函数类型) 对任意两个类型 $A,B$, 有一个类型 $[A\to B]$;
+		\item (幂) 对任意类型 $A$, 有一个类型 $PA$; 记 $\Omega = P1$;
+		\item (列表) 对任意类型 $A$, 有一个类型 $LA$.
+	\end{itemize}
+	对每个函数符号 $f$ 指定两个类型 $A,B$, 记 $f\colon A\to B$;
+	对每个关系符号 $R$ 指定一个类型 $A$, 记 $R\hookrightarrow A$.
+	这里的 $A,B$ 可以是基本类型, 也可以是由上述归纳规则定义的类型.
+	例如 $A=A_1\times \cdots\times A_n$ 时, $f\colon A\to B$ 是 $n$ 元函数.
+\end{definition}
+
+高阶逻辑比一阶逻辑多了函数类型, 幂以及列表的操作, 使得可以谈论 ``对任意子集 $A\subset X$'' ``对任意函数 $f\colon X\to Y$'' 之类.
+
+
+
+\begin{definition}
+	{(项)}
+	设 $\Sigma$ 为高阶逻辑的符号表, 归纳定义 $\Sigma$ 上的项.
+	%我们仅列举一阶逻辑的定义 (\ref{definition-terms}) 中没有的条款.
+	\begin{itemize}
+		\item 一个类型 $A$ 的单独一个变量 $x$ 是一项;
+		%\item 若 $x_1,\cdots,x_n$ 分别是类型 $A_1,\cdots,A_n$ 的项, 那么 $(x_1,\cdots,x_n)$ 是类型 $A_1\times\cdots\times A_n$ 的项;
+		\item 对于函数符号 $f \colon A \to B$, 若有一项 $x\colon A$, 则有 $f(x)\colon B$.
+		\item ($1$, 引入法则) 类型 $1$ 有一个项 $\star$;
+		\item (二元对, 引入法则) 对于 $s\colon A$, $t\colon B$, 有 $(s,t)\colon A\times B$;
+		\item (二元对, 消去法则) 对于 $t\colon A\times B$, 有 $\mathsf {fst}(t)\colon A$, $\mathsf {snd}(t)\colon B$, 分别代表取二元对的第一项和第二项;
+		\item (函数, 引入法则) 对于类型 $A$ 的变量 $x$ 与 $t\colon B$ (其中 $t$ 的自由变量可包含 $x$, 也可不包含 $x$), 有 $\big(\lambda {x} . t\big) \colon [A\to B]$, 其自由变量为 $t$ 的自由变量去掉 $x$;
+		\item (函数, 消去法则) 对于 $f\colon [A\to B]$ 以及 $t\colon A$, 有 $\mathsf {app}(f,t)\colon B$, 其自由变量为 $f$ 与 $t$ 的自由变量之并;
+		\item (子集, 引入法则) 对公式 $\phi$ 以及 $x\colon A$, 有 $\{x\in A \mid \phi\} \colon PA$, 其自由变量为 $\phi$ 的自由变量去掉 $x$;
+		\item (列表, 引入法则) 对于类型 $A$, 有 ``空列表'' $[\ ]\colon LA$;
+		对于 $s,t\colon LA$ 有 ``列表的拼接'' $\mathsf {cons}(s,t)\colon LA$; 此外, 列表还有一个引入法则 ``迭代器'' (iterator), 即递推构造列表的法则, 这里略去 (见 \cite{Elephant} D4.1.2).
+	\end{itemize}
+	其中没有提到子集的消去法则, 是因为子集的消去法则给出的是一个原子公式 (下面的定义 \ref{higher-atomic-formulae}), 而非一个项.
+\end{definition}
+
+对于 $\Sigma$ 中的函数符号 $f\colon A\to B$, 取类型 $A$ 的变量 $x$, 由函数的引入法则 $\lambda x.f(x)\colon [A\to B]$ 是类型 $[A\to B]$ 的一个常量 (因为按定义其自由变量是 $f(x)$ 的自由变量去掉 $x$, 也即没有自由变量).
+
+\begin{definition}
+	[label={higher-atomic-formulae}]
+	{(原子公式)}
+	设 $\Sigma$ 为高阶逻辑的符号表, 定义下列公式为 $\Sigma$ 上的原子公式.
+	\begin{itemize}
+		\item (关系) 对关系符号 $R\hookrightarrow A$ 与 $t\colon A$, 关系 $R(t)$ 为原子公式, 其中的自由变量为 $t$ 的自由变量;
+		\item (等式) 对 $s,t\colon  A$, 等式 $s=t$ 为原子公式, 其中的自由变量为 $s,t$ 的自由变量之并;
+		\item (成员关系, 即 ``子集的消去法则'') 对 $t\colon A$ 与 $S\colon PA$, 成员关系 $t\in S$ 为原子公式, 其中的自由变量为 $S,t$ 的自由变量之并.
+	\end{itemize}
+	相比一阶逻辑中的原子公式 (定义 \ref{kinds-of-formulae}), 高阶逻辑多了成员关系.
+\end{definition}
+
+\begin{definition}
+	{(公式)}
+	高阶逻辑中的公式由原子公式以及定义 \ref{formula} 中的法则归纳定义.
+\end{definition}
+
+\begin{definition}
+	{($\Sigma$-结构)}
+	设 $\Sigma$ 为高阶逻辑的一个符号表, $\mathcal C$ 为合适的范畴.
+	定义 $\mathcal C$ 上的 $\Sigma$-结构 $M$ 为如下资料:
+	\begin{itemize}
+		\item 对 $\Sigma$ 中每个基本类型 $A$ 指定 $\mathcal C$ 的一个对象 $MA$ (由此可归纳地对每个类型也指定一个对象, 如 $1$ 对应终对象, $A\times B$ 对应 $MA\times MB$, $[A\to B]$ 对应指数对象 $MB^{MA}$, $PA$ 对应幂对象 $P(MA)$
+		%, $LA$ 对应列表对象 $L(MA)$
+		);
+		\item 对 $\Sigma$ 中每个函数符号 $f\colon A\to B$ 指定一个态射 $Mf\colon MA\to MB$.
+		\item 对 $\Sigma$ 中每个关系符号 $R\hookrightarrow A$ 指定一个子对象 $MR \hookrightarrow MA$.
 	\end{itemize}
 \end{definition}
 
 \begin{definition}
-	{(模型)}
-	% TST p.37
-	设 $\mathbb T$ 是符号表 $\Sigma$ 上的理论, $M$ 是范畴 $\mathsf C$ 上的 $\Sigma$-结构,
-	且 $\mathbb T$ 的公理在 $\mathsf C$ 中可解释.
-	若 $\mathbb T$ 的公理在 $M$ 中均被满足, 则称 $M$ 为 $\mathbb T$ 在 $\mathsf C$ 中的一个\emph{模型} (model).
-	记 $\mathbb T$ 的模型在 $\Sigma\text{-}\mathsf{Str}(\mathsf C)$ 中构成的满子范畴为 $\mathbb T\text{-Mod}(\mathsf C)$.
+	[label={higher-order-term-interpretation}]
+	{(项的解释)}
+	设 $\vec x.t$ 是带语境的项, 其中 $\vec x=(x_1,\cdots,x_n), x_i\colon A_i$. 记 $A=A_1\times\cdots\times A_n$.
+	\begin{itemize}
+		\item (1, 引入法则) 若 $t=\star\colon 1$, 则 $\interpretation{\vec x.t}$ 是唯一的映射 $MA \to 1$.
+		\item (二元对, 引入法则) 若 $t= (r,s)\colon B_1\times B_2$, 则 $\interpretation{\vec x.t} = (\interpretation{\vec x.r}, \interpretation{\vec x.s})\colon MA \to MB_1\times MB_2$.
+		\item (二元对, 消去法则) 若 $t=\mathsf {fst}(s)$, $s\colon B\times C$, 则 $\interpretation{\vec x.t} = \pi_1\circ \interpretation{\vec x.s}\colon MA\to MB$, 对 $\mathsf {snd}$ 类似定义;
+		\item (函数, 引入法则) 若 $t=(\lambda z.s)\colon [B\to C]$, 变量 $z$ 不出现在语境 $\vec x$ 中, 则 $\interpretation{\vec x.t}$ 是 $\interpretation{(\vec x,z).s}\colon MA\times MB\to MC$ 对应的态射 $MA \to MC^{MB}$.
+		\item (函数, 消去法则) 若 $t = \mathsf {app}(r,s)$, $r\colon [B\to C]$, 则
+		$\interpretation{\vec x.t}$ 是复合 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJNQSJdLFsxLDAsIk1DXntNQn1cXHRpbWVzIE1CIl0sWzIsMCwiTUMiXSxbMCwxLCIoW1tcXHZlYyB4LnJdXSwgW1tcXHZlYyB4LiBzXV0pIl0sWzEsMiwiXFx0ZXh0e2V2fSJdXQ==
+		\[\begin{tikzcd}[ampersand replacement=\&]
+			MA \&\& {MC^{MB}\times MB} \& MC.
+			\arrow["{(\interpretation{\vec x.r}, \interpretation{\vec x. s})}", from=1-1, to=1-3]
+			\arrow["{\text{ev}}", from=1-3, to=1-4]
+		\end{tikzcd}\]
+		\item (子集, 引入法则) 若 $t=\{z\in B\mid \phi\}$, 则 $\interpretation{\vec x.t}$ 是 $\interpretation{(\vec x,z),\phi}\hookrightarrow MA\times MB$ 对应的态射 $MA \to P(MB)$.
+		\item (列表, 引入法则) 略 (见 \cite{Elephant} D4.1.5).
+	\end{itemize}
 \end{definition}
-
-\section{高阶逻辑}
-
-\todo{}
+\begin{definition}
+	{(公式的解释)}
+	原子公式以及一般的公式的解释沿用定义 \ref{interpretation-formolae}, 只是添加如下对成员关系的解释:
+	\begin{itemize}
+		\item 若 $\phi = (t\in S)$, $t\colon B$, 则 $\interpretation{\vec x.\phi}$ 是如下拉回,
+		% https://q.uiver.app/#q=WzAsNCxbMSwxLCJNQlxcdGltZXMgUChNQikiXSxbMSwwLCJcXGluIl0sWzAsMSwiTUEiXSxbMCwwLCJbW1xcdmVjIHguXFxwaGldXSJdLFsxLDAsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzIsMCwiKFtbXFx2ZWMgeC50XV0sW1tcXHZlYyB4LlNdXSkiLDJdLFszLDIsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzMsMV1d
+		\[\begin{tikzcd}[ampersand replacement=\&,column sep=large]
+			{\interpretation{\vec x.\phi}} \& \in \\
+			MA \& {MB\times P(MB).}
+			\arrow[hook, from=1-2, to=2-2]
+			\arrow["{(\interpretation{\vec x.t},\interpretation{\vec x.S})}"', from=2-1, to=2-2]
+			\arrow[hook, from=1-1, to=2-1]
+			\arrow[from=1-1, to=1-2]
+		\end{tikzcd}\]
+	\end{itemize}
+\end{definition}
 
 \section{类型论}
 
@@ -690,16 +962,37 @@ $$
 	
 \end{example}
 
+\subsection{命题是类型: Curry--Howard 同构}
+
+Curry--Howard 同构是\emph{形式逻辑}与\emph{计算}之间的联系. 首先, 它指出\emph{命题是一种类型}. 将命题 $A$ 视为类型, 其元素是 $A$ 成立的\emph{证据}; 由此不难理解如下的对应. 例如, ``$A$ 且 $B$'' 成立的一个证据即是 $A$ 成立的一个证据加上 $B$ 成立的一个证据.
+
+\begin{center}
+	\begin{tabular}
+		{cc}
+		类型 & 命题 \\\hline
+		$0$ & 假 \\
+		$1$ & 真 \\
+		$A\times B$ & $A$ 且 $B$ \\
+		$A+B$ & $A$ 或 $B$ \\
+		$B^A\text{ (又记为 $A\to B$)}$ & $A$ 蕴涵 $B$ \\
+		$\prod_{x : A}P(x)$ & ${\forall x : A}\, P(x)$ \\
+		$\sum_{x : A}P(x)$ & ${\exists x : A}\, P(x)$
+	\end{tabular}
+\end{center}
+
+进一步, \emph{证明是一种计算}. 例如证明 $A \land (A\Rightarrow B)\Rightarrow B$ 对应于取值映射 $\operatorname{ev}\colon A \times B^A \to B$. 更复杂的证明对应更复杂的计算. 要检查证明的正确性, 只需检查每一步得到的对象拥有正确的类型.
+
 \section{模态逻辑}
 
 \label{appendix-modal-logic}
 
 在形式逻辑中, \emph{模态} (modality) 或\emph{模态算子} (modal operator) 是一种将命题变为命题的算子, 通常用 $\square$, $\lozenge$, $\bigcirc$ 等符号表示. 直觉上, 一个模态算子 $\square$ 的含义是
 $$\square p = \text{``$p$ 以某种方式成立''}.$$
+模态的作用正如自然语言中的\emph{情态动词} (modal verb), 如 ``可能'' (can), ``必须'' (must), ``将要'' (would).
 
 \begin{example}
 	{(可能性与必然性)}
-	在许多文献中, $\square$ 表示 ``必然性'', $\lozenge$ 表示 ``可能性''. 如下是两者的一些性质:
+	设 $\square$ 表示 ``必然性'', $\lozenge$ 表示 ``可能性''. 如下是两者的一些性质:
 	\begin{itemize}
 		\item $\square p \Rightarrow p$ (必然成立蕴涵实际上成立), $p\Rightarrow \lozenge p$ (实际上成立蕴涵可能成立);
 		\item $\square (p \land q) = \square p \land \square q$, $\lozenge (p\lor q) = \lozenge p \lor \lozenge q$;
@@ -707,17 +1000,16 @@ $$\square p = \text{``$p$ 以某种方式成立''}.$$
 		\item ...
 	\end{itemize}
 	可能性与必然性模态的一种实现方式是考虑 ``所有可能世界的集合'', 或 ``所有可能观测结果的集合''. 一个命题\emph{可能}成立就是说\emph{存在}一个可能世界使得该命题成立; 一个命题\emph{必然}成立就是说在\emph{任意}可能世界中该命题都成立.
-	考虑一个\topos{} $\mathsf C$ 中对象 $X$ 产生的三元伴随 (命题 \ref{over-topos-essential-geometric-morphism}, 注 \ref{quantifier-exists-as-left-adjoint}),
-	想象 $X$ 为 ``所有可能世界的集合''.
+	考虑一个\topos{} $\mathcal C$ 中对象 $X$ 产生的三元伴随 (命题 \ref{over-topos-essential-geometric-morphism}, 注 \ref{quantifier-exists-as-left-adjoint})
 	\[\begin{tikzcd}[ampersand replacement=\&,background color=\examplecolor]
-		{\mathsf C/X} \&\& {\mathsf C,}
+		{\mathcal C/X} \&\& {\mathcal C,}
 		\arrow[""{name=0, anchor=center, inner sep=0}, "{X^*}"{description, pos=0.3}, from=1-3, to=1-1]
 		\arrow[""{name=1, anchor=center, inner sep=0}, "{\Sigma_X}"{description, pos=0.3}, shift left=5, from=1-1, to=1-3]
 		\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_X}"{description, pos=0.3}, shift right=5, from=1-1, to=1-3]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
 	\end{tikzcd}\]
-	令
+	想象 $X$ 为 ``所有可能世界的集合'', 而 $\mathcal C/X$ 的对象是在不同可能世界中变化的集合. 令
 	$$
 	\lozenge = X^*\Sigma_X,\quad
 	\square = X^*\Pi_X.

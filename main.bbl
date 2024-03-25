@@ -118,6 +118,57 @@
       \verb https://www.youtube.com/watch?v=21qPOReu4FI
       \endverb
     \endentry
+    \entry{ILAG}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b57eedfbf33a736b81749fda74f1f241}{%
+           family={Blechschmidt},
+           familyi={B\bibinitperiod},
+           given={Ingo},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b57eedfbf33a736b81749fda74f1f241}
+      \strng{fullhash}{b57eedfbf33a736b81749fda74f1f241}
+      \strng{bibnamehash}{b57eedfbf33a736b81749fda74f1f241}
+      \strng{authorbibnamehash}{b57eedfbf33a736b81749fda74f1f241}
+      \strng{authornamehash}{b57eedfbf33a736b81749fda74f1f241}
+      \strng{authorfullhash}{b57eedfbf33a736b81749fda74f1f241}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.AG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Using the internal language of toposes in algebraic geometry}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2111.03685
+      \endverb
+    \endentry
+    \entry{HCA2}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c9259674b0e31a3252b2a81d66e21923}{%
+           family={Borceux},
+           familyi={B\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge Univrsity Press}%
+      }
+      \strng{namehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{fullhash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{bibnamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authorbibnamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authornamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authorfullhash}{c9259674b0e31a3252b2a81d66e21923}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Handbook of Categorical Algebra 2}
+      \field{year}{1994}
+    \endentry
     \entry{HCA3}{book}{}
       \name{author}{1}{}{%
         {{hash=c9259674b0e31a3252b2a81d66e21923}{%
@@ -135,12 +186,13 @@
       \strng{authorbibnamehash}{c9259674b0e31a3252b2a81d66e21923}
       \strng{authornamehash}{c9259674b0e31a3252b2a81d66e21923}
       \strng{authorfullhash}{c9259674b0e31a3252b2a81d66e21923}
+      \field{extraname}{2}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Handbook of Categorical Algebra 3}
-      \field{year}{2008}
+      \field{year}{1994}
     \endentry
     \entry{TST}{book}{}
       \name{author}{1}{}{%

@@ -62,7 +62,7 @@
     \renewcommand{\arraystretch}{1.5}
     \begin{center}
     	\begin{tabular}{l|l}
-    		对于范畴 $\mathsf C$, 如下条件等价: \quad & 对于范畴 $\mathsf C$, 如下条件等价: \\
+    		对于范畴 $\mathcal C$, 如下条件等价: \quad & 对于范畴 $\mathcal C$, 如下条件等价: \\
     		(1) 存在有限极限\footnotemark; & (1) 存在有限余极限; \\
     		(2) 存在有限积与等化子; &  (2) 存在有限余积与余等化子;\\
     		(3) 存在终对象与拉回. & (3) 存在始对象与推出.
@@ -75,7 +75,7 @@
 \begin{proof}
     由对偶性, 我们只需证明左边的命题. 由定义, $(1)$ 蕴含 $(2)$ 和 $(3)$.
     
-    $(2) \Rightarrow (1)$ 的证明. 设 $F \colon I \to\mathsf C, i\mapsto F_i$ 是任意有限图,
+    $(2) \Rightarrow (1)$ 的证明. 设 $F \colon I \to\mathcal C, i\mapsto F_i$ 是任意有限图,
     考虑有限积
     $$
         P = \prod_{i} F_i,\quad
@@ -107,19 +107,19 @@
 
 \subsection{指数对象与积闭范畴}
 
-集合范畴中, 两个集合间的态射仍构成一个集合, 称为映射集合. 在某些范畴 $\mathsf C$ 中, 两个对象之间有一个 $\mathsf C$ 的对象充当了 ``映射集合'' 的角色, 称为\emph{指数对象} (exponential object).
+集合范畴中, 两个集合间的态射仍构成一个集合, 称为映射集合. 在某些范畴 $\mathcal C$ 中, 两个对象之间有一个 $\mathcal C$ 的对象充当了 ``映射集合'' 的角色, 称为\emph{指数对象} (exponential object).
 
 \begin{definition}
     [label={exponential-object}]
     {(指数对象, 积闭范畴)}
-    设范畴 $\mathsf C$ 具有有限积. 对固定的对象 $X$, 若存在函子 $(-)^X \colon \mathsf C \to \mathsf C$ 构成 $(-)\times X$ 的右伴随\footnotemark, 即有自然同构
+    设范畴 $\mathcal C$ 具有有限积. 对固定的对象 $X$, 若存在函子 $(-)^X \colon \mathcal C \to \mathcal C$ 构成 $(-)\times X$ 的右伴随\footnotemark, 即有自然同构
     \begin{equation}
-        \operatorname{Hom}_{\mathsf C}(Z,Y^X)  \simeq \operatorname{Hom}_{\mathsf C}(Z\times X,Y),
+        \operatorname{Hom}_{\mathcal C}(Z,Y^X)  \simeq \operatorname{Hom}_{\mathcal C}(Z\times X,Y),
         \label{exponential-adjoint}
     \end{equation}
     则称 $X$ \emph{可作指数} (exponentiable), 称 $Y^X$ 为\emph{指数对象} (exponential object), 或称\emph{内蕴态射对象} (internal hom-object).
     
-    若 $\mathsf C$ 的所有对象均可作指数, 则称 $\mathsf C$ 为\emph{积闭范畴} (cartesian closed category), 其中 ``闭'' 即指数对象的存在性.
+    若 $\mathcal C$ 的所有对象均可作指数, 则称 $\mathcal C$ 为\emph{积闭范畴} (cartesian closed category), 其中 ``闭'' 即指数对象的存在性.
 \end{definition}
 
 \footnotetext{指数对象可对一般的\emph{幺半范畴} (monoidal category) 定义, 这里我们只考虑所谓\emph{积幺半范畴} (cartesian monoidal category), 即以乘积定义的幺半范畴.}
@@ -143,17 +143,17 @@
 
 \begin{example}
     {(函子范畴)}
-    两个范畴 $\mathsf C,\mathsf D$ 之间的函子构成一个范畴 $\mathsf {Fun}(\mathsf C,\mathsf D)$, 这是范畴的范畴 $\mathsf {Cat}$ 中的指数对象.
+    两个范畴 $\mathcal C,\mathcal D$ 之间的函子构成一个范畴 $\mathsf {Fun}(\mathcal C,\mathcal D)$, 这是范畴的范畴 $\mathsf {Cat}$ 中的指数对象.
 \end{example}
 
 \begin{prop}
     {}
-    对于积闭范畴, 指数对象实际上构成一个\emph{双函子} (也即乘积范畴出发的函子) $\mathsf C^{\op}\times\mathsf C \to \mathsf C$, $(X,Y)\mapsto Y^X$.
+    对于积闭范畴, 指数对象实际上构成一个\emph{双函子} (也即乘积范畴出发的函子) $\mathcal C^{\op}\times\mathcal C \to \mathcal C$, $(X,Y)\mapsto Y^X$.
 \end{prop}
 
     %指数对象的性质也可表述为函子 . 下面 (\ref{slice-category} 节) 还会介绍更多相关的性质.
     
-    %另外, 即使范畴中没有乘积也可定义指数对象: 使用米田嵌入 $\yo \colon \mathsf C \to \mathsf {Fun}(\mathsf C^{\op},\mathsf {Set})$,
+    %另外, 即使范畴中没有乘积也可定义指数对象: 使用米田嵌入 $\yo \colon \mathcal C \to \mathsf {Fun}(\mathcal C^{\op},\mathsf {Set})$,
     %指数对象 $Y^X$ 是函子 $\yo(Y)^{\yo(X)}$ 的表示对象.
 
     
@@ -163,7 +163,7 @@
 \begin{definition}
     [label={evaluation-map}]
     {(取值映射)}
-    在 (\ref{exponential-adjoint}) 中取 $Z=Y^X$, 那么 $\operatorname{id}_{Y^X}\in \operatorname{Hom}_{\mathsf C}(Y^X,Y^X)$ 在另一边对应的态射称作\emph{取值映射} (evaluation map) $\operatorname{ev}\colon Y^X\times X \to Y$. 换言之, 取值映射 $\operatorname{ev}\colon Y^X\times X \to Y$ 是伴随 $(-)\times X \dashv (-)^X$ 的余单位.
+    在 (\ref{exponential-adjoint}) 中取 $Z=Y^X$, 那么 $\operatorname{id}_{Y^X}\in \operatorname{Hom}_{\mathcal C}(Y^X,Y^X)$ 在另一边对应的态射称作\emph{取值映射} (evaluation map) $\operatorname{ev}\colon Y^X\times X \to Y$. 换言之, 取值映射 $\operatorname{ev}\colon Y^X\times X \to Y$ 是伴随 $(-)\times X \dashv (-)^X$ 的余单位.
 \end{definition}
 
 指数对象有与数的乘方类似的规律.
@@ -188,25 +188,36 @@
 \end{proof}
 
 \begin{prop}
+	[label={distributive-law}]
+	{(分配律)}
+	在有二元和的积闭范畴中,
+	$$
+	Z\times (X+Y)\simeq Z\times X+Z\times Y.
+	$$
+\end{prop}
+\begin{proof}
+	这是因为 $(-)\times W$ 作为 $(-)^W$ 的左伴随保持余极限 (命题 \ref{adjoints-preserve-limits}).
+\end{proof}
+
+\begin{prop}
 	[label={sum-exponential-product}]
 	{}
-	在有二元和的积闭范畴中, 对任意对象 $X,Y,Z$ 有
+	在有二元和的积闭范畴中, %对任意对象 $X,Y,Z$ 有
 	$$
 	Z^{X + Y}\simeq Z^X \times Z^Y.
 	$$
 \end{prop}
 
 \begin{proof}
-	略. 与命题 \ref{exponential-law} 的证明类似, 使用米田引理.
-%	\begin{align*}
-%		\operatorname{Hom}(W,Z^{X+Y})
-%		&\simeq\operatorname{Hom}(W\times (X+Y),Z)\\
-%		&\simeq\operatorname{Hom}(W\times X+W\times Y,Z)\\
-%		&\simeq\operatorname{Hom}(W\times X,Z)+\operatorname{Hom}(W\times Y,Z)\\
-%		&\simeq\operatorname{Hom}(W,Z^X)\times\operatorname{Hom}(W,Z^Y)\\
-%		&\simeq\operatorname{Hom}(W,Z^X\times Z^Y).
-%	\end{align*}
-	其中要用到积闭范畴中的 ``分配律'' $$W\times (X+Y)\simeq W\times X+W\times Y,$$ 这是因为 $(-)\times W$ 作为 $(-)^W$ 的左伴随保持余极限 (命题 \ref{adjoints-preserve-limits}).
+	%略. 与命题 \ref{exponential-law} 的证明类似, 使用米田引理.
+	\begin{align*}
+		\operatorname{Hom}(W,Z^{X+Y})
+		&\simeq\operatorname{Hom}(W\times (X+Y),Z)\\
+		&\simeq\operatorname{Hom}(W\times X+W\times Y,Z)&\text{(分配律)}\\
+		&\simeq\operatorname{Hom}(W\times X,Z)+\operatorname{Hom}(W\times Y,Z)\\
+		&\simeq\operatorname{Hom}(W,Z^X)\times\operatorname{Hom}(W,Z^Y)\\
+		&\simeq\operatorname{Hom}(W,Z^X\times Z^Y).
+	\end{align*}
 \end{proof}
 
 
@@ -255,14 +266,14 @@ $$
 
 
 
-范畴 $\mathsf C$ 中对象 $X$ 的子对象构成一偏序集 $\operatorname{Sub}_{\mathsf C}(X)$, 其序关系为 ``包含'' 关系. 若子对象 $U\hookrightarrow X$ 作为嵌入映射可分解为 $U\hookrightarrow V \hookrightarrow X$, 则称 $U$ 包含于 $V$.
+范畴 $\mathcal C$ 中对象 $X$ 的子对象构成一偏序集 $\operatorname{Sub}_{\mathcal C}(X)$, 其序关系为 ``包含'' 关系. 若子对象 $U\hookrightarrow X$ 作为嵌入映射可分解为 $U\hookrightarrow V \hookrightarrow X$, 则称 $U$ 包含于 $V$.
 %这个偏序集作为范畴, 其中的乘积为子对象的\emph{交}.
 
-在范畴 $\mathsf C$ 具有拉回时, 子对象集合有函子性.
+在范畴 $\mathcal C$ 具有拉回时, 子对象集合有函子性.
 
 \begin{definition}{(子对象函子)}
-    假设范畴 $\mathsf C$ 具有拉回. 定义\emph{子对象函子}
-    $$\operatorname{Sub}_{\mathsf C} \colon \mathsf C^{\op} \to \mathsf {Set},$$
+    假设范畴 $\mathcal C$ 具有拉回. 定义\emph{子对象函子}
+    $$\operatorname{Sub}_{\mathcal C} \colon \mathcal C^{\op} \to \mathsf {Set},$$
     将对象 $X$ 对应到其子对象的集合,
     态射对应到子对象的拉回.
 \end{definition}
@@ -291,17 +302,17 @@ $$
 
 
 \begin{definition}[label={Subobject-classifier-definition}]{(子对象分类子)}
-    设范畴 $\mathsf C$ 存在拉回. 若子对象函子 $\operatorname{Sub} \colon \mathsf C^{\op} \to \mathsf {Set}$ 可表, 即存在对象 $\Omega$ 使得有自然同构
+    设范畴 $\mathcal C$ 存在拉回. 若子对象函子 $\operatorname{Sub} \colon \mathcal C^{\op} \to \mathsf {Set}$ 可表, 即存在对象 $\Omega$ 使得有自然同构
     $$
-    \operatorname{Sub}_{\mathsf C}(X) \simeq \operatorname{Hom}_{\mathsf C}(X,\Omega),
+    \operatorname{Sub}_{\mathcal C}(X) \simeq \operatorname{Hom}_{\mathcal C}(X,\Omega),
     $$
-    则称 $\Omega$ 为 $\mathsf C$ 的\emph{子对象分类子} (subobject classifier).
+    则称 $\Omega$ 为 $\mathcal C$ 的\emph{子对象分类子} (subobject classifier).
 \end{definition}
 
 子对象分类子还有如下的等价定义.
 
 \begin{definition}[label={Subobject-classifier-definition-alternative}]{(子对象分类子, 等价定义)}
-    设范畴 $\mathsf C$ 存在拉回以及终对象 $1$. 若存在满足如下条件的对象 $\Omega$ 以及单射 $\top \colon 1 \to \Omega$, 则称其为 $\mathsf C$ 的\emph{子对象分类子} (subobject classifier): 对任意单射 (子对象) $U \to X$ 存在唯一的\emph{特征函数} (characteristic map) $\chi_U \colon X \to \Omega$ 使得下图为拉回.
+    设范畴 $\mathcal C$ 存在拉回以及终对象 $1$. 若存在满足如下条件的对象 $\Omega$ 以及单射 $\top \colon 1 \to \Omega$, 则称其为 $\mathcal C$ 的\emph{子对象分类子} (subobject classifier): 对任意单射 (子对象) $U \to X$ 存在唯一的\emph{特征函数} (characteristic map) $\chi_U \colon X \to \Omega$ 使得下图为拉回.
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJVIl0sWzAsMSwiWCJdLFsxLDAsIjEiXSxbMSwxLCJcXE9tZWdhIl0sWzEsMywiXFxjaGlfVSIsMl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJib3R0b20ifX19XSxbMiwzLCJcXHRvcCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoiYm90dG9tIn19fV0sWzAsMl1d
     \[\begin{tikzcd}[ampersand replacement=\&]
     	U \& 1 \\
@@ -495,9 +506,9 @@ $$
 
 \begin{definition}
     [label={power-object-functor}]{(幂对象函子)}
-    设范畴 $\mathsf C$ 中存在子对象分类子和指数对象, 定义\emph{幂对象} (power object)
+    设范畴 $\mathcal C$ 中存在子对象分类子和指数对象, 定义\emph{幂对象} (power object)
     $$P(X) := \Omega^X.$$
-    幂对象给出了函子 $P \colon \mathsf C^{\op} \to \mathsf C$.
+    幂对象给出了函子 $P \colon \mathcal C^{\op} \to \mathcal C$.
 \end{definition}
 
 在上述定义中取 $X=1$, 我们得到子对象分类子等于终对象的幂对象: \makebox{$\Omega = P(1)$}.
@@ -513,7 +524,7 @@ $$
 $$
 这启发了如下定义.
 \begin{definition}{(幂对象, 另一种定义)}
-    设范畴 $\mathsf C$ 具有有限极限. 对象 $X$ 的\emph{幂对象}是一个对象 $P(X)$ 以及一个单射 $\in \hookrightarrow X \times P(X)$, 满足对任意对象 $Y,Z$ 与单态射 $Z \to X\times Y$, 存在唯一的 $\chi_Z \colon Y \to P(X)$ 使得下图为拉回.
+    设范畴 $\mathcal C$ 具有有限极限. 对象 $X$ 的\emph{幂对象}是一个对象 $P(X)$ 以及一个单射 $\in \hookrightarrow X \times P(X)$, 满足对任意对象 $Y,Z$ 与单态射 $Z \to X\times Y$, 存在唯一的 $\chi_Z \colon Y \to P(X)$ 使得下图为拉回.
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJYXFx0aW1lcyBZIl0sWzEsMSwiWFxcdGltZXMgUChYKSJdLFsxLDAsIlxcaW4iXSxbMCwwLCJaIl0sWzMsMCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJib3R0b20ifX19XSxbMCwxLCJcXGNoaV9aIiwyXSxbMywyXSxbMiwxLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6ImJvdHRvbSJ9fX1dXQ==
 \[\begin{tikzcd}[ampersand replacement=\&]
 	Z \& \in \\
@@ -559,7 +570,7 @@ $$
 \begin{definition}
     [label={over-category}]
     {(俯范畴)}
-    范畴 $\mathsf C$ 在对象 $X$ 上的\emph{俯范畴} (over category, 又称切片范畴, slice category) $\mathsf C/X$ 的对象是 $\mathsf C$ 中指向 $X$ 的态射, 两个对象 $Y\to X$, $Z \to X$ 之间的态射是如下的交换图.
+    范畴 $\mathcal C$ 在对象 $X$ 上的\emph{俯范畴} (over category, 又称切片范畴, slice category) $\mathcal C/X$ 的对象是 $\mathcal C$ 中指向 $X$ 的态射, 两个对象 $Y\to X$, $Z \to X$ 之间的态射是如下的交换图.
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJZIl0sWzIsMCwiWiJdLFsxLDEsIlgiXSxbMCwxXSxbMCwyXSxbMSwyXV0=
     \[\begin{tikzcd}[ampersand replacement=\&,column sep=tiny]
     	Y \&\& Z \\
@@ -568,25 +579,44 @@ $$
     	\arrow[from=1-1, to=2-2]
     	\arrow[from=1-3, to=2-2]
     \end{tikzcd}\]
-	与俯范畴对偶的概念是\emph{仰范畴} (under category) $X\backslash \mathsf C$, 即由对象 $X$ 出发的态射构成的范畴.
-	另一种记号是将俯范畴与仰范畴分别记作 $\mathsf C_{/X},\mathsf C_{X/}$.
+	与俯范畴对偶的概念是\emph{仰范畴} (under category) $X\backslash \mathcal C$, 即由对象 $X$ 出发的态射构成的范畴.
+	另一种记号是将俯范畴与仰范畴分别记作 $\mathcal C_{/X},\mathcal C_{X/}$.
 \end{definition}
 
-俯范畴中极限, 子对象等结构与原来的范畴密切相关.
+俯范畴中极限, 余极限, 子对象等结构与原来的范畴密切相关. 容易验证如下事实.
 
 \begin{prop}
-    {(俯范畴中的有限极限)}
-    设 $\mathsf C$ 中存在有限极限. 设 $Y\to X,Z\to X$ 是俯范畴 $\mathsf C/X$ 中两个对象.
-    那么两个态射 $f,g \colon Y \to Z$ 的等化子就是 $f,g \colon Y \to Z$ 在 $\mathsf C$ 中的等化子配上到 $X$ 明显的态射;
-    两个对象 $Y\to X, Z\to X$ 的乘积是 $\mathsf C$ 中的拉回 $Y\times_X Z$.
-    
-    对任意范畴 $\mathsf C$ 的对象 $X$, 俯范畴 $\mathsf C/X$ 都有终对象 $\operatorname{id}_X\colon X\to X$.
+	[label={limits-in-over-category}]
+    {(俯范畴中的极限)}
+%    设 $\mathcal C$ 中存在有限极限. 设 $Y\to X,Z\to X$ 是俯范畴 $\mathcal C/X$ 中两个对象.
+%    那么
+%    \begin{itemize}
+%    	\item (二元积) $\mathcal C/X$ 的两个对象 $Y\to X, Z\to X$ 的乘积是 $\mathcal C$ 中的拉回 $Y\times_X Z$;
+%    	\item (等化子) $\mathcal C/X$ 中的两个态射 $f,g \colon Y \to Z$ 的等化子就是两者在 $\mathcal C$ 中的等化子 (配上到 $X$ 明显的态射);
+%    	\item (终对象) $\mathcal C/X$ 的终对象是 $\operatorname{id}_X\colon X\to X$.
+%    	\item (拉回) $\mathcal C/X$ 中的拉回仍是 $\mathcal C$ 中的拉回.
+%    \end{itemize}
+	设 $X$ 是范畴 $\mathcal C$ 的对象, 那么俯范畴 $\mathcal C/X$ 中一个图的极限等同\footnote{这里 ``等同'' 的意思是, 前者存在当且仅当后者存在, 且当两者存在时, 两者同构.}于 $\mathcal C$ 中对应的图加上指向 $X$ 的态射后的极限.
+	例如,
+	\begin{itemize}
+    	\item (二元积) $\mathcal C/X$ 的两个对象 $Y\to X, Z\to X$ 的乘积是 $\mathcal C$ 中的拉回 $Y\times_X Z$;
+    	\item (等化子) $\mathcal C/X$ 中的两个态射 $f,g \colon Y \to Z$ 的等化子是 $\mathcal C$ 中的等化子;
+    	\item (终对象) $\mathcal C/X$ 的终对象是 $\operatorname{id}_X\colon X\to X$.
+    	\item (拉回) $\mathcal C/X$ 中的拉回是 $\mathcal C$ 中的拉回.
+	\end{itemize}
+\end{prop}
+
+余极限的情况则更简单.
+
+\begin{prop}
+	{(俯范畴中的余极限)}
+	设 $X$ 是范畴 $\mathcal C$ 的对象, 那么俯范畴 $\mathcal C/X$ 中一个图的余极限等同于 $\mathcal C$ 中对应的图的余极限.
 \end{prop}
 
 \begin{prop}
 	[label={subobjects-in-slice-category}]
     {(俯范畴中的子对象)}
-    对任何范畴 $\mathsf C$, 俯范畴 $\mathsf C/X$ 中 $Y\to X$ 的子对象
+    对任何范畴 $\mathcal C$, 俯范畴 $\mathcal C/X$ 中 $Y\to X$ 的子对象
     $$
     \begin{tikzcd}[ampersand replacement=\&,column sep=-1pt,row sep=small]
 	W \&\& Y \\
@@ -596,40 +626,40 @@ $$
 	\arrow[from=1-1, to=2-2]
     \end{tikzcd}
     $$
-    等同于 $\mathsf C$ 中 $Y$ 的子对象 $W \hookrightarrow Y$.
-    当 $\mathsf C$ 有子对象分类子 $\Omega$ 且存在乘积时,
+    等同于 $\mathcal C$ 中 $Y$ 的子对象 $W \hookrightarrow Y$.
+    当 $\mathcal C$ 有子对象分类子 $\Omega$ 且存在乘积时,
     $$
-    \operatorname{Sub}_{\mathsf C/X}(Y\to X)\simeq\operatorname{Sub}_{\mathsf C}(Y)\simeq\operatorname{Hom}_{\mathsf C}(Y,\Omega)\simeq\operatorname{Hom}_{\mathsf C/X}(Y,\Omega\times X\to X),
+    \operatorname{Sub}_{\mathcal C/X}(Y\to X)\simeq\operatorname{Sub}_{\mathcal C}(Y)\simeq\operatorname{Hom}_{\mathcal C}(Y,\Omega)\simeq\operatorname{Hom}_{\mathcal C/X}(Y,\Omega\times X\to X),
     $$
-    即 $\mathsf C/X$ 有子对象分类子 $\Omega\times X \to X$.
+    即 $\mathcal C/X$ 有子对象分类子 $\Omega\times X \to X$.
 \end{prop}
 
-俯范畴的性质中, 非常重要的是各俯范畴以及原来的范畴 $\mathsf C$ 之间的关系, 也即\emph{换基} (change of base).
+俯范畴的性质中, 非常重要的是各俯范畴以及原来的范畴 $\mathcal C$ 之间的关系, 也即\emph{换基} (change of base).
 
-很明显, 俯范畴 $\mathsf C/X$ 到原来的范畴 $\mathsf C$ 有一个 ``遗忘''\footnote{但严格来说这不是遗忘函子, 它一般没有对应的自由函子 (自由是遗忘的左伴随), 因为它一般不保持极限, 见命题 \ref{adjoints-preserve-limits}.} 函子: 对于态射 $Y \to X$, 只保留对象 $Y$ 而忘掉那个态射. 而 $\mathsf C$ 等价于俯范畴 $\mathsf C/1$ (假设 $\mathsf C$ 有终对象 $1$),
+很明显, 俯范畴 $\mathcal C/X$ 到原来的范畴 $\mathcal C$ 有一个 ``遗忘''\footnote{但严格来说这不是遗忘函子, 它一般没有对应的自由函子 (自由是遗忘的左伴随), 因为它一般不保持极限, 见命题 \ref{adjoints-preserve-limits}.} 函子: 对于态射 $Y \to X$, 只保留对象 $Y$ 而忘掉那个态射. 而 $\mathcal C$ 等价于俯范畴 $\mathcal C/1$ (假设 $\mathcal C$ 有终对象 $1$),
 故上述函子的相对版本如下.
 
 \begin{definition}
     [label={sigma-functor}]
     {($\Sigma$-函子)}
-    设 $\mathsf C$ 是范畴.
-    对态射 $f \colon X \to Y$, 定义函子 $\Sigma_f \colon \mathsf C / X \to \mathsf C / Y$,
-    将 $\mathsf C/X$ 的对象 $Z \to X$ 对应到复合 $Z \to X \overset{f}{\to} Y$.
+    设 $\mathcal C$ 是范畴.
+    对态射 $f \colon X \to Y$, 定义函子 $\Sigma_f \colon \mathcal C / X \to \mathcal C / Y$,
+    将 $\mathcal C/X$ 的对象 $Z \to X$ 对应到复合 $Z \to X \overset{f}{\to} Y$.
     
-    当 $Y=1$ 是 $\mathsf C$ 的终对象时, $\mathsf C/1\simeq \mathsf C$, 记上述函子为
-    $\Sigma_X \colon \mathsf C/X \to \mathsf C$.
+    当 $Y=1$ 是 $\mathcal C$ 的终对象时, $\mathcal C/1\simeq \mathcal C$, 记上述函子为
+    $\Sigma_X \colon \mathcal C/X \to \mathcal C$.
 \end{definition}
 
 稍加观察即可得到如下命题.
 \begin{prop}
     [label={sigma-adjoint}]
     {}
-    设范畴 $\mathsf C$ 存在拉回, 那么对态射
+    设范畴 $\mathcal C$ 存在拉回, 那么对态射
     $f \colon X \to Y$,
     有伴随
     % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDIC9YIl0sWzEsMCwiXFxtYXRoc2YgQy9ZLiJdLFswLDEsIlxcU2lnbWFfZiIsMCx7Im9mZnNldCI6LTJ9XSxbMSwwLCJmXioiLDAseyJvZmZzZXQiOi0yfV0sWzIsMywiIiwwLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
-    	{\mathsf C /X} \& {\mathsf C/Y.}
+    	{\mathcal C /X} \& {\mathcal C/Y.}
     	\arrow[""{name=0, anchor=center, inner sep=0}, "{\Sigma_f}", shift left=2, from=1-1, to=1-2]
     	\arrow[""{name=1, anchor=center, inner sep=0}, "{f^*}", shift left=2, from=1-2, to=1-1]
     	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
@@ -665,7 +695,7 @@ $$
     $$
     \mathsf {Set}/X \simeq \mathsf {Set}^X.
     $$
-    其中右边的 $X$ 视为离散范畴. ($\mathsf {Set}$ 是集合丛的 ``分类空间''.)
+    其中右边的 $X$ 视为离散范畴. ($\mathsf {Set}$ 是集合丛的 ``分类空间'', $X$ 到 $\mathsf {Set}$ 的函子等同于 $X$ 上的集合丛.)
     
     对集合映射 $f\colon X \to Y$, 拉回函子 $f^* \colon \mathsf {Set}/Y \to \mathsf {Set}/X$ 在另一边表现为 ``重新标号'' 函子 $f^*\colon \mathsf {Set}^Y \to \mathsf {Set}^X,$
     $$
@@ -688,12 +718,12 @@ $$
     {}
     在命题 \ref{sigma-adjoint} 中令 $Y=1$, 以 $X$ 表示唯一的态射 $X\to 1$, 得到伴随
     \[\begin{tikzcd}[ampersand replacement=\&]
-        	{\mathsf C /X} \& {\mathsf C.}
+        	{\mathcal C /X} \& {\mathcal C.}
         	\arrow[""{name=0, anchor=center, inner sep=0}, "{\Sigma_X}", shift left=2, from=1-1, to=1-2]
         	\arrow[""{name=1, anchor=center, inner sep=0}, "{X^*}", shift left=2, from=1-2, to=1-1]
         	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
     \end{tikzcd}\]
-    到 $1$ 的态射的拉回为二元乘积, 故函子 $X^* \colon \mathsf C \to \mathsf C/X$ 将对象 $Z$ 对应到投影 $\text{pr}_2 \colon Z\times X \to X$ (直观: $X$ 的每个点上都有一个 $Z$). 那么这对伴随的余单位为 $(-)\times X$.
+    到 $1$ 的态射的拉回为二元乘积, 故函子 $X^* \colon \mathcal C \to \mathcal C/X$ 将对象 $Z$ 对应到投影 $\text{pr}_2 \colon Z\times X \to X$ (直观: $X$ 的每个点上都有一个 $Z$). 那么这对伴随的余单位为 $(-)\times X$.
     
 \end{example}
 
@@ -702,22 +732,22 @@ $$
 \begin{propdef}
 	[label={pi-functor-absolute}]
     {($\Pi$-函子, 绝对情形)}
-    设范畴 $\mathsf C$ 存在有限极限.
-    那么 $(-)\times X \colon \mathsf C \to \mathsf C$ 有右伴随 $(-)^X$ 当且仅当
-    $X^* \colon \mathsf C \to \mathsf C/X$ 有右伴随 $\Pi_X \colon \mathsf C/X \to \mathsf C$.
+    设范畴 $\mathcal C$ 存在有限极限.
+    那么 $(-)\times X \colon \mathcal C \to \mathcal C$ 有右伴随 $(-)^X$ 当且仅当
+    $X^* \colon \mathcal C \to \mathcal C/X$ 有右伴随 $\Pi_X \colon \mathcal C/X \to \mathcal C$.
 \end{propdef}
 
 \begin{proof}
-    假设 $X^* \colon \mathsf C \to \mathsf C/X$ 有右伴随 $\Pi_X \colon \mathsf C/X \to \mathsf C$. 定义 $(-)^X = \Pi_X \circ X^*$, 那么有自然同构
+    假设 $X^* \colon \mathcal C \to \mathcal C/X$ 有右伴随 $\Pi_X \colon \mathcal C/X \to \mathcal C$. 定义 $(-)^X = \Pi_X \circ X^*$, 那么有自然同构
     \begin{align*}
-        \operatorname{Hom}_{\mathsf C} (Y,Z^X)
-        &\simeq\operatorname{Hom}_{\mathsf C} (Y,\Pi_X\circ X^*Z)&\text{(定义)}\\
-        &\simeq\operatorname{Hom}_{\mathsf C/X} (X^*Y,X^*Z)&\text{($\Pi_X$ 是 $X^*$ 的右伴随)}\\
-        &\simeq\operatorname{Hom}_{\mathsf C} (\Sigma_X\circ X^*Y,Z)&\text{($\Sigma_X$ 是 $X^*$ 的左伴随)}\\
-        &\simeq\operatorname{Hom}_{\mathsf C} (Y\times X,Z).
+        \operatorname{Hom}_{\mathcal C} (Y,Z^X)
+        &\simeq\operatorname{Hom}_{\mathcal C} (Y,\Pi_X\circ X^*Z)&\text{(定义)}\\
+        &\simeq\operatorname{Hom}_{\mathcal C/X} (X^*Y,X^*Z)&\text{($\Pi_X$ 是 $X^*$ 的右伴随)}\\
+        &\simeq\operatorname{Hom}_{\mathcal C} (\Sigma_X\circ X^*Y,Z)&\text{($\Sigma_X$ 是 $X^*$ 的左伴随)}\\
+        &\simeq\operatorname{Hom}_{\mathcal C} (Y\times X,Z).
     \end{align*}
 
-    另一方面, 假设 $(-)\times X \colon \mathsf C \to \mathsf C$ 有右伴随 $(-)^X$.
+    另一方面, 假设 $(-)\times X \colon \mathcal C \to \mathcal C$ 有右伴随 $(-)^X$.
     对于 $f\colon Z \to X$, 定义 $\Pi_X(f)$ 为如下的拉回,
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCIxIl0sWzEsMSwiWF5YIl0sWzEsMCwiWl5YIl0sWzAsMCwiXFxQaV9YKGYpIl0sWzAsMSwiXFxvcGVyYXRvcm5hbWV7aWR9X1giLDJdLFszLDBdLFszLDJdLFsyLDEsImZeWCJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -734,9 +764,9 @@ $$
     并且由拉回的性质容易得到构造的函子性.
     这个拉回的直观是 ``$f \colon Z \to X$ 的截面的集合'' (因为 $f$ 的截面就是 $X$ 到 $Z$ 的态射, 使得它复合 $f$ 后等于 $\operatorname{id}_X$).
     
-    对 $\mathsf C$ 的对象 $W$, 有自然同构
+    对 $\mathcal C$ 的对象 $W$, 有自然同构
     \begin{align*}
-        &\operatorname{Hom}_{\mathsf C}(W,\Pi_X(f))
+        &\operatorname{Hom}_{\mathcal C}(W,\Pi_X(f))
         \\\simeq&
         \big\{
         h\colon W\to Z^X \mid f^X \circ h=\operatorname{id}_X\circ W
@@ -746,7 +776,7 @@ $$
         h\colon W\times X \to Z \mid f \circ h = \operatorname{pr}_2 \colon W\times X \to X
         \big\}
         \\\simeq&
-        \operatorname{Hom}_{\mathsf C/X}
+        \operatorname{Hom}_{\mathcal C/X}
         (X^*W,f).
     \end{align*}
     这证明了 $\Pi_X$ 是 $X^*$ 的伴随.
@@ -754,9 +784,9 @@ $$
 
 \begin{remark}
 	{}
-	正如 $\Sigma_X\colon \mathsf C/X\to\mathsf C$ 可理解为对 $X$ 上一族对象求和,
-	$\Pi_X\colon \mathsf C/X\to\mathsf C$ 可理解为对 $X$ 上一族对象求积.
-	而 $X^*\colon \mathsf C\to\mathsf C/X$ 是将对象 $Y$ ``复制 $X$ 那么多份'',
+	正如 $\Sigma_X\colon \mathcal C/X\to\mathcal C$ 可理解为对 $X$ 上一族对象求和,
+	$\Pi_X\colon \mathcal C/X\to\mathcal C$ 可理解为对 $X$ 上一族对象求积.
+	而 $X^*\colon \mathcal C\to\mathcal C/X$ 是将对象 $Y$ ``复制 $X$ 那么多份'',
 	所以 $\Pi_X\circ X^* (Y)$ 就是将 $X$ 那么多个 $Y$ 相乘, 也就是 $Y^X$.
 \end{remark}
 
@@ -764,12 +794,12 @@ $$
 
 \begin{definition}
     {(局部积闭范畴)}
-    称范畴 $\mathsf C$ 为\emph{局部积闭范畴} (locally cartesian closed category, LCCC) 是指 $\mathsf C$ 在任何对象 $X$ 上的\emph{俯范畴} $\mathsf C /X$ 为积闭范畴.
+    称范畴 $\mathcal C$ 为\emph{局部积闭范畴} (locally cartesian closed category, LCCC) 是指 $\mathcal C$ 在任何对象 $X$ 上的\emph{俯范畴} $\mathcal C /X$ 为积闭范畴.
 \end{definition}
 
 \begin{remark}
     {}
-    通常人们还会假定局部积闭范畴 $\mathsf C$ 有终对象 $1$, 从而 $\mathsf C$ 是积闭范畴, 因为 $\mathsf C/1\simeq \mathsf C$.
+    通常人们还会假定局部积闭范畴 $\mathcal C$ 有终对象 $1$, 从而 $\mathcal C$ 是积闭范畴, 因为 $\mathcal C/1\simeq \mathcal C$.
     
     积闭范畴的定义要求有限积, 故局部积闭范畴中存在拉回, 从而存在有限极限.
 \end{remark}
@@ -777,14 +807,14 @@ $$
 \begin{propdef}
 	[label={pullback-has-right-adjoint}]
     {($\Pi$-函子)}
-    设范畴 $\mathsf C$ 有一切有限极限. 那么 $\mathsf C$ 是局部积闭范畴当且仅当对任何态射 $f \colon X \to Y$,
-    拉回 $f^* \colon \mathsf C/Y \to \mathsf C/X$ 有右伴随 $\Pi_f$.
+    设范畴 $\mathcal C$ 有一切有限极限. 那么 $\mathcal C$ 是局部积闭范畴当且仅当对任何态射 $f \colon X \to Y$,
+    拉回 $f^* \colon \mathcal C/Y \to \mathcal C/X$ 有右伴随 $\Pi_f$.
 \end{propdef}
 
 \begin{proof}
     注意到
     $$
-    (\mathsf C/Y)/f \simeq \mathsf C/X,
+    (\mathcal C/Y)/f \simeq \mathcal C/X,
     $$
     这个命题化为绝对情形 (命题 \ref{pi-functor-absolute}).
 \end{proof}
@@ -798,7 +828,7 @@ $$
 对于存在有限极限的局部积闭范畴, 对每个态射 $f\colon X\to Y$ 有三元伴随
 % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDL1giXSxbMiwwLCJcXG1hdGhzZiBDL1kiXSxbMSwwLCJmXioiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMCwxLCJcXFNpZ21hX2YiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzAsIm9mZnNldCI6LTV9XSxbMCwxLCJcXFBpX2YiLDEseyJsYWJlbF9wb3NpdGlvbiI6MzAsIm9mZnNldCI6NX1dLFszLDIsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzIsNCwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
 \[\begin{tikzcd}[ampersand replacement=\&,background color=\propcolor]
-	{\mathsf C/X} \&\& {\mathsf C/Y.}
+	{\mathcal C/X} \&\& {\mathcal C/Y.}
 	\arrow[""{name=0, anchor=center, inner sep=0}, "{f^*}"{description, pos=0.3}, from=1-3, to=1-1]
 	\arrow[""{name=1, anchor=center, inner sep=0}, "{\Sigma_f}"{description, pos=0.3}, shift left=5, from=1-1, to=1-3]
 	\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_f}"{description, pos=0.3}, shift right=5, from=1-1, to=1-3]
@@ -818,45 +848,46 @@ $$
 	[label={pullback-preserve-exponential-objects}]
 	{}
 	对于存在有限极限的局部积闭范畴,
-	拉回 $f^*\colon \mathsf C/Y\to \mathsf C/X$ 保持指数对象; 即对 $\mathsf C/Y$ 的对象 $g\colon Z\to Y, h\colon W\to Y$,
+	拉回 $f^*\colon \mathcal C/Y\to \mathcal C/X$ 保持指数对象; 即对 $\mathcal C/Y$ 的对象 $g\colon Z\to Y, h\colon W\to Y$,
 	$$
 	f^*\big((Z\overset{g}{\to}Y)^{(W\overset{h}{\to}Y)}\big) \simeq \big({f^*(Z\to Y)}\big)^{f^*(W\to Y)}.
 	$$
 \end{prop}
 
 \begin{proof}
-	记 $f^*g$ 为 $g'$, $f^*W$ 为 $W'$. 要证明的是下图的里层方块交换.
-	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXG1hdGhzZiBDL1kiXSxbMiwwLCJcXG1hdGhzZiBDL1kiXSxbMCwyLCJcXG1hdGhzZiBDL1giXSxbMiwyLCJcXG1hdGhzZiBDL1giXSxbMCwxLCIoLSleaCIsMix7Im9mZnNldCI6Mn1dLFsxLDAsIigtKVxcdGltZXNfWSBXIiwyLHsib2Zmc2V0IjoyfV0sWzMsMSwiXFxTaWdtYV9mIiwyLHsib2Zmc2V0IjoyfV0sWzEsMywiZl4qIiwyLHsib2Zmc2V0IjoyfV0sWzAsMiwiZl4qIiwwLHsib2Zmc2V0IjotMn1dLFsyLDMsIigtKV57aCd9IiwwLHsib2Zmc2V0IjotMn1dLFsyLDAsIlxcU2lnbWFfZiIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCIoLSlcXHRpbWVzX1ggVyciLDAseyJvZmZzZXQiOi0yfV0sWzUsNCwiIiwyLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XSxbNiw3LCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMCw4LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMSw5LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
-	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
-		{\mathsf C/Y} \&\& {\mathsf C/Y} \\
-		\\
-		{\mathsf C/X} \&\& {\mathsf C/X}
-		\arrow[""{name=0, anchor=center, inner sep=0}, "{(-)^h}"', shift right=2, from=1-1, to=1-3]
-		\arrow[""{name=1, anchor=center, inner sep=0}, "{(-)\times_Y W}"', shift right=2, from=1-3, to=1-1]
-		\arrow[""{name=2, anchor=center, inner sep=0}, "{\Sigma_f}"', shift right=2, from=3-3, to=1-3]
-		\arrow[""{name=3, anchor=center, inner sep=0}, "{f^*}"', shift right=2, from=1-3, to=3-3]
-		\arrow[""{name=4, anchor=center, inner sep=0}, "{f^*}", shift left=2, from=1-1, to=3-1]
-		\arrow[""{name=5, anchor=center, inner sep=0}, "{(-)^{h'}}", shift left=2, from=3-1, to=3-3]
-		\arrow[""{name=6, anchor=center, inner sep=0}, "{\Sigma_f}", shift left=2, from=3-1, to=1-1]
-		\arrow[""{name=7, anchor=center, inner sep=0}, "{(-)\times_X W'}", shift left=2, from=3-3, to=3-1]
-		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
-		\arrow["\dashv"{anchor=center, rotate=-180}, draw=none, from=2, to=3]
-		\arrow["\dashv"{anchor=center}, draw=none, from=6, to=4]
-		\arrow["\dashv"{anchor=center, rotate=90}, draw=none, from=7, to=5]
-	\end{tikzcd}\]
-	由伴随的复合以及伴随的 (同构意义下的) 唯一性, 只需证明外层方块交换. 展开定义, 这就是说对任意 $U\to X$, 下图的大长方形为拉回.
-	% https://q.uiver.app/#q=WzAsNixbMSwxLCJYIl0sWzIsMSwiWSJdLFsyLDAsIlciXSxbMSwwLCJXJyJdLFswLDEsIlUiXSxbMCwwLCJVXFx0aW1lc19YIFcnIl0sWzUsNF0sWzQsMF0sWzAsMSwiZiIsMl0sWzUsM10sWzMsMl0sWzIsMSwiaCJdLFszLDAsImgnIl1d
-	\[\begin{tikzcd}[ampersand replacement=\&,column sep=normal]
-		{\hspace{-2em}U\times_X W'} \& {W'} \& W \\
-		U \& X \& Y
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=2-1, to=2-2]
-		\arrow["f"', from=2-2, to=2-3]
-		\arrow[from=1-1, to=1-2]
-		\arrow[from=1-2, to=1-3]
-		\arrow["h", from=1-3, to=2-3]
-		\arrow["{h'}", from=1-2, to=2-2]
-	\end{tikzcd}\]
+%	记 $f^*g$ 为 $g'$, $f^*W$ 为 $W'$. 要证明的是下图的里层方块交换.
+%	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXG1hdGhzZiBDL1kiXSxbMiwwLCJcXG1hdGhzZiBDL1kiXSxbMCwyLCJcXG1hdGhzZiBDL1giXSxbMiwyLCJcXG1hdGhzZiBDL1giXSxbMCwxLCIoLSleaCIsMix7Im9mZnNldCI6Mn1dLFsxLDAsIigtKVxcdGltZXNfWSBXIiwyLHsib2Zmc2V0IjoyfV0sWzMsMSwiXFxTaWdtYV9mIiwyLHsib2Zmc2V0IjoyfV0sWzEsMywiZl4qIiwyLHsib2Zmc2V0IjoyfV0sWzAsMiwiZl4qIiwwLHsib2Zmc2V0IjotMn1dLFsyLDMsIigtKV57aCd9IiwwLHsib2Zmc2V0IjotMn1dLFsyLDAsIlxcU2lnbWFfZiIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCIoLSlcXHRpbWVzX1ggVyciLDAseyJvZmZzZXQiOi0yfV0sWzUsNCwiIiwyLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XSxbNiw3LCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMCw4LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxMSw5LCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+%	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
+%		{\mathcal C/Y} \&\& {\mathcal C/Y} \\
+%		\\
+%		{\mathcal C/X} \&\& {\mathcal C/X}
+%		\arrow[""{name=0, anchor=center, inner sep=0}, "{(-)^h}"', shift right=2, from=1-1, to=1-3]
+%		\arrow[""{name=1, anchor=center, inner sep=0}, "{(-)\times_Y W}"', shift right=2, from=1-3, to=1-1]
+%		\arrow[""{name=2, anchor=center, inner sep=0}, "{\Sigma_f}"', shift right=2, from=3-3, to=1-3]
+%		\arrow[""{name=3, anchor=center, inner sep=0}, "{f^*}"', shift right=2, from=1-3, to=3-3]
+%		\arrow[""{name=4, anchor=center, inner sep=0}, "{f^*}", shift left=2, from=1-1, to=3-1]
+%		\arrow[""{name=5, anchor=center, inner sep=0}, "{(-)^{h'}}", shift left=2, from=3-1, to=3-3]
+%		\arrow[""{name=6, anchor=center, inner sep=0}, "{\Sigma_f}", shift left=2, from=3-1, to=1-1]
+%		\arrow[""{name=7, anchor=center, inner sep=0}, "{(-)\times_X W'}", shift left=2, from=3-3, to=3-1]
+%		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+%		\arrow["\dashv"{anchor=center, rotate=-180}, draw=none, from=2, to=3]
+%		\arrow["\dashv"{anchor=center}, draw=none, from=6, to=4]
+%		\arrow["\dashv"{anchor=center, rotate=90}, draw=none, from=7, to=5]
+%	\end{tikzcd}\]
+%	由伴随的复合以及伴随的 (同构意义下的) 唯一性, 只需证明外层方块交换. 展开定义, 这就是说对任意 $U\to X$, 下图的大长方形为拉回.
+%	% https://q.uiver.app/#q=WzAsNixbMSwxLCJYIl0sWzIsMSwiWSJdLFsyLDAsIlciXSxbMSwwLCJXJyJdLFswLDEsIlUiXSxbMCwwLCJVXFx0aW1lc19YIFcnIl0sWzUsNF0sWzQsMF0sWzAsMSwiZiIsMl0sWzUsM10sWzMsMl0sWzIsMSwiaCJdLFszLDAsImgnIl1d
+%	\[\begin{tikzcd}[ampersand replacement=\&,column sep=normal]
+%		{\hspace{-2em}U\times_X W'} \& {W'} \& W \\
+%		U \& X \& Y
+%		\arrow[from=1-1, to=2-1]
+%		\arrow[from=2-1, to=2-2]
+%		\arrow["f"', from=2-2, to=2-3]
+%		\arrow[from=1-1, to=1-2]
+%		\arrow[from=1-2, to=1-3]
+%		\arrow["h", from=1-3, to=2-3]
+%		\arrow["{h'}", from=1-2, to=2-2]
+%	\end{tikzcd}\]
+	这是 Frobenius 互反律的性质 (命题 \ref{base-change-Frobenius}, \ref{ccc-Frobenius-pullback-preserve-exp}) 的直接推论.
 \end{proof}
 
 \section{\topos{}}
@@ -880,7 +911,7 @@ $$
 \begin{prop}
     [label={over-category-topos}]
     {(``\topos{}理论基本定理'')}
-    对\topos{} $\mathsf C$ 的任何对象 $X$, 俯范畴 $\mathsf C / X$ 是\topos{}.
+    对\topos{} $\mathcal C$ 的任何对象 $X$, 俯范畴 $\mathcal C / X$ 是\topos{}.
 \end{prop}
 
 %它的证明十分复杂. %感兴趣的读者可阅读\cite{SGL} IV.7 节, 或 \cite{Elephant} A2.3 节.
@@ -897,7 +928,7 @@ $$
 \begin{example}
     [label={Set_times_Set}]
     {($\mathsf {Set}\times\mathsf {Set}$)}
-    范畴 $\mathsf C = \mathsf {Set}\times\mathsf {Set}\simeq \mathsf {Set}^{\{1,2\}}$ 是一个\topos{},
+    范畴 $\mathcal C = \mathsf {Set}\times\mathsf {Set}\simeq \mathsf {Set}^{\{1,2\}}$ 是一个\topos{},
     其对象为一对集合 $(X_1,X_2)$,
     态射为一对映射 $\big(f_1\colon X_1\to Y_1,f_2\colon X_2 \to Y_2\big)$,
     终对象为 $(1,1)$.    
@@ -960,8 +991,8 @@ $$
 本节记录\topos{}的始对象 $0$ 与终对象 $1$ 的若干性质.
 
 \begin{prop}
-	{(0 和 1 的乘法与指数)}
-	对任何对象 $X$, 有 $X\times 0\simeq 0$, $X\times 1\simeq X$, $X^0\simeq 1$, $X^1\simeq X$,
+	{(0 和 1 参与的运算)}
+	对\topos{}中任何对象 $X$, 有 $X+0\simeq X$, $X\times 0\simeq 0$, $X\times 1\simeq X$, $X^0\simeq 1$, $X^1\simeq X$,
 	$1^X\simeq 1$.
 \end{prop}
 
@@ -973,6 +1004,7 @@ $$
 \begin{proof}
 	我们使用米田引理. 对任何对象 $Y$, 有自然同构
 	\begin{itemize}
+		\item $\operatorname{Hom}(X+0,Y)\simeq\operatorname{Hom}(X,Y)\times\operatorname{Hom}(0,Y)\simeq\operatorname{Hom}(X,Y)$, 故 $X+0\simeq X$;
 		\item $\operatorname{Hom}(X\times 0,Y)\simeq \operatorname{Hom}(0,Y^X)\simeq 1$, 故 $X\times 0\simeq 0$;
 		\item $\operatorname{Hom}(Y,X\times 1)\simeq\operatorname{Hom}(Y,X)\times\operatorname{Hom}(Y,1)\simeq\operatorname{Hom}(Y,X)$, 故 $X\times 1\simeq 1$;
 		\item $\operatorname{Hom}(Y,X^0)\simeq \operatorname{Hom}(Y\times 0,X)\simeq \operatorname{Hom}(0,X)\simeq 1$,
@@ -1043,12 +1075,12 @@ $$
 	左伴随保持满射, 右伴随保持单射.
 \end{prop}
 
-例如, 对\topos{} $\mathsf C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathsf C/X \to \mathsf C/Y$ 是 $f^*\colon \mathsf C/Y \to \mathsf C/X$ 的右伴随 (命题 \ref{over-topos-essential-geometric-morphism}), 从而保持单射; 因此有如下结论.
+例如, 对\topos{} $\mathcal C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathcal C/X \to \mathcal C/Y$ 是 $f^*\colon \mathcal C/Y \to \mathcal C/X$ 的右伴随 (命题 \ref{over-topos-essential-geometric-morphism}), 从而保持单射; 因此有如下结论.
 
 \begin{prop}
 	[label={forall}]
 	{(子对象拉回的右伴随)}
-	对\topos{} $\mathsf C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathsf C/X \to \mathsf C/Y$ 限制为一个函子 $\forall_f\colon \operatorname{Sub}(X) \to \operatorname{Sub}(Y)$ (关于函子 $\forall_f$ 的名称见注 \ref{quantifier-exists-as-left-adjoint}), 且为 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 的右伴随.
+	对\topos{} $\mathcal C$ 中的态射 $f\colon X\to Y$, $\Pi_f\colon \mathcal C/X \to \mathcal C/Y$ 限制为一个函子 $\forall_f\colon \operatorname{Sub}(X) \to \operatorname{Sub}(Y)$ (关于函子 $\forall_f$ 的名称见注 \ref{quantifier-exists-as-left-adjoint}), 且为 $f^*\colon \operatorname{Sub}(Y)\to \operatorname{Sub}(X)$ 的右伴随.
 \end{prop}
 
 \begin{prop}
@@ -1071,10 +1103,10 @@ $$
 \begin{definition}
 	[label={regular-epi-and-mono}]
 	{(正则单射与满射)}
-	%对于范畴 $\mathsf C$ 中的态射 $i\colon U\to X$, 若存在态射 $f,g\colon X\to Y$ 使得 $i$ 是 $f,g$ 的等化子, 则称 $i$ 为\emph{正则单射} (regular monomorphism).
+	%对于范畴 $\mathcal C$ 中的态射 $i\colon U\to X$, 若存在态射 $f,g\colon X\to Y$ 使得 $i$ 是 $f,g$ 的等化子, 则称 $i$ 为\emph{正则单射} (regular monomorphism).
 	
-	%对于范畴 $\mathsf C$ 中的态射 $j\colon Y\to Z$, 若存在态射 $f,g\colon X\to Y$ 使得 $j$ 是 $f,g$ 的余等化子, 则称 $j$ 为\emph{正则满射} (regular epimorphism).
-	定义范畴中可做为等化子的态射为\emph{正则单射} (regular monomorphism), 可做为余等化子的态射为\emph{正则满射} (regular epimorphism).
+	%对于范畴 $\mathcal C$ 中的态射 $j\colon Y\to Z$, 若存在态射 $f,g\colon X\to Y$ 使得 $j$ 是 $f,g$ 的余等化子, 则称 $j$ 为\emph{正则满射} (regular epimorphism).
+	定义范畴中可作为等化子的态射为\emph{正则单射} (regular monomorphism), 可作为余等化子的态射为\emph{正则满射} (regular epimorphism).
 \end{definition}
 
 \begin{example}
@@ -1083,6 +1115,7 @@ $$
 \end{example}
 
 \begin{example}
+	[label={ring-non-regular-epi-example}]
 	{}
 	环范畴 $\mathsf {Ring}$ 中的正则满射正是那些底层集合上是满射的环同态. $\mathsf {Ring}$ 中一般的满射未必是正则满射, 例如整数到有理数的嵌入 $\mathbb{Z} \to \mathbb{Q}$.
 \end{example}
@@ -1092,7 +1125,7 @@ $$
 \begin{definition}
 	[label={kernel-pair}]
 	{(核偶与余核偶)}
-	设范畴 $\mathsf C$ 存在所需的拉回或推出. 定义
+	设范畴 $\mathcal C$ 存在所需的拉回或推出. 定义
 	\begin{itemize}
 		\item 态射 $f\colon X\to Y$ 的\emph{核偶} (kernel pair) 为左下方拉回图中的态射偶 $(p_1,p_2)$, 也即被 $f$ 余等化的万有态射偶 $\bullet\rightrightarrows X$;
 		\item 态射 $f\colon X\to Y$ 的\emph{余核偶} (cokernel pair) $(g,h)$ 为右下方推出图中的态射偶 $(i_1,i_2)$, 也即被 $f$ 等化的万有态射偶 $Y\rightrightarrows \bullet$.
@@ -1138,9 +1171,9 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 
 \begin{definition}
 	{(有效单射与满射)}
-	%对于范畴 $\mathsf C$ 中的态射 $i\colon U\to X$, 若 $i$ 是其余核偶 $X \rightrightarrows X \sqcup_U X$ 的等化子, 则称 $i$ 为\emph{有效单射} (effective monomorphism).
+	%对于范畴 $\mathcal C$ 中的态射 $i\colon U\to X$, 若 $i$ 是其余核偶 $X \rightrightarrows X \sqcup_U X$ 的等化子, 则称 $i$ 为\emph{有效单射} (effective monomorphism).
 	
-	%对于范畴 $\mathsf C$ 中的态射 $j\colon Y\to Z$, 若 $j$ 是其核偶 $X\times_Y X \rightrightarrows X$ 的余等化子, 则称 $j$ 为\emph{有效满射} (effective epimorphism).
+	%对于范畴 $\mathcal C$ 中的态射 $j\colon Y\to Z$, 若 $j$ 是其核偶 $X\times_Y X \rightrightarrows X$ 的余等化子, 则称 $j$ 为\emph{有效满射} (effective epimorphism).
 	在具有拉回与推出的范畴中, 若一个态射是其余核偶的等化子, 则称之为\emph{有效单射} (effective monomorphism);
 	若一个态射是其核偶的余等化子, 则称之为\emph{有效满射} (effective epimorphism).
 \end{definition}
@@ -1209,11 +1242,11 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \begin{definition}
     [label={image-definition}]
     {(像)}
-    对于范畴 $\mathsf C$ 中的态射 $f\colon W \to X$, 若存在 $f$ 穿过的最小子对象 $U\hookrightarrow X$, 则称其为 $f$ 的\emph{像} (image), 记作 $\operatorname{im}f$.
+    对于范畴 $\mathcal C$ 中的态射 $f\colon W \to X$, 若存在 $f$ 穿过的最小子对象 $U\hookrightarrow X$, 则称其为 $f$ 的\emph{像} (image), 记作 $\operatorname{im}f$.
 \end{definition}
 
 \begin{remark}{(像作为函子)}
-    对固定的对象 $X$, 假设到 $X$ 态射都有像, 则有一个函子 $\operatorname{im}\colon \mathsf C /X \to \operatorname{Sub}_{\mathsf C}(X)$, 它是嵌入函子\footnotemark{} $\operatorname{Sub}_{\mathsf C}(X) \to \mathsf C /X$ 的左伴随;
+    对固定的对象 $X$, 假设到 $X$ 态射都有像, 则有一个函子 $\operatorname{im}\colon \mathcal C /X \to \operatorname{Sub}_{\mathcal C}(X)$, 它是嵌入函子\footnotemark{} $\operatorname{Sub}_{\mathcal C}(X) \to \mathcal C /X$ 的左伴随;
     对任意态射 $f\colon W\to X$ 与子对象 $U\hookrightarrow X$,
     \[
     \operatorname{im}(f\colon W\to X) \leq U\quad\Leftrightarrow\quad
@@ -1221,13 +1254,14 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
     \]
     %这个伴随表达的含义正是 $\operatorname{im}f$ 是 $f$ 穿过的最小子对象.
 \end{remark}
-\footnotetext{注意 $\operatorname{Sub}_{\mathsf C}(X)$ 的对象是单态射的等价类, 但这里为了构造函子, 可任取每个等价类中的一个代表元. 对于子对象 $U\to X$ 与 $V\to X$, 即使视为 $\mathsf C/X$ 的对象, 两者之间也至多只有一个态射; 故 $\operatorname{Sub}_{\mathsf C}(X)$ 可视为 $\mathsf C/X$ 的满子范畴.}
+\footnotetext{注意 $\operatorname{Sub}_{\mathcal C}(X)$ 的对象是单态射的等价类, 但这里为了构造函子, 可任取每个等价类中的一个代表元. 对于子对象 $U\to X$ 与 $V\to X$, 即使视为 $\mathcal C/X$ 的对象, 两者之间也至多只有一个态射; 故 $\operatorname{Sub}_{\mathcal C}(X)$ 可视为 $\mathcal C/X$ 的满子范畴.}
 
 \begin{prop}
+	[label={image-vs-exists}]
     {(像与存在)}
-    假设范畴 $\mathsf C$ 存在拉回, 那么如下条件等价:
+    假设范畴 $\mathcal C$ 存在拉回, 那么如下条件等价:
     \begin{enumerate}[(1)]
-        \item $\mathsf C$ 的所有态射都有像.
+        \item $\mathcal C$ 的所有态射都有像.
         \item 对任意态射 $f \colon X \to Y$,
         拉回 $f^* \colon \operatorname{Sub}(Y) \to \operatorname{Sub}(X)$ 有左伴随 $\exists_f$.
     \end{enumerate}
@@ -1238,9 +1272,9 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
     $$
     \exists_f \colon \operatorname{Sub}(X)
     \longrightarrow
-    \mathsf C / X
+    \mathcal C / X
     \overset{\Sigma_f}{\longrightarrow}
-    \mathsf C / Y
+    \mathcal C / Y
     \overset{\operatorname{im}}{\longrightarrow}
     \operatorname{Sub}(Y).
     $$
@@ -1293,6 +1327,14 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 %\end{prop}
 
 %现在我们构造\topos{}中的像. 构造中要用到推出, 这是基于前面构造的 (或者定义中要求的) 有限余极限.
+
+\begin{remark}
+	[label={image-epi-cover}]
+	{(满射的像)}
+	在一般的范畴中, 满射 $f\colon X\to Y$ 的像未必是 $Y$, 例如 \ref{ring-non-regular-epi-example} 提到的 $\mathbb{Z}\hookrightarrow\mathbb{Q}$, 其像为 $\mathbb{Z}$.
+	若态射 $f\colon X\to Y$ 的像为 $Y$, 即 $f$ 不能穿过 $Y$ 的任何真子对象, 则称 $f$ 为\emph{覆盖} (cover) (注意 ``覆盖'' 在本书中有多种含义).
+	容易证明正则满射都是覆盖, 且当拉回存在时, 覆盖都是满射.
+\end{remark}
 
 \subsection{满--单分解}
 
@@ -1382,21 +1424,21 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \begin{definition}
 	[label={subterminal-object-definition}]
 	{(子终对象)}
-	对范畴 $\mathsf C$ 与对象 $X$, 若 $\mathsf C$ 的任何对象到 $X$ 有\emph{至多}一个态射, 称 $X$ 为\emph{子终对象} (subterminal object).
+	对范畴 $\mathcal C$ 与对象 $X$, 若 $\mathcal C$ 的任何对象到 $X$ 有\emph{至多}一个态射, 称 $X$ 为\emph{子终对象} (subterminal object).
 \end{definition}
 
 \begin{prop}
 	{(子终对象的等价定义)}
 	\begin{itemize}
-		\item 当 $\mathsf C$ 存在二元积时, $X$ 是子终对象等价于对角线映射 $\Delta\colon X\to X\times X$ 为同构;
-		\item 当 $\mathsf C$ 存在终对象 $1$ 时, $X$ 是子终对象当且仅当唯一的映射 $X\to 1$ 是单射. (这解释了子终对象的名称.)
+		\item 当 $\mathcal C$ 存在二元积时, $X$ 是子终对象等价于对角线映射 $\Delta\colon X\to X\times X$ 为同构;
+		\item 当 $\mathcal C$ 存在终对象 $1$ 时, $X$ 是子终对象当且仅当唯一的映射 $X\to 1$ 是单射. (这解释了子终对象的名称.)
 	\end{itemize}
 \end{prop}
 
 \begin{proof}
 	~\\
 	\begin{itemize}
-		\item 假设 $\mathsf C$ 存在二元积. 注意到 $\operatorname{pr}_i\circ\Delta=\operatorname{id}_X\,(i=1,2)$.
+		\item 假设 $\mathcal C$ 存在二元积. 注意到 $\operatorname{pr}_i\circ\Delta=\operatorname{id}_X\,(i=1,2)$.
 		若 $X$ 为子终对象, 则
 		$\operatorname{pr}_1=\operatorname{pr}_2\colon X\times X\to X$,
 		故 $\Delta\circ \operatorname{pr}_1 = (\operatorname{pr}_1,\operatorname{pr}_1)= (\operatorname{pr}_1,\operatorname{pr}_2) = \operatorname{id}_{X\times X}$. 这证明了 $\Delta$ 为同构.
@@ -1404,7 +1446,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 		则 $(\operatorname{pr}_1,\operatorname{pr}_2)=\operatorname{id}_{X\times X} = \Delta\circ\Delta^{-1} = (\Delta^{-1},\Delta^{-1})$, 从而 $\operatorname{pr}_1=\Delta^{-1}=\operatorname{pr}_2$,
 		从而对任意 $f,g\colon Y\to X$,
 		$f=\operatorname{pr}_1\circ (f,g)=\operatorname{pr}_2\circ (f,g)=g$, 即 $X$ 为子终对象.
-		\item 假设 $\mathsf C$ 中存在终对象 $1$.
+		\item 假设 $\mathcal C$ 中存在终对象 $1$.
 		若 $X$ 为子终对象, 则对任意 $f,g\colon Y\to X$, $f=g$, 这表明 $X\to 1$ 为单射.
 		另一方面, 设 $X\to 1$ 是单射, 则对任意 $f,g\colon Y\to X$, $X\circ f=X\circ g\colon Y\to 1$, 故 $f=g$.
 	\end{itemize}
@@ -1422,19 +1464,19 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \begin{example}
 	[label={subterminal-of-slice-category}]
 	{(俯范畴的子终对象)}
-	俯范畴 $\mathsf C/X$ 的终对象是 $\operatorname{id}_X\colon X\to X$, 因此 $\mathsf C/X$ 的子终对象是 $X$ 的子对象 (见命题 \ref{subobjects-in-slice-category}).
+	俯范畴 $\mathcal C/X$ 的终对象是 $\operatorname{id}_X\colon X\to X$, 因此 $\mathcal C/X$ 的子终对象是 $X$ 的子对象 (见命题 \ref{subobjects-in-slice-category}).
 \end{example}
 
 我们给出一个有趣的性质.
 
 \begin{propdef}
 	{(\topos{}的分解)}
-	设 $(U_i)_{i\in I}$ 为\topos{} $\mathsf C$ 的子终对象, 则如下条件等价:
+	设 $(U_i)_{i\in I}$ 为\topos{} $\mathcal C$ 的子终对象, 则如下条件等价:
 	\begin{itemize}
 		\item 典范的映射 $\coprod_i U_i \to 1$ 为同构;
-		\item 函子 $\mathsf C \to \prod_i \mathsf C/U_i$, $X\mapsto (X\times U_i)_{i\in I}$ 为等价.
+		\item 函子 $\mathcal C \to \prod_i \mathcal C/U_i$, $X\mapsto (X\times U_i)_{i\in I}$ 为等价.
 	\end{itemize}
-	此时, 我们称 $(U_i)$ 为\topos{} $\mathsf C$ 的一个\emph{分解}.
+	此时, 我们称 $(U_i)$ 为\topos{} $\mathcal C$ 的一个\emph{分解}.
 \end{propdef}
 
 \begin{remark}
@@ -1520,6 +1562,16 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 
 \begin{prop}
 	{}
+	Heyting 代数是分配格, 即满足
+	$z\land (x\lor y) = (z\land x)\lor (z\land y)$
+	的格.
+\end{prop}
+\begin{proof}
+	这是积闭范畴中的分配律 (命题 \ref{distributive-law}).
+\end{proof}
+
+\begin{prop}
+	{}
 	在 Heyting 代数中,
 	\begin{enumerate}
 		[(1)]
@@ -1552,7 +1604,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 
 \begin{proof}
 	由于
-	$\operatorname{Sub}_{\mathsf C}(X) \simeq \operatorname{Sub}_{\mathsf C/X}(1)$
+	$\operatorname{Sub}_{\mathcal C}(X) \simeq \operatorname{Sub}_{\mathcal C/X}(1)$
 	(例 \ref{subterminal-of-slice-category}),
 	我们只需对 $X=1$ 的情形证明结论.
 	
@@ -1785,11 +1837,11 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \begin{prop}
 	[label={union-of-disjoint-subobjects}]
 	{}
-	在\topos{} $\mathsf C$ 中, 设 $i\colon U\to X, j \colon V \to X$ 为不相交的子对象 (即 $U\land V = 0$).
+	在\topos{} $\mathcal C$ 中, 设 $i\colon U\to X, j \colon V \to X$ 为不相交的子对象 (即 $U\land V = 0$).
 	那么两者的并为 $(i,j)\colon U+V\to X$.
 \end{prop}
 \begin{proof}
-	考虑沿 $i\colon U\to X$ 的拉回 $i^*\mathsf C/X \to \mathsf C/U$, 有 $i^*(U) = U, i^*(V) = 0$.
+	考虑沿 $i\colon U\to X$ 的拉回 $i^*\mathcal C/X \to \mathcal C/U$, 有 $i^*(U) = U, i^*(V) = 0$.
 	由拉回保持和, 知 $i^*(U+V) = U$, 即下图为拉回.
 	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJVIl0sWzAsMCwiVSJdLFsxLDEsIlgiXSxbMSwwLCJVK1YiXSxbMSwwLCJcXG9wZXJhdG9ybmFtZXtpZH1fVSIsMl0sWzAsMiwiaSIsMl0sWzEsMywiXFxpb3RhXzEiXSxbMywyLCIoaSxqKSJdXQ==
 	\[\begin{tikzcd}[ampersand replacement=\&]
@@ -1800,7 +1852,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 		\arrow["{\iota_1}", from=1-1, to=1-2]
 		\arrow["{(i,j)}", from=1-2, to=2-2]
 	\end{tikzcd}\]
-	此图亦可理解为, 对于沿 $(i,j)\colon U+V\to X$ 的拉回 $(i,j)^*\colon \mathsf C/X \to \mathsf C/(U+V)$, 有
+	此图亦可理解为, 对于沿 $(i,j)\colon U+V\to X$ 的拉回 $(i,j)^*\colon \mathcal C/X \to \mathcal C/(U+V)$, 有
 	$(i,j)^* (U) = U$.
 	同理, $(i,j)^*(V)=V$.
 	由拉回保持和, 知 $(i,j)^*(U+V) = U+V$.
@@ -1811,7 +1863,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 
 \begin{definition}
     {(自然数对象)}
-    \topos{} $\mathsf C$ 中的\emph{自然数对象} (natural numbers object) 是一个对象 $N$,
+    \topos{} $\mathcal C$ 中的\emph{自然数对象} (natural numbers object) 是一个对象 $N$,
     以及态射 $0 \colon 1 \to N$ (零),
     $s \colon N \to N$ (后继),
     满足如下的泛性质: 对任意对象 $X$,
@@ -1838,7 +1890,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \end{prop}
 \begin{remark}
 	{}
-	自然数对象是函子 $X\mapsto 1+X$ 的\emph{始代数} \footnotemark(函子 $F\colon \mathsf C\to \mathsf C$ 的代数是一个对象 $X$ 配备一个态射 $FX\to X$). 结论 \ref{natural-numbers-object-condition} 的一部分可由 Lambek 定理得出, 这个定理说对于函子 $F$ 的始代数, $FX\to X$ 必然是同构.
+	自然数对象是函子 $X\mapsto 1+X$ 的\emph{始代数} \footnotemark(函子 $F\colon \mathcal C\to \mathcal C$ 的代数是一个对象 $X$ 配备一个态射 $FX\to X$). 结论 \ref{natural-numbers-object-condition} 的一部分可由 Lambek 定理得出, 这个定理说对于函子 $F$ 的始代数, $FX\to X$ 必然是同构.
 \end{remark}
 \footnotetext{\url{https://ncatlab.org/nlab/show/initial+algebra+of+an+endofunctor}}
 
@@ -1862,8 +1914,8 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 %
 %\begin{definition}
 %	{(内射对象)}
-%	设 $\mathsf C$ 为范畴, 称对象 $X$ 为\emph{内射对象}是指
-%	$\operatorname{Hom}(-,X)\colon \mathsf C\to\mathsf {Set}$ 将单射变为满射.
+%	设 $\mathcal C$ 为范畴, 称对象 $X$ 为\emph{内射对象}是指
+%	$\operatorname{Hom}(-,X)\colon \mathcal C\to\mathsf {Set}$ 将单射变为满射.
 %	换言之, 对任意子对象 $V\hookrightarrow U$,
 %	态射 $V\to X$ 总能延拓为 $U\to X$.
 %\end{definition}
@@ -1962,9 +2014,9 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 
 \begin{prop}
 	{(\topos{}为广延范畴)}
-	对于\topos{} $\mathsf C$ 中任意两个对象 $X,Y$, 典范的函子
+	对于\topos{} $\mathcal C$ 中任意两个对象 $X,Y$, 典范的函子
 		\[
-		+\,\colon\, \mathsf C/X \times \mathsf C/Y \to \mathsf C/(X+Y),
+		+\,\colon\, \mathcal C/X \times \mathcal C/Y \to \mathcal C/(X+Y),
 		\quad
 		\Big(\begin{tikzcd}[sep=small]
 			Z_1\ar[d,"f_1"]\\X
@@ -1981,7 +2033,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \begin{proof}
 	记 $i_1\colon X\to X+Y$, $i_2\colon Y\to X+Y$ 为嵌入,
 	我们断言两个拉回函子的乘积
-	$$(i_1^*,i_2^*)\colon \mathsf C/(X+Y) \to \mathsf C/X \times \mathsf C/Y$$
+	$$(i_1^*,i_2^*)\colon \mathcal C/(X+Y) \to \mathcal C/X \times \mathcal C/Y$$
 	是 $+$ 的逆.
 	
 	一方面, 对任意态射 $\begin{tikzcd}[sep=small]
@@ -2043,9 +2095,9 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 
 \begin{propdef}
 	{(Boole \topos{})}
-	对于\topos{} $\mathsf C$, 如下条件等价.
+	对于\topos{} $\mathcal C$, 如下条件等价.
 	\begin{enumerate}[(1)]
-		\item 子对象分类子 $\Omega$ 是 $\mathsf C$ 的内蕴 Boole 代数, 即\emph{非}运算 $\neg\colon \Omega\to\Omega$ 满足 $\neg\neg=\operatorname{id}_{\Omega}$, $\lor\circ (\operatorname{id}_{\Omega},\neg) = \top_{\Omega}$;
+		\item 子对象分类子 $\Omega$ 是 $\mathcal C$ 的内蕴 Boole 代数, 即\emph{非}运算 $\neg\colon \Omega\to\Omega$ 满足 $\neg\neg=\operatorname{id}_{\Omega}$, $\lor\circ (\operatorname{id}_{\Omega},\neg) = \top_{\Omega}$;
 		\item (``排中律'') 对任意对象 $X$, $\operatorname{Sub}(X)$ 为 Boole 代数, 即对任意子对象 $U\to X$, 有 $\neg\neg U = U$, $U\vee \neg U = X$;
 		\item 态射 $(\top,\bot)\colon 1+1\to\Omega$ 为同构.
 	\end{enumerate}
@@ -2072,6 +2124,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \end{example}
 
 \begin{remark}
+	[label={boolean-not-two-valued}]
 	{(Boole 与二值性无关)}
 	注意 Boole \topos{}中尽管有 ``排中律'', 但不一定只有两个真值 (后者称为\topos{}的\emph{二值性}). 例如 $\mathsf {Set}\times\mathsf {Set}$ 是 Boole 的, 但有 $4$ 个真值. 反过来, 只有两个真值的\topos{}也不一定是 Boole \topos{}.
 \end{remark}
@@ -2080,30 +2133,31 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 
 \begin{definition}
 	{(投射对象)}
-	设 $\mathsf C$ 为范畴, 称对象 $X$ 为\emph{投射对象}是指
-	$\operatorname{Hom}(X,-)\colon \mathsf C\to\mathsf {Set}$ 保持满射.
+	设 $\mathcal C$ 为范畴, 称对象 $X$ 为\emph{投射对象}是指
+	$\operatorname{Hom}(X,-)\colon \mathcal C\to\mathsf {Set}$ 保持满射.
 \end{definition}
 
 \begin{propdef}
 	{(选择公理)}
-	设 $\mathsf C$ 为范畴,
+	设 $\mathcal C$ 为范畴,
 	那么以下条件等价,
 	\begin{itemize}
-		\item $\mathsf C$ 的每个对象都是投射对象.
-		\item $\mathsf C$ 中的每个满射都存在截面, 即对任意满射 $p\colon X\to I$ (类比于 ``以 $I$ 为指标的集合族''), 存在 $s\colon I\to X$ 使得 $ps=\operatorname{id}_I$ (``在集合族的每个成员中选择一个元素'').
+		\item $\mathcal C$ 的每个对象都是投射对象.
+		\item $\mathcal C$ 中的每个满射都存在截面, 即对任意满射 $p\colon X\to I$ (类比于 ``以 $I$ 为指标的集合族''), 存在 $s\colon I\to X$ 使得 $ps=\operatorname{id}_I$ (``在集合族的每个成员中选择一个元素'').
 	\end{itemize}
 	称上述条件为\emph{选择公理}.
 \end{propdef}
 
 \begin{proof}
-	假设 $\mathsf C$ 的每个对象都是投射的. 对于满射 $p\colon X\to I$, 由于 $I$ 是投射的, 有 $p_*\colon \operatorname{Hom}(I,X)\to \operatorname{Hom}(I,I)$ 为满射, 故存在 $s\in\operatorname{Hom}(I,X)$ 使得 $ps=\operatorname{id}_I$.
+	假设 $\mathcal C$ 的每个对象都是投射的. 对于满射 $p\colon X\to I$, 由于 $I$ 是投射的, 有 $p_*\colon \operatorname{Hom}(I,X)\to \operatorname{Hom}(I,I)$ 为满射, 故存在 $s\in\operatorname{Hom}(I,X)$ 使得 $ps=\operatorname{id}_I$.
 	
-	假设 $\mathsf C$ 中的每个满射都存在截面. 有截面的映射在任何函子作用下仍是满射, 故任何函子 $\operatorname{Hom}(Y,-)$ 都保持满射.
+	假设 $\mathcal C$ 中的每个满射都存在截面. 有截面的映射在任何函子作用下仍是满射, 故任何函子 $\operatorname{Hom}(Y,-)$ 都保持满射.
 \end{proof}
 
 \begin{propdef}
+	[label={internal-axiom-of-choice}]
 	{(内蕴选择公理)}
-	设 $\mathsf C$ 为\topos{}. 称 $\mathsf C$ 满足\emph{内蕴选择公理}是指对任何对象 $Y$, 函子 $(-)^Y\colon \mathsf C\to\mathsf C$ 保持满射 (此时称 $Y$ 是\emph{内蕴投射}的).
+	设 $\mathcal C$ 为\topos{}. 称 $\mathcal C$ 满足\emph{内蕴选择公理}是指对任何对象 $Y$, 函子 $(-)^Y\colon \mathcal C\to\mathcal C$ 保持满射 (此时称 $Y$ 是\emph{内蕴投射}的).
 \end{propdef}
 
 容易证明选择公理可以推出内蕴选择公理, 但反之不然.
@@ -2111,9 +2165,8 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \begin{example}
 	{(不满足选择公理的例子)}
 	为了说明选择公理不是理所当然的性质, 我们举两个最简单的\topos{}中满射没有截面的例子.
-	
 	第一个例子是变集范畴 (例 \ref{varying-set-topos}),
-	态射
+	如下态射是满射, 但没有截面. 
 	\begin{center}
 		\begin{minipage}
 			{0.5\textwidth}
@@ -2159,7 +2212,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 			\end{tikzpicture}
 		\end{minipage}
 	\end{center}
-	是满射, 但没有截面. 采用例 \ref{cohesion-family-of-sets} 对集合族的直观, 这就是说两个粘在一起的点无法分开 (右图).
+	采用例 \ref{cohesion-family-of-sets} 对集合族的直观, 这就是说两个粘在一起的点无法分开 (右图).
 	
 	第二个例子是 $\mathsf {Fun}(B\mathbb{N},\mathsf {Set})$, 其中 $B\mathbb N$ 是将半群 $\mathbb N$ 视为单对象范畴. 这个范畴的对象是集合 $X$ 配备一个映射 $f\colon X\to X$. 态射
 	\begin{center}
@@ -2207,14 +2260,14 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 
 %
 %\begin{proof}
-%	假设\topos{} $\mathsf C$ 满足选择公理. 对任意满射 $p\colon X\to I$, 取截面 $s\colon I\to X$, 那么 $p^Y\colon X^Y\to I^Y$ 有截面 $s^Y\colon I^Y\to X^Y$, 从而 $X^Y\to I^Y$ 为满射, 即 $(-)^Y$ 保持满射.
+%	假设\topos{} $\mathcal C$ 满足选择公理. 对任意满射 $p\colon X\to I$, 取截面 $s\colon I\to X$, 那么 $p^Y\colon X^Y\to I^Y$ 有截面 $s^Y\colon I^Y\to X^Y$, 从而 $X^Y\to I^Y$ 为满射, 即 $(-)^Y$ 保持满射.
 %\end{proof}
 
 \begin{prop}
 	[label={IAC-technical-lemma}]
 	{}
-	假设\topos{} $\mathsf C$ 满足内蕴选择公理, 那么对其中任意满射 $f\colon Z\to X$, 都有 $\Pi_X(f) \to 1$ 是满射. 进一步, 记 $S=\Pi_X(f)$,
-	则 $S^*Z\to S^*X$ (作为\topos{} $\mathsf C/S$ 中的映射, 定义见例 \ref{over-category-Sigma-adjunction}) 有截面.
+	假设\topos{} $\mathcal C$ 满足内蕴选择公理, 那么对其中任意满射 $f\colon Z\to X$, 都有 $\Pi_X(f) \to 1$ 是满射. 进一步, 记 $S=\Pi_X(f)$,
+	则 $S^*Z\to S^*X$ (作为\topos{} $\mathcal C/S$ 中的映射, 定义见例 \ref{over-category-Sigma-adjunction}) 有截面.
 \end{prop}
 
 \begin{proof}
@@ -2273,8 +2326,19 @@ $\Pi_X(f)$ 是 ``$f$ 的截面的集合'', 所以内蕴选择公理是说满射�
 	的子对象满足排中律, 也即右边方块为拉回.
 	这意味着大长方形为拉回, 故 $U$ 满足 $U\lor \neg U = X$.
 	
-	上述讨论是在满射 $(X\sqcup X) \to (X\sqcup_U X)$ 有截面的前提下进行的. 但是由命题 \ref{IAC-technical-lemma}, 存在满射 $S\twoheadrightarrow 1$ 使得 $S^*(X\sqcup X)\to S^*(X\sqcup_U X)$ 有截面. 而拉回是子对象 Heyting 代数的同态 (命题 \ref{subobject-lattice-Heyting-algebra}),
-	所以一般情况下也有 $U\lor \neg U = X$.
+	上述讨论证明的是满射 $(X\sqcup X) \to (X\sqcup_U X)$ 有截面的情形, 现在证明一般情形. 由命题 \ref{IAC-technical-lemma}, 存在满射 $S\twoheadrightarrow 1$ 使得 $S^*(X\sqcup X)\to S^*(X\sqcup_U X)$ 有截面, %\todo{俯范畴的推出}
+	而拉回是子对象 Heyting 代数的同态 (命题 \ref{subobject-lattice-Heyting-algebra}),
+	套用前面证明的情形, 得 $S^*(U \lor \neg U) = S^*(X)$. 注意到由于 $S\to 1$ 是满射, 故 $S\times X\to X$ 是满射. 对任意态射 $V\to X$, 若 $S^*(V)\to S^*(X)$ 满, 则下图说明 $V\to X$ 是满射.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJTXiooVikiXSxbMCwxLCJTXiooWCkiXSxbMSwxLCJYIl0sWzEsMCwiViJdLFswLDEsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDNdLFszLDJdLFsxLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{S^*(V)} \& V \\
+		{S^*(X)} \& X
+		\arrow[two heads, from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=2-2]
+		\arrow[two heads, from=2-1, to=2-2]
+	\end{tikzcd}\]
+	由此得 $U\lor \neg U = X$.
 \end{proof}
 
 另外, Bauer 的文章 (讲座) \cite{FSCM} 给出了 (外蕴) 选择公理推出排中律的一种证明.

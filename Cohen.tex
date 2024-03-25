@@ -17,3 +17,24 @@ $$
 	{}
 	存在一个 Boole \topos{}, 其中选择公理成立, 而连续统假设不成立.
 \end{prop}
+
+\subsubsection{基础知识}
+
+回忆任何\topos{}上都有一个 Lawvere--Tierney 拓扑 $\neg\neg$. 有趣的是, 它总是给出一个 Boole 意象.
+
+\begin{prop}
+	{}
+	对任意\topos{} $\mathcal C$, $\operatorname{Sh}_{\neg\neg}\mathcal C$ 为 Boole \topos{}.
+\end{prop}
+\begin{proof}
+	由 Boole \topos{}的内语言刻画 (\ref{internal-Boolean-topos}), 我们要在 $\operatorname{Sh}_{\neg\neg}\mathcal C$ 中证明 $\forall p\in\Omega (p\lor \neg p)$.
+	% 需要几何态射在命题上的作用
+\end{proof}
+
+\begin{definition}
+	{(基数的比较)}
+	对于一个\topos{}中的两个对象 $X,Y$, 若存在单射 $X\to Y$, 且 $\operatorname{Epi}(X,Y)\simeq 0$, 则称 $X$ 的基数小于 $Y$, 记为 $X<Y$.
+\end{definition}
+
+回忆 $\operatorname{Epi}(X,Y)$ 的定义 (\ref{set-of-epimorphisms}), $\operatorname{Epi}(X,Y)\simeq 0$ 当且仅当公式 $\forall f\in Y^X\,\neg(\operatorname{im}f = Y)$ 成立.
+

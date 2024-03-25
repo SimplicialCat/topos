@@ -1,4 +1,4 @@
-\chapter{\topos{}的内语言: 从语法到语义}
+\chapter{\topos{}的内语言}
 
 \philoquote{
     A mathematical statement is just a story you tell about some devices. Some of those stories are clever, some are stupid; some of those stories are true, some others are false. Doing mathematics is telling clever stories which are true.\footnotemark
@@ -10,17 +10,21 @@
 \minitoc
 
 我们曾提到\topos{}中有一种\emph{内语言} (internal language) 可用来进行推理, 本章介绍这种语言, 以及它在各个数学分支中的应用.
-建议不熟悉数理逻辑的读者在本章之前先阅读附录 \ref{logic-appendix}.
+
+\begin{remark}
+	{}
+	建议读者在阅读本章之前先阅读附录 \ref{logic-appendix}.
+\end{remark}
 
 \section{Mitchell--B\'enabou 语言}
 
 \label{Mitchell--Benabou-language}
 
-本节描述一种重要的语言, 称作 \emph{Mitchell--B\'enabou 语言}; 它是由给定的\topos{} $\mathsf C$ 定义出的一种一阶语言, 其特点是利用子对象分类器 $\Omega$, 将\emph{公式}一视同仁地解释为 $\Omega$ 类型的\emph{项}. 使用这种语言, 可将\topos{}中的对象在语法上当作集合一样处理.
+本节描述一种重要的语言, 称作 \emph{Mitchell--B\'enabou 语言}; 它是由给定的\topos{} $\mathcal C$ 定义出的一种一阶或高阶语言, 其特点是利用子对象分类器 $\Omega$, 将\emph{公式}一视同仁地解释为 $\Omega$ 类型的\emph{项}. 使用这种语言, 可将\topos{}中的对象在语法上当作集合一样处理.
 
 \begin{definition}
     {(类型)}
-    Mitchell--B\'enabou 语言中的\emph{类型}是 $\mathsf C$ 的对象.
+    Mitchell--B\'enabou 语言中的\emph{类型}是 $\mathcal C$ 的对象.
 \end{definition}
 
 
@@ -35,11 +39,11 @@
 
 \begin{definition}
 	{(函数符号, 关系符号)}
-	Mitchell--B\'enabou 语言中的\emph{函数符号} $f\colon A_1\cdots A_n \to B$ 是 $\mathsf C$ 中的态射
+	Mitchell--B\'enabou 语言中的\emph{函数符号} $f\colon A_1\cdots A_n \to B$ 是 $\mathcal C$ 中的态射
 	$$f\colon A_1\times\cdots\times A_n\to B.$$
 	特别地, 类型 $X$ 的\emph{常量} (零元函数) 是态射 $1 \to X$, 也即对象 $X$ 的\emph{整体元素}.
 	
-	Mitchell--B\'enabou 语言中的\emph{关系符号} $R\hookrightarrow A_1\cdots A_n$ 是 $\mathsf C$ 中的态射
+	Mitchell--B\'enabou 语言中的\emph{关系符号} $R\hookrightarrow A_1\cdots A_n$ 是 $\mathcal C$ 中的态射
 	$$
 	R\colon A_1\times\cdots\times A_n \to \Omega,
 	$$
@@ -49,7 +53,11 @@
 	%我们看到, 函数符号与项被解释成了同一种东西. 这是有道理的, 因为\emph{项}在这里就是其自由变量的函数.
 \end{definition}
 
-至此, Mitchell--B\'enabou 语言已经定义完成. 接下来我们归纳地给出这种语言中的项和公式的\emph{解释} (interpretation).
+% 至此, Mitchell--B\'enabou 语言已经定义完成.
+
+以上两个定义给出了一个符号表 $\Sigma$, 自然, $\mathcal C$ 中具有典范的 $\Sigma$-结构.
+由定义 \ref{term-interpretation}, \ref{higher-order-term-interpretation}, 可以归纳地得到所有项和公式的\emph{解释} (interpretation).
+注意在附录 \ref{logic-appendix} 中公式被解释为子对象, 而在\topos{}中它等同于类型 $\Omega$ 的项.
 
 %\begin{definition}
 %    {(变量的解释)}
@@ -63,87 +71,473 @@
 %\end{definition}
 
 
-\begin{definition}
-	{(项的解释)}
-	\begin{itemize}
-		\item (变量)
-		类型 $X$ 的一个\emph{变量} (可视为含一个自由变量的项) 解释为恒等态射 $\operatorname{id}\colon X \to X$.
-		\item (函数取值)
-		对于函数符号 $f\colon X \to Y$ 与类型 $X$ 的项 $\sigma\colon U \to X$, $f(\sigma)$ 解释为复合 $f\circ\sigma \colon U \to Y$.
-	\end{itemize}
-\end{definition}
+%\begin{propdef}
+%	{(项的解释)}
+%	类型 $X$ 的项解释为指向 $X$ 的态射 $\sigma\colon U\to X$, 其中 $U$ 是该项所含的变量的类型.
+%	\begin{itemize}
+%		\item (变量)
+%		类型 $X$ 的一个\emph{变量} (可视为含一个自由变量的项) $x\colon X$ (为了体现与集合论的相似性也记为 $x\in X$) 解释为恒等态射 $\operatorname{id}\colon X \to X$.
+%		\item (函数取值)
+%		对于函数符号 $f\colon X \to Y$ 与类型 $X$ 的项 $\sigma\colon U \to X$, $f(\sigma)$ 解释为复合 $f\circ\sigma \colon U \to Y$.
+%	\end{itemize}
+%	由 (一阶语言中) 项的定义 (\ref{definition-terms}), 上述条款归纳地解释了所有的项.
+%	高阶语言的项还需要如下的解释.
+%	\begin{itemize}
+%		\item (二元对, )
+%		\item ()
+%		\item (函数引入法则, 即 ``$\lambda$-演算'') 设 $x$ 是类型 $X$ 的变量, $\sigma\colon X\times U\to Z$ 是任意项,
+%		那么 $\lambda x.\sigma$ 解释为 $\sigma$ 在伴随之下对应的态射 $U\to Z^X$.
+%		\item (函数消去法则) 对于
+%	\end{itemize}
+%\end{propdef}
+
+\begin{example}
+	{(变量, 一般元素)}
+	设 $x$ 是类型 $X$ 的一个变量. 由定义 \ref{term-interpretation}, 其解释为 $\operatorname{id}\colon X\to X$.
+	
+	变量 $x$ 可视为类型 $X$ 的\emph{一般元素} (generic element).
+	其中 ``元素'' 是指广义元素, 即指向 $X$ 的态射; ``一般'' 是指如下的泛性质: 假若我们证明了含变量 $x$ 的公式 $\phi(x)$,
+	那么对 $X$ 的任意具体的项 (广义元素) $x_0\colon U\to X$, 都有 $\phi(x_0)$ 成立.
+	这是由于 $\operatorname{id}_X$ 是所有指向 $X$ 的态射中的终对象.
+\end{example}
+
+\begin{example}
+	{(函数的取值)}
+	使用取值映射 $\operatorname{ev}\colon Y^X\times X\to Y$ (定义 \ref{evaluation-map}),
+	可将 $Y^X$ 类型的项 (内语言中的 ``函数'') $\theta\colon V\to Y^X$
+	作用于 $X$ 类型的项 $\sigma \colon U \to X$,
+	得到 $Y$ 类型的项
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWXFx0aW1lcyBVIl0sWzEsMCwiWV5YXFx0aW1lcyBYIl0sWzIsMCwiWSJdLFswLDEsIihcXHRoZXRhLFxcc2lnbWEpIl0sWzEsMiwiXFxvcGVyYXRvcm5hbWV7ZXZ9Il1d
+	\[\theta(\sigma)\colon
+	\begin{tikzcd}[ampersand replacement=\&]
+		{V\times U} \& {Y^X\times X} \& Y.
+		\arrow["{(\theta,\sigma)}", from=1-1, to=1-2]
+		\arrow["{\operatorname{ev}}", from=1-2, to=1-3]
+	\end{tikzcd}\]
+\end{example}
+
+\begin{example}
+	{(成员关系)}
+	考虑成员关系 (例 \ref{membership-relation}) ${\in_X} \colon \Omega^X\times X \to \Omega$,
+	可对 $PX=\Omega^X$ 类型的项 (内语言中的 ``子集'') $\eta\colon V \to \Omega^X$ 与 $X$ 类型的项 $\sigma\colon U\to X$ 定义 $\Omega$ 类型的项
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWXFx0aW1lcyBVIl0sWzEsMCwiXFxPbWVnYV5YXFx0aW1lcyBYIl0sWzIsMCwiXFxPbWVnYSJdLFswLDEsIihcXGV0YSxcXHNpZ21hKSJdLFsxLDIsIlxcaW5fWCJdXQ==
+	\[
+	(\sigma \in \eta) \colon 
+	\begin{tikzcd}[ampersand replacement=\&]
+		{V\times U} \& {\Omega^X\times X} \& \Omega.
+		\arrow["{(\eta,\sigma)}", from=1-1, to=1-2]
+		\arrow["{\in_X}", from=1-2, to=1-3]
+	\end{tikzcd}\]
+\end{example}
+
+\begin{example}
+	{(等式)}
+	对于类型 $X$ 的变量 $x_1,x_2$, \emph{等式} $x_1 = x_2$ 被解释为 $\chi_\Delta\colon X\times X\to\Omega$, 即对角线 $\Delta\colon X\to X\times X$ 的特征函数 (例 \ref{diagonal}).
+\end{example}
+
+\begin{example}
+	{(存在量词与任意量词)}
+	设 $\phi(x,y)$ 是含两个变量 $x\in X,y\in Y$ 的公式.
+		考虑投影 $\pi\colon X\times Y\to Y$ 诱导的子对象偏序集之间的三元伴随
+		\[\begin{tikzcd}[ampersand replacement=\&,background color=\propcolor]
+			{\operatorname{Sub}(X\times Y)} \&\& {\operatorname{Sub}(Y).}
+			\arrow[""{name=0, anchor=center, inner sep=0}, "{\pi^*}"{description, pos=0.3}, from=1-3, to=1-1]
+			\arrow[""{name=1, anchor=center, inner sep=0}, "{\exists_\pi}"{description, pos=0.3}, shift left=5, from=1-1, to=1-3]
+			\arrow[""{name=2, anchor=center, inner sep=0}, "{\forall_\pi}"{description, pos=0.3}, shift right=5, from=1-1, to=1-3]
+			\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+			\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
+		\end{tikzcd}\]
+		(命题 \ref{forall}, \ref{image-vs-exists})
+		公式 $\exists x\in X\, \phi(x,y)$, $\forall x\in X\, \phi(x,y)$
+		分别解释为子对象 $\{(x,y)\in X\times Y \mid \phi(x,y)\}$ 在 $\exists_\pi$ 与 $\forall_\pi$ 下的像 (的特征函数).
+		(在合适的语境下, 记号中的 ``$\in X$'' 可省略.)
+
+	注意到 $\operatorname{Hom}(-,\Omega^X) \simeq\operatorname{Sub}(X\times {-})$, 由米田引理, 子对象偏序集之间的三元伴随给出三个态射
+	\[\begin{tikzcd}[ampersand replacement=\&,background color=\propcolor]
+		{\Omega^X} \&\& {\Omega.}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{X^*}"{description, pos=0.3}, from=1-3, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\exists_X}"{description, pos=0.3}, shift left=5, from=1-1, to=1-3]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\forall_X}"{description, pos=0.3}, shift right=5, from=1-1, to=1-3]
+		%\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+		%\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
+	\end{tikzcd}\]
+	它们是所谓 ``内蕴伴随''.
+\end{example}
 
 \begin{remark}
-	{(一般元素)}
-	设 $x$ 是类型 $X$ 的一个变量.
-	假若我们证明了含变量 $x$ 的公式 $\phi(x)$,
-	那么对 $X$ 的任意具体的项 $x_0$, 就有 $\phi(x_0)$ 成立.
-	在 Mitchell--B\'enabou 语言中, $x\in X$ 被解释为 $\operatorname{id}\colon X\to X$, 它可视为对象 $X$ 的\emph{一般元素} (generic element) (这里元素的含义是广义元素, 即态射 $?\to X$), 因为对任意态射 $f\colon X\to Y$, 只要给定了 $f$ 在广义元素 $\operatorname{id}\colon X\to X$ 上的值 $f\circ\operatorname{id}$, 就确定了 $f$ 在任何广义元素 $x_0\colon U\to X$ 上的值 $f\circ x_0$. 这是平凡的.
+	{}
+	注意我们在两处使用了 ``属于'' 符号 $\in$: 一处是含全称量词或存在量词的公式 $\forall x\in X\,\phi(x)$ 或 $\exists x\in X\,\phi(x)$,
+	一处是成员关系 $x\in S$. 这并不会引起歧义, 因为对于子对象 $S\hookrightarrow X$ 有
+	\[
+	\begin{aligned}
+		\forall x\in S\, \phi(x)&\quad \Leftrightarrow\quad
+		\forall x\in X (x\in S\Rightarrow \phi(x))\\
+		\exists x\in S\, \phi(x)&\quad \Leftrightarrow\quad
+		\exists x\in X (x\in S\land \phi(x)).
+	\end{aligned}
+	\]
+	甚至当 $S$ 是类型 $PX$ 的一般的项时, 我们也可简记 $\forall x\in X(x\in S\Rightarrow\phi(x))$ 为 $\forall x\in S\,\phi(x)$, 简记  $\exists x\in X(x\in S\land\phi(x))$ 为 $\exists x\in S\,\phi(x)$.
 \end{remark}
 
-特别地, 使用取值映射 $\operatorname{ev}\colon Y^X\times X\to Y$ (定义 \ref{evaluation-map}),
-可将 $Y^X$ 类型的项 (内语言中的 ``函数'') $\theta\colon V\to Y^X$
-作用于 $X$ 类型的项 $\sigma \colon U \to X$,
-得到 $Y$ 类型的项
-% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWXFx0aW1lcyBVIl0sWzEsMCwiWV5YXFx0aW1lcyBYIl0sWzIsMCwiWSJdLFswLDEsIihcXHRoZXRhLFxcc2lnbWEpIl0sWzEsMiwiXFxvcGVyYXRvcm5hbWV7ZXZ9Il1d
-\[\theta(\sigma)\colon
-\begin{tikzcd}[ampersand replacement=\&]
-	{V\times U} \& {Y^X\times X} \& Y.
-	\arrow["{(\theta,\sigma)}", from=1-1, to=1-2]
-	\arrow["{\operatorname{ev}}", from=1-2, to=1-3]
-\end{tikzcd}\]
-
-例如, 考虑成员关系 (例 \ref{membership-relation}) ${\in_X} \colon \Omega^X\times X \to \Omega$,
-可对 $PX=\Omega^X$ 类型的项 (内语言中的 ``子集'') $\eta\colon V \to \Omega^X$ 与 $X$ 类型的项 $\sigma\colon U\to X$ 定义 $\Omega$ 类型的项
-% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWXFx0aW1lcyBVIl0sWzEsMCwiXFxPbWVnYV5YXFx0aW1lcyBYIl0sWzIsMCwiXFxPbWVnYSJdLFswLDEsIihcXGV0YSxcXHNpZ21hKSJdLFsxLDIsIlxcaW5fWCJdXQ==
-\[
-(\sigma \in \eta) \colon 
-\begin{tikzcd}[ampersand replacement=\&]
-	{V\times U} \& {\Omega^X\times X} \& \Omega.
-	\arrow["{(\eta,\sigma)}", from=1-1, to=1-2]
-	\arrow["{\in_X}", from=1-2, to=1-3]
-\end{tikzcd}\]
-
-\begin{definition}
-	{(公式)}
-	\begin{itemize}
-		\item
-		(等式) 对于类型 $X$ 的两个项 $\sigma\colon U \to X$, $\tau\colon V \to X$, \emph{等式} $\sigma = \tau$ 被解释为 $\Omega$ 的项
-		% https://q.uiver.app/#q=WzAsMyxbMCwwLCJVXFx0aW1lcyBWIl0sWzEsMCwiWFxcdGltZXMgWCJdLFsyLDAsIlxcT21lZ2EiXSxbMCwxLCIoXFxzaWdtYSxcXHRhdSkiXSxbMSwyLCJcXGNoaV97XFxEZWx0YX0iXV0=
-		\[\begin{tikzcd}[ampersand replacement=\&]
-			{U\times V} \& {X\times X} \& \Omega.
-			\arrow["{(\sigma,\tau)}", from=1-1, to=1-2]
-			\arrow["{\chi_{\Delta}}", from=1-2, to=1-3]
-		\end{tikzcd}\]
-		回忆 $\chi_{\Delta}$ 是对角线 $\Delta\colon X\to X\times X$ 的特征函数 (例 \ref{diagonal}), 它表达的正是 $X$ 上的相等关系.
-	\end{itemize}
-\end{definition}
-
-\begin{definition}
+\begin{example}
+	[label={subobject-from-formula}]
 	{(公式确定的子对象)}
-	对公式 $\phi(x)$, 设其解释为 $p\colon X\to\Omega$, 定义 $X$ 的子对象 $\{x\in X \mid \phi(x)\}$ (或简记为 $\{x\mid \phi(x)\}$) 为如下的拉回.
+	对公式 $\phi(x)$, 设其解释为 $\phi(x)\colon X\to\Omega$, 那么 $\{x\in X \mid \phi(x)\}$ 的解释是以 $\phi(x)$ 为特征函数的子对象.
+	我们称之为公式 $\phi(x)$ 的\emph{外延} (extension)\footnotemark{}.
+	
+	更一般地, $\phi$ 不仅可以是 $X$ 上的公式, 而且可以是 $\Omega^X$ 的项 (即内语言中的 ``$X$ 上的公式''); 此时我们沿用记号 $\{x\in X\mid\phi(x)\}$ 表示 $\phi$ 自身, 视为 $PX$ 的项.
+	
+	任何子对象 $S\hookrightarrow X$ 都至少有一个公式与之对应, 即公式 $x\in S$, 因为 $\in$ 的定义是 $\operatorname{id}_{\Omega^X}$ 对应的态射 $\Omega^X\times X \to \Omega$.
+\end{example}
+\footnotetext{这与哲学上的用法是一致的: 外延是一个词语适用的对象的集合.}
+
+%\begin{definition}
+%	{(真值, 内语言定义)}
+%	公式 $\phi(x)$ 的\emph{真值}是集合
+%	$$
+%	\{\star \in 1 \mid \phi\} \in \Omega,
+%	$$
+%	其中 $\star$ 代表任意一个不出现在 $\phi(x)$ 中的变量.
+%\end{definition}
+
+\begin{propdef}
+	[label={universally-valid}]
+	{(恒成立)}
+	对公式 $\phi(x)$, 如下条件等价:
+	\begin{enumerate}[(1)]
+		\item $\{x\in X\mid \phi(x)\} = X$;
+		\item $\phi(x)\colon X\to\Omega$ 穿过 $\top\colon 1\to\Omega$;
+		\item 公式 $\forall x\in X\, \phi(x) \colon 1 \to \Omega$ 等于 $\top$.
+	\end{enumerate}
+	我们称满足上述条件的公式 $\phi(x)$ (在 $X$ 上) \emph{恒成立} (is universally valid), 简称\emph{成立}.
+\end{propdef}
+\begin{proof}~
+	\begin{itemize}
+		\item $(1)\Leftrightarrow (2)$ 由 $\{x\in X\mid \phi(x)\}$ 的定义即得.
+		\item $(2)\Leftrightarrow (3)$. 由任意量词的解释, 对于 $p\in\operatorname{Sub}(1)$,
+		\[
+		X\times p\leq \{x\in X\mid \phi(x)\}\quad \text{当且仅当}\quad p\leq \forall x\in X\, \phi(x).
+		\]
+		因此 $\{x\in X\mid \phi(x)\} = X$ 等价于 $p=1$ 满足以上两式, 等价于 $\big(\forall x\in X\, \phi(x)\big) = \top$.
+	\end{itemize}
+\end{proof}
+
+\begin{remark}
+	{}
+		为了避免混淆, 作如下约定: 在本章中如无特殊说明, 自然语言 (中文) 的逻辑连接词 ``对任意'' ``存在'' ``或'' 等等是通常的 (``外部'' 的) 数学语言,
+	而符号 $\forall,\exists,\lor$ 等等是某个\topos{}的内语言, 即 Mitchell--B\'enabou 语言.
+\end{remark}
+
+下面是使用 Mitchell--B\'enabou 语言表达\topos{}中的对象的例子.
+
+\begin{example}
+	[label={image-internal-definition}]
+	{(像)}
+	映射 $f\colon X\to Y$ 的像为
 	\[
-	\begin{tikzcd}
-		\{x\mid \phi(x)\}\ar[r]\ar[d] & 1\ar[d] \\
-		X \ar[r,"p"'] & \Omega
-	\end{tikzcd}
+	\operatorname{im}(f) = \{y\in Y\mid \exists x\in X\, f(x) = y\}.
 	\]
-\end{definition}
+	记 $\pi\colon X\times Y\to Y$ 为投影, 那么对于 $U\in\operatorname{Sub}(Y)$, 有 $\pi^* U=X\times U$.
+	由存在量词的解释, 上述 $\operatorname{im}(f)$ 的定义翻译为外部语言即
+	\[
+	\operatorname{im}(f)\leq U \quad \text{当且仅当} \quad \{(x,y)\in X\times Y \mid f(x)=y\} \leq X\times U.
+	\]
+	而后者等价于 (外部语言) $f$ 穿过 $U\hookrightarrow Y$; 故这个条件正是像的范畴论定义 (\ref{image-definition}).
+	在内语言中我们也将 $\operatorname{im}(f)$ 记为 $\{f(x)\mid x\in X\}$.
+%	注意此时我们有
+%	\[
+%	\forall y\in \operatorname{im}(f)\,\exists x\in X\, f(x)=y.
+%	\]
+\end{example}
+
+\begin{example}
+	{(单射与满射)}
+	对于\topos{}中的态射 $f\colon X\to Y$,
+	\begin{itemize}
+		\item $f$ 为单射当且仅当公式 $\forall x_1\in X\,\forall x_2\in X\,\big(f(x_1)=f(x_2)\Rightarrow x_1=x_2\big)$ 成立.
+		\item $f$ 为满射当且仅当公式 $\forall y\in Y\, \exists x\in X\, f(x)=y$ 成立.
+	\end{itemize}
+\end{example}
+\begin{proof}~
+	\begin{itemize}
+		\item 公式 $\forall x_1\in X\,\forall x_2\in X\,\big(f(x_1)=f(x_2)\Rightarrow x_1=x_2\big)$ 翻译为外部语言即左下图交换 (见命题 \ref{universally-valid}).
+		% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYXFx0aW1lcyBYIl0sWzAsMSwiXFxPbWVnYVxcdGltZXNcXE9tZWdhIl0sWzEsMSwiXFxPbWVnYSJdLFsxLDAsIjEiXSxbMiwwLCJYIl0sWzMsMCwiWSJdLFsyLDEsIlhcXHRpbWVzIFgiXSxbMywxLCJZXFx0aW1lcyBZIl0sWzAsMSwiXFxiaWcoXFxjaGlfXFxEZWx0YVxcY2lyYyAoZlxcdGltZXMgZiksXFxjaGlfXFxEZWx0YVxcYmlnKSIsMl0sWzEsMiwiXFxSaWdodGFycm93IiwyXSxbMCwzXSxbMywyLCJcXHRvcCJdLFs2LDcsImZcXHRpbWVzIGYiLDJdLFs0LDYsIlxcRGVsdGEiLDJdLFs1LDcsIlxcRGVsdGEiXSxbNCw1LCJmIl1d
+		\[\begin{tikzcd}[ampersand replacement=\&]
+			{X\times X} \& 1 \& X \& Y \\
+			\Omega\times\Omega \& \Omega \& {X\times X} \& {Y\times Y}
+			\arrow["{\big(\chi_\Delta\circ (f\times f),\chi_\Delta\big)}"', from=1-1, to=2-1]
+			\arrow["\Rightarrow"', from=2-1, to=2-2]
+			\arrow[from=1-1, to=1-2]
+			\arrow["\top", from=1-2, to=2-2]
+			\arrow["{f\times f}"', from=2-3, to=2-4]
+			\arrow["\Delta"', from=1-3, to=2-3]
+			\arrow["\Delta", from=1-4, to=2-4]
+			\arrow["f", from=1-3, to=1-4]
+		\end{tikzcd}\]
+		注意到 $f$ 是单射当且仅当上面的右图为拉回, 而右图为 (子对象的) 拉回等价于特征函数满足 $\chi_\Delta\circ (f\times f) = \chi_\Delta$.
+		这等价于上面的左图交换.
+		\item 由例 \ref{image-internal-definition} 中的讨论, 公式 $\forall y\in Y\, \exists x\in X\, f(x)=y$ 成立等价于 $\operatorname{im}f=Y$, 即 $f$ 为满射.
+	\end{itemize}
+\end{proof}
+
+
+
+\begin{example}
+	[label={set-of-epimorphisms}]
+	{(满射的集合)}
+	由 $X$ 到 $Y$ 的满射的 ``集合'' 为
+	\[
+	\operatorname{Epi}(X,Y) = \{f\in Y^X \mid \forall y\in Y\, \exists x\in X\, f(x)=y\} = \{f\in Y^X\mid\operatorname{im}f=Y\}.
+	\]
+	%这个对象有另一种使用外部语言的定义, 其中用到了内蕴版本的 ``像'' $\operatorname{im}\colon Y^X\to \Omega^Y$.
+	%见 \cite{SGL} VI.3 节.
+\end{example}
+
+\begin{example}
+	[label={internal-language-singleton}]
+	{(单元集)}
+	回忆 ``单元集映射'' $\{-\}\colon X\to PX$ 是 $\delta_X\colon X\times X\to\Omega$ 对应的态射 (例 \ref{singleton}).
+	换言之,
+	\[
+	\{x\} = \{y\in X\mid y=x\}.
+	\]
+	
+	$PX$ 上有一个谓词 ``是单元集''.
+	首先我们定义\emph{子单元集} (subsingleton), 也即单元集的子集\footnotemark{}:
+	\[
+	\internalprop{\text{$S$ 是子单元集}} := \forall x\in S\,\forall y\in S\,x=y.
+	\]
+	接着定义
+	\[
+	\internalprop{\text{$S$ 是单元集}} := \internalprop{\text{$S$ 是子单元集}} \land \exists x\in S\,\top.
+	\]
+	可以证明
+	\[
+	\forall S\in PX\,\big(\internalprop{\text{$S$ 是单元集}}\,\Leftrightarrow\,\exists x\in X\,S=\{x\}\big).
+	\]
+\end{example}
+\footnotetext{在经典逻辑中只有两个不同的子单元集, 即空集与单元集; 但在\topos{}的内语言中则不然: 子单元集对应\topos{}的子终对象, 见定义 \ref{subterminal-object-definition}.}
+
+\begin{example}
+	[label={quotient-set-internal}]
+	{(商集)}
+	%内语言中的商集即范畴论中的余等化子.
+	集合论中, 商集由等价类的集合构造; 在内语言中我们也可仿照这一构造.
+	首先回顾等价关系 (\ref{equivalence-relation}) 的定义.
+	内语言中, 集合 $X$ 上的等价关系是满足如下条件的二元关系 $\sim$:
+	\begin{itemize}
+		\item $x\sim x$;
+		\item $x\sim y\Rightarrow y\sim x$;
+		\item $(x\sim y \land y\sim z) \Rightarrow x\sim z$.
+	\end{itemize}
+	对于 $x\in X$ 定义 ``等价类''
+	\[
+	[x] := \{x'\in X\mid x'\sim x\},
+	\]
+	从而有映射 $[-]\colon X\to PX$.
+	于是商集 $X/{\sim}$ 可定义为
+	\[
+	X/{\sim} := \{[x] \mid x\in X\} := \operatorname{im}([-]\colon X\to PX).
+	\]
+	注意此时我们有
+	\[
+	\forall \alpha\in (X/{\sim}) \,\exists x\in X\, \alpha = [x].
+	\]
+\end{example}
+
+\begin{example}
+	[label={internal-Boolean-topos}]
+	{(Boole \topos{})}
+	一个\topos{}是 Boole 的, 当且仅当公式 $\forall p\in\Omega\, (p\lor \neg p)$ 成立.
+	注意这个公式\emph{不是}说 ``$p=\top$ 或 $p=\bot$'' (后者是\emph{二值性}, 见注 \ref{boolean-not-two-valued}), 因为 $\lor$ 是内语言, 而 ``或'' 是 ``外部'' 语言.
+\end{example}
+
+\begin{example}
+	{(内蕴选择公理)}
+	一个\topos{}满足内蕴选择公理 (定义 \ref{internal-axiom-of-choice}), 当且仅当对任意对象 $X,Y$ 如下公式成立.
+	\[
+	\forall f\in\operatorname{Epi}(X,Y)\, \exists g\in X^Y\, \forall y\in Y\, f(g(y))=y.
+	\]
+\end{example}
+
+因为一般的\topos{}不一定是 Boole 的, 也不一定满足内蕴选择公理, 所以在内语言中进行推理一般不能使用以上两例中写出的公式.
+内语言中可以使用的推导法则是\emph{直觉主义谓词演算} (intuitionistic predicate calculus).
+
+% 讲逻辑态射?
+% nLab https://ncatlab.org/nlab/show/logical+functor
+
+
+\label{logical-functor-internal}
+
+\section{Kripke--Joyal 语义}
+
+\emph{语义} (semantics) 是将一种形式语言 (如前面介绍的 Mitchell--B\'enabou 语言) 的公式转化为另一种语言 (如通常数学语言) 的方法. 回忆 Mitchell--B\'enabou 语言中, 含一个变量 $x\colon X$ 的公式 $\phi(x)$ 被解释为一个态射 $\phi(x) \colon X \to \Omega$.
+子对象 $\{x \mid \phi(x)\}$ 是 $\top\colon 1\to\Omega$ 沿 $\phi(x)$ 的拉回 (定义 \ref{subobject-from-formula}).
+设 $X$ 有整体元素 $x_0\colon 1\to X$, 那么 $x_0$ 满足公式 $\phi$ 当且仅当下图中虚线态射存在.
+% https://q.uiver.app/#q=WzAsNSxbMCwxLCIxIl0sWzEsMSwiWCJdLFsyLDEsIlxcT21lZ2EiXSxbMiwwLCIxIl0sWzEsMCwiXFx7eFxcbWlkXFx2YXJwaGkoeClcXH0iXSxbNCwxXSxbMCwxLCJ4XzAiLDJdLFsxLDIsIlxcdmFycGhpKHgpIiwyXSxbMCw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNCwzXSxbMywyLCJcXHRvcCJdXQ==
+\[\begin{tikzcd}[ampersand replacement=\&]
+	\& {\{x\mid\phi(x)\}} \& 1 \\
+	1 \& X \& \Omega
+	\arrow[from=1-2, to=2-2]
+	\arrow["{x_0}"', from=2-1, to=2-2]
+	\arrow["{\varphi(x)}"', from=2-2, to=2-3]
+	\arrow[dashed, from=2-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["\top", from=1-3, to=2-3]
+\end{tikzcd}\]
+将 ``整体元素'' 推广为 ``广义元素'', 我们得到如下的定义.
+
+\newcommand{\forces}{\models}
 
 \begin{definition}
-	{(真值, 内语言定义)}
-	公式 $\varphi$ 的\emph{真值}是集合
-	$$
-	\{x:1 \mid \varphi\} \in \Omega,
-	$$
-	其中 $x$ 是不出现在 $\varphi$ 中的变量.
+	{}
+	称广义元素 $x_0 \colon U\to X$ 满足公式 $\phi$, 是指下图中虚线态射存在.
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		\& {\{x\mid\phi(x)\}} \& 1 \\
+		U \& X \& \Omega
+		\arrow[from=1-2, to=2-2]
+		\arrow["{x_0}"', from=2-1, to=2-2]
+		\arrow["{\phi(x)}"', from=2-2, to=2-3]
+		\arrow[dashed, from=2-1, to=1-2]
+		\arrow[from=1-2, to=1-3]
+		\arrow["\top", from=1-3, to=2-3]
+	\end{tikzcd}\]
+	记 $U\forces \phi(x_0)$. 由于后文介绍的 ``力迫法'' 的影响, 这个条件也称为 $U$ \emph{力迫} (forces) $\phi(x_0)$.
 \end{definition}
+
+\begin{prop}
+	[label={epi-forcing}]
+	{}
+	对于广义元素 $x_0 \colon U\to X$, 设 $p\colon U' \twoheadrightarrow U$ 为满射, 若 $U'\forces\phi(x_0 p)$, 则 $U\forces \phi(x_0)$.
+\end{prop}
+\begin{proof}
+	由条件有交换图
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJVJyJdLFswLDEsIlUiXSxbMSwxLCJYIl0sWzEsMCwiXFx7eFxcbWlkXFxwaGkoeClcXH0iXSxbMCwxLCJmIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsM10sWzMsMiwiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJib3R0b20ifX19XSxbMSwyLCJcXGFscGhhIiwyXV0=
+	$\begin{tikzcd}[ampersand replacement=\&,row sep=small,column sep=tiny]
+		{U'} \& {\{x\mid\phi(x)\}} \\
+		U \& X
+		\arrow["p"', two heads, from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow[hook', from=1-2, to=2-2]
+		\arrow["x_0"', from=2-1, to=2-2]
+	\end{tikzcd}$.
+	作 $\{x\mid\phi(x)\}$ 沿 $x_0$ 的拉回 $\widetilde {U}$,
+	那么 $\widetilde U \to U$ 既单又满, 故为同构.
+	这说明 $U\forces \phi(x_0)$.
+	这是满射关于单射的一种提升性质.
+\end{proof}
+
+\begin{propdef}
+	{(Kripke--Joyal 语义的递归定义)}
+	设 $x_0 \colon U\to X$ 为广义元素, 如下条款递归地给出了 $U\forces\phi(x_0)$ 的定义 (``按公式 $\phi$ 的复杂度归纳''):
+	\begin{enumerate}[(1)]
+		\item 对于公式 $\phi(x), \psi(x)$, $U\forces \phi(x_0) \land \psi(x_0)$ 当且仅当 $U\forces \phi(x_0)$ 且 $U\forces\psi(x_0)$.
+		\item 对于公式 $\phi(x), \psi(x)$, $U\forces \phi(x_0) \lor \psi(x_0)$ 当且仅当存在 $p\colon V\to U$ 与 $q\colon W\to U$,
+		使得 $p+q\colon V+W\to U$ 满, 且 $V\forces \phi(x_0 p)$, $W\forces\psi(x_0 q)$.
+		\item 对于公式 $\phi(x), \psi(x)$, $U\forces \phi(x_0) \Rightarrow \psi(x_0)$ 当且仅当对任意 $p\colon V\to U$, 只要 $V\forces \phi(x_0 p)$, 就有 $V\forces \psi(x_0p)$; 这又等价于 $U\land\{x\mid \phi(x)\}\forces \psi(x_0)$.
+		\item 对于公式 $\phi(x)$, $U\forces \neg\phi(x_0)$ 当且仅当对任意 $p\colon V\to U$, 只要 $V\forces\phi(x_0p)$, 就有 $V\simeq 0$.
+		\item 对于公式 $\phi(x,y)$, $U \forces \exists y \phi(x_0,y)$ 当且仅当存在满射 $p\colon V\twoheadrightarrow U$ 以及广义元素 $y_0\colon V\to Y$ 使得 $V\forces \phi(x_0p,y_0)$.
+		\item 对于公式 $\phi(x,y)$, $U \forces \forall y \phi(x_0,y)$ 当且仅当对任意 $y_0\colon V\to Y$, $p\colon V\to U$, 都有 $V\forces \phi(x_0p,y_0)$; 这又等价于 $U\times Y \forces \phi(x_0\pi_1,y\pi_2)$, 其中 $\pi_1,\pi_2$ 为 $U\times Y$ 向两个分量的投影.
+	\end{enumerate}
+\end{propdef}
+\begin{proof}
+	这些性质的证明基本上是直接验证定义, 我们提供一些细节.
+	
+	在 (2) 中, $x_0\colon U\to X$ 穿过 $\{x\mid\phi(x)\lor\psi(x)\} = \{x\mid\phi(x)\}\lor\{x\mid\psi(x)\}$,
+	当且仅当 $U$ 的两个子对象 $\{u\in U\mid \phi(x_0u)\}$, $\{u\in U\mid \psi(x_0u)\}$ 之并等于 $U$.
+	取 $V,W$ 为这两个子对象即可.
+	
+	在 (4) 中, 若 $x_0\colon U\to X$ 穿过 $\{x\mid \exists y \phi(x,y)\}$, 作如下拉回,
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHsodSx5KVxcbWlkXFxwaGkoeF8wdSx5KVxcfSJdLFswLDEsIlUiXSxbMSwxLCJcXHt4XFxtaWRcXGV4aXN0cyB5XFxwaGkoeCx5KVxcfSJdLFsxLDAsIlxceyh4LHkpXFxtaWRcXHBoaSh4LHkpXFx9Il0sWzAsMV0sWzAsM10sWzEsMl0sWzMsMl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\{(u,y)\mid\phi(x_0u,y)\}} \& {\{(x,y)\mid\phi(x,y)\}} \\
+		U \& {\{x\mid\exists y\phi(x,y)\}}
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=2-1, to=2-2]
+		\arrow[from=1-2, to=2-2]
+	\end{tikzcd}\]
+	因为右边为满射, 所以左边 $\{(u,y)\mid \phi(x_0u,y)\}\to U$ 为满射.
+\end{proof}
+
+\subsection{层语义}
+
+Kripke--Joyal 语义在景上 (特别地, 在拓扑空间上) 有更直观的表述.
+
+\begin{propdef}
+	{}
+	设 $\phi(x)$ 是 Grothendieck \topos{} $\operatorname{Sh}(\mathcal C,J)$ 的内语言中含一个变量 $x\in X$ 的公式.
+	对于 $\mathcal C$ 的对象 $c$ 与 $x_0\in X(c)$,
+	如下条件等价,
+	\begin{itemize}
+		\item $x_0\in \{x\mid\phi(x)\}(c)$, 其中 $\{x\mid\phi(x)\}$ 是 $\operatorname{Sh}(\mathcal C,J)$ 中 $X$ 的子对象;
+		\item $\widehat {\mathcal C}$ 中的态射 $x_0\colon \yo(c) \to X$ 穿过 $\{x\mid\phi(x)\}\hookrightarrow X$;
+		\item $\operatorname{Sh}(\mathcal C,J)$ 中的态射 $x_0\colon a\yo(c) \to X$ 穿过 $\{x\mid\phi(x)\}\hookrightarrow X$.
+	\end{itemize}
+	当上述条件成立时, 记 $c\forces \phi(x_0)$.
+\end{propdef}
+
+\begin{prop}
+	{(层语义的局部性)}
+	若存在 $c$ 的覆盖 (筛) $\{f_i\colon c_i \to c\}$ 使得对每个 $i$ 都有 $c_i\forces \phi(x_0f_i)$, 那么 $c\forces \phi(x_0)$.
+\end{prop}
+
+\begin{proof}
+	取 $f_i$ 生成的筛 $S\to \yo(c)$, 则有满射 $\sum_i \yo(c_i) \to S$. 层化后有满射 $\sum_i a\yo(c_i) \to a\yo(c)$ (层化保持满射, 命题 \ref{adjoints-preserve-mono-epi}). 于是由命题 \ref{epi-forcing} 即证.
+\end{proof}
+
+\begin{propdef}
+	[label={sheaf-semantics-inductive}]
+	{(层语义)}
+	设 $X$ 是 $\operatorname{Sh}(\mathcal C,J)$ 的对象, $\phi(x)$ 是 $X$ 上的公式, $c$ 是 $\mathcal C$ 的对象, $x_0 \in X(c)$. 如下条款递归地给出了 $c\forces\phi(x_0)$ 的定义 (``按公式 $\phi$ 的复杂度归纳''):
+	\begin{enumerate}[(1)]
+		\item 对于公式 $\phi(x), \psi(x)$, $c\forces \phi(x_0) \land \psi(x_0)$ 当且仅当 $c\forces \phi(x_0)$ 且 $c\forces\psi(x_0)$.
+		\item 对于公式 $\phi(x), \psi(x)$, $c\forces \phi(x_0) \lor \psi(x_0)$ 当且仅当存在覆盖 $\{f_i\colon c_i\to c\}$, 使得对每个 $i$, $c_i\forces \phi(x_0 f_i)$ 或 $c_i\forces\psi(x_0 f_i)$.
+		\item 对于公式 $\phi(x), \psi(x)$, $c\forces \phi(x_0) \Rightarrow \psi(x_0)$ 当且仅当对任意 $p\colon d\to c$, 只要 $d\forces \phi(x_0 p)$, 就有 $d\forces \psi(x_0p)$.
+		\item 对于公式 $\phi(x)$, $c\forces \neg\phi(x)$ 当且仅当对任意 $p\colon d\to c$, 只要 $d\forces\phi(x_0p)$, 就有 $d$ 被空集覆盖.
+		\item \label{sheaf-semantics-exists}对于公式 $\phi(x,y)$, $c \forces \exists y \phi(x_0,y)$ 当且仅当存在覆盖 $\{f_i\colon c_i\to c\}$ 以及元素 $y_i\in Y(c_i)$ 使得对每个 $i$ 有 $c_i\forces \phi(x_0f_i,y_i)$.
+		\item 对于公式 $\phi(x,y)$, $c \forces \forall y \phi(x_0,y)$ 当且仅当对任意 $y_0\in Y(d)$, $p\colon d\to c$, 都有 $d\forces \phi(x_0p,y_0)$.
+	\end{enumerate}
+\end{propdef}
+
+\begin{example}
+	{(一个点上的层语义)}
+	一个点上的层\topos{} $\mathsf {Set} \simeq \operatorname{Sh}(*)$ 中 $*\forces\phi(x_0)$ 即是公式 $\phi(x_0)$ 在通常数学的意义下成立.
+\end{example}
+
+\begin{example}
+	{(拓扑空间上的层语义)}
+	设 $X$ 为拓扑空间, 那么 $\operatorname{Sh}(X)$ 的内语言中的命题 (即终对象 $1$ 上的公式) 对应于 $X$ 的开集, 直观上这个开集表示该命题成立的范围. 此时对于 $U,V\in\operatorname{Open}(X)$, 有 $U\forces V$ 等价于 $U\leq V$. 例如,
+	\begin{itemize}
+		\item $\neg U$ 对应开集 $U$ 的补集的内部. 因此, $X\forces (\neg\neg U)$ 当且仅当 $\neg U = \varnothing$, 当且仅当 $U$ 是 $X$ 的稠密开集.
+		\item 设 $(X,\mathcal O_X)$ 为环化空间, 即拓扑空间 $X$ 配备 $\operatorname{Sh}(X)$ 中的环 $\mathcal O_X$.
+		对于 $f\in O_X$, 命题 $$\internalprop{\text{$f$ 可逆}} := \exists g\,fg=1$$
+		表示 ``$f$ 可逆的地方''. 由命题 \ref{sheaf-semantics-inductive} (\ref{sheaf-semantics-exists}), 对于开集 $U$, $U\forces \internalprop{\text{$f$ 可逆}}$ 当且仅当存在 $U$ 的开覆盖 $\{U_i\}$ 以及 $g_i\in \mathcal O_X(U_i)$ 使得 $U_i\forces (fg_i = 1)$.
+		\item 所谓\emph{局部环化空间} (locally ringed space) 是指一个环化空间 $(X,\mathcal O_X)$, 使得 $\mathcal O_X$ 的每个茎 $\mathcal O_{X,x}$ 都是局部环. 这等价于 $\mathcal O_X$ 在内语言中是一个局部环. 准确地说, 这等价于 $\mathcal O_X$ 上如下公式成立:
+		\[
+			\internalprop{\text{$x+y$ 可逆}} \Rightarrow \internalprop{\text{$x$ 可逆}} \lor \internalprop{\text{$y$ 可逆}}.
+		\]
+		使用这种语言可以简化代数几何中的许多命题以及它们的证明, 见 Ingo Blechschmidt 的博士论文 \cite{ILAG}.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	{(Zariski 景上的层语义)}
+	回忆 Zariski 景 (定义 \ref{zariski-site}) 是有限表现环的范畴的对偶范畴, 配备如下覆盖结构: 对于环 $A$ 中生成单位理想的一族元素 $f_i$, $\operatorname{Spec}A[f_i^{-1}]\to \operatorname{Spec}A$ 为覆盖.
+	
+\end{example}
+
+%\todo{stack semantics}
+
+% https://ncatlab.org/nlab/show/stack+semantics
+
+%\todo{Zariski 景}
+
+% https://ncatlab.org/nlab/show/Zariski+site
 
 \section{模态与层化}
 
-本节讨论模态 (\ref{appendix-modal-logic}), Lawvere--Tierney 拓扑与层化.
-
-首先我们重新定义 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}).
+将 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}) 视为一种模态 (\ref{appendix-modal-logic}), 可以在内语言中构造其层化. 首先我们以内语言重新定义 Lawvere--Tierney 拓扑. 本节中的 ``集合'' 是指某个固定的\topos{}中的对象.
 
 \begin{definition}
 	{(Lawvere--Tierney 拓扑, 内语言定义)}
@@ -155,40 +549,132 @@
 	\end{itemize}
 \end{definition}
 
+对于景的 Grothendieck 拓扑给出的 Lawvere--Tierney 拓扑, $\square \varphi$ 的直观是 ``$\varphi$ 在局部上成立'' (注 \ref{Lawvere--Tierney-topology-as-modality}).
+一般地, $\square \varphi$ 是 $\varphi$ 的某种 ``弱化''.
+
+条件 $\square(\varphi \land \psi) \Leftrightarrow \square\varphi\land \square\psi$ 等价于模态 $\square$ 单调递增:
+对任意 $\varphi,\psi \colon \Omega$,
+若 $\varphi \Rightarrow \psi$,
+则 $\square\varphi \Rightarrow \square \psi$.
+
+
 \begin{example}
+	{}
+	在 $\mathsf {Set}$ (即经典逻辑) 中只有两个模态, $\square \varphi = \varphi$ 以及 $\square \varphi = \top$.
+\end{example}
+
+\begin{example}
+	[label={internal-Lawvere--Tierney-examples}]
 	{}
 	如下映射都是 Lawvere--Tierney 拓扑:
 	\begin{itemize}
-		\item $\square\varphi = (\mu\Rightarrow\varphi)$;
-		\item $\square\varphi = (\nu\lor\varphi)$;
-		\item $\square\varphi = \neg\neg\varphi$.
+		\item $\square\varphi = (\mu\Rightarrow\varphi)$, 其中 $\mu$ 是一个固定的命题 (即类型 $\Omega$ 的常量);
+		\item $\square\varphi = (\nu\lor\varphi)$, 其中 $\nu$ 是一个固定的命题;
+		\item $\square\varphi = \neg\neg\varphi$ (其中用到 $\neg\neg\neg\neg\varphi \Rightarrow \neg\neg\varphi$, 这是因为 $\neg\neg\neg\varphi\Rightarrow\neg\varphi$, 见命题 \ref{xyyy-xy}).
 	\end{itemize}
 \end{example}
 
 \begin{definition}
 	{(分离性与层条件, 内语言定义)}
-	对于给定的Lawvere--Tierney 拓扑 $\square$, 称集合 $F$ $\square$-\emph{分离}是指
+	对于给定的 Lawvere--Tierney 拓扑 $\square$, 称集合 $F$ ``$\square$-\emph{分离}'' 是指如下公式成立:
 	$$
-	\forall x,y:F. \square (x=y) \Rightarrow x=y.
+	\forall x,y\in F,\quad \square (x=y) \Rightarrow x=y.
 	$$
-	称集合 $F$ 为\emph{层}是指 $F$ 分离, 且
+	称集合 $F$ 为 $\square$-\emph{层}是指 $F$ $\square$-分离, 且如下公式成立:
 	$$
-	\forall S \subset F. \square (\text{$S$ 是单元集}) \Rightarrow \exists x:F.\square(x\in S).
+	\forall S \subset F, \quad \square (\internalprop{\text{$S$ 是单元集}}) \Rightarrow \exists x\in F.\,\square(x\in S).
 	$$
+	(其中 $\forall S\subset F$ 是 $\forall S\in\Omega^F$ 的意思.)
 \end{definition}
 
-一个集合 $\square$-分离
+若 $\square$ 的直观是某命题局部上成立, 那么 $F$ $\square$-分离的直观就是 ``若 $F$ 的两个元素 $x,y$ 在局部上相等, 则它们相等'';
+$F$ 为 $\square$-层的直观就是 ``若子集 $S\subset F$ 在局部上是单元集, 则存在 $F$ 的元素 $x$ 局部上属于 $S$''.
 
-\todo{层化}
+\begin{definition}
+	{($+$ 构造)}
+	对任意集合 $F$, 定义 $F^+$ 为如下商集 (\ref{quotient-set-internal}):
+	\[
+	F^+ = \{S\subset F \mid \square\internalprop{\text{$S$ 为单元集}} \} /{\sim},\quad\text{其中}\quad S\sim T :\Leftrightarrow \square (S=T).
+	\]
+	典范的映射 $F\to F^+$ 由 $x\mapsto [\{x\}]$ 给出.
+\end{definition}
 
+注意 $S\sim T \Rightarrow \big( \square(x\in S) \Leftrightarrow \square(x\in T) \big)$.
+
+\begin{prop}
+	{}
+	对任意集合 $F$,
+	\begin{itemize}
+		\item $F^+$ $\square$-分离;
+		\item 若 $F$ $\square$-分离, 则 $F^+$ 为 $\square$-层.
+	\end{itemize}
+\end{prop}
+\begin{proof}~
+	\begin{itemize}
+		\item 要证明 $F^+$ $\square$-分离, 即如下公式在 $F^+$ 上恒成立:
+		\[
+		\square(x=y) \Rightarrow x=y.
+		\]
+		在内语言中这个命题是明显的: 由 $F^+$ 的定义, 有
+		\[
+			\begin{aligned}
+				&\forall S,T\in \{S\subset F \mid \square\internalprop{\text{$S$ 为单元集}} \}\\
+				& \square([S] = [T]) \Leftrightarrow \square \square(S = T) \Leftrightarrow \square(S=T)\Leftrightarrow [S]=[T].
+			\end{aligned}
+		\]
+		\item \footnotemark{}要证明 $F^+$ 为层, 即证明如下公式成立:
+		\[
+		\forall S \subset F^+,\quad\square(\internalprop{\text{$S$ 是单元集}}) \Rightarrow\exists \alpha\in F^+\,\alpha\in S.
+		\]
+		定义\emph{压平} $f\colon PF^+\to PF$ 如下:
+		\[
+			f(S) := \{x\in F \mid \exists [A]\in S\, \square(x\in A)\}.
+		\]
+		这里, $\exists [A]\in S$ 是 $\exists A\,\big([A]\in S\land\cdots\big)$ 的意思.
+		其中 ``压平'' 的直观是将多层的 $\{\,\}$ 替换为单层.
+		例如, 当 $S$ 为单元集 $\big\{[\{a\}]\big\}$ 时, $f(S)=\{a\}$, 这是因为
+		\[
+		\begin{aligned}
+			\exists [A]\in S\,\square (x\in A)
+			&\Rightarrow
+			\exists A\,\big([A]=[\{a\}]\big)\land \square(x\in A)\\
+			&\Rightarrow
+			\exists A\,\square(A=\{a\}\land x\in A)\\
+			&\Rightarrow \square(x=a)\\
+			&\Rightarrow x=a\,(\text{由 $\square$-分离性}).
+		\end{aligned}
+		\]
+		
+		%我们将使用 $\square$ 的一个重要性质: 要证明 $\square\phi \Rightarrow \square \psi$, 只需证明 $\phi\Rightarrow\square\psi$.
+		由单元集的定义,
+			\[
+			\internalprop{\text{$S$ 为单元集}} \Rightarrow \exists  A\subset F \,\big(\square\internalprop{\text{$A$ 为单元集}} \land S=\{[A]\}\big).
+			\]
+		而
+			\[
+			\begin{aligned}
+				\internalprop{\text{$A$ 为单元集}} \land S=\{[A]\}
+				&\Rightarrow
+				\exists a\in F\,S=\big\{[\{a\}]\big\}\\
+				&\Rightarrow
+				\exists a\in F\,f(S) = \{a\}\\
+				&\Rightarrow
+				\internalprop{\text{$f(S)$ 为单元集}}.
+			\end{aligned}
+			\]
+		综合上述论证, 使用模态 $\square$ 的性质, 我们证明了
+		\[
+		\square(\internalprop{\text{$S$ 为单元集}}) \Rightarrow \square(\internalprop{\text{$f(S)$ 为单元集}}).
+		\]
+	\end{itemize}
+	
+	\todo{证明}
+\end{proof}
+\footnotetext{此证明来自杨家同.}
 
 %\section{几何理论}
 
-\section{层语义}
 
-\todo{stack semantics}
-
-% https://ncatlab.org/nlab/show/stack+semantics
 
 %\todo{将综合可计算性理论, 综合微分几何, 综合代数几何变成本章的节}
 

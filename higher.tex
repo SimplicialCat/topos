@@ -4,30 +4,31 @@
 
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHRleHR76ZuG5ZCIfSJdLFswLDEsIlxcdG9wb3N7fSJdLFsxLDAsIlxcdGV4dHvnqbrpl7R9Il0sWzEsMSwiXFxpbmZ0eSBcXHRleHR7LX0gXFx0b3Bvc3t9Il0sWzAsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dXQ==
 \[\begin{tikzcd}[ampersand replacement=\&]
-	{\text{集合}} \& {\text{空间}} \\
-	{\text{\topos{}}} \& {\infty \text{-\topos{}}}
+	{\text{集合}} \& {\text{\topos{}}} \\
+	{\text{空间}} \& {\infty \text{-\topos{}}}
 	\arrow[rightsquigarrow, from=1-1, to=2-1]
 	\arrow[rightsquigarrow, from=1-2, to=2-2]
 \end{tikzcd}\]
 
 \minitoc
 
-\section{$\infty$-范畴}
+\section{$\infty$-范畴: 单纯集模型}
 
 粗略地说, 一个 $\infty$-范畴含有如下成分: 对象, 对象之间的态射, 态射之间的 $2$-态射, $\cdots$, $k$-态射之间的 $(k+1)$-态射, 以至于无穷. 我们使用的 $\infty$-范畴又称 $(\infty ,1)$-范畴, 意为对所有 $k>1$, $k$-态射都可逆.
 
-在实践中, $\infty$-范畴有许多不同而互相等价的模型, 就像一个算法由许多不同的编程语言实现. 单纯集 (定义 \ref{Simplicial-Sets}) 就是一种实用的 ``编程语言''. 如下是用单纯集表达的一种 $\infty$-范畴的模型, 是 Lurie \cite{HTT} 使用的模型, 也是最简单的模型.
+在实践中, $\infty$-范畴有许多不同而可以互相转化的\emph{模型}, 就像一个算法由许多不同的编程语言实现. 单纯集 (定义 \ref{Simplicial-Sets}) 就是一种实用的 ``编程语言''. 我们先介绍用单纯集表达的一种 $\infty$-范畴的模型, 它是 Lurie \cite{HTT} 使用的模型, 也是最简单的模型; 但后面我们陈述的关于无穷范畴的任何结论都可叙述为模型无关的形式.
 
 \begin{definition}
-	{}
-	定义单纯集 $\Delta^n$ 为米田嵌入的像 $\yo([n])$. 对于单射 $[m]\to [n]$, 设其像为 $J$, 定义单纯集 $\Delta^J$ 为对应的态射 $\Delta^m\to\Delta^n$ 的像 (作为 $\Delta^n$ 的子对象). 对于 $0\leq k \leq n$, 定义
+	[label={simplicial-set-horn}]
+	{(角形)}
+	回忆单纯集 $\Delta^n$ 为 $[n]\in\Delta$ 在米田嵌入下的像 $\yo([n])$. 对于单射 $[m]\to [n]$, 设其像为 $J$, 定义单纯集 $\Delta^J$ 为对应的态射 $\Delta^m\to\Delta^n$ 的像 (作为 $\Delta^n$ 的子对象). 对于 $0\leq k \leq n$, 定义
 	$$
 	\Lambda_k^n : = \bigcup_{k\in J\neq [n]}\Delta^J,
 	$$
 	称为\emph{角形} (horn). 其中对应 $0<k<n$ 的角形称为\emph{内角形} (inner horn).
 \end{definition}
 
-如下是角形 $\Lambda_k^2$ ($k=0,1,2$) 的示意图. 可以看到它们是互不同构的单纯集, 其中只有内角形 $\Lambda_1^2$ 表示 ``两个首尾相接的箭头''.
+角形是用来描述单纯集模型 $\infty$-范畴中一些结构的图形. 如下是角形 $\Lambda_k^2$ ($k=0,1,2$) 的示意图. 可以看到它们是互不同构的单纯集, 其中只有内角形 $\Lambda_1^2$ 表示 ``两个首尾相接的箭头''.
 % https://q.uiver.app/#q=WzAsMTIsWzAsMiwiMCJdLFsxLDAsIjEiXSxbMiwyLCIyIl0sWzEsMywiXFxMYW1iZGFfMF4yIl0sWzMsMiwiMCJdLFs0LDAsIjEiXSxbNSwyLCIyIl0sWzQsMywiXFxMYW1iZGFfMV4yIl0sWzcsMywiXFxMYW1iZGFfMl4yIl0sWzYsMiwiMCJdLFs4LDIsIjIiXSxbNywwLCIxIl0sWzAsMV0sWzAsMl0sWzQsNV0sWzUsNl0sWzksMTBdLFsxMSwxMF1d
 \[\begin{tikzcd}[ampersand replacement=\&,column sep=0, row sep=0.8em]
 	\& 1 \&\&\& 1 \&\&\& 1 \\
@@ -75,22 +76,23 @@
 \end{definition}
 
 \begin{definition}
-	{(对偶)}
+	{(单纯集的对偶)}
 	考虑函子 $(-)^{\op} \colon \Delta \to \Delta$.
 	对于单纯集 $\mathcal X$, 定义其\emph{对偶} $\mathcal X^{\op}$ 为 $\mathcal X^{\op}:= \mathcal X\circ (-)^{\op}\colon \Delta \to\mathsf {Set}$.
 \end{definition}
 
 \begin{example}
 	{(普通范畴的脉)}
-	回忆一个普通范畴 $\mathsf C$ 的脉 $\text{N}(\mathsf C)$ (例 \ref{sset-geometric-realization}) 定义如下,
+	回忆一个普通范畴 $\mathcal C$ 的脉 $\text{N}(\mathcal C)$ (例 \ref{sset-geometric-realization}) 定义如下,
 	$$
-	\text{N}\mathsf{C}_n = \mathsf {Fun}(0\to 1\to \cdots \to n,\mathsf C),
+	\text{N}\mathcal{C}_n = \mathsf {Fun}(0\to 1\to \cdots \to n,\mathcal C),
 	$$
-	即 $\text{N}(\mathsf C)_n$ 的元素是 $\mathsf C$ 中连续的 $n$ 个箭头. 由于对任意 $0<k<n$, $\Lambda_k^n$ 都包含一条折线 $0\to 1\to\cdots\to n$, 故映射 $\Lambda_k^n\to \text{N}(\mathsf C)$ 总能提升为 $\Delta^n\to \text{N}(\mathsf C)$, $\text{N}(\mathsf C)$ 是一个 $\infty$-范畴.
+	即 $\text{N}(\mathcal C)_n$ 的元素是 $\mathcal C$ 中连续的 $n$ 个箭头. 由于对任意 $0<k<n$, $\Lambda_k^n$ 都包含一条折线 $0\to 1\to\cdots\to n$, 故映射 $\Lambda_k^n\to \text{N}(\mathcal C)$ 总能提升为 $\Delta^n\to \text{N}(\mathcal C)$, $\text{N}(\mathcal C)$ 是一个 $\infty$-范畴.
 \end{example}
 
+
 \begin{remark}
-	{}
+	{($\infty$-范畴单纯集模型的注意事项)}
 	定义 \ref{infinity-category-definition} 中有两点需要注意; 如果忽视这两点, 就会得到另外两种东西.
 	\begin{itemize}
 		\item 只有内角形可以填充. 若所有角形都可以填充, 则可证明 $\mathcal X$ 的所有态射都可逆, 我们称之为 \emph{$\infty$-群胚}.
@@ -124,7 +126,7 @@
 %第二个条件表明单纯集 $X$ 完全由 $X_0,X_1$ 即 ``$0$ 维和 $1$ 维的信息'' 决定.
 
 \begin{propdef}
-	{($\infty$-群胚, Kan 复形)}
+	{($\infty$-群胚, Kan 复形模型)}
 	定义 \emph{$\infty$-群胚} (又称 \emph{Kan 复形}) 是满足如下等价条件之一的 $\infty$-范畴 $\mathcal X$:
 	\begin{itemize}
 		\item $\mathcal X$ 中所有态射都可逆;
@@ -170,9 +172,19 @@
 		\arrow[from=1-1, to=1-2]
 	\end{tikzcd}\]
 	其中 $s,t\colon \mathsf {Fun}(\Delta^1,\mathcal X)\to \mathcal X$ 将 $\mathcal X$ 的态射对应到其起点与终点.
+	
+	更一般地, 对 $\mathcal X$ 中 $n+1$ 个对象 $x_0,x_1,\cdots,x_n$, 定义 $\operatorname{Hom}_{\mathcal X}(x_0,x_1,\cdots,x_n)$ 为如下的拉回.
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1em,row sep=2em]
+		{\hspace{-1em}\operatorname{Hom}_{\mathcal X}(x_0,\cdots,x_n)} \& {\mathsf {Fun}(\Delta^n,\mathcal X)\hspace{-1em}} \\
+		{\Delta^0} \& {\mathcal X^{n+1}}
+		\arrow["{}", from=1-2, to=2-2]
+		\arrow["{(x_0,\cdots,x_n)}"', from=2-1, to=2-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+	\end{tikzcd}\]
 \end{definition}
 
-下面用一个例子说明我们思考 $\operatorname{Hom}_{\mathcal X}(x,y)$ 的方式.
+如果 $\infty$-群胚是空间的模型, 那么 $\operatorname{Hom}_{\mathcal X}(x,y)$ 就是两点 $x,y$ 之间的道路的空间.
 
 \begin{example}
 	{}
@@ -183,7 +195,7 @@
 
 \begin{prop}
 	{}
-	单纯集 $\operatorname{Hom}_{\mathcal X}(x,y)$ 是 $\infty$-群胚.
+	对 $\infty$-范畴 $\mathcal X$ 中的任意两个对象 $x,y$, $\operatorname{Hom}_{\mathcal X}(x,y)$ 是 $\infty$-群胚.
 \end{prop}
 
 \subsection{同伦}
@@ -244,51 +256,7 @@
 	\arrow["\dashv"{anchor=center, rotate=-45}, draw=none, from=5, to=4]
 \end{tikzcd}\]
 
-\subsection{更多范畴论操作}
 
-\begin{definition}
-	{(终对象)}
-	设 $\mathcal X$ 为 $\infty$-范畴, $x$ 为 $\mathcal X$ 中的对象. 若对任意对象 $y$, $\operatorname{Hom}_{\mathcal X}(y,x)$ 都可缩, 则称 $x$ 为 $\mathcal X$ 的一个\emph{终对象}.
-\end{definition}
-
-\begin{definition}
-	{(俯范畴)}
-	设 $\mathcal X$ 为 $\infty$-范畴, $x$ 为 $\mathcal X$ 中的对象. 定义\emph{俯范畴} $\mathcal X/x$ 为如下的拉回:
-	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXERlbHRhXjAiXSxbMSwxLCJYIl0sWzEsMCwiXFxtYXRoc2Yge0Z1bn0oXFxEZWx0YV4xLFgpIl0sWzAsMCwiWC94Il0sWzAsMSwieCIsMl0sWzIsMSwiMSJdLFszLDBdLFszLDJdXQ==
-	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1em,row sep=2em]
-		{{\mathcal X}/x} \& {\mathsf {Fun}(\Delta^1,{\mathcal X})\hspace{-1em}} \\
-		{\Delta^0} \& {\mathcal X}
-		\arrow["x"', from=2-1, to=2-2]
-		\arrow["t", from=1-2, to=2-2]
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=1-1, to=1-2]
-	\end{tikzcd}\]
-	其中 $t\colon \mathsf {Fun}(\Delta^1,X)\to X$ 将 ${\mathcal X}$ 的态射对应到其终点.
-\end{definition}
-
-由定义, 俯范畴 $\mathcal {\mathcal X}/x$ 的对象是 ${\mathcal X}$ 中以 $x$ 为终点的箭头.
-可以说明 $\operatorname{id}_x$ 是 ${\mathcal X}/x$ 的终对象.
-
-\begin{definition}
-	{(极限)}
-	设 $\mathcal C$ 为 $\infty$-范畴, $I$ 为单纯集 (称为\emph{指标集}或\emph{指标范畴}), $F\colon I\to\mathcal C$ 为单纯集映射 (称为 $\mathcal C$ 中的一个\emph{图表}).
-	类似于普通范畴中极限的定义, 我们可以构造一个 (广义的) ``俯范畴'' $\mathcal C_{/F}$, 其对象为 $\mathcal C$ 的对象到 $F$ 的锥. 具体地, $\mathcal C_{/F}$ 为如下拉回.
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\mathcal C_{/F}} \& {({\mathcal C}^I)_{/F}} \\
-		{\mathcal C} \& {{\mathcal C}^I}
-		\arrow["{\text{常值}}"', from=2-1, to=2-2]
-		\arrow[from=1-2, to=2-2]
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=1-1, to=1-2]
-	\end{tikzcd}\]
-	其中 $\text{``常值''}\colon \mathcal C\simeq\mathcal C^{\Delta^0}\to \mathcal C^I$ 是 $I\to \Delta^0$ 的拉回, 它将 $\mathcal C$ 的对象 $x\colon \Delta^0\to\mathcal C$ 对应到 $x$ 处的 ``常值图表'' $I\to\Delta^0\to\mathcal C$, 就像普通范畴的情形一样.
-	称图表 $F$ 有\emph{极限}是指 ``俯范畴'' $\mathcal C_{/F}$ 有终对象.
-\end{definition}
-
-\begin{example}
-	{}
-	对于 $I = \varnothing$, 空图表 $F\colon I\to \mathcal C$ 的极限是终对象.
-\end{example}
 
 我们还需要描述 $\infty$-范畴的满子范畴.
 
@@ -296,12 +264,12 @@
 
 \begin{definition}
 	{}
-	设 $\mathcal C$ 是 $\infty$-范畴, $\mathsf S\to \Ho (\mathcal C)$ 是其同伦范畴的子范畴.
-	定义由 $\mathsf S$ 张成的 $\mathcal C$ 的子范畴为如下拉回.
+	设 $\mathcal C$ 是 $\infty$-范畴, $\mathcal S\to \Ho (\mathcal C)$ 是其同伦范畴的子范畴.
+	定义 \emph{$\mathcal S$ 张成的 $\mathcal C$ 的满子范畴}为如下 (作为单纯集的) 拉回.
 	\[
 	\begin{tikzcd}
-		\mathsf {S}\times_{\text{N}(\Ho (\mathcal C))} \mathcal C \ar[r]\ar[d]& \mathcal C\ar[d]\\
-		\mathsf S \ar[r]& \text{N}(\Ho (\mathcal C))
+		\mathcal {S}\times_{\text{N}(\Ho (\mathcal C))} \mathcal C \ar[r]\ar[d]& \mathcal C\ar[d]\\
+		\mathcal S \ar[r]& \text{N}(\Ho (\mathcal C))
 	\end{tikzcd}
 	\]
 \end{definition}
@@ -318,17 +286,17 @@ $\infty$-范畴的另一种模型是用单纯范畴描述的, 其优点包括
 \begin{definition}
 	{(单纯范畴)}
 	\emph{单纯范畴}是指充实于 $\mathsf {sSet}$ 的范畴.
-	具体地, 我们有一个对象集合 $\operatorname{Ob}(\mathsf C)$,
-	对 $x,y\in\operatorname{Ob}(\mathsf C)$ 有一个单纯集 $\operatorname{Hom}_{\mathsf C}(x,y)$,
-	对 $x\in\operatorname{Ob}(\mathsf C)$ 有恒等态射 $\operatorname{id}_x\in\operatorname{Hom}(x,x)$,
-	对 $x,y,z\in\operatorname{Ob}(\mathsf C)$ 有单纯集映射
+	具体地, 我们有一个对象集合 $\operatorname{Ob}(\mathcal C)$,
+	对 $x,y\in\operatorname{Ob}(\mathcal C)$ 有一个单纯集 $\operatorname{Hom}_{\mathcal C}(x,y)$,
+	对 $x\in\operatorname{Ob}(\mathcal C)$ 有恒等态射 $\operatorname{id}_x\in\operatorname{Hom}(x,x)$,
+	对 $x,y,z\in\operatorname{Ob}(\mathcal C)$ 有单纯集映射
 	$$
-	\circ\colon \operatorname{Hom}_{\mathsf C}(x,y) \times \operatorname{Hom}_{\mathsf C}(y,z) \to \operatorname{Hom}_{\mathsf C}(x,z),
+	\circ\colon \operatorname{Hom}_{\mathcal C}(x,y) \times \operatorname{Hom}_{\mathcal C}(y,z) \to \operatorname{Hom}_{\mathcal C}(x,z),
 	$$
 	满足结合律与幺元律.
 	
-	等价地, 单纯范畴也可定义为小范畴范畴 $\mathsf {Cat}$ 中的内蕴单纯集 $\mathsf C\colon \Delta^{\op}\to\mathsf {Cat}$,
-	满足 ``对象的单纯集'' $\operatorname{Ob}(\mathsf C) := \operatorname{Ob}\circ\mathsf C\colon \Delta^{\op} \to \mathsf {Set}$
+	等价地, 单纯范畴也可定义为小范畴范畴 $\mathsf {Cat}$ 中的内蕴单纯集 $\mathcal C\colon \Delta^{\op}\to\mathsf {Cat}$,
+	满足 ``对象的单纯集'' $\operatorname{Ob}(\mathcal C) := \operatorname{Ob}\circ\mathcal C\colon \Delta^{\op} \to \mathsf {Set}$
 	是常值单纯集.
 	
 	记 (小) 单纯范畴的范畴为 $\mathsf {sCat}$, 其中的态射是单纯范畴之间的 $\mathsf {sSet}$-充实函子.
@@ -336,7 +304,7 @@ $\infty$-范畴的另一种模型是用单纯范畴描述的, 其优点包括
 
 \begin{definition}
 	{(纤维性单纯范畴)}
-	若单纯范畴 $\mathsf C$ 的态射集 $\operatorname{Hom}_{\mathsf C}(x,y)$ 均为 Kan 复形 (即前面定义的 $\infty$-群胚), 则称之为\emph{纤维性} (fibrant) 单纯范畴; 它是 $\infty$-范畴的另一种模型. 换言之, $\infty$-范畴可视为充实于 $\infty$-群胚的范畴.
+	若单纯范畴 $\mathcal C$ 的态射集 $\operatorname{Hom}_{\mathcal C}(x,y)$ 均为 Kan 复形 (即前面定义的 $\infty$-群胚), 则称之为\emph{纤维性} (fibrant) 单纯范畴; 它是 $\infty$-范畴的另一种模型. 换言之, $\infty$-范畴可视为充实于 $\infty$-群胚的范畴.
 \end{definition}
 
 \begin{example}
@@ -453,6 +421,134 @@ $\infty$-范畴的另一种模型是用单纯范畴描述的, 其优点包括
 %	$$
 %\end{definition}
 
+\subsection{伴随}
+
+%在定义极限和余极限之前, 我们需要指出 $\infty$-范畴之间的伴随. 注意以下陈述是模型无关的.
+
+\begin{definition}
+	{($\infty$-范畴之间的伴随)}
+	$\infty$-范畴之间的一对伴随 \begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal D} \& {\mathcal C}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}
+	是如下资料,
+	\begin{itemize}
+		\item 两个 $\infty$-范畴 $\mathcal C,\mathcal D$,
+		\item 两个函子 $F\colon \mathcal C\to \mathcal D$ (称为\emph{左伴随}), $G\colon \mathcal D\to \mathcal C$ (称为\emph{右伴随}),
+		\item 两个自然变换 $\eta\colon \operatorname{id}_{\mathcal C}\to GF$ (称为\emph{单位}), $\varepsilon\colon FG\to\operatorname{id}_{\mathcal D}$ (称为\emph{余单位});
+	\end{itemize}
+	满足如下 $2$-态射的关系,
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
+		{\mathcal C} \&\& {\mathcal C} \\
+		\& {\mathcal D} \&\& {\mathcal D}
+		\arrow["F"', from=1-1, to=2-2]
+		\arrow["G"{description}, from=2-2, to=1-3]
+		\arrow["F", from=1-3, to=2-4]
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal C}}", from=1-1, to=1-3]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal D}}"', from=2-2, to=2-4]
+		\arrow["\eta"', shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=2-2]
+		\arrow["\varepsilon", shorten <=3pt, shorten >=3pt, Rightarrow, from=1-3, to=1]
+	\end{tikzcd}\hspace{-1em}\sim \operatorname{id}_F,
+	\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
+		\& {\mathcal C} \&\& {\mathcal C} \\
+		{\mathcal D} \&\& {\mathcal D}
+		\arrow["G", from=2-1, to=1-2]
+		\arrow["F"{description}, from=1-2, to=2-3]
+		\arrow["G"', from=2-3, to=1-4]
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal D}}"', from=2-1, to=2-3]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal C}}", from=1-2, to=1-4]
+		\arrow["\varepsilon", shorten <=3pt, shorten >=3pt, Rightarrow, from=1-2, to=0]
+		\arrow["\eta"', shorten <=3pt, shorten >=3pt, Rightarrow, from=1, to=2-3]
+	\end{tikzcd}\hspace{-1em}\sim\operatorname{id}_{G},\]
+	其中第一个式子中 $\sim$ 表示 $\operatorname{id}_F$ 是 $\infty$-范畴 $\mathsf {Fun}(\mathcal C,\mathcal D)$ 中两个态射 $F\to FGF$, $FGF\to F$ 的一个复合.
+	
+	记 $\Ho_2(\infCatinfcat)$ 为 $\infCatinfcat$ 的\emph{同伦 $2$-范畴}, 其中 $\operatorname{Hom}_{\Ho_2(\infCatinfcat)}(\mathcal C,\mathcal D) := \Ho{}(\operatorname{Fun}(\mathcal C,\mathcal D))$. 由定义, $\infty$-范畴之间的伴随等同于 $\Ho_2(\infCatinfcat)$ 中的伴随.
+\end{definition}
+
+\begin{prop}
+	{($\infty$-范畴之间的伴随与 $\operatorname{Hom}$-函子)}
+	设 \begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal D} \& {\mathcal C}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd} 为 $\infty$-范畴之间的伴随, 则对任意对象 $C\in\mathcal C$, $D\in\mathcal D$, 函子
+	\[
+	\operatorname{Hom}_{\mathcal D}(F(C),D) \overset{G}{\longrightarrow} \operatorname{Hom}_{\mathcal C}(GF(C),G(D))
+	\overset{\eta_C^*}{\longrightarrow}
+	\operatorname{Hom}_{\mathcal C}(C,G(D))
+	\]
+	为\emph{同伦等价}.
+\end{prop}
+
+\subsection{极限与余极限}
+
+\begin{definition}
+	{(终对象, 始对象)}
+	设 $\mathcal X$ 为 $\infty$-范畴, $x$ 为 $\mathcal X$ 中的对象. 若对任意对象 $y$, $\operatorname{Hom}_{\mathcal X}(y,x)$ 都可缩, 则称 $x$ 为 $\mathcal X$ 的一个\emph{终对象}. 对偶地定义\emph{始对象}.
+	
+	等价的定义是, $\mathcal X$ 的终对象是 (唯一的) 函子 $\mathcal X\to 1$ 的\emph{右伴随} $1\to\mathcal X$, $\mathcal X$ 的始对象是函子 $\mathcal X\to 1$ 的\emph{左伴随} $1\to\mathcal X$; 这告诉我们终对象和始对象的概念实际上存在于 $\infty$-范畴构成的 \emph{$2$-范畴}中, 见例 \ref{terminal-object-2-categorical}.
+\end{definition}
+
+\begin{definition}
+	{(俯范畴, 仰范畴)}
+	设 $\mathcal X$ 为 $\infty$-范畴, $x$ 为 $\mathcal X$ 中的对象. 定义\emph{俯范畴} $\mathcal X/x$ 为如下的拉回:
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXERlbHRhXjAiXSxbMSwxLCJYIl0sWzEsMCwiXFxtYXRoc2Yge0Z1bn0oXFxEZWx0YV4xLFgpIl0sWzAsMCwiWC94Il0sWzAsMSwieCIsMl0sWzIsMSwiMSJdLFszLDBdLFszLDJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1em,row sep=2em]
+		{{\mathcal X}/x} \& {\mathsf {Fun}(\Delta^1,{\mathcal X})\hspace{-1em}} \\
+		{\Delta^0} \& {\mathcal X}
+		\arrow["x"', from=2-1, to=2-2]
+		\arrow["t", from=1-2, to=2-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+	\end{tikzcd}\]
+	其中 $t\colon \mathsf {Fun}(\Delta^1,X)\to X$ 将 ${\mathcal X}$ 的态射对应到其终点.
+\end{definition}
+
+由定义, 俯范畴 $\mathcal {\mathcal X}/x$ 的对象是 ${\mathcal X}$ 中以 $x$ 为终点的箭头.
+可以说明 $\operatorname{id}_x$ 是 ${\mathcal X}/x$ 的终对象.
+
+\begin{definition}
+	{(极限, 余极限)}
+	设 $\mathcal C$ 为 $\infty$-范畴, $I$ 为单纯集 (称为\emph{指标集}或\emph{指标范畴}), $F\colon I\to\mathcal C$ 为单纯集映射 (称为 $\mathcal C$ 中的一个\emph{图表}).
+	类似于普通范畴中极限的定义, 我们可以构造一个 (广义的) ``俯范畴'' $\mathcal C_{/F}$, 其对象为 $\mathcal C$ 的对象到 $F$ 的锥. 具体地, $\mathcal C_{/F}$ 为如下拉回.
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal C_{/F}} \& {({\mathcal C}^I)_{/F}} \\
+		{\mathcal C} \& {{\mathcal C}^I}
+		\arrow["{\text{常值}}"', from=2-1, to=2-2]
+		\arrow[from=1-2, to=2-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+	\end{tikzcd}\]
+	其中 $\text{``常值''}\colon \mathcal C\simeq\mathcal C^{\Delta^0}\to \mathcal C^I$ 是 $I\to \Delta^0$ 的拉回, 它将 $\mathcal C$ 的对象 $x\colon \Delta^0\to\mathcal C$ 对应到 $x$ 处的 ``常值图表'' $I\to\Delta^0\to\mathcal C$, 就像普通范畴的情形一样.
+	定义图 $F$ 的\emph{极限}为 ``俯范畴'' $\mathcal C_{/F}$ 的终对象; 对偶地, 定义 $F$ 的\emph{余极限}为 ``仰范畴'' $\mathcal C_{F/}$ 的始对象.
+\end{definition}
+
+\begin{remark}
+	{}
+	$\infty$-范畴 $\infGpdinfcat$ 中的极限和余极限与拓扑学中的\emph{同伦极限, 同伦余极限}有关.
+\end{remark}
+
+\begin{example}
+	{}
+	对于 $I = \varnothing$, 空图表 $F\colon I\to \mathcal C$ 的极限即是 $\mathcal C$ 的终对象.
+\end{example}
+
+\begin{example}
+	{(推出, 拉回)}
+	考虑 $I = \Lambda_2^2$ (见定义 \ref{simplicial-set-horn} 及其后的插图), 则 $F\colon I\to X$ 等同于两个态射 $x\to z$, $y\to z$. 称 $F$ 的极限为 $\infty$-\emph{拉回}, 简称\emph{拉回}, 记为 $x\times_z y$.
+	对偶地, 形如 $\Lambda_0^2$ 的图的余极限称为 $\infty$-\emph{推出}, 简称\emph{推出}.
+	
+	单纯集映射 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiWSJdLFswLDEsIloiXSxbMCwyXSxbMCwxXV0=
+	$\begin{tikzcd}[ampersand replacement=\&,sep=small]
+		X \& Y \\
+		Z
+		\arrow[from=1-1, to=2-1]
+		\arrow[from=1-1, to=1-2]
+	\end{tikzcd}$ 的\emph{同伦推出}为 $Y\sqcup_{\{0\}\times X}(\Delta^1\times X)\sqcup_{\{1\}\times X}Z$, 拓扑空间的同伦推出也可类似定义, 不过将 $\Delta^1$ 改为区间 $[0,1]$.
+\end{example}
 
 \subsection{$\operatorname{Hom}$ 函子, 预层与 $\infty$-米田引理}
 
@@ -472,17 +568,24 @@ $\infty$-范畴的另一种模型是用单纯范畴描述的, 其优点包括
 	
 \end{prop}
 
+\todo{自由余完备化}
+
+%\section{$\infty$-范畴: 公理化}
+
 \section{$\infty$-\topos{}}
 
 \todo{HTT Ch.6 $\infty$-\topos{}}
 
+
+
 \begin{definition}
 	{(自反局部化)}
-	设 $\mathcal X$ 为 $\infty$-范畴, $\mathcal S\subset \mathcal X$ 为子 $\infty$-范畴,
-	\todo{}
-	
-	这与普通范畴中的自反局部化 (定义 \ref{reflective-subcategory}) 完全类似.
+	设 $\mathcal C$ 为 $\infty$-范畴, 定义 $\mathcal C$ 的一个\emph{自反局部化}为函子 $a\colon \mathcal C\to \mathcal D$, 其具有全忠实的右伴随.
+	进一步, 若 $a$ 为正合函子 (保持有限极限), 则称之为\emph{正合局部化}.
+	这与普通范畴中的自反局部化 (定义 \ref{reflective-subcategory}) 在语法上完全相同.
 \end{definition}
+
+如下是 Grothendieck \topos{}的 $\infty$ 版本.
 
 \begin{definition}
 	{$\infty$-\topos{}}
@@ -491,11 +594,10 @@ $\infty$-范畴的另一种模型是用单纯范畴描述的, 其优点包括
 \end{definition}
 
 \begin{prop}
-	{($\infty$-\topos{}的等价定义)}
-	$\infty$-范畴 $\mathcal X$ 是 $\infty$-\topos{}当且仅当它满足如下 $\infty$-Giraud 公理:
-	\begin{itemize}
-		\item
-	\end{itemize}
+	{($\infty$-\topos{}的等价定义, $\infty$-Giraud 公理)}
+	$\infty$-\topos{}等价于局部小, 可表现, 余完备, 拉回保持余极限, 且内群胚有效的 $\infty$-范畴.
+	% Cisinski CSTT: 局部小, 小余极限, 小可达生成, 拉回保持余极限, 和无交, 内群胚有效.
+	% nLab: 可表现, 拉回保持余极限, 和无交, 内群胚有效.
 \end{prop}
 
 %\cite{DCCT}
@@ -546,6 +648,53 @@ $\infty$-层是层在 $\infty$-范畴中的类比. 正如层构成\topos{}, $\in
 \end{example}
 
 \section{$n$-范畴}
+
+\begin{definition}
+	[label={local-objects-infinity-category}]
+	{(局部对象)}
+	设 $\mathcal C$ 为 $\infty$-范畴, $S$ 为 $\mathcal C$ 中一族态射的集合, 称 $\mathcal C$ 的对象 $x$ 为 \emph{$S$-局部对象}是指对 $S$ 中任意态射 $f\colon a\to b$,
+	\[
+	f^*\colon \operatorname{Hom}_{\mathcal C}(b,x) \to \operatorname{Hom}_{\mathcal C}(a,x)
+	\]
+	为 $\infty$-群胚的等价.
+	这是定义 \ref{local-objects} 在 $\infty$-范畴中的类比.
+\end{definition}
+
+\begin{definition}
+	{(球面)}
+	归纳定义 $\infGpdinfcat$ 的 \emph{$n$ 维球面} $S^n\,(n\geq -1)$ 如下:
+	\begin{itemize}
+		\item $S^{-1}=\varnothing$;
+		\item 对 $n\geq -1$, $S^{n+1}$ 是如图所示的推出.
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJTXntufSJdLFswLDEsIioiXSxbMSwwLCIqIl0sWzEsMSwiU157bisxfSJdLFswLDFdLFsxLDNdLFswLDJdLFsyLDNdXQ==
+	\end{itemize}
+	\vspace{-6.5em}
+	\begin{flushright}
+		$\begin{tikzcd}[ampersand replacement=\&,column sep=small]
+			{S^{n}} \& {*} \\
+			{*} \& {S^{n+1}}
+			\arrow[from=1-1, to=2-1]
+			\arrow[from=2-1, to=2-2]
+			\arrow[from=1-1, to=1-2]
+			\arrow[from=1-2, to=2-2]
+		\end{tikzcd}$
+	\end{flushright}
+\end{definition}
+
+\begin{definition}
+	{($n$-群胚)}
+	对整数 $n\geq -2$, 定义 \emph{$n$-群胚}为 $\infGpdinfcat$ 中关于 $\{S^{n+1}\to *\}$ 的局部对象 (定义 \ref{local-objects-infinity-category}).
+\end{definition}
+
+\begin{example}
+	{(低维群胚的例子)}
+	在同伦等价的意义下,
+	\begin{itemize}
+		\item $(-2)$-群胚是一个点.
+		\item $(-1)$-群胚是空集或一个点.
+		\item $0$-群胚是集合, 也即离散群胚.
+	\end{itemize}
+\end{example}
 
 \subsection{东西, 结构, 性质}
 

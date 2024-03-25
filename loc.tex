@@ -38,6 +38,8 @@
 	\bigwedge A = \bigvee \big\{ b \colon b\leq a \ \forall a\in A\big\},
 	$$
 	可以证明\fm{}中任意交也存在, 即\fm{}是\emph{完备格} (complete lattice). 但由定义, \fm{}的态射不一定保持任意交.
+	\fm{}的结合律说明 $a\wedge({-})$ 保持任意并; 由偏序集的伴随函子定理 (命题 \ref{adjoint-functor-theorem-poset}),
+	$a\wedge({-})$ 有右伴随 $a\Rightarrow ({-})$, 因此我们得到\fm{}是\emph{Heyting 代数} (定义 \ref{Heyting-algebra-definition}), 从而是\emph{完备 Heyting 代数}. 但注意\fm{}的同态不一定是 Heyting 代数的同态, 即不一定保持 $\Rightarrow$ 运算. 保持 $\Rightarrow$ 运算的\fm{}同态对应位象的\emph{开映射} (命题 \ref{locale-open-map-preserves-implication}).
 \end{remark}
 
 \begin{definition}
@@ -61,7 +63,7 @@
 \begin{prop}
 	[label={morphism-of-locales-as-adjunction}]
 	{(位象态射的等价定义)}
-	位象的态射 $f\colon X\to Y$ 等同于一对伴随\footnotemark{}
+	位象的态射 $f\colon X\to Y$ 等同于一对伴随%\footnotemark{}
 	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhjYWwgTyhYKSJdLFsxLDAsIlxcbWF0aGNhbCBPKFkpIl0sWzEsMCwiZl4qIiwyLHsib2Zmc2V0IjoyfV0sWzAsMSwiZl8qIiwyLHsib2Zmc2V0IjoyfV0sWzIsMywiIiwyLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
 	\[\begin{tikzcd}[ampersand replacement=\&]
 		{\mathcal O(X)} \& {\mathcal O(Y),}
@@ -71,7 +73,7 @@
 	\end{tikzcd}\]
 	满足 $f^*$ 保持有限交. (注意, $f_*$ 不一定是\fm{}的同态, 即不一定保持任意并.)
 \end{prop}
-\footnotetext{这个伴随也可理解为位象构成的 $2$-范畴中的伴随 (定义 \ref{adjoints-in-2-categories}).}
+%\footnotetext{这个伴随也可理解为位象构成的 $2$-范畴中的伴随 (定义 \ref{adjoints-in-2-categories}).}
 \begin{proof}
 	首先, 若有上述伴随 $f^*\dashv f_*$, 则 $f^*$ 保持任意并 (左伴随保持余极限, 命题 \ref{adjoints-preserve-limits}).
 	
@@ -84,7 +86,7 @@
 	f^*f_*(U) = \bigvee \{f^*(V)\mid f^*(V)\leq U\} \leq U.
 	\]
 	(这是伴随的余单位.)
-	由此可得 $V\leq f_*(U) \Leftrightarrow f^*(V)\leq U$, 即 $f^*\dashv f_*$. 这个结论是 ``伴随函子定理'' 的特例.
+	由此可得 $V\leq f_*(U) \Leftrightarrow f^*(V)\leq U$, 即 $f^*\dashv f_*$. 这个结论是 ``伴随函子定理'' (注 \ref{adjoint-functor-theorem-poset}) 的特例.
 \end{proof}
 
 \begin{example}
@@ -113,7 +115,7 @@
 	\mathcal O(\operatorname{Spec}A):= \big\langle U_f\colon f\in A\mid U_0 = \bot, U_1 = \top,
 	U_{f+g} \leq U_f \vee U_g, U_{fg} = U_f \wedge U_g \big\rangle.
 	$$
-	(\fm{}就像群, 环等代数结构一样, 可使用生成元和关系刻画, 并且可由给定生成元的 ``自由代数'' 的商得到.)
+	(\fm{}就像群, 环等代数结构一样, 可使用生成元和关系刻画, 并且可由给定生成元的 ``自由代数'' 的商得到, 见注 \ref{frame-from-generators-relations}.)
 	
 	将 $U_f$ 想象为一个空间上函数 $f$ ``非零'' 的地方,
 	$f+g$ 非零的地方包含于 $f$ 与 $g$ 各自非零的地方的并,
@@ -129,13 +131,22 @@
 %\end{example}
 
 \begin{example}
-	{(点作为位象)}
-	单点空间 $\text{pt}$ 对应的位象记作 $1 = \operatorname{Open}(\text{pt})$.
-	它对应的位格是两个元素的全序集 $\{\top,\bot\}$ ($\bot < \top$).
-	位象 $1$ 也称为\emph{终位象} (terminal locale), 因为它是 $\mathsf {Loc}$ 的终对象.
+	[label={initial-locale}]
+	{(空位象)}
+	空空间 $\varnothing$ 作为位象, 对应的\fm{}是一个元素的全序集 $\{\bot\}$.
+	它是 $\mathsf {Loc}$ 的始对象, $\mathsf {Frm}$ 的终对象.
 \end{example}
 
 \begin{example}
+	[label={terminal-locale}]
+	{(点作为位象)}
+	单点空间 $\text{pt}$ 对应的位象记作 $1 = \operatorname{Open}(\text{pt})$.
+	它对应的位格是两个元素的全序集 $\{\top,\bot\}$ ($\bot < \top$).
+	位象 $1$ 也称为\emph{终位象} (terminal locale), 因为它是 $\mathsf {Loc}$ 的终对象, $\mathsf {Frm}$ 的始对象.
+\end{example}
+
+\begin{example}
+	[label={Sierpinski-space-locale-example}]
 	{(Sierpi\'nski 空间)}
 	定义 \emph{Sierpi\'nski 空间} $S$ 是以 $\{\top,\bot\}$ 为底层集合的拓扑空间, 有三个开集 $\varnothing, \{\top\}, \{\top,\bot\}$. 那么 $\mathcal O(S)$ 是三个元素的全序集.
 	位象 $X$ 到 $S$ 的态射一一对应于 $X$ 的开子空间, 因为\fm{}态射  $\mathcal O(S)\to\mathcal O(X)$ 由 $\{\top\}$ 的像唯一决定.
@@ -188,6 +199,10 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 		\top &\ \ \ p\in\varphi(U)\\
 		\bot &\ \ \ p\notin \varphi(U)
 	\end{aligned}}\Bigr.\,\Big).
+	\]
+	容易验证这给出了自然同构
+	\[
+	\operatorname{Hom}_{\mathsf {Top}}(S,\operatorname{Pt}(X)) \simeq\operatorname{Hom}_{\mathsf {Frm}}(\mathcal O(X),\operatorname{Open}(S)) = \operatorname{Hom}_{\mathsf {Loc}} (\operatorname{Open}(S),X).
 	\]
 \end{proof}
 
@@ -246,7 +261,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 
 \section{位象的几何性质}
 
-\subsection{子位象与内核}
+\subsection{子位象}
 
 正如许多 ``空间'' 的概念 (拓扑空间, 向量空间, 概形 ...) 一样, 位象有一种自然的 ``子空间'' 的概念; 当然, 子位象不是通过点集, 而是通过开集的代数定义的. 注意区分底层集合的单 (满) 射与范畴论意义上的单 (满) 态射. 拓扑空间的子空间不等于范畴论意义上的单态射; 类似地, 子位象的定义不是 $\mathsf {Loc}$ 中的单态射, 而是其中的\emph{正则单射} (定义 \ref{regular-epi-and-mono}), 即 $\mathsf {Frm}$ 中的\emph{正则满射}.
 
@@ -270,7 +285,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\end{itemize}
 \end{proof}
 
-上面的条件 $(3)$ 是自反子范畴的性质 (\ref{reflective-counit-isomorphism}) 的特例.
+上面的条件 $(3)$ 是自反子范畴的性质 (\ref{adjoint-full-faithful-unit-iso}) 的特例.
 
 对于子位象 $Y\to X$, $\mathcal O(Y)$ 既可视为 $\mathcal O(X)$ 的商, 又可视为其子集. 以下两个命题分别描述了它作为商集和子集的性质.
 
@@ -343,7 +358,16 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\end{enumerate}
 \end{prop}
 
-\subsection{开子位象与闭子位象}
+\begin{example}
+	{(随机元素的子位象)}
+	Alex Simpson 的文章 \cite{SIMPSON20121642} 引入了位象\footnote{准确地说, 是 $\sigma$-位象}上的测度 $\mu\colon \mathcal O(X)\to [0,+\infty]$. 对于位象 $X$ 上的概率测度 $\mu$, 存在一个最大的测度为 $1$ 的子位象 $\operatorname{Ran}_\mu(X)$, 其对应的等价关系为
+	$$
+	U\equiv_{\operatorname{Ran}_\mu(X)} V \quad \text{当且仅当}\quad \mu(U\cap V) = \mu(U\cup V).
+	$$
+	使用这个结论可以构造 ``随机序列的位象'', 它是 $0$ 和 $1$ 组成的所有可数序列的空间的 ``子空间'', 但没有任何一个序列属于这个子空间, 因为 ``一个确定的序列永远不是随机序列''. 位象上的测度还可解决 ``分球悖论'': 分球悖论是指球面上不可能给所有子集定义一个旋转不变的测度, 因为一个球可以分成若干不相交的部分, 然后拼成两个同样大的球. 以位象的观点, 这些部分实际上是相交的, 从而不会造成矛盾.
+\end{example}
+
+\subsubsection{开子位象与闭子位象}
 
 对于位象 $X$, $\mathcal O(X)$ 的元素可视为其开子空间.
 
@@ -384,8 +408,8 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 		% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXHtVXzFcXGluXFxtYXRoY2FsIE8oWClcXG1pZCBVXzFcXGxlcSBXXFx9Il0sWzEsMCwiXFx7VV8yXFxpblxcbWF0aGNhbCBPKFgpXFxtaWQgVV8yPShXXFxSaWdodGFycm93IFVfMilcXH0iXSxbMCwxLCJVXzFcXG1hcHN0byAoV1xcUmlnaHRhcnJvdyBVXzEpIiwyLHsib2Zmc2V0Ijo1fV0sWzEsMCwiVV8yXFxtYXBzdG8gKFdcXGxhbmQgVV8yKSIsMix7Im9mZnNldCI6NX1dLFsyLDMsIlxcc2ltZXEiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJub25lIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
 		\[\begin{tikzcd}[ampersand replacement=\&]
 			{\{U_1\in\mathcal O(X)\mid U_1\leq W\}} \& {\{U_2\in\mathcal O(X)\mid U_2=(W\Rightarrow U_2)\}}
-			\arrow[""{name=0, anchor=center, inner sep=0}, "{U_1\mapsto (W\Rightarrow U_1)}"', shift right=5, from=1-1, to=1-2]
-			\arrow[""{name=1, anchor=center, inner sep=0}, "{U_2\mapsto (W\land U_2)}"', shift right=5, from=1-2, to=1-1]
+			\arrow[""{name=0, anchor=center, inner sep=0}, "{U_1\mapsto (W\Rightarrow U_1)}"', shift right=4, from=1-1, to=1-2]
+			\arrow[""{name=1, anchor=center, inner sep=0}, "{U_2\mapsto (W\land U_2)}"', shift right=4, from=1-2, to=1-1]
 			\arrow["\simeq"{description}, draw=none, from=0, to=1]
 		\end{tikzcd}\]
 		\item 定义 $(3),(4)$ 等价是因为 $(W\Rightarrow U) = (W\Rightarrow (W\land U))$,
@@ -411,14 +435,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\end{itemize}
 \end{definition}
 
-\begin{example}
-	{(随机元素的子位象)}
-	Alex Simpson 的文章 \cite{SIMPSON20121642} 引入了位象\footnote{准确地说, 是 $\sigma$-位象}上的测度 $\mu\colon \mathcal O(X)\to [0,+\infty]$. 对于位象 $X$ 上的概率测度 $\mu$, 存在一个最大的测度为 $1$ 的子位象 $\operatorname{Ran}_\mu(X)$, 其对应的等价关系为
-	$$
-	U\equiv_{\operatorname{Ran}_\mu(X)} V \quad \text{当且仅当}\quad \mu(U\cap V) = \mu(U\cup V).
-	$$
-	使用这个结论可以构造 ``随机序列的位象'', 它是 $0$ 和 $1$ 组成的所有可数序列的空间的 ``子空间'', 但没有任何一个序列属于这个子空间, 因为 ``一个确定的序列永远不是随机序列''. 位象上的测度还可解决 ``分球悖论'': 分球悖论是指球面上不可能给所有子集定义一个旋转不变的测度, 因为一个球可以分成若干不相交的部分, 然后拼成两个同样大的球. 以位象的观点, 这些部分实际上是相交的, 从而不会造成矛盾.
-\end{example}
+
 
 %\subsection{测度与随机性}
 %
@@ -456,6 +473,8 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 %\todo{}
 
 \newcommand{\nc}{内核}
+
+\subsubsection{子位象与\nc{}}
 
 下面引入\emph{\nc{}} (nucleus) 的概念. 它是\topos{}中 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}) 和层化在位象中的类比.
 
@@ -646,6 +665,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 前面研究了位象的正则单射. 位象的满射与之并非完全对偶. 不同之处在于 $\mathsf {Frm}$ 中的单态射等同于底层集合上的单射. 这是因为遗忘函子 $\mathsf {Frm}\to\mathsf {Set}$ 保持极限.
 
 \begin{propdef}
+	[label={surjection-of-locales}]
 	{(位象的满射)}
 	对于位象的态射 $f\colon X\to Y$, 以下条件等价:
 	\begin{enumerate}[(1)]
@@ -663,9 +683,53 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\end{itemize}
 \end{proof}
 
+\begin{prop}
+	[label={locale-epi-mono-decomposition-existence}]
+	{(位象的满--单分解, 存在性)}
+	设 $f\colon X\to Y$ 为位象态射.
+	存在 $Y$ 上的内核 $j$ 使得 $f$ 分解为满射 $X\to Y_j$ 与嵌入 $Y_j\hookrightarrow Y$ 的复合.
+\end{prop}
+\begin{proof}
+	令 $j = f_*f^*$ 为 $f$ 诱导的内核, 则有 $f^* = f^*f_*f^* = f^*j$.
+	定义 $p\colon X\to Y_j$, $p^* = f^*\big|_{\mathcal O(Y_j)}$ (回忆 $\mathcal O(Y_j) = \{U\in\mathcal O(Y)\mid j(U)=U\}$),
+	则 $f^*=p^*j$, $f$ 分解为 $X\overset{p}{\to} Y_j \hookrightarrow Y$.
+	对任意 $U,V\in\mathcal O(Y_j)$, 若 $p^*(U)=p^*(V)$, 则 $U=j(U)=j(V)=V$, 这说明 $p^*$ 单, 即 $p$ 为满射.
+\end{proof}
+
+\begin{prop}
+	{(位象的满--单分解, 唯一性)}
+	设 $f\colon X\to Y$ 为位象态射, $f$ 有两个分解 $f=X\overset{p}{\to} A\overset{u}{\to} Y = X\overset{q}{\to} B\overset{v}{\to} Y$.
+	假设 $v$ 为嵌入, $p$ 为满射, 那么存在唯一的态射 $g\colon A\to B$ 使下图交换;
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJYIl0sWzEsMCwiQSJdLFsyLDEsIlkiXSxbMSwyLCJCIl0sWzAsMSwicCJdLFsxLDIsInUiXSxbMCwzLCJxIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzMsMiwidiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoiYm90dG9tIn19fV0sWzEsMywiXFxleGlzdHMgISIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&,row sep=small]
+		\& A \\
+		X \&\& Y \\
+		\& B
+		\arrow["p", two heads, from=2-1, to=1-2]
+		\arrow["u", from=1-2, to=2-3]
+		\arrow["q"', from=2-1, to=3-2]
+		\arrow["v"', hook', from=3-2, to=2-3]
+		\arrow["{\exists ! g}"{description}, dashed, from=1-2, to=3-2]
+	\end{tikzcd}\]
+	进一步假设 $u$ 为嵌入, $q$ 为满射, 则 $g$ 为同构.
+\end{prop}
+\begin{proof}
+	对 $v$ 使用命题 \ref{locale-epi-mono-decomposition-existence},
+	得分解 $v=B\overset{r}{\to} Y_j\overset{i}{\hookrightarrow} Y$, 那么 $r$ 既单又满, 故为同构.
+	不妨设 $B = Y_j$, $v^* = j$.
+	
+	注意到对于位象态射 $f\colon X\to Y$, $f$ 穿过 $Y_j$ 当且仅当 $f^*$ 穿过 $j$, 当且仅当 $f^* j = f^*$.
+	代入 $f=up$ 得 $p^*u^* j = p^*u^*$.
+	由 $p^*$ 为单射得 $u^*j = u^*$, 故 $u$ 穿过 $Y_j$. 由于 $Y_j\to Y$ 为单射, 态射 $g\colon A\to B$ 当然是唯一的.
+	因为 $vgp = up = vq$, $v$ 为嵌入, 所以 $gp=q$.
+	
+	进一步假设 $u$ 为嵌入, $q$ 为满射, 则 $u=vg$ 推出 $g$ 单, $q=gp$ 推出 $g$ 满, 从而 $g$ 为同构.
+\end{proof}
+
 \subsection{开映射}
 
-\todo{SGL p502}
+% SGL p502
+% Elephant C1.5.3
 
 拓扑空间的开映射 $f\colon X\to Y$ 是指将开集映为开集的映射. 对开集 $U\in\operatorname{Open}(X)$, 存在开集
 $f_!(U) \in \operatorname{Open}(Y)$ 构成开集 $U$ 在 $Y$ 中的像, 即逆像包含 $U$ 的最小开集, 这个性质可表述为 $f_!$ 是 $f^*$ 的左伴随:
@@ -678,11 +742,19 @@ f_!(U\cap f^*(V)) = f(U)\cap V.
 \]
 
 \begin{definition}
+	[label={locale-open-map}]
 	{}
-	对于位象的态射 $f\colon X\to Y$, 若 $f^*\mathcal O(Y)\to \mathcal O(X)$ 有左伴随 $f_!$, 且满足 Frobenius 恒等式 $f_!(U\cap f^*(V)) = f(U)\cap V$, 则称 $f$ 为\emph{开映射}.
+	对于位象的态射 $f\colon X\to Y$, 若 $f^* \colon \mathcal O(Y)\to \mathcal O(X)$ 有左伴随 $f_!$, 且满足 Frobenius 恒等式 $f_!(U\cap f^*(V)) = f(U)\cap V$, 则称 $f$ 为\emph{开映射}.
 \end{definition}
 
-
+\begin{prop}
+	[label={locale-open-map-preserves-implication}]
+	{}
+	位象的态射 $f\colon X\to Y$ 为开映射当且仅当 $f^*$ 为\emph{完备 Heyting 代数}的同态, 即 $f^*$ 保持任意交, 且保持 $\Rightarrow$ 运算.
+\end{prop}
+\begin{proof}
+	$f^*$ 保持任意交当且仅当 $f^*$ 有左伴随 (命题 \ref{adjoint-functor-theorem-poset}), 而 $f^*$ 保持 $\Rightarrow$ 运算是 Frobenius 互反律的性质 (命题 \ref{ccc-Frobenius-pullback-preserve-exp}).
+\end{proof}
 
 \section{位象与逻辑}
 
@@ -690,24 +762,36 @@ f_!(U\cap f^*(V)) = f(U)\cap V.
 
 \philoquote{[A locale is a] propositional geometric theory pretending to be a space.}{Steven Vickers}
 
-建议在阅读本节之前阅读附录 \ref{first-order-languages} 节, 尤其关注几何逻辑的内容.
-
 % frame = complete Heyting algebra (但作为范畴不同构)
 
-我们将建立如下对应.
+%我们将建立如下对应.
+%
+%\begin{itemize}
+%	\item 位象 = 命题逻辑理论
+%	\item 开集 = 命题
+%	\item 点 = 模型
+%\end{itemize}
 
-\begin{itemize}
-	\item 位象 = 命题逻辑理论
-	\item 开集 = 命题
-	\item 点 = 模型
-\end{itemize}
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXHRleHR756m66Ze0fSJdLFsxLDAsIlxcdGV4dHvnkIborrp9Il0sWzEsMSwiXFx0ZXh0e+aooeWei30iXSxbMCwxLCJcXHRleHR754K5fSJdLFswLDIsIlxcdGV4dHvlvIDpm4Z9Il0sWzEsMiwiXFx0ZXh0e+WRvemimH0iXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+\[\begin{tikzcd}[ampersand replacement=\&,row sep=small]
+	{\text{空间}} \& {\text{理论}} \\
+	{\text{点}} \& {\text{模型}} \\
+	{\text{开集}} \& {\text{命题}}
+	\arrow[dashed, no head, from=1-1, to=1-2]
+	\arrow[dashed, no head, from=2-1, to=2-2]
+	\arrow[dashed, no head, from=3-1, to=3-2]
+\end{tikzcd}\]
+
+建议在阅读本节之前阅读附录 \ref{first-order-languages} 节.
+%, 尤其关注几何逻辑的内容.
+
 
 \subsection{经典命题逻辑与 Boole 代数}
 
 Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是一个理论中的 ``命题的代数''; 在经典逻辑的情形, 它就是 \emph{Boole 代数} (定义 \ref{Boolean-algebra}). 根据 Stone 表示定理, Boole 代数在代数--几何对偶中对应 \emph{Stone 空间}.
 
 设 $\Sigma$ 是由若干命题符号 $p,q,r,\cdots$ 组成的符号表\footnote{在定义 \ref{def-first-order-signature} 的框架中, 我们可以说 $\Sigma$ 包括 $0$ 个类型, $0$ 个函数符号 (固然, 因为 $\Sigma$ 中没有类型), 以及若干个 $0$ 元关系符号 $p,q,r,\cdots$. 这样的理论也成为\emph{零阶理论} (zeroth-order theory).}.
-定义 $\mathsf {Sen}_\Sigma$ 为 $\Sigma$ 上由 $\lor,\land,\neg,\Rightarrow,\top,\bot$ 组成的公式\footnote{这里的公式也可以放在定义 \ref{formula} 的框架中. 注意, 在这个框架中没有等式 $p=q$, 因为 $p,q$ 不是某个类型的项 ($\Sigma$ 中没有类型), 而是 $0$ 元关系符号.}的集合, 包括 $(p\land q)\Rightarrow r$, $p\lor\neg p$, $p\Rightarrow\bot$ 等等.
+定义 $\mathsf {Sen}_\Sigma$ 为 $\Sigma$ 上由 $\lor$, $\land$, $\neg$, $\Rightarrow$, $\top$, $\bot$ 组成的公式\footnote{这里的公式也可以放在定义 \ref{formula} 的框架中. 注意, 在这个框架中没有等式 $p=q$, 因为 $p,q$ 不是某个类型的项 ($\Sigma$ 中没有类型), 而是 $0$ 元关系符号.}的集合, 包括 $(p\land q)\Rightarrow r$, $p\lor\neg p$, $p\Rightarrow\bot$ 等等.
 
 \newcommand{\LA}{\mathcal {LA}}
 
@@ -858,7 +942,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 
 \subsection{几何逻辑与\fm{}}
 
-仍设 $\Sigma$ 是由若干命题符号组成的符号表. 回忆\emph{几何公式}由命题符号, 真 $\top$, 有限合取 $\land$ 以及无穷析取 $\bigvee$ 构成, 由此还包含假 $\bot=\bigvee\varnothing$, 参见定义 \ref{kinds-of-formulae}. 一个\emph{几何理论}由若干相继式 $\phi\vdash\psi$ 组成, 其中 $\phi,\psi$ 为几何公式. 几何逻辑允许使用如下推理规则,
+仍设 $\Sigma$ 是由若干命题符号组成的符号表. 回忆\emph{几何公式}由命题符号, 真 $\top$, 有限合取 $\land$ 以及无穷析取 $\bigvee$ 构成, 由此还包含假 $\bot=\bigvee\varnothing$, 参见定义 \ref{kinds-of-formulae}. 一个\emph{几何命题理论} (geometric propositional theory) 由若干相继式 $\phi\vdash\psi$ 组成, 其中 $\phi,\psi$ 为几何公式. 几何逻辑允许使用如下推理规则,
 \begin{itemize}
 	\item 有限合取规则,
 	\[
@@ -881,13 +965,17 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 
 \begin{definition}
 	{}
-	设 $\mathbb T$ 为 $\Sigma$ 上的几何理论. 定义 $\mathbb T$ 的 \emph{Lindenbaum 代数} $\LA_{\mathbb T}$ 为 $\Sigma$ 上\emph{几何公式}的 $\mathbb T$-\emph{可证等价类}构成的\fm{}.
+	设 $\mathbb T$ 为 $\Sigma$ 上的几何理论. 定义 $\mathbb T$ 的 \emph{Lindenbaum 代数} $\LA_{\mathbb T}$ 为 $\Sigma$ 上\emph{几何公式}的 $\mathbb T$-\emph{可证等价类}构成的\fm{}. 当然, 其上的序关系 $\leq$ 是 $\vdash$.
 \end{definition}
 
 \begin{remark}
-	{}
-	上面的推理规则保证公式的可证等价类构成\fm{}; 它可视为由 $\Sigma$ 中的命题符号作为生成元, $\mathbb T$ 中的公理作为关系生成的\fm{}. 向一个理论 $\mathbb T$ 添加公理, 相当于添加\fm{}生成元之间的关系, 因此对应于取 $\LA_{\mathbb T}$ 的子位象 (定义 \ref{sublocales}).
+	[label={frame-from-generators-relations}]
+	{(生成元与关系)}
+	上面的推理规则保证公式的可证等价类构成\fm{}; 它可视为由 $\Sigma$ 中的命题符号作为\emph{生成元}, $\mathbb T$ 中的公理作为\emph{关系}生成的\fm{}. 这里的关系可以是不等式 $p\leq q$, 也可以是等式 $p=q$ (两者可以互相转化, $p\leq q$ 等价于 $p\land q = p$, $p=q$ 等价于 $p\leq q,q\leq p$). 向一个理论 $\mathbb T$ 添加公理, 相当于添加\fm{}生成元之间的关系, 因此对应于取 $\LA_{\mathbb T}$ 的子位象 (定义 \ref{sublocales}).
+	
+	与 Lawvere 理论不同, \fm{}的结构包含了任意集合大小的运算, 一般而言这可能导致所有公式的 ``集合'' 过大而不构成集合. 但\fm{}的特殊性在于, 任何公式都 (在 $\mathbb T$-可证的意义下) 等同于 $\Sigma$ 中的符号先取有限交再任意并的形式, 正如点集拓扑学中由\emph{子基} (subbasis) 生成拓扑一样. 因此全体公式的可证等价类确实是一个集合.
 \end{remark}
+
 
 \begin{definition}
 	{(几何理论的模型)}
@@ -900,11 +988,85 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 	几何理论 $\mathbb T$ 的 $A$-模型一一对应于\fm{}同态 $\LA_{\mathbb T}\to A$. 特别地, $\mathbb T$ 的标准模型一一对应于位象 $\LA_{\mathbb T}$ 的\emph{点}.
 \end{prop}
 
-$\LA_{\mathbb T}$ 对应的位象可想象为 ``$\mathbb T$ 的模型的空间''; 上述命题印证了这一直观: ``$\mathbb T$ 的模型的空间'' 中的点正是 $\mathbb T$ 的模型. 但是一个空间不能由它的点完全决定, 正如一个理论不能由它的模型完全决定.
+\begin{remark}
+	[label={classifying-locale}]
+	{(直观: 分类空间)}
+	$\LA_{\mathbb T}$ 对应的位象可想象为 ``$\mathbb T$ 的模型的空间'', 它是一种 ``分类空间''; 上述命题印证了这一直观: ``$\mathbb T$ 的模型的空间'' 中的点正是 $\mathbb T$ 的模型. 但是一个空间不能由它的点完全决定, 正如一个理论不能由它的 (标准) 模型完全决定.
+\end{remark}
+
+\begin{example}
+	{(一些简单的几何理论)}
+	\begin{itemize}
+		\item 记 $\mathbb T_{-1}$ 为零个命题符号与一条公理 $\top\vdash \bot$ 构成的理论, 这是一个\emph{不相容} (inconsistent) 的理论,
+		\[
+		\LA_{\mathbb T_{-1}} = \{\bot\},
+		\]
+		它对应空位象 $\varnothing$ (例 \ref{initial-locale}).
+		\item 记 $\mathbb T_0$ 为零个命题符号与零条公理构成的理论, 则
+		\[
+		\LA_{\mathbb T_0} = \{\bot \to \top\},
+		\]
+		它对应终位象 $1$ (例 \ref{terminal-locale}).
+		\item 记 $\mathbb T_1$ 为一个命题符号 $p$ 与零条公理构成的理论, 则
+		\[
+		\LA_{\mathbb T_1} =
+		\{
+		\bot \to p \to \top
+		\}.
+		\]
+		它是一个元素生成的自由\fm{}, 对应 Sierpi\'nski 空间 $S$ (例 \ref{Sierpinski-space-locale-example}).
+		$S$ 有两个点 $\top, \bot$, 分别对应 $\mathbb T_1$ 的两个标准模型.
+		\item 记 $\mathbb T_2$ 为两个命题符号 $p,q$ 与零条公理构成的理论, 则
+		\[
+		\LA_{\mathbb T_2} =
+		\left\{
+		% https://q.uiver.app/#q=WzAsNixbMCwxLCJcXGJvdCJdLFsxLDEsInBcXGxhbmQgcSJdLFsyLDAsInAiXSxbMiwyLCJxIl0sWzMsMSwicFxcbG9yIHEiXSxbNCwxLCJcXHRvcCJdLFswLDFdLFsxLDJdLFsyLDRdLFs0LDVdLFsxLDNdLFszLDRdXQ==
+		\begin{tikzcd}[ampersand replacement=\&,sep=tiny]
+			\&\& p \\
+			\bot \& {p\land q} \&\& {p\lor q} \& \top \\
+			\&\& q
+			\arrow[from=2-1, to=2-2]
+			\arrow[from=2-2, to=1-3]
+			\arrow[from=1-3, to=2-4]
+			\arrow[from=2-4, to=2-5]
+			\arrow[from=2-2, to=3-3]
+			\arrow[from=3-3, to=2-4]
+		\end{tikzcd}
+		\right\}.
+		\]
+		它是两个元素生成的自由\fm{}, 对应位象 $S\times S$.
+		$S\times S$ 有四个点 $(\top,\top), (\top,\bot), (\bot,\top), (\bot,\bot)$, 分别对应 $\mathbb T_2$ 的四个标准模型.
+		\item 记 $\mathbb T_3$ 为两个命题符号 $p,q$ 与一条公理 $p\vdash q$ 构成的理论, 则
+		\[
+		\LA_{\mathbb T_3} =
+		\{
+		\bot \to p \to q \to \top
+		\}.
+		\]
+		它是 $\LA_{\mathbb T_2}$ 在等价关系 $p\land q\equiv p,\, q\equiv p\lor q$ 下的商, 对应 $S\times S$ 的一个子位象,
+		其中有三个点
+		$(\top,\top), (\bot,\top), (\bot,\bot)$, 分别对应 $\mathbb T_3$ 的三个标准模型.
+	\end{itemize}
+\end{example}
+
+\begin{prop}
+	{}
+	对任意位象 $X$, 都存在一个几何理论 $\mathbb T_X$ 以 $\mathcal O(X)$ 为 Lindenbaum 代数.
+\end{prop}
+\begin{proof}
+	定义理论 $\mathbb T_{X}$ 包含命题符号 $P_{U}\,(U\in \mathcal O(X))$, 且有如下公理.
+	\begin{itemize}
+		\item $\vdash P_{\top}$;
+		\item 对 $\mathcal O(X)$ 中每两个满足 $U\leq V$ 的元素, 有一条公理 $P_U \vdash P_V$;
+		\item 对 $\mathcal O(X)$ 中每两个元素 $U,V$, 有一条公理 $P_U \land P_V \vdash P_{U\land V}$;
+		\item 对 $\mathcal O(X)$ 中每一族元素 $\{U_i\}$, 有一条公理 $P_{\bigvee_i U_i} \vdash \bigvee_i P_{U_i}$.
+	\end{itemize}
+	容易看到, 几何公式的 $\mathbb T_{X}$-可证等价类一一对应于 $\mathcal O(X)$ 的元素, 且逻辑连接词 $\land,\bigvee$ 与\fm{}中的结构吻合.
+\end{proof}
 
 \begin{example}
 	{(实数位象)}
-	本例介绍一个几何理论 $\mathbb T_{\mathbb{R}}$, 其标准模型为实数 (Dedekind 分割), 其 Lindenbaum 代数对应实数的位象. 理论 $\mathbb T_{\mathbb{R}}$ 中包含命题符号 $P_{a,b}\,(a,b\in \mathbb{Q})$, 意指 ``属于开区间 $(a,b)$'', 有如下的公理:
+	实数位象可由如下几何理论 $\mathbb T_{\mathbb{R}}$ 给出: 其中包含命题符号 $P_{a,b}\,(a,b\in \mathbb{Q})$, 直观为 ``某实数属于开区间 $(a,b)$'', 且有如下的公理.
 	\begin{itemize}
 		\item 对每组 $a,a',b,b'\in\mathbb{Q}$, 有两条公理
 		\[
@@ -916,5 +1078,17 @@ $\LA_{\mathbb T}$ 对应的位象可想象为 ``$\mathbb T$ 的模型的空间''
 		\top\vdash\bigvee\{P_{q-\varepsilon,q+\varepsilon}\mid q\in \mathbb{Q}\}.
 		\]
 	\end{itemize}
+	理论 $\mathbb T_{\mathbb{R}}$ 的一个标准模型为一个实数 (由 Dedekind 分割定义).
 \end{example}
 % sublocale 与 product locale 对应的理论是什么
+
+
+%\subsection{分类位象}
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHRleHR76Zu26Zi26YC76L6RfSJdLFswLDEsIlxcdGV4dHtMaW5kZW5iYXVtLS1UYXJza2kg5Luj5pWwfSJdLFsxLDAsIlxcdGV4dHvkuIDpmLbpgLvovpF9Il0sWzEsMSwiXFx0ZXh0e+WIhuexu1xcdG9wb3N7fX0iXSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFswLDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In19fV1d
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\text{零阶逻辑}} \& {\text{Lindenbaum--Tarski 代数}} \\
+	{\text{一阶逻辑}} \& {\text{分类\topos{}}}
+	\arrow[squiggly, from=1-2, to=2-2]
+	\arrow[squiggly, from=1-1, to=2-1]
+\end{tikzcd}\]

@@ -6,12 +6,12 @@
 
 \begin{axiom}
 	{(空间)}
-	综合微分几何所谓的\emph{空间} (或称\emph{集合}) 是一个固定的\topos{} $\mathsf E$ 中的对象; \emph{光滑映射} (或称\emph{映射}) 是 $\mathsf E$ 中的态射.
+	综合微分几何所谓的\emph{空间} (或称\emph{集合}) 是一个固定的\topos{} $\mathcal E$ 中的对象; \emph{光滑映射} (或称\emph{映射}) 是 $\mathcal E$ 中的态射.
 \end{axiom}
 
 \begin{axiom}
 	{(直线)}
-	综合微分几何所谓的\emph{直线}是 $\mathsf E$ 中一个固定的环 $R$.
+	综合微分几何所谓的\emph{直线}是 $\mathcal E$ 中一个固定的环 $R$.
 \end{axiom}
 
 \begin{remark}
@@ -283,6 +283,7 @@ $$
 
 \begin{remark}
 	{}
+	\todo{写到前言?}
 	至此, 我感到有必要介绍对待层的一种观点或一套术语. 范畴 $\mathsf{R}$ (这里是某种环范畴) 到 $\mathsf {Set}$ 的函子又称 \emph{$\mathsf {R}$ 上的变集合} (varying set over $\mathsf R$, 见 \cite{SDG-Lavendhomme} 8.3 节, 回忆 ``变集范畴'' \ref{varying-set-topos}),
 	$\mathsf R$ 的每个对象称为一个\emph{阶段} (stage), $\mathsf R$ 的态射称为阶段之间的\emph{转移} (transition), 对于 $\mathsf R$ 的对象 $A$ 与函子 $X\colon \mathsf R\to\mathsf {Set}$, $X(A)$ 的元素称为变集合 $X$ 在阶段 $A$ 的元素.
 	
@@ -303,6 +304,7 @@ $\mathbb{R}$-代数上的运算是多项式运算; 若将多项式运算扩充�
 \end{definition}
 
 \begin{remark}
+	[label={remark-smooth-algebra-R-algebra}]
 	{}
 	如上定义的 $C^\infty$-代数首先是 $\mathbb{R}$-代数: 考虑 $0$ 元函数 $\mathbb{R}^0\to \mathbb{R}$ 就得到了常量 $A^0\to A$,
 	考虑加法与乘法函数 $+,\times\colon \mathbb{R}^2\to \mathbb{R}$ 就得到 $A$ 上的加法与乘法, 考虑映射 $\mathbb{R}^3\to \mathbb{R}, (x,y,z)\mapsto x(y+z) = xy+xz$, 使用 $f\mapsto A(f)$ 保持复合的条件, 就得到 $A$ 上的分配律, 如此这般.
@@ -327,9 +329,12 @@ $\mathbb{R}$-代数上的运算是多项式运算; 若将多项式运算扩充�
 	光滑流形上一点处的光滑函数芽 (定义 \ref{germ-and-stalk}) 构成光滑代数.
 \end{example}
 
-我们需要有限生成 $C^\infty$-代数的概念. 类比于 $\mathbb{R}[x_1,\cdots,x_n]$ 是 $n$ 个元素生成的自由 $\mathbb{R}$-代数 (代数是指交换含幺代数), 有如下命题.
+%\todo{使用一般 Lawvere 代数中有限生成的概念}
+%我们需要有限生成 $C^\infty$-代数的概念.
+类比于 $\mathbb{R}[x_1,\cdots,x_n]$ 是 $n$ 个元素生成的自由 $\mathbb{R}$-代数 (代数是指交换含幺代数), 有如下命题.
 
 \begin{prop}
+	[label={freely-generated-smooth-algebra}]
 	{}
 	$C^\infty (\mathbb{R}^n)$ 是 $n$ 个元素生成的\emph{自由 $C^\infty$-代数}.
 \end{prop}
@@ -349,7 +354,7 @@ $\mathbb{R}$-代数上的运算是多项式运算; 若将多项式运算扩充�
 
 \newcommand{\locus}{处所}
 
-\todo{有限表现 vs 有限生成}
+%\todo{有限表现 vs 有限生成}
 
 \begin{definition}
 	{(光滑\locus{})}
@@ -361,12 +366,7 @@ $\mathbb{R}$-代数上的运算是多项式运算; 若将多项式运算扩充�
 	记 $\ell A$ 为 $A$ 在对偶范畴中的化身. $\ell$  是 $\operatorname{Spec}$ 在光滑代数范畴中的类比.
 \end{definition}
 
-\begin{definition}
-	{}
-	$$
-	\mathsf {Fun}(C^\infty \mathsf {Alg}_{\text{fg}},\mathsf {Set}).
-	$$
-\end{definition}
+我们发现\topos{} $\widehat {\mathbb L} = \mathsf {Fun}(C^\infty \mathsf {Alg}_{\text{fg}},\mathsf {Set})$ 是综合微分几何某种意义上的模型 (不过它尚且缺少一些微分几何关心的性质).
 
 \begin{definition}
 	{}

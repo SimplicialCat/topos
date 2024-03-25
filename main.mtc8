@@ -1,12 +1,13 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}$\infty $-范畴}{\reset@font\mtcSfont 142}{section.7.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 同伦}{\reset@font\mtcSSfont 145}{tcb@cnt@remark.7.1.12}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 更多范畴论操作}{\reset@font\mtcSSfont 146}{tcb@cnt@remark.7.1.14}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 单纯范畴}{\reset@font\mtcSSfont 147}{tcb@cnt@remark.7.1.19}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $\operatorname {Hom}$ 函子, 预层与 $\infty $-米田引理}{\reset@font\mtcSSfont 150}{tcb@cnt@remark.7.1.29}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}$\infty $-意象{}}{\reset@font\mtcSfont 150}{section.7.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}$\infty $-层 $\infty $-意象{}及其表现}{\reset@font\mtcSfont 151}{section.7.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Grothendieck 拓扑与层}{\reset@font\mtcSSfont 151}{section.7.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}上同调}{\reset@font\mtcSfont 151}{section.7.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 例}{\reset@font\mtcSSfont 152}{tcb@cnt@remark.7.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}$n$-范畴}{\reset@font\mtcSfont 152}{section.7.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 东西, 结构, 性质}{\reset@font\mtcSSfont 152}{section.7.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}$\infty $-范畴: 单纯集模型}{\reset@font\mtcSfont 164}{section.7.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 同伦}{\reset@font\mtcSSfont 167}{tcb@cnt@remark.7.1.12}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 单纯范畴}{\reset@font\mtcSSfont 168}{tcb@cnt@remark.7.1.15}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 伴随}{\reset@font\mtcSSfont 171}{tcb@cnt@remark.7.1.25}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 极限与余极限}{\reset@font\mtcSSfont 172}{tcb@cnt@remark.7.1.27}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $\operatorname {Hom}$ 函子, 预层与 $\infty $-米田引理}{\reset@font\mtcSSfont 173}{tcb@cnt@remark.7.1.33}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}$\infty $-意象{}}{\reset@font\mtcSfont 174}{section.7.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}$\infty $-层 $\infty $-意象{}及其表现}{\reset@font\mtcSfont 175}{section.7.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Grothendieck 拓扑与层}{\reset@font\mtcSSfont 175}{section.7.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}上同调}{\reset@font\mtcSfont 175}{section.7.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 例}{\reset@font\mtcSSfont 175}{tcb@cnt@remark.7.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}$n$-范畴}{\reset@font\mtcSfont 176}{section.7.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 东西, 结构, 性质}{\reset@font\mtcSSfont 176}{tcb@cnt@remark.7.5.4}}

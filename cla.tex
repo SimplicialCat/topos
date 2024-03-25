@@ -6,7 +6,7 @@
 
 \section{句法范畴: 语法--语义对偶}
 
-\todo{两种不同的 syntactic category}
+% \todo{两种不同的 syntactic category}
 
 %\todo{写成单独的一章?}
 
@@ -15,24 +15,20 @@
 
 %  A most notable fact is that the models of the theory can be recovered as functors defined on its syntactic category which respect the ‘logical’ structure on it.
 
-逻辑学上有一个一般性的现象, 即理论 (一阶逻辑, 类型论等等) 与范畴之间的对应. 某些范畴可以为理论提供语义, 某些理论可以作为范畴的语法.
-%
-\todo{}
+范畴逻辑学的一个一般性的现象是理论 (一阶逻辑, 类型论等等) 与范畴之间的对应. 某些范畴可以为理论提供语义, 某些理论可以作为范畴的语法.
+语法--语义对偶也是一种代数--几何对偶\footnote{或许也可以反过来说代数--几何对偶不过是一种语法--语义对偶.}, 语法是 ``代数'', 语义是 ``几何''.
+这一点已经在 \ref{locales-and-logic} 节体现.
 
-我们将看到语法--语义对偶也是一种代数--几何对偶\footnote{或许也可以反过来说代数--几何对偶不过是一种语法--语义对偶.}, 语法对应代数, 语义对应几何.
+\subsection{代数理论的句法范畴}
 
-\subsection{类型论的语境范畴}
+% 建议不熟悉 Lawvere 理论的读者先阅读附录 \ref{universal-algebra} 节.
 
-附录 \ref{appendix-type-theory} 节简单介绍了类型论.
-
-\begin{definition}
+\begin{prop}
 	{}
-	对于一种类型论 $T$, 其\emph{语境范畴} (category of contexts) $\operatorname{Con}(T)$ 定义如下.
-	\begin{itemize}
-		\item $\operatorname{Con}(T)$ 的\emph{对象}为类型论 $T$ 的\emph{语境};
-		\item $\operatorname{Con}(T)$ 中的\emph{态射}为语境之间的\emph{代换}.
-	\end{itemize}
-\end{definition}
+	对于 Horn 理论 $\mathbb T$,
+\end{prop}
+
+
 
 
 
@@ -42,10 +38,10 @@
 	[label={first-order-theory-syntactic-category}]
 	{(一阶理论的句法范畴)}
 	
-	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论. 定义\emph{句法范畴} (syntactic category) $\mathcal C_{\mathbb T}$, 其中
+	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论. 定义\emph{句法范畴} (syntactic category) $\mathcal C_{\mathbb T}$ 为如下的范畴,
 	\begin{itemize}
-		\item \emph{对象}是 $\Sigma$ 上带有语境的公式 $(\vec x , \phi)$ 的 $\alpha$-等价类 ($\alpha$ 等价是指两个公式仅有变量名的差异);
-		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的\emph{态射} (其中不妨设语境 $\vec x , \vec y$ 不交) 是公式 $\theta(\vec x,\vec y)$ 的 $\mathbb T$-可证等价类, 满足 $\mathbb T$-可证的\emph{函数性}, 即如下相继式 $\mathbb T$-可证.
+		\item 其对象是 $\Sigma$ 上带语境的公式 $(\vec x , \phi)$ 的 $\alpha$-等价类, $\alpha$ 等价是指两个公式仅有变量名的差异. 公式的种类由理论 $\mathbb T$ 的类别规定, 如几何理论允许使用几何公式, 正则理论允许使用正则公式, 代数理论只允许使用形如\todo{TST p46}
+		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的态射 (其中不妨设语境 $\vec x , \vec y$ 不交) 是公式 $\theta(\vec x,\vec y)$ 的 $\mathbb T$-可证等价类, 满足 $\mathbb T$-可证的\emph{函数性}, 即如下相继式 $\mathbb T$-可证.
 		\begin{itemize}
 			\item $\phi\vdash_{\vec x} \exists \vec y \,\theta$, 含义是 ``对给定的 $\vec x$, 存在 $\vec y$ 满足 $\theta(\vec x,\vec y)$'';
 			\item $\theta\vdash_{\vec x,\vec y} \phi \wedge \psi$,
@@ -64,20 +60,24 @@
 	由定义, 一个理论的句法范畴依赖于理论所属的类别 (代数, 正则, 凝聚, $\cdots$). 一个代数理论也可以视为凝聚理论, 但一个代数理论的句法范畴与它作为凝聚理论的句法范畴不同.
 \end{remark}
 
-\subsection{代数理论的句法范畴--Lawvere 理论}
-
-\todo{万有代数}
-
-\begin{prop}
-	{}
-	对于代数理论 $\mathbb T$,
-\end{prop}
-
 \begin{example}
-	[label={Lawvere-theory-CartSp}]
-	{}
-	$\mathsf {CartSp}$
+	{(环的句法范畴)}
+	%对于通常背景的读者, 或许最合适的例子是环的理论的句法范畴.
+	回忆, 环的理论是一种代数理论, 其中的公式形如 $s=t$.
 \end{example}
+
+\subsection{类型论的语境范畴}
+
+附录 \ref{appendix-type-theory} 节简单介绍了类型论.
+
+\begin{definition}
+	{}
+	对于一种类型论 $T$, 其\emph{语境范畴} (category of contexts) $\operatorname{Con}(T)$ 定义如下.
+	\begin{itemize}
+		\item $\operatorname{Con}(T)$ 的\emph{对象}为类型论 $T$ 的\emph{语境};
+		\item $\operatorname{Con}(T)$ 中的\emph{态射}为语境之间的\emph{代换}.
+	\end{itemize}
+\end{definition}
 
 \section{分类\topos{}}
 
@@ -99,14 +99,16 @@ $$
 
 类似地, 在许多情形下, \topos{}上的一种结构 $T$ 可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
 某种结构 $T$ 的分类\topos{}应当视为 ``所有 $T$ 构成的空间'', 术语叫做\emph{模空间}.
-若将\topos{} $\mathsf C$ 视为空间, 那么 $\mathsf C$ 上的一个结构 $T$ 可视为空间的 ``每一点'' 上都有一个结构 $T$,
-从而这给出 $\mathsf C$ 到模空间的一个几何态射.
-例如, 设 $\mathsf E$ 为环的分类\topos{}, 那么 $\mathsf E$ 应当视为 ``所有环构成的空间'' (上的层范畴), 拓扑空间 $X$ 上的一个环层即是 $X$ 的 ``每一点'' 上都有一个环,
-这等同于 $\text{Sh}(X)$ 到 $\mathsf E$ 的一个几何态射.
+若将\topos{} $\mathcal C$ 视为空间, 那么 $\mathcal C$ 上的一个结构 $T$ 可视为空间的 ``每一点'' 上都有一个结构 $T$,
+从而这给出 $\mathcal C$ 到模空间的一个几何态射.
+例如, 设 $\mathcal E$ 为环的分类\topos{}, 那么 $\mathcal E$ 应当视为 ``所有环构成的空间'' (上的层范畴), 拓扑空间 $X$ 上的一个环层即是 $X$ 的 ``每一点'' 上都有一个环,
+这等同于 $\text{Sh}(X)$ 到 $\mathcal E$ 的一个几何态射.
 
 分类\topos{}到自身的恒等态射对应着其上的 ``万有'' 的 $T$ 结构, 又称\emph{重言} (tautological) $T$ 结构.
 
-\subsection{$G$-旋子的分类\topos{}}
+\subsection{例}
+
+\subsubsection{$G$-旋子的分类\topos{}}
 
 
 下面的概念是 ``空间上的 $G$-主丛'' 的推广, 取自 \cite{SGL} VIII.2 节.
@@ -114,7 +116,7 @@ $$
 	[label={G-torsors-over-topos}]
 	{(\topos{}上的 $G$-旋子)}
 	设 $G$ 为离散群, 即 $\mathsf {Set}$ 中的群.
-	设 $\gamma\colon \mathsf C\to \mathsf {Set}$ 是 $\mathsf {Set}$ 上的\topos{} (见命题 \ref{global-sections-geometric-morphism}). 定义 $\mathsf C$ 上的一个 $G$-\emph{旋子}\footnotemark (torsor) 为 $\mathsf C$ 的对象 $T$, 以及群对象 $\gamma^*(G)$ 在 $T$ 上的作用 $\mu\colon \gamma^*(G)\times T \to T$, 满足
+	设 $\gamma\colon \mathcal C\to \mathsf {Set}$ 是 $\mathsf {Set}$ 上的\topos{} (见命题 \ref{global-sections-geometric-morphism}). 定义 $\mathcal C$ 上的一个 $G$-\emph{旋子}\footnotemark (torsor) 为 $\mathcal C$ 的对象 $T$, 以及群对象 $\gamma^*(G)$ 在 $T$ 上的作用 $\mu\colon \gamma^*(G)\times T \to T$, 满足
 	\begin{enumerate}[(i)]
 		\item 映射 $T\to 1$ 为满射;
 		\item 群作用 $\mu$ 诱导同构 $(\mu,\pi_2)\colon \gamma^*(G)\times T \to T\times T$.
@@ -174,7 +176,7 @@ $$
 
 理论 $\mathbb T_G$ 是一种几何理论 (定义 \ref{kinds-of-theories}), 因为它用到了 ``真'' $\top$, 存在量词 $\exists$, ``假'' $\bot$ 和无穷析取 $\bigvee$.
 
-\subsection{子终对象的分类\topos}
+\subsubsection{子终对象的分类\topos}
 
 考虑范畴 $\mathsf 2 = \{\bullet\longrightarrow\bullet\}$. 例 \ref{varying-set-topos} 介绍的 ``变集范畴'' $\mathsf {Fun}(\mathsf {2},\mathsf {Set})\simeq\widehat {\mathsf {2}}$ 还有一个特殊的名字叫 \emph{Sierpi\'nski \topos{}}, 因为它与 Sierpi\'nski 空间有关.
 
@@ -186,11 +188,11 @@ $$
 
 \todo{}
 
-\subsection{群的分类\topos{}}
+\subsubsection{群的分类\topos{}}
 
 本节构造群的分类\topos{}. 群是一种 Lawvere 理论 (附录 \ref{universal-algebra} 节); 下面的论述适用于一般的 Lawvere 理论, 从而逐字逐句地替换可得到环, Boole 代数等结构的分类\topos{}.
 %
-% 回忆范畴中的群对象的概念. 设范畴 $\mathsf C$ 有有限积 (包括始对象 $1$), 那么 $\mathsf C$ 中的\emph{群}为对象 $G$, 带有元素 $e \colon 1 \to G$, 乘法 $\cdot \colon G\times G \to G$, 满足群的交换图.
+% 回忆范畴中的群对象的概念. 设范畴 $\mathcal C$ 有有限积 (包括始对象 $1$), 那么 $\mathcal C$ 中的\emph{群}为对象 $G$, 带有元素 $e \colon 1 \to G$, 乘法 $\cdot \colon G\times G \to G$, 满足群的交换图.
 
 %满足通常的交换环的图表, 例如分配律 $x(y+z)=xy+xz$ 对应交换图
 %% https://q.uiver.app/#q=WzAsNCxbMCwwLCJSXFx0aW1lcyBSXFx0aW1lcyBSIl0sWzEsMCwiUlxcdGltZXMgUiJdLFsxLDEsIlIiXSxbMCwxLCJSXFx0aW1lcyBSIl0sWzAsMSwiKHgseSx6KVxcbWFwc3RvICh4LHkreikiXSxbMSwyLCJcXHRpbWVzIl0sWzAsMywiKHgseSx6KVxcbWFwc3RvICh4eSx4eikiLDJdLFszLDIsIisiLDJdXQ==
@@ -204,20 +206,20 @@ $$
 %\end{tikzcd}\]
 %(这里使用了 \ref{Mitchell--Benabou-language} 节介绍的 Mitchell--B\'enabou 语言.)
 
-设范畴 $\mathsf C$ 有有限积. $\mathsf C$ 中的群对象构成一个范畴 $\mathsf {Grp}(\mathsf C)$.
-\ref{universal-algebra} 节提到它等同于群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$ 到 $\mathsf C$ 的保持有限积的函子的范畴.
-进一步, 对于两个具有有限积的范畴 $\mathsf C,\mathsf D$, 以及保持有限积的函子 $f \colon \mathsf C \to \mathsf D$, 有对应的函子
-$\mathsf {Grp}(\mathsf C) \to \mathsf {Grp}(\mathsf D)$.% $\mathsf {Ring}(\mathsf C) \to \mathsf {Ring}(\mathsf D)$.
+设范畴 $\mathcal C$ 有有限积. $\mathcal C$ 中的群对象构成一个范畴 $\mathsf {Grp}(\mathcal C)$.
+\ref{universal-algebra} 节提到它等同于群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$ 到 $\mathcal C$ 的保持有限积的函子的范畴.
+进一步, 对于两个具有有限积的范畴 $\mathcal C,\mathcal D$, 以及保持有限积的函子 $f \colon \mathcal C \to \mathcal D$, 有对应的函子
+$\mathsf {Grp}(\mathcal C) \to \mathsf {Grp}(\mathcal D)$.% $\mathsf {Ring}(\mathcal C) \to \mathsf {Ring}(\mathcal D)$.
 
-对于\topos{}间的几何态射 $f \colon \mathsf C \to \mathsf D$, 其逆像部分 (见定义 \ref{geometric-morphism}) $f^* \colon \mathsf D \to \mathsf C$ 保持有限极限, 故保持有限积, 从而诱导了函子 $\mathsf {Grp}(\mathsf D) \to \mathsf {Grp}(\mathsf C)$;
+对于\topos{}间的几何态射 $f \colon \mathcal C \to \mathcal D$, 其逆像部分 (见定义 \ref{geometric-morphism}) $f^* \colon \mathcal D \to \mathcal C$ 保持有限极限, 故保持有限积, 从而诱导了函子 $\mathsf {Grp}(\mathcal D) \to \mathsf {Grp}(\mathcal C)$;
 这表示 $\mathsf {Grp}(-)$ 关于\topos{}是 ``反变'' 的.
 
-下面我们将构造一个\topos{} $\mathsf E$, 称为\emph{群的分类\topos{}}, 使得有自然的范畴等价
+下面我们将构造一个\topos{} $\mathcal E$, 称为\emph{群的分类\topos{}}, 使得有自然的范畴等价
 $$
-\mathsf {Grp}(\mathsf C) \simeq \mathsf{Hom}(\mathsf C,\mathsf E).
+\mathsf {Grp}(\mathcal C) \simeq \mathsf{Hom}(\mathcal C,\mathcal E).
 $$
 
-\subsection{环的分类\topos{}}
+\subsubsection{环的分类\topos{}}
 
 \todo{单独讲一下和代数几何的关系}
 
@@ -235,6 +237,9 @@ $$
 %也即仿射直线.
 
 \subsection{几何理论的分类\topos{}}
+
+\todo{几何命题理论的 ``分类位象''}
+\ref{classifying-locale}
 
 \begin{definition}
     {(几何理论的句法景和分类\topos{})}

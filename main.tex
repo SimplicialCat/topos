@@ -118,10 +118,11 @@
 
 \newcommand{\op}{\text{op}} % 对偶范畴
 \newcommand{\yo}{\!\text{{\mincho よ}}} % 米田嵌入
-\newcommand{\Top}{\mathcal T\!op}
+\newcommand{\Top}{\mathcal T\hspace{-3pt}opos}
+\newcommand{\interpretation}[1]{{[\![#1]\!]}}
 
 % sequent calculus
-\newcommand{\sqc}[2]{\frac{\quad #1 \quad}{\quad #2 \quad}}
+\newcommand{\sqc}[2]{\dfrac{\quad #1 \quad}{\quad #2 \quad}}
 \newcommand{\sqqc}[2]{
 	\begin{array}
 		{c}
@@ -130,6 +131,7 @@
 }
 
 \newcommand{\todo}[1]{{\color{red} [\textbf{未完成: #1}]}}
+\newcommand{\internalprop}[1]{{\ulcorner {#1} \urcorner}}
 
 \begin{document}
 \dominitoc

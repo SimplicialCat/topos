@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  25 MAR 2024 16:50
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  27 APR 2024 23:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1405,7 +1405,7 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
  [12] [13] [14] [15] [16] [17] [18]
-Underfull \vbox (badness 4886) has occurred while \output is active []
+Underfull \vbox (badness 2828) has occurred while \output is active []
 
  [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1423,13 +1423,13 @@ Underfull \vbox (badness 5119) has occurred while \output is active []
 Underfull \vbox (badness 1867) has occurred while \output is active []
 
  [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1439--1440
+Underfull \hbox (badness 10000) in paragraph at lines 1441--1442
 
  []
 
 [34]
 
-LaTeX Warning: Reference `ouvert' on page 35 undefined on input line 1484.
+LaTeX Warning: Reference `ouvert' on page 35 undefined on input line 1486.
 
 
 Underfull \vbox (badness 1122) has occurred while \output is active []
@@ -1438,14 +1438,14 @@ Underfull \vbox (badness 1122) has occurred while \output is active []
 Underfull \vbox (badness 1728) has occurred while \output is active []
 
  [42] [43] [44]
-Overfull \hbox (27.11479pt too wide) in paragraph at lines 2152--2153
+Overfull \hbox (27.11479pt too wide) in paragraph at lines 2154--2155
 []\TU/SimSun(0)/m/n/10.53937 假 设 $\OMS/cmsy/m/n/10.53937 C$ \TU/SimSun(0)/m/n/10.53937 的 每 个 对 象 都 是 投 射 的\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 对 于 满 射 $\OML/cmm/m/it/10.53937 p [] [] X \OMS/cmsy/m/n/10.53937 ! \OML/cmm/m/it/10.53937 I$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 由 于 $\OML/cmm/m/it/10.53937 I$ \TU/SimSun(0)/m/n/10.53937 是 投 射 的\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 有 $\OML/cmm/m/it/10.53937 p[] [] []  []\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 I; X\OT1/cmr/m/n/10.53937 ) \OMS/cmsy/m/n/10.53937 !
  []
 
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 2229.
+(amsmath)                 on input line 2231.
 
 [45] [46]) (./loc.tex [47] [48
 
@@ -1466,46 +1466,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--3
 \openout5 = `main.mtc'.
 
 (./main.mtc3) [49] [50] [51]
-Underfull \hbox (badness 1831) in paragraph at lines 151--153
+Underfull \hbox (badness 1831) in paragraph at lines 136--138
 []\TU/SimSun(0)/m/n/10.53937 定 义 \TU/lmr/m/it/10.53937 Sierpiński \TU/SimSun(0)/m/it/10.53937 空 间 $\OML/cmm/m/it/10.53937 S$ \TU/SimSun(0)/m/n/10.53937 是 以 $\OMS/cmsy/m/n/10.53937 f>\OML/cmm/m/it/10.53937 ; \OMS/cmsy/m/n/10.53937 ?g$ \TU/SimSun(0)/m/n/10.53937 为 底 层 集 合 的 拓 扑 空 间\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 有 三 个 开 集
  []
 
 [52]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 198.
+LaTeX Font Warning: Command \small invalid in math mode on input line 211.
 
-[53]
-Underfull \vbox (badness 6188) has occurred while \output is active []
+[53] [54] [55] [56] [57]
+Overfull \hbox (10.89003pt too wide) detected at line 446
+[][]
+ []
 
- [54] [55] [56] [57] [58] [59] [60] [61] [62]
-Underfull \hbox (badness 10000) in paragraph at lines 763--763
+LaTeX Font Info:    Trying to load font information for U+euf on input line 447.
+(d:/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [58] [59] [60] [61] [62] [63] [64]
+Underfull \hbox (badness 10000) in paragraph at lines 926--926
+
+ []
+
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 926--926
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--763
+Underfull \hbox (badness 10000) in paragraph at lines 926--927
 
  []
 
+[66] [67]
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--764
+LaTeX Warning: Reference `completely-prime-filter-vs-prime-ideal' on page 68 undefined on input line 1033.
 
- []
-
-[63] [64]
-Overfull \hbox (4.05875pt too wide) in paragraph at lines 867--868
-[]\TU/SimSun(0)/m/n/10.53937 命 题 理 论 的 \TU/lmr/m/n/10.53937 (\TU/SimSun(0)/m/n/10.53937 经 典\TU/lmr/m/n/10.53937 ) \TU/SimSun(0)/m/n/10.53937 模 型 的 集 合 可 赋 予 一 个 拓 扑\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 就 像 环 的 谱 可 赋 予 拓 扑 一 样 \TU/lmr/m/n/10.53937 (\TU/SimSun(0)/m/n/10.53937 注 []\TU/lmr/m/n/10.53937 2.1.12[]). 
- []
-
-[65] [66] [67]
-Underfull \hbox (badness 2042) in paragraph at lines 1036--1039
+[68] [69] [70]
+Underfull \hbox (badness 2042) in paragraph at lines 1202--1205
 \TU/SimSun(0)/m/n/10.53937 它 是 两 个 元 素 生 成 的 自 由 位 格\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 对 应 位 象 $\OML/cmm/m/it/10.53937 S \OMS/cmsy/m/n/10.53937 ^^B \OML/cmm/m/it/10.53937 S$\TU/lmr/m/n/10.53937 . $\OML/cmm/m/it/10.53937 S \OMS/cmsy/m/n/10.53937 ^^B \OML/cmm/m/it/10.53937 S$ \TU/SimSun(0)/m/n/10.53937 有 四 个 点
  []
 
+[71] [72]) (./Gro.tex [73] [74
 
-Underfull \vbox (badness 4913) has occurred while \output is active []
-
- [68] [69]) (./Gro.tex [70]
+]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
@@ -1526,33 +1529,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--13
 
 \openout5 = `main.mtc'.
 
-(./main.mtc4 [71
-
-]
-Overfull \hbox (2.0416pt too wide) detected at line 15
- []\TU/lmr/bx/n/9.03374 102
+(./main.mtc4 [75]
+Overfull \hbox (2.0416pt too wide) detected at line 10
+ []\TU/lmr/bx/n/9.03374 106
  []
 
 
-Overfull \hbox (2.0416pt too wide) detected at line 21
- []\TU/lmr/bx/n/9.03374 107
+Overfull \hbox (2.0416pt too wide) detected at line 11
+ []\TU/lmr/bx/n/9.03374 109
  []
 
 
-Overfull \hbox (2.0416pt too wide) detected at line 30
+Overfull \hbox (2.0416pt too wide) detected at line 17
+ []\TU/lmr/bx/n/9.03374 115
+ []
+
+
+Overfull \hbox (2.0416pt too wide) detected at line 23
  []\TU/lmr/bx/n/9.03374 120
  []
 
 
-Overfull \hbox (2.0416pt too wide) detected at line 35
- []\TU/lmr/bx/n/9.03374 122
+Overfull \hbox (2.0416pt too wide) detected at line 32
+ []\TU/lmr/bx/n/9.03374 133
  []
 
-) [72]
-Underfull \vbox (badness 2005) has occurred while \output is active []
 
- [73] [74]
-Overfull \hbox (11.47464pt too wide) in paragraph at lines 179--186
+Overfull \hbox (2.0416pt too wide) detected at line 37
+ []\TU/lmr/bx/n/9.03374 136
+ []
+
+) [76]
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+[77]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78] [79]
+Overfull \hbox (11.47464pt too wide) in paragraph at lines 183--190
 []\TU/SimSun(0)/m/n/10.53937 第 一 个 复 合\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 对 任 意 平 展 映 射 $\OML/cmm/m/it/10.53937 p [] [] Y \OMS/cmsy/m/n/10.53937 ! \OML/cmm/m/it/10.53937 X$ \TU/SimSun(0)/m/n/10.53937 与 截 面 $\OML/cmm/m/it/10.53937 s \OMS/cmsy/m/n/10.53937 2 \OT1/cmr/m/n/10.53937 ^^@[](\OML/cmm/m/it/10.53937 U\OT1/cmr/m/n/10.53937 )$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 由 $\OML/cmm/m/it/10.53937 ^^Q$ \TU/SimSun(0)/m/n/10.53937 的 定 义 有 $\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 ^^Q\OT1/cmr/m/n/10.53937 ^^@)[](\OML/cmm/m/it/10.53937 U\OT1/cmr/m/n/10.53937 )(\OML/cmm/m/it/10.53937 s\OT1/cmr/m/n/10.53937 ) =
  []
 
@@ -1579,73 +1605,95 @@ Package fontspec Info: Font family 'IPAexMincho(0)' created for font
 (fontspec)             <->"IPAexMincho/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-[75] [76] [77] [78]
-Underfull \vbox (badness 2111) has occurred while \output is active []
-
- [79] [80]
-Underfull \hbox (badness 1033) in paragraph at lines 616--619
+[80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92]
+Underfull \hbox (badness 1033) in paragraph at lines 982--985
 []\TU/SimSun(0)/m/n/10.53937 令 范 畴 $\OT1/cmr/m/n/10.53937 ^^A$ \TU/SimSun(0)/m/n/10.53937 为 有 限 全 序 集 $\OT1/cmr/m/n/10.53937 [0]\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 [1]\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 [2]\OML/cmm/m/it/10.53937 ; [] $ \TU/SimSun(0)/m/n/10.53937 与 保 序 映 射 构 成 的 范 畴\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 其 中 $\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 n\OT1/cmr/m/n/10.53937 ] =
  []
 
 
 Underfull \vbox (badness 3219) has occurred while \output is active []
 
- [81] [82] (./figure-sieve.tex) [83] [84] [85] [86] [87]
-Overfull \hbox (14.84541pt too wide) in paragraph at lines 1030--1031
+ [93] [94] (./figure-sieve.tex) [95] [96] [97] [98]
+Underfull \hbox (badness 10000) in paragraph at lines 1324--1324
+
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 1324--1324
+[] \TU/lmss/m/n/10.53937 Attempting to define a “Weil cohomology” with the for-
+ []
+
+
+Underfull \hbox (badness 2181) in paragraph at lines 1324--1324
+\TU/lmss/m/n/10.53937 mal properties necessary to establish the Weil conjectures,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1324--1324
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1324--1325
+
+ []
+
+[99] [100]
+Overfull \hbox (14.84541pt too wide) in paragraph at lines 1400--1401
 []\TU/lmr/m/n/10.53937 “\TU/SimSun(0)/m/n/10.53937 覆 盖 结 构\TU/lmr/m/n/10.53937 ” \TU/SimSun(0)/m/n/10.53937 是 从 \TU/lmr/m/it/10.53937 Grothendieck \TU/SimSun(0)/m/it/10.53937 拓 扑 \TU/SimSun(0)/m/n/10.53937 的 概 念 中 分 离 出 的 一 个 比 较 重 要 的 条 件\TU/lmr/m/n/10.53937 . Grothendieck
  []
 
-[88] [89]
-Underfull \vbox (badness 3895) has occurred while \output is active []
-
- [90]
-Underfull \hbox (badness 1881) in paragraph at lines 1150--1152
-\TU/SimSun(0)/m/n/10.53937 这 意 味 着 我 们 可 将 $\OMS/cmsy/m/n/10.53937 C$ \TU/SimSun(0)/m/n/10.53937 通 过 米 田 嵌 入 视 为 $[]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 C\OML/cmm/m/it/10.53937 ; J\OT1/cmr/m/n/10.53937 )$ \TU/SimSun(0)/m/n/10.53937 的 满 子 范 畴\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 定 义 \TU/SimSun(0)/m/it/10.53937 典 范
+[101] [102]
+Underfull \hbox (badness 1881) in paragraph at lines 1520--1522
+\TU/SimSun(0)/m/n/10.53937 这 意 味 着 我 们 可 将 $\OMS/cmsy/m/n/10.53937 C$ \TU/SimSun(0)/m/n/10.53937 通 过 米 田 嵌 入 视 为 $[]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 C\OML/cmm/m/it/10.53937 ; J\OT1/cmr/m/n/10.53937 )$ \TU/SimSun(0)/m/n/10.53937 的 全 子 范 畴\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 定 义 \TU/SimSun(0)/m/it/10.53937 典 范
  []
 
-[91] [92] [93]
+[103] [104] [105]
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 1255.
+(Font)              size <14.4> substituted on input line 1625.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 1255.
+(Font)              size <14.4> substituted on input line 1625.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1255.
+(hyperref)                removing `math shift' on input line 1625.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1255.
+(hyperref)                removing `math shift' on input line 1625.
 
-[94]
-Underfull \vbox (badness 1603) has occurred while \output is active []
-
- [95] [96] [97] [98] [99] [100]
-Overfull \hbox (3.51216pt too wide) in paragraph at lines 1807--1811
+[106] [107] [108] [109] [110] [111] [112]
+Overfull \hbox (3.51216pt too wide) in paragraph at lines 2177--2181
 []\TU/SimSun(0)/m/n/10.53937 设 $\OML/cmm/m/it/10.53937 F$ \TU/SimSun(0)/m/n/10.53937 是 $\OMS/cmsy/m/n/10.53937 D$ \TU/SimSun(0)/m/n/10.53937 上 的 $\OML/cmm/m/it/10.53937 J[][]$\TU/lmr/m/n/10.53937 -\TU/SimSun(0)/m/n/10.53937 层\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 那 么 $\OML/cmm/m/it/10.53937 i[]F$ \TU/SimSun(0)/m/n/10.53937 的 限 制 是 $\OML/cmm/m/it/10.53937 F$\TU/lmr/m/n/10.53937 : \TU/SimSun(0)/m/n/10.53937 对 $\OMS/cmsy/m/n/10.53937 D$ \TU/SimSun(0)/m/n/10.53937 的 对 象 $\OML/cmm/m/it/10.53937 d$\TU/lmr/m/n/10.53937 , $\OML/cmm/m/it/10.53937 i[]F\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 d\OT1/cmr/m/n/10.53937 ) = [][] \OML/cmm/m/it/10.53937 F\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 d[]\OT1/cmr/m/n/10.53937 ) =
  []
 
-[101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112]
+[113]
+Underfull \vbox (badness 5417) has occurred while \output is active []
+
+ [114] [115] [116] [117] [118] [119] [120] [121]
+Underfull \vbox (badness 2005) has occurred while \output is active []
+
+ [122] [123] [124] [125]
 Underfull \vbox (badness 1939) has occurred while \output is active []
 
- [113]
+ [126]
 Underfull \vbox (badness 1062) has occurred while \output is active []
 
- [114] [115]
-Underfull \vbox (badness 7722) has occurred while \output is active []
-
- [116] [117] [118] [119]
+ [127] [128] [129] [130] [131] [132]
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
- [120]
-Underfull \vbox (badness 7888) has occurred while \output is active []
+ [133] [134]
+Underfull \vbox (badness 6016) has occurred while \output is active []
 
- [121] [122]) (./lan.tex [123] [124
+ [135] [136]
+Overfull \hbox (18.22812pt too wide) in paragraph at lines 3706--3718
+[] []\TU/SimSun(0)/b/n/10.53937 第 二 步\TU/lmr/bx/n/10.53937 , \TU/SimSun(0)/b/n/10.53937 层 条 件 的 验 证[] \TU/SimSun(0)/m/n/10.53937 现 在 验 证 $\OML/cmm/m/it/10.53937 y [] [] \OMS/cmsy/m/n/10.53937 C ! []$ \TU/SimSun(0)/m/n/10.53937 的 像 落 在 $[]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 D\OML/cmm/m/it/10.53937 ; J\OT1/cmr/m/n/10.53937 )$ \TU/SimSun(0)/m/n/10.53937 中\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 即 对 于 $\OML/cmm/m/it/10.53937 c \OMS/cmsy/m/n/10.53937 2 C$\TU/lmr/m/n/10.53937 , $[]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 ^^@\OML/cmm/m/it/10.53937 ; c\OT1/cmr/m/n/10.53937 )\OMS/cmsy/m/n/10.53937 j[]$
+ []
 
-]
+[137]) (./lan.tex [138]
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
@@ -1663,77 +1711,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--7
 
 (./main.mtc5
 Overfull \hbox (2.0416pt too wide) detected at line 1
- []\TU/lmr/bx/n/9.03374 126
+ []\TU/lmr/bx/n/9.03374 140
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 2
- []\TU/lmr/bx/n/9.03374 132
+ []\TU/lmr/bx/n/9.03374 146
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 4
- []\TU/lmr/bx/n/9.03374 135
+ []\TU/lmr/bx/n/9.03374 150
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 5
- []\TU/lmr/bx/n/9.03374 138
+ []\TU/lmr/bx/n/9.03374 152
  []
 
 
-Overfull \hbox (2.0416pt too wide) detected at line 9
- []\TU/lmr/bx/n/9.03374 138
- []
-
-
-Overfull \hbox (2.0416pt too wide) detected at line 11
- []\TU/lmr/bx/n/9.03374 141
- []
-
-
-Overfull \hbox (2.0416pt too wide) detected at line 18
- []\TU/lmr/bx/n/9.03374 149
- []
-
-
-Overfull \hbox (2.0416pt too wide) detected at line 22
+Overfull \hbox (2.0416pt too wide) detected at line 6
  []\TU/lmr/bx/n/9.03374 153
  []
 
-[125]
-Overfull \hbox (2.0416pt too wide) detected at line 24
- []\TU/lmr/bx/n/9.03374 154
+
+Overfull \hbox (2.0416pt too wide) detected at line 10
+ []\TU/lmr/bx/n/9.03374 153
  []
 
-) [126] [127] [128] [129]
-Underfull \vbox (badness 1642) has occurred while \output is active []
 
- [130]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [131] [132] [133] [134] [135]
-Underfull \vbox (badness 1057) has occurred while \output is active []
-
- [136] [137] (./NSA.tex) (./eff.tex [138] [139]) (./SDG.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [140] [141]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 105.
- (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [142] [143]
-Underfull \hbox (badness 3209) in paragraph at lines 188--190
-[]\TU/SimSun(0)/m/n/10.53937 考 虑 有 限 表 现 仿 射 $\U/msb/m/n/10.53937 R$\TU/lmr/m/n/10.53937 -\TU/SimSun(0)/m/n/10.53937 概 形 范 畴 $\U/msb/m/n/10.53937 R[][]$\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 回 忆\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 有 限 表 现 $\U/msb/m/n/10.53937 R$\TU/lmr/m/n/10.53937 -\TU/SimSun(0)/m/n/10.53937 代 数 即 形 如
+Overfull \hbox (2.0416pt too wide) detected at line 12
+ []\TU/lmr/bx/n/9.03374 155
  []
 
-[144] [145] [146]
+
+Overfull \hbox (2.0416pt too wide) detected at line 19
+ []\TU/lmr/bx/n/9.03374 164
+ []
+
+
+Overfull \hbox (2.0416pt too wide) detected at line 23
+ []\TU/lmr/bx/n/9.03374 168
+ []
+
+[139
+
+]
+Overfull \hbox (2.0416pt too wide) detected at line 25
+ []\TU/lmr/bx/n/9.03374 169
+ []
+
+) [140] [141] [142] [143] [144]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [145] [146]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [147]
 Underfull \vbox (badness 1354) has occurred while \output is active []
 
- [148]) (./Bohr.tex
+ [148]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [149] [150] [151] (./NSA.tex [152]) (./eff.tex [153] [154]) (./SDG.tex [155]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [156] [157]
+Underfull \vbox (badness 1418) has occurred while \output is active []
+
+ [158]
+Underfull \hbox (badness 3209) in paragraph at lines 188--190
+[]\TU/SimSun(0)/m/n/10.53937 考 虑 有 限 表 现 仿 射 $\U/msb/m/n/10.53937 R$\TU/lmr/m/n/10.53937 -\TU/SimSun(0)/m/n/10.53937 概 形 范 畴 $\U/msb/m/n/10.53937 R[][]$\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 回 忆\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 有 限 表 现 $\U/msb/m/n/10.53937 R$\TU/lmr/m/n/10.53937 -\TU/SimSun(0)/m/n/10.53937 代 数 即 形 如
+ []
+
+[159] [160] [161]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [162]
+Underfull \vbox (badness 1354) has occurred while \output is active []
+
+ [163]) (./Bohr.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
 
  []
@@ -1751,15 +1808,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
 Underfull \vbox (badness 7925) has occurred while \output is active []
 
- [149] [150]
+ [164] [165]
 Underfull \hbox (badness 1960) in paragraph at lines 69--70
 []\TU/SimSun(0)/m/n/10.53937 一 个 \TU/SimSun(0)/m/it/10.53937 经 典 力 学 系 统 \TU/lmr/m/n/10.53937 (classical mechanical system) \TU/SimSun(0)/m/n/10.53937 是 一 个 \TU/lmr/m/n/10.53937 Poisson \TU/SimSun(0)/m/n/10.53937 代 数
  []
 
-[151]
+[166]
 Underfull \vbox (badness 1005) has occurred while \output is active []
 
- [152]) (./Cohen.tex [153]) (./condensed.tex)) (./cla.tex [154]
+ [167]) (./Cohen.tex [168]) (./condensed.tex)) (./cla.tex [169] [170
+
+]
 Chapter 5.
 \openout5 = `main.mtc'.
 
@@ -1767,12 +1826,12 @@ Chapter 5.
 
 (./main.mtc6
 Overfull \hbox (2.0416pt too wide) detected at line 1
- []\TU/lmr/bx/n/9.03374 155
+ []\TU/lmr/bx/n/9.03374 171
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 5
- []\TU/lmr/bx/n/9.03374 157
+ []\TU/lmr/bx/n/9.03374 173
  []
 
 )
@@ -1790,9 +1849,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-[155
-
-] [156]
+[171] [172]
 Underfull \hbox (badness 10000) in paragraph at lines 87--87
 
  []
@@ -1807,13 +1864,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[157] [158] [159]) (./rel.tex [160]
-Chapter 6.
-Package minitoc Info: I0006
-(minitoc)             main.mtc7 is empty on input line 4.
-) (./higher.tex [161
 
-] [162
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+[173] [174] [175] [176]) (./rel.tex [177] [178
+
+]
+Chapter 6.
+\openout5 = `main.mtc'.
+
+\openout5 = `main.mtc'.
+
+(./main.mtc7
+Overfull \hbox (2.0416pt too wide) detected at line 1
+ []\TU/lmr/bx/n/9.03374 179
+ []
+
+)) (./higher.tex [179] [180
 
 ]
 Chapter 7.
@@ -1838,27 +1907,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
 (./main.mtc8
 Overfull \hbox (2.0416pt too wide) detected at line 1
- []\TU/lmr/bx/n/9.03374 164
+ []\TU/lmr/bx/n/9.03374 182
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 7
- []\TU/lmr/bx/n/9.03374 174
+ []\TU/lmr/bx/n/9.03374 192
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 8
- []\TU/lmr/bx/n/9.03374 175
+ []\TU/lmr/bx/n/9.03374 193
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 10
- []\TU/lmr/bx/n/9.03374 175
+ []\TU/lmr/bx/n/9.03374 193
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 12
- []\TU/lmr/bx/n/9.03374 176
+ []\TU/lmr/bx/n/9.03374 194
  []
 
 )
@@ -1874,16 +1943,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 15.
 
-[163] [164]
+[181] [182]
 Underfull \vbox (badness 1527) has occurred while \output is active []
 
- [165] [166] [167] [168]
+ [183] [184] [185] [186]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [169]
+ [187]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [170] [171] [172]
+ [188] [189] [190]
 Underfull \hbox (badness 10000) in paragraph at lines 555--555
 
  []
@@ -1893,7 +1962,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 555--555
 
  []
 
-[173]
+[191]
 Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
@@ -1913,7 +1982,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Underfull \vbox (badness 1917) has occurred while \output is active []
 
- [174]
+ [192]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 606.
@@ -1938,7 +2007,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 606.
 
-[175]
+[193]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 650.
@@ -1947,7 +2016,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 650.
 
-) (./cohesion.tex [176]
+) (./cohesion.tex [194]
 Chapter 8.
 \openout5 = `main.mtc'.
 
@@ -1955,12 +2024,12 @@ Chapter 8.
 
 (./main.mtc9
 Overfull \hbox (2.0416pt too wide) detected at line 1
- []\TU/lmr/bx/n/9.03374 177
+ []\TU/lmr/bx/n/9.03374 195
  []
 
-) [177
+) [195
 
-]) (./cat-appendix.tex [178]
+]) (./cat-appendix.tex [196]
 附录 A.
 \openout5 = `main.mtc'.
 
@@ -1968,62 +2037,72 @@ Overfull \hbox (2.0416pt too wide) detected at line 1
 
 (./main.mtc10
 Overfull \hbox (2.0416pt too wide) detected at line 1
- []\TU/lmr/bx/n/9.03374 180
+ []\TU/lmr/bx/n/9.03374 198
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 4
- []\TU/lmr/bx/n/9.03374 186
+ []\TU/lmr/bx/n/9.03374 204
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 9
- []\TU/lmr/bx/n/9.03374 192
+ []\TU/lmr/bx/n/9.03374 212
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 12
- []\TU/lmr/bx/n/9.03374 202
+ []\TU/lmr/bx/n/9.03374 223
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 17
- []\TU/lmr/bx/n/9.03374 207
- []
-
-
-Overfull \hbox (2.0416pt too wide) detected at line 22
- []\TU/lmr/bx/n/9.03374 214
- []
-
-
-Overfull \hbox (2.0416pt too wide) detected at line 23
- []\TU/lmr/bx/n/9.03374 216
- []
-
-
-Overfull \hbox (2.0416pt too wide) detected at line 24
- []\TU/lmr/bx/n/9.03374 220
- []
-
-
-Overfull \hbox (2.0416pt too wide) detected at line 29
  []\TU/lmr/bx/n/9.03374 228
  []
 
 
-Overfull \hbox (0.95755pt too wide) detected at line 30
+Overfull \hbox (2.0416pt too wide) detected at line 22
+ []\TU/lmr/bx/n/9.03374 236
+ []
+
+
+Overfull \hbox (2.0416pt too wide) detected at line 23
+ []\TU/lmr/bx/n/9.03374 237
+ []
+
+
+Overfull \hbox (2.0416pt too wide) detected at line 24
+ []\TU/lmr/bx/n/9.03374 242
+ []
+
+
+Overfull \hbox (2.0416pt too wide) detected at line 29
+ []\TU/lmr/bx/n/9.03374 250
+ []
+
+[197
+
+]
+Overfull \hbox (0.95755pt too wide) detected at line 31
 \TU/lmr/bx/n/9.03374 A.10 
  []
 
 
-Overfull \hbox (2.0416pt too wide) detected at line 30
- []\TU/lmr/bx/n/9.03374 233
+Overfull \hbox (2.0416pt too wide) detected at line 31
+ []\TU/lmr/bx/n/9.03374 258
  []
 
-) [179
 
-]
+Overfull \hbox (0.95755pt too wide) detected at line 32
+\TU/lmr/bx/n/9.03374 A.11 
+ []
+
+
+Overfull \hbox (2.0416pt too wide) detected at line 32
+ []\TU/lmr/bx/n/9.03374 261
+ []
+
+)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 7.
@@ -2032,103 +2111,94 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 7.
 
-[180] [181]
+[198] [199] [200]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [182]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [183]
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
+ [201]
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 []\TU/SimSun(0)/m/n/10.53937 对 $\OMS/cmsy/m/n/10.53937 C$ \TU/SimSun(0)/m/n/10.53937 的 每 两 个 对 象 $\OML/cmm/m/it/10.53937 A; B$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 有 一 个 函 子 $\OML/cmm/m/it/10.53937 F[] [] []  [][]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 A; B\OT1/cmr/m/n/10.53937 ) \OMS/cmsy/m/n/10.53937 !
  []
 
-
-Underfull \vbox (badness 4699) has occurred while \output is active []
-
- [184]
-Underfull \vbox (badness 1565) has occurred while \output is active []
-
- [185]
-Underfull \vbox (badness 1616) has occurred while \output is active []
-
- [186]
-Underfull \vbox (badness 4531) has occurred while \output is active []
-
- [187] [188] [189] [190] [191] [192]
-Underfull \vbox (badness 6608) has occurred while \output is active []
-
- [193]
-
-LaTeX Warning: Reference `reflective-counit-isomorphism' on page 194 undefined on input line 1265.
-
-
-Underfull \vbox (badness 3281) has occurred while \output is active []
-
- [194] [195] [196] [197] [198] [199]
+[202]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [200] [201]
-Underfull \vbox (badness 2837) has occurred while \output is active []
+ [203] [204] [205]
+Underfull \hbox (badness 1259) in paragraph at lines 732--746
+[]$[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 C; C\OT1/cmr/m/n/10.53937 ) = []$\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 记 $\OT1/cmr/m/n/10.53937 ^^A[]$ \TU/SimSun(0)/m/n/10.53937 为 有 限 全 序 集
+ []
 
- [202]
-Underfull \vbox (badness 7397) has occurred while \output is active []
 
- [203] [204] [205] [206] [207] [208]
-Overfull \hbox (18.68549pt too wide) in paragraph at lines 2154--2162
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [206] [207] [208]
+Underfull \vbox (badness 3039) has occurred while \output is active []
+
+ [209] [210] [211] [212] [213] [214]
+
+LaTeX Warning: Reference `reflective-counit-isomorphism' on page 215 undefined on input line 1442.
+
+[215] [216] [217] [218] [219] [220]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [221] [222]
+Underfull \vbox (badness 5924) has occurred while \output is active []
+
+ [223]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [224] [225] [226] [227] [228] [229]
+Overfull \hbox (18.68549pt too wide) in paragraph at lines 2331--2339
 \TU/SimSun(0)/m/n/10.53937 那 么 对 固 定 的 $\OML/cmm/m/it/10.53937 j \OMS/cmsy/m/n/10.53937 2 \OML/cmm/m/it/10.53937 J$\TU/lmr/m/n/10.53937 , $[][] \OML/cmm/m/it/10.53937 X[]$ \TU/SimSun(0)/m/n/10.53937 的 元 素 等 同 于 $\OML/cmm/m/it/10.53937 J$ \TU/SimSun(0)/m/n/10.53937 中 图 表 $\OML/cmm/m/it/10.53937 f$ \TU/SimSun(0)/m/n/10.53937 上 以 $\OML/cmm/m/it/10.53937 j$ \TU/SimSun(0)/m/n/10.53937 为 顶 点 的 余 锥\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 故 $[][] [][] \OML/cmm/m/it/10.53937 X[]$
  []
 
-[209] [210]
-Underfull \vbox (badness 5563) has occurred while \output is active []
+[230] [231]
+Underfull \vbox (badness 4699) has occurred while \output is active []
 
- [211] [212] [213] [214] [215] [216] [217]
+ [232] [233] [234] [235] [236]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [218]
+ [237]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [219]
-Underfull \vbox (badness 2418) has occurred while \output is active []
+ [238] [239] [240]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [220] [221] [222]
-Underfull \vbox (badness 4266) has occurred while \output is active []
+ [241] [242] [243] [244] [245] [246] [247]
+Underfull \vbox (badness 7685) has occurred while \output is active []
 
- [223] [224] [225] [226]
-Underfull \hbox (badness 4713) in paragraph at lines 3250--3251
+ [248]
+Underfull \hbox (badness 4713) in paragraph at lines 3476--3477
 []$\OML/cmm/m/it/10.53937 f [] [] \U/msb/m/n/10.53937 T[] \OMS/cmsy/m/n/10.53937 ! []$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 此 时 $\OML/cmm/m/it/10.53937 f[]$ \TU/SimSun(0)/m/n/10.53937 没 有 简 单 的 描 述\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 但 有 一 些 例 子\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 如
  []
 
-[227] [228] [229]
-Underfull \hbox (badness 1117) in paragraph at lines 3344--3347
+[249] [250]
+Underfull \hbox (badness 1117) in paragraph at lines 3575--3578
 []\TU/SimSun(0)/m/n/10.53937 此 处 所 谓 的 \TU/SimSun(0)/m/it/10.53937 符 号 表 \TU/lmr/m/n/10.53937 (signature) $\OT1/cmr/m/n/10.53937 ^^F$ \TU/SimSun(0)/m/n/10.53937 是 由 一 族 \TU/SimSun(0)/m/it/10.53937 类 型 $\OML/cmm/m/it/10.53937 A; B; [] $ \TU/SimSun(0)/m/n/10.53937 以 及 一 些 \TU/SimSun(0)/m/it/10.53937 函 数 符 号
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3381--3382
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [251] [252]
+Underfull \hbox (badness 10000) in paragraph at lines 3634--3635
 []\TU/SimSun(0)/m/n/10.53937 态 射 $\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 f; '\OT1/cmr/m/n/10.53937 ) [] [] (\OML/cmm/m/it/10.53937 i; A\OT1/cmr/m/n/10.53937 ) \OMS/cmsy/m/n/10.53937 ! \OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 j; B\OT1/cmr/m/n/10.53937 )$\TU/lmr/m/n/10.53937 ,
  []
 
 
-Overfull \hbox (20.60011pt too wide) in paragraph at lines 3443--3444
+Overfull \hbox (20.60011pt too wide) in paragraph at lines 3696--3697
  [] 
  []
 
-
+[253] [254] [255] [256] [257] [258]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [230]
-Underfull \vbox (badness 4316) has occurred while \output is active []
-
- [231]
-Underfull \vbox (badness 1527) has occurred while \output is active []
-
- [232]
+ [259]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [233] [234]) (./logic-appendix.tex [235] [236
+ [260]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [261]) (./logic-appendix.tex [262]
 附录 B.
 \openout5 = `main.mtc'.
 
@@ -2136,27 +2206,27 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 (./main.mtc11
 Overfull \hbox (2.0416pt too wide) detected at line 1
- []\TU/lmr/bx/n/9.03374 237
+ []\TU/lmr/bx/n/9.03374 263
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 6
- []\TU/lmr/bx/n/9.03374 249
+ []\TU/lmr/bx/n/9.03374 275
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 9
- []\TU/lmr/bx/n/9.03374 254
+ []\TU/lmr/bx/n/9.03374 280
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 11
- []\TU/lmr/bx/n/9.03374 257
+ []\TU/lmr/bx/n/9.03374 283
  []
 
 
 Overfull \hbox (2.0416pt too wide) detected at line 15
- []\TU/lmr/bx/n/9.03374 259
+ []\TU/lmr/bx/n/9.03374 285
  []
 
 )
@@ -2174,79 +2244,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[237]
+[263
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [238]
+ [264]
 Underfull \hbox (badness 1412) in paragraph at lines 94--96
 []\TU/SimSun(0)/m/n/10.53937 一 些 \TU/SimSun(0)/m/it/10.53937 函 数 符 号 \TU/lmr/m/n/10.53937 (function symbols), \TU/SimSun(0)/m/n/10.53937 每 一 个 函 数 符 号 $\OML/cmm/m/it/10.53937 f$ \TU/SimSun(0)/m/n/10.53937 具 有 固 定 的 类 型
  []
 
-[239] [240]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [241]
-Underfull \hbox (badness 1715) in paragraph at lines 194--195
+[265] [266] [267]
+Underfull \hbox (badness 1715) in paragraph at lines 196--197
 []\TU/SimSun(0)/m/n/10.53937 在 \TU/SimSun(0)/m/it/10.53937 语 法 \TU/SimSun(0)/m/n/10.53937 的 层 面\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 项 与 公 式 是 两 种 不 同 的 东 西\TU/lmr/m/n/10.53937 ; \TU/SimSun(0)/m/n/10.53937 但 项 与 公 式 可 以 有 相 同 的 \TU/SimSun(0)/m/it/10.53937 语 义\TU/lmr/m/n/10.53937 :
  []
 
 
-Underfull \vbox (badness 2980) has occurred while \output is active []
-
- [242] [243] [244] [245]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [246] [247] [248] [249]
-Underfull \hbox (badness 1490) in paragraph at lines 640--643
+ [268] [269] [270] [271] [272] [273] [274] [275]
+Underfull \hbox (badness 1490) in paragraph at lines 642--645
 []\TU/SimSun(0)/m/n/10.53937 项 的 代 换 性 质 \TU/lmr/m/n/10.53937 ([]B.2.4[]) \TU/SimSun(0)/m/n/10.53937 的 一 个 常 见 的 特 例 是 $[] \OT1/cmr/m/n/10.53937 = [] \OMS/cmsy/m/n/10.53937 ^^Z []$ \TU/SimSun(0)/m/n/10.53937 的 情 形\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 此 时
  []
 
-[250]
-Underfull \vbox (badness 1609) has occurred while \output is active []
 
- [251]
-Underfull \hbox (badness 3049) in paragraph at lines 726--732
+Underfull \vbox (badness 1178) has occurred while \output is active []
+
+ [276]
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+ [277]
+Underfull \hbox (badness 3049) in paragraph at lines 728--734
 []\TU/SimSun(0)/m/n/10.53937 设 $[]\OML/cmm/m/it/10.53937 :^^^$ \TU/SimSun(0)/m/n/10.53937 是 符 号 表 $\OT1/cmr/m/n/10.53937 ^^F$ \TU/SimSun(0)/m/n/10.53937 上 带 语 境 的 公 式\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 在 范 畴 $\OMS/cmsy/m/n/10.53937 C$ \TU/SimSun(0)/m/n/10.53937 中 可 解 释\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 其 中 $[] \OT1/cmr/m/n/10.53937 =
  []
 
 
-Underfull \hbox (badness 6047) in paragraph at lines 726--732
+Underfull \hbox (badness 6047) in paragraph at lines 728--734
 \OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 y[]; []  ; y[]\OT1/cmr/m/n/10.53937 )\OML/cmm/m/it/10.53937 ; y[] [] [] B[]$\TU/lmr/m/n/10.53937 . \TU/SimSun(0)/m/n/10.53937 设 $[] \OT1/cmr/m/n/10.53937 = (\OML/cmm/m/it/10.53937 s[]; []  ; s[]\OT1/cmr/m/n/10.53937 )\OML/cmm/m/it/10.53937 ; s[] [] [] B[]$ \TU/SimSun(0)/m/n/10.53937 是 任 意 的 项\TU/lmr/m/n/10.53937 , $[] \OT1/cmr/m/n/10.53937 =
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [252]
-Underfull \vbox (badness 2269) has occurred while \output is active []
-
- [253] [254]
-Overfull \hbox (0.71318pt too wide) in paragraph at lines 834--835
+[278] [279] [280]
+Overfull \hbox (0.71318pt too wide) in paragraph at lines 836--837
 []\TU/SimSun(0)/m/n/10.53937 对 于 $\OT1/cmr/m/n/10.53937 ^^F$ \TU/SimSun(0)/m/n/10.53937 中 的 函 数 符 号 $\OML/cmm/m/it/10.53937 f [] [] A \OMS/cmsy/m/n/10.53937 ! \OML/cmm/m/it/10.53937 B$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 取 类 型 $\OML/cmm/m/it/10.53937 A$ \TU/SimSun(0)/m/n/10.53937 的 变 量 $\OML/cmm/m/it/10.53937 x$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 由 函 数 的 引 入 法 则 $\OML/cmm/m/it/10.53937 ^^Ux:f\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x\OT1/cmr/m/n/10.53937 ) [] [] [\OML/cmm/m/it/10.53937 A \OMS/cmsy/m/n/10.53937 !
  []
 
-[255]
+[281] [282]
+Underfull \hbox (badness 10000) in paragraph at lines 909--909
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 909--909
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 909--910
+
+ []
+
+[283]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [256]
-Underfull \hbox (badness 10000) in paragraph at lines 907--907
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 907--907
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
-
- []
-
-[257]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [258] [259]) [260] [261
+ [284] [285]) [286] [287
 
 ]
 Package minitoc Info: I0009
@@ -2260,7 +2320,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the main.log file.
 
-[262] (./main.aux)
+[288] (./main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65625pt have occurred.
@@ -2272,18 +2332,18 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AFFE4F8DCA441ADCA393ADB9EF7212D8;6326.
+(rerunfilecheck)             Checksum: C88C3842BAC4CB953AE63FB12A206C2A;6662.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52779 strings out of 476675
- 1170973 string characters out of 5807327
+ 54143 strings out of 476675
+ 1205948 string characters out of 5807327
  1892290 words of memory out of 5000000
- 72033 multiletter control sequences out of 15000+600000
+ 73395 multiletter control sequences out of 15000+600000
  533181 words of font info for 197 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  100i,22n,104p,1316b,4866s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (262 pages).
+Output written on main.pdf (288 pages).

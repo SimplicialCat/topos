@@ -457,6 +457,35 @@
       \verb https://www.youtube.com/watch?v=Ro8KoFFdtS4
       \endverb
     \endentry
+    \entry{EGG}{article}{}
+      \name{author}{2}{}{%
+        {{hash=879e6f70ccf8d5999602c642fcda57b3}{%
+           family={Joyal},
+           familyi={J\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b52806ad188ef709135e996e45d93b28}{%
+           family={Tierney},
+           familyi={T\bibinitperiod},
+           given={Myles},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f44fa41b2d075dc432e8f5360634d07f}
+      \strng{fullhash}{f44fa41b2d075dc432e8f5360634d07f}
+      \strng{bibnamehash}{f44fa41b2d075dc432e8f5360634d07f}
+      \strng{authorbibnamehash}{f44fa41b2d075dc432e8f5360634d07f}
+      \strng{authornamehash}{f44fa41b2d075dc432e8f5360634d07f}
+      \strng{authorfullhash}{f44fa41b2d075dc432e8f5360634d07f}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mem. Amer. Math. Soc.}
+      \field{number}{309}
+      \field{title}{An extension of the Galois theory of Grothendieck}
+      \field{volume}{51}
+      \field{year}{1984}
+    \endentry
     \entry{SGL}{book}{}
       \name{author}{2}{}{%
         {{hash=ee7e692312c310fd33fbfdd5f0ce2799}{%

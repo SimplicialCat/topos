@@ -86,43 +86,75 @@
     If you discover that two theories have the same classifying topos, this means that the two theories tell the same story in different languages.
 }{Olivia Caramello}
 
+% https://q.uiver.app/#q=WzAsNCxbMSwxLCJcXHRleHR75YiG57G7XFx0b3Bvc3t9fSJdLFsxLDAsIlxcdGV4dHvliIbnsbvnqbrpl7R9Il0sWzAsMCwiXFx0ZXh0e+epuumXtH0iXSxbMCwxLCJcXHRleHR7XFx0b3Bvc3t9fSJdLFsyLDMsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In19fV0sWzEsMCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XV0=
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\text{空间}} \& {\text{分类空间}} \\
+	{\text{\topos{}}} \& {\text{分类\topos{}}}
+	\arrow[squiggly, from=1-1, to=2-1]
+	\arrow[squiggly, from=1-2, to=2-2]
+\end{tikzcd}\]
+
+~\\
+
 %分类\topos{}的角色类似于拓扑学中的分类空间:
-有代数拓扑背景的读者知道, 对于拓扑群 $G$ 存在 ``分类空间'' $BG$,
+在代数拓扑中, 对于拓扑群 $G$ 可构造\emph{分类空间} $BG$,
 使得 (足够好的) 空间 $X$ 上 $G$-主丛的等价类
 一一对应于 $X$ 到 $BG$ 的映射同伦类 (被 $BG$ ``分类''),
 $$
-G\mathsf{-Bund} (X) \simeq [X,BG];
+G\mathsf{Bund} (X) \simeq [X,BG];
 $$
-从而恒等映射 $\operatorname{id}_{BG}$ 对应着 $BG$ 上一个 ``万有'' 的 $G$-主丛 $EG \to BG$,
+从而恒等映射 $\operatorname{id}_{BG}$ 对应着 $BG$ 上一个\emph{万有 $G$-主丛} $EG \to BG$,
 ``万有'' 意指任何 $G$-主丛都是通过某个映射 $X \to BG$ 将其拉回得到.
-分类\topos{}不仅仅是分类空间的一个精神上的类比; 它某种意义上是分类空间的推广, 这种推广正是沿着 Grothendieck 的 ``\topos{}作为空间概念的推广'' 的思路.
 
-类似地, 在许多情形下, \topos{}上的一种结构 $T$ 可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
-某种结构 $T$ 的分类\topos{}应当视为 ``所有 $T$ 构成的空间'', 术语叫做\emph{模空间}.
+类似地, 在许多情形下, \topos{} $\mathcal C$ 上的一种结构 $T$ (即某个理论的模型) 可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
+某种结构 $T$ 的分类\topos{}可视为 ``所有 $T$ 构成的空间'', 也可称作 $T$ 的\emph{模空间}.
 若将\topos{} $\mathcal C$ 视为空间, 那么 $\mathcal C$ 上的一个结构 $T$ 可视为空间的 ``每一点'' 上都有一个结构 $T$,
 从而这给出 $\mathcal C$ 到模空间的一个几何态射.
 例如, 设 $\mathcal E$ 为环的分类\topos{}, 那么 $\mathcal E$ 应当视为 ``所有环构成的空间'' (上的层范畴), 拓扑空间 $X$ 上的一个环层即是 $X$ 的 ``每一点'' 上都有一个环,
 这等同于 $\text{Sh}(X)$ 到 $\mathcal E$ 的一个几何态射.
-
-分类\topos{}到自身的恒等态射对应着其上的 ``万有'' 的 $T$ 结构, 又称\emph{重言} (tautological) $T$ 结构.
+与分类空间的情况类似, 分类\topos{}到自身的恒等态射对应着其上的 ``\emph{万有 $T$ 结构}'', 又称\emph{重言} (tautological) $T$ 结构.
 
 \subsection{例}
 
 \subsubsection{$G$-旋子的分类\topos{}}
 
+\begin{definition}
+	{(群作用)}
+	设 $\mathcal C$ 为\topos{}, $G$ 为 $\mathcal C$ 中的群, 其乘法映射与单位元分别为 $m\colon G\times G\to G$, $e\colon 1\to G$. 设 $X$ 为 $\mathcal C$ 的对象. 定义 $X$ 上的 $G$-\emph{左作用}为一个映射 $\rho\colon G\times X\to X$, 满足如下交换图.
+	% https://q.uiver.app/#q=WzAsNyxbMSwwLCJHXFx0aW1lcyBYIl0sWzAsMCwiR1xcdGltZXMgR1xcdGltZXMgWCJdLFswLDEsIkdcXHRpbWVzIFgiXSxbMSwxLCJYIl0sWzIsMCwiWCJdLFszLDEsIlgiXSxbMywwLCJHXFx0aW1lcyBYIl0sWzEsMiwibSIsMl0sWzEsMCwiXFxyaG8iXSxbMiwzLCJcXHJobyIsMl0sWzAsMywiXFxyaG8iXSxbNCw1LCJcXG9wZXJhdG9ybmFtZXtpZH1fWCIsMl0sWzQsNiwiZSJdLFs2LDUsIlxccmhvIl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{G\times G\times X} \& {G\times X} \& X \& {G\times X} \\
+		{G\times X} \& X \&\& X
+		\arrow["m"', from=1-1, to=2-1]
+		\arrow["\rho", from=1-1, to=1-2]
+		\arrow["\rho"', from=2-1, to=2-2]
+		\arrow["\rho", from=1-2, to=2-2]
+		\arrow["{\operatorname{id}_X}"', from=1-3, to=2-4]
+		\arrow["e", from=1-3, to=1-4]
+		\arrow["\rho", from=1-4, to=2-4]
+	\end{tikzcd}\]
+	等价地, 群作用也可定义为半群的同态 $G\to X^X$.
+\end{definition}
+
+%\begin{definition}
+%	{(普通的群视为\topos{}中的群)}
+%	设 $G$ 为 ($\mathsf {Set}$ 中的) 群, $\gamma\colon \mathcal C\to \mathsf {Set}$ 是 $\mathsf {Set}$ 上的\topos{} (见命题 \ref{global-sections-geometric-morphism}). 那么 $\gamma^*(G)$ 为 $\mathcal C$ 中的群. 为了记号的简便, 我们以 $G$ 表示 $\gamma^*(G)$.
+%	%因为 $\gamma^*$ 保持有限极限 (特别地, $\gamma^*(1)=1$), 所以 $\gamma^*(G)$ 是群.
+%	对于群 $G$ 的元素 $g\colon 1\to G$, 以 $g$ 表示其给出的 $\gamma^*(G)$ 的整体元素 $\gamma^*(g)\colon 1\to \gamma^*(G)$.
+%\end{definition}
 
 下面的概念是 ``空间上的 $G$-主丛'' 的推广, 取自 \cite{SGL} VIII.2 节.
 \begin{definition}
 	[label={G-torsors-over-topos}]
 	{(\topos{}上的 $G$-旋子)}
-	设 $G$ 为离散群, 即 $\mathsf {Set}$ 中的群.
-	设 $\gamma\colon \mathcal C\to \mathsf {Set}$ 是 $\mathsf {Set}$ 上的\topos{} (见命题 \ref{global-sections-geometric-morphism}). 定义 $\mathcal C$ 上的一个 $G$-\emph{旋子}\footnotemark (torsor) 为 $\mathcal C$ 的对象 $T$, 以及群对象 $\gamma^*(G)$ 在 $T$ 上的作用 $\mu\colon \gamma^*(G)\times T \to T$, 满足
+	设 $G$ 为群. 定义 $\mathcal C$ 上的一个 $G$-\emph{旋子}\footnotemark (torsor) 为 $\mathcal C$ 的对象 $T$, 以及 $\underline G$ (记号见注 \ref{notation-constant-sheaf}) 在 $T$ 上的作用 $\mu\colon \underline G\times T \to T$, 满足
 	\begin{enumerate}[(i)]
-		\item 映射 $T\to 1$ 为满射;
-		\item 群作用 $\mu$ 诱导同构 $(\mu,\pi_2)\colon \gamma^*(G)\times T \to T\times T$.
+		\item 映射 $T\to 1$ 为满射, 即 $T$ ``有物'' (关于有物与非空的讨论, 见 \ref{inhabited-vs-nonempty});
+		\item 群作用 $\mu$ 诱导同构 $(\mu,\pi_2)\colon \underline G\times T \to T\times T$.
 	\end{enumerate}
+	记 $\mathcal C$ 上的 $G$-旋子构成范畴为 $\mathsf{Tors}_G(\mathcal C)$, 其中态射是保持 $G$-左作用的映射.
 \end{definition}
-\footnotetext{Torsor 似乎没有通行的中文译名, 这可能是因为它在拓扑学中一般被称作\emph{主丛}. 这里我跟随我的一位老师译为\emph{旋子}.}
+\footnotetext{Torsor 似乎没有通行的中文译名, 这可能是因为它在拓扑学中一般被称作\emph{主丛}. 这里我跟随我的一位老师将其译为\emph{旋子}.}
 
 %\begin{remark}
 %	{(条件 ii 的解读)}
@@ -138,29 +170,57 @@ $$
 	后一个条件等价于这个作用是自由且传递的:
 	``自由'' 等价于 $(\mu,\pi_2)\colon G\times T \to T\times T$ 为单射, ``传递'' 等价于其为满射.
 	
-	有趣的是, 两个映射 $\mu,\pi_2\colon G\times T \to T$ 也可视为一个范畴 (具体地, $G$ 在 $T$ 上作用的\emph{作用群胚}) 的箭头集合到对象集合的两个映射, 分别将一个箭头映射到其终点与起点. 那么 $(\mu,\pi_2)\colon G\times T \to T\times T$ 为双射就是说, 作用群胚的任何两个对象 $x,y$ 之间有且仅有一个态射 $x\to y$.
+	另一种看法是, 两个映射 $\mu,\pi_2\colon G\times T \to T$ 给出了一个范畴 (具体地, $G$ 在 $T$ 上作用的\emph{作用群胚}) 的箭头集合到对象集合的两个映射, 分别将一个箭头映射到其终点与起点. 那么 $(\mu,\pi_2)\colon G\times T \to T\times T$ 为双射就是说, 作用群胚的任何两个对象 $x,y$ 之间有且仅有一个态射 $x\to y$.
 \end{example}
 
 \begin{example}
 	{(空间上的 $G$-主丛)}
-	仍设 $G$ 为离散群. 拓扑空间 $X$ 上的 $G$-主丛等价于 (或可定义为) 平展映射 $E \to X$, 带有 $X$ 上的 $G$-左作用 $G\times E \to E$, 使得每个纤维 $E_x$ 非空且带有 $G$ 的自由传递作用.
-	
-	可以证明, 这个定义等价于层\topos{} $\operatorname{Sh}(X)$ 上 $G$-旋子的定义.
+	仍设 $G$ 为离散群. 拓扑空间 $X$ 上的 $G$-主丛等价于平展映射 $E \to X$, 带有 $X$ 上的 $G$-左作用 $\underline G\times E \to E$, 使得每个纤维 $E_x$ 非空且带有 $G$ 的自由传递作用. 这等价于层\topos{} $\operatorname{Sh}(X)$ 上的 $G$-旋子.
 \end{example}
 
-\begin{example}
-	{($G\mathsf {Set}$ 上的万有 $G$-旋子)}
-	对于离散群 $G$, 考虑其自身作成的 $G$-右作用集合 $R_G$. 我们断言它是 $G\mathsf {Set}$ 上的 $G$-旋子.
-	
-	首先回忆几何态射 $\gamma\colon G\mathsf {Set} \to \mathsf {Set}$ (例 \ref{group-homomorphism-adjoint-triple-example-G-1}),
-	其逆像函子 $\gamma^*\colon \mathsf {Set} \to G\mathsf {Set}$
-	将集合对应到其自身, 带有平凡 $G$-右作用.
-	群作用 $\mu\colon \gamma^*(G)\times R_G \to R_G$, $(g,h)\mapsto gh$ 是 $G$-集合的态射, 因为 $\mu(g,hk)=ghk=\mu(g,h)k$.
-	映射 $(\mu,\pi_2)\colon \gamma^*(G)\times R_G\to R_G\times R_G$ 为 $(g,h)\mapsto (gh,h)$, 从而为 $G$-集合的同构.
-	%\todo{写完万有 $G$-旋子}
-\end{example}
+就像分类空间 $BG$ 上有万有 $G$-主丛, \topos{} $G\mathsf {Set}$ 上有\emph{万有 $G$-旋子}; 它就是 $G$ 在自身上的 $G$-右作用, 记为 $R_G$.
 
-\topos{}上的旋子是 ``旋子的理论'' 的模型.
+首先说明 $R_G$ 是 $G\mathsf {Set}$ 上的 $G$-旋子.
+回忆几何态射 $\gamma\colon G\mathsf {Set} \to \mathsf {Set}$ (例 \ref{group-homomorphism-adjoint-triple-example-G-1}), 其逆像函子 $\gamma^*\colon \mathsf {Set} \to G\mathsf {Set}$ 将集合对应到其自身, 带有平凡 $G$-右作用; 直像函子 $\gamma_*\colon G\mathsf {Set}\to\mathsf {Set}$ 将 $G$-集合对应到其不动点集.
+群作用 $\mu\colon \underline G\times R_G \to R_G$, $(g,h)\mapsto gh$ 是 $G$-集合的态射, 因为\emph{左作用与右作用交换},  $\mu(g,hk)=ghk=\mu(g,h)k$.
+映射 $(\mu,\pi_2)\colon \underline G\times R_G\to R_G\times R_G$ 为 $(g,h)\mapsto (gh,h)$, 从而为 $G$-集合的同构.
+
+\begin{prop}
+	{(万有 $G$-旋子)}
+	$R_G$ 是万有 $G$-旋子, 即对任何\topos{} $\mathcal C$ 上的 $G$-旋子 $T$, 有一对伴随
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhjYWwgQyJdLFsxLDAsIkdcXG1hdGhzZiB7U2V0fSJdLFswLDEsIlxcb3BlcmF0b3JuYW1le0hvbX1fe1xcbWF0aGNhbCBDfShULC0pIiwyLHsib2Zmc2V0IjoyfV0sWzEsMCwiVFxcdGltZXNfe0d9IC0iLDIseyJvZmZzZXQiOjJ9XSxbMywyLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal C} \& {G\mathsf {Set},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\operatorname{Hom}_{\mathcal C}(T,-)}"', shift right=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{-\times_{G}T}"', shift right=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\end{tikzcd}\]
+	且有 $T\simeq R_G\times_G T$. 这一构造给出了范畴等价
+	\[
+	\mathsf{Tors}_G(\mathcal C)\simeq\operatorname{Hom}_{\Top}(\mathcal C,G\mathsf {Set}).
+	\]
+\end{prop}
+顾名思义, 这对伴随是 ``张量--同态伴随'' 的类比, 参见命题 \ref{group-action-tensor-hom}, \ref{presheaf-topos-tensor-hom-adjunction}.
+\begin{proof} 略. 我们仅给出这一对函子的定义.
+\begin{itemize}
+	\item 因为 $T$ 带有 $G$-左作用, 所以对 $\mathcal C$ 的对象 $X$, $\operatorname{Hom}_{\mathcal C}(T,X)$ 带有自然的 $G$-右作用. 这给出了函子 $\operatorname{Hom}_{\mathcal C}(T,-)\colon \mathcal C\to G\mathsf {Set}$.
+	\item 设集合 $Y$ 带有 $G$-右作用. 定义 $\mathcal C$ 的对象 $Y\times_G T$ 为
+	\[
+	Y\times_G T := \operatorname{coeq}\big(
+		\begin{tikzcd}[ampersand replacement=\&]
+			{\underline Y\times \underline G \times T} \& {\underline Y\times T}
+			\arrow[shift left, from=1-1, to=1-2]
+			\arrow[shift right, from=1-1, to=1-2]
+		\end{tikzcd}
+	\big),
+	\]
+	其中两个映射分别是 $\underline G$ 右作用于 $\underline Y$ 和左作用于 $T$. 参考定义 \ref{group-action-tensor}.
+\end{itemize}
+\end{proof}
+
+
+
+\topos{}上的旋子是一个理论的模型.
 
 \begin{definition}
 	{($G$-旋子的理论)}
@@ -168,7 +228,7 @@ $$
 	其中只有一个类型 $T$, 对每个元素 $g\in G$ 都有一个一元函数符号 $g$, 公理如下.
 	\begin{itemize}
 		\item (\emph{群作用}) 对每一对 $g,h\in G$ 有一条公理 $\vdash_x g(hx)=(gh)x$ (注意这里没有用到任意量词 $\forall$);
-		\item (\emph{非空}) $\vdash \exists x. \top$;
+		\item (\emph{有物}) $\vdash \exists x. \top$;
 		\item (\emph{自由性}) 对每一对不同的 $g,h\in G$ 有一条公理 $(gx=hx)\vdash_x \bot$ (同上, 这里没有用到 $\forall$);
 		\item (\emph{传递性}) $\displaystyle\vdash_{(x,y)}\bigvee_{g\in G}gx=y$.
 	\end{itemize}

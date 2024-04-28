@@ -8,7 +8,8 @@
 
 常常拓扑空间的重点不在于\emph{点}, 而在于开集, 以及开集之间的关系.
 将开集的性质提炼出来, 使其不再依赖于点, 就成为\emph{位象} (locales) 的概念. 它是介于拓扑空间和景之间的一个推广.\footnote{说位象是拓扑空间的 ``推广'' 不甚准确, 因为一般拓扑空间到位象的对应不是全忠实的 (有的空间开集太少). 但是 ``好'' 的空间范畴如 Hausdorff 空间范畴确实嵌入位象的范畴.}
-位象理论又称为\emph{无点拓扑学} (pointless topology\footnote{双关笑话: 无点拓扑学不是 pointless (无用的).}). 位象与逻辑的联系表明, 忘掉 ``点'' 并不是一个过分的抽象. Andr\'e Joyal \cite{Joyal-Crash-Course} 建议在\topos{}理论之前先学习位象理论. 一个原因可能是在 $n$-\topos{}的观点中, 位象又可称作 $0$-\topos{}. 正如\topos{}是一种 ``集合宇宙'' 一样, $0$-\topos{}是一种 ``真值宇宙''. %我们将在高阶\topos{}的章节介绍这一点.
+位象理论又称为\emph{无点拓扑学} (pointless topology\footnote{双关笑话: 无点拓扑学不是 pointless (无用的).}). 位象与逻辑的联系表明, 忘掉 ``点'' 并不是一个过分的抽象. 在 $n$-\topos{}的观点中, 位象又可视为 $0$-\topos{}. 正如\topos{}是一种 ``集合宇宙'' 一样, $0$-\topos{}是一种 ``真值宇宙''. %我们将在高阶\topos{}的章节介绍这一点.
+因此位象理论某种意义上是\topos{}的前置 (参见 Andr\'e Joyal 的讲座 \cite{Joyal-Crash-Course}). % 建议在\topos{}理论之前先学习位象理论.
 
 \newcommand{\fm}{位格}
 
@@ -107,22 +108,6 @@
 	由拓扑空间到位象的构造给出函子 $\operatorname{Open} \colon \mathsf {Top} \to \mathsf {Loc}.$
 \end{example}
 
-\begin{example}
-	[label={spectrum-as-locale}]
-	{(环的谱作为位象)}
-	在代数几何中, (交换) 环的谱 $\operatorname{Spec}A$ 是由 $A$ 的素理想的集合赋予 Zariski 拓扑定义的. 然而, 我们也可以直接刻画谱的 ``基础开集'' $U_f$ 生成的\fm, 从而不需要使用环的素理想\footnotemark:
-	$$
-	\mathcal O(\operatorname{Spec}A):= \big\langle U_f\colon f\in A\mid U_0 = \bot, U_1 = \top,
-	U_{f+g} \leq U_f \vee U_g, U_{fg} = U_f \wedge U_g \big\rangle.
-	$$
-	(\fm{}就像群, 环等代数结构一样, 可使用生成元和关系刻画, 并且可由给定生成元的 ``自由代数'' 的商得到, 见注 \ref{frame-from-generators-relations}.)
-	
-	将 $U_f$ 想象为一个空间上函数 $f$ ``非零'' 的地方,
-	$f+g$ 非零的地方包含于 $f$ 与 $g$ 各自非零的地方的并,
-	而 $fg$ 非零的地方恰为两者的交.
-	可以证明如此定义的位象 $\operatorname{Spec}A$ 正是传统上定义的拓扑空间 $\operatorname{Spec}A$.
-\end{example}
-\footnotetext{值得一提的是, 构造主义数学青睐这种位象的观点, 因为环的素理想的存在性依赖选择公理. 关于构造主义数学与位象, 我们推荐读者阅读 Andrej Bauer 的文章 \cite{FSCM}.}
 
 %\begin{example}
 %	[label={complete-boolean-algebras}]
@@ -164,11 +149,39 @@
 位象 $X$ 的一个点 $p\colon 1 \to X$ 对应\fm{}态射 $p^*\colon \mathcal O(X) \to \{\bot,\top\}$.
 由于它保持有限交与任意并, $p^*$ 的核 ($\top$ 的原像) 是 $\mathcal O(X)$ 的\emph{完全素滤子} (completely prime filter). (偏序集中的\emph{滤子}是关于交封闭的向上封闭子集, 称 $F$ 为完全素滤子是指当 $\bigvee_i U_i \in F$ 时, 至少有一个 $U_i$ 属于 $F$.)
 
-\begin{remark}
-	[label={completely-prime-filter-vs-prime-ideal}]
-	{}
-	滤子是理想的 ``对偶''. 我们有如下类比: 态射 $\mathcal O(X)\to \{\bot,\top\}$ 中 $\top$ 的原像是完全素滤子, 类似于环同态 $A\to k$ 的核是素理想 ($k$ 为整环). 位象 $X$ 的点对应 $\mathcal O(X)$ 的完全素滤子, 类似于谱 $\operatorname{Spec}A$ 的点对应环 $A$ 的素理想.
-\end{remark}
+\begin{example}
+	[label={spectrum-as-locale}]
+	{(环的谱作为位象)}
+	在代数几何中, (交换) 环的谱 $\operatorname{Spec}A$ 是由 $A$ 的素理想的集合赋予 Zariski 拓扑定义的. 然而, 我们也可以直接刻画谱的 ``基础开集'' $U_f$ 生成的\fm, 从而不需要使用环的素理想\footnotemark. 定义 $\mathcal O(\operatorname{Spec}A)$ 为如下生成元和关系表现的\fm{}\footnotemark.
+	$$
+	\mathcal O(\operatorname{Spec}A):= \big\langle U_f\colon f\in A\mid U_0 = \bot, U_1 = \top,
+	U_{f+g} \leq U_f \vee U_g, U_{fg} = U_f \wedge U_g \big\rangle.
+	$$
+	由关系 $U_{fg} = U_f \wedge U_g$, 有限个基础开集的交仍是基础开集, 从而 $\mathcal O(\operatorname{Spec}A)$ 的任何元素都可写成 $\bigvee_i U_{f_i}$ ($f_i\in A$) 的形式; 这解释了 $U_f$ 称为 ``基础开集'' 的原因.
+	
+	将 $U_f$ 想象为一个空间上函数 $f$ ``非零'' 的地方,
+	$f+g$ 非零的地方包含于 $f$ 与 $g$ 各自非零的地方的并,
+	而 $fg$ 非零的地方恰为两者的交.
+	
+	可以证明如此定义的位象 $\operatorname{Spec}A$ 正是传统上定义的拓扑空间 $\operatorname{Spec}A$.
+	例如, $\operatorname{Spec}A$ 的点一一对应于\fm{}态射 $\mathcal O(\operatorname{Spec}A)\to\{\top,\bot\}$, 而这等同于对每个生成元 $U_f \,(f\in A)$ 指定 $p(f)\in\{\top,\bot\}$, 满足
+	$p(0)=\bot,p(1)=\top,p(fg)=p(f)\land p(g),p(f+g)\leq p(f)\lor p(g)$. 此时 $p^{-1}(\bot)$ 正是 $A$ 的素理想.
+	
+	对于 $A$ 的一族元素 $\{f_i\}$, 所有开子空间 $U_{f_i}$ 覆盖 $\operatorname{Spec}A$ (即 $\bigvee_i U_{f_i} = \top$) 当且仅当存在一族至多有限个非零的元素 $\{a_i\}$ 使得 $\sum_i a_if_i = 1$, 即 $\{f_i\}$ 生成 $A$ 的单位理想. 这启发了 Zariski 景的定义 (\ref{zariski-site}).
+	
+	另外, 基础开集 $U_f$ 对应的开子位象同构于局部化的谱 $\operatorname{Spec}A_f$, 并且也有生成元和关系的表现, 见例 \ref{open-sublocale-of-spectrum}.
+\end{example}
+\addtocounter{footnote}{-1}
+\footnotetext{值得一提的是, 构造主义数学青睐这种位象的观点, 因为环的素理想的存在性依赖选择公理. 关于构造主义数学与位象, 我们推荐读者阅读 Andrej Bauer 的文章 \cite{FSCM}.}
+\addtocounter{footnote}{1}
+\footnotetext{\fm{}就像群, 环等代数结构一样, 可使用生成元和关系刻画, 并且可由给定生成元的 ``自由代数'' 的商得到, 见注 \ref{frame-from-generators-relations}.}
+
+
+%\begin{remark}
+%	[label={completely-prime-filter-vs-prime-ideal}]
+%	{}
+%	滤子是理想的 ``对偶''. 我们有如下类比: 态射 $\mathcal O(X)\to \{\bot,\top\}$ 中 $\top$ 的原像是完全素滤子, 类似于环同态 $A\to k$ 的核是素理想 ($k$ 为整环). 位象 $X$ 的点对应 $\mathcal O(X)$ 的完全素滤子, 类似于谱 $\operatorname{Spec}A$ 的点对应环 $A$ 的素理想.
+%\end{remark}
 
 对每个元素 $U\in\mathcal O(X)$, 规定 $\operatorname{Pt}(X)$ 的子集
 $\{p \in \operatorname{Pt}(X) \mid p^*(U) = \top\}$ 为开集,
@@ -210,9 +223,10 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 
 然而, 对于分离性较好的空间, 其对应的位象确实能重构出这个空间:
 \begin{definition}
+	[label={sober-space}]
 	{(清晰空间)}
 	设 $X$ 为拓扑空间. 若命题 \ref{top-loc-adjunction} 中伴随的单位 $X \to \operatorname{Pt}\operatorname{Open}(X)$ 是同胚,
-	则称 $X$ 为\emph{清晰空间} (sober space\footnotemark). 换言之, 清晰空间的范畴是上述伴随给出的等价的满子范畴 (命题 \ref{adjoint-full-subcategory-equivalence}).
+	则称 $X$ 为\emph{清晰空间} (sober space\footnotemark). 换言之, 清晰空间的范畴是上述伴随给出的等价的全子范畴 (命题 \ref{adjoint-full-subcategory-equivalence}).
 \end{definition}
 \footnotetext{Sober 的原义是清醒, 未喝醉. 直观上一个 sober 空间中的点没有过于 ``糊在一起'', 清晰可辨.}
 
@@ -358,6 +372,10 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\end{enumerate}
 \end{prop}
 
+\begin{proof}
+	见命题 \ref{reflective-subcategory-poset}.
+\end{proof}
+
 \begin{example}
 	{(随机元素的子位象)}
 	Alex Simpson 的文章 \cite{SIMPSON20121642} 引入了位象\footnote{准确地说, 是 $\sigma$-位象}上的测度 $\mu\colon \mathcal O(X)\to [0,+\infty]$. 对于位象 $X$ 上的概率测度 $\mu$, 存在一个最大的测度为 $1$ 的子位象 $\operatorname{Ran}_\mu(X)$, 其对应的等价关系为
@@ -416,6 +434,18 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 		$(W\land U) = (W\land (W\Rightarrow U))$.
 	\end{itemize}
 \end{proof}
+
+\begin{example}
+	[label={open-sublocale-of-spectrum}]
+	{(环谱的开子位象)}
+	继续例 \ref{spectrum-as-locale}, $\operatorname{Spec}A$ 的基础开集 $U_f$ 对应的开子位象正是 $\operatorname{Spec}A_f$,
+	\[
+	\begin{aligned}
+		\mathcal O(\operatorname{Spec}A_f) &\simeq \{U\in\mathcal O(\operatorname{Spec}A)\mid U\leq U_f\} \\&\simeq \big\langle U_{fg}\colon g\in A\mid U_0 = \bot, U_f=\top, U_{f(g+h)}\leq U_{fg}\lor U_{fh}, U_{fgh}=U_{fg}\land U_{fh}\big\rangle.
+	\end{aligned}
+	\]
+	$\operatorname{Spec}A_f$ 的点一一对应于\fm{}态射 $\mathcal O(\operatorname{Spec}A_f) \to \{\bot,\top\}$, 也即对每个生成元 $U_{fg}$ 指定一个元素 $p(fg)\in \{\top,\bot\}$, 满足 $p(0) = \bot, p(f)=\top, p(f(g+h))\leq p(fg)\lor p(fh), p(fgh)=p(fg)\land p(fh)$. 令 $\mathfrak p=\{g\in A\mid p(fg)=\bot\}$, 则 $\mathfrak p$ 是 $A$ 中不含 $f$ 的素理想, 这与 $\operatorname{Spec}A_f$ 的传统定义相符.
+\end{example}
 
 \begin{definition}
 	{(闭子位象)}
@@ -491,7 +521,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\]
 \end{prop}
 \begin{proof}
-	前两式是伴随函子的余单位和单位, 而后两式由前两式易得 (后两式也包含在伴随函子的定义中, 见定义 \ref{adjoints-in-2-categories}).
+	前两式是伴随 $f^*\dashv f_*$ 的余单位和单位, 而后两式由前两式易得. 后两式也包含在伴随函子的一种定义中, 见定义 \ref{adjoints-in-2-categories}).
 \end{proof}
 对于位象态射 $f$, 记 $j = f_*f^*$, 由上述命题有 $U\leq j(U)$, 且 $jj=j$. 这实际上是 ``伴随产生单子'' (命题 \ref{monad-from-adjoint}).
 
@@ -738,13 +768,13 @@ f_!(U) \subset V \,\Leftrightarrow\, U\subset f^*(V).
 \]
 此外还有如下的 \emph{Frobenius 恒等式},
 \[
-f_!(U\cap f^*(V)) = f(U)\cap V.
+f_!(U\cap f^*(V)) = f_!(U)\cap V.
 \]
 
 \begin{definition}
 	[label={locale-open-map}]
 	{}
-	对于位象的态射 $f\colon X\to Y$, 若 $f^* \colon \mathcal O(Y)\to \mathcal O(X)$ 有左伴随 $f_!$, 且满足 Frobenius 恒等式 $f_!(U\cap f^*(V)) = f(U)\cap V$, 则称 $f$ 为\emph{开映射}.
+	对于位象的态射 $f\colon X\to Y$, 若 $f^* \colon \mathcal O(Y)\to \mathcal O(X)$ 有左伴随 $f_!$, 且满足 Frobenius 恒等式 $f_!(U\land f^*(V)) = f_!(U)\land V$, 则称 $f$ 为\emph{开映射}.
 \end{definition}
 
 \begin{prop}
@@ -753,8 +783,141 @@ f_!(U\cap f^*(V)) = f(U)\cap V.
 	位象的态射 $f\colon X\to Y$ 为开映射当且仅当 $f^*$ 为\emph{完备 Heyting 代数}的同态, 即 $f^*$ 保持任意交, 且保持 $\Rightarrow$ 运算.
 \end{prop}
 \begin{proof}
-	$f^*$ 保持任意交当且仅当 $f^*$ 有左伴随 (命题 \ref{adjoint-functor-theorem-poset}), 而 $f^*$ 保持 $\Rightarrow$ 运算是 Frobenius 互反律的性质 (命题 \ref{ccc-Frobenius-pullback-preserve-exp}).
+	$f^*$ 保持任意交当且仅当 $f^*$ 有左伴随 (命题 \ref{adjoint-functor-theorem-poset}), 而 $f^*$ 保持 $\Rightarrow$ 运算是 Frobenius 互反律的等价条件 (命题 \ref{ccc-Frobenius-pullback-preserve-exp}).
 \end{proof}
+
+\begin{prop}
+	{}
+	子位象 $i\colon Y\to X$ 是开子位象当且仅当 $i$ 是开映射.
+\end{prop}
+\begin{proof}
+	设 $i\colon Y\to X$ 是开子位象, $Y\in\mathcal O(X)$, $\mathcal O(Y) = \{U\in\mathcal O(X)\mid U\leq Y\}$.
+	那么 $i_!(U)=U$, $i^*(U)=U\land Y$ 满足 Frobenius 恒等式.
+	
+	另一方面, 设子位象的嵌入 $i\colon Y\to X$ 是开映射. 因为 $i^*$ 为满射而 $i_!\dashv i^*$ (这导致 $i^*i_!i^*=i^*$), 所以 $i_!$ 为单射. 令 $W = i_!(\top)$ ($\top$ 是 $\mathcal O(Y)$ 的最大元), 那么 Frobenius 恒等式给出 
+	$i_!i^*(V) = W\land V$ ($V\in\mathcal O(X)$). 进而有
+	\[
+		\{V\in\mathcal O(X)\mid V\leq W\}
+		\{V\in\mathcal O(X)\mid V=i_!i^*(V)\}
+		= \operatorname{im}i_!.
+	\]
+	这说明 $Y$ 是由 $W$ 确定的开子位象.
+\end{proof}
+
+\begin{example}
+	{(到点的映射)}
+	对于位象 $X$, 映射 $X\to 1$ 是开映射.\footnotemark{} %\todo{真的吗?}
+	这是因为 $X^*\colon \mathcal O(1)\to\mathcal O(X)$ 有左伴随
+	\[
+	X_!\colon U\mapsto\begin{cases}
+		\top & U\neq \bot\\
+		\bot & U = \bot
+	\end{cases},
+	\]
+	而 Frobenius 恒等式 $X_!(U\land X^*(V)) = X_!(U)\land V$ 对 $V=\top,V=\bot$ 均成立.
+\end{example}
+
+\footnotetext{注意这个命题依赖于排中律: 左伴随 $X_!$ 的构造使用了排中律, $\mathcal O(1)=\{\top,\bot\}$ 的事实也需要排中律. 在没有排中律时, 也可以证明映射 $X\to 1$ 是开映射当且仅当 $X^*\colon \mathcal O(1)\to\mathcal O(X)$ 有左伴随. 称满足该条件的位象 $X$ 为\emph{开位象}.}
+
+\todo{留下经典逻辑的讨论, 将内位象的讨论移到内语言那一章?}
+
+\begin{prop}
+	{(离散空间)}
+	位象 $X$ 是\emph{离散空间}, 即 $\mathcal O(X)$ 作为\fm{}同构于某个集合的幂集, 当且仅当 $\Delta\colon X\to X\times X$ 是开映射.
+\end{prop}
+\begin{proof}
+	定义集合
+	\[
+	X_0 = \{\text{开子空间 $A\hookrightarrow X$} \mid A\times A\subset \Delta\subset X\times X,\,X_!A=\top\}.
+	\]
+	其中条件 $X_!A=\top$ 在经典逻辑中等价于 $A\neq\bot$.
+	考虑映射
+	\[
+	\phi\colon \mathcal O(X) \to P(X_0),\,
+	U\mapsto \{A\in X_0\mid A\leq U\}.
+	\]
+	\todo{}
+\end{proof}
+
+\subsection{局部位象}
+
+\begin{definition}
+	{(局部位象)}
+	称位象 $X$ 为\emph{局部位象}是指 $X$ 的任何开覆盖都包含 $X$ 自身; 即对任意一族元素 $\{U_i\}_{i\in I}\subset O(X)$, 若 $\bigvee_i U_i = \top$, 则存在 $i$ 使得 $U_i=\top$.
+\end{definition}
+
+\begin{example}
+	{(局部拓扑空间)}
+	设 $X$ 为清晰空间 (定义 \ref{sober-space}), 例如 Hausdorff 空间.
+	那么 $X$ 为局部位象当且仅当 $X$ 中存在一点 $x$, 其唯一的邻域是 $X$ 本身.
+\end{example}
+
+\begin{example}
+	{(局部环的谱是局部位象)}
+	在经典逻辑中, \emph{局部环}是指仅有一个极大理想的环. 一般地, 称环 $R$ 为局部环是指对任意 $x,y\in R$, 若 $x+y$ 可逆, 则 $x$ 可逆或 $y$ 可逆.
+	局部环 $R$ 的谱 $\operatorname{spec}R$ 是局部位象, 事实上, 考虑 $R$ 的极大理想对应的 $\operatorname{spec}R$ 的点, 其唯一的邻域是 $\operatorname{spec}R$ 本身.
+\end{example}
+
+%\todo{Elephant C1.5.6}
+\begin{prop}
+	{}
+	位象 $X$ 是局部位象当且仅当 $X_*\colon \mathcal O(X)\to \mathcal O(1)$ 有右伴随.
+\end{prop}
+\begin{proof}
+%	假设 $X_*$ 有右伴随, 那么 $X_*$ 保持所有极限和余极限, 故存在位象态射 $p\colon 1\to X$, $p^*\dashv p_*$, 使得 $X_*=p^*$. 因此
+%	\[
+%	\{U\in\mathcal O(X) \mid p^*(U)=\top\} = \{U\in\mathcal O(X) \mid X_*(U)=\top\} = \{X\}.
+%	\]
+%	\todo{}
+%	
+	$X_*$ 有右伴随当且仅当 $X_*$ 保持任意并, 而 $X_*(U)=\begin{cases}
+		\top & U=\top\\
+		\bot & U< \top
+	\end{cases}$, 故 $X_*$ 保持任意并当且仅当 $\big(\bigvee_{U<\top} U\big) < \top$, 即 $X$ 为局部位象.
+\end{proof}
+
+\subsection{局部连通位象}
+
+\begin{definition}
+	[label={connected-locale}]
+	{(连通位象)}
+	称位象 $X$ \emph{连通}, 是指对任意\emph{两两不交}的一族元素 $\{U_i\}_{i\in I}\subset\mathcal O(X)\,(i\neq j\Rightarrow U_i\land U_j=\bot)$, 若 $\bigvee_i U_i = \top$, 则存在 $i$ 使得 $U_i = \top$.
+\end{definition}
+
+%\begin{prop}
+%	{(连通性的等价定义)}
+%	位象 $X$ 是连通位象
+%\end{prop}
+
+% Elephant C1.5.9 写在意象的几何性质那一节?
+
+\begin{definition}
+	[label={locally-connected-locale}]
+	{(局部连通位象)}
+	称位象 $X$ \emph{局部连通} (locally connected), 是指其任何开子位象都可写成若干个连通的开子位象的并.
+\end{definition}
+
+由定义, 可知 ``局部连通'' 是一种\emph{局部性质}, 即当 $X$ 有开覆盖 $X=\bigvee_i U_i$ 时, $X$ 局部连通当且仅当每个 $U_i$ 局部连通.
+
+\begin{propdef}
+	{(连通分支)}
+	局部连通位象 $X$ 可唯一地分解为连通开子位象的不交并 $X=\bigvee_i X_i$, 称每个 $X_i$ 为 $X$ 的\emph{连通分支} (component).
+\end{propdef}
+\begin{proof}
+	由定义, $X$ 是若干个连通开子位象 $U_j$ 的并. 在这些开子位象之间, ``相交非空'' 的关系生成一个等价关系 $\sim$, 取 $X_i$ 为每个等价类中所有成员的并即可.
+\end{proof}
+
+%\begin{prop}
+%	{(局部连通性的等价条件)}
+%	位象 $X$, 局部连通当且仅当 $X^*\mathcal O(1)\to\mathcal O(X)$ 有左伴随 $X_!$.
+%\end{prop}
+%\begin{proof}
+%	\todo{}
+%	% C1.5.9
+%	设 $X$ 局部连通, 定义 $X_!\colon \mathcal O(X)\to \mathcal O(1)$
+%\end{proof}
+
+在 \ref{topos-geometric-properties} 节, 我们将用层范畴的性质来刻画位象的 (局部) 连通性等几何性质, 并由此类比得到\topos{}的几何性质的定义.
 
 \section{位象与逻辑}
 
@@ -772,14 +935,17 @@ f_!(U\cap f^*(V)) = f(U)\cap V.
 %	\item 点 = 模型
 %\end{itemize}
 
-% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXHRleHR756m66Ze0fSJdLFsxLDAsIlxcdGV4dHvnkIborrp9Il0sWzEsMSwiXFx0ZXh0e+aooeWei30iXSxbMCwxLCJcXHRleHR754K5fSJdLFswLDIsIlxcdGV4dHvlvIDpm4Z9Il0sWzEsMiwiXFx0ZXh0e+WRvemimH0iXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+% https://q.uiver.app/#q=WzAsOSxbMCwwLCJcXHRleHR756m66Ze0fSJdLFsyLDAsIlxcdGV4dHvnkIborrp9Il0sWzIsMSwiXFx0ZXh0e+aooeWei30iXSxbMCwxLCJcXHRleHR754K5fSJdLFswLDIsIlxcdGV4dHvlvIDpm4Z9Il0sWzIsMiwiXFx0ZXh0e+WRvemimH0iXSxbMSwxLCJcXHRleHR757Sg55CG5oOzfSJdLFsxLDIsIlxcdGV4dHvlh73mlbB9Il0sWzEsMCwiXFx0ZXh0e+WHveaVsOeOr30iXSxbMyw2LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw1LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDgsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
 \[\begin{tikzcd}[ampersand replacement=\&,row sep=small]
-	{\text{空间}} \& {\text{理论}} \\
-	{\text{点}} \& {\text{模型}} \\
-	{\text{开集}} \& {\text{命题}}
-	\arrow[dashed, no head, from=1-1, to=1-2]
+	{\text{空间}} \& {\text{代数}} \& {\text{理论}} \\
+	{\text{点}} \& {\text{素理想}} \& {\text{模型}} \\
+	{\text{开集}} \& {\text{元素}} \& {\text{命题}}
 	\arrow[dashed, no head, from=2-1, to=2-2]
+	\arrow[dashed, no head, from=2-2, to=2-3]
 	\arrow[dashed, no head, from=3-1, to=3-2]
+	\arrow[dashed, no head, from=3-2, to=3-3]
+	\arrow[dashed, no head, from=1-1, to=1-2]
+	\arrow[dashed, no head, from=1-2, to=1-3]
 \end{tikzcd}\]
 
 建议在阅读本节之前阅读附录 \ref{first-order-languages} 节.
@@ -826,7 +992,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 \begin{prop}
 	[label={model-boolealg-homomorphism}]
 	{}
-	命题理论 $(\Sigma,\mathbb T)$ 的 $A$-模型一一对应于 Boole 代数同态 $\LA_{\mathbb T} \to A$.
+	对任意 Boole 代数 $A$, 命题理论 $(\Sigma,\mathbb T)$ 的 $A$-模型一一对应于 Boole 代数同态 $\LA_{\mathbb T} \to A$.
 \end{prop}
 
 \begin{proof}
@@ -1064,6 +1230,11 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 	容易看到, 几何公式的 $\mathbb T_{X}$-可证等价类一一对应于 $\mathcal O(X)$ 的元素, 且逻辑连接词 $\land,\bigvee$ 与\fm{}中的结构吻合.
 \end{proof}
 
+\begin{remark}
+	{}
+	理论 $\mathbb T_X$ 可视为位象 $X$ 的\emph{内语言}, 其在\topos{}理论中的类比即是 \ref{Mitchell--Benabou-language} 节介绍的 Mitchell--B\'enabou 语言.
+\end{remark}
+
 \begin{example}
 	{(实数位象)}
 	实数位象可由如下几何理论 $\mathbb T_{\mathbb{R}}$ 给出: 其中包含命题符号 $P_{a,b}\,(a,b\in \mathbb{Q})$, 直观为 ``某实数属于开区间 $(a,b)$'', 且有如下的公理.
@@ -1092,3 +1263,4 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 	\arrow[squiggly, from=1-2, to=2-2]
 	\arrow[squiggly, from=1-1, to=2-1]
 \end{tikzcd}\]
+

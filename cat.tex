@@ -536,21 +536,21 @@ $$
 \end{tikzcd}\]
 \end{definition}
 
-另一个有趣的事实是, 由幂对象和子对象分类子, 我们可构造所有指数对象; 其思路是将函数表示为图像. 如下构造取自 \cite{SGL} IV.2 节.
+另一个有趣的事实是, 由幂对象和子对象分类子, 我们可构造所有指数对象; 其思路是将函数表示为图像. 下面我们仅给出构造与直观, 证明细节见 \cite{SGL} IV.2 节.
 
 集合映射 $f\colon X\to Y$ 可视为 $X\times Y$ 的子集 $\Gamma(f) = \{(x,f(x))\mid x\in X\}$, 称为映射的\emph{图像} (graph). $X\times Y$ 的子集 $\Gamma$ 是某个函数 $X\to Y$ 的图像的充要条件是, 对任意 $x\in X$, 存在唯一的 $y$ 使得 $(x,y)\in \Gamma$.
 % $\{y\in Y\mid (x,y)\in\Gamma(f)\}$ 是单元集.
-在\topos{}中我们完全可以模仿这个构造. 在以下陈述中, 引号中的内容是 $\mathsf {Set}$ 中的事实.
+在\topos{}中我们完全可以模仿这个构造. %在以下陈述中, 引号中的内容是 $\mathsf {Set}$ 中的事实.
 
 \begin{itemize}
-	\item 考虑例 \ref{singleton} 定义的函数 $\sigma_Y\colon PY\to\Omega$. ``对于 $p\in PY$, $\sigma_Y (p)$ 表示 $p$ 为单元集.''
+	\item 考虑例 \ref{singleton} 定义的函数 $\sigma_Y\colon PY\to\Omega$. 对于 $p\in PY$, $\sigma_Y (p)$ 直观上表示 ``$p$ 为单元集''.
 	\item 由成员关系 (例 \ref{membership-relation}) $\in_{X\times Y}\colon X\times Y \times P(X\times Y) \to \Omega$ 可构造映射
-	$v\colon X\times P(X\times Y)\to PY$; ``对于 $x\in X$ 与 $p\in P(X\times Y)$, $v(x,p)$ 表示 $\{y\mid p(x,y)\}\in PY$.''
-	\item 考虑复合映射 $\sigma_Y v\colon X\times P(X\times Y)\to\Omega$, ``对于 $x\in X$ 与谓词 $p\in P(X,Y)$, $\sigma_Y v (p,x)$ 表示存在唯一的 $y$ 满足命题 $p(x,y)$.''
-	\item 进一步定义 $u\colon P(X\times Y) \to PX$ 为 $\sigma_Y v$ 对应的映射, ``对于谓词 $p$, $u(p)$ 表示 $\{x\mid \text{存在唯一的 $y$ 满足命题 $p(x,y)$}\}$''. 
+	$v\colon X\times P(X\times Y)\to PY$; 对于 $x\in X$ 与 $p\in P(X\times Y)$, $v(x,p)$ 直观上表示 ``$\{y\mid p(x,y)\}\in PY$''.
+	\item 考虑复合映射 $\sigma_Y v\colon X\times P(X\times Y)\to\Omega$, 对于 $x\in X$ 与谓词 $p\in P(X,Y)$, $\sigma_Y v (p,x)$ 直观上表示 ``存在唯一的 $y$ 满足命题 $p(x,y)$''.
+	\item 进一步定义 $u\colon P(X\times Y) \to PX$ 为 $\sigma_Y v$ 对应的映射, 对于谓词 $p$, $u(p)$ 直观上表示 ``$\{x\mid \text{存在唯一的 $y$ 满足命题 $p(x,y)$}\}$''. 
 \end{itemize}
 
-定义 $Y^X$ 为如下拉回, 这便完成了指数对象的构造.
+定义 $Y^X$ 为如下拉回, 这便完成了指数对象的构造. 在后面介绍的内语言中, 这表示 ``函数 $X\to Y$ 等同于 $X\times Y$ 的满足特定条件的子集'', 见例 \ref{function-vs-graph}.
 % https://q.uiver.app/#q=WzAsNCxbMCwxLCJQKFhcXHRpbWVzIFkpIl0sWzEsMSwiUFgiXSxbMSwwLCIxIl0sWzAsMCwiWV5YIl0sWzMsMl0sWzIsMSwiXFx0b3BfWCJdLFszLDBdLFswLDEsInUiLDJdLFszLDEsIiIsMSx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dXQ==
 \[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
 	{Y^X} \& 1 \\
@@ -840,6 +840,7 @@ $$
 由于 $f^*$ 同时有左右伴随, 我们得到 $f^*$ 同时保持极限和余极限. 拉回也保持子对象分类子, 即 $\Omega\times Y\to Y$ 的拉回是 $\Omega\times X\to X$ (命题 \ref{subobjects-in-slice-category}). 下面我们证明拉回保持指数对象.
 
 \begin{remark}
+	[label={universal-colimits}]
 	{}
 	我们称 ``拉回保持余极限'' 的范畴具有\emph{万有余极限} (universal colimits), 这个条件是 Giraud 公理 (\ref{Giraud-axioms}) 的一部分.
 \end{remark}
@@ -978,6 +979,7 @@ $$
 \begin{example}
     {(有限集范畴)}
     有限集范畴 $\mathsf {Fin}$ 是一个\topos{}; 这表示\topos{}中不天然具有 ``无限'' 的概念.
+    更一般地, 设基数 $\pi$ 满足对任意基数 $\lambda < \pi$ 有 $2^\lambda < \pi$ (这样的基数称为\emph{强极限基数}), 那么基数小于 $\pi$ 的集合的范畴 $\mathsf {Set}_{<\pi}$ 是一个\topos{}.
 \end{example}
 
 在第 \ref{chapter-grothendieck-toposes} 章, 我们将介绍一类重要的 (也是最早被研究的) \topos{}, 即 Grothendieck \topos{}.
@@ -1254,7 +1256,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
     \]
     %这个伴随表达的含义正是 $\operatorname{im}f$ 是 $f$ 穿过的最小子对象.
 \end{remark}
-\footnotetext{注意 $\operatorname{Sub}_{\mathcal C}(X)$ 的对象是单态射的等价类, 但这里为了构造函子, 可任取每个等价类中的一个代表元. 对于子对象 $U\to X$ 与 $V\to X$, 即使视为 $\mathcal C/X$ 的对象, 两者之间也至多只有一个态射; 故 $\operatorname{Sub}_{\mathcal C}(X)$ 可视为 $\mathcal C/X$ 的满子范畴.}
+\footnotetext{注意 $\operatorname{Sub}_{\mathcal C}(X)$ 的对象是单态射的等价类, 但这里为了构造函子, 可任取每个等价类中的一个代表元. 对于子对象 $U\to X$ 与 $V\to X$, 即使视为 $\mathcal C/X$ 的对象, 两者之间也至多只有一个态射; 故 $\operatorname{Sub}_{\mathcal C}(X)$ 可视为 $\mathcal C/X$ 的全子范畴.}
 
 \begin{prop}
 	[label={image-vs-exists}]

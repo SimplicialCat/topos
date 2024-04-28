@@ -5,7 +5,7 @@
 }{
     Francis Borceux, \cite{HCA3}
 }
-\footnotetext{一句数学陈述不过是你对某些东西讲的一个故事. 这些故事有的妙, 有的蠢, 有的真, 有的假. 做数学就是要讲出又妙又真的故事.}
+\footnotetext{一句数学陈述不过是你对某些东西讲的一个故事. 这些故事或妙, 或蠢, 或真, 或假. 做数学就是要讲出又妙又真的故事.}
 
 \minitoc
 
@@ -280,7 +280,11 @@
 	\end{itemize}
 \end{proof}
 
-
+\begin{example}
+	[label={inhabited-vs-nonempty}]
+	{(``有物'' 与 ``非空'')}
+	在\topos{}中, 称对象 $X$ ``\emph{有物}'' (inhabited), 是指 $X\to 1$ 为满射; 在内语言中此即公式 $\exists x\in X \top$ 成立. 称 $X$ ``\emph{非空}'' (nonempty) 是指公式 $\neg(\forall x\in X \bot)$ 成立. 一般而言, 有物与非空是\emph{不同的}概念; 这一点从后面介绍的拓扑空间上的层语义的例子 (\ref{sheaf-semantics-topological-space}) 可以看出 (考虑一个稠密开集作为子终对象, 它不是有物的, 却是非空的).
+\end{example}
 
 \begin{example}
 	[label={set-of-epimorphisms}]
@@ -309,14 +313,24 @@
 	\]
 	接着定义
 	\[
-	\internalprop{\text{$S$ 是单元集}} := \internalprop{\text{$S$ 是子单元集}} \land \exists x\in S\,\top.
+	\internalprop{\text{$S$ 是单元集}} := \internalprop{\text{$S$ 是子单元集}} \land \exists x\in S\,\top
+	=(\exists ! x\in S\,\top).
 	\]
-	可以证明
+	(其中 $\exists !$ 表示存在唯一, 见定义 \ref{formula}) 可以证明
 	\[
 	\forall S\in PX\,\big(\internalprop{\text{$S$ 是单元集}}\,\Leftrightarrow\,\exists x\in X\,S=\{x\}\big).
 	\]
 \end{example}
 \footnotetext{在经典逻辑中只有两个不同的子单元集, 即空集与单元集; 但在\topos{}的内语言中则不然: 子单元集对应\topos{}的子终对象, 见定义 \ref{subterminal-object-definition}.}
+
+\begin{example}
+	[label={function-vs-graph}]
+	{(函数及其图像)}
+	设 $\Gamma\in P(X\times Y)$ 使得公式 $\forall x\,\exists ! y\, (x,y)\in\Gamma$ 成立. 设 $\Gamma$ 对应态射 $\widetilde f\colon X\to PY$, 则有 $\forall x\,\exists y\,\widetilde f(x)=\{y\}$, 也即 $\operatorname{im}f\subset \operatorname{im}\{{-}\}$. 这说明 $\widetilde f$ 穿过一个态射 $f\colon X\to Y$. 进一步, 可以证明
+	\[
+	Y^X \simeq \{\Gamma\in P(X\times Y)\mid \forall x\,\exists ! y\, (x,y)\in\Gamma\}.
+	\]
+\end{example}
 
 \begin{example}
 	[label={quotient-set-internal}]
@@ -506,6 +520,7 @@ Kripke--Joyal 语义在景上 (特别地, 在拓扑空间上) 有更直观的表
 \end{example}
 
 \begin{example}
+	[label={sheaf-semantics-topological-space}]
 	{(拓扑空间上的层语义)}
 	设 $X$ 为拓扑空间, 那么 $\operatorname{Sh}(X)$ 的内语言中的命题 (即终对象 $1$ 上的公式) 对应于 $X$ 的开集, 直观上这个开集表示该命题成立的范围. 此时对于 $U,V\in\operatorname{Open}(X)$, 有 $U\forces V$ 等价于 $U\leq V$. 例如,
 	\begin{itemize}
@@ -677,6 +692,26 @@ $F$ 为 $\square$-层的直观就是 ``若子集 $S\subset F$ 在局部上是单
 
 
 %\todo{将综合可计算性理论, 综合微分几何, 综合代数几何变成本章的节}
+
+\section{内位象}
+
+\begin{prop}
+	[label={internal-frame}]
+	{(内\fm{})}
+	设 $\mathcal S$ 为\topos{}. 定义 $\mathcal S$ 的\emph{内\fm{}} (internal frame) 为 $\mathcal S$ 的内语言中定义的\fm{} (定义 \ref{frame-definition}). 具体地, 一个内\fm{}包含如下信息:
+	\begin{itemize}
+		\item 一个对象 $A$;
+		\item 运算 $\land\colon A\times A\to A$, 以及 $\bigvee\colon PA\to A$, 满足 ``有限交'' 和 ``任意并'' 的条件;
+		\item 结合律
+		\[
+		\forall a\in A\,\forall I\in PA\,\,\Big(a\land \bigvee I = \bigvee \{a\land b\mid b\in I\}\Big).
+		\]
+	\end{itemize}
+\end{prop}
+
+\todo{Elephant C1.6}
+
+
 
 \input{NSA}
 

@@ -183,6 +183,8 @@
 		\item (蕴含) 对于公式 $\phi,\psi$, $(\phi\Rightarrow \psi)$ 是公式, 其中自由变量是 $\phi$ 与 $\psi$ 的自由变量的并;
 		\item (否定) 对于公式 $\phi$, $\neg\phi$ 是公式, 其中自由变量即为 $\phi$ 的自由变量;
 		\item (存在量词) 对于公式 $\phi$ 以及变量 $x$, $(\exists x\,\phi)$ 是公式, 其中的自由变量为 $\phi$ 的自由变量\emph{去掉} $x$ (我们允许 $\phi$ 中\emph{不含} $x$);
+		\item (存在唯一) 对于公式 $\phi$ 以及变量 $x$, 引入一个记号 $\exists ! x\,\phi$ 表示 $$(\exists x\,\phi) \,\land\, \forall x\forall x'\,\big( \phi \land \phi[x'/x] \Rightarrow x'=x \big),$$
+		其中 $\phi[x'/x]$ 为将公式 $\phi$ 中的自由变量 $x$ 替换为 $x'$ 所得的公式.
 		\item (全称量词) 对于公式 $\phi$ 以及变量 $x$, $(\forall x\,\phi)$ 是公式, 其中的自由变量为 $\phi$ 的自由变量去掉 $x$;
 		\item (无穷析取) 对于公式 $\phi_i\, (i\in I)$, 若其中的自由变量有限, 则 $\bigvee_{i\in I}\phi_i$ 是公式 (包括 $\bot$), 其中的自由变量为 $\phi_i$ 的自由变量的并;
 		\item (无穷合取) 对于公式 $\phi_i\, (i\in I)$, 若其中的自由变量有限, 则 $\bigwedge_{i\in I}\phi_i$ 是公式 (包括 $\top$), 其中的自由变量为 $\phi_i$ 的自由变量的并.
@@ -1016,3 +1018,4 @@ $$\square p = \text{``$p$ 以某种方式成立''}.$$
 	$$
 	在此种实现下, 可能性 $\lozenge$ (存在) 是必然性 $\square$ (任意) 的左伴随.
 \end{example}
+

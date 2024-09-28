@@ -1,3 +1,43 @@
 \section{凝聚态数学}
 
 % 【潜水】岩豚鼠: 我们要解决拓扑abel群范畴不是abel范畴的问题, 首先要解决拓扑空间范畴中连续双射不可逆的问题. 注意到紧Hausdorff空间没有这个问题, 我们就尝试将一般的拓扑空间换成紧Hausdorff空间范畴上的层, 而这个景有一族基叫做投射有限集. 这里的拓扑是取连续满射为覆盖. 每个紧Hausdorff空间都被它自己的集合作为离散空间覆盖, 注意到紧Hausdorff空间到一般拓扑空间范畴的嵌入有个左伴随叫Stone—Cech紧化, 我们就可以把基取为离散空间的SC紧化.
+
+作为原理的介绍, 本节忽视集合论问题.
+
+\begin{definition}
+	{(投射有限集景)}
+	\emph{投射有限集景} $\mathsf{ProFin}$ 是投射有限集的范畴 (例 \ref{pro-finite-set}), 配备有限联合满射族生成的覆盖. 该覆盖对应 $\mathsf {ProFin}$ 上的典范 Grothendieck 拓扑 (定义 \ref{canonical-topology}).
+\end{definition}
+
+% 为什么典范?
+% 紧空间上联合有效满射族必然有有限的子族构成联合满射.
+
+
+\begin{definition}
+	{(凝聚态集合)}
+	\emph{凝聚态集合} (condensed set) 是投射有限集景 $\mathsf{ProFin}$ 上的层. 记凝聚态集合的范畴为 $\mathsf{Cond}$.
+	定义凝聚态群 (Abel 群, 环, ...) 为 $\mathsf{Cond}$ 中的群 (Abel 群, 环, ...).
+\end{definition}
+
+任何一个 Grothendieck \topos{}中的 Abel 群构成 Abel 范畴. 凝聚态 Abel 群也构成一个 Abel 范畴. 相比之下, 拓扑 Abel 群范畴没有这样好的性质: 考虑 Abel 群 $\mathbb{R}$ 带有离散拓扑 $\mathbb{R}_{\text{散}}$ 和通常拓扑 $\mathbb{R}_{\text{常}}$. 恒等映射 $\mathbb{R}_{\text{散}}\to \mathbb{R}_{\text{常}}$ 既单又满, 却不是同构.
+
+\begin{example}
+	[label={top-space-as-cond-set}]
+	{(拓扑空间视为凝聚态集合)}
+	对于拓扑空间 $X$, 定义凝聚态集合 $\underline{X}\colon S\mapsto \operatorname{Hom}_{\mathsf {Top}}(S,X)$.
+	当然, 对于拓扑群 (Abel 群, 环, ...), 也有相应的凝聚态群 (Abel 群, 环, ...).
+	
+	凝聚态集合 $\underline{X}$ 包含了 $X$ 的许多重要的拓扑信息. 例如, 考虑投射有限集 $\mathbb{N}\cup\infty$ (例 \ref{N-cup-infty}), $\underline{X}(\mathbb{N}\cup\infty)$ 的元素等同于 $X$ 中的\emph{收敛序列}.
+	
+	对于好的空间 $X$ (所谓\emph{紧生成 Hausdorff 空间}), $\underline{X}$ 包含的信息足够还原 $X$ 的拓扑, 这就是说这类拓扑空间的范畴全忠实地嵌入凝聚态集合范畴.
+\end{example}
+
+\begin{remark}
+	[label={remark-topological-topos}]
+	{(凝聚态集合作为拓扑空间的推广, Johnstone 拓扑\topos{})}
+	由例 \ref{top-space-as-cond-set}, 凝聚态集合可视为拓扑空间的推广: 对于凝聚态集合 $X$ 与投射有限集 $S$, $X(S)$ 的元素可视为 $S$ 到 $X$ 的假想的 ``连续映射''; 
+	特别地, $X(\mathbb{N}\cup\infty)$ 的元素可视为 $X$ 中假想的 ``收敛序列''.
+	
+	称拓扑空间 $X$ 为\emph{序列空间} (sequential space) 是指: 对任意拓扑空间 $Y$, 集合映射 $f\colon X\to Y$ 连续当且仅当 $f$ 将 $X$ 中的收敛序列映射到 $Y$ 中的收敛序列. 很多常见的拓扑空间 (如 CW 复形) 都是序列空间.
+	考虑单点 $\text{pt}$ 和 $\mathbb{N}\cup\infty$ 构成的 $\mathsf {Top}$ 的全子范畴, 配备典范 Grothendieck 拓扑成为一个景, 这个景上的层范畴即是 Johnstone 的\emph{拓扑\topos{}} $\mathcal T$. 那么序列空间的范畴全忠实地嵌入 $\mathcal T$, 正如紧生成 Hausdorff 空间全忠实地嵌入凝聚态集合范畴一样.
+\end{remark}

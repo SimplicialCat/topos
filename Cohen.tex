@@ -1,41 +1,287 @@
-\section{Cohen 力迫法}
+\section{连续统假设的独立性}
 
 \label{Cohen-forcing}
 
-1874 年, Georg Cantor 证明了自然数与实数 (又称连续统) 之间不存在一一对应\footnote{不过他的第一个证明并非现在流行的对角线论证.}. Cantor 接着于 1878 年提出了\emph{连续统假设} (continuum hypothesis),
+1874 年, Georg Cantor 证明了自然数与实数 (又称\emph{连续统}) 之间不存在一一对应. 更一般地, 对任意集合 $X$, $X$ 的基数总是小于 $PX$.
+%\footnote{不过他的第一个证明并非现在流行的对角线论证.}.
+Cantor 接着于 1878 年提出了\emph{连续统假设} (continuum hypothesis),
 $$
-\fbox{在自然数集合 $N$ 与连续统 $PN$ 之间不存在其它的基数.}
+\fbox{在自然数集合 $\mathbb N$ 与连续统 $P\mathbb N$ 之间不存在其它的基数.}
 $$
+1900 年, Hilbert 将连续统假设放在他的 23 个问题的第一位.
+1940 年, Kurt G\"odel 证明连续统假设与 Zermelo--Fraenkel 集合论 (例 \ref{ZF-set-theory}) 相容.
+1963 年, Paul Cohen 的文章 \emph{The Independence of the Continuum Hypothesis} 证明了连续统假设独立于带有选择公理的 Zermelo--Fraenkel 集合论 ZFC, 即 ZFC 既不能证明连续统假设, 也不能证明其否定. 在文章中, Cohen 定义了一个关系 ``$P$ 力迫 $\mathfrak a$'' (因此他的方法被称为\emph{力迫法}), 以后人的观点, 它正是某个\topos{}中的 Kripke--Joyal 语义 (定义 \ref{sheaf-semantics-inductive}). 于是 Cohen 的论证相当于直接在这个\topos{}中工作. 这个\topos{}就是本节主要介绍的对象.
 
-1940 年, Kurt G\"odel 证明连续统假设与 Zermelo--Fraenkel 集合论相容. 1963 年, Paul Cohen 证明了连续统假设独立于带有选择公理的 Zermelo--Fraenkel 集合论 (ZFC), 即 ZFC 既不能证明, 也不能证伪连续统假设.
+%我们可以用\topos{}理论表达 Cohen 的证明所包含的思想. \ref{Boolean-topos} 节介绍了 Boole \topos{}, 这样的\topos{}中可以做 ``经典数学''. 一个 Boole \topos{}几乎是 ZF 的一个模型. 我们的目标是构造一个 Boole \topos{}, 其中连续统假设不成立.
 
-% Boole 意象的内容放在了第一章末尾.
+%选择公理成立, 而
 
-在 \ref{Boolean-topos} 节我们介绍了 Boole \topos{}. 我们可以在这样的\topos{}中做 ``经典数学''. 下面的内容本质上等同于 Cohen 证明连续统假设独立于 ZFC 所使用的方法, 只不过翻译到了\topos{}的语境.
+\subsection{双重否定与稠密拓扑}
 
+类比于位象的双重否定子位象 (例 \ref{double-negation-sublocale}), 在\topos{}上有双重否定给出的子\topos{}, 它是 Boole \topos{}.
+
+\begin{propdef}
+	[label={double-negation-LT}]
+	{(双重否定作为 Lawvere--Tierney 拓扑)}
+	在一个\topos{}中, $\neg\neg\colon \Omega\to\Omega$ 定义了其上的 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}, 内语言定义见 \ref{Lawvere--Tierney-topology-internal-definition}).
+\end{propdef}
+\begin{proof}
+	要证明的是如下公式. 实际上这些公式在任何 Heyting 代数中成立.
+	\begin{itemize}
+		\item $\neg\neg\top=\top$. 这是因为 $\neg\top=\bot$, $\neg\bot=\top$.
+		\item $\neg\neg\neg=\neg$. 这个公式的证明与命题 \ref{xyyy-xy} 完全相同 (只是将 $\leq$ 替换为内语言的 $\Rightarrow$): 注意到 $x\Rightarrow \neg\neg x$, 故 $\neg(\neg\neg x) \Rightarrow \neg x$, 而又有 $\neg x\Rightarrow \neg\neg(\neg x)$, 所以 $\neg \neg\neg x = \neg x$.) 由此, 得 $\neg\neg\neg\neg=\neg\neg$.
+		\item $\neg\neg (x\land y) = (\neg\neg x)\land (\neg\neg y)$, 这个公式的证明与命题 \ref{Heyting-algebra-double-negation-preserves-finite-meet} 完全相同.
+	\end{itemize}
+\end{proof}
+
+%关于 $\neg\neg$ 的层构成一个 Boole 意象.
 \begin{prop}
 	{}
-	存在一个 Boole \topos{}, 其中选择公理成立, 而连续统假设不成立.
-\end{prop}
-
-\subsubsection{基础知识}
-
-回忆任何\topos{}上都有一个 Lawvere--Tierney 拓扑 $\neg\neg$. 有趣的是, 它总是给出一个 Boole 意象.
-
-\begin{prop}
-	{}
-	对任意\topos{} $\mathcal C$, $\operatorname{Sh}_{\neg\neg}\mathcal C$ 为 Boole \topos{}.
+	对任何\topos{} $\mathcal C$, 有 $\operatorname{Sh}_{\neg\neg}\mathcal C$ 为 Boole \topos{}.
 \end{prop}
 \begin{proof}
-	由 Boole \topos{}的内语言刻画 (\ref{internal-Boolean-topos}), 我们要在 $\operatorname{Sh}_{\neg\neg}\mathcal C$ 中证明 $\forall p\in\Omega (p\lor \neg p)$.
-	% 需要几何态射在命题上的作用
-	\todo{}
+	$\operatorname{Sh}_{\neg\neg}\mathcal C$ 的子对象分类子为 $\Omega_{\neg\neg} = \{p\in\Omega\mid \neg\neg p = p\}$ (命题 \ref{sheaf-subobject-classifier-internal-definition}).
+	$\Omega_{\neg\neg}$ 上的 Heyting 代数结构继承自 $\Omega$,
+	因此 $\forall p\in\Omega_{\neg\neg} (\neg\neg p\Rightarrow p)$, 即 $\operatorname{Sh}_{\neg\neg}\mathcal C$ 为 Boole \topos{} (命题 \ref{internal-Boolean-topos}).
+	% \todo{}
+	% 层范畴的内语言如何继承自原来范畴的内语言
 \end{proof}
+
+回忆预层范畴 $\widehat {\mathcal C}$ 上的 Lawvere--Tierney 拓扑一一对应于 $\mathcal C$ 上的 Grothendieck 拓扑 (命题 \ref{LT-presheaf-topos-Grothendieck}). 双重否定 $\neg\neg$ 对应的 Grothendieck 拓扑有另一种简洁的表述.
+
+\begin{definition}
+	[label={dense-topology}]
+	{(稠密拓扑)}
+	设 $\mathcal C$ 为范畴. 定义其上的\emph{稠密拓扑} (dense topology) $J_{\text{稠密}}$ 为
+	$$
+	J_{\text{稠密}}(c) = \{\text{$c$ 上的筛 $S$}\mid \text{对任意 $f\colon d\to c$, 存在 $g\colon e\to d$, $fg\in S$}\}.
+	$$
+	换言之, 称 $S$ 为 $c$ 的 $J_{\text{稠密}}$-覆盖是指 $S$ 中的箭头可以穿过所有指向 $c$ 的箭头.
+\end{definition}
+
+\begin{example}
+	{(拓扑空间上的稠密拓扑)}
+	设 $X$ 为拓扑空间, $\text{Open}(X)$ 上的稠密拓扑可描述如下: 开集 $U$ 的一族子集 $\{U_i\}$ 构成 $J_{\text{稠密}}$-覆盖当且仅当 $\bigcup_i U_i$ 在 $U$ 中稠密.
+\end{example}
+
+\begin{prop}
+	[label={double-negation-LT-dense-topology}]
+	{}
+	在预层范畴 $\widehat {\mathcal C}$ 上, 相应于 Lawvere--Tierney 拓扑 $\neg\neg$ 的 Grothendieck 拓扑是 $J_{\text{稠密}}$.
+	%因此我们也记 $\operatorname{Sh}(\mathcal C,J_{\text{稠密}})\simeq\operatorname{Sh}_{\neg\neg}\widehat {\mathcal C}$ 为 $\operatorname{Sh}(\mathcal C,\neg\neg)$.
+\end{prop}
+\begin{proof}
+	设 $S$ 为 $c$ 上的筛. 作为 $\yo(c)$ 的子对象有
+	$$
+		\neg S =
+		\{f\colon d\to c\mid \forall g\colon e\to d,\,fg\notin S\}.
+	$$
+	进而有
+	$$
+	\begin{aligned}
+		\neg\neg S &=
+		\{f\colon d\to c\mid \forall g\colon e\to d,\,fg\notin\neg S\}\\
+		&=
+		\{f\colon d\to c\mid \forall g\colon e\to d,\,\exists h\colon k\to e,\,fgh\in S\}.
+	\end{aligned}
+	$$
+	故 $\operatorname{id}_c\in\neg\neg S$ 当且仅当 $S$ 是 $J_{\text{稠密}}$-覆盖.
+\end{proof}
+
+我们将要使用的是命题 \ref{double-negation-LT-dense-topology} 中 $\mathcal C$ 为偏序集的情形. 回忆, 偏序集 $\mathcal P$ 中一个元素 $p$ 上的筛 $S$ 是 $\downarrow p$ 的一个向下封闭子集 (例 \ref{sieve-in-poset}).
+筛 $S$ 是 $J_{\text{稠密}}$-覆盖, 当且仅当 $S$ 在 $\downarrow p$ 中\emph{稠密}, 即对任意 $q\leq p$, 存在 $s\in S$, $s\leq q$.
+
+\subsection{\topos{}中基数的比较}
 
 \begin{definition}
 	{(基数的比较)}
-	对于一个\topos{}中的两个对象 $X,Y$, 若存在单射 $X\to Y$, 且 $\operatorname{Epi}(X,Y)\simeq 0$, 则称 $X$ 的基数小于 $Y$, 记为 $X<Y$.
+	对于一个\topos{}中的两个对象 $X,Y$,
+	\begin{itemize}
+		\item 若存在单射 $X\to Y$, 则称 \emph{$X$ 的基数小于等于 $Y$}, 记为 $X\leq Y$;
+		\item 若 $X\leq Y$ 且 $\operatorname{Epi}(X,Y)\simeq 0$ (定义 \ref{set-of-epimorphisms}), 则称 \emph{$X$ 的基数小于 $Y$}, 记为 $X<Y$.
+	\end{itemize}
 \end{definition}
 
-回忆 $\operatorname{Epi}(X,Y)$ 的定义 (\ref{set-of-epimorphisms}), $\operatorname{Epi}(X,Y)\simeq 0$ 当且仅当公式 $\forall f\in Y^X\,\neg(\operatorname{im}f = Y)$ 成立.
+%回忆 $\operatorname{Epi}(X,Y)$ 的定义 , %$\operatorname{Epi}(X,Y)\simeq 0$ 当且仅当 $$\forall f\in Y^X\,\neg(\operatorname{im}f = Y).$$
 
+\begin{prop}
+	{(Cantor 定理)}
+	在任何\topos{}中, 对任何对象 $X$ 有 $X<PX$.
+\end{prop}
+\begin{proof}
+	首先, $\{-\}\colon X\to PX$ 为单射 (命题 \ref{singleton-map-injection}).
+	
+	下证 $\operatorname{Epi}(X,PX)\simeq 0$. 以下论证均在内语言中进行. 假设 $f\colon X\to PX$ 为满射, 即 $$\forall S\subset X \,\exists x\in X\,f(x)=S.$$
+	引入一些新的记号, 以 $x\notin S$ 代表 $\neg(x\in S)$; 记 $$T:=\{x\in X| x\notin f(x)\}.$$
+	假设 $f(x)=T$, 则有
+	\begin{align*}
+		x\in T & \Rightarrow x\notin T,\\
+		x\notin T &\Rightarrow x\in T.
+	\end{align*}
+	两者导致矛盾\footnotemark{}.
+	这说明 $\operatorname{Epi}(X,PX)\simeq 0$.
+\end{proof}
+\footnotetext{注意, 这里不需要排中律. 一般地, 在 Heyting 代数中有 $(p\Rightarrow \neg p)\land (\neg p\Rightarrow p) = \bot$. 这是因为 $(p\Rightarrow\neg p)\Rightarrow \neg p$, 而 $\neg p\land (\neg p\Rightarrow p)\Rightarrow \bot$.}
+
+由 ``$\leq$'' 的定义, 显然 $\leq$ 有传递性 (单射的复合是单射). 然而我们需要一些额外的条件才能得到 ``$<$'' 的传递性.
+\begin{prop}
+	{}
+	在 Boole \topos{}中, 若 $X<Y$, $Y\leq Z$, 且 $Y$ 存在整体元素 $y\colon 1\to Y$, 则 $X<Z$.
+\end{prop}
+\begin{proof}
+	由排中律, $Z=Y+\neg Y$. 设有整体元素 $y\colon 1\to Y$, 则嵌入 $i\colon Y\hookrightarrow Z$ 有收缩 $$r=(\operatorname{id}_Y,y)\colon Z=Y+\neg Y\to Y.$$
+	由于 $ri=\operatorname{id}_Y$, $r$ 为满射. 进而内语言中如下公式成立,
+	$$
+	\forall f\in\operatorname{Epi}(X,Z),\,r\circ f\in\operatorname{Epi}(X,Y).
+	$$
+	特别地, 若 $\operatorname{Epi}(X,Y)\simeq 0$, 则 $\operatorname{Epi}(X,Z)\simeq 0$.
+\end{proof}
+
+\subsection{连续统假设反例的构造}
+
+%\philoquote{In brief, sheaves for the dense topology on the poset of finite states of knowledge about the desired impossible monomorphism form the newmodel of sets in which that mono is really there.}{\cite{SGL}}
+
+构造违反连续统假设的\topos{}的大致过程如下.
+\begin{enumerate}[(1)]
+	\item 从经典的集合论模型开始, 选取一个充分大的基数 $\kappa$, 使得 $\mathbb{N}< 2^{\mathbb{N}} <\kappa$. %此时不存在单射 $\kappa\to P\mathbb{N}$.
+	\item 回忆, 对于 Grothendieck \topos{} $\mathcal E$ (想象为一个新的 ``集合宇宙''), 使用常值层函子 $\Delta\colon\mathsf{Set}\to \mathcal E$ (定义 \ref{global-sections-geometric-morphism}) 可将普通集合视为 $\mathcal E$ 中的 ``集合''. 特别地, $\Delta\mathbb{N}$ 是 $\mathcal E$ 中的自然数对象 (定义 \ref{natural-numbers-object}).
+	\item \label{Cohen-topos-essence}我们精心构造这样一个\topos{}, 使得单射 $\Delta\kappa\to P(\Delta\mathbb{N})$ 存在, 并且 $\Delta\colon\mathsf{Set}\to\mathcal{E}$ 保持基数的 ``$<$'' 关系. (注意 $P(\Delta\mathbb N)$ 不同于 $\Delta(2^\mathbb{N})$.)
+	%$\operatorname{Sh}(\mathcal P,\neg\neg)$
+	\item 此时有 $\Delta\mathbb{N} <\Delta(2^\mathbb{N})<\Delta\kappa \leq P (\Delta\mathbb{N})$, 连续统假设不成立.
+\end{enumerate}
+
+%上述过程中最不平凡的一点是单射 $\Delta\kappa\to P(\Delta\mathbb{N})$ 存在.
+
+%要得到单射 $K\to PN$, 只需构造一个映射 $f\colon K\times N \to 2$ (即 $K\times N$ 的一个子集), 满足对不同的 $x,y\in K$, 存在 $n\in N$, $f(x,n)\neq f(y,n)$.
+
+上述构造最出人意料的是第 (\ref{Cohen-topos-essence}) 步, 我们仿佛要构造一个不存在的单射 $\kappa\to P\mathbb{N}$. 注意到映射 $\kappa\to P\mathbb{N}$ 等同于 $\kappa\times\mathbb{N}\to \{\top,\bot\}$. 下面构造的 Cohen 偏序集与这样的映射有关.
+
+\begin{definition}
+	{(Cohen 偏序集)}
+	对于基数 $\kappa$, 定义偏序集
+	$$
+	\mathcal P_\kappa = \big\{p\colon S\to \{\top,\bot\}\mid \text{$S\hookrightarrow\kappa\times \mathbb{N}$ 为有限子集}\big\},
+	$$
+	其上的序为: $p_1 \leq p_2$ 当且仅当 $p_2$ 是 $p_1$ 的一个限制.
+\end{definition}
+\begin{remark}
+	[label={P-kappa-finite-condition}]
+	{($\mathcal P_\kappa$ 的元素的直观)}
+	请注意 $\mathcal P_\kappa$ 上定义的偏序与表面上的包含关系相反. 这是因为, 我们想象 $\mathcal P_\kappa$ 的一个元素为加在映射 $\kappa\times\mathbb{N}\to \{\top,\bot\}$ 上的一个\emph{条件} (一个条件是有限个形如 $p(x,n)=\top$ 或 $p(x,n)=\bot$ 的等式给出的), 这个条件在全体映射 $\kappa\times\mathbb{N}\to \{\top,\bot\}$ 的空间中划出了一个子空间. 如下的陈述等价:
+	\begin{itemize}
+		\item 条件 $p_1$ 蕴涵条件 $p_2$;
+		\item $p_2$ 是 $p_1$ 的一个限制;
+		\item $p_1$ 对应的子空间包含于 $p_2$ 对应的子空间;
+		\item $p_1\leq p_2$.
+	\end{itemize}
+\end{remark}
+
+考虑常值层函子 $\Delta\colon \mathsf {Set} \to \widehat {\mathcal P_\kappa}$, 注意到 $\Delta(\kappa\times\mathbb{N})\simeq\Delta\kappa\times\Delta\mathbb{N}$ ($\Delta$ 保持有限极限).
+
+\begin{definition}
+	{(Cohen \topos{})}
+	定义 \emph{Cohen \topos{}}为 $\operatorname{Sh}_{\neg\neg}\widehat {\mathcal P_{\kappa}}$, 也即 $\operatorname{Sh}(\mathcal P_\kappa,J_{\text{稠密}})$ (命题 \ref{double-negation-LT-dense-topology}).
+\end{definition}
+
+%\begin{remark}
+%	{($\mathcal P_\kappa$ 上稠密拓扑的层的直观)}
+%	由稠密拓扑的定义 (\ref{dense-topology}),
+%	$\mathcal P_\kappa$ 中一族元素 $\{p_i\}\subset{\,\downarrow p}$ 构成 $p$ 的覆盖当且仅当
+%	\begin{itemize}
+%		\item 对任意 $q\leq p$, 存在 $i$ 使得 $p_i\leq q$.
+%	\end{itemize}
+%	%根据注 \ref{P-kappa-finite-condition}, 这就是说
+%\end{remark}
+
+\begin{definition}
+	{(子对象 $A$)}
+	定义子对象 $A\hookrightarrow \Delta(\kappa\times\mathbb{N})$,
+	$$
+	A(p) = \{(x,n)\in\kappa\times\mathbb{N}\mid p(x,n)=\bot\}.
+	$$
+	其中 $p(x,n)$ 可能未定义, $p(x,n)=\bot$ 的含义是 $p(x,n)$ 有定义且其值为 $\bot$.
+	注意对于 $q\leq p$, $p$ 是 $q$ 的限制, 因此 $A(p)\subset A(q)$, 即 $A$ 构成 $\Delta(\kappa\times\mathbb{N})$ 的子函子.
+\end{definition}
+
+\begin{prop}
+	{}
+	子对象 $A\hookrightarrow \Delta(\kappa\times\mathbb{N})$ 是 $\neg\neg$-闭的 (定义 \ref{Lawvere--Tierney-closure}, 命题 \ref{closed-subobject-classifier}).
+\end{prop}
+\begin{proof}
+	由命题 \ref{presheaf-category-subobject-classifier}, $A$ 的特征函数为
+	$\chi_A\colon \Delta(\kappa\times\mathbb{N})\to\Omega,$
+	\begin{align*}
+		\chi_A(p)(x,n) &=
+		\{r\leq p\mid (x,n)\in A(r)\}\\
+		&= \{r\leq p\mid r(x,n)=\bot\}.
+	\end{align*}
+	记 $S=\{r\leq p\mid r(x,n)=\bot\}\in\Omega(p)$. 由命题 \ref{double-negation-LT-dense-topology} 的证明,
+	$$
+		\neg\neg S=\{r\leq p\mid \forall s\leq r\,\exists t\leq s\,t(x,n)=\bot\}.
+	$$
+	对于 $r\in\neg\neg S$, 若 $r(x,n)$ 未定义, 令 $s$ 为 $r$ 的扩张, 使得 $s(x,n)=\top$, 得到矛盾; 若 $r(x,n)=\top$, 亦得矛盾. 故只能有 $r(x,n)=\bot$, 即 $r\in S$. 我们证明了 $\neg\neg S=S$, 即 $\chi_A$ 穿过 $\Omega_{\neg\neg}$.
+\end{proof}
+
+\begin{prop}
+	{}
+	子对象 $A\hookrightarrow \Delta(\kappa\times\mathbb{N})$ 对应的态射 $\gamma\colon \Delta\kappa\to \Omega_{\neg\neg}^{\Delta\mathbb{N}}$ 是单射.
+\end{prop}
+\begin{proof}
+	对于预层的态射, 只需逐对象验证 $\gamma_p\colon \kappa\to\Omega_{\neg\neg}^{\Delta\mathbb{N}}(p)$ 为单射. 回忆 $\Omega_{\neg\neg}^{\Delta\mathbb{N}}(p)$ 等同于 $\operatorname{Hom}_{\widehat {\mathcal P_\kappa}}(\yo(p)\times\Delta\mathbb{N},\Omega_{\neg\neg})$, 即有如下两图之间的对应,
+	% https://q.uiver.app/#q=WzAsNixbMCwxLCJcXHlvKHApXFx0aW1lc1xcRGVsdGFcXG1hdGhiYntOfSJdLFswLDAsIlxcRGVsdGFcXGthcHBhXFx0aW1lc1xcRGVsdGFcXG1hdGhiYntOfSJdLFsxLDAsIlxcT21lZ2Ffe1xcbmVnXFxuZWd9Il0sWzIsMSwiXFx5byhwKSJdLFsyLDAsIlxcRGVsdGFcXGthcHBhIl0sWzMsMCwiXFxPbWVnYV97XFxuZWdcXG5lZ31ee1xcRGVsdGFcXG1hdGhiYntOfX0iXSxbMSwyLCJcXGNoaV9BIl0sWzAsMSwiKHFcXGxlcSBwLG4pXFxtYXBzdG8gKHgsbikiXSxbNCw1LCJcXGdhbW1hIl0sWzMsNCwieCJdLFswLDIsIlxcZ2FtbWFfcCh4KSIsMl0sWzMsNSwiXFxnYW1tYV9wKHgpIiwyXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\Delta\kappa\times\Delta\mathbb{N}} \& {\Omega_{\neg\neg}} \& {\Delta\kappa} \& {\Omega_{\neg\neg}^{\Delta\mathbb{N}}} \\
+		{\yo(p)\times\Delta\mathbb{N}} \&\& {\yo(p)}
+		\arrow["{\chi_A}", from=1-1, to=1-2]
+		\arrow["\gamma", from=1-3, to=1-4]
+		\arrow["{(q\leq p,n)\mapsto (x,n)}", from=2-1, to=1-1]
+		\arrow["{\gamma_p(x)}"', from=2-1, to=1-2]
+		\arrow["(q\leq p)\mapsto x", from=2-3, to=1-3]
+		\arrow["{\gamma_p(x)}"', from=2-3, to=1-4]
+	\end{tikzcd}\]
+	只需证明对不同的 $x\in\kappa$,
+	映射 $\gamma_p(x)\colon \yo(p)\times\Delta\mathbb{N}\to\Omega_{\neg\neg}$ 互不相同. 映射 $\gamma_p(x)$ 可表示为
+	$$
+	\gamma_p %\colon \kappa\to \operatorname{Hom}(\yo(p)\times\Delta\mathbb{N},\Omega_{\neg\neg})\colon x\mapsto \Big(q\mapsto \big(n\mapsto \big)\Big)
+	(x)(q\leq p,n)=\chi_A(q)(x,n)=\{r\leq q \mid r(x,n)=\bot\}.
+	$$
+	设 $x\neq x'$.
+	由于 $p$ 的定义域有限, 总存在 $n_0\in\mathbb{N}$ 使得 $p(x,n_0),p(x',n_0)$ 均未定义. 于是可将 $p$ 扩充为 $q$ ($q\leq p$), 使得 $q(x,n_0)=\bot$, $q(x',n_0)=\top$. 那么 $q\in\gamma_p(x)(p,n_0)$, $q\notin\gamma_p(x')(p,n_0)$. 这证明了所需的结论.
+\end{proof}
+
+考虑层化 $a\colon \widehat {\mathcal P_\kappa} \to \operatorname{Sh}_{\neg\neg}\widehat {\mathcal P_\kappa}$, 那么 $a\Delta\colon \mathsf {Set}\to \operatorname{Sh}_{\neg\neg}\widehat {\mathcal P_\kappa}$ 是\topos{} $\operatorname{Sh}_{\neg\neg}\widehat {\mathcal P_\kappa}$ 对应的常值层函子; 且 $a\Delta$ 保持有限极限, 从而保持单射.
+% https://q.uiver.app/#q=WzAsMyxbMSwwLCJcXHdpZGVoYXQge1xcbWF0aGNhbCBQX1xca2FwcGF9Il0sWzAsMSwiXFxvcGVyYXRvcm5hbWV7U2h9X3tcXG5lZ1xcbmVnfVxcd2lkZWhhdCB7XFxtYXRoY2FsIFBfXFxrYXBwYX0iXSxbMiwxLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsImkiLDEseyJvZmZzZXQiOjEsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzAsMSwiYSIsMix7Im9mZnNldCI6M31dLFswLDIsIlxcR2FtbWEiLDEseyJvZmZzZXQiOjF9XSxbMiwwLCJcXERlbHRhIiwyLHsib2Zmc2V0IjozfV0sWzEsMiwiXFxHYW1tYSIsMix7Im9mZnNldCI6M31dLFsyLDEsImFcXERlbHRhIiwxLHsib2Zmc2V0IjoxfV1d
+\[\begin{tikzcd}[ampersand replacement=\&]
+	\& {\widehat {\mathcal P_\kappa}} \\
+	{\operatorname{Sh}_{\neg\neg}\widehat {\mathcal P_\kappa}} \&\& {\mathsf {Set}}
+	\arrow["a"', shift right=3, from=1-2, to=2-1]
+	\arrow["\Gamma"{description}, shift right, from=1-2, to=2-3]
+	\arrow["i"{description}, shift right, hook, from=2-1, to=1-2]
+	\arrow["\Gamma"', shift right=3, from=2-1, to=2-3]
+	\arrow["\Delta"', shift right=3, from=2-3, to=1-2]
+	\arrow["{a\Delta}"{description}, shift right, from=2-3, to=2-1]
+\end{tikzcd}\]
+
+\begin{definition}
+	{(Souslin 性质)}
+	称\topos{}中的一个对象 $X$ 具有 \emph{Souslin 性质}是指 $X$ 的一族两两不交的子对象至多有可数个.
+	称\topos{} $\mathcal E$ 具有 \emph{Souslin 性质} 是指 $\mathcal E$ 由其中具有 Souslin 性质的对象生成.
+\end{definition}
+
+\begin{prop}
+	{}
+	设 $\mathcal E$ 为具有 Souslin 性质的 Grothendieck \topos{}, $\Delta\colon \mathsf {Set}\to\mathcal E$ 为常值层函子. 则对于无限集合 $X<Y$, 有 $\Delta(X)<\Delta(Y)$.
+\end{prop}
+%\begin{proof}
+%	
+%\end{proof}
+
+\begin{prop}
+	{}
+	Cohen \topos{}具有 Souslin 性质.
+\end{prop}
+
+这两个命题的证明见 \cite{SGL} VI.3 节. 综上所述, 在 Cohen \topos{}中有
+$$
+a\Delta(\mathbb{N})<a\Delta(2^\mathbb{N})<a\Delta(\kappa)\leq P(\Delta\mathbb{N}).
+$$

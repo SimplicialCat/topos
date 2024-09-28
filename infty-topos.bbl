@@ -1,0 +1,136 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{FHC}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7dd2ed2fa26fc7e09189bfc17e41911a}{%
+           family={Cisinski},
+           familyi={C\bibinitperiod},
+           given={Denis-Charles},
+           giveni={D\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{7dd2ed2fa26fc7e09189bfc17e41911a}
+      \strng{fullhash}{7dd2ed2fa26fc7e09189bfc17e41911a}
+      \strng{bibnamehash}{7dd2ed2fa26fc7e09189bfc17e41911a}
+      \strng{authorbibnamehash}{7dd2ed2fa26fc7e09189bfc17e41911a}
+      \strng{authornamehash}{7dd2ed2fa26fc7e09189bfc17e41911a}
+      \strng{authorfullhash}{7dd2ed2fa26fc7e09189bfc17e41911a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{记录人: Bastiaan Cnossen}
+      \field{title}{Formalization of Higher Category Theory}
+      \field{type}{课程笔记}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://elearning.uni-regensburg.de/course/view.php?id=64170
+      \endverb
+      \verb{url}
+      \verb https://elearning.uni-regensburg.de/course/view.php?id=64170
+      \endverb
+    \endentry
+    \entry{HTT}{book}{}
+      \name{author}{1}{}{%
+        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+           family={Lurie},
+           familyi={L\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Higher Topos Theory}
+      \field{year}{2009}
+    \endentry
+    \entry{DCCT}{book}{}
+      \name{author}{1}{}{%
+        {{hash=22bb4311878b35b2db2b84b4f2ade791}{%
+           family={Schreiber},
+           familyi={S\bibinitperiod},
+           given={Urs},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {(尚未出版)}%
+      }
+      \strng{namehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{fullhash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{bibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authorbibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authornamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authorfullhash}{22bb4311878b35b2db2b84b4f2ade791}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Diifferential Cohomology in a Cohesive Topos}
+      \verb{urlraw}
+      \verb https://ncatlab.org/schreiber/files/dcct170811.pdf
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/schreiber/files/dcct170811.pdf
+      \endverb
+    \endentry
+    \entry{HTTP}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=22bb4311878b35b2db2b84b4f2ade791}{%
+           family={Schreiber},
+           familyi={S\bibinitperiod},
+           given={Urs},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{fullhash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{bibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authorbibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authornamehash}{22bb4311878b35b2db2b84b4f2ade791}
+      \strng{authorfullhash}{22bb4311878b35b2db2b84b4f2ade791}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Higher Topos Theory in Physics}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://ncatlab.org/schreiber/show/Higher+Topos+Theory+in+Physics
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/schreiber/show/Higher+Topos+Theory+in+Physics
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

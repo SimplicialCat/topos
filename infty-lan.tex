@@ -1,0 +1,40 @@
+\chapter{$\infty$-范畴的语言}
+
+% 简要介绍无穷范畴的历史?
+
+\philoquote{The traditional way in the literature to provide foundations (for higher category theory) is via the theory of \emph{quasi-categories}, which in turn rests on set theory. While this can be done, the language of set theory is simply not very adequate to model homotopical notions, ...}{Denis-Charles Cisinski, \cite{FHC}}
+
+像许多 $\infty$-范畴论的文献一样, 本书使用 $\infty$-范畴的一种公理化语言. 我们不是从 $\infty$-范畴的任何一种定义 (或模型) 出发, 而是以公理的形式刻画期望中 $\infty$-范畴的行为. 这样我们可以获得\emph{模型无关} (model-independent) 的结果.
+
+
+同伦类型论 (Homotopy Type Theory, HoTT) 提供了 $\infty$-群胚的语言. 我们也可以用一种类似的类型论来谈论 $\infty$-范畴.
+% https://arxiv.org/pdf/1705.07442
+
+\section{$\infty$-范畴中的结构与性质}
+
+\subsection{连通性与截断性}
+
+% HoTT?
+
+\begin{definition}
+	{($n$-截断 $\infty$-群胚, $n$-群胚)}
+	设 $n\geq -1$ 为整数. 称一个 $\infty$-群胚 $X$  \emph{$n$-截断} (或称其为 \emph{$n$-群胚}) 是指其所有大于 $n$ 阶的同伦群 $\pi_k(X)\,(k>n)$ 均平凡.
+\end{definition}
+
+\begin{definition}
+	{($n$-群胚, 等价定义)}
+	设 $n\geq -1$ 为整数. 称一个 $\infty$-群胚 $X$  \emph{$n$-截断}是指 $X$ 为关于 $\{S^{n+1}\to *\}$ 的局部对象.
+\end{definition}
+
+\begin{example}
+	{(低维群胚的例子)}
+	在同伦等价的意义下,
+	\begin{itemize}
+		\item $(-2)$-群胚是一个点.
+		\item $(-1)$-群胚是空集或一个点.
+		\item $0$-群胚是集合, 也即离散群胚.
+	\end{itemize}
+\end{example}
+
+\subsection{东西, 结构, 性质}
+

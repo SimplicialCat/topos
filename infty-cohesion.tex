@@ -1,0 +1,86 @@
+\chapter{\cohesive{}\topos{}}
+
+\philoquote{[T]he existence
+	of a nontrivial shape operation on types is what reflects that types may carry a nontrivial topological (or more generally: cohesive) quality in the first place.}{Urs Schreiber, \cite{DCCT}}
+
+\minitoc
+
+\section{\cohesion{}的动机, 基本概念}
+
+\label{cohesion-basics}
+
+拓扑空间范畴 $\mathsf {Top}$ 与集合范畴 $\mathsf {Set}$ 之间存在如下的伴随四元组,
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\mathsf{Top}} \&\& {\mathsf {Set}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "\Gamma"{description, pos=0.7}, shift right=2, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{disc}}"{description, pos=0.7}, shift right=2, from=1-3, to=1-1]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_0}"{description, pos=0.7}, shift left=6, from=1-1, to=1-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "{\operatorname{codisc}}"{description, pos=0.7}, shift left=6, from=1-3, to=1-1]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=1]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=3]
+\end{tikzcd}\]
+其中
+\begin{itemize}
+	\item $\Pi_0$ 给出拓扑空间的\emph{连通分支的集合};
+	\item $\operatorname{disc}$ 将集合对应到\emph{离散空间};
+	\item $\Gamma$ 将拓扑空间遗忘为其\emph{底层集合};
+	\item $\operatorname{codisc}$ 将集合对应到\emph{余离散空间} (即只有空集和全集两个开集的拓扑空间).
+\end{itemize}
+
+
+
+\begin{definition}
+	{(\cohesive{}\topos{})}
+	\emph{\cohesive{}\topos{}} (cohesive topos)\footnotemark{} 是指一个\topos{} $\mathcal E$ 带有如下伴随四元组,
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBFIl0sWzIsMCwiXFxtYXRoc2Yge1NldH0iXSxbMCwxLCJcXEdhbW1hIiwxLHsibGFiZWxfcG9zaXRpb24iOjcwLCJvZmZzZXQiOjF9XSxbMSwwLCJcXG9wZXJhdG9ybmFtZXtkaXNjfSIsMSx7ImxhYmVsX3Bvc2l0aW9uIjo3MCwib2Zmc2V0IjoyfV0sWzAsMSwiXFxQaV8wIiwxLHsibGFiZWxfcG9zaXRpb24iOjcwLCJvZmZzZXQiOi01fV0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7Y29kaXNjfSIsMSx7ImxhYmVsX3Bvc2l0aW9uIjo3MCwib2Zmc2V0IjotNH1dLFs0LDMsIiIsMSx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzMsMiwiIiwxLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XSxbMiw1LCIiLDEseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal E} \&\& {\mathsf {Set}}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "\Gamma"{description, pos=0.7}, shift right=2, from=1-1, to=1-3]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{disc}}"{description, pos=0.7}, shift right=2, from=1-3, to=1-1]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\Pi_0}"{description, pos=0.7}, shift left=6, from=1-1, to=1-3]
+		\arrow[""{name=3, anchor=center, inner sep=0}, "{\operatorname{codisc}}"{description, pos=0.7}, shift left=6, from=1-3, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=3]
+	\end{tikzcd}\]
+	使得 $\Pi_0$ 保持有限乘积.
+\end{definition}
+
+\begin{example}
+	[label={cohesion-family-of-sets}]
+	{(集合族)}
+	% (例 \ref{family-of-sets-fibration})
+	% (例 \ref{varying-set-topos})
+	% (定义 \ref{Sierpinski-space})
+	考虑 ``集合族范畴'' $\mathsf {Fam}=\mathsf{Fun}(\bullet\to\bullet,\mathsf{Set})$. 将 $\mathsf{Fam}$ 的对象 $W\to X$ 想象为一个大集合 $W$ 分成了 $X$ 那么多组, 每一组是这个映射的一个纤维. $\mathsf {Fam}$ 是一个\cohesive{}\topos{}, 其中
+	\begin{itemize}
+		\item $\Pi_0\colon \mathsf {Fam}\to\mathsf {Set}$, $(W\to X)\mapsto X$, ``将每一组捏成一个点'';
+		\item $\operatorname{disc}\colon\mathsf {Set}\to\mathsf {Fam}, X\mapsto (\operatorname{id}\colon X\to X)$, ``将一个集合每个点当作一组'';
+		\item $\Gamma \colon \mathsf {Fam}\to\mathsf {Set}$, $(W\to X)\mapsto W$, ``忘记分组'';
+		\item $\operatorname{codisc}\colon \mathsf {Set}\to \mathsf {Fam}$, $X\mapsto (X\to \{*\})$, ``将一个集合整体当作一组''.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	{(单纯集)}
+	单纯集范畴 $\mathsf {sSet}$ 是一个\cohesive{}\topos{}, 其中
+	\begin{itemize}
+		\item $\Pi_0\colon \mathsf {sSet}\to\mathsf {Set}$, $X\mapsto \operatorname{coeq}(X_1\rightrightarrows X_0)$, 即 $X$ 的连通分支的集合;
+		\item $\operatorname{disc}\colon\mathsf {Set}\to\mathsf {sSet}$, 将集合 $X$ 对应到常值单纯集 (也就是离散单纯集) $X$;
+		\item $\Gamma \colon \mathsf {sSet}\to\mathsf {Set}$, $X\mapsto X_0 = \operatorname{Hom}(\Delta^0,X)$;
+		\item $\operatorname{codisc}\colon \mathsf {Set}\to \mathsf {sSet}$, $\operatorname{codisc}(X)_n := X^{n+1}$.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	{(光滑空间)}
+	光滑空间范畴 $\mathsf {SmoothSp}=\operatorname{Sh}(\mathsf {CartSp})$ (例 \ref{cartsp-site}) 是一个\cohesive{}\topos{}, 其中
+	\begin{itemize}
+		\item $\Pi_0\colon \mathsf {SmoothSp}\to\mathsf {Set}$, $X\mapsto \operatorname{coeq}(X(\mathbb{R}^1)\rightrightarrows X(\mathbb{R}^0))$, 其中两个态射分别是层 $X$ 取值于 $0,1\colon \mathbb{R}^0\to \mathbb{R}^1$ (简而言之, $\Pi_0(X)$ 是 $X$ 的道路连通分支的集合);
+		\item $\operatorname{disc}\colon\mathsf {Set}\to\mathsf {SmoothSp}$, 将集合 $X$ 对应到 ``离散光滑空间'' $X$;
+		\item $\Gamma \colon \mathsf {SmoothSp}\to\mathsf {Set}$, $X\mapsto X(\mathbb{R}^0)\simeq\operatorname{Hom}_{\mathsf {SmoothSp}}(\mathbb{R}^0,X)$, 将光滑空间对应到其底层集合;
+		\item $\operatorname{codisc}\colon \mathsf {Set}\to \mathsf {SmoothSp}$, $\operatorname{codisc}(X)(\mathbb{R}^n) := \operatorname{Hom}_{\mathsf {Set}}(\mathbb{R}^n,X)$.
+	\end{itemize}
+\end{example}
+

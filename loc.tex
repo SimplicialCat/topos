@@ -90,6 +90,23 @@
 	由此可得 $V\leq f_*(U) \Leftrightarrow f^*(V)\leq U$, 即 $f^*\dashv f_*$. 这个结论是 ``伴随函子定理'' (注 \ref{adjoint-functor-theorem-poset}) 的特例.
 \end{proof}
 
+位象的态射作为伴随函子, 具有如下的重要性质.
+\begin{prop}
+	[label={locale-map-triangular-identities}]
+	{}
+	对位象的态射 $f\colon X\to Y$, 有
+	\[
+	f^*f_*V \leq V\,(V\in\mathcal O(X)),\quad U\leq f_*f^* U\,(U\in\mathcal O(Y)),
+	\]
+	\[
+	f^*f_*f^* = f^*,\quad
+	f_*f^*f_* = f_*.
+	\]
+\end{prop}
+\begin{proof}
+	前两式是伴随 $f^*\dashv f_*$ 的余单位和单位, 而后两式由前两式易得. 后两式也可由伴随函子的定义直接得到, 见定义 \ref{adjoints-in-2-categories}.
+\end{proof}
+
 \begin{example}
 	{(拓扑空间作为位象)}
 	拓扑空间 $X$ 的开集范畴 $\operatorname{Open}(X)$ 构成一个\fm{}.
@@ -157,19 +174,17 @@
 	\mathcal O(\operatorname{Spec}A):= \big\langle U_f\colon f\in A\mid U_0 = \bot, U_1 = \top,
 	U_{f+g} \leq U_f \vee U_g, U_{fg} = U_f \wedge U_g \big\rangle.
 	$$
-	由关系 $U_{fg} = U_f \wedge U_g$, 有限个基础开集的交仍是基础开集, 从而 $\mathcal O(\operatorname{Spec}A)$ 的任何元素都可写成 $\bigvee_i U_{f_i}$ ($f_i\in A$) 的形式; 这解释了 $U_f$ 称为 ``基础开集'' 的原因.
+	%可以证明如此定义的位象 $\operatorname{Spec}A$ 正是传统上定义的拓扑空间 $\operatorname{Spec}A$.
 	
-	将 $U_f$ 想象为一个空间上函数 $f$ ``非零'' 的地方,
-	$f+g$ 非零的地方包含于 $f$ 与 $g$ 各自非零的地方的并,
-	而 $fg$ 非零的地方恰为两者的交.
-	
-	可以证明如此定义的位象 $\operatorname{Spec}A$ 正是传统上定义的拓扑空间 $\operatorname{Spec}A$.
-	例如, $\operatorname{Spec}A$ 的点一一对应于\fm{}态射 $\mathcal O(\operatorname{Spec}A)\to\{\top,\bot\}$, 而这等同于对每个生成元 $U_f \,(f\in A)$ 指定 $p(f)\in\{\top,\bot\}$, 满足
-	$p(0)=\bot,p(1)=\top,p(fg)=p(f)\land p(g),p(f+g)\leq p(f)\lor p(g)$. 此时 $p^{-1}(\bot)$ 正是 $A$ 的素理想.
-	
-	对于 $A$ 的一族元素 $\{f_i\}$, 所有开子空间 $U_{f_i}$ 覆盖 $\operatorname{Spec}A$ (即 $\bigvee_i U_{f_i} = \top$) 当且仅当存在一族至多有限个非零的元素 $\{a_i\}$ 使得 $\sum_i a_if_i = 1$, 即 $\{f_i\}$ 生成 $A$ 的单位理想. 这启发了 Zariski 景的定义 (\ref{zariski-site}).
-	
-	另外, 基础开集 $U_f$ 对应的开子位象同构于局部化的谱 $\operatorname{Spec}A_f$, 并且也有生成元和关系的表现, 见例 \ref{open-sublocale-of-spectrum}.
+	\begin{itemize}
+		\item 由关系 $U_{fg} = U_f \wedge U_g$, 有限个基础开集的交仍是基础开集, 从而 $\mathcal O(\operatorname{Spec}A)$ 的任何元素都可写成 $\bigvee_i U_{f_i}$ ($f_i\in A$) 的形式; 即 $U_f$ 构成 $\operatorname{Spec}A$ 的一组开集基.
+		\item 直观上, $U_f$ 是空间 $\operatorname{Spec}A$ 上的函数 $f$ ``非零'' 的地方, 而 $f+g$ 非零的地方包含于 $f$ 与 $g$ 各自非零的地方的并, $fg$ 非零的地方恰为两者的交.
+		\item $\operatorname{Spec}A$ 的点 $p\colon 1\to \operatorname{Spec}A$ 一一对应于\fm{}态射 $p^*\colon\mathcal O(\operatorname{Spec}A)\to\{\top,\bot\}$, 给定这个态射 $p^*$ 相当于对每个生成元 $U_f \,(f\in A)$ 指定 $p^*(U_f)\in\{\top,\bot\}$ (直观上 $p^*(U_f)$ 表示函数 $f$ 在 $p$ 点是否可逆), 满足
+		$p^*(U_0)=\bot,p^*(U_1)=\top,p^*(U_{fg})=p^*(U_f)\land p^*(U_g),p^*(U_{f+g})\leq p^*(U_f)\lor p^*(U_g)$. 此时 $\{f\in A\mid p^*(U_f)=\bot\}$ 正是点 $p$ 对应的素理想.
+		\item \fm{} $\mathcal O(\operatorname{Spec}A)$ 有一个更显式的定义是 $A$ 的\emph{根理想}的集合. (理想 $I$ 的根的定义为 $\sqrt{I}=\{a\mid \exists n\in\mathbb{N}\,a^n\in I\}$; 称理想 $I$ 为根理想是指 $I=\sqrt{I}$.) $\operatorname{Spec}A$ 的开子空间 $\bigvee_i U_{f_i}$ 对应于 $A$ 的根理想 $\sqrt{(\{f_i\})}$.
+		\item 对于 $A$ 的一族元素 $\{f_i\}$, 所有开子空间 $U_{f_i}$ 覆盖 $\operatorname{Spec}A$ (即 $\bigvee_i U_{f_i} = \top$) 当且仅当 $(\{f_i\})=(1)$, 即存在一族至多有限个非零的元素 $a_i$ 使得 $\sum_i a_if_i = 1$. 这给出了 Zariski 景的定义 (\ref{zariski-site}).
+		\item 基础开集 $U_f$ 对应的开子位象同构于局部化的谱 $\operatorname{Spec}A_f$, 并且也有生成元和关系的表现, 见例 \ref{open-sublocale-of-spectrum}.
+	\end{itemize}
 \end{example}
 \addtocounter{footnote}{-1}
 \footnotetext{值得一提的是, 构造主义数学青睐这种位象的观点, 因为环的素理想的存在性依赖选择公理. 关于构造主义数学与位象, 我们推荐读者阅读 Andrej Bauer 的文章 \cite{FSCM}.}
@@ -183,10 +198,12 @@
 %	滤子是理想的 ``对偶''. 我们有如下类比: 态射 $\mathcal O(X)\to \{\bot,\top\}$ 中 $\top$ 的原像是完全素滤子, 类似于环同态 $A\to k$ 的核是素理想 ($k$ 为整环). 位象 $X$ 的点对应 $\mathcal O(X)$ 的完全素滤子, 类似于谱 $\operatorname{Spec}A$ 的点对应环 $A$ 的素理想.
 %\end{remark}
 
-对每个元素 $U\in\mathcal O(X)$, 规定 $\operatorname{Pt}(X)$ 的子集
-$\{p \in \operatorname{Pt}(X) \mid p^*(U) = \top\}$ 为开集,
-我们得到了 $\operatorname{Pt}(X)$ 上的一个拓扑. 于是有函子
-$$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
+\begin{definition}
+	{(位象的点构成拓扑空间)}
+	设 $X$ 为位象, 我们定义 $\operatorname{Pt}(X)$ 上的一个拓扑, 对每个元素 $U\in\mathcal O(X)$, 规定 $\operatorname{Pt}(X)$ 的子集
+	$\{p \in \operatorname{Pt}(X) \mid p^*(U) = \top\}$ 为开集. 于是有函子
+	$$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
+\end{definition}
 
 \begin{prop}
 	[label={top-loc-adjunction}]
@@ -263,7 +280,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	%P\mathbb{N}\big/ \sim,\quadA\sim B \Leftrightarrow A\setminus B, B\setminus A\text{为有限集}.
 	%$$% 是 $\mathbb{N}$ 的子集在相差有限个元素的等价关系下构成的偏序集.
 	$$
-	称为 $X$ 的\emph{正则开集代数} (regular open algebra). 可以证明 $\text{RO}(X)$ 也是一个完备 Boole 代数\footnotemark. 例如其中的任意并由下式给出:
+	称为 $X$ 的\emph{正则开集代数} (regular open algebra). 可以证明 $\text{RO}(X)$ 也是一个完备 Boole 代数. 其中的任意并由下式给出:
 	$$
 	\bigvee_{i\in I}U_i = \neg\neg\Big(\bigcup_{i\in I}U_i\Big).
 	$$
@@ -271,7 +288,27 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	若取空间 $X$ 为欧氏空间, 则 $\text{RO}(X)$ 没有原子 (任何正则开集内都有一个更小的正则开集). 这是双重否定子位象 (\ref{double-negation-sublocale}) 的特例.
 	\end{itemize}
 \end{example}
-\footnotetext{\url{https://planetmath.org/regularopenalgebra}}
+%\footnotetext{\url{https://planetmath.org/regularopenalgebra}}
+
+\begin{example}
+	{(没有点的位象的例子: $\mathbb{N}$ 到 $\mathbb{R}$ 的满射的位象)}
+	我们定义 ``$\mathbb{N}$ 到 $\mathbb{R}$ 的满射的位象''. 考虑由元素 $U_{n,x}\,(n\in\mathbb{N},x\in\mathbb{R})$ 生成的\fm{} ($U_{n,x}$ 的直观是这个位象中 ``满足 $f(n)=x$ 的元素构成的子集''), 商掉如下关系:
+	\begin{itemize}
+		\item (``每个 $n$ 都有像'') 对每个 $n\in\mathbb{N}$, 有关系
+		$$
+		\bigvee_{x\in\mathbb{R}} U_{n,x} = \top;
+		$$
+		\item (``每个 $x$ 都有原像'') 对每个 $x\in\mathbb{R}$, 有关系
+		$$
+		\bigvee_{n\in\mathbb{N}} U_{n,x} = \top;
+		$$
+		\item (``每个 $n$ 有唯一的像'') 对每个 $n\in\mathbb{N},\,x,y\in\mathbb{R} \,(x\neq y)$, 有关系
+		$$
+		U_{n,x} \land U_{n,y} = \bot.
+		$$
+	\end{itemize}
+	这个位象的一个点就是一个满射 $\mathbb{N}\to \mathbb{R}$, 所以它没有点.
+\end{example}
 
 \section{位象的几何性质}
 
@@ -301,12 +338,13 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 
 上面的条件 $(3)$ 是自反子范畴的性质 (\ref{adjoint-full-faithful-unit-iso}) 的特例.
 
-对于子位象 $Y\to X$, $\mathcal O(Y)$ 既可视为 $\mathcal O(X)$ 的商, 又可视为其子集. 以下两个命题分别描述了它作为商集和子集的性质.
+对于子位象 $i\colon Y\to X$, $\mathcal O(Y)$ 既可通过满射 $i^*$ 视为 $\mathcal O(X)$ 的商, 又可通过单射 $i_*$ 视为 $\mathcal O(X)$ 的子集. %以下两个命题分别采取了商集和子集的观点.
 
 %\todo{重写子位象的所有内容, SGL p484, nLab sublocale, Stone Spaces p49}
 
 \begin{prop}
-	{}
+	[label={sublocale-frame-equivalence-relation}]
+	{($X$ 的子位象作为 $\mathcal O(X)$ 上的等价关系)}
 	对于 $\mathsf {Frm}$ 中的态射 $f^*\colon \mathcal O(Y)\to \mathcal O(X)$, 若 $f^*$ 为集合的满射, 则 $f^*$为正则满射, 即存在子\fm{} $(\equiv_X)\hookrightarrow \mathcal O(Y)\times\mathcal O(Y)$, $$\mathcal O(X) \,=\, \mathcal O(Y) \big/ \!\equiv_X.$$
 	当然, 这也等价于 $f$ 为 $\mathsf {Loc}$ 中的正则单射.
 \end{prop}
@@ -315,7 +353,12 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	令 $(\equiv_Y)$ 为 $f^*$ (底层集合意义下) 的核偶 (定义 \ref{kernel-pair}). 容易验证它关于有限交与任意并封闭, 即是 $\mathcal O(X)\times\mathcal O(X)$ 的子\fm{}.
 \end{proof}
 
-子位象 $Y\to X$ 一一对应于 $\mathcal O(X)$ 上关于有限交与任意并封闭的等价关系 $\equiv_Y$. 直观上, 这个等价关系是说两者与子空间 $Y$ 的 ``交'' 相同.
+\begin{remark}
+	{(子位象等同于商\fm{})}
+	由命题 \ref{sublocale-frame-equivalence-relation}, 子位象 $Y\to X$ 一一对应于 $\mathcal O(X)$ 上关于有限交与任意并封闭的等价关系 $\equiv_Y$, 即 ``商\fm{}''. 直观上, 若 $U,V\in\mathcal O(X)$ 满足 $U\equiv_Y V$, 则 $U,V$ 与子空间 $Y$ 的 ``交'' 相同.
+	对于 $U\in\mathcal O(X)$, $f^*U$
+\end{remark}
+
 
 %\begin{prop}
 %	[label={sublocale-as-adjunction}]
@@ -329,34 +372,36 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 \begin{prop}
 	[label={sublocale-exponential-ideal}]
 	{}
-	对于子位象 $i\colon Y\to X$, 将 $\mathcal O(Y)$ 通过 $i_*$ 视为 $\mathcal O(X)$ 的子集,
-	那么
+	对于子位象 $i\colon Y\to X$, %将 $\mathcal O(Y)$ 通过 $i_*$ 视为 $\mathcal O(X)$ 的子集,
+	%那么
 	\begin{enumerate}[(1)]
-		\item $\mathcal O(Y)$ 关于 $\mathcal O(X)$ 中的任意交封闭 (\fm{}中任意交存在, 见注 \ref{arbitrary-meet});
-		\item $\mathcal O(Y)$ 上的 ``$\Rightarrow$'' 运算与 $\mathcal O(X)$ 上的一致;
-		\item 对任意 $U\in\mathcal O(X)$ 与 $W\in\mathcal O(Y)$, 有 $(U\Rightarrow W)\in \mathcal O(Y)$ (满足此条件的子集称为\emph{指数理想} exponential ideal).
+		\item $i_*$ 保持任意交%$\mathcal O(Y)$ 关于 $\mathcal O(X)$ 中的任意交封闭
+		(\fm{}中任意交存在, 见注 \ref{arbitrary-meet});
+		\item $i_*$ 保持 ``$\Rightarrow$'' 运算;
+		\item 若将 $\mathcal O(Y)$ 通过 $i_*$ 视为 $\mathcal O(X)$ 的子集, 则对任意 $U\in\mathcal O(X)$ 与 $W\in \mathcal O(Y)$, 有 $(U\Rightarrow W)\in \mathcal O(Y)$.
 	\end{enumerate}
 \end{prop}
 \begin{proof}~
 	\begin{enumerate}
 		[(1)]
-		\item 这是因为 $i_*$ 作为右伴随保持极限 (命题 \ref{adjoints-preserve-limits}).
-		\item 这是因为 ``$\Rightarrow$'' 运算完全由 ``$\land$'' 决定, 而 $\mathcal O(Y)$ 上的交运算与 $\mathcal O(X)$ 上的一致.
-		\item 对任意 $U,V\in\mathcal O(X)$, 由于 $i^*$ 保持有限交且 $i^*i^*=i^*$ (其中我们省略含入映射 $i_*$), 有
-		\[
-		i^*(V\land U) = i^*(V)\land i^*(U) = i^*i^*(V)\land i^*(U) = i^*(i^*(V)\land U),
-		\]
-		从而如下条件等价:
-		\begin{align*}
-			V&\leq (U\Rightarrow W) , &
-			V\land U&\leq W, &
-			i^*(V\land U)&\leq W,\\
-			i^*(i^*(V)\land U)&\leq W,&
-			i^*(V)\land U&\leq W,&
-			i^*(V)&\leq (U\Rightarrow W).
-		\end{align*}
-		令 $V=(U\Rightarrow W)$, 知 $i^*(U\Rightarrow W) = (U\Rightarrow W)$, 故 $(U\Rightarrow W)\in \mathcal O(Y)$.
-		这个命题是指数理想的判定 (命题 \ref{exponential-ideal-cartesian-closed-reflective-subcategory}) 的特例.
+		\item $i_*$ 作为右伴随保持极限 (命题 \ref{adjoints-preserve-limits}).
+		\item 对任意 $W\in\mathcal O(X)$ 与 $U\in\mathcal O(Y)$, $$i^*(W\land i_*U)=i^*W\land i^*i_*U=i^*W\land U,$$ 故伴随 $i^*\dashv i_*$ 满足 Frobenius 互反律 (定义 \ref{Frobenius-reciprocity}), 这说明 $i_*$ 保持指数对象 (命题 \ref{ccc-Frobenius-pullback-preserve-exp}).%这是因为 ``$\Rightarrow$'' 运算完全由 ``$\land$'' 决定, 而 $\mathcal O(Y)$ 上的交运算与 $\mathcal O(X)$ 上的一致.
+		\item
+%		对任意 $U,V\in\mathcal O(X)$, 由于 $i^*$ 保持有限交且 $i^*i^*=i^*$ (其中我们省略含入映射 $i_*$), 有
+%		\[
+%		i^*(V\land U) = i^*(V)\land i^*(U) = i^*i^*(V)\land i^*(U) = i^*(i^*(V)\land U),
+%		\]
+%		从而如下条件等价:
+%		\begin{align*}
+%			V&\leq (U\Rightarrow W) , &
+%			V\land U&\leq W, &
+%			i^*(V\land U)&\leq W,\\
+%			i^*(i^*(V)\land U)&\leq W,&
+%			i^*(V)\land U&\leq W,&
+%			i^*(V)&\leq (U\Rightarrow W).
+%		\end{align*}
+%		令 $V=(U\Rightarrow W)$, 知 $i^*(U\Rightarrow W) = (U\Rightarrow W)$, 故 $(U\Rightarrow W)\in \mathcal O(Y)$.
+		注意到 $i^*$ 保持有限交. 由命题 \ref{exponential-ideal-cartesian-closed-reflective-subcategory}, $O(Y)$ 是 $\mathcal O(X)$ 的指数理想.
 	\end{enumerate}
 \end{proof}
 
@@ -373,17 +418,23 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 \end{prop}
 
 \begin{proof}
-	见命题 \ref{reflective-subcategory-poset}.
+	这是自反子范畴之间的包含关系的特例, 见命题 \ref{reflective-subcategory-poset}.
 \end{proof}
 
 \begin{example}
 	{(随机元素的子位象)}
-	Alex Simpson 的文章 \cite{SIMPSON20121642} 引入了位象\footnote{准确地说, 是 $\sigma$-位象}上的测度 $\mu\colon \mathcal O(X)\to [0,+\infty]$. 对于位象 $X$ 上的概率测度 $\mu$, 存在一个最大的测度为 $1$ 的子位象 $\operatorname{Ran}_\mu(X)$, 其对应的等价关系为
+	与测度空间类似, 某些位象上可以引入测度. Alex Simpson 的文章 \cite{SIMPSON20121642} 指出可测位象中 ``随机元素的子位象'' 反映了随机性. 粗略地说, 位象 $X$ 上的一个测度是一个满足若干条件的映射 $\mu\colon \mathcal O(X)\to [0,+\infty]$. 对于位象 $X$ 上的概率测度 $\mu$ (即满足 $\mu(X)=1$ 的测度), 存在一个\emph{最小}的测度为 $1$ 的子位象 $\operatorname{Ran}_\mu(X)\hookrightarrow X$, 其对应的等价关系为
 	$$
 	U\equiv_{\operatorname{Ran}_\mu(X)} V \quad \text{当且仅当}\quad \mu(U\cap V) = \mu(U\cup V).
 	$$
-	使用这个结论可以构造 ``随机序列的位象'', 它是 $0$ 和 $1$ 组成的所有可数序列的空间的 ``子空间'', 但没有任何一个序列属于这个子空间, 因为 ``一个确定的序列永远不是随机序列''. 位象上的测度还可解决 ``分球悖论'': 分球悖论是指球面上不可能给所有子集定义一个旋转不变的测度, 因为一个球可以分成若干不相交的部分, 然后拼成两个同样大的球. 以位象的观点, 这些部分实际上是相交的, 从而不会造成矛盾.
+	称 $\operatorname{Ran}_\mu(X)$ 为 $X$ 的\emph{随机元素的子位象}.
+	
+	例如, 考虑 Cantor 空间 $X=\{0,1\}^{\mathbb{N}}$, 其元素为 0,1 组成的无穷序列, 则 $\operatorname{Ran}_\mu(X)$ 是 ``随机 0-1 序列的位象''. 对任何确定的序列 $x\in X$, 由于 $X\setminus\{x\}\hookrightarrow X$ 是一个测度为 $1$ 的子位象, 由 $\operatorname{Ran}_\mu(X)$ 的最小性有 $\operatorname{Ran}_\mu(X)\leq X\setminus\{x\}$, 即 $x$ 不属于 $\operatorname{Ran}_\mu(X)$, 因为 ``一个确定的序列永远不是随机序列''.
+	用形象的话讲, 一个随机序列是包含于 $X$ 的所有测度为 $1$ 的子位象的序列.
+	
+	位象上的测度还可解决 ``分球悖论'': 分球悖论是指球面上不可能给所有子集定义一个旋转不变的测度, 因为一个球可以分成若干不相交的部分, 然后拼成两个同样大的球. 以位象的观点, 这些部分实际上是相交的, 从而不会造成矛盾.
 \end{example}
+%\footnotetext{{具体地说是 $\sigma$-位象. 见 Alex Simpson 的文章 \cite{SIMPSON20121642}.}}
 
 \subsubsection{开子位象与闭子位象}
 
@@ -508,23 +559,6 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 
 下面引入\emph{\nc{}} (nucleus) 的概念. 它是\topos{}中 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}) 和层化在位象中的类比.
 
-\begin{prop}
-	[label={locale-map-triangular-identities}]
-	{}
-	对位象的态射 $f\colon X\to Y$, 有
-	\[
-	f^*f_*V \leq V\,(V\in\mathcal O(X)),\quad U\leq f_*f^* U\,(U\in\mathcal O(Y)),
-	\]
-	\[
-	f^*f_*f^* = f^*,\quad
-	f_*f^*f_* = f_*.
-	\]
-\end{prop}
-\begin{proof}
-	前两式是伴随 $f^*\dashv f_*$ 的余单位和单位, 而后两式由前两式易得. 后两式也包含在伴随函子的一种定义中, 见定义 \ref{adjoints-in-2-categories}).
-\end{proof}
-对于位象态射 $f$, 记 $j = f_*f^*$, 由上述命题有 $U\leq j(U)$, 且 $jj=j$. 这实际上是 ``伴随产生单子'' (命题 \ref{monad-from-adjoint}).
-
 \begin{definition}
 	[label={nuclei}]
 	{(\nc{})}
@@ -534,9 +568,9 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 		\item $U\leq j(U)$;
 		\item $jj=j$.
 	\end{itemize}
-	其中后两个条件就是说 $j$ 为单子 (定义 \ref{monad-definition}).
+	其中后两个条件就是说 $j$ 为 $\mathcal O(X)$ 上的\emph{单子} (定义 \ref{monad-definition}).
 	
-	对于位象态射 $f\colon X\to Y$, 称 $f_*f^*$ 为 $f$ 诱导的 $Y$ 的\nc{}.
+	对于位象态射 $f\colon X\to Y$, 记 $j = f_*f^*$, 由命题 \ref{locale-map-triangular-identities} 有 $U\leq j(U)$, 且 $jj=j$. 这实际上是 ``伴随产生单子'' (命题 \ref{monad-from-adjoint}) 的特例. 称 $f_*f^*$ 为 $f$ 诱导的 $Y$ 的\nc{}.
 \end{definition}
 
 \begin{definition}
@@ -558,9 +592,17 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 	\end{itemize}
 \end{definition}
 
-例如, 当 $j(U) = U\lor W$ 时, 上述构造给出闭子位象 $X\setminus W$. 当 $j(U) = (W\Rightarrow U)$ 时, 上述构造给出开子位象 $W$.
+\begin{example}
+	{(\nc{}对应的子位象的例子)}
+	按照定义 \ref{nucleus-to-sublocale},
+	\begin{itemize}
+		\item \nc{} $j(U) = U\lor W$ 给出闭子位象 $X\setminus W$.
+		\item \nc{} $j(U) = (W\Rightarrow U)$ 给出开子位象 $W$.
+	\end{itemize}
+\end{example}
 
 \begin{prop}
+	[label={nucleus-one-to-one-sublocale}]
 	{}
 	位象 $X$ 的\nc{}一一对应于 $X$ 的子位象.
 \end{prop}
@@ -615,7 +657,17 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 		\arrow[""{name=1, anchor=center, inner sep=0}, "(-)\Rightarrow y"', shift right=2, from=1-2, to=1-1]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
 	\end{tikzcd}\]
-	对比命题 \ref{locale-map-triangular-identities} 的证明.
+	(对比命题 \ref{locale-map-triangular-identities} 的证明.)
+	具体的证明如下: 首先注意到对任意 $z\in H$, 有
+	\begin{equation}
+		z \leq \big((z\Rightarrow y)\Rightarrow y\big).
+		\tag{$\star$}
+	\end{equation}
+	\begin{itemize}
+		\item 在 $(\star)$ 中令 $z=(x\Rightarrow y)$, 得
+		$(x\Rightarrow y)\leq \Big(\big((x\Rightarrow y) \Rightarrow y\big) \Rightarrow y\Big)$.
+		\item 在 $(\star)$ 中令 $z=x$, 得 $x \leq \big((x\Rightarrow y)\Rightarrow y\big)$, 从而 $\Big(\big((x\Rightarrow y) \Rightarrow y\big) \Rightarrow y\Big)\leq (x\Rightarrow y)$.
+	\end{itemize}
 \end{proof}
 
 %上述命题表明, $x = \big((x\Rightarrow y) \Rightarrow y\big)$ 当且仅当存在 $z$, $x= (z\Rightarrow y)$.
@@ -638,7 +690,7 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 %		\end{tikzcd}\]
 %		$\mathcal O(\booleansublocale{W}) := \{U\in\mathcal O(X)\mid (U)\}$
 %	\end{itemize}
-	那么 $\booleansublocale{W}$ 为 Boole 位象, 且 $X$ 的所有 Boole 位象均可表示为这种形式.
+	那么 $\booleansublocale{W}$ 为 Boole 位象, 且 $X$ 的所有 Boole 子位象均可表示为这种形式.
 \end{propdef}
 \begin{proof}
 	由命题 \ref{xyyy-xy} 的证明知 $j = \big((-\Rightarrow W) \Rightarrow W\big)$ 为内核,
@@ -669,6 +721,40 @@ $$\operatorname{Pt} \colon \mathsf {Loc} \to \mathsf {Top}.$$
 由上述证明可知, 对任何子位象 $i\colon Y\to X$, 将 $\mathcal O(Y)$ 通过 $i_*$ 视为 $\mathcal O(X)$ 的子集,
 对任意 $W\in\mathcal O(Y)$, 有 $\mathcal O(\booleansublocale{W}) \subset\mathcal O(Y)$,
 即 ``$\booleansublocale{W}$ 是包含 $W$ 的最小子位象'', 其中子位象按照上述方式视为 $\mathcal O(X)$ 的子集.
+
+\begin{prop}
+	[label={Heyting-algebra-double-negation-preserves-finite-meet}]
+	{}
+	在任何 Heyting 代数 $H$ 中有
+	$$
+	\neg\neg(x\land y) = (\neg\neg x) \land (\neg\neg y).
+	$$
+\end{prop}
+\begin{proof}
+	首先, 由于 $(x\land y)\leq x$,
+	有 $\neg\neg (x\land y) \leq \neg\neg x$, 同理可得 $\neg\neg (x\land y) \leq (\neg\neg x)\land (\neg\neg y)$.
+	下面要证明
+	$$
+	(\neg\neg x)\land (\neg\neg y) \leq\neg\neg (x\land y),
+	$$
+	只需证明
+	$$
+	(\neg\neg x)\land (\neg\neg y)\land (\neg(x\land y)) \leq\bot.
+	$$
+	这是因为
+	\begin{align*}
+		(\neg\neg x) \land (\neg\neg y)\land (\neg(x\land y)) &=
+		(\neg\neg x) \land (\neg\neg y)\land (x\Rightarrow\neg y)\\
+		&\leq (\neg\neg\neg y)\land (\neg\neg y)\\
+		&\leq \bot.
+	\end{align*}
+\end{proof}
+
+由 Heyting 代数的性质 \ref{xyyy-xy} \ref{Heyting-algebra-double-negation-preserves-finite-meet} 得如下结论.
+\begin{prop}
+	{(双重否定\nc{})}
+	对任意位象 $X$, 双重否定 $\neg\neg\colon \mathcal O(X)\to\mathcal O(X)$ 是\nc{}.
+\end{prop}
 
 \begin{example}
 	[label={double-negation-sublocale}]
@@ -798,7 +884,7 @@ f_!(U\cap f^*(V)) = f_!(U)\cap V.
 	$i_!i^*(V) = W\land V$ ($V\in\mathcal O(X)$). 进而有
 	\[
 		\{V\in\mathcal O(X)\mid V\leq W\}
-		\{V\in\mathcal O(X)\mid V=i_!i^*(V)\}
+		= \{V\in\mathcal O(X)\mid V=i_!i^*(V)\}
 		= \operatorname{im}i_!.
 	\]
 	这说明 $Y$ 是由 $W$ 确定的开子位象.
@@ -1027,23 +1113,27 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 	命题理论的态射 $f\colon (\Sigma,\mathbb T) \to (\Sigma',\mathbb T')$ 诱导模型的映射 $\text{Mod}_A(\mathbb T') \to \text{Mod}_A(\mathbb T)$.
 \end{prop}
 
-注意方向的反转 (这是代数--几何对偶的一部分).
+%注意方向的反转 (这是代数--几何对偶的一部分).
 %集合 $\text{Mod}(\mathbb T)$ 可附加一个拓扑, 以 $\{f\in\text{Mod}(\mathbb T)\mid \bar f(\phi)=\top\}$ 为开集基 ($\phi$ 取所有公式).
 
-命题理论的 (经典) 模型的集合可赋予一个拓扑, 就像环的谱可赋予拓扑一样 (注 \ref{completely-prime-filter-vs-prime-ideal}).
+对于一个命题理论, 其 (经典) 模型的集合可赋予一个拓扑, 就像代数几何中一个环的素理想的集合可赋予拓扑一样.
 
 \begin{definition}
 	{(Boole 代数的谱)}
-	对 Boole 代数 $B$, 定义拓扑空间 $\operatorname{Spec}(B)$ 如下, 其点集为 $\operatorname{Hom}_{\mathsf {BooleAlg}}(B,\{\top,\bot\})$ (注意同态 $f\colon B\to\{\top,\bot\}$ 一一对应于素滤子 $f^{-1}(\top)$), 一个开集基为 $\big\{\{f\mid f(b)=\top\}\big\}_{b\in B}$.
+	对 Boole 代数 $B$, 定义拓扑空间 $\operatorname{Spec}(B)$ 如下, 其点集为 $\operatorname{Hom}_{\mathsf {BooleAlg}}(B,\{\top,\bot\})$ (注意同态 $f\colon B\to\{\top,\bot\}$ 一一对应于 $B$ 的素滤子 $f^{-1}(\top)$), 其拓扑基为 $$\{f\mid f(b)=\top\} (b\in B).$$
+	换言之, $\operatorname{Spec}(B)$ 上的拓扑是使得所有取值映射 $\text{ev}_b\colon \operatorname{Spec}(B)\to \{\top,\bot\}$ 都连续的最粗拓扑.
 \end{definition}
 
+
+
 \begin{propdef}
+	[label={def-stone-space}]
 	{(Stone 空间)}
 	对于拓扑空间 $X$, 以下条件等价:
 	\begin{itemize}
 		\item $X$ 是紧 Hausdorff 空间, 且完全不连通 (仅有的连通分支为单点集);
 		\item $X$ 紧, 且完全分离 (任何两个不同的点都能被一个既开又闭子集分开);
-		\item $X$ 是\emph{投射有限空间}, 即有限离散空间的投射极限.
+		\item $X$ 是\emph{投射有限空间}, 即有限离散空间在 $\mathsf{Top}$ 中的余滤极限 (定义 \ref{pro-object}).
 	\end{itemize}
 	称满足上述条件的空间为 \emph{Stone 空间}.
 \end{propdef}
@@ -1064,6 +1154,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 \end{proof}
 
 \begin{example}
+	[label={Tarski-algebra-Cantor-space}]
 	{(Tarski 代数与 Cantor 空间)}
 	Tarski 证明了可数无原子 Boole 代数在同构意义下唯一, 不妨称之为 \emph{Tarski 代数}. (原子的定义见例 \ref{complete-atomless-Boolean-algebra}.) 其一种构造是可数个变量生成的自由 Boole 代数, 也即可数个命题符号上的\emph{空理论} (即没有公理的理论) 的 Lindenbaum 代数.
 	
@@ -1105,6 +1196,11 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 	\end{itemize}
 \end{proof}
 
+\begin{remark}
+	[label={stone-duality-restriction-finite}]
+	{}
+	在 Stone 对偶中, 一个 Boole 代数 (的底层集合) 是有限集, 当且仅当对应的 Stone 空间是有限空间. 因此 Stone 对偶也给出有限 Boole 代数与有限集之间的等价 $\mathsf {FinBooleAlg}^{\op}\simeq\mathsf {Fin}$.
+\end{remark}
 
 \subsection{几何逻辑与\fm{}}
 
@@ -1139,7 +1235,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 	{(生成元与关系)}
 	上面的推理规则保证公式的可证等价类构成\fm{}; 它可视为由 $\Sigma$ 中的命题符号作为\emph{生成元}, $\mathbb T$ 中的公理作为\emph{关系}生成的\fm{}. 这里的关系可以是不等式 $p\leq q$, 也可以是等式 $p=q$ (两者可以互相转化, $p\leq q$ 等价于 $p\land q = p$, $p=q$ 等价于 $p\leq q,q\leq p$). 向一个理论 $\mathbb T$ 添加公理, 相当于添加\fm{}生成元之间的关系, 因此对应于取 $\LA_{\mathbb T}$ 的子位象 (定义 \ref{sublocales}).
 	
-	与 Lawvere 理论不同, \fm{}的结构包含了任意集合大小的运算, 一般而言这可能导致所有公式的 ``集合'' 过大而不构成集合. 但\fm{}的特殊性在于, 任何公式都 (在 $\mathbb T$-可证的意义下) 等同于 $\Sigma$ 中的符号先取有限交再任意并的形式, 正如点集拓扑学中由\emph{子基} (subbasis) 生成拓扑一样. 因此全体公式的可证等价类确实是一个集合.
+	与 Lawvere 理论不同, \fm{}的结构包含了任意集合大小的运算, 一般而言这可能导致所有公式的 ``集合'' 过大而不构成集合. 但\fm{}的特殊性在于, 任何公式都 (在 $\mathbb T$-可证的意义下) 等同于 $\Sigma$ 中的符号先取有限交再任意并的形式, 正如点集拓扑学中由\emph{子基} (subbasis) 生成拓扑一样. 因此全体公式的 \emph{$\mathbb T$-可证等价类}确实构成一个集合.
 \end{remark}
 
 

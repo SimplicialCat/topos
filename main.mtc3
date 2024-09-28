@@ -1,13 +1,13 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}基本概念}{\reset@font\mtcSfont 50}{section.2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}位象的几何性质}{\reset@font\mtcSfont 55}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子位象}{\reset@font\mtcSSfont 55}{section.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 开子位象与闭子位象}{\reset@font\mtcSSSfont 57}{tcb@cnt@remark.2.2.5}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 子位象与内核{}}{\reset@font\mtcSSSfont 58}{tcb@cnt@remark.2.2.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Boole 位象}{\reset@font\mtcSSfont 60}{tcb@cnt@remark.2.2.13}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 位象的满射}{\reset@font\mtcSSfont 61}{tcb@cnt@remark.2.2.17}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 开映射}{\reset@font\mtcSSfont 63}{tcb@cnt@remark.2.2.20}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 局部位象}{\reset@font\mtcSSfont 64}{tcb@cnt@remark.2.2.25}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 局部连通位象}{\reset@font\mtcSSfont 65}{tcb@cnt@remark.2.2.29}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}位象与逻辑}{\reset@font\mtcSfont 66}{section.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 经典命题逻辑与 Boole 代数}{\reset@font\mtcSSfont 66}{section.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 几何逻辑与位格{}}{\reset@font\mtcSSfont 70}{tcb@cnt@remark.2.3.13}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}基本概念}{\reset@font\mtcSfont 52}{section.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}位象的几何性质}{\reset@font\mtcSfont 57}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子位象}{\reset@font\mtcSSfont 57}{section.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 开子位象与闭子位象}{\reset@font\mtcSSSfont 60}{tcb@cnt@remark.2.2.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 子位象与内核{}}{\reset@font\mtcSSSfont 61}{tcb@cnt@remark.2.2.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Boole 位象}{\reset@font\mtcSSfont 62}{tcb@cnt@remark.2.2.13}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 位象的满射}{\reset@font\mtcSSfont 65}{tcb@cnt@remark.2.2.19}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 开映射}{\reset@font\mtcSSfont 66}{tcb@cnt@remark.2.2.22}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 局部位象}{\reset@font\mtcSSfont 68}{tcb@cnt@remark.2.2.27}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 局部连通位象}{\reset@font\mtcSSfont 68}{tcb@cnt@remark.2.2.31}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}位象与逻辑}{\reset@font\mtcSfont 69}{section.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 经典命题逻辑与 Boole 代数}{\reset@font\mtcSSfont 69}{section.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 几何逻辑与位格{}}{\reset@font\mtcSSfont 73}{tcb@cnt@remark.2.3.14}}

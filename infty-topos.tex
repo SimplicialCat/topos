@@ -1,0 +1,180 @@
+%
+
+\documentclass{book}
+\usepackage[UTF8]{ctex}
+\usepackage{fontspec}
+%\usepackage{xeCJK}
+\newCJKfontfamily\mincho{IPAexMincho}
+\setCJKmainfont{SimSun}[ItalicFont=KaiTi, BoldFont=SimHei]
+
+% SimSun
+% STSong
+% SimHei
+% KaiTi
+% DengXian
+
+\def\topos{意象}
+\def\nlab{$n$Lab}
+\def\regular{常理}
+\def\coherent{贯理}
+\def\cohesive{凝集}
+\def\cohesion{凝集}
+
+\newcommand{\tomeun}{{卷 1 }}
+
+\title{\textbf{\huge 盲人摸象 ($\infty$)}\\\emph{$\infty$-\topos{}理论讲义}}
+\author{\emph{王进一}\\\href{我的邮箱}{jin12003@163.com}\\QQ 2917905525}
+\date{2024 年夏至今\\~\\~此版本编译时间: \today{}~\\~\\这是一本正在施工的讲义. 目前我迫切需要读者的意见!
+	\\~\\
+	%在非正式版本中, 我故意将 topos 译为 ``\topos{}''.
+}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{stmaryrd}
+
+%\usepackage{wrapfig}
+
+\usepackage{epigraph}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usetikzlibrary{decorations.pathmorphing}
+
+\usepackage{enumerate}
+
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+% 哲思
+
+\newcommand{\philoquote}[2]{
+	~\\
+	\begin{center}
+		\begin{minipage}{0.7\linewidth}
+			{\quad\sffamily #1}\\
+			\begin{flushright}
+				\textsf{#2}
+			\end{flushright}
+		\end{minipage}
+	\end{center}
+	~\\
+}
+
+% 彩色方框
+\input{colorboxes-printing}
+
+% 分栏
+\usepackage{multicol}
+
+% 页边距
+\usepackage{geometry}
+\geometry{
+	b5paper,
+	left=15mm,
+	right=15mm,
+	top=20mm,
+	bottom=20mm
+}
+%\renewcommand{\baselinestretch}{0.9}
+
+% 页眉与页脚样式
+\usepackage{fancyhdr}
+
+\newcommand{\chaptert}{}
+\newcommand{\sectiont}{}
+
+\renewcommand{\chaptermark}[1]{\renewcommand{\chaptert}{第\ \thechapter\ 章\ #1}}
+\renewcommand{\sectionmark}[1]{\renewcommand{\sectiont}{\thesection\ #1}}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancyfoot[LE,RO]{\thepage}
+}
+
+\fancypagestyle{Jfancy}{
+	\fancyhead[LE]{\chaptert{}}
+	\fancyhead[RO]{\sectiont{}}
+	\fancyhead[RE,LO]{}
+	\fancyfoot[C]{}
+	\fancyfoot[LE,RO]{\thepage}
+	\renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
+	\renewcommand{\footrulewidth}{0pt}% Line at the footer visible
+}
+
+\pagestyle{Jfancy}
+
+% 参考文献
+\usepackage{biblatex}
+\addbibresource{infty-topos.bib}
+
+% 跨文档引用 (引用第一卷)
+\usepackage{xr}
+\externaldocument[t1-]{topos}
+
+% 章节样式
+\usepackage{titlesec}
+\titleformat{\chapter}{\huge\bfseries}{第\, \thechapter\, 章}{1em}{}
+
+\usepackage{minitoc}
+\renewcommand{\mtctitle}{}
+
+\usepackage{multirow}
+
+% 常用记号
+
+\newcommand{\op}{\text{op}} % 对偶范畴
+\newcommand{\yo}{\!\text{{\mincho よ}}} % 米田嵌入
+\newcommand{\Top}{\mathcal T\hspace{-3pt}opos}
+\newcommand{\interpretation}[1]{{[\![#1]\!]}}
+\newcommand{\upward}[1]{\uparrow{\!}{#1}}
+
+% sequent calculus
+\newcommand{\sqc}[2]{\dfrac{\quad #1 \quad}{\quad #2 \quad}}
+\newcommand{\sqqc}[2]{
+	\begin{array}
+		{c}
+		#1 \\ \hline \hline #2
+	\end{array}
+}
+
+\newcommand{\todo}[1]{{\color{red} [\textbf{未完成: #1}]}}
+\newcommand{\internalprop}[1]{{\ulcorner {#1} \urcorner}}
+
+\begin{document}
+	\dominitoc
+	
+	\maketitle
+	
+	\tableofcontents
+	
+	\setcounter{chapter}{-1} % 这样下面一章就是第 0 章
+	
+	% 第零章 前言
+	\input{infty-foreword}
+	
+	\input{infty-lan}
+	
+	\input{infty-cat}
+	
+	\input{infty-coh}
+	
+	\input{infty-bun}
+	
+	\input{infty-cohesion}
+	
+	\appendix
+	
+	% 附录 范畴论
+	\input{infty-cat-appendix}
+	
+	%\input{infty-glossaries}
+	
+	\printbibliography[title=参考文献]
+	
+\end{document}

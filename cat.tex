@@ -31,7 +31,6 @@
 	\arrow[from=1-2, to=2-2]
 \end{tikzcd}$ 的图的极限;
     \item \emph{终对象}是空图的极限. 终对象也可视为 $0$ 个对象的积, 因此我们将终对象记作 $1$.
-    终对象到另一对象 $c$ 的态射称为 $c$ 的\emph{整体元素} (global element)\footnote{这一称呼来自层的整体截面.}.
 \end{itemize}
 
 我们关注的一类极限是\emph{有限图} (有限个对象和有限个态射组成的图) 的极限, 称为\emph{有限极限}. (空图的极限也是一种有限极限.)
@@ -119,7 +118,7 @@
     \end{equation}
     则称 $X$ \emph{可作指数} (exponentiable), 称 $Y^X$ 为\emph{指数对象} (exponential object), 或称\emph{内蕴态射对象} (internal hom-object).
     
-    若 $\mathcal C$ 的所有对象均可作指数, 则称 $\mathcal C$ 为\emph{积闭范畴} (cartesian closed category), 其中 ``闭'' 即指数对象的存在性.
+    若 $\mathcal C$ 的所有对象均可作指数, 则称 $\mathcal C$ 为\emph{积闭范畴} (cartesian closed category), 其中 ``积'' 指有限积, ``闭'' 即指数对象的存在性.
 \end{definition}
 
 \footnotetext{指数对象可对一般的\emph{幺半范畴} (monoidal category) 定义, 这里我们只考虑所谓\emph{积幺半范畴} (cartesian monoidal category), 即以乘积定义的幺半范畴.}
@@ -136,8 +135,8 @@
     取 $X$ 到 $Y$ 所有满足 $f(K) \subset O$ 的映射构成的集合.
     
     拓扑学中, 人们常说 ``我们在一个方便的拓扑空间范畴中工作''\footnotemark,
-    即要求所考虑的范畴包含我们感兴趣的空间, 且具有积闭等性质.
-    一个比较方便的范畴是\emph{紧生成弱 Hausdorff 空间范畴} $\mathsf{CGWH}$. Johnstone \cite{Johnstone-OTT} 构造了一个方便的拓扑空间范畴, 且它是\topos{}.
+    即要求所考虑的范畴包含我们感兴趣的空间 (如 CW 复形), 且具有良好的范畴论性质.
+    一个比较方便的范畴是\emph{紧生成弱 Hausdorff 空间范畴} $\mathsf{CGWH}$, 它是积闭范畴, 但还不是\topos{}. Johnstone \cite{Johnstone-OTT} 构造了一个方便的 ``拓扑空间范畴'', 且它是\topos{}. 注 \ref{remark-topological-topos} 讨论了 Johnstone 的构造.
 \end{example}
 \footnotetext{\url{https://ncatlab.org/nlab/show/convenient+category+of+topological+spaces}}
 
@@ -165,6 +164,21 @@
     {(取值映射)}
     在 (\ref{exponential-adjoint}) 中取 $Z=Y^X$, 那么 $\operatorname{id}_{Y^X}\in \operatorname{Hom}_{\mathcal C}(Y^X,Y^X)$ 在另一边对应的态射称作\emph{取值映射} (evaluation map) $\operatorname{ev}\colon Y^X\times X \to Y$. 换言之, 取值映射 $\operatorname{ev}\colon Y^X\times X \to Y$ 是伴随 $(-)\times X \dashv (-)^X$ 的余单位.
 \end{definition}
+
+\begin{example}
+	{(复合)}
+	正如集合映射的复合, 指数对象之间有 ``复合'' 运算
+	$$
+	(-\circ -)\colon Z^Y\times Y^X \to Z^X.
+	$$
+	它来自如下的复合:
+	$$
+	Z^Y\times Y^X\times X \overset{\operatorname{ev}}{\to}
+	Z^Y\times Y
+	\overset{\operatorname{ev}}{\to}
+	Z.
+	$$
+\end{example}
 
 指数对象有与数的乘方类似的规律.
 
@@ -196,7 +210,13 @@
 	$$
 \end{prop}
 \begin{proof}
-	这是因为 $(-)\times W$ 作为 $(-)^W$ 的左伴随保持余极限 (命题 \ref{adjoints-preserve-limits}).
+	这是因为 $(-)\times W$ 作为 $(-)^W$ 的左伴随保持余极限 (命题 \ref{adjoints-preserve-limits}). 此外也可给出一个具体的证明.
+	\begin{align*}
+		\operatorname{Hom}(Z\times (X+Y),W)&\simeq \operatorname{Hom}(X+Y,W^Z)\\
+		&\simeq\operatorname{Hom}(X,W^Z)\times\operatorname{Hom}(Y,W^Z)\\
+		&\simeq\operatorname{Hom}(Z\times X,W)\times\operatorname{Hom}(Z\times Y,W)\\
+		&\simeq\operatorname{Hom}(Z\times X+Z\times Y,W).
+	\end{align*}
 \end{proof}
 
 \begin{prop}
@@ -357,7 +377,7 @@ $$
     符号 $\top$ (\LaTeX 代码: \verb|\top|) 读作 ``真'', 后面也将用到另一个元素 $\bot\colon 1\to\Omega$ (\verb|\bot|), 读作 ``假''. 一般地, 态射 $1\to\Omega$ 称为\emph{真值} (truth value).
 \end{remark}
 
-现在证明子对象分类器两种定义的等价性. 假设第一种定义 (\ref{Subobject-classifier-definition}) 中的对象 $\Omega$ 存在, 我们需要给出第二种定义 (\ref{Subobject-classifier-definition-alternative}) 所要求的单射 $\top\colon 1 \to \Omega$.
+现在证明子对象分类子两种定义的等价性. 假设第一种定义 (\ref{Subobject-classifier-definition}) 中的对象 $\Omega$ 存在, 我们需要给出第二种定义 (\ref{Subobject-classifier-definition-alternative}) 所要求的单射 $\top\colon 1 \to \Omega$.
 
 考虑 $\Omega$ 到自身的恒等映射 $\operatorname{id}\colon \Omega \to \Omega$, 它在同构 $\operatorname{Sub}(\Omega) \simeq \operatorname{Hom}(\Omega,\Omega)$ 下对应一个子对象 $\widetilde \top \colon \widetilde 1 \to \Omega$.
 
@@ -410,8 +430,10 @@ $\begin{tikzcd}[ampersand replacement=\&,sep=small]
 \end{example}
 
 \begin{example}
+	[label={global-element-of-object-of-category}]
 	{(整体元素)}
-	任何整体元素 $1\to X$ 是子对象.
+	在一个范畴 $\mathcal C$ 中, 终对象 $1$ 到另一对象 $X$ 的态射称为 $X$ 的\emph{整体元素} (global element)\footnote{这一称呼来自层的整体截面.}.
+	任何整体元素 $1\to X$ 都构成子对象.
 \end{example}
 
 \begin{example}
@@ -496,7 +518,7 @@ $$
     对角线 $\Delta \colon  X\to X\times X$ 对应谓词 ``$x=y$'';
     等化子 $\operatorname{eq}(f,g) \to X$ 对应谓词 ``$f(x)=g(x)$''.
 
-    态射 $A \to X$ 可视为 $X$ 的\emph{广义元素}. 设 $X \to \Omega$ 是谓词, 那么复合 $A \to X \to \Omega$ 可视为 $\Omega$ 的广义元素, 表示 ``广义元素 $A \to X$ 满足谓词 $X\to\Omega$''.
+    态射 $A \to X$ 可视为 $X$ 的\emph{广义元素}, 广义元素是整体元素 (例 \ref{global-element-of-object-of-category}) 的推广. 设 $X \to \Omega$ 是谓词, 那么复合 $A \to X \to \Omega$ 可视为 $\Omega$ 的广义元素, 表示 ``广义元素 $A \to X$ 满足谓词 $X\to\Omega$''.
 \end{remark}
 
 \subsection{幂对象}
@@ -609,8 +631,9 @@ $$
 余极限的情况则更简单.
 
 \begin{prop}
+	[label={over-colimit}]
 	{(俯范畴中的余极限)}
-	设 $X$ 是范畴 $\mathcal C$ 的对象, 那么俯范畴 $\mathcal C/X$ 中一个图的余极限等同于 $\mathcal C$ 中对应的图的余极限.
+	设 $X$ 是范畴 $\mathcal C$ 的对象, 那么俯范畴 $\mathcal C/X$ 中一个图的余极限等同于 $\mathcal C$ 中对应的图的余极限 (配备其到 $X$ 的典范态射).
 \end{prop}
 
 \begin{prop}
@@ -927,7 +950,17 @@ $$
 \end{example}
 
 \begin{example}
-    [label={Set_times_Set}]
+	[label={degenerate-topos}]
+	{(退化\topos{})}
+	在\topos{} $\mathcal C$ 中, 若 $0\simeq 1$, 则对任何对象 $X$ 有 $X\to 1$ 为同构 (命题 \ref{topos-strict-initial-object}), 可知 $\mathcal C$ 只有一个对象 $1$ 和一个态射 $\operatorname{id}_1$; 称之为\emph{退化\topos{}} (degenerate topos).
+	\begin{itemize}
+		\item 在非退化\topos{}中, 不存在态射 $1\to 0$.
+		\item 对任何\topos{} $\mathcal C$, 有 $\mathcal C/0$ 为退化\topos{}.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+    [label={Set-times-Set}]
     {($\mathsf {Set}\times\mathsf {Set}$)}
     范畴 $\mathcal C = \mathsf {Set}\times\mathsf {Set}\simeq \mathsf {Set}^{\{1,2\}}$ 是一个\topos{},
     其对象为一对集合 $(X_1,X_2)$,
@@ -1113,13 +1146,13 @@ $$
 
 \begin{example}
 	{}
-	拓扑空间范畴 $\mathsf {Top}$ 中的正则单射是\emph{嵌入}, 也即子空间拓扑. $\mathsf {Top}$ 中一般的单射未必是正则单射, 例如一个集合上离散拓扑到平凡拓扑的映射.
+	拓扑空间范畴 $\mathsf {Top}$ 中的正则单射是\emph{嵌入}, 也即带有子空间拓扑的子集. $\mathsf {Top}$ 中一般的单射未必是正则单射, 例如一个集合上离散拓扑到平凡拓扑的映射.
 \end{example}
 
 \begin{example}
 	[label={ring-non-regular-epi-example}]
 	{}
-	环范畴 $\mathsf {Ring}$ 中的正则满射正是那些底层集合上是满射的环同态. $\mathsf {Ring}$ 中一般的满射未必是正则满射, 例如整数到有理数的嵌入 $\mathbb{Z} \to \mathbb{Q}$.
+	环范畴 $\mathsf {Ring}$ 中的正则满射正是在底层集合上为满射的环同态. $\mathsf {Ring}$ 中一般的满射未必是正则满射, 例如整数到有理数的嵌入 $\mathbb{Z} \to \mathbb{Q}$.
 \end{example}
 
 
@@ -1149,7 +1182,7 @@ $$
 
 %\subsection{等价关系}
 
-对于集合, 态射 $f\colon X\to Y$ 的核偶为 $X\times X$ 的子集
+对于集合的映射 $f\colon X\to Y$, 其核偶为 $X\times X$ 的子集
 $$
 	X\times_Y X = \{(x_1,x_2)\in X\times X \mid f(x_1)=f(x_2)\}.
 $$
@@ -1258,7 +1291,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \end{remark}
 \footnotetext{注意 $\operatorname{Sub}_{\mathcal C}(X)$ 的对象是单态射的等价类, 但这里为了构造函子, 可任取每个等价类中的一个代表元. 对于子对象 $U\to X$ 与 $V\to X$, 即使视为 $\mathcal C/X$ 的对象, 两者之间也至多只有一个态射; 故 $\operatorname{Sub}_{\mathcal C}(X)$ 可视为 $\mathcal C/X$ 的全子范畴.}
 
-\begin{prop}
+\begin{propdef}
 	[label={image-vs-exists}]
     {(像与存在)}
     假设范畴 $\mathcal C$ 存在拉回, 那么如下条件等价:
@@ -1267,7 +1300,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
         \item 对任意态射 $f \colon X \to Y$,
         拉回 $f^* \colon \operatorname{Sub}(Y) \to \operatorname{Sub}(X)$ 有左伴随 $\exists_f$.
     \end{enumerate}
-\end{prop}
+\end{propdef}
 
 \begin{proof}
     $(1) \Rightarrow (2)$ 的证明. 假设所有函子 $\operatorname{im}$ 存在. 定义 $\exists_f$ 为如下的复合,
@@ -1541,11 +1574,20 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 	Heyting 代数的同态是保持有限积, 有限余积和指数对象的函子, 也即保持上述所有结构 $\land,\lor,\top,\bot,\Rightarrow,\neg$ 的偏序集映射.
 \end{definition}
 
+定义 \ref{Heyting-algebra-definition} 中的运算符号提示我们, Heyting 代数的元素可视为某种命题.
+
 \begin{remark}
 	[label={implication-universal-property}]
 	{}
 	$x\Rightarrow y$ 的万有性质可叙述如下: 它是使得 $(z\wedge x)\leq y$ 的 $z$ 的最大值,
 	``由命题 $x$ 想要推出 $y$ 还需要的最弱命题'' (当 $z\leq w$ 时, 我们认为 $z$ 强于 $w$).
+\end{remark}
+
+\begin{remark}
+	{(内部和外部的蕴涵)}
+	在 Heyting 代数中, $x \Rightarrow y$ 和 $x\leq y$ 均表示 ``$x$ 蕴涵 $y$'', 但前者是 ``内部'' 的命题 (即 Heyting 代数中的一个元素), 后者是 ``外部'' 的命题.
+	由定义 \ref{Heyting-algebra-definition} (令 $z=\top$), 可知
+	$(x\Rightarrow y) = \top$ 当且仅当 $x\leq y$.
 \end{remark}
 
 \begin{example}
@@ -1564,7 +1606,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 
 \begin{prop}
 	{}
-	Heyting 代数是分配格, 即满足
+	Heyting 代数是分配格, 即满足分配律
 	$z\land (x\lor y) = (z\land x)\lor (z\land y)$
 	的格.
 \end{prop}
@@ -1573,12 +1615,13 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 \end{proof}
 
 \begin{prop}
-	{}
+	[label={Heyting-algebra-implication-properties}]
+	{(Heyting 代数中关于 $\Rightarrow$ 的恒等式)}
 	在 Heyting 代数中,
 	\begin{enumerate}
 		[(1)]
 		\item $\big(x\Rightarrow (y\Rightarrow z)\big) = \big((x\land y)\Rightarrow z\big)$;
-		\item $((x\lor y)\Rightarrow z)=\big((x\Rightarrow z)\land(y\Rightarrow z)\big)$;
+		\item $((x\lor y)\Rightarrow z)=\big((x\Rightarrow z)\land(y\Rightarrow z)\big)$, 特别地, $\neg(x\lor y)=(\neg x)\land (\neg y)$;
 		\item $\big(x\Rightarrow (y\land z)\big)= (x\Rightarrow y)\land (x\Rightarrow z)$.
 	\end{enumerate}
 \end{prop}
@@ -1589,8 +1632,7 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 
 \begin{remark}
 	{}
-	我们暗示 (明示) 了 Heyting 代数的元素可视为某种命题. 事实上, 它可以作为\emph{直觉主义命题演算} (intuitionistic propositional calculus) 的模型.
-	
+	Heyting 代数可以作为\emph{直觉主义命题演算} (intuitionistic propositional calculus) 的模型.
 	%定义 Heyting 代数中的 ``非'' 运算 $\neg x = (x\Rightarrow \bot)$.
 	在例 \ref{topological-space-open-Heyting-algebra} 中,
 	$U \lor \neg U$ 和 $(\neg\neg U) \Rightarrow U$ 都不一定等于 $\top$. %(仅当 $U$ 既开又闭时它们才等于 $\top$).
@@ -1617,16 +1659,19 @@ $X\times X$ 的子集可视为集合 $X$ 上的一个 (二元) \emph{关系}.
 
 值得一提的是, 命题 \ref{subobject-lattice-Heyting-algebra} 对更一般的 Heyting 范畴 (Heyting 范畴是指子对象的拉回 $f^*$ 有右伴随 $\forall_f$, 见定义 \ref{Heyting-category}) 都成立. 对于子对象 $i\colon U\hookrightarrow X$ 与 $V\hookrightarrow X$, 可定义 $U\Rightarrow V$ 为 $\forall_i(U\cap V)\in\operatorname{Sub}(X)$.
 
-由命题 \ref{subobject-lattice-Heyting-algebra} 以及子对象分类子的性质, 我们知道 $\operatorname{Sub}(X)\simeq \operatorname{Hom}(X,\Omega)$ 上有\makebox{\emph{自然}}的 Heyting 代数结构; 自然性意味着我们可以开动米田机器, 得到
-$$
-\fbox{$\Omega$ 是\topos{}中的\emph{内蕴} Heyting 代数.}
-$$
-例如 $\operatorname{Hom}(X,\Omega)$ 上的 ``$\vee$'' 运算
-$\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \operatorname{Hom}(X,\Omega)$ (作为自然变换)
-等同于 $\vee\colon \operatorname{Hom}(X,\Omega\times \Omega)\to \operatorname{Hom}(X,\Omega)$, 等同于一个态射 $\vee\colon \Omega\times\Omega\to\Omega$.
-类似地, 可证明对\topos{}中的任意对象 $X$, 幂对象 $PX$ 为内蕴 Heyting 代数.
+\begin{remark}
+	{($\Omega$ 是内蕴 Heyting 代数)}
+	由命题 \ref{subobject-lattice-Heyting-algebra} 以及子对象分类子的性质, 我们知道 $\operatorname{Sub}(X)\simeq \operatorname{Hom}(X,\Omega)$ 上有\makebox{\emph{自然}}的 Heyting 代数结构; 自然性意味着我们可以开动米田机器, 得到
+	$$
+	\fbox{$\Omega$ 是\topos{}中的\emph{内蕴} Heyting 代数.}
+	$$
+	例如 $\operatorname{Hom}(X,\Omega)$ 上的 ``$\vee$'' 运算
+	$\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \operatorname{Hom}(X,\Omega)$ (作为自然变换)
+	等同于 $\vee\colon \operatorname{Hom}(X,\Omega\times \Omega)\to \operatorname{Hom}(X,\Omega)$, 等同于一个态射 $\vee\colon \Omega\times\Omega\to\Omega$.
+	类似地, 可证明对\topos{}中的任意对象 $X$, 幂对象 $PX$ 为内蕴 Heyting 代数.
+\end{remark}
 
-我们还可以具体写出内蕴 Heyting 代数 $\Omega$ 的结构态射.
+下面具体写出内蕴 Heyting 代数 $\Omega$ 的结构态射.
 
 %\begin{prop}
 %	{}
@@ -1679,7 +1724,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 
 \begin{prop}
 	[label={zero-char-function}]
-	{}
+	{(最小子对象与假)}
 	对象 $X$ 的最小子对象 $0\to X$ (命题 \ref{bottom-subobject}) 的特征函数是 $$\bot_X\colon X\to 1\overset{\bot}{\to}\Omega.$$
 \end{prop}
 \begin{proof}
@@ -1699,6 +1744,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \end{proof}
 
 \begin{definition}
+	[label={definition-not}]
 	{(非)}
 	\emph{非} (not) $\neg\colon \Omega\to\Omega$ 是\emph{假} $\bot\colon 1 \to\Omega$ 的特征函数, 即下图是子对象的拉回.
 	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIxIl0sWzAsMSwiXFxPbWVnYSJdLFsxLDEsIlxcT21lZ2EiXSxbMSwwLCIxIl0sWzAsMSwiXFxib3QiLDJdLFswLDNdLFsxLDIsIlxcbmVnIiwyXSxbMywyLCJcXHRvcCJdXQ==
@@ -1729,13 +1775,13 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	\end{tikzcd}\]
 \end{proof}
 \begin{prop}
-	{}
+	{(子对象的 ``非'' 与 $\Omega$ 上的 ``非'')}
 	设子对象 $U\hookrightarrow X$ 的特征函数是 $\chi\colon X\to\Omega$, 则 $\neg U$ 的特征函数是 $X\overset{\chi}{\to}\Omega\overset{\neg}{\to}\Omega$.
 \end{prop}
 \begin{proof}
 	拉回 $\chi^*\colon \operatorname{Sub}(\Omega)\to\operatorname{Sub}(X)$ 保持 ``$\Rightarrow$'' 运算 (命题 \ref{subobject-lattice-Heyting-algebra}), 也保持 $0$ (最小子对象), 从而保持 ``$\neg$'' 运算.
-	由命题 \ref{bot-neg-top},
-	我们证明了下图中左边的方块为拉回, 从而长方形为拉回.
+	由命题 \ref{bot-neg-top}, 
+	$\chi^* \bot =\chi^*(\neg\top)=\neg\chi^*\top = \neg U$, 即下图中左边的方块为拉回. 这说明长方形为拉回, 即 $\neg U$ 的特征函数是 $X\overset{\chi}{\to}\Omega\overset{\neg}{\to}\Omega$.
 	% https://q.uiver.app/#q=WzAsNixbMCwxLCJYIl0sWzEsMSwiXFxPbWVnYSJdLFsyLDEsIlxcT21lZ2EiXSxbMCwwLCJcXG5lZyBVIl0sWzEsMCwiMSJdLFsyLDAsIjEiXSxbMywwXSxbMCwxLCJcXGNoaSIsMl0sWzEsMiwiXFxuZWciLDJdLFszLDRdLFs0LDEsIlxcYm90Il0sWzQsNV0sWzUsMiwiXFx0b3AiXV0=
 	\[\begin{tikzcd}[ampersand replacement=\&]
 		{\neg U} \& 1 \& 1 \\
@@ -1770,7 +1816,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	\end{tikzcd}\]
 \end{definition}
 \begin{prop}
-	{}
+	{(子对象的交与 $\Omega$ 上的 ``且'')}
 	设子对象 $U\to X$, $V\to X$ 的特征函数分别是 $\chi_U,\chi_V\colon X\to\Omega$, 则 $U\land V$ 的特征函数是 $X \overset{(\chi_U,\chi_V)}{\longrightarrow}\Omega\times\Omega\overset{\land}{\to}\Omega$.
 \end{prop}
 \begin{proof}
@@ -1803,12 +1849,38 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \end{proof}
 
 \begin{definition}
+	{(偏序)}
+	在一般的范畴中, 若 $X\times X$ 的子对象 (即 $X$ 上的关系) $R$ 满足以下条件, 则称之为 $X$ 上的一个\emph{偏序}.
+	\begin{itemize}
+		\item (自反性) $\Delta\leq R$;
+		\item (传递性) $p_{12}^*R \land p_{23}^* R \leq p_{13}^*R$;
+		\item (反对称性) $\operatorname{eq}(R,\sigma R)=\Delta$.
+	\end{itemize}
+	其中 $\Delta,\sigma,p_{12}$ 等符号的含义见定义 \ref{equivalence-relation}.
+\end{definition}
+
+
+
+\begin{propdef}
+	{($\Omega$ 上的偏序)}
+	等化子 $\operatorname{eq}(\land,\pi_1) \to \Omega\times\Omega$
+	是 $\Omega$ 上的偏序, 记之为 $\leq$.
+\end{propdef}
+\begin{proof}~
+	\begin{itemize}
+		\item 由 $\land$ 的定义易得 $\land\Delta = \operatorname{id}_{\Omega}=\pi_1\Delta$, 所以 $\Delta\leq \operatorname{eq}(\land,\pi_1)$, 即自反性;
+		\item 对任意 $U\hookrightarrow \Omega^3$, $U\leq p_{12}^*\operatorname{eq}(\land,\pi_1)$ 当且仅当 $p_1U\land p_2U = p_1 U$, 即 $p_1U\leq p_2 U$. 这证明了传递性.
+		\item 注意到 $\sigma{\leq} = \operatorname{eq}(\land,\pi_2)$, 故对任意 $V\hookrightarrow \Omega^2$, $V\leq \operatorname{eq}(\leq,\sigma {\leq})$ 当且仅当 $p_1 V = p_2V$, 即 $V\leq\Delta$. 此即反对称性.
+	\end{itemize}
+\end{proof}
+
+\begin{definition}
+	[label={Omega-implication}]
 	{(蕴涵)}
-	\emph{蕴涵} $\Rightarrow \colon \Omega\times\Omega\to \Omega$ 是等化子 $\operatorname{eq}(\land,\pi_1) \to \Omega\times\Omega$
-	的特征函数.
+	\emph{蕴涵} $\Rightarrow \colon \Omega\times\Omega\to \Omega$ 是偏序 $\leq$ 的特征函数.
 \end{definition}
 \begin{prop}
-	{}
+	{(子对象的 ``$\Rightarrow$'' 与 $\Omega$ 上的 ``$\Rightarrow$'')}
 	设子对象 $U\to X$, $V\to X$ 的特征函数分别是 $\chi_U,\chi_V\colon X\to\Omega$, 则 $U\Rightarrow V$ 的特征函数是 $X \overset{(\chi_U,\chi_V)}{\longrightarrow}\Omega\times\Omega\overset{\Rightarrow}{\to}\Omega$.
 \end{prop}
 \begin{proof}
@@ -1863,12 +1935,15 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 
 \subsection{自然数对象}
 
+将一个\topos{}看作一个集合宇宙, 我们有时关心是否存在无穷集合. 最基本的无穷集合是自然数的集合, 它是由一个泛性质定义的. 自然数集合的存在性又叫 \emph{Peano 公理}.
+
 \begin{definition}
+	[label={natural-numbers-object}]
     {(自然数对象)}
     \topos{} $\mathcal C$ 中的\emph{自然数对象} (natural numbers object) 是一个对象 $N$,
     以及态射 $0 \colon 1 \to N$ (零),
     $s \colon N \to N$ (后继),
-    满足如下的泛性质: 对任意对象 $X$,
+    满足如下的泛性质: 对 $\mathcal C$ 的任意对象 $X$,
     任意态射 $\widetilde 0\colon 1\to X,\widetilde s\colon X\to X$,
     存在唯一的态射 $f\colon N\to X$ 使得下图交换.
     % https://q.uiver.app/#q=WzAsNixbMCwwLCIxIl0sWzEsMCwiTiJdLFsyLDAsIk4iXSxbMCwxLCIxIl0sWzEsMSwiWCJdLFsyLDEsIlgiXSxbMCwzXSxbMCwxLCIwIl0sWzEsMiwicyJdLFszLDQsIlxcd2lkZXRpbGRlIDAiLDJdLFs0LDUsIlxcd2lkZXRpbGRlIHMiLDJdLFsxLDQsImYiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJmIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
@@ -1883,6 +1958,15 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	\arrow["f", dashed, from=1-2, to=2-2]
 	\arrow["f", dashed, from=1-3, to=2-3]
 \end{tikzcd}\]
+换言之, 如下 ``递推方程'' 的解 $f$ 存在且唯一:
+$$
+\left\{
+\begin{aligned}
+	f(0) &= \widetilde {0}, \\
+	f(sn) &= \widetilde s (f(n)).
+\end{aligned}
+\right.
+$$
 \end{definition}
 
 \begin{prop}
@@ -1891,18 +1975,14 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	在一个\topos{}中, $0\colon 1\to N$ 与 $s\colon N\to N$ 构成自然数对象的充要条件是 $(0,s)\colon 1+N\to N$ 为同构且 $1,s$ 的余等化子为 $\mathbb{N}\to 1$.
 \end{prop}
 \begin{remark}
-	{}
-	自然数对象是函子 $X\mapsto 1+X$ 的\emph{始代数} \footnotemark(函子 $F\colon \mathcal C\to \mathcal C$ 的代数是一个对象 $X$ 配备一个态射 $FX\to X$). 结论 \ref{natural-numbers-object-condition} 的一部分可由 Lambek 定理得出, 这个定理说对于函子 $F$ 的始代数, $FX\to X$ 必然是同构.
+	{(始代数)}
+	自然数对象 $N$ 的泛性质亦可叙述为, $N$ 是函子 $X\mapsto 1+X$ 的\emph{始代数} (initial algebra). 函子 $F\colon \mathcal C\to \mathcal C$ 的代数是指一个对象 $X$ 配备一个态射 $FX\to X$, 而始代数是代数的范畴中的始对象. 结论 \ref{natural-numbers-object-condition} 的一部分可由 Lambek 定理得出, 这个定理说对于函子 $F$ 的始代数, $FX\to X$ 必然是同构.
 \end{remark}
-\footnotetext{\url{https://ncatlab.org/nlab/show/initial+algebra+of+an+endofunctor}}
-
-\begin{remark}{}
-	自然数对象的存在性可视为\topos{}中的 Peano 公理.
-\end{remark}
+%\footnotetext{\url{https://ncatlab.org/nlab/show/initial+algebra+of+an+endofunctor}}
 
 \begin{example}
     {(自然数对象不一定存在)}
-    有限集范畴 $\mathsf {Fin}$ 中不存在自然数对象.
+    有限集范畴 $\mathsf {Fin}$ 中不存在自然数对象, 因为对有限集合 $S$, $1+S$ 与 $S$ 不可能同构.
 \end{example}
 
 \subsection{无交和}
@@ -2131,7 +2211,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 	注意 Boole \topos{}中尽管有 ``排中律'', 但不一定只有两个真值 (后者称为\topos{}的\emph{二值性}). 例如 $\mathsf {Set}\times\mathsf {Set}$ 是 Boole 的, 但有 $4$ 个真值. 反过来, 只有两个真值的\topos{}也不一定是 Boole \topos{}.
 \end{remark}
 
-为了陈述选择公理, 我们需要投射对象的概念. 它与同调代数中的概念类似.
+为了陈述选择公理, 我们需要投射对象的概念. 它与同调代数中投射模的概念类似.
 
 \begin{definition}
 	{(投射对象)}
@@ -2140,6 +2220,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \end{definition}
 
 \begin{propdef}
+	[label={axiom-of-choice}]
 	{(选择公理)}
 	设 $\mathcal C$ 为范畴,
 	那么以下条件等价,
@@ -2151,7 +2232,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 \end{propdef}
 
 \begin{proof}
-	假设 $\mathcal C$ 的每个对象都是投射的. 对于满射 $p\colon X\to I$, 由于 $I$ 是投射的, 有 $p_*\colon \operatorname{Hom}(I,X)\to \operatorname{Hom}(I,I)$ 为满射, 故存在 $s\in\operatorname{Hom}(I,X)$ 使得 $ps=\operatorname{id}_I$.
+	假设 $\mathcal C$ 的每个对象都是投射的. 对于满射 $p\colon X\to I$, 由于 $I$ 是投射的, 有 $$p_*\colon \operatorname{Hom}(I,X)\to \operatorname{Hom}(I,I)$$ 为满射, 故存在 $s\in\operatorname{Hom}(I,X)$ 使得 $ps=\operatorname{id}_I$.
 	
 	假设 $\mathcal C$ 中的每个满射都存在截面. 有截面的映射在任何函子作用下仍是满射, 故任何函子 $\operatorname{Hom}(Y,-)$ 都保持满射.
 \end{proof}
@@ -2165,6 +2246,7 @@ $\vee\colon \operatorname{Hom}(X,\Omega)\times \operatorname{Hom}(X,\Omega)\to \
 容易证明选择公理可以推出内蕴选择公理, 但反之不然.
 
 \begin{example}
+	[label={example-no-AC}]
 	{(不满足选择公理的例子)}
 	为了说明选择公理不是理所当然的性质, 我们举两个最简单的\topos{}中满射没有截面的例子.
 	第一个例子是变集范畴 (例 \ref{varying-set-topos}),

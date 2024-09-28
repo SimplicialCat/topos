@@ -146,6 +146,7 @@
 \end{example}
 
 \begin{example}
+	[label={monoidal-category}]
 	{(幺半范畴)}
 	\emph{幺半范畴} (monoidal category) 是范畴 $\mathcal M$ 带有如下资料:
 	\begin{itemize}
@@ -741,7 +742,7 @@ $2$-范畴是谈论伴随的自然的语境.
 			\arrow[shift left=2, from=1-4, to=1-3]
 			\arrow[shift right=2, from=1-4, to=1-3]
 		\end{tikzcd}$.
-		记 $\Delta_+$ 为有限全序集 $[-1],[0],[1],[2],\cdots$ 与保序映射构成的范畴 (其中 $[n]=\{0,1,\cdots,n\}$, $[-1]=\varnothing$), 则 $\operatorname{Hom}(C,C)\simeq\Delta_+$. $\Delta_+$ 是所谓\emph{增广单纯形范畴} (augmented simplex category), 即单纯形范畴 $\Delta$ 添加一个始对象 $[-1]$.
+		记 $\Delta_+$ 为有限全序集 $[-1],[0],[1],[2],\cdots$ 与保序映射构成的范畴 (其中 $[n]=\{0,1,\cdots,n\}$, $[-1]=\varnothing$), 则 $\operatorname{Hom}(C,C)\simeq\Delta_+$. $\Delta_+$ 是所谓\emph{增广单纯形范畴} (augmented simplex category), 即单纯形范畴 $\Delta$ 添加一个始对象 $[-1]$. 后面将会提到 (注 \ref{adjunction-induced-monad-remark}) 由于 $\Delta_+$ 中的 $[0]$ 是游走的幺半群 (例 \ref{doctrine-monoidal-categories}), 保持幺半范畴结构的函子 $\Delta_+\to \operatorname{End}(\mathcal C)$ 等同于 $\operatorname{End}(\mathcal C)$ 中的幺半群, 也即 $\mathcal C$ 上的单子.
 		\item
 		$\operatorname{Hom}(C,D) = \begin{tikzcd}[ampersand replacement=\&,sep=small]
 			F \& FGF \& FGFGF \& \cdots
@@ -994,6 +995,7 @@ $2$-范畴是谈论伴随的自然的语境.
 事实上, 伴随三元组 $F\dashv G \dashv H$ 等同于 $2$-范畴 $\mathcal Cat_{\text{Adj}}$ 中的伴随 $(F\dashv G)\dashv (G\dashv H)$.
 
 \begin{prop}
+	[label={adjoint-triple-induces-adjunction}]
 	{(伴随三元组诱导伴随)}
 	伴随三元组 $F\dashv G \dashv H$ 诱导两对伴随
 	$
@@ -1102,6 +1104,11 @@ $2$-范畴是谈论伴随的自然的语境.
 	\end{center}
 \end{proof}
 
+\begin{remark}
+	{}
+	在命题 \ref{adjoint-triple-induces-adjunction} 中, $GF$ 为单子, $GH$ 为余单子 (命题 \ref{monad-from-adjoint}).
+\end{remark}
+
 \begin{prop}
 	[label={adjoint-triple-full-faithful}]
 	{}
@@ -1140,7 +1147,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	\[
 	\pi\colon f_!(f^*Y\times X) \to Y\times f_!(X)
 	\]
-	为同构, 则称这对伴随满足 \emph{Frobenius 互反律} (reciprocity).
+	为同构, 则称伴随 $f_!\dashv f^*$ 满足 \emph{Frobenius 互反律} (reciprocity).
 	这个概念还可推广到更一般的幺半范畴, 其中乘积推广为某种运算 $\otimes$, 要求 $f^*$ 保持 $\otimes$.
 \end{definition}
 
@@ -1156,7 +1163,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 \begin{prop}
 	[label={base-change-Frobenius}]
 	{(基变换)}
-	设范畴 $\mathcal C$ 存在拉回, 对于态射 $f\colon X\to Y$, 记 $f_!=\Sigma_f$ 为拉回 $f^*\colon \mathcal C/Y \to \mathcal C/X$ 的左伴随 (命题 \ref{sigma-adjoint}), 那么这对伴随满足 Frobenius 互反律.
+	设范畴 $\mathcal C$ 存在拉回, 对于态射 $f\colon X\to Y$, 记 $f_!=\Sigma_f$ 为拉回 $f^*\colon \mathcal C/Y \to \mathcal C/X$ 的左伴随 (命题 \ref{sigma-adjoint}), 那么伴随 $f_!\dashv f^*$ 满足 Frobenius 互反律.
 \end{prop}
 \begin{proof}
 	此时 Frobenius 互反律说的是对任意态射 $U\to X$ 与 $V\to Y$, $f^*V\times_X U\simeq U\times_Y U$. 这是因为下图中两个小方块为拉回, 故大长方形为拉回.
@@ -1179,9 +1186,9 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	{}
 	设范畴 $\mathcal C,\mathcal D$ 存在拉回, 且为积闭范畴 (定义 \ref{exponential-object}). 对于伴随函子 $\begin{tikzcd}[ampersand replacement=\&]
 		{\mathcal C} \& {\mathcal D}
-		\arrow[""{name=0, anchor=center, inner sep=0}, "f_!"', shift right=2, from=1-1, to=1-2]
-		\arrow[""{name=1, anchor=center, inner sep=0}, "f^*"', shift right=2, from=1-2, to=1-1]
-		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+		\arrow[""{name=0, anchor=center, inner sep=0}, "f_!", shift left=2, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "f^*", shift left=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
 	\end{tikzcd}%\adj{f_!}{f^*}{\mathcal C}{\mathcal D}
 	$, 其满足 Frobenius 互反律当且仅当 $f^*$ 保持指数对象.
 \end{prop}
@@ -1205,7 +1212,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 		\arrow["\dashv"{anchor=center, rotate=90}, draw=none, from=7, to=5]
 	\end{tikzcd}\]
 \end{proof}
-这个结论的推论包括 ``拉回保持指数对象'' (命题 \ref{pullback-preserve-exponential-objects}) 以及位象开映射的等价定义 (命题 \ref{locale-open-map-preserves-implication}).
+这个结论的应用包括 ``\topos{}中拉回保持指数对象'' (命题 \ref{pullback-preserve-exponential-objects}), 子位象的性质 (命题 \ref{sublocale-exponential-ideal}) 以及位象开映射的等价定义 (命题 \ref{locale-open-map-preserves-implication}).
 
 %\begin{example}
 %	{(表示论中的 Frobenius 互反律)}
@@ -1554,7 +1561,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	\end{tikzcd}\]
 \end{proof}
 
-上述性质的应用之一是预层范畴中的层关于极限封闭 (命题 \ref{sheaf-limit}).
+上述性质的应用之一是预层范畴中的层关于极限封闭 (命题 \ref{sheaf-limit}, \ref{j-sheaf-finite-limits}).
 
 \begin{prop}
 	{(自反子范畴可视为局部对象的子范畴)}
@@ -1703,14 +1710,15 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	那么 $\mathcal D$ 为指数理想当且仅当 $a$ 保持有限积.
 \end{prop}
 \begin{proof}
-	由于 $a$ 保持有限积且 $aa=a$, 有自然同构
+	假设 $a$ 保持有限积, 则有自然同构
 	$a(Z\times X)\simeq a(Z)\times a(X)\simeq a(a(Z)\times X)$,
 	\begin{align*}
 		\operatorname{Hom}_{ {\mathcal C}} (Z,Y^X)&\simeq
 		\operatorname{Hom}_{ {\mathcal C}} (Z\times X,Y)\\
-		&\simeq \operatorname{Hom}_{ {\mathcal C}} (a(Z\times X),Y)\\
-		&\simeq \operatorname{Hom}_{ {\mathcal C}} (a(a(Z)\times X),Y)\\
-		&\simeq \operatorname{Hom}_{ {\mathcal C}} (a(Z)\times X,Y)\simeq \operatorname{Hom}_{ {\mathcal C}} (a(Z),Y^X),
+		&\simeq \operatorname{Hom}_{ {\mathcal C}} (a(Z\times X),Y)&\text{($Y$ 是 $\mathcal D$ 的对象)}\\
+		&\simeq \operatorname{Hom}_{ {\mathcal C}} (a(a(Z)\times X),Y)&\text{($a$ 保持有限积, 且 $aa(z)=a(z)$)}\\
+		&\simeq \operatorname{Hom}_{ {\mathcal C}} (a(Z)\times X,Y)&\text{($Y$ 是 $\mathcal D$ 的对象)}\\
+		&\simeq \operatorname{Hom}_{ {\mathcal C}} (a(Z),Y^X),
 	\end{align*}
 	故任何态射 $Z\to Y^X$ 唯一地穿过 $Z\to a(Z)$, 这说明 $Y^X$ 是 $\mathcal D$ 的对象.
 	
@@ -1719,8 +1727,8 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	\begin{align*}
 		\operatorname{Hom}_{ {\mathcal C}}(Z\times X, Y)&\simeq
 		\operatorname{Hom}_{ {\mathcal C}}(Z, Y^X)\\
-		&\simeq \operatorname{Hom}_{ {\mathcal C}}(a(Z), Y^X)\\
-		&\simeq \operatorname{Hom}_{ {\mathcal C}}(a(Z)\times X, Y)\simeq \operatorname{Hom}_{ {\mathcal C}}(a(Z)\times a(X), Y).
+		&\simeq \operatorname{Hom}_{ {\mathcal C}}(a(Z), Y^X)&\text{($Y^X$ 为 $\mathcal D$ 的对象)}\\
+		&\simeq \operatorname{Hom}_{ {\mathcal C}}(a(Z)\times X, Y)\\&\simeq \operatorname{Hom}_{ {\mathcal C}}(a(Z)\times a(X), Y)&\text{(重复上述论证可得)}.
 	\end{align*}
 	故任何态射 $Z\times X\to Y$ 唯一地穿过 $Z\times X \to a(Z)\times a(X)$,
 	这说明 $a(Z)\times a(X)\simeq a(Z\times X)$.
@@ -1941,6 +1949,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 
 由 $\mathcal C$ 的对象 $c$, 可得 $\mathcal C$ 上的预层 $\operatorname{Hom}_{\mathcal C}(-,c)$. 这事实上是 $\mathcal C$ 到 $\widehat {\mathcal C}$ 的嵌入.
 \begin{definition}
+	[label={definition-yoneda-embedding}]
 	{(米田嵌入)}
 	小范畴 $\mathcal C$ 的\emph{米田嵌入}是指函子
 	$\yo\colon \mathcal C \to \widehat{\mathcal C}$,
@@ -1996,7 +2005,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 \begin{remark}
 	[label={category-of-elements-as-over-category}]
     {(元素的范畴同构于 ``广义俯范畴'')}
-    由米田引理, $X$ 的元素的范畴同构于如下范畴: 其对象为态射 $\yo(c)\to X$, 其态射为形如
+    对于 $X\in\widehat{\mathcal C}$, 由米田引理, $X$ 的元素的范畴同构于如下范畴: 其对象为态射 $\yo(c)\to X$, 其态射为形如
     $\begin{tikzcd}[ampersand replacement=\&,row sep=-1pt,column sep=small]
     	{\yo(c)} \\
     	\& X \\
@@ -2051,7 +2060,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
     此时上述命题即是说 $X$ 等同于其所有单纯形的粘合. 这符合了单纯集是由单纯形组成的直观.
 \end{example}
 
-\subsection{自由余完备化}
+\subsection{自由余完备化, 脉与几何实现}
 
 在上个小节, 我们看到 $\widehat {\mathcal C}$ 是 $\mathcal C$ 经过某种添加余极限的过程得到的余完备范畴. 称 $\widehat {\mathcal C}$ 为 $\mathcal C$ 的\emph{自由余完备化} (free cocompletion); 以下命题解释了这句话中 ``自由'' 的含义, 即余完备范畴到一般范畴的 ``遗忘'' 的左伴随.
 
@@ -2088,7 +2097,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 
 \begin{prop}
 	[label={nerve-and-realization}]
-	{}
+	{(脉--几何实现伴随, 米田扩张)}
 	设 $\mathcal C$ 是(小)范畴, $\mathcal D$ 是余完备范畴.
 	对任意函子 $F \colon \mathcal C \to \mathcal D$, 存在一对伴随
 	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXHdpZGVoYXQge1xcbWF0aHNmIEN9Il0sWzEsMCwiXFxtYXRoc2YgRCJdLFswLDEsIkwiLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiUiIsMCx7Im9mZnNldCI6LTJ9XSxbMiwzLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
@@ -2102,7 +2111,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	$R(d) = \operatorname{Hom}_{\mathcal C}(F-,d)$;
 	其左伴随 $L$ 由如下余极限给出:
 	$$
-	L (X) = \operatorname{colim}\Big(
+	L (X) = X\otimes_{\mathcal C} F \operatorname{colim}\Big(
 	F\circ \pi_X \colon 
 	{\displaystyle\int_{\mathcal C}X} \to {\mathcal D}
 	\Big)
@@ -2129,7 +2138,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	设 $\mathcal C = \Delta$ (例 \ref{Simplicial-Sets}),
 	$\mathcal D=\mathsf {Top}$ 为拓扑空间范畴.
 	我们知道 $\mathsf {Top}$ 是余完备的.
-	设 $F \colon \Delta \to \mathsf {Top}$ 将 $[n]$ 对应到 $n$-维标准拓扑单形, 也即 $\mathbb{R}^{n+1}$ 中 $(n+1)$ 个基向量的闭包.
+	设 $F \colon \Delta \to \mathsf {Top}$ 将 $[n]$ 对应到 $n$-维标准拓扑单形, 也即 $\mathbb{R}^{n+1}$ 中 $(n+1)$ 个基向量的凸包.
 	那么命题 \ref{nerve-and-realization} 给出了 ``脉--几何实现伴随''
 %	单纯集的几何实现
 %	$$
@@ -2154,16 +2163,16 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	\operatorname{N}(\mathcal C)_n := \mathsf {Fun}(0\to 1\to\cdots\to n,\mathcal C).
 	\]
 	
-	在 $\infty$-范畴理论中我们还会用到单纯集与单纯范畴的脉--几何实现伴随
+	在 $\infty$-范畴理论 (单纯范畴模型) 中还有单纯集与单纯范畴的脉--几何实现伴随
 	\[
 	\begin{tikzcd}[ampersand replacement=\&]
 			{\mathsf {sSet}} \& {\mathsf {sCat}}
 			\arrow[""{name=0, anchor=center, inner sep=0}, "{\mathfrak {C}[{-}]}", shift left=2, from=1-1, to=1-2]
 			\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{N}^{\text{c}}}", shift left=2, from=1-2, to=1-1]
 			\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
-	\end{tikzcd},
+	\end{tikzcd}.
 	\]
-	见定义 \ref{coherent-nerve}.
+	%见定义 \ref{coherent-nerve}.
 \end{example}
 
 \begin{example}
@@ -2241,6 +2250,169 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	$$
 \end{example}
 
+\section{(余) 滤范畴和 (余) 滤 (余) 极限}
+
+回忆对于范畴 $\mathcal C$ 中的图 $X\colon I\to \mathcal C$, 其上的\emph{锥}是 $\mathcal C$ 的对象 $c$ (称为\emph{顶点}) 以及一族相容的态射 $c\to X(i)$. 对偶地, \emph{余锥}是 $\mathcal C$ 的对象 $c$ 以及一族相容的态射 $X(i) \to c$.
+
+\begin{definition}
+	[label={filtered-category}]
+	{(滤范畴, 滤余极限)}	
+	若一个范畴中任意有限图都存在余锥, 则称之为\emph{滤范畴} (filtered category). 对偏序集而言, 这个条件即是说任意有限子集都有上界, 称这样的偏序集为\emph{正向集} (directed set).
+	以滤范畴为指标范畴的余极限称为\emph{滤余极限} (filtered colimit).\footnotemark{}
+\end{definition}
+\footnotetext{曾经, 以正向集为指标范畴的余极限又称为\emph{正向极限} (directed limit). 正向极限是一个引起混淆的术语, 因此不建议使用. 另外不幸的是, 有些文献中 ``滤范畴'' 和 ``余滤范畴'' 的概念与此处定义的相反, 如 \cite{SGL}.}
+
+\begin{example}
+	{}
+	下图是一个滤范畴的例子.
+	\[\begin{tikzcd}[ampersand replacement=\&,sep=tiny]
+		\cdots \& \bullet \\
+		\cdots \& \bullet \& \bullet \\
+		\cdots \& \bullet \& \bullet \& \bullet \& \cdots
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=2-3]
+		\arrow[from=2-1, to=2-2]
+		\arrow[from=2-2, to=3-3]
+		\arrow[from=2-3, to=3-4]
+		\arrow[from=3-1, to=3-2]
+		\arrow[from=3-2, to=3-3]
+		\arrow[from=3-3, to=3-4]
+		\arrow[from=3-4, to=3-5]
+	\end{tikzcd}\]
+\end{example}
+
+\begin{prop}
+	[label={filtered-colimit-commutes-with-finite-limit}]
+	{(滤范畴的等价刻画)}
+	设 $J$ 为小范畴, 则 $J$ 为滤范畴当且仅当 $\mathsf {Set}$ 中任意 $J$-余极限与有限极限交换.
+\end{prop}
+\begin{proof}
+	见命题 \ref{lambda-filtered-colimit-commutes-with-lambda-small-limit}.
+\end{proof}
+
+\begin{definition}
+	[label={ind-object}]
+	{($\text{ind}$-对象)}
+	%范畴 $\mathsf {Flat}(\mathcal C^{\op},\mathsf {Set})$ 又记作 $\mathsf {Ind}(\mathcal C)$,
+	对于范畴 $\mathcal C$, 定义 $\mathcal C$ 的一个 ``$\text{ind}$-对象\footnotemark{}'' 为 $\widehat {\mathcal C}$ 中可表函子的一个滤余极限. 记 ``$\text{ind}$-对象\footnotemark{}'' 构成的 $\widehat {\mathcal C}$ 的全子范畴为 $\mathsf {Ind}(\mathcal C)$.
+\end{definition}
+\footnotetext{``$\text{ind}$-对象'' 中 $\text{ind}$ 来自\emph{归纳极限} (inductive limit), 它是滤余极限的别名. 由于找不到合适的译名, 姑且以 ``$\text{ind}$-对象'' 称之. 但也有作者用 inductive limit 表示一般的余极限, 如 \cite{SGA4}; 他们的滤余极限是 \emph{limites inductives filtrantes} (filtered inductive limits).}
+
+\begin{remark}
+	[label={remark-ind-elements-filtered}]
+	{(元素的范畴为滤范畴; $\text{ind}$-对象的等价定义)}
+	由命题 \ref{Set-valued-flat-functor} (将 $\mathcal C$ 替换为 $\mathcal C^{\op}$), $\mathsf {Ind}(\mathcal C)$ 等价于 $\mathsf {Flat}(\mathcal C^{\op},\mathsf {Set})$. 由该命题的 (1) 部分知对于 $X\in\mathsf {Ind}(\mathcal C)$, $\displaystyle\int_{\mathcal C}X$ 为滤范畴. 图 $\displaystyle\int_{\mathcal C}X\to \mathcal C\overset{\yo}{\to}\widehat {\mathcal C}$ 的余极限正是 $X$.
+	这解释了 ``$\text{ind}$-对象'' 的另一个等价定义: $\mathcal C$ 的一个 ``$\text{ind}$-对象'' 为一个图 $I\to \mathcal C$, 其中 $I$ 为滤范畴; 其用意是表达这个 ``$\text{ind}$-对象'' 是这个图的形式滤余极限.
+\end{remark}
+
+\begin{prop}
+	{}
+	对于范畴 $\mathcal C$, $\mathsf {Ind}(\mathcal C)$ 具有滤余极限.
+\end{prop}
+\begin{proof}
+	当 $\mathcal C$ 具有有限余极限时, $F\colon \mathcal C^{\op}\to\mathsf {Set}$ 平坦当且仅当 $F$ 保持有限极限, 故命题可证明如下. 设 $J$ 为滤范畴, 考虑图表 $F\colon J \to \mathsf{Ind}(\mathcal C)$. 对任意有限图表 $X\colon I\to \mathcal C$,
+	$$
+	\operatorname{colim}_{j\in J}F_j (\operatorname{lim}_{i\in I}X_i) \simeq \operatorname{colim}_{j\in J}\operatorname{lim}_{i\in I}F_j (X_i)\simeq \operatorname{lim}_{i\in I}\operatorname{colim}_{j\in J}F_j (X_i),
+	$$
+	故
+	$\operatorname{colim}_{j\in J}F_j\in \mathsf{Ind}(\mathcal C)$.
+\end{proof}
+
+\begin{prop}
+	{(关于滤余极限的完备化)}
+	对任意具有滤余极限的范畴 $\mathcal D$, 函子 $\mathcal C\to \mathcal D$ 可本质唯一地延拓为保持滤余极限的函子 $\mathsf {Ind}(\mathcal C) \to \mathcal D$.
+\end{prop}
+
+\begin{proof}
+	首先注意到函子 $F\colon \mathcal C\to \mathcal D$ 自然诱导了函子 $\mathsf {Ind}(F)\colon \mathsf {Ind}(\mathcal C) \to \mathsf {Ind}(\mathcal D)$,
+	$$
+	\mathsf {Ind}(F)(X) := \operatorname{colim}_{\yo(c) \to X} F(c).
+	$$
+	(由注 \ref{remark-ind-elements-filtered}, 该余极限为滤余极限, 故存在于 $\mathcal D$ 中.)
+	这与米田扩张 (命题 \ref{nerve-and-realization}) 类似.
+	%它将 $\operatorname{colim}_{i\in I}\yo(c_i)$ 映射到 $\operatorname{colim}_{i\in I}\yo(F(c_i))$.
+\end{proof}
+
+\begin{remark}
+	{(形式滤余极限)}
+	我们知道 $\widehat {\mathcal C}$ 是 $\mathcal C$ 的自由余完备化. 由上述命题, $\mathsf {Ind}(\mathcal C)$ 是 $\mathcal C$ \emph{关于滤余极限的完备化} (cocompletion under filtered colimits). $\mathcal C$ 的 $\text{ind}$-对象可以想象为 $\mathcal C$ 的对象\emph{形式上} (formally) 取滤余极限的结果.
+	所谓 $\mathcal C$ 的对象的\emph{形式滤余极限}, 就是指米田嵌入到 $\widehat {\mathcal C}$ 后的滤余极限.
+\end{remark}
+
+%\todo{代数理论的模型的范畴是有限模型的范畴的 ind}
+
+\begin{example}
+	[label={set-ind-fin-set}]
+	{}
+	集合范畴 $\mathsf {Set}$ 等价于有限集范畴 $\mathsf {Fin}$ 的 $\text{ind}$-对象的范畴:
+	考虑函子 $$\alpha\colon \mathsf {Set}\to \mathsf {Ind}(\mathsf {Fin}),\quad
+	S\mapsto \operatorname{Hom}_{\mathsf {Set}}(-,S)$$
+	以及 $$\beta\colon \mathsf {Ind}(\mathsf {Fin})\to \mathsf {Set},\quad
+	F\mapsto \operatorname{colim}_{\yo(X)\to F}X,$$
+	此处视 $F$ 为函子 $\mathsf {Fin}^{\op}\to \mathsf {Set}$, $X$ 表示有限集合, 余极限的指标范畴为 $\displaystyle\int_{\mathsf {Fin}}F$.
+	那么
+	\begin{align*}
+		\alpha(\beta(F))&\simeq\operatorname{Hom}_{\mathsf {Set}}(-,\operatorname{colim}_{\yo(X)\to F}X)\\
+		&\simeq\operatorname{colim}_{\yo(X)\to F}\operatorname{Hom}_{\mathsf {Set}}(-,X)&(\star)\\
+		&\simeq F;
+	\end{align*}
+	\begin{align*}
+		\beta(\alpha(S))&\simeq\operatorname{colim}_{\yo(X)\to \yo(S)}X\\
+		&\simeq S.
+	\end{align*}
+	其中关键的一步 $(\star)$ 使用了如下事实: 对于有限集 $Y$, $\operatorname{Hom}_{\mathsf {Set}}(Y,-)$ 保持滤余极限.
+	类似地, 可证明群范畴 $\mathsf {Grp}$ 等价于有限群范畴 $\mathsf {FinGrp}$ 的 $\text{ind}$-对象的范畴, 同样是因为对于有限群 $Y$, $\operatorname{Hom}_{\mathsf {Grp}}(Y,-)$ 保持滤余极限.
+	这一规律适用于任何代数理论; 其原因参见例 \ref{lambda-presentable-group}.
+\end{example}
+
+\begin{definition}
+	[label={cofiltered-category}]
+	{(余滤范畴, 余滤极限)}
+	若一个范畴中任意有限图都存在锥, 则称之为\emph{余滤范畴} (cofiltered category).
+	换言之, 称滤范畴的对偶为余滤范畴.
+	以余滤范畴为指标范畴的极限称为\emph{余滤极限} (cofiltered limit).\footnotemark{}
+\end{definition}
+\footnotetext{注意余滤\emph{极限}是一种特殊的\emph{极限}, 而不是一种余极限.}
+
+\begin{definition}
+	[label={pro-object}]
+	{($\text{pro}$-对象)}
+	对于范畴 $\mathcal C$, 定义 $\mathcal C$ 的一个 ``$\text{pro}$-对象\footnotemark{}'' 为 $\mathsf {Fun}(\mathcal C,\mathsf {Set})$ 中可表函子的一个余滤极限. 记 ``$\text{pro}$-对象'' 构成的 $\mathsf {Fun}(\mathcal C,\mathsf {Set})^{\op}$ 的全子范畴为 $\mathsf {Pro}(\mathcal C)$.
+	由定义, 有 $$\mathsf {Pro}(\mathcal C)\simeq\mathsf {Ind}(\mathcal C^{\op})^{\op}.$$
+\end{definition}
+\footnotetext{``$\text{pro}$-对象'' 中 $\text{pro}$ 来自\emph{投射极限} (projective limit), 它是余滤极限的别名. 但也有作者用 projective limit 表示一般的极限.}
+
+\begin{example}
+	[label={pro-finite-set}]
+	{(投射有限集)}
+	有限集合范畴 $\mathsf {Fin}$ 的 ``$\text{pro}$-对象'' 称作\emph{投射有限集} (profinite set).
+	投射有限集的范畴 $\mathsf {ProFin}$ 等价于 Stone 空间的范畴 $\mathsf {StoneSp}$ (定义 \ref{def-stone-space}):
+	%一个常见的投射有限集是 $\mathbb{N}\cup \{\infty\}$
+	$$
+	\begin{aligned}
+		\mathsf {ProFin} &\simeq \mathsf {Pro} (\mathsf {FinBooleAlg}^{\op})&\text{(注 \ref{stone-duality-restriction-finite})}\\
+		&\simeq(\mathsf {Ind}(\mathsf {FinBooleAlg}))^{\op}&\text{(定义 \ref{pro-object})}\\
+		&\simeq (\mathsf {BooleAlg})^{\op}&\text{(例 \ref{set-ind-fin-set})}\\
+		&\simeq \mathsf {StoneSp}&\text{(Stone 对偶, 命题 \ref{Stone-duality})}.
+	\end{aligned}
+	$$
+\end{example}
+
+\begin{example}
+	[label={N-cup-infty}]
+	{($\mathbb{N}\cup\infty$)}
+	$\mathbb{N}\cup\infty$ 是一个 Stone 空间, 由离散空间 $\mathbb{N}$ 加上一个点 $\infty$ 构成, 其拓扑基为 $\{n\}(n\in\mathbb{N})$ 以及 $\{k\in\mathbb{N}\mid k>n\}(n\in\mathbb{N})$.
+	由例 \ref{pro-finite-set} 中的等价, $\mathbb{N}\cup\infty$ 亦可视为投射有限集, 作为函子 $\mathsf {Fin}\to\mathsf {Set}$, 它是
+	$$
+	S\mapsto \operatorname{Hom}_{\mathsf {Top}}(\mathbb{N}\cup\infty,S) \simeq \{f\colon \mathbb{N}\to S\mid \text{$\lim_{n\to\infty}f(n)$ 存在}\}.
+	$$
+	容易证明, 投射有限集 $\mathbb{N}\cup\infty$ 是下图的形式极限 (很明显它是余滤极限):
+	$$
+	\cdots\to\{2,1,0\} \to\{1,0\}\to\{0\},
+	$$
+	其中每个态射 $\{n+1,n,\cdots,0\} \to \{n,\cdots,0\}$ 将 $n+1$ 映射到 $n$, 其余元素不变. 注意 $\infty$ 这个元素在极限锥中被映射到了 $\cdots,2,1,0$.
+\end{example}
+
 \section{可表现范畴}
 \label{appendix-presentable-categories}
 
@@ -2284,16 +2456,16 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 \end{definition}
 
 \begin{definition}
-	[label={filtered-category}]
+	[label={lambda-filtered-category}]
 	{($\lambda$-滤范畴, $\lambda$-滤余极限)}
-	回忆对于范畴 $\mathcal C$ 中的图 $X\colon I\to \mathcal C$, 其上的\emph{锥}是 $\mathcal C$ 的对象 $c$ (称为\emph{顶点}) 以及一族相容的态射 $c\to X(i)$. 对偶地, \emph{余锥}是 $\mathcal C$ 的对象 $c$ 以及一族相容的态射 $X(i) \to c$.
+	%回忆对于范畴 $\mathcal C$ 中的图 $X\colon I\to \mathcal C$, 其上的\emph{锥}是 $\mathcal C$ 的对象 $c$ (称为\emph{顶点}) 以及一族相容的态射 $c\to X(i)$. 对偶地, \emph{余锥}是 $\mathcal C$ 的对象 $c$ 以及一族相容的态射 $X(i) \to c$.
 	
 	设 $\lambda$ 为正则基数. 若一个范畴中任意 $\lambda$-小的图都存在余锥, 则称之为 \emph{$\lambda$-滤范畴} ($\lambda$-filtered category). 对偏序集而言, 这个条件即是说任意基数小于 $\lambda$ 的子集都有上界, 称这样的偏序集为 \emph{$\lambda$-正向集} ($\lambda$-directed set).
 	以 $\lambda$-滤范畴为指标范畴的余极限称为 \emph{$\lambda$-滤余极限} ($\lambda$-filtered colimit).
 	
-	\emph{滤范畴} (filtered category) 是指 $\aleph_0$-滤范畴, 即每个有限图都有余锥的范畴. 滤范畴的对偶称为\emph{余滤范畴} (cofiltered category), 即每个有限图都有锥的范畴.\footnotemark{}
+	
 \end{definition}
-\footnotetext{不幸的是, 有些文献中 ``滤范畴'' 和 ``余滤范畴'' 的概念与此处定义的相反, 如 \cite{SGL}.}
+
 注意, $\lambda$-滤范畴中对象的多少没有限制, 但我们默认谈论\emph{小余极限}, 也即默认指标范畴的对象构成一个小集合 (从而是 $\kappa$-小的, $\kappa$ 为某个正则基数).
 
 如下是一个有广泛应用的命题, 尤其是 $\lambda = \aleph_0$ 的特例.
@@ -2419,8 +2591,8 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \begin{example}
 	[label={set-lambda-presentable-object}]
 	{(集合范畴中的 $\lambda$-可表现对象)}
-	$\mathsf {Set}$ 中的 $\lambda$-可表现对象即为基数小于 $\lambda$ 的集合.
-	单元集显然是 $\lambda$-可表现对象; 由命题 \ref{small-colimit-of-small-objects},
+	$\mathsf {Set}$ 中的 $\lambda$-可表现对象即为基数小于 $\lambda$ 的集合, 证明如下.
+	首先, 单元集显然是 $\lambda$-可表现对象; 由命题 \ref{small-colimit-of-small-objects},
 	基数小于 $\lambda$ 的集合是 $\lambda$-可表现对象.
 	
 	另一方面, 注意到\emph{任意集合可表示为 $\lambda$-小集合的 $\lambda$-滤余极限}: 对集合 $S$, 令
@@ -2488,6 +2660,11 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 
 %可表现性的直观是, 一个可能很大的范畴, 其中的对象可由一族小对象通过小余极限生成.
 
+\begin{example}
+	{(群范畴是可表现范畴)}
+	由于每个群都可表示为有限表现群的滤余极限 (例 \ref{lambda-presentable-group}), 群范畴 $\mathsf {Grp}$ 是可表现范畴.
+\end{example}
+
 \begin{prop}
 	{}
 	对于小范畴 $\mathcal C$, 预层范畴 $\widehat {\mathcal C}$ 是 $\aleph_0$-可表现范畴.
@@ -2510,25 +2687,29 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	甚至可以证明 (\cite{LPAC} 1.64), 若 $\mathcal C$ 与 $\mathcal C^{\op}$ 均为可表现范畴, 那么 $\mathcal C$ 只能是完备格.
 \end{remark}
 
+%\subsection{可表现范畴由可表现对象生成}
+
+
+
 \subsection{稠密子范畴}
 
 \begin{definition}
 	{(稠密子范畴)}
 	设 $\mathcal C$ 为范畴, $\mathcal D$ 为其全子范畴.
-	若对 $\mathcal C$ 的任意对象 $c$, 所有由 $\mathcal D$ 的对象到 $c$ 的箭头构成余极限余锥,
+	若对 $\mathcal C$ 的任意对象 $c$, 由 $c$ 出发的态射 $f\colon c\to c'$ 被 $\{fg\mid g\colon d\to c,\,d\in\mathcal D\}$ 唯一决定 (换言之, 所有由 $\mathcal D$ 的对象到 $c$ 的箭头构成某个余极限余锥),
 	则称 $\mathcal D$ 为\emph{稠密子范畴}.
 \end{definition}
 注意这个概念与景的 $J$-稠密子范畴 (定义 \ref{site-J-dense-subcategory}) 不同, 但精神上相似:
-在直观上, $\mathcal D$ 在 $\mathcal C$ 中稠密就是说 $\mathcal C$ 的对象 (以及态射) 可完全由 $\mathcal D$ 的对象出发的态射来 ``探测''.
+在直观上, $\mathcal D$ 在 $\mathcal C$ 中稠密就是说 $\mathcal C$ 中的信息可完全由 $\mathcal D$ 的对象出发的态射来 ``探测''.
 这与注 \ref{remark-probe} 提到的 ``探测'' 的想法亦相通; 命题 \ref{dense-subcategory-yoneda-embedding} 建立了 $\mathcal C$ 与 $\widehat {\mathcal D}$ 之间的联系.
 
 \begin{example}
 	{(米田嵌入是稠密子范畴)}
-	设 $\mathcal C$ 为小范畴. 通过米田嵌入 $\yo\colon \mathcal C \to \widehat {\mathcal C}$, 可将 $\mathcal C$ 视为 $\widehat {\mathcal C}$ 的稠密子范畴 (命题 \ref{presheaf-as-colimit-of-representables}).
+	设 $\mathcal C$ 为小范畴. 通过米田嵌入 $\yo\colon \mathcal C \to \widehat {\mathcal C}$, 可将 $\mathcal C$ 视为 $\widehat {\mathcal C}$ 的稠密子范畴, 这是因为 $\widehat {\mathcal C}$ 的对象都可表示为可表函子的余极限 (命题 \ref{presheaf-as-colimit-of-representables}).
 \end{example}
 \begin{example}
 	{(偏序集范畴的稠密子范畴)}
-	在偏序集范畴 $\mathsf {Pos}$ (甚至小范畴的范畴 $\mathsf {Cat}$) 中, 对象 $\{0\leq 1\}$ 构成稠密子范畴. 注意 $\{0\leq 1\}$ 到自身有三个态射, 分别是恒等映射以及两个常值映射.
+	在偏序集范畴 $\mathsf {Pos}$ (甚至小范畴的范畴 $\mathsf {Cat}$) 中, 对象 $\{0\leq 1\}$ 构成的全子范畴是稠密子范畴. 直观上, 这就是说一个偏序集完全由 $\{0\leq 1\}$ 到它的全体态射决定. %注意 $\{0\leq 1\}$ 到自身有三个态射, 分别是恒等映射以及两个常值映射.
 \end{example}
 \begin{example}
 	{(图范畴的稠密子范畴)}
@@ -2581,17 +2762,38 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	
 	
 	另一方面, 假设 $\mathcal C$ 是 $\widehat {\mathcal D}$ 的自反子范畴, 且关于 $\widehat {\mathcal D}$ 中的 $\lambda$-滤余极限封闭. 由余完备范畴的自反子范畴是余完备范畴 (命题 \ref{co-complete-reflective-subcategory}), 知 $\mathcal C$ 余完备.
-	此外, $\mathcal C$ 的对象都可写为 $\widehat {\mathcal D}$ 中可表函子在 $\widehat {\mathcal D}$ 中的余极限, 从而可写为 $\lambda$-可表现对象在 $\widehat {\mathcal D}$ 中的 $\lambda$-滤余极限 (命题 \ref{finite-plus-filtered-arbitrary-colimit}). 为了证明最终的结论, 只需证明左伴随 $a\colon \widehat {\mathcal D} \to\mathcal C$ 保持 $\lambda$-可表现对象. % LPAC 1.s (p65)
-	设 $d$ 是 $\mathcal D$ 的 $\lambda$-可表现对象. 对任意 $\lambda$-滤范畴 $I$, 任意图 $X\colon I\to \mathcal C$, %因为 $\mathcal C$ 关于 $\widetilde {\mathcal D}$ 中的 $\lambda$-滤余极限封闭, 所以 
-	由条件, $\mathcal D$ 中的余极限 $\operatorname{colim}_i X_i$ 差一个同构落在 $\mathcal C$ 中. 因此有
+	此外,
+	\begin{itemize}
+		\item $\mathcal C$ 的对象都可写为 $\widehat {\mathcal D}$ 中可表函子在 $\widehat {\mathcal D}$ 中的余极限 (命题 \ref{presheaf-as-colimit-of-representables}),
+	\end{itemize}
+	从而
+	\begin{itemize}
+		\item $\mathcal C$ 的对象都可写为 $\widehat {\mathcal D}$ 的 $\lambda$-可表现对象在 $\widehat {\mathcal D}$ 中的 $\lambda$-滤余极限 (命题 \ref{finite-plus-filtered-arbitrary-colimit}).
+	\end{itemize}
+	我们的目标是
+	\begin{itemize}
+		\item $\mathcal C$ 的对象都可写为 $\mathcal C$ 的 $\lambda$-可表现对象在 $\mathcal C$ 中的 $\lambda$-滤余极限.
+	\end{itemize}
+	注意左伴随 $a\colon \widehat {\mathcal D} \to\mathcal C$ 保持余极限, 故只需证明
+	\begin{itemize}
+		\item $a\colon \widehat {\mathcal D} \to\mathcal C$ 保持 $\lambda$-可表现对象; 即对 $\widehat {\mathcal D}$ 的任意 $\lambda$-可表现对象 $d$, $a(d)$ 是 $\mathcal C$ 的 $\lambda$-可表现对象.
+	\end{itemize}
+	% LPAC 1.s (p65)
+	设 $d$ 是 $\widehat{\mathcal D}$ 的 $\lambda$-可表现对象. 对任意 $\lambda$-滤范畴 $I$, 任意的图 $X\colon I\to \mathcal C$,
 	\[
 	\begin{aligned}
-		\operatorname{Hom}_{\mathcal C}(a(d),\operatorname{colim}_i X_i)
+		\operatorname{Hom}_{\mathcal C}(a(d),\operatorname{colim}_i^{\mathcal C}X_i)
 		&\simeq
-		\operatorname{Hom}_{\widehat {\mathcal D}}(d,\operatorname{colim}_i X_i)\\
+		\operatorname{Hom}_{\mathcal C}(a(d),\operatorname{colim}_i^{\widehat{\mathcal D}} X_i)
+		&\text{($\mathcal C$ 关于 $\widehat {\mathcal D}$ 中的 $\lambda$-滤余极限封闭)}\\
 		&\simeq
-		\operatorname{colim}_i \operatorname{Hom}_{\widehat {\mathcal D}}(d,X_i)\simeq
-		\operatorname{colim}_i \operatorname{Hom}_{\mathcal C}(a(d),X_i).
+		\operatorname{Hom}_{\widehat {\mathcal D}}(d,\operatorname{colim}_i X_i)
+		&\text{(自反子范畴的性质)}\\
+		&\simeq
+		\operatorname{colim}_i \operatorname{Hom}_{\widehat {\mathcal D}}(d,X_i)
+		&\text{($d$ 为 $\lambda$-可表现对象)}\\
+		&\simeq
+		\operatorname{colim}_i \operatorname{Hom}_{\mathcal C}(a(d),X_i).&\text{(自反子范畴的性质)}
 	\end{aligned}
 	\]
 	这说明 $a(d)$ 为 $\lambda$-可表现对象, 结论得证.
@@ -2604,7 +2806,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	可表现范畴是完备范畴.
 \end{prop}
 \begin{proof}
-	这是因为完备范畴的自反子范畴是完备范畴 (命题 \ref{co-complete-reflective-subcategory}).
+	这是因为可表现范畴是某个预层范畴的自反子范畴 (命题 \ref{presheaf-reflective-subcategory-presentable}), 而完备范畴的自反子范畴是完备范畴 (命题 \ref{co-complete-reflective-subcategory}).
 \end{proof}
 
 \begin{prop}
@@ -2658,7 +2860,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	[label={Kan-extension-definition}]
 	{(Kan 扩张)}
 	设 $p\colon \mathcal C\to \mathcal C'$ 为函子. 对另一范畴 $\mathcal D$, 记
-	$p^* \colon \mathsf {Fun}(\mathcal C',\mathcal D) \to \mathsf {Fun}(\mathcal C,\mathcal D)$ 为 $p$ 诱导的函子,
+	$p^* \colon \mathsf {Fun}(\mathcal C',\mathcal D) \to \mathsf {Fun}(\mathcal C,\mathcal D)$ 为与 $p$ 的复合,
 	即 $h\colon \mathcal C'\to \mathcal D$ 对应 $p^*h\colon \mathcal C \overset{p}{\to} \mathcal C' \overset{h}{\to}\mathcal D$.
 	
 	\begin{itemize}
@@ -2672,8 +2874,11 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 
 %对比例 \ref{group-homomorphism-adjoint-triple} 中的记号.
 
+在上述定义中的伴随不是全局存在的情况下, 也可以谈论单个函子 $\mathcal C\to\mathcal D$ 沿 $p$ 的左右 Kan 扩张.
+
 \begin{definition}
-	{(局部 Kan 扩张)}
+	[label={local-Kan-extension}]
+	{(单个函子的 Kan 扩张)}
 	设 $p\colon \mathcal C\to \mathcal C'$ 为函子. 对函子 $F \colon \mathcal C \to \mathcal D$,
 	\begin{itemize}
 		\item 若存在 $p_! F \colon \mathcal C' \to \mathcal D$ 使得有自然同构
@@ -2691,7 +2896,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 
 \begin{example}
 	{(极限)}
-	设 $\mathcal C'$ 为终范畴 $1$, 那么 $\mathsf {Fun}(\mathcal C',\mathcal D)\simeq\mathcal D$, 函子 $p^*\colon \mathcal D \to \mathsf {Fun}(\mathcal C,\mathcal D)$
+	取定义 \ref{local-Kan-extension} 中的 $\mathcal C'$ 为终范畴 $1$, 那么 $\mathsf {Fun}(\mathcal C',\mathcal D)\simeq\mathcal D$, 函子 $p^*\colon \mathcal D \to \mathsf {Fun}(\mathcal C,\mathcal D)$
 	将 $\mathcal D$ 的对象 $d$ 对应到常值函子 $\operatorname{const}_d \colon \mathcal C \to \mathcal D$.
 	
 	对函子 $F \colon \mathcal C \to \mathcal D$,
@@ -2710,9 +2915,12 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 
 \begin{example}
 	{(沿米田嵌入的 Kan 扩张)}
-	设 $\mathcal C' = \widehat {\mathcal C}$, $p=\yo\colon \mathcal C \to \widehat {\mathcal C}$ 为米田嵌入.
+	取定义 \ref{local-Kan-extension} 中的 $\mathcal C'$ 为预层范畴 $\widehat {\mathcal C}$, $p=\yo\colon \mathcal C \to \widehat {\mathcal C}$ 为米田嵌入.
 	设 $\mathcal D$ 为余完备范畴. 命题 \ref{free-cocompletion} 给出了任意函子 $F\colon \mathcal C \to \mathcal D$
-	沿 $\yo$ 的唯一的左 Kan 扩张 $\yo_{!} F \colon \widehat {\mathcal C} \to \mathcal D$, 命题 \ref{nerve-and-realization} 给出了它的具体表达式.
+	沿 $\yo$ 的唯一的左 Kan 扩张 $\yo_{!} F \colon \widehat {\mathcal C} \to \mathcal D$, 命题 \ref{nerve-and-realization} 给出了它的具体表达式
+	$$
+	\yo_{!} F (X) = \operatorname{colim}_{\yo(c)\to X} F(c).
+	$$
 \end{example}
 
 \begin{example}
@@ -2738,7 +2946,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 		\item 对 $F\in \widehat {\mathcal C}$,
 		$p_*(F)(c') = \operatorname{lim}_{pc\to c'} F(c)$.
 	\end{itemize}
-	这说明当定义 \ref{Kan-extension-definition} 中的 $\mathcal D$ 取 $\mathsf {Set}$ 时, 左右 Kan 扩张总存在. 更一般地, 当 $\mathcal D$ 余完备时左 Kan 扩张 $p_!$ 存在, 当 $\mathcal D$ 完备时右 Kan 扩张 $p_*$ 存在.
+	此处的 $p_!$ 与 $p_*$ 分别是沿 $p^{\op}\colon \mathcal C^{\op} \to (\mathcal C')^{\op}$ 的左右 Kan 扩张. 这说明当定义 \ref{Kan-extension-definition} 中的 $\mathcal D$ 取 $\mathsf {Set}$ 时, 左右 Kan 扩张总存在. 更一般地, 当 $\mathcal D$ 余完备时左 Kan 扩张 $p_!$ 存在, 当 $\mathcal D$ 完备时右 Kan 扩张 $p_*$ 存在.
 \end{example}
 %\footnotetext{关于方向观念的注解. 函子 $p$ 通常对应着一个反方向的态射, 例如拓扑空间的映射 $X\to Y$ 是反方向的函子 $\operatorname{Open}(Y)\to\operatorname{Open}(X)$. 因此}
 %\todo{用 Kan 扩张定义预层的逆像}
@@ -2750,7 +2958,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \begin{definition}
     [label={monad-definition}]
     {(单子和余单子)}
-    范畴 $\mathcal C$ 上的一个\emph{单子} (monad) $(T,\eta,\mu)$ 是一个自函子 $T \colon \mathcal C \to \mathcal C$, 以及两个自然变换 $\mu\colon T^2 \to T$, $\eta \colon \operatorname{id}_{\mathcal C} \to T$, 满足自函子范畴 $\mathsf {End}(\mathcal C)$ 中幺半群的条件, 即如下交换图.
+    范畴 $\mathcal C$ 上的一个\emph{单子} (monad)\footnotemark{} $(T,\eta,\mu)$ 是一个自函子 $T \colon \mathcal C \to \mathcal C$, 以及两个自然变换 $\mu\colon T^2 \to T$, $\eta \colon \operatorname{id}_{\mathcal C} \to T$, 满足自函子范畴 $\mathsf {End}(\mathcal C)$ 中幺半群的条件, 即如下交换图.
     % https://q.uiver.app/#q=WzAsOCxbMCwwLCJUXjMiXSxbMSwwLCJUXjIiXSxbMCwxLCJUXjIiXSxbMSwxLCJUIl0sWzIsMCwiXFxvcGVyYXRvcm5hbWV7aWR9X3tcXG1hdGhzZiBDfVQiXSxbNCwwLCJUXFxvcGVyYXRvcm5hbWV7aWR9X3tcXG1hdGhzZiBDfSJdLFszLDAsIlReMiJdLFszLDEsIlQiXSxbMCwxLCJcXG11IFQiXSxbMCwyLCJUXFxtdSIsMl0sWzIsMywiXFxtdSIsMl0sWzEsMywiXFxtdSJdLFs2LDcsIlxcbXUiXSxbNCw3LCJcXG9wZXJhdG9ybmFtZXtpZH1fVCIsMl0sWzUsNywiXFxvcGVyYXRvcm5hbWV7aWR9X1QiXSxbNCw2LCJcXGV0YSBUIl0sWzUsNiwiVFxcZXRhIiwyXV0=
 \[\begin{tikzcd}[ampersand replacement=\&]
 	{T^3} \& {T^2} \& {T} \& {T^2} \& {T} \\
@@ -2765,8 +2973,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	\arrow["{\eta T}", from=1-3, to=1-4]
 	\arrow["T\eta"', from=1-5, to=1-4]
 \end{tikzcd}\]
-	对偶地, \emph{余单子} (comonad) $(S,\rho,\delta)$ 是一个自函子 $T\colon \mathcal C\to\mathcal C$, 以及两个自然变换 $\rho\colon S\to \operatorname{id}_{\mathcal C}$, $\delta\colon S\to S^2$, 满足如下交换图.
-	% https://q.uiver.app/#q=WzAsOCxbMSwxLCJTXjMiXSxbMSwwLCJTXjIiXSxbMCwxLCJTXjIiXSxbMCwwLCJTIl0sWzIsMSwiXFxvcGVyYXRvcm5hbWV7aWR9X3tcXG1hdGhzZiBDfVMiXSxbNCwxLCJTXFxvcGVyYXRvcm5hbWV7aWR9X3tcXG1hdGhzZiBDfSJdLFszLDEsIlNeMiJdLFszLDAsIlMiXSxbMSwwLCJcXGRlbHRhIFMiXSxbMiwwLCJTXFxkZWx0YSIsMl0sWzMsMiwiXFxkZWx0YSIsMl0sWzMsMSwiXFxkZWx0YSJdLFs3LDYsIlxcZGVsdGEiLDJdLFs3LDQsIlxcb3BlcmF0b3JuYW1le2lkfV9TIiwyXSxbNyw1LCJcXG9wZXJhdG9ybmFtZXtpZH1fUyJdLFs2LDQsIlxccmhvIFMiXSxbNiw1LCJTXFxyaG8iLDJdXQ==
+	对偶地, \emph{余单子} (comonad) $(S,\epsilon,\delta)$ 是一个自函子 $T\colon \mathcal C\to\mathcal C$, 以及两个自然变换 $\epsilon\colon S\to \operatorname{id}_{\mathcal C}$, $\delta\colon S\to S^2$, 满足如下交换图.
 	\[\begin{tikzcd}[ampersand replacement=\&]
 		S \& {S^2} \&\& S \\
 		{S^2} \& {S^3} \& {\operatorname{id}_{\mathcal C}S} \& {S^2} \& {S\operatorname{id}_{\mathcal C}}
@@ -2777,18 +2984,15 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 		\arrow["\delta"', from=1-4, to=2-4]
 		\arrow["{\operatorname{id}_S}"', from=1-4, to=2-3]
 		\arrow["{\operatorname{id}_S}", from=1-4, to=2-5]
-		\arrow["{\rho S}", from=2-4, to=2-3]
-		\arrow["S\rho"', from=2-4, to=2-5]
+		\arrow["{\epsilon S}", from=2-4, to=2-3]
+		\arrow["S\epsilon"', from=2-4, to=2-5]
 	\end{tikzcd}\]
 \end{definition}
+\footnotetext{在历史文献中可见单子的曾用名 ``三元组'' (triple), 这个名字是无趣的.}
 
 \begin{remark}
-	{}
-	在历史文献中可见单子的曾用名 ``三元组'' (triple), 这个名字是无趣的.
-	相对有趣的是, 单子被某些作者称为\emph{代数理论} (algebraic theory). 后面我们将说明单子与代数理论 (定义 \ref{kinds-of-theories}) 的关系. 直观上, $TX$ 的元素是某种代数理论中以 $X$ 中元素为变量的项. 对于单子 $T$ 以及两个态射 $X\to TY$, $Y\to TZ$, 可以指定一个 ``代数复合'' $X\to TZ$:
-	\[
-	X\to TY \to TTZ\to TZ.
-	\]
+	{(单子与代数理论)}
+	单子被某些作者称为\emph{代数理论} (algebraic theory). 后面我们将说明单子与代数理论 (定义 \ref{kinds-of-theories}) 的关系. Lawvere 理论 $\mathbb T$ 可视为 $\mathsf {Set}$ 上的单子 $T$, $TX$ 的元素是以 $X$ 中元素为变量的项.
 \end{remark}
 
 \begin{propdef}
@@ -2806,10 +3010,10 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
     $$
     确定了
     \begin{itemize}
-    	\item 一个单子 $(T,\eta,\mu)$, 其中 $T = GF \colon \mathcal C \to \mathcal C$,
-    	$\eta \colon \operatorname{id}_{C} \to GF$ 是单位, 而 $\mu \colon T^2 = GFGF \to GF = T$ 来自余单位 $\epsilon \colon FG \to \operatorname{id}_{\mathcal D}$;
-    	\item 一个余单子 $(S,\rho,\delta)$, 其中 $S=FG\colon \mathcal {D}\to\mathcal {D}$,
-    	$\rho \colon FG\to\operatorname{id}_{\mathcal D}$ 是余单位, 而 $\delta\colon S= FG\to FGFG = S^2$ 来自单位 $\operatorname{id}_{\mathcal C}\to GF$.
+    	\item $\mathcal C$ 上的一个单子 $(T,\eta,\mu)$, 其中 $T = GF \colon \mathcal C \to \mathcal C$,
+    	单位即为伴随的单位 $\eta \colon \operatorname{id}_{C} \to GF$, 乘法为 $\mu \colon T^2 = GFGF \overset{G\epsilon F}{\longrightarrow} GF = T$;
+    	\item $\mathcal D$ 上的一个余单子 $(S,\epsilon,\delta)$, 其中 $S=FG\colon \mathcal {D}\to\mathcal {D}$,
+    	余单位即为伴随的余单位 $\epsilon \colon FG\to\operatorname{id}_{\mathcal D}$, 余乘法为 $\delta\colon S= FG\overset{F\eta G}{\longrightarrow} FGFG = S^2$.
     \end{itemize}
 \end{propdef}
 
@@ -2963,72 +3167,174 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	\end{center}
 \end{proof}
 
+\begin{remark}
+	[label={adjunction-induced-monad-remark}]
+	{}
+	一对伴随函子可视为一个 $2$-函子  $\mathsf {Adj} \to \mathcal Cat$ (定义 \ref{walking-adjunction}). 事实上, 记 $\mathsf {Mnd}$ 为 $\mathsf {Adj}$ 中 $C$ 上的全子 $2$-范畴, 则一个单子等同于一个 $2$-函子 $\mathsf {Mnd} \to \mathcal Cat$, 因此一对伴随自然产生一个单子. 另外, $\operatorname{Hom}(C,C)\simeq\Delta_+$ 中的对象 $[0]$ 是 ``游走的幺半群'' (参见例 \ref{doctrine-monoidal-categories}), 而范畴 $\mathcal C$ 上的单子是 $\operatorname{End}(\mathcal C)$ 中的幺半群, 因此对应一个函子 $\Delta_+ \to\operatorname{End}(\mathcal C)$.
+\end{remark}
+
 \begin{definition}
     [label={monad-T-algebra}]
     {(单子的代数, 余单子的余代数)}
-    设 $T$ 是范畴 $\mathcal C$ 上的单子.
-    定义范畴 $\mathcal C$ 上的 \emph{$T$-代数}为 $\mathcal C$ 的对象 $c$ 配备一个态射 $h \colon Tc \to c$,
+    设 $(T,\eta,\mu)$ 是范畴 $\mathcal C$ 上的单子.
+    定义范畴 $\mathcal C$ 上的 \emph{$T$-代数}为 $\mathcal C$ 的对象 $X$ 配备一个态射 $h \colon TX \to X$,
     满足如下交换图.
     \[
     \begin{tikzcd}[ampersand replacement=\&]
-    	{T^2c} \& Tc \& c \& Tc \\
-    	Tc \& c \&\& c
+    	{T^2X} \& TX \& X \& TX \\
+    	TX \& X \&\& X
     	\arrow["Th", from=1-1, to=1-2]
-    	\arrow["{\mu_c}"', from=1-1, to=2-1]
+    	\arrow["{\mu_X}"', from=1-1, to=2-1]
     	\arrow["h"', from=2-1, to=2-2]
     	\arrow["h", from=1-2, to=2-2]
     	\arrow["h", from=1-4, to=2-4]
-    	\arrow["{\operatorname{id}_c}"', from=1-3, to=2-4]
-    	\arrow["{\eta_c}", from=1-3, to=1-4]
+    	\arrow["{\operatorname{id}_X}"', from=1-3, to=2-4]
+    	\arrow["{\eta_X}", from=1-3, to=1-4]
     \end{tikzcd}
     \]
-    $\mathcal C$ 上两个 $T$-代数之间的态射即是 $\mathcal C$ 中保持上述交换图的态射.
+    $\mathcal C$ 上两个 $T$-代数之间的态射即是保持以上交换图的态射.
     记 $\mathcal C$ 上 $T$-代数的范畴为 $\mathcal C^{T}$, 这个范畴又称为 $T$ 的 \emph{Eilenberg--Moore 范畴}.
     
-    对偶地, 设 $S$ 是范畴 $\mathcal C$ 上的余单子, 定义 $S$-\emph{余代数} (coalgebra) 是 $\mathcal C$ 的对象 $c$ 配备一个态射 $h\colon c\to Sc$,
+    对偶地, 设 $(S,\epsilon,\delta)$ 是范畴 $\mathcal C$ 上的余单子, 定义 $S$-\emph{余代数} (coalgebra) 是 $\mathcal C$ 的对象 $X$ 配备一个态射 $h\colon X\to SX$,
     满足如下交换图.
     \[
     \begin{tikzcd}[ampersand replacement=\&]
-    	{c} \& Sc \& c \& Sc \\
-    	Sc \& {S^2c} \&\& c
+    	{X} \& SX \& X \& SX \\
+    	SX \& {S^2X} \&\& X
     	\arrow["h", from=1-1, to=1-2]
     	\arrow["{h}"', from=1-1, to=2-1]
     	\arrow["Sh"', from=2-1, to=2-2]
-    	\arrow["{\delta_c}", from=1-2, to=2-2]
-    	\arrow["\rho_c", from=1-4, to=2-4]
-    	\arrow["{\operatorname{id}_c}"', from=1-3, to=2-4]
+    	\arrow["{\delta_X}", from=1-2, to=2-2]
+    	\arrow["\epsilon_X", from=1-4, to=2-4]
+    	\arrow["{\operatorname{id}_X}"', from=1-3, to=2-4]
     	\arrow["{h}", from=1-3, to=1-4]
     \end{tikzcd}
     \]
+    记 $\mathcal C$ 上 $S$-余代数的范畴为 $\mathcal C_{S}$.
 \end{definition}
 
-
-\begin{prop}
-	{($T$-代数的自由--遗忘伴随)}
-	设 $T$ 是范畴 $\mathcal C$ 上的单子, 则有如下伴随:
+\begin{propdef}
+	{(自由 $T$-代数, 自由--遗忘伴随, 余自由 $S$-余代数, 遗忘--余自由伴随)}
+	设 $T$ 是范畴 $\mathcal C$ 上的单子.
+	定义对象 $X$ 上的\emph{自由 $T$-代数}为 $TX$ 配备态射 $\mu_X\colon TTX \to TX$.
+	该构造给出自由函子 $\mathcal C\to\mathcal C^T$, 且为遗忘函子的左伴随:
 	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\mathcal C} \& {\mathcal C^T,}
+		{\mathcal C} \& {\mathcal C^T.}
 		\arrow[""{name=0, anchor=center, inner sep=0}, "{\text{自由}}", shift left=2, from=1-1, to=1-2]
 		\arrow[""{name=1, anchor=center, inner sep=0}, "\text{遗忘}", shift left=2, from=1-2, to=1-1]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 	\end{tikzcd}\]
-	其中自由函子将 $c$ 对应到 $(Tc,\mu_c\colon T^2c\to Tc)$,
-	遗忘函子将 $(c,h\colon Tc\to c)$ 对应到 $c$.
-\end{prop}
+	与之对偶, 设 $S$ 是范畴 $\mathcal C$ 上的余单子, 定义对象 $X$ 上的\emph{余自由 $S$-余代数}为 $SX$ 配备态射 $\delta_X\colon SX\to SSX$. 该构造给出余自由函子 $\mathcal C\to \mathcal C_S$, 且为遗忘函子的右伴随:
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal C} \& {\mathcal C_S.}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\text{遗忘}}"', shift left=-2, from=1-2, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "\text{余自由}"', shift left=-2, from=1-1, to=1-2]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+\end{propdef}
+\begin{proof}
+	设 $X$ 为 $\mathcal C$ 的对象, 而 $Y$ 为 $T$-代数, 配备 $h\colon TY\to Y$. 对任意态射 $f\colon X\to Y$, 有如下交换图.
+	% https://q.uiver.app/#q=WzAsOCxbMCwwLCJYIl0sWzAsMSwiVFgiXSxbMSwwLCJZIl0sWzEsMSwiVFkiXSxbMiwxLCJZIl0sWzAsMiwiVFRYIl0sWzIsMiwiVFkiXSxbMSwyLCJUVFkiXSxbMCwyLCJmIl0sWzEsMywiVGYiLDJdLFswLDEsIlxcZXRhX1giLDJdLFsyLDMsIlxcZXRhX1kiXSxbMyw0LCJoIiwyXSxbMiw0LCJcXG9wZXJhdG9ybmFtZXtpZH1fWSJdLFs1LDEsIlxcbXVfWCJdLFs2LDQsImgiXSxbNywzLCJcXG11X1kiXSxbNyw2LCJUaCIsMl0sWzUsNywiVFRmIiwyXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		X \& Y \\
+		TX \& TY \& Y \\
+		TTX \& TTY \& TY
+		\arrow["f", from=1-1, to=1-2]
+		\arrow["{\eta_X}"', from=1-1, to=2-1]
+		\arrow["{\eta_Y}", from=1-2, to=2-2]
+		\arrow["{\operatorname{id}_Y}", from=1-2, to=2-3]
+		\arrow["Tf"', from=2-1, to=2-2]
+		\arrow["h"', from=2-2, to=2-3]
+		\arrow["{\mu_X}", from=3-1, to=2-1]
+		\arrow["TTf"', from=3-1, to=3-2]
+		\arrow["{\mu_Y}", from=3-2, to=2-2]
+		\arrow["Th"', from=3-2, to=3-3]
+		\arrow["h", from=3-3, to=2-3]
+	\end{tikzcd}\]
+	这说明 $h\circ Tf\colon TX\to Y$ 为 $T$-代数同态. 余下的检验留给读者.
+\end{proof}
+
+\begin{definition}
+	{(单子的 Kleisli 范畴)}
+	对于范畴 $\mathcal C$ 上的单子 $T$ 以及两个态射 $f\colon X\to TY$, $g\colon Y\to TZ$, 可以指定一个 ``复合'' $X\to TZ$:
+	\[
+	X\overset{f}{\longrightarrow} TY \overset{Tg}{\longrightarrow} TTZ\overset{\mu_Z}{\longrightarrow} TZ.
+	\]
+	称态射 $X\to TY$ 为 $X$ 到 $Y$ 的 \emph{Kleisli 态射}, 那么 $\mathcal C$ 原本的对象和 Kleisli 态射构成一个新的范畴, 称为单子 $T$ 的 \emph{Kleisli 范畴} $\mathsf {Kl}(T)$. 对象 $X$ 在 $\mathsf {Kl}(T)$ 中的恒等态射为 $\eta_X\colon X\to TX$.
+	
+	注意到由自由--遗忘伴随, Kleisli 态射 $X\to TY$ 等同于 $T$-代数同态 $TX\to TY$, 因此 $\mathsf {Kl}(T)$ 也可视为 $T$-代数范畴 $\mathcal C^T$ 中\emph{自由 $T$-代数}构成的全子范畴.
+	
+	Kleisli 范畴的信息构成了单子的一种等价定义, 即一个自函子 $T$, 态射 $\eta_X\colon X\to TX$, 以及一种将态射 $X\to TY, Y\to TZ$ 复合为 $X\to TZ$ 的规则, 满足单位律与结合律.
+	这种定义体现了计算机科学中单子具有的另一种直观, $TX$ 的元素是 $X$-取值的\emph{计算} (或 $X$-取值的\emph{程序}). 见例 \ref{maybe-monad}, 例 \ref{state-monad}.
+\end{definition}
 
 \begin{propdef}
     {(比较函子)}
-    在伴随产生的单子 (命题 \ref{monad-from-adjoint}) 中, 存在 $\mathcal D$ 到 $T$-代数范畴的\emph{比较函子} (comparison functor) $K\colon \mathcal D\to\mathcal C^T$,
+    在命题 \ref{monad-from-adjoint} 中, 对于伴随产生的单子  $T=GF$, 存在 $\mathcal D$ 到 $T$-代数范畴的\emph{比较函子} (comparison functor) $K\colon \mathcal D\to\mathcal C^T$,
     将对象 $d$ 对应到 $T$-代数 $Gd$, 其 $T$-代数结构为
     $$
     TGd=GFGd\overset{G\epsilon}{\longrightarrow}Gd.
     $$
+    注意到 $KF\colon \mathcal C\to \mathcal C^T$ 为自由函子, 如左下图.
+    \def\cdadjointshift{3}
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhjYWwgQyJdLFsyLDAsIlxcbWF0aGNhbCBEIl0sWzIsMiwiXFxtYXRoY2FsIENeVCJdLFs0LDIsIlxcbWF0aGNhbCBDIl0sWzYsMiwiXFxtYXRoY2FsIEQiXSxbNCwwLCJcXG1hdGhjYWwgRF9TIl0sWzAsMSwiRiJdLFsxLDAsIkciLDAseyJvZmZzZXQiOi00LCJzaG9ydGVuIjp7InNvdXJjZSI6MTAsInRhcmdldCI6MTB9fV0sWzAsMiwiXFx0ZXh0e+iHqueUsX0iLDAseyJsYWJlbF9wb3NpdGlvbiI6NjB9XSxbMiwwLCJcXHRleHR76YGX5b+YfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo2MCwib2Zmc2V0IjotNCwic2hvcnRlbiI6eyJzb3VyY2UiOjEwLCJ0YXJnZXQiOjEwfX1dLFsxLDIsIksiXSxbMyw0LCJGIiwwLHsib2Zmc2V0IjotNCwic2hvcnRlbiI6eyJzb3VyY2UiOjEwLCJ0YXJnZXQiOjEwfX1dLFs0LDMsIkciXSxbMyw1LCJLXntcXHRleHR7Y299fSJdLFs0LDUsIlxcdGV4dHvkvZnoh6rnlLF9IiwwLHsibGFiZWxfcG9zaXRpb24iOjYwfV0sWzUsNCwiXFx0ZXh0e+mBl+W/mH0iLDAseyJsYWJlbF9wb3NpdGlvbiI6NjAsIm9mZnNldCI6LTQsInNob3J0ZW4iOnsic291cmNlIjoxMCwidGFyZ2V0IjoyMH19XSxbNiw3LCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFs4LDksIiIsMCx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV0sWzExLDEyLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFsxNSwxNCwiIiwyLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    	{\mathcal C} \&\& {\mathcal D} \&\& {\mathcal D_S} \\
+    	\\
+    	\&\& {\mathcal C^T} \&\& {\mathcal C} \&\& {\mathcal D}
+    	\arrow[""{name=0, anchor=center, inner sep=0}, "F", from=1-1, to=1-3]
+    	\arrow[""{name=1, anchor=center, inner sep=0}, "{\text{自由}}"{pos=0.6}, from=1-1, to=3-3]
+    	\arrow[""{name=2, anchor=center, inner sep=0}, "G", shift left=\cdadjointshift, shorten <=5pt, shorten >=5pt, from=1-3, to=1-1]
+    	\arrow["K", from=1-3, to=3-3]
+    	\arrow[""{name=3, anchor=center, inner sep=0}, "{\text{遗忘}}"{pos=0.6}, shift left=\cdadjointshift, shorten <=6pt, shorten >=11pt, from=1-5, to=3-7]
+    	\arrow[""{name=4, anchor=center, inner sep=0}, "{\text{遗忘}}"{pos=0.6}, shift left=\cdadjointshift, shorten <=6pt, shorten >=6pt, from=3-3, to=1-1]
+    	\arrow["{K^{\text{co}}}", from=3-5, to=1-5]
+    	\arrow[""{name=5, anchor=center, inner sep=0}, "F", shift left=\cdadjointshift, shorten <=5pt, shorten >=5pt, from=3-5, to=3-7]
+    	\arrow[""{name=6, anchor=center, inner sep=0}, "{\text{余自由}}"{pos=0.6}, from=3-7, to=1-5]
+    	\arrow[""{name=7, anchor=center, inner sep=0}, "G", from=3-7, to=3-5]
+    	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=2]
+    	\arrow["\dashv"{anchor=center, rotate=-135}, draw=none, from=1, to=4]
+    	\arrow["\dashv"{anchor=center, rotate=-135}, draw=none, from=3, to=6]
+    	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=5, to=7]
+    \end{tikzcd}\]
+	与之对偶, 存在 $\mathcal C$ 到 $S$-余代数范畴的\emph{余比较函子} (cocomparison functor) $K^{\text{co}}\colon \mathcal C\to \mathcal D_{S}$, 将对象 $c$ 对应到 $S$-余代数 $Fc$, 其 $S$-余代数结构为
+	$$
+	Fc \overset{F\eta}{\longrightarrow} FGFc = SFc.
+	$$
+	注意到 $K^\text{co}G\colon \mathcal D\to \mathcal D_S$ 为余自由函子, 如右上图.
 \end{propdef}
+
+\begin{example}
+	[label={maybe-monad}]
+	{(可能单子)}
+	集合范畴到自身的函子 $T\colon X\mapsto X+1$ 是单子, 乘法 $X+1+1\to X+1$ 将两个 $1$ 映射到一个 $1$.
+	在函数式编程中这个函子称为\emph{可能单子} (maybe monad), $X+1$ 中的 $1$ 称为\emph{无} (nothing). $X+1$ 的元素可能是 $X$ 的元素, 也可能无.
+	
+	可能单子上的代数为集合 $X$ 配备一个映射 $X+1\to X$, 限制到 $X$ 上为恒等; 这样的一个映射相当于一个\emph{带基点集合} (pointed set).
+	
+	设想一台机器, 每输入一个 $A$ 类型数据, 它可能输出一个 $B$ 类型数据, 也可能报错 (例如输入不符合要求). 那么这台机器可视为一个函数 $A\to B+1$, 其中 $1$ 代表错误.
+\end{example}
+
+\begin{example}
+	{(函数单子)}
+	设范畴 $\mathcal C$ 的对象 $S$ 可作指数 (定义 \ref{exponential-object}), 则 $\mathcal C$ 与 $\mathcal C/S$ 之间有伴随
+	$S^*\dashv \Pi_S$
+	(命题 \ref{pi-functor-absolute}). 这对伴随给出了单子 $T = (-)^S$.
+	自然变换 $\mu\colon T^2\to T$ 在对象 $X$ 上的分量为 $\Delta_S^*\colon X^{S\times S} \to X^S$, 即沿对角线的拉回.
+\end{example}
+
+\begin{example}
+	[label={state-monad}]
+	{(状态单子)}
+	设范畴 $\mathcal C$ 的对象 $S$ 可作指数 (定义 \ref{exponential-object}), 即有伴随 $(-)\times S \dashv (-)^S$. 这对伴随给出了单子 $T = (-\times S)^S$. 这个单子在计算机科学中称为\emph{状态单子} (state monad).
+	
+	设想一台机器, 每输入一个 $A$ 类型数据, 它就输出一个 $B$ 类型数据, 此外还会根据输入改变状态 (全局变量). 令 $S$ 表示所有可能状态的集合, 那么这台机器可视为一个函数 $A\times S \to B\times S$, 也即一个函数 $A \to (B\times S)^S$.
+\end{example}
 
 \begin{example}
     {(集合与 $M$-集合之间的自由--遗忘伴随)}
     设 $M$ 是 (集合范畴 $\mathsf {Set}$ 中的) 幺半群, 那么 $T \colon X \mapsto M\times X$ 给出了集合范畴上的一个单子,
-    自然变换 $\mu \colon T^2 \to T$ 由 $M$ 的乘法 $M\times M \to M$ 给出. 定义 \ref{monad-definition} 中的交换图对应 $M$ 的结合律和左右单位律.
+    乘法 $\mu \colon T^2 \to T$ 由 $M$ 的乘法 $M\times M \to M$ 给出. 定义 \ref{monad-definition} 中的交换图对应 $M$ 的结合律和左右单位律.
 
     记 $\mathsf BM$ 为带有 $M$-作用的集合的范畴, 那么 $\mathsf {Set}$ 与 $\mathsf BM$ 之间有如下的伴随, 其中 ``自由'' 函子将集合 $X$ 对应到 $M\times X$.
     % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsIlxcbWF0aHNmIEJNIl0sWzAsMSwiXFx0ZXh0e+iHqueUsX0iLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiXFx0ZXh0e+mBl+W/mH0iLDAseyJvZmZzZXQiOi0yfV0sWzIsMywiIiwwLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
@@ -3045,7 +3351,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \end{example}
 
 \begin{example}
-    {(集合与幺半群之间的自由--遗忘伴随)}
+    {(集合与幺半群之间的自由--遗忘伴随, 词单子)}
     以 $\mathsf {Mon}$ 表示幺半群范畴,
     那么集合范畴 $\mathsf {Set}$ 与 $\mathsf {Mon}$ 之间存在伴随
     % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsIlxcbWF0aHNmIHtNb259Il0sWzAsMSwiXFx0ZXh0e+iHqueUsX0iLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiXFx0ZXh0e+mBl+W/mH0iLDAseyJvZmZzZXQiOi0yfV0sWzIsMywiIiwwLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
@@ -3057,9 +3363,9 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \end{tikzcd}\]
     这对伴随给出的单子 $T= \text{遗忘}\circ \text{自由}\colon \mathsf {Set}\to\mathsf {Set}$ 将集合 $X$ 对应到 $X$ 生成的自由幺半群的底层集合
     $$TX=\coprod_{n\geq 0} X^n,$$
-    也即 $X$ 上列表的集合.
-    自然变换 $\mu\colon T^2\to T$ 将 ``列表的列表'' 拼接起来变为一个列表.
-    一个 $T$-代数 $X$ 即为一个幺半群. 比较函子 $K\colon \mathsf {Mon} \to\mathsf {Set}^T$ 恰好也是范畴的同构.
+    也即 $X$ 上列表的集合. 自然变换 $\mu\colon T^2\to T$ 将 ``列表的列表'' 拼接起来变为一个列表.
+    一个 $T$-代数 $X$ 即为一个幺半群. 注意比较函子 $K\colon \mathsf {Mon} \to\mathsf {Set}^T$ 是等价.
+    在函数式编程中, 这个函子也称为\emph{词单子} (word monad).
 \end{example}
 
 \begin{example}
@@ -3074,15 +3380,21 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 	\end{tikzcd}\]
 	其中 $\operatorname{Hom}_B(B,-)$ 相当于将 $B$-模通过同态 $A\to B$ 视为 $A$ 模. 上述伴随是一般双模的张量--同态伴随的特例 (参考命题 \ref{group-action-tensor-hom}).
-	它给出
+	其对应的单子和余单子如下.
 	\begin{itemize}
-		\item $A\mathsf {Mod}$ 上的单子 $(T,\eta,\mu)$, $T = (-)\otimes_A B$,
-		$\eta_N \colon N\to N\otimes_A B, x\mapsto x\otimes 1$,
-		$\mu_N \colon N\otimes_A B\otimes_A B \to N, x\otimes b\otimes b'\mapsto x\otimes bb'$;
-		\item $B\mathsf {Mod}$ 上的余单子 $(S,\rho,\delta)$,
-		$S = (-)\otimes_A B$,
-		$\rho_M \colon M\otimes_A B\to M, x\otimes b\mapsto xb$,
-		$\delta_M \colon M\otimes_A B \to M\otimes_A B\otimes_A B, x\otimes b\mapsto x\otimes 1\otimes b$.
+		\item $A\mathsf {Mod}$ 上的单子 $(T,\eta,\mu)$,
+		\begin{itemize}
+			\item $T = (-)\otimes_A B$ (作为 $A$-模的张量积),
+			\item $\eta_N \colon N\to N\otimes_A B, x\mapsto x\otimes 1$,
+			\item $\mu_N \colon N\otimes_A B\otimes_A B \to N\otimes_A B, x\otimes b\otimes b'\mapsto x\otimes bb'$, 注意这个态射来自 $\epsilon_{N\otimes_A B}$  ($N\otimes_A B$ 上的 $B$-模结构由右边的 $B$ 给出), $y\otimes b'\mapsto yb'$;
+		\end{itemize}
+		\item $B\mathsf {Mod}$ 上的余单子 $(S,\epsilon,\delta)$,
+		\begin{itemize}
+			\item $S = (-)\otimes_A B$ (由右边的 $B$ 给出 $B$ 模结构),
+			\item $\epsilon_M \colon M\otimes_A B\to M, x\otimes b\mapsto xb$,
+			\item $\delta_M \colon M\otimes_A B \to M\otimes_A B\otimes_A B, x\otimes b\mapsto x\otimes 1\otimes b$, 注意这个态射来自 $\eta_{M}\colon M\to M\otimes_A B$ ($M$ 视为 $A$-模), $x\mapsto x\otimes 1$, 所以 $\delta_M$ 是 $x\otimes b\mapsto x\otimes 1\otimes b$ 而不是 $x\otimes b\mapsto x\otimes b\otimes 1$.
+		\end{itemize}
+		
 %		$S$-余代数是 $B$-模 $M$ 配备一个同态 $h\colon M\to M\otimes_A B$, 满足
 %		\todo{}
 %		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTVxcb3RpbWVzX0EgQiJdLFswLDEsIk1cXG90aW1lc19BIEIiXSxbMSwxLCJNXFxvdGltZXNfQSBCXFxvdGltZXNfQSBCIl0sWzAsMSwiaCJdLFswLDIsImgiLDJdLFsxLDMsIlxcZGVsdGFfTSJdLFsyLDNdXQ==
@@ -3095,7 +3407,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 %			\arrow[from=2-1, to=2-2]
 %		\end{tikzcd}\]
 	\end{itemize}
-	代数学著名教材 \cite{lww2} 的第 7 章介绍了这个单子的应用.
+	关于这些函子的应用及推广, 见代数学著名教材 \cite{lww2} 第 7 章.
 \end{example}
 %
 %\begin{example}
@@ -3122,19 +3434,22 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 对于某些伴随产生的单子 $T$, 我们发现 $T$-代数的范畴恰好等价于伴随另一边的范畴; 因此这一对伴随可视为范畴 $\mathcal C$ 与其上的 $T$-代数范畴 $\mathcal C^T$ 之间的自由--遗忘伴随. 于是有如下的定义.
 
 \begin{definition}
-    {(单子性伴随)}
-    设一对伴随函子
+    {(单子性伴随, 余单子性伴随)}
+    设有一对伴随函子
     % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDIl0sWzEsMCwiXFxtYXRoc2YgRCJdLFsxLDAsIkciLDAseyJvZmZzZXQiOi0yfV0sWzAsMSwiRiIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
     $$
     \begin{tikzcd}[ampersand replacement=\&]
-    	{\mathcal C} \& {\mathcal D}
+    	{\mathcal C} \& {\mathcal D,}
     	\arrow[""{name=0, anchor=center, inner sep=0}, "G", shift left=2, from=1-2, to=1-1]
     	\arrow[""{name=1, anchor=center, inner sep=0}, "F", shift left=2, from=1-1, to=1-2]
     	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
     \end{tikzcd}
     $$
-    确定了一个单子 $T = GF \colon \mathcal C \to \mathcal C$.
-    若比较函子 $K\colon \mathcal D\to\mathcal C^T$ 构成范畴等价, 则称这对伴随为\emph{单子性伴随} (monadic adjunction), 称右伴随 $G$ 为\emph{单子性函子}. 换言之, $G$ 可视为 $\mathcal C$ 上某个单子的代数范畴到 $\mathcal C$ 的遗忘函子.
+    它们确定了 $\mathcal C$ 上的单子 $T = GF$ 和 $\mathcal D$ 上的余单子 $S = FG$.
+    \begin{itemize}
+    	\item 若比较函子 $K\colon \mathcal D\to\mathcal C^T$ 构成范畴等价, 则称这对伴随为\emph{单子性伴随} (monadic adjunction), 称右伴随 $G$ 为\emph{单子性函子}. 换言之, $G$ 可视为 $\mathcal C$ 上某个单子的代数范畴到 $\mathcal C$ 的遗忘函子.
+    	\item 若比较函子 $K^{\text{co}}\colon \mathcal C\to\mathcal D_S$ 构成范畴等价, 则称这对伴随为\emph{余单子性伴随} (comonadic adjunction), 称左伴随 $F$ 为\emph{余单子性函子}. 换言之, $F$ 可视为 $\mathcal D$ 上某个余单子的余代数范畴到 $\mathcal D$ 的遗忘函子.
+    \end{itemize}
 \end{definition}
 
 \begin{example}
@@ -3143,20 +3458,58 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \end{example}
 
 \begin{example}
-	{(平坦下降)}
-	在例 \ref{change-of-rings} 中, 若 $B$ 是\emph{忠实平坦 $A$-代数} (即 $B\otimes_A{-}$ 是忠实函子且保持有限极限), 则伴随是单子性的.
+	{(忠实平坦下降)}
+	在例 \ref{change-of-rings} 中, 对于 $B$-模 $M$, 有时人们关心是否存在 (以及如何给出) $A$-模 $N$ 使得 $M\simeq N\otimes_A B$. 所谓\emph{忠实平坦下降} (faithfully flat descent) 解答了这个问题的一部分情形.
+	这个定理是说, 若 $B$ 是\emph{忠实平坦 $A$-代数} (即 $B\otimes_A{-}\colon A\mathsf {Mod}\to A\mathsf {Mod}$ 是忠实函子且保持有限极限), 则伴随是余单子性的.
+	这就是说, 只要 $B$-模 $M$ 带有一个 $S$-余代数结构 $M\to SM\simeq M\otimes_A B$,
+	就能够给出 $A$-模 $N$ 使得 $M\simeq N\otimes_A B$.
+	这个 $S$-余代数结构称为\emph{下降数据}. 关于下降的概念, 见 \ref{section-descent} 节的讨论.
+	
+	%\todo{例子}
+	考虑一个最简单的例子, $A=\mathbb{R},B=\mathbb{C}$,
+	同态 $\mathbb{R}\to \mathbb{C}$ 为实数域到复数域的嵌入.
+	余单子 $S$ 将复线性空间 $V$ 对应到复线性空间 $V\otimes_{\mathbb{R}}\mathbb{C}$, 后者的复结构来自 $\mathbb C$ 上的复结构. 一个 $S$-余代数结构 $h\colon V \to V\otimes_{\mathbb{R}}\mathbb{C}$ 满足如下交换图.
+	% https://q.uiver.app/#q=WzAsNyxbMCwwLCJWIl0sWzAsMSwiVlxcb3RpbWVzX3tcXG1hdGhiYntSfX1cXG1hdGhiYntDfSJdLFsxLDAsIlZcXG90aW1lc197XFxtYXRoYmJ7Un19XFxtYXRoYmJ7Q30iXSxbMSwxLCJWXFxvdGltZXNfe1xcbWF0aGJie1J9fVxcbWF0aGJie0N9XFxvdGltZXNfe1xcbWF0aGJie1J9fVxcbWF0aGJie0N9Il0sWzIsMCwiViJdLFszLDAsIlZcXG90aW1lc197XFxtYXRoYmJ7Un19XFxtYXRoYmJ7Q30iXSxbMywxLCJWIl0sWzAsMSwiaCIsMl0sWzEsMywiaFxcb3RpbWVzX3tcXG1hdGhiYntSfX1cXG1hdGhiYntDfSIsMl0sWzAsMiwiaCJdLFsyLDMsIlxcZGVsdGFfViJdLFs0LDUsImgiXSxbNSw2LCJcXGVwc2lsb25fViJdLFs0LDYsIlxcb3BlcmF0b3JuYW1le2lkfV9WIiwyXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		V \& {V\otimes_{\mathbb{R}}\mathbb{C}} \& V \& {V\otimes_{\mathbb{R}}\mathbb{C}} \\
+		{V\otimes_{\mathbb{R}}\mathbb{C}} \& {V\otimes_{\mathbb{R}}\mathbb{C}\otimes_{\mathbb{R}}\mathbb{C}} \&\& V
+		\arrow["h", from=1-1, to=1-2]
+		\arrow["h"', from=1-1, to=2-1]
+		\arrow["{\delta_V}", from=1-2, to=2-2]
+		\arrow["h", from=1-3, to=1-4]
+		\arrow["{\operatorname{id}_V}"', from=1-3, to=2-4]
+		\arrow["{\epsilon_V}", from=1-4, to=2-4]
+		\arrow["{h\otimes_{\mathbb{R}}\mathbb{C}}"', from=2-1, to=2-2]
+	\end{tikzcd}\]
+	记 $J\colon V\to V$ 为乘以 $i$ 的变换.
+	将 $h$ 表示为 $$h(v)=\Re v\otimes 1+\Im v\otimes i,$$ 其中 $\Re,\Im \colon V\to V$ 为 $\mathbb{R}$-线性变换.
+	由 $h(Jv)=i h(v)$,
+	得 $\Im v= -\Re Jv$.
+	此时上面的交换图给出
+	$$
+	\left\{
+	\begin{aligned}
+		\Re \Re v\otimes 1\otimes 1 + \Re\Im v\otimes 1\otimes i&\\
+		+\Im\Re v\otimes i\otimes 1+ \Im\Im v \otimes i\otimes i
+		&= \Re v\otimes 1\otimes 1+\Im v\otimes 1\otimes i,\\
+		v&=\Re v + J\Im v,
+	\end{aligned}
+	\right.
+	$$
+	前一个条件化为
+	$$
+	\Re\Re=\Re,\quad \Re\Im=\Im, \quad \Im\Re=0,\quad\Im\Im=0.
+	$$
+	因此 $V$ 可写为 $W\oplus JW$, 其中 $W=\ker\Im$; 故有 $V\simeq W\otimes_{\mathbb{R}}\mathbb{C}$.
 \end{example}
 
 % the Eilenberg-Moore category of ultrafilter monad is the category of compact Hausdorff spaces with its obvious forgetful functor to Set.
-
-
-
 
 \section{万有代数}
 
 \label{universal-algebra}
 
-万有代数可视为群, 环, 模, Boole 代数等概念的共同推广, 又称\emph{等式逻辑} (equational logic), 是一阶逻辑的简单例子. 本节介绍 William Lawvere 1963 年的博士论文 \emph{Functorial Semantics of Algebraic Theories} 引入的研究万有代数的范畴论方法.
+万有代数可视为群, 环, 模, Boole 代数等概念的共同推广, 又称\emph{等式理论} (equational theory), 是一阶理论最简单的例子. 本节介绍 William Lawvere 1963 年的博士论文 \cite{FSAT} 引入的研究万有代数的范畴论方法.
 
 \subsection{Lawvere 理论}
 
@@ -3167,7 +3520,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \end{definition}
 
 Lawvere 理论将一个代数理论的运算记录在范畴 $T$ 的态射中, 态射 $n \to 1$ 为 $n$ 元运算. 例如在群的理论中, 乘法是一个态射 $2 \to 1$, 而取逆是一个态射 $1\to 1$.
-Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定义 \ref{first-order-theory-syntactic-category} 中的句法范畴尚有差距).
+Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (比较定义 \ref{first-order-theory-syntactic-category}).
 
 \begin{definition}
 	{(Lawvere 理论的模型)}
@@ -3187,7 +3540,7 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定�
 	一个 (单类型) \emph{代数理论的表现} (presentation of an algebraic theory) $\mathcal T$ 是如下资料,
 	\begin{itemize}
 		\item 任意多个\emph{变量};
-		\item 一些\emph{运算符号}, 每一个运算符号对应一个固定的非负整数, 称为其\emph{元数} (arity);
+		\item 一些\emph{运算符号}, 每一个运算符号对应一个固定的非负整数, 称为其\emph{元数} (arity\footnotemark);
 		\item 一些\emph{公理}, 其中每个公理形如 $s=t$, $s,t$ 为\emph{项} (terms)\footnotemark{}, 而项的归纳定义如下:
 		\begin{itemize}
 			\item 每个变量是一项;
@@ -3195,29 +3548,37 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定�
 		\end{itemize}
 	\end{itemize}
 \end{definition}
+\addtocounter{footnote}{-1}
+\footnotetext{元数 arity 来自\emph{一元} unary, \emph{二元} binary 等词的词尾 -ary.}
+\addtocounter{footnote}{1}
 \footnotetext{为了严谨, 我们应该补充说明: 对每一条公理 $s=t$, 改变 $s,t$ 中某个变量的名称仍是一条公理. 但这种事情是不重要的.}
 
 \begin{remark}
 	{}
-	这里 ``代数理论的表现'' 须理解为一个整体术语. 它是定义 \ref{kinds-of-theories} 中的代数理论的特例, 其中只有一个类型. 此处这样称呼的理由是, 我们必须把它与 Lawvere 理论区分开. 后面我们将看到, 一个 ``代数理论的表现'' 唯一确定了一个 Lawvere 理论, 但后者的表现远远不是唯一的.
-	例如群的理论可以仅由一种运算 $(a,b)\mapsto a^{-1} b$ 确定.
+	定义 \ref{presentation-of-an-algebraic-theory} 中的 ``代数理论的表现'' 是定义 \ref{kinds-of-theories} 中 ``代数理论'' 的单类型情形. 后面我们将看到, 一个 ``代数理论的表现'' 表现了唯一确定的一个 Lawvere 理论 (定义 \ref{Lawvere-theory-presentation}); 但一个 Lawvere 理论的表现远远不是唯一的.
+	例如群的理论可以仅由一种运算 $(a,b)\mapsto a^{-1} b$ 表现, 又如 $\mathbb{Z}$-模和 Abel 群是同样的结构.
+	作为范畴的 Lawvere 理论包含了所有的运算, 因而是一种 ``坐标无关'' 式的概念. Lawvere 理论与其表现的关系正如一个群与其 ``生成元--关系'' 表现的关系, 只不过在范畴层级上高了一级.
 \end{remark}
 
 \begin{definition}
 	[label={model-of-presentation-of-Lawvere-theory}]
-	{(``代数理论之表现'' 的模型)}
-	设 $\mathcal T$ 是代数理论的表现 (定义 \ref{presentation-of-an-algebraic-theory}). 定义一个 \emph{$\mathcal T$-模型} $M$ 为如下资料:
+	{(通过 Lawvere 理论的表现定义其模型)}
+	设 $\mathcal T$ 是 Lawvere 理论的表现 (定义 \ref{presentation-of-an-algebraic-theory}). 定义一个 \emph{$\mathcal T$-模型} $M$ 为如下资料:
 	\begin{itemize}
 		\item 集合 $M$ (称作该模型的\emph{底层集合}),
-		\item 对每个非负整数 $n$ 以及 $n$ 元运算符号 $f$, 一个映射 $[[f]]\colon M^n\to M$;
+		\item 对每个非负整数 $n$ 以及 $n$ 元运算符号 $f$, 一个映射 $\interpretation{f}\colon M^n\to M$;
 	\end{itemize}
-	满足所有的公理, 也即当 $\mathcal T$ 中的变量取值为 $M$ 的任何元素时, 公理 $s=t$ 的两端总是取相等的值. 其中, 一个项 $t$ 的取值 $[[t]]$ 归纳定义如下:
+	满足所有的公理, 也即当 $\mathcal T$ 中的变量取值为 $M$ 的任何元素时, 公理 $s=t$ 的两端总是取相等的值. 其中, 一个项 $t$ 的取值 $\interpretation{t}$ 归纳定义如下:
 	\begin{itemize}
-		\item 每个变量 $x$ 可取 $M$ 中任意的值, $[[x]]\in M$;
-		\item 若 $f$ 是 $n$ 元运算符号, $t_1,\cdots,t_n$ 各是一项, 则 $f(t_1,\cdots,t_n)$ 的取值是 $[[f]]([[t_1]],\cdots, [[t_n]])$. (特别地, 每个零元运算取 $M$ 中一个固定的值.)
+		\item 每个变量 $x$ 可取 $M$ 中任意的值, $\interpretation{x}\in M$;
+		\item 若 $f$ 是 $n$ 元运算符号, $t_1,\cdots,t_n$ 各是一项, 则 $f(t_1,\cdots,t_n)$ 的取值是 $\interpretation{f}(\interpretation{t_1},\cdots, \interpretation{t_n})$. (特别地, 每个零元运算取 $M$ 中一个固定的值.)
 	\end{itemize}
 	所有 $\mathcal T$-模型构成一个范畴 $\mathcal T\mathsf {Mod}$, 其中的态射为保持所有运算的映射.
+	对于两个 Lawvere 理论的表现 $\mathcal T_1,\mathcal T_2$, 若 $\mathcal T_1\mathsf {Mod}\simeq \mathcal T_2\mathsf {Mod}$, 则称 $\mathcal T_1,\mathcal T_2$ \emph{森田等价} (Morita equivalence).\footnotemark{}
+	
+	设 $\mathcal C$ 是任何具有有限乘积的范畴, 我们也可类似地定义 $\mathcal T$ 在 $\mathcal C$ 中的模型, 以及模型的范畴 $\mathcal T\mathsf{Mod}(\mathcal C)$.
 \end{definition}
+\footnotetext{森田纪一 (1915-1995), 日本数学家, 研究代数和拓扑学. 代数学上, 森田等价的概念最早是指两个环的模范畴的等价. 环上的模是 Lawvere 理论的特例, 故这里的森田等价可视为代数学上森田等价的推广.}
 
 \begin{propdef}
 	[label={finitely-generated-free-model}]
@@ -3237,8 +3598,9 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定�
 这表明 $F(n)$ 在范畴 $\mathcal T\mathsf {Mod}$ 中同构于 $n$ 个 $F(1)$ 的和. 特别地, $F(0)$ 是 $0$ 个对象的和, 也即 $\mathcal T\mathsf {Mod}$ 的始对象.
 
 \begin{propdef}
-	{(Lawvere 理论及其表现)}
-	设 $\mathcal T$ 是代数理论的表现 (定义 \ref{presentation-of-an-algebraic-theory}). 那么 $\mathcal T\mathsf {Mod}$ 中由有限生成自由模型构成的全子范畴的对偶范畴构成一个 Lawvere 理论 $\mathbb T$, 且有范畴等价\[\mathcal T\mathsf {Mod} \simeq \mathbb T\mathsf {Mod}.\]
+	[label={Lawvere-theory-presentation}]
+	{(Lawvere 理论与其表现的关系)}
+	设 $\mathcal T$ 是 Lawvere 理论的表现 (定义 \ref{presentation-of-an-algebraic-theory}). 那么 $\mathcal T\mathsf {Mod}$ 中由有限生成自由模型构成的全子范畴的对偶范畴构成一个 Lawvere 理论 $\mathbb T$, 且有范畴等价\[\mathcal T\mathsf {Mod} \simeq \mathbb T\mathsf {Mod}.\]
 	此时称 $\mathcal T$ 为 $\mathbb T$ 的一个\emph{表现}.
 \end{propdef}
 \begin{proof}
@@ -3263,10 +3625,8 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定�
 
 \begin{example}
 	{}
-	一个 Lawvere 理论 $\mathbb T$ 有一种 ``极大'' 的表现 $\mathcal T$, 即所有 $\operatorname{Hom}_{\mathbb T}(n,1)$ 的元素都是一个 $n$ 元运算符号, 所有态射之间的等式都是一条公理. 很明显, 此时有 $\mathcal T\mathsf {Mod}\simeq\mathbb T\mathsf {Mod}$ (因为此时定义 \ref{model-of-presentation-of-Lawvere-theory} 所要求的正是保积函子的定义).
+	一个 Lawvere 理论 $\mathbb T$ 有一种极大的表现 $\mathcal T$, 即所有 $\operatorname{Hom}_{\mathbb T}(n,1)$ 的元素都是一个 $n$ 元运算符号, 所有态射之间的等式都是一条公理. 很明显, 此时有 $\mathcal T\mathsf {Mod}\simeq\mathbb T\mathsf {Mod}$ (因为此时定义 \ref{model-of-presentation-of-Lawvere-theory} 所要求的正是保积函子的定义).
 \end{example}
-
-%需要注意的是, 一个 ``代数理论的表现'' $\mathcal T$ 唯一确定了一个 Lawvere 理论, 而一个 Lawvere 理论对应的表现远不是唯一的.
 
 \begin{example}
 	{(群的 Lawvere 理论)}
@@ -3279,12 +3639,18 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定�
 	其中群同态 $F(1) \to F(2)$ 将 $F(1)$ 的生成元映射到 $F(2)$ 两个生成元的乘积.
 \end{example}
 
+%\begin{example}
+%	{(Abel 群的 Lawvere 理论)}
+%	Abel 群的 Lawvere 理论 $\mathbb T_{\text{Ab}}$ 
+%\end{example}
+
 \begin{remark}
 	[label={walking-model}]
 	{(游走模型)}
 	我们形象地称对象 $F(1)$ 为理论 $\mathbb T$ 的\emph{游走模型} (walking model), 因为理论 $\mathbb T$ 的任何模型都是 $F(1)$ 在相应范畴中的一个化身.
 	例如对于群的理论 $\mathbb T_{\text{Grp}}$, 其在拓扑空间范畴 $\mathsf {Top}$ 中的模型 $\mathbb T_{\text{Grp}} \to \mathsf {Top}$ 即为拓扑群,
 	在光滑流形范畴 $\mathsf {Man}$ 中的模型 $\mathbb T_{\text{Grp}} \to \mathsf {Man}$ 即为 Lie 群.
+	一般地, 在一个理论的句法范畴中有这个理论的游走模型, 该理论在任何范畴中的模型都是游走模型的化身.
 \end{remark}
 
 \begin{example}
@@ -3310,7 +3676,7 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定�
 		\rho_{r+s}(x) &= \rho_{r}(x) + \rho_s(x).
 	\end{align*}
 	记 $R^n$ 为 $n$ 个元素生成的自由 $R$-模, 那么 $\mathbb T_{R\text{Mod}}$ 为所有 $R^n$ 在 $R\mathsf {Mod}$ 中构成的全子范畴的对偶范畴.
-	$R\mathsf {Mod}$ 中 $R^n$ 与 $R^m$ 的余积为 $R^{n+m}$, 所以在 $\mathbb T_{R\text{Mod}}$ 中有 $R^n = (R^1)^n$.
+	$R\mathsf {Mod}$ 中 $R^n$ 与 $R^m$ 的余积为 $R^{n+m}$, 所以在 $\mathbb T_{R\text{Mod}}$ 中有 $R^n \simeq (R^1)^n$.
 	设 $A\colon \mathbb T_{R\text{Mod}} \to \mathsf {Set}$ 为保积函子,
 	记 $M = A(R^1)$,
 	则 $M$ 上的 $R$-模结构由如下资料给出:
@@ -3328,6 +3694,7 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (但与定�
 	$\mathbb T = \mathbb N^{\op}$ 本身是一个 Lawvere 理论. $\mathbb T$ 在 $\mathcal C$ 中的模型等同于 $\mathcal C$ 的对象.
 	该理论由 $0$ 个运算符号和 $0$ 个公理所表现.
 	由于我们一般以集合范畴中模型的名称来命名一个 Lawvere 理论, 平凡的 Lawvere 理论也可称作 ``集合的 Lawvere 理论''.
+	$\mathbb N^{\op}$ 是一个对象生成的自由有限乘积范畴, 也即对任意具有有限乘积的范畴 $\mathcal C$, 其中的对象等同于保积函子 $\mathbb N^{\op} \to \mathcal C$.
 \end{example}
 
 \begin{example}
@@ -3739,7 +4106,7 @@ $(\operatorname{id}_i,\varphi)$
 	\end{tikzcd}\]
 \end{definition}
 
-$\pi$-水平态射的直观为 ``拉回''; 且在下例中它完全就是拉回.
+$\pi$-水平态射的一个直观为 ``拉回'', 如下例所示.
 
 \begin{example}
 	{(向量丛范畴中的水平态射)}
@@ -3772,7 +4139,7 @@ $\pi$-水平态射的直观为 ``拉回''; 且在下例中它完全就是拉回.
 	若如下条件成立, 则称之为\emph{纤维范畴} (fibered category, 或称\emph{ Grothendieck 纤维化}):
 	对 $\mathcal C$ 的任意对象 $c$ 以及 $\mathcal S$ 中任意态射 $f\colon s\to \pi(c)$,
 	都存在 $\pi$-水平态射 $\widetilde f\colon c'\to c$ 使得 $\pi(\widetilde f)= f$.
-	换言之, \emph{若一个态射 $f$ 的终点有提升, 则该态射有水平提升 $\widetilde f$}.
+	%换言之, \emph{对 $c$ 的任意提升, 都存在相应的 $f$ 的水平提升 $\widetilde f$}.
 	
 	若上面条件中的 $\pi(\widetilde f)= f$ 改为较弱的条件 $\pi(\widetilde f) \simeq f$ (在 $\mathcal S/\pi(c)$ 中), 则称之为 \emph{Street 纤维化}\footnotemark{}.
 	
@@ -3988,6 +4355,8 @@ $\pi$-水平态射的直观为 ``拉回''; 且在下例中它完全就是拉回.
 
 \todo{}
 
+\label{section-descent}
+
 % Grothendieck 1959 Descente par morphismes fid\'element plats
 
 % Grothendieck 1971 Cat\'egories fibr\'ees et descente
@@ -4013,7 +4382,7 @@ $\pi$-水平态射的直观为 ``拉回''; 且在下例中它完全就是拉回.
 		\arrow["{\varphi_{jk}}"', from=2-2, to=1-3]
 	\end{tikzcd}\]
 	
-	上述粘贴资料可表示为更抽象的形式.
+	上述粘贴资料可表示为更简洁的形式.
 	注意到
 	\begin{equation}
 		Y\times_X Y\simeq\coprod_{i,j} U_i\cap U_j,\quad Y\times_X Y\times_X Y\simeq\coprod_{i,j,k} U_i\cap U_j\cap U_k,
@@ -4103,7 +4472,7 @@ $\pi$-水平态射的直观为 ``拉回''; 且在下例中它完全就是拉回.
 	%在代数中, 模的局部化
 	(注. $(M_i)_{f_j}$ 是 $M_i$ 关于 $f_j$ 生成的乘法封闭子集 $\{1,f_j,f_j^2,\cdots\}$ 的局部化, 见例 \ref{localization-module}. 这个局部化对应到开子空间 $\operatorname{Spec}R_{f_i}$ 的限制. 对任意两个元素 $f_i,f_j$, 作为 $\operatorname{Spec}R$ 的子空间有 $\operatorname{Spec}R_{f_i}\cap\operatorname{Spec}R_{f_j} = \operatorname{Spec}(R_{f_i}\otimes_R R_{f_j})= \operatorname{Spec}R_{f_if_j}$.)
 	
-	上述粘贴资料可表示为更抽象的形式.
+	上述粘贴资料可表示为更简洁的形式.
 	注意到
 	\begin{equation}
 		S\otimes_R S \simeq \prod_{i,j=1}^n R_{f_i}\otimes_R R_{f_j} \simeq \prod_{i,j=1}^n R_{f_if_j},\quad
@@ -4150,7 +4519,7 @@ $\pi$-水平态射的直观为 ``拉回''; 且在下例中它完全就是拉回.
 	% https://q.uiver.app/#q=WzAsNixbMSwwLCIoXFxtdV97MTN9KV8hKFxcbXVfMSlfIUZcXGhzcGFjZXstMmVtfSJdLFs0LDAsIlxcaHNwYWNley0yZW19KFxcbXVfezEzfSlfIShcXG11XzIpXyFGIl0sWzIsMywiKFxcbXVfezEyfSlfIShcXG11XzIpXyFGIl0sWzAsMSwiKFxcbXVfezEyfSlfIShcXG11XzEpXyFGIl0sWzUsMSwiKFxcbXVfezIzfSlfIShcXG11XzIpXyFGLiJdLFszLDMsIihcXG11X3syM30pXyEoXFxtdV8xKV8hRiJdLFswLDEsIihcXG11X3sxM30pXyEoXFx2YXJwaGkpIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfX1dLFszLDIsIihcXG11X3sxMn0pXyEoXFx2YXJwaGkpIiwyXSxbNSw0LCIoXFxtdV97MjN9KV8hKFxcdmFycGhpKSIsMl0sWzIsNSwiIiwyLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwzLCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDQsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
 	\[\begin{tikzcd}[ampersand replacement=\&,sep=tiny]
 		\& {(\mu_{13})_!(\mu_1)_!M\hspace{-3em}} \&\&\& {\hspace{-3em}(\mu_{13})_!(\mu_2)_!M} \\
-		{(\mu_{12})_!(\mu_1)_!M} \&\&\&\&\& {(\mu_{23})_!(\mu_2)_!M.} \\
+		{(\mu_{12})_!(\mu_1)_!M} \&\&\&\&\& {(\mu_{23})_!(\mu_2)_!M,} \\
 		\\
 		\&\& {(\mu_{12})_!(\mu_2)_!M} \& {(\mu_{23})_!(\mu_1)_!M}
 		\arrow["{(\mu_{13})_!(\varphi)}", shorten <=32pt, shorten >=32pt, from=1-2, to=1-5]
@@ -4188,74 +4557,75 @@ $\pi$-水平态射的直观为 ``拉回''; 且在下例中它完全就是拉回.
 	% monadic descent applied to codomain fibrations archetypically exhibits the nature of monadic descent
 	设 $\pi\colon \mathcal C\to \mathcal S$ 为双纤维化. 对于 $\mathcal S$ 中的态射 $f\colon X\to Y$,
 	% https://ncatlab.org/nlab/show/monadic+descent
-	定义\emph{下降资料的范畴} $\operatorname{Des}_\pi(f)$ 为伴随 $f_!\dashv f^*$ 对应的单子 $f^*f_!$ 的代数范畴, 也即
+	有伴随 $f_! \dashv f^*$ (定义 \ref{bifibration-induced-adjunction}).
+	定义\emph{下降资料的范畴} $\operatorname{Des}_\pi(f)$ 为这对伴随对应的单子 $f^*f_!$ 的代数范畴, 也即
 	\begin{itemize}
-		\item $\operatorname{Des}_\pi(f)$ 的对象为\todo{}
+		\item $\operatorname{Des}_\pi(f)$ 的对象为 $\mathcal C_X$ 的对象 $V$ 以及态射 $h\colon f^*f_! V \to V$,
 	\end{itemize}
 \end{definition}
 
-\section{内范畴}
-
-\begin{definition}
-	{(内范畴)}
-	% Diaconescu, 
-	设范畴 $\mathcal S$ 具有拉回 (实际上不需要存在全部的拉回, 只需要存在下面用到的拉回即可).
-	定义 $\mathcal S$ 上的一个\emph{内范畴} (internal category) $C$ 为如下资料,
-	\begin{itemize}
-		\item 对象 $C_0,C_1$, 分别代表 ``对象集'' 与 ``态射集'';
-		\item 态射 $s,t\colon C_1\to C_0$, 分别代表态射的起点与终点;
-		\item 态射 $e\colon C_0\to C_1$, 代表对象上的恒等态射;
-		\item 态射 $c\colon C_1\times_{C_0} C_1\to C_1$, 代表态射的复合;
-	\end{itemize}
-	满足如下条件,
-	\begin{itemize}
-		\item $se=te=\operatorname{id}_{C_0}$ (恒等态射的起点和终点是自己);
-		\item $sc=s\pi_1, tc=t\pi_2$ (复合态射的起点和终点);
-		\item $c(c\times\operatorname{id}_{C_1})=c(\operatorname{id}_{C_1}\times c)$ (结合律);
-		\item $c(\operatorname{id}_{C_1}\times e)=\pi_1,c(e\times \operatorname{id}_{C_1})=\pi_2$ (单位律).
-	\end{itemize}
-	%\todo{两者为何等价?}
-	% 似乎是因为 Cartesian theory, Elephant D1.3.4
-	
-	对于\topos{}或正则范畴, $\mathcal S$ 的内范畴也可直接定义为小范畴的理论在 $\mathcal S$ 中的模型 (例 \ref{small-category-language}, 例 \ref{small-category-theory}).
-	
-	对于内范畴 $C,D$, 定义一个\emph{内函子} (internal functor) $f\colon C\to D$ 为态射 $f_0\colon C_0\to D_0$, $f_1\colon C_1\to D_1$, 要求与所有结构态射 $s,t,e,c$ 相容. 对于内函子 $f,g\colon C\to D$, 定义\emph{内自然变换} (internal natural transformation) $\alpha\colon f\to g$ 为态射 $\alpha\colon C_0\to D_1$, 满足 $s\alpha = f_0$, $t\alpha = g_0$, 且 $c(\alpha t,f_1) = c(g_1,\alpha s)\colon C_1\to D_1$. 其中最后一个等式对应交换图
-	% https://q.uiver.app/#q=WzAsNCxbMSwwLCJnKGMpIl0sWzEsMSwiZyhkKSJdLFswLDAsImYoYykiXSxbMCwxLCJmKGQpIl0sWzAsMSwiZyhoKSJdLFsyLDMsImYoaCkiLDJdLFsyLDAsIlxcYWxwaGFfYyJdLFszLDEsIlxcYWxwaGFfZCIsMl1d
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{f(c)} \& {g(c)} \\
-		{f(d)} \& {g(d).}
-		\arrow["{g(h)}", from=1-2, to=2-2]
-		\arrow["{f(h)}"', from=1-1, to=2-1]
-		\arrow["{\alpha_c}", from=1-1, to=1-2]
-		\arrow["{\alpha_d}"', from=2-1, to=2-2]
-	\end{tikzcd}\]
-	$\mathcal S$ 上的内范畴, 内函子与内自然变换构成 $2$-范畴 $\mathcal Cat(\mathcal S)$.
-\end{definition}
-
-\begin{remark}
-	{(内脉)}
-	通过\emph{内脉} (internal nerve) 操作, $\mathcal S$ 上的内范畴 $C$ 可视为 $\mathcal S$ 中的单纯对象 $N(C)\colon \Delta^{\op}\to\mathcal S$, 其中 $$N(C)_n:= \underbrace{C_1\times_{C_0}C_1\times_{C_0}\cdots\times_{C_0} C_1}_{\text{$n$ 个 $C_1$}}$$ 是 ``$n$ 个首尾相连态射的集合''. 由此, $\mathcal S$ 上的内范畴等同于保持拉回的函子 $\Delta^{\op}\to \mathcal S$. 此时内范畴之间的内函子对应\emph{单纯同伦}.
-\end{remark}
-
-\begin{example}
-	{(Lie 群, Lie 群胚)}
-	回忆 Lie 群是光滑流形范畴 $\mathsf {Man}$ 中的群. 正如群胚是群的推广, 我们可定义 Lie 群胚为 $\mathsf {Man}$ 的内群胚. 读者可尝试写下\emph{内群胚}的定义, 即在内范畴的基础上增加一个态射 $i\colon C_1\to C_1$ 表示态射的逆, 满足 $si=t,ti=s,c(i,\operatorname{id})=et,c(\operatorname{id},i)=es$.
-	那么, Lie 群则是 $\mathsf {Man}$ 中以一个点为 ``对象集'' 的内群胚.
-\end{example}
-
-\begin{definition}
-	{(内范畴对应的索引范畴)}
-	设 $C$ 是 $\mathcal S$ 上的内范畴. 定义索引范畴 $[C]\colon \mathcal S^{\op}\to \mathcal Cat$ 如下:
-	\begin{itemize}
-		\item 将 $\mathcal S$ 的对象 $I$ 对应到范畴 $C^I$, 其对象为态射 $I\to C_0$, 态射为态射 $I\to C_1$;
-		\item 将 $\mathcal S$ 中的态射 $f\colon I\to J$ 对应到函子 $f^*\colon C^J\to C^I$.
-	\end{itemize}
-	这是 ``对象族范畴'' (例 \ref{category-of-set-indexed-families}) 的推广. 范畴 $C^I$ 中的对象是 ``以 $I$ 为索引的一族对象''.
-\end{definition}
-
-% 内函子范畴到底是什么?
-\begin{definition}
-	{(内函子范畴)}
-	设 $C,D$ 是 $\mathcal S$ 上的内范畴, 则 $[C,D]$
-	\todo{}
-\end{definition}
+%\section{内范畴}
+%
+%\begin{definition}
+%	{(内范畴)}
+%	% Diaconescu, 
+%	设范畴 $\mathcal S$ 具有拉回 (实际上不需要存在全部的拉回, 只需要存在下面用到的拉回即可).
+%	定义 $\mathcal S$ 上的一个\emph{内范畴} (internal category) $C$ 为如下资料,
+%	\begin{itemize}
+%		\item 对象 $C_0,C_1$, 分别代表 ``对象集'' 与 ``态射集'';
+%		\item 态射 $s,t\colon C_1\to C_0$, 分别代表态射的起点与终点;
+%		\item 态射 $e\colon C_0\to C_1$, 代表对象上的恒等态射;
+%		\item 态射 $c\colon C_1\times_{C_0} C_1\to C_1$, 代表态射的复合;
+%	\end{itemize}
+%	满足如下条件,
+%	\begin{itemize}
+%		\item $se=te=\operatorname{id}_{C_0}$ (恒等态射的起点和终点是自己);
+%		\item $sc=s\pi_1, tc=t\pi_2$ (复合态射的起点和终点);
+%		\item $c(c\times\operatorname{id}_{C_1})=c(\operatorname{id}_{C_1}\times c)$ (结合律);
+%		\item $c(\operatorname{id}_{C_1}\times e)=\pi_1,c(e\times \operatorname{id}_{C_1})=\pi_2$ (单位律).
+%	\end{itemize}
+%	%\todo{两者为何等价?}
+%	% 似乎是因为 Cartesian theory, Elephant D1.3.4
+%	
+%	对于\topos{}或\regular{}范畴, $\mathcal S$ 的内范畴也可直接定义为小范畴的理论在 $\mathcal S$ 中的模型 (例 \ref{small-category-language}, 例 \ref{small-category-theory}).
+%	
+%	对于内范畴 $C,D$, 定义一个\emph{内函子} (internal functor) $f\colon C\to D$ 为态射 $f_0\colon C_0\to D_0$, $f_1\colon C_1\to D_1$, 要求与所有结构态射 $s,t,e,c$ 相容. 对于内函子 $f,g\colon C\to D$, 定义\emph{内自然变换} (internal natural transformation) $\alpha\colon f\to g$ 为态射 $\alpha\colon C_0\to D_1$, 满足 $s\alpha = f_0$, $t\alpha = g_0$, 且 $c(\alpha t,f_1) = c(g_1,\alpha s)\colon C_1\to D_1$. 其中最后一个等式对应交换图
+%	% https://q.uiver.app/#q=WzAsNCxbMSwwLCJnKGMpIl0sWzEsMSwiZyhkKSJdLFswLDAsImYoYykiXSxbMCwxLCJmKGQpIl0sWzAsMSwiZyhoKSJdLFsyLDMsImYoaCkiLDJdLFsyLDAsIlxcYWxwaGFfYyJdLFszLDEsIlxcYWxwaGFfZCIsMl1d
+%	\[\begin{tikzcd}[ampersand replacement=\&]
+%		{f(c)} \& {g(c)} \\
+%		{f(d)} \& {g(d).}
+%		\arrow["{g(h)}", from=1-2, to=2-2]
+%		\arrow["{f(h)}"', from=1-1, to=2-1]
+%		\arrow["{\alpha_c}", from=1-1, to=1-2]
+%		\arrow["{\alpha_d}"', from=2-1, to=2-2]
+%	\end{tikzcd}\]
+%	$\mathcal S$ 上的内范畴, 内函子与内自然变换构成 $2$-范畴 $\mathcal Cat(\mathcal S)$.
+%\end{definition}
+%
+%\begin{remark}
+%	{(内脉)}
+%	通过\emph{内脉} (internal nerve) 操作, $\mathcal S$ 上的内范畴 $C$ 可视为 $\mathcal S$ 中的单纯对象 $N(C)\colon \Delta^{\op}\to\mathcal S$, 其中 $$N(C)_n:= \underbrace{C_1\times_{C_0}C_1\times_{C_0}\cdots\times_{C_0} C_1}_{\text{$n$ 个 $C_1$}}$$ 是 ``$n$ 个首尾相连态射的集合''. 由此, $\mathcal S$ 上的内范畴等同于保持拉回的函子 $\Delta^{\op}\to \mathcal S$. 此时内范畴之间的内函子对应\emph{单纯同伦}.
+%\end{remark}
+%
+%\begin{example}
+%	{(Lie 群, Lie 群胚)}
+%	回忆 Lie 群是光滑流形范畴 $\mathsf {Man}$ 中的群. 正如群胚是群的推广, 我们可定义 Lie 群胚为 $\mathsf {Man}$ 的内群胚. 读者可尝试写下\emph{内群胚}的定义, 即在内范畴的基础上增加一个态射 $i\colon C_1\to C_1$ 表示态射的逆, 满足 $si=t,ti=s,c(i,\operatorname{id})=et,c(\operatorname{id},i)=es$.
+%	那么, Lie 群则是 $\mathsf {Man}$ 中以一个点为 ``对象集'' 的内群胚.
+%\end{example}
+%
+%\begin{definition}
+%	{(内范畴对应的索引范畴)}
+%	设 $C$ 是 $\mathcal S$ 上的内范畴. 定义索引范畴 $[C]\colon \mathcal S^{\op}\to \mathcal Cat$ 如下:
+%	\begin{itemize}
+%		\item 将 $\mathcal S$ 的对象 $I$ 对应到范畴 $C^I$, 其对象为态射 $I\to C_0$, 态射为态射 $I\to C_1$;
+%		\item 将 $\mathcal S$ 中的态射 $f\colon I\to J$ 对应到函子 $f^*\colon C^J\to C^I$.
+%	\end{itemize}
+%	这是 ``对象族范畴'' (例 \ref{category-of-set-indexed-families}) 的推广. 范畴 $C^I$ 中的对象是 ``以 $I$ 为索引的一族对象''.
+%\end{definition}
+%
+%% 内函子范畴到底是什么?
+%\begin{definition}
+%	{(内函子范畴)}
+%	设 $C,D$ 是 $\mathcal S$ 上的内范畴, 则 $[C,D]$
+%	\todo{}
+%\end{definition}

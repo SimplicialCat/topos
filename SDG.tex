@@ -1,8 +1,164 @@
+
+\section{代数几何的函子观点}
+
+代数几何中的函子观点将概形视为某种特殊的函子 $\mathsf {Ring}\to\mathsf {Set}$, 也即 ``环范畴上的变集合''. (此处的环是指交换环.) 对于环 $A$, 一个概形的 ``$A$-点'' 即是这个函子在阶段 $A$ 的元素. 一个概形可理解为同时在所有环上解一个方程组, 例如 Fermat 概形为函子 $$A\mapsto \{(x,y,z)\in A^3\mid x^n+y^n=z^n\},$$ 它在阶段 $\mathbb{R}$ 当然有点, 而人们关心的是其在阶段 $\mathbb{Q}$ 是否就有点.
+
+Ingo Blechschmidt 的博士论文 \cite{ILAG} 指出, 在函子观点下, 我们考虑的对象生活在一个\topos{}中, 这个\topos{}的内语言即可用于对这些对象进行各种操作与推理.
+
+\begin{definition}
+	[label={affine-line}]
+	{(仿射直线, 仿射空间)}
+	定义\emph{仿射直线} (affine line) $\mathbb A^1$ 为遗忘函子
+	$$
+	\mathbb A^1\colon \mathsf {Ring}\to\mathsf {Set},A\mapsto A.
+	$$
+	换言之, 仿射直线的 $A$-点等同于 $A$ 的元素.
+	对于自然数 $n$, 定义\emph{仿射空间} $\mathbb A^n$ 为 $(\mathbb A^1)^n$, 即函子 $A\mapsto A^n$. (回忆函子范畴中的极限是逐对象的.)
+\end{definition}
+
+%\todo{层语义}
+
+%定义 \ref{affine-line} 表明对任何环 $A$, 仿射直线的 $A$-点等同于 $A$ 的元素.
+
+由于 $\mathbb A^1$ 是环范畴到集合范畴的遗忘函子, 它自然带有一个环结构. 因此在内语言中我们可以像操作一个普通的环一样操作 $\mathbb A^1$.
+例如, 对任何整系数多项式 $f\in\mathbb{Z}[x]$, 有多项式映射 $f\colon \mathbb A^1\to\mathbb A^1$.
+
+\begin{example}
+	{(多项式方程的解)}
+	设 $f\in\mathbb{Z}[x]$ 为整系数多项式. $f$ 在 $\mathbb{A}^1$ 上的 ``解集''
+	$$
+	\{x\in\mathbb A^1\mid f(x)=0\}
+	$$
+	为函子
+	$$
+	\mathsf {Ring}\to\mathsf {Set}, A\mapsto\{x\in A\mid f(x)=0\}.
+	$$
+	这是因为它按定义是如下的拉回, 而拉回是逐对象计算的.
+	% https://q.uiver.app/#q=WzAsNCxbMSwwLCIxIl0sWzAsMSwiXFxtYXRoYmIgQV4xIl0sWzEsMSwiXFxtYXRoYmIgQV4xIl0sWzAsMCwiXFxoc3BhY2V7LTJlbX1cXHt4XFxpblxcbWF0aGJiIEFeMVxcbWlkIGYoeCk9MFxcfSJdLFswLDIsIjAiXSxbMSwyLCJmIiwyXSxbMywxXSxbMywwXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\hspace{-2em}\{x\in\mathbb A^1\mid f(x)=0\}} \& 1 \\
+		{\mathbb A^1} \& {\mathbb A^1}
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow["0", from=1-2, to=2-2]
+		\arrow["f"', from=2-1, to=2-2]
+	\end{tikzcd}\]
+	
+	一般地, 设 $f_1,\cdots,f_m\in\mathbb{Z}[x_1,\cdots,x_n]$ 为整系数多项式, 其 ``解集''
+	$$
+	\{x=(x_1,\cdots,x_n)\in\mathbb A^n\mid f_1(x)=\cdots=f_m(x)=0\}
+	$$
+	为函子
+	$$
+	\mathsf {Ring}\to\mathsf {Set}, A\mapsto\{x=(x_1,\cdots,x_n)\in A^n \mid f_1(x)=\cdots = f_m(x)=0\}.
+	$$
+\end{example}
+
+使用含 $\lor,\Rightarrow,\exists$ 等逻辑符号的公式可以定义更多对象. 如下将所谓\emph{乘法群概形}定义为 $\mathbb A^1$ 的一个子集.
+
+%加法和乘法 $+,{\cdot}\colon \mathbb A^1\times\mathbb A^1\to \mathbb A^1$, 零元和幺元 $0,1\colon {*} \to \mathbb A^1$.
+
+%
+%\begin{example}
+%	{($\mathbb A^1$ 到自身的映射)}
+%	态射 $\mathbb A^1\to\mathbb A^1$
+%\end{example}
+
+\begin{definition}
+	{(乘法群概形, 内语言定义)}
+	乘法群概形 $\mathbb G_m$ 是 $\mathbb A^1$ 中的 ``可逆元构成的子集'':
+	$$
+	\mathbb G_m := \{x\in \mathbb A^1\mid\internalprop{\text{$x$ 可逆}}\}= \{x\in \mathbb A^1\mid \exists y\in \mathbb A^1\,xy=1\}.
+	$$
+	
+	一般地, 群概形 $GL_n$ 是 $(\mathbb A^1)^{n\times n}$ 中可逆矩阵构成的子集:
+	$$
+	\begin{aligned}
+		GL_n &:= \{M\in (\mathbb A^1)^{n\times n}\mid \internalprop{\text{$M$ 可逆}}\}\\&= \{M\in (\mathbb A^1)^{n\times n}\mid \exists N\in (\mathbb A^1)^{n\times n}\,MN=NM=1\}.
+	\end{aligned}
+	$$
+\end{definition}
+
+由定义, $\mathbb G_m$ 是 $\{(x,y)\in\mathbb A^1\times\mathbb A^1\mid xy=1\}$ 在第一分量投影下的像, 故 $\mathbb G_m$ 作为函子可具体表示为
+$$
+\mathbb G_m\colon \mathsf {Ring}\to\mathsf {Set},\,
+A\mapsto \{x\in A\mid \text{$x$ 可逆}\}.
+$$
+
+\begin{prop}
+	{}
+	$\mathbb A^1$ 是一个 ``域''. 这句话的意思是如下公式成立,
+	$$
+	\forall x\in \mathbb A^1\, \big( x\neq 0\Rightarrow\internalprop{\text{$x$ 可逆}}\big).
+	$$
+	(回忆 $x\neq 0$ 是指 $\neg (x=0)$, 即 $(x=0)\Rightarrow\bot$.) 因此, ``乘法群概形'' $\mathbb G_m$ 也可表示为
+	$$
+	\mathbb G_m = \{x\in\mathbb A^1\mid x\neq 0\}.
+	$$
+\end{prop}
+%\todo{层语义}
+
+\begin{proof}
+	
+	由层语义 (定义 \ref{sheaf-semantics-inductive}),
+	$A\forces (x_0\neq 0)$ 的含义是对任意环同态 $\varphi\colon A\to B$, 若 $\varphi(x_0)=0$, 则 $B=0$ (零环).
+	令 $B$ 
+	
+%	只需证明
+%	\begin{itemize}
+%%		\item 对任意环 $A$ 以及 $x_0\in A$,
+%%		$A\forces \big(x_0\neq 0\Rightarrow\internalprop{\text{$x_0$ 可逆}}\big)$.
+%%		\item 对任意环 $A$, $x_0\in A$ 以及 $\varphi\colon A\to B$, 若 $B\forces \varphi(x_0)\neq 0,$ 则 $B\forces \internalprop{\text{$\varphi(x_0)$ 可逆}}$.
+%	\item 对任意环 $A$, 以及 $x_0\in A$, 若 $A\forces (x_0\neq 0),$ 则 $A\forces \internalprop{\text{$x_0$ 可逆}}$.
+%	\end{itemize}
+\end{proof}
+
+\todo{仿射概形在哪里讲}
+
+\begin{definition}
+	{(射影空间, 内语言定义)}
+	射影空间 $\mathbb P^n$ 是 $\mathbb A^{n+1}$ 中 ``过原点的直线的集合'':
+	$$
+	\begin{aligned}
+		\mathbb P^n&:=
+		\{(x_0,\cdots,x_n)\in \mathbb A^{n+1}\mid
+		x_0\neq 0\lor\cdots\lor x_n\neq 0\}\big/ \sim,
+	\end{aligned}
+	$$
+	其中 $\sim$ 是如下等价关系.
+	$$
+	x\sim x'\quad\text{当且仅当}\quad \exists \lambda \in \mathbb G_m\,x'=\lambda x.
+	$$
+\end{definition}
+
+\begin{definition}
+	{(仿射概形)}
+	定义\emph{仿射概形}为可表函子 $\mathsf {Ring}\to\mathsf {Set}$. 对于环 $A$, 记
+	$$
+	\operatorname{Spec}A = \operatorname{Hom}(A,-)\colon \mathsf {Ring}\to \mathsf {Set}.
+	$$
+	由米田引理, 仿射概形的范畴 $\mathsf {Aff}$ 等价于 $\mathsf {Ring}^{\op}$.
+\end{definition}
+\begin{example}
+	{}
+	\begin{itemize}
+		\item 仿射直线 $\mathbb A^1$ 是仿射概形 $\operatorname{Spec}\mathbb{Z}[x]$; 这是因为 环同态 $\mathbb{Z}[x]\to A$ 一一对应于 $A$ 的元素.
+		\item 仿射概形的和, 积均为仿射概形: $\operatorname{Spec}A+\operatorname{Spec}B\simeq \operatorname{Spec}(A\times B)$, $\operatorname{Spec}A\times\operatorname{Spec}B\simeq\operatorname{Spec}(A\otimes B)$.
+	\end{itemize}
+\end{example}
+
+\subsection{``小'' \topos{}与 ``大'' \topos{}}
+
+
+
+
 \section{综合微分几何与光滑无穷小分析}
+
+代数几何的函子观点可类似地用于微分几何.
 
 \subsection{综合微分几何的理论}
 
-我们首先在本小节叙述一种偏向语法的 (或公理化的) 理论, 而暂时不关心这个理论是否存在一个模型. 我们将看到这种理论比通常的微分几何更加符合直观.
+我们首先在本小节叙述一种偏向语法的 (或公理化的) 理论, 而暂时不关心其模型. 我们将看到这种理论比通常的微分几何更加符合直观.
 
 \begin{axiom}
 	{(空间)}
@@ -162,6 +318,7 @@ Lawvere 以如下的性质刻画无穷小几何对象.
 \end{example}
 
 \begin{remark}
+	[label={infinitesimal-object-intuition}]
 	{}
 	回忆对\topos{}中任意对象 $S$, $(-)^S$ 都有左伴随 $(-)\times S$, 而 $(-)^S$ 有右伴随是非常稀奇的事情. 重要的是此时 $(-)^S$ \emph{保持余极限}. 一个直观如下. 设空间 $X$ 被一族空间 $U_i$ 覆盖 ($X$ 可写成 $U_i$ 和 $U_i\times_X U_j$ 的某种余极限), 那么 $X^S$ 也被 $U_i^S$ 覆盖, 即 $S$ 到 $X$ 的任何映射都必须穿过某个 $U_i$; 这是 $S$ 的像 ``太小'' 导致的.
 	
@@ -202,7 +359,7 @@ Lawvere 以如下的性质刻画无穷小几何对象.
 
 \begin{remark}
 	{}
-	在第 \ref{cla} 章我们将会讲到, 这里考虑的\topos{}是 $\mathbb{R}$-代数理论的\emph{分类\topos{}}, 而 $R$ 是\emph{一般 $\mathbb{R}$-代数} (generic $\mathbb{R}$-algebra).
+	这里考虑的\topos{}是 $\mathbb{R}$-代数的\emph{分类\topos{}}, 而 $R$ 是其中的\emph{一般 $\mathbb{R}$-代数} (generic $\mathbb{R}$-algebra).
 	
 	这些结论对有限生成 $\mathbb{R}$-代数范畴同样成立.
 \end{remark}
@@ -281,14 +438,7 @@ $$
 	其中用到 $\mathbb{R}$-代数的张量积是 $\mathbb{R}\mathsf{Alg}$ 中的和, 即 $\mathbb{R}\mathsf{Alg}^\op$ 中的积.%; 而 $\yo(A)\times\yo(B) \simeq \yo(A\times B)$.
 \end{proof}
 
-\begin{remark}
-	{}
-	\todo{写到前言?}
-	至此, 我感到有必要介绍对待层的一种观点或一套术语. 范畴 $\mathsf{R}$ (这里是某种环范畴) 到 $\mathsf {Set}$ 的函子又称 \emph{$\mathsf {R}$ 上的变集合} (varying set over $\mathsf R$, 见 \cite{SDG-Lavendhomme} 8.3 节, 回忆 ``变集范畴'' \ref{varying-set-topos}),
-	$\mathsf R$ 的每个对象称为一个\emph{阶段} (stage), $\mathsf R$ 的态射称为阶段之间的\emph{转移} (transition), 对于 $\mathsf R$ 的对象 $A$ 与函子 $X\colon \mathsf R\to\mathsf {Set}$, $X(A)$ 的元素称为变集合 $X$ 在阶段 $A$ 的元素.
-	
-	Grothendieck 的\emph{概形}是函子 $\mathsf {Ring}\to\mathsf {Set}$, 也即环范畴上的变集合. 对于环 $A$, 一个概形的 $A$-点即是这个函子在阶段 $A$ 的元素. 例如 Fermat 概形为函子 $A\mapsto \{(x,y,z)\in A^3\mid x^n+y^n=z^n\}$, 它在阶段 $\mathbb{R}$ 当然有点, 而人们关心的是其在阶段 $\mathbb{Q}$ 是否就有点. 因此, 一个概形可理解为同时在所有环上解一个方程组.
-\end{remark}
+
 
 
 
@@ -331,39 +481,35 @@ $\mathbb{R}$-代数上的运算是多项式运算; 若将多项式运算扩充�
 
 %\todo{使用一般 Lawvere 代数中有限生成的概念}
 %我们需要有限生成 $C^\infty$-代数的概念.
-类比于 $\mathbb{R}[x_1,\cdots,x_n]$ 是 $n$ 个元素生成的自由 $\mathbb{R}$-代数 (代数是指交换含幺代数), 有如下命题.
+类比于 $\mathbb{R}[x_1,\cdots,x_n]$ 是 $n$ 个元素生成的自由 $\mathbb{R}$-代数 (交换含幺代数), 有如下命题.
 
 \begin{prop}
 	[label={freely-generated-smooth-algebra}]
 	{}
-	$C^\infty (\mathbb{R}^n)$ 是 $n$ 个元素生成的\emph{自由 $C^\infty$-代数}.
+	$C^\infty (\mathbb{R}^n)$ 是 $n$ 个元素生成的\emph{自由光滑代数}.
 \end{prop}
 
 \begin{proof}
-	要证明的是对任意 $C^\infty$-代数 $A$ 与任意 $n$ 个元素 $a_1,\cdots,a_n \in A$,
-	存在唯一的同态 $\varphi\colon C^\infty (\mathbb{R}^n) \to A$ 将每个坐标函数 (投影) $x_i$ 映射到 $a_i$.
+	要证明的是对任意光滑代数 $A$ 与任意 $n$ 个元素 $a_1,\cdots,a_n \in A$,
+	存在唯一的同态 $\varphi\colon C^\infty (\mathbb{R}^n) \to A$ 将每个坐标函数 $x_i$ 映射到 $a_i$.
 	由定义, 对任意 $f\in C^\infty (\mathbb{R}^n)$,
 	$\varphi$ 必须把 $f = f\circ (x_1,\cdots,x_n)$ 映射到 $f(a_1,\cdots,a_n)$, 这便唯一确定了 $\varphi$; 而它确实将投影 $x_i$ 映射到 $a_i$: $x_i(a_1,\cdots,a_n) = a_i$.
 \end{proof}
-
-
-
-\begin{example}
-	{}
-\end{example}
 
 \newcommand{\locus}{处所}
 
 %\todo{有限表现 vs 有限生成}
 
+类比于\fm{}与位象的关系, 以及环与仿射概形的关系, 我们作如下的定义. 其中记号遵循 Moerdijk 与 Reyes \cite{MSIA}.
+
 \begin{definition}
 	{(光滑\locus{})}
-	定义\emph{光滑\locus{}} (smooth locus, 复数 loci) 的范畴 $\mathbb L$ 为有限生成 $C^\infty$ 代数范畴的对偶,
+	定义\emph{光滑\locus{}} (smooth locus, 复数 loci) 的范畴 $\mathbb L$ 为有限生成光滑代数范畴的对偶,
 	$$
 	\mathbb L:= C^\infty \mathsf {Alg}_{\text{fg}}^{\op},
 	$$
-	此处的记号遵循 Moerdijk 与 Reyes \cite{MSIA}. 对于 $C^\infty$-代数 $A$,
-	记 $\ell A$ 为 $A$ 在对偶范畴中的化身. $\ell$  是 $\operatorname{Spec}$ 在光滑代数范畴中的类比.
+	对于光滑代数 $A$,
+	记 $\ell A$ 为 $A$ 在对偶范畴中的化身.
 \end{definition}
 
 我们发现\topos{} $\widehat {\mathbb L} = \mathsf {Fun}(C^\infty \mathsf {Alg}_{\text{fg}},\mathsf {Set})$ 是综合微分几何某种意义上的模型 (不过它尚且缺少一些微分几何关心的性质).

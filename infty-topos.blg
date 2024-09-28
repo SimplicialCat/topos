@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'infty-topos.blg'
+[78] biber-MSWIN64:340> INFO - === 
+[123] Biber.pm:419> INFO - Reading 'infty-topos.bcf'
+[196] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[206] Biber.pm:4419> INFO - Processing section 0
+[214] Biber.pm:4610> INFO - Looking for bibtex file 'infty-topos.bib' for section 0
+[279] bibtex.pm:1713> INFO - LaTeX decoding ...
+[295] bibtex.pm:1519> INFO - Found BibTeX data source 'infty-topos.bib'
+[330] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[331] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[331] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[331] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[336] bbl.pm:660> INFO - Writing 'infty-topos.bbl' with encoding 'UTF-8'
+[337] bbl.pm:763> INFO - Output to infty-topos.bbl

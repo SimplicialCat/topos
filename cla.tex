@@ -1,10 +1,10 @@
-\chapter{句法景与分类\topos{}}
+\chapter{语法景与分类\topos{}}
 
 \label{cla}
 
 \minitoc
 
-\section{句法范畴: 语法--语义对偶}
+\section{语法范畴: 语法--语义对偶}
 
 % \todo{两种不同的 syntactic category}
 
@@ -13,57 +13,81 @@
 \philoquote{The importance of syntactic categories lies in the fact that they allow us to associate with a theory (in the sense of axiomatic presentation), which is a `linguistic',
 	unstructured kind of entity, a well-structured mathematical object whose `geometry' embodies the syntactic aspects of the theory.}{Olivia Caramello, \cite{TST}}
 
+\philoquote{[C]ategories and theories are practically indistinguishable.}{Michael Makkai, Gonzalo Reyes,\\\emph{First Order Categorical Logic: Model-Theoretical Methods in the Theory of Topoi and Related Categories}}
+
 %  A most notable fact is that the models of the theory can be recovered as functors defined on its syntactic category which respect the ‘logical’ structure on it.
 
-范畴逻辑学的一个一般性的现象是理论 (一阶逻辑, 类型论等等) 与范畴之间的对应. 某些范畴可以为理论提供语义, 某些理论可以作为范畴的语法.
-语法--语义对偶也是一种代数--几何对偶\footnote{或许也可以反过来说代数--几何对偶不过是一种语法--语义对偶.}, 语法是 ``代数'', 语义是 ``几何''.
+范畴逻辑学的一个一般性的现象是理论 (一阶逻辑, 类型论等等) 与范畴之间的对应. 某些范畴可以为理论提供\emph{语义} (semantics), 某些理论可以作为范畴的\emph{语法} (syntactics).
+语法--语义对偶可类比于代数--几何对偶, 语法是 ``代数'', 语义则是 ``几何''.
 这一点已经在 \ref{locales-and-logic} 节体现.
 
-\subsection{代数理论的句法范畴}
+%\subsection{代数理论的语法范畴}
+%
+%% 建议不熟悉 Lawvere 理论的读者先阅读附录 \ref{universal-algebra} 节.
+%
+%\begin{prop}
+%	{}
+%	对于 Horn 理论 $\mathbb T$,
+%\end{prop}
+%
+%
+%
+%
+%
+%\subsection{一阶理论的语法范畴}
 
-% 建议不熟悉 Lawvere 理论的读者先阅读附录 \ref{universal-algebra} 节.
-
-\begin{prop}
-	{}
-	对于 Horn 理论 $\mathbb T$,
-\end{prop}
-
-
-
-
-
-\subsection{一阶理论的句法范畴}
+附录 \ref{universal-algebra} 节介绍了 Lawvere 理论. 一个 Lawvere 理论 $\mathbb T$ 作为范畴可视为其万有模型所在的范畴 (注 \ref{walking-model}). 在万有模型中成立的公式恰是理论 $\mathbb T$ 中可证的所有公式.
+一般地, 对于一阶理论 $\mathbb T$, 我们可以构造一个包含万有模型的范畴 $\mathcal C_{\mathbb T}$, 其对象和态射是理论 $\mathbb T$ 的任何模型按照 $\mathbb T$ 的语法的要求所必须具备的对象和态射.
 
 \begin{definition}
 	[label={first-order-theory-syntactic-category}]
-	{(一阶理论的句法范畴)}
-	
-	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论. 定义\emph{句法范畴} (syntactic category) $\mathcal C_{\mathbb T}$ 为如下的范畴,
+	{(几种一阶理论的语法范畴)}
+	设 $\mathbb T$ 是符号表 $\Sigma$ 上的几何 (正则, 凝聚, 一阶) 理论 (定义 \ref{kinds-of-theories}). 定义其\emph{语法范畴} (syntactic category) $\mathcal C_{\mathbb T}$ 为如下的范畴,
 	\begin{itemize}
-		\item 其对象是 $\Sigma$ 上带语境的公式 $(\vec x , \phi)$ 的 $\alpha$-等价类, $\alpha$ 等价是指两个公式仅有变量名的差异. 公式的种类由理论 $\mathbb T$ 的类别规定, 如几何理论允许使用几何公式, 正则理论允许使用正则公式, 代数理论只允许使用形如\todo{TST p46}
-		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的态射 (其中不妨设语境 $\vec x , \vec y$ 不交) 是公式 $\theta(\vec x,\vec y)$ 的 $\mathbb T$-可证等价类, 满足 $\mathbb T$-可证的\emph{函数性}, 即如下相继式 $\mathbb T$-可证.
+		\item 其对象是 $\Sigma$ 上带语境的几何 (正则, 凝聚, 一阶) 公式 $(\vec x , \phi)$ 的 $\alpha$-等价类, $\alpha$ 等价是指两个公式仅有变量名的差异.
+		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的态射 (其中不妨设语境 $\vec x , \vec y$ 不交) 是公式 $\theta(\vec x,\vec y)$ 的 $\mathbb T$-可证等价类, 满足 $\mathbb T$-可证的\emph{函数性} (functionality), 即如下相继式 $\mathbb T$-可证:
 		\begin{itemize}
-			\item $\phi\vdash_{\vec x} \exists \vec y \,\theta$, 含义是 ``对给定的 $\vec x$, 存在 $\vec y$ 满足 $\theta(\vec x,\vec y)$'';
-			\item $\theta\vdash_{\vec x,\vec y} \phi \wedge \psi$,
-			\item $\theta \wedge \theta[\vec z/\vec y] \vdash_{\vec x,\vec y,\vec z} \vec y = \vec z$, 这里 $\theta[\vec z / \vec y]$ 是指将 $\theta$ 中的 $\vec y$ 替换为 $\vec z$, 公式的含义是 ``对给定的 $\vec x$, 至多存在一个 $\vec y$ 满足 $\theta(\vec x,\vec y)$''.
+			\item $\theta\vdash_{\vec x,\vec y} \phi \wedge \psi$;
+			\item (像的存在性) $\phi\vdash_{\vec x} \exists \vec y \,\theta$;
+			\item (像的唯一性) $\theta \wedge \theta[\vec z/\vec y] \vdash_{\vec x,\vec y,\vec z} \vec y = \vec z$, 这里 $\theta[\vec z / \vec y]$ 是指将 $\theta$ 中的 $\vec y$ 替换为 $\vec z$, $\vec y = \vec z$ 表示 $(y_1=z_1)\land \cdots\land (y_n=z_n)$.
 		\end{itemize}
+		直观上, $\theta(\vec x,\vec y)$ 是公式之间的变量代换.
+		\item 对象 $(\vec x,\phi)$ 到自身的恒等态射为 $\phi\land (\vec x = \vec x')$.
+		\item 态射 $\theta\colon (\vec x,\phi) \to (\vec y,\psi)$, $\eta\colon (\vec y,\psi) \to (\vec z,\chi)$ 的复合为
+		$
+		\exists\vec y\,(\eta\land\theta)
+		$.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	{(代数理论的语法范畴)}
+	设 $\mathbb T$ 是符号表 $\Sigma$ 上的代数理论. 定义其\emph{语法范畴} $\mathcal C_{\mathbb T}^{\text{alg}}$ 为如下的范畴,
+	\begin{itemize}
+		\item 其对象是 $\Sigma$ 上带语境的原子公式的有限合取.
+		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的态射是一列项 $\vec t = (t_1(\vec x),\cdots,t_m(\vec x))$, 使得 $\phi\vdash_{\vec x} \psi(t_1(\vec x),\cdots,t_m(\vec x))$ 是 $\mathbb T$-可证的. 直观上, $\vec t$ 是公式之间的变量代换.
 	\end{itemize}
 \end{definition}
 
 \begin{remark}
 	{}
-	句法范畴的态射又称\emph{变量代换}.
+	由定义, 一个理论的语法范畴依赖于理论所属的类别 (几何, 正则, 凝聚, $\cdots$). 一个代数理论也可以视为凝聚理论, 但一个代数理论的语法范畴与它作为凝聚理论的语法范畴不同.
 \end{remark}
 
-\begin{remark}
+\begin{prop}
+	[label={context-dual-to-fin-gen-models}]
 	{}
-	由定义, 一个理论的句法范畴依赖于理论所属的类别 (代数, 正则, 凝聚, $\cdots$). 一个代数理论也可以视为凝聚理论, 但一个代数理论的句法范畴与它作为凝聚理论的句法范畴不同.
-\end{remark}
+	代数理论 $\mathbb T$ 的语法范畴等价于其有限生成模型的范畴的对偶范畴.
+\end{prop}
+
+下面的例子解释了命题 \ref{context-dual-to-fin-gen-models} 的直观.
 
 \begin{example}
-	{(环的句法范畴)}
-	%对于通常背景的读者, 或许最合适的例子是环的理论的句法范畴.
-	回忆, 环的理论是一种代数理论, 其中的公式形如 $s=t$.
+	{}
+	考虑 $\mathbb T_{\text{Grp}}$ 的两个有限生成模型, 即有限生成群 $G = \langle x,y\mid x^2=y^3 \rangle$, $H = \langle z \rangle \simeq \mathbb{Z}$. 它们也可视为带语境的公式: $G$ 是语境 $(x,y)$ 下的公式 $x^2=y^3$, 而 $H$ 是语境 $z$ 下的公式 $\top$.
+	%一个带语境的公式给出一个函子 $\mathsf {Grp} \to \mathsf {Set}$
+	我们有公式之间的代换 $$\langle z \rangle \to \langle x,y\mid x^2=y^3 \rangle, (x,y)=(z^3,z^2),$$
+	(注意到 $\top\vdash_{z} (z^3)^2=(z^2)^3$ 是 $\mathbb T_{\text{Grp}}$-可证的.) 它对应着反方向的群同态 $G\to H, x\mapsto z^3, y\mapsto z^2$.
 \end{example}
 
 \subsection{类型论的语境范畴}
@@ -76,6 +100,18 @@
 	\begin{itemize}
 		\item $\operatorname{Con}(T)$ 的\emph{对象}为类型论 $T$ 的\emph{语境};
 		\item $\operatorname{Con}(T)$ 中的\emph{态射}为语境之间的\emph{代换}.
+	\end{itemize}
+\end{definition}
+
+\subsection{语法景}
+
+\begin{definition}
+	[label={Grothendieck-topology-on-certain-kinds-of-categories}]
+	{(几种范畴上自然的 Grothendieck 拓扑)}
+	\begin{itemize}
+		\item 对于\regular{}范畴 $\mathcal C$ (定义 \ref{regular-category}), 定义其上的\emph{\regular{}拓扑} (regular topology) $J_{\mathcal C}^{\text{reg}}$, 一个筛为 $J_{\mathcal C}^{\text{reg}}$-覆盖筛当且仅当它包含一个态射 $f\colon d\to c$, 满足 $\operatorname{im}f=\operatorname{id}_c$.
+		\item 对于\coherent{}范畴 $\mathcal C$ (定义 \ref{coherent-category}), 定义其上的\emph{\coherent{}拓扑} (coherent topology) $J_{\mathcal C}^{\text{coh}}$, 一个筛为 $J_{\mathcal C}^{\text{coh}}$-覆盖筛当且仅当它包含一族\emph{有限个}态射 $\{f_i\colon c_i\to c\}_{1\leq i \leq n}$, 满足 $\bigvee_{i=1}^n\operatorname{im}f_i = \operatorname{id}_c$.
+		\item 对于几何范畴 $\mathcal C$ (定义 \ref{geometric-category}), 定义其上的\emph{几何拓扑} (geometric topology) $J_{\mathcal C}^{\text{geom}}$, 一个筛为 $J_{\mathcal C}^{\text{geom}}$-覆盖筛当且仅当它包含一族态射 $\{f_i\colon c_i\to c\}_{i\in I}$, 满足 $\bigvee_{i\in I}\operatorname{im}f_i = \operatorname{id}_c$.
 	\end{itemize}
 \end{definition}
 
@@ -114,9 +150,7 @@ $$
 这等同于 $\text{Sh}(X)$ 到 $\mathcal E$ 的一个几何态射.
 与分类空间的情况类似, 分类\topos{}到自身的恒等态射对应着其上的 ``\emph{万有 $T$ 结构}'', 又称\emph{重言} (tautological) $T$ 结构.
 
-\subsection{例}
-
-\subsubsection{$G$-旋子的分类\topos{}}
+\subsection{$G$-旋子的分类\topos{}}
 
 \begin{definition}
 	{(群作用)}
@@ -236,7 +270,23 @@ $$
 
 理论 $\mathbb T_G$ 是一种几何理论 (定义 \ref{kinds-of-theories}), 因为它用到了 ``真'' $\top$, 存在量词 $\exists$, ``假'' $\bot$ 和无穷析取 $\bigvee$.
 
-\subsubsection{子终对象的分类\topos}
+\subsection{对象的分类\topos}
+
+\begin{prop}
+	{(对象分类子)}
+	记 $\mathsf {Fin}$ 为有限集合的范畴. \topos{} $\mathsf {Set}^{\mathsf {Fin}}$ 是\emph{对象分类子} (object classifier),
+	即对任何\topos{} $\mathcal C$, 有范畴等价
+	$$
+	\mathcal C\simeq \operatorname{Hom}(\mathcal C,\mathsf {Set}^{\mathsf {Fin}}).
+	$$
+	
+\end{prop}
+\begin{proof}
+	$\mathsf {Fin}^{\op}$ 是一个对象自由生成的有限乘积范畴, 也即对任何具有有限乘积的范畴 $\mathcal C$, 其对象等同于保持有限乘积的函子 $\mathsf {Fin}^{\op}\to \mathcal C$. 而由自由余完备化的性质 (命题 \ref{free-cocompletion}), 后者又对应一个函子 $\mathsf {Set}^{\mathsf {Fin}}=\widehat {\mathsf {Fin}^{\op}} \to \mathcal C$, 其保持有限乘积与任意余极限.
+\end{proof}
+
+
+\subsection{子终对象的分类\topos}
 
 考虑范畴 $\mathsf 2 = \{\bullet\longrightarrow\bullet\}$. 例 \ref{varying-set-topos} 介绍的 ``变集范畴'' $\mathsf {Fun}(\mathsf {2},\mathsf {Set})\simeq\widehat {\mathsf {2}}$ 还有一个特殊的名字叫 \emph{Sierpi\'nski \topos{}}, 因为它与 Sierpi\'nski 空间有关.
 
@@ -248,7 +298,7 @@ $$
 
 \todo{}
 
-\subsubsection{群的分类\topos{}}
+\subsection{群的分类\topos{}}
 
 本节构造群的分类\topos{}. 群是一种 Lawvere 理论 (附录 \ref{universal-algebra} 节); 下面的论述适用于一般的 Lawvere 理论, 从而逐字逐句地替换可得到环, Boole 代数等结构的分类\topos{}.
 %
@@ -279,7 +329,7 @@ $$
 \mathsf {Grp}(\mathcal C) \simeq \mathsf{Hom}(\mathcal C,\mathcal E).
 $$
 
-\subsubsection{环的分类\topos{}}
+\subsection{环的分类\topos{}}
 
 \todo{单独讲一下和代数几何的关系}
 
@@ -302,10 +352,10 @@ $$
 \ref{classifying-locale}
 
 \begin{definition}
-    {(几何理论的句法景和分类\topos{})}
+    {(几何理论的语法景和分类\topos{})}
     设 $\mathbb T$ 为一几何理论.
     
     $\text{Sh}(\mathcal C_{\mathbb T},)$
 \end{definition}
 
-\todo{以 torsor 的句法景举例}
+\todo{以 torsor 的语法景举例}

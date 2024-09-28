@@ -1,0 +1,57 @@
+\chapter{$\infty$-\topos{}的范畴论结构}
+
+\philoquote{Quite contrary to superficial perception, higher topos theory provides just the mathematical context that physicists are often intuitively but informally assuming anyway.}{Urs Schreiber, \cite{HTTP}}
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHRleHR76ZuG5ZCIfSJdLFswLDEsIlxcdG9wb3N7fSJdLFsxLDAsIlxcdGV4dHvnqbrpl7R9Il0sWzEsMSwiXFxpbmZ0eSBcXHRleHR7LX0gXFx0b3Bvc3t9Il0sWzAsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dXQ==
+\[\begin{tikzcd}[ampersand replacement=\&]
+	{\text{集合}} \& {\text{\topos{}}} \\
+	{\text{空间}} \& {\infty \text{-\topos{}}}
+	\arrow[rightsquigarrow, from=1-1, to=2-1]
+	\arrow[rightsquigarrow, from=1-2, to=2-2]
+\end{tikzcd}\]
+
+\minitoc
+
+
+
+
+%\section{$\infty$-\topos{}}
+
+\todo{HTT Ch.6 $\infty$-\topos{}}
+
+
+
+\begin{definition}
+	{(自反局部化)}
+	设 $\mathcal C$ 为 $\infty$-范畴, 定义 $\mathcal C$ 的一个\emph{自反局部化}为函子 $a\colon \mathcal C\to \mathcal D$, 其具有全忠实的右伴随.
+	进一步, 若 $a$ 为正合函子 (保持有限极限), 则称之为\emph{正合局部化}.
+	这与普通范畴中的自反局部化在语法上完全相同.
+	%(定义 \ref{reflective-subcategory})
+\end{definition}
+
+如下是 Grothendieck \topos{}的 $\infty$ 版本.
+
+\begin{definition}
+	{($\infty$-\topos{})}
+	对于 $\infty$-范畴 $\mathcal X$, 若存在 $\infty$-范畴 $\mathcal C$ 以及一个正合局部化
+	$$ \widehat {\mathcal C} \to \mathcal X, $$ 则称 $\mathcal X$ 为 (Grothendieck) \emph{$\infty$-\topos{}}.
+\end{definition}
+
+
+
+
+
+\section{Grothendieck 拓扑与层}
+
+\todo{层, HTT 6.2.2}
+
+\section{Giraud 定理}
+
+\begin{prop}
+	{($\infty$-\topos{}的等价定义, $\infty$-Giraud 公理)}
+	$\infty$-\topos{}等价于局部小, 可表现, 余完备, 拉回保持余极限, 且内群胚有效的 $\infty$-范畴.
+	% Cisinski CSTT: 局部小, 小余极限, 小可达生成, 拉回保持余极限, 和无交, 内群胚有效.
+	% nLab: 可表现, 拉回保持余极限, 和无交, 内群胚有效.
+\end{prop}
+
+%\cite{DCCT}

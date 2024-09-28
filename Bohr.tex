@@ -1,19 +1,22 @@
 \section{量子理论与 Bohr 意象}
 
-\philoquote{A description of physical reality is made in terms of two sets of objects: observables and states.}{Ludwig Faddeev, \emph{Elementary Introduction to Quantum Field Theory }}
+\philoquote{A description of physical reality is made in terms of two sets of objects: observables and states.}{Ludwig Faddeev,\\ \emph{Elementary Introduction to Quantum Field Theory }}
 
-对于经典力学与量子力学系统, 最核心的对象是其中的\emph{状态}与\emph{可观测量}.
-量子理论有多种不同的公理化. 粗略地说, 我们考虑的一个量子系统由一个 $C^*$-代数 $\mathcal A$ 表示, 可观测量是这个 $C^*$-代数中的自伴元素, 而系统的状态是这个代数到 $\mathbb{C}$ 的某种映射 $$\rho\colon \mathcal A \to \mathbb{C}.$$ 人们常常以一个 Hilbert 空间 $H$ 表示系统中的纯态 (pure states), 而可观测量则被表示为 $H$ 上的自伴算子, 即有表示 $$\pi\colon \mathcal A \to \operatorname{End}(H).$$ 纯态 $\psi\in H$ 对应的映射则是
-$$
+一个物理系统最核心的对象是其中的\emph{状态}与\emph{可观测量}. 可观测量的\emph{代数}与状态的\emph{空间}互为对偶: 例如经典力学中, 可观测量是状态空间上的函数; 反过来, 状态空间上的点可视为可观测量代数到 $\mathbb{R}$ 的代数同态.
+%完全类似地, 在量子力学中, 给定语境 $\mathcal A$, 对应的 "状态空间" $\Sigma(\mathcal A)$ 中的点就是 $\mathcal A$ 到 $\mathbb{C}$ 的代数同态, 而 $\mathcal A$ 中的可观测量则可视为状态空间 $\Sigma(\mathcal A)$ 上的函数.
+
+量子理论有多种不同的公理化, 我们考虑的公理化使用 $C^*$-代数 $\mathcal A$ 表示量子系统, \emph{可观测量}是 $\mathcal A$ 中的自伴元素, 而\emph{状态}是线性映射 $\rho\colon \mathcal A \to \mathbb{C}.$ 此外人们常常以一个 Hilbert 空间 $H$ 表示系统中的纯态 (pure states), 可观测量通过一个表示 $\pi\colon \mathcal A \to \operatorname{End}(H)$ 对应到 $H$ 上的自伴算子, 而纯态 $\psi\in H$ 对应一个映射
+$
 \rho\colon A\mapsto \langle\psi | A | \psi \rangle := \langle\psi,\pi(A)\psi\rangle,
-$$
+$
 它给出状态 $\psi$ 下可观测量 $A$ 的 ``期望值''.
+在这种公理化的量子理论中, 每个量子系统都对应一个\topos{}, 称为 \emph{Bohr \topos{}}, 使得 $\mathcal A$ 在这个\topos{}的内语言中成为\emph{交换} $C^*$-代数, 且系统中的状态与可观测量在这个\topos{}的内语言中可理解为一个\emph{经典力学系统}的状态和可观测量.
 
 \subsection{$C^*$-代数, 经典语境与 Bohr 景}
 
 \begin{definition}
-    {($C^*$-代数)}
-    \emph{$C^*$-代数}是 $\mathbb{C}$ 上的 Banach 代数 $\big(\mathcal A,\|{-}\|\big)$,
+    {($C^*$-代数, $*$-子代数)}
+    \emph{$C^*$-代数}是 $\mathbb{C}$ 上的 Banach 代数\footnotemark{} $\big(\mathcal A,\|{-}\|\big)$,
     带有 ``伴随'' 运算 $(-)^*\colon \mathcal A \to \mathcal A$,
     满足对任意 $x\in \mathcal A$,
     \begin{multicols}
@@ -22,16 +25,12 @@ $$
     		\item $(a^*)^*=a$,
     		\item $(ab)^*=b^*a^*$,
     		\item $(\lambda a)^*=\bar\lambda a^*\,(\lambda\in\mathbb{C})$,
-    		\item $\|a^* a\|=\|a\|\|a^*\|=\|a\|^2$.
+    		\item $\|a^* a\|=\|a\|\cdot \|a^*\|=\|a\|^2$.
     	\end{itemize}
     \end{multicols}
-    $C^*$-代数的 $*$-子代数是指关于 $(-)^*$ 封闭的子代数.
+    $C^*$-代数的 \emph{$*$-子代数}是指关于 $(-)^*$ 封闭的子代数.
 \end{definition}
-
-\begin{example}
-    {}
-    对于 Hilbert 空间 $H$, $H$ 上的有界线性算子的代数 $\mathcal B(H)$ 是 $C^*$-代数, 其中 $a^*$ 是 $a$ 的伴随算子. 事实上, 每个 $C^*$-代数都同构于某个形如 $\mathcal B(H)$ 的代数的 $*$-子代数, 因此后者也可作为 $C^*$-代数的一种具体定义.
-\end{example}
+\footnotetext{Banach 代数是配有乘法的完备赋范线性空间, 满足 $\|ab\|\leq\|a\|\cdot\|b\|$. 后面我们将要在\topos{}内部使用 $C^*$ 代数的概念, 这需要谨慎地定义\emph{实数}, 但我们忽略这一问题.}
 
 \begin{definition}
 	{(量子力学系统, 可观测量)}
@@ -46,6 +45,12 @@ $$
 	\end{itemize}
 \end{definition}
 
+\begin{example}
+	{(Hilbert 空间上的有界线性算子的代数)}
+	对于 Hilbert 空间 $H$, $H$ 上的有界线性算子的代数 $\mathcal B(H)$ 是 $C^*$-代数, 其中 $a^*$ 是 $a$ 的伴随算子. 事实上, 每个 $C^*$-代数都同构于某个形如 $\mathcal B(H)$ 的代数的 $*$-子代数, 因此后者也可作为 $C^*$-代数的一种具体定义.
+	量子力学最初就是使用 Hilbert 空间上的自伴算子叙述的.
+\end{example}
+
 我们给出经典力学系统的一种定义. 注意经典与量子系统的相似性.
 
 \begin{definition}
@@ -53,13 +58,13 @@ $$
 	\emph{Poisson 代数}是 $\mathbb{R}$ 上的含幺交换结合代数 $\mathcal A$ 配备一个运算 $\{-,-\}\colon \mathcal A\otimes \mathcal A\to \mathcal A$, 称为 \emph{Poisson 括号}, 满足
 	\begin{itemize}
 		\item $(\mathcal A,\{-,-\})$ 是 Lie 代数;
-		\item 对任意 $a\in A$, $\{a,-\}\colon A\to A$ 是导子, 也即 $\{a,xy\}=\{a,x\}y+x\{a,y\}$.
+		\item 对任意 $a\in \mathcal A$, $\{a,-\}\colon \mathcal A\to \mathcal A$ 是导子, 也即 $\{a,xy\}=\{a,x\}y+x\{a,y\}$.
 	\end{itemize}
 \end{definition}
 
 \begin{example}
-	{}
-	在经典力学中, 辛流形 $(X,\omega)$ 上的光滑函数代数 $C^\infty (X)$ 有自然的 Poisson 代数结构: 对 $f\in C^\infty (X)$ 定义向量场 $v_f$ 满足 $\omega(v_f,-) = df$, 则 $\{f,g\}:=\omega(v_f,v_g)$ 给出 $C^\infty (X)$ 上的 Poisson 代数结构.
+	{(辛流形上的光滑函数代数)}
+	在经典力学中, \emph{相空间} (phase space) 是一个辛流形 $(X,\omega)$, 其上的光滑函数代数 $C^\infty (X)$ 有自然的 Poisson 代数结构: 对 $f\in C^\infty (X)$ 定义向量场 $v_f$ 满足 $\omega(v_f,-) = df$, 则 $\{f,g\}:=\omega(v_f,v_g)$ 给出 $C^\infty (X)$ 上的 Poisson 代数结构.
 \end{example}
 
 \begin{definition}
@@ -68,7 +73,7 @@ $$
 	\begin{itemize}
 		\item 一个\emph{经典力学系统} (classical mechanical system) 是一个 Poisson 代数 $(\mathcal A,\{-,-\})$;
 		\item 系统中的\emph{可观测量} (observable) 是 $\mathcal A$ 中的元素;
-		\item 系统中的\emph{状态} (state) 是线性函数 $\rho\colon \mathcal A\to \mathbb{R}$, 满足
+		\item 系统中的\emph{状态} (state) 是\emph{线性函数} $\rho\colon \mathcal A\to \mathbb{R}$, 满足
 		\begin{itemize}
 			\item (正性) $\rho(a^2)\geq 0$;
 			\item (归一性) $\rho(1)=1$.
@@ -77,45 +82,76 @@ $$
 	\end{itemize}
 \end{definition}
 
-\begin{example}
-	{}
+\begin{remark}
+	{(相空间上的点对应纯态)}
 	由定义 \ref{classical-mechanical-system}, 对于辛流形 $(X,\omega)$, $X$ 上的一个点 $p$ 对应一个纯态 $C^\infty (X)\to\mathbb{R},f\mapsto f(p)$.
-\end{example}
+	在 $X$ 为紧流形的情形, 可以证明纯态 $C^\infty \to\mathbb{R}$ 一定形如 $f\mapsto f(p)$.
+\end{remark}
 
-Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定, 而一族相交换的可观测量可以同时确定. 因此我们格外关注那些交换的子代数.
+量子力学中的 Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定, 而一族相交换的可观测量可以同时确定. 因此我们格外关注那些交换的子代数. 因为一个状态对应的函数 $\mathcal A\to \mathbb{C}$ 只有在交换的子代数上\emph{局部地}谈论才有意义, 我们自然应当视之为交换子代数范畴上的一个层.
 
 \begin{definition}
     {(经典语境)}
     对于量子力学系统 $\mathcal A$, 称 $\mathcal A$ 的一个交换 $*$-子代数为一个\emph{经典语境} (classical context).
-    记 $\mathcal C(\mathcal A)$ 为 $\mathcal A$ 的交换 $*$-子代数在包含关系下构成的偏序集.
+    记 $\mathcal C(\mathcal A)$ 为经典语境在包含关系下构成的偏序集.
 \end{definition}
 
 \begin{remark}
     {}
-    语境这个名字的含义是, 一个可观测量只在某些特定的语境 (也就是包含它的那些语境) 下才有确定的值. 在一个固定的语境中, 可观测量的表现无异于一个经典系统.
+    语境这个名字的含义是, 一个可观测量只在某些特定的语境下才有确定的值. 在一个固定的交换 $*$-子代数中, 可观测量的表现无异于一个经典系统, 故称之为经典语境.
 \end{remark}
 
 这里我们稍微偏题, 介绍偏序集上的层.
 
-\todo{移到层论那一章}
+\subsubsection{偏序集上的层}
 
 \begin{definition}
-    {(Alexandorff 空间)}
-    若一个拓扑空间中开集的任意交仍是开集, 则称其为 \emph{Alexandorff 空间}.
+	[label={Alexandroff-space}]
+    {(Alexandroff 空间)}
+    若一个拓扑空间中开集的任意交仍是开集, 则称其为 \emph{Alexandroff 空间}. 记 Alexandroff 空间构成的 $\mathsf {Top}$ 的全子范畴为 $\mathsf {AlexSp}$.
 \end{definition}
 
 \begin{definition}
-    {(Alexandroff 拓扑)}
-    设 $P$ 为偏序集. 定义 $P$ 上的 \emph{Alexandroff 拓扑}是以向上封闭集为开集的拓扑. 其中, 称 $Q\subset P$ 为\emph{向上封闭集}是指对任意 $x\in Q,y\in P$, 若 $x\leq y$, 则 $y\in Q$. 这给出了函子
+	[label={Alex-space-on-poset}]
+    {(偏序集上的 Alexandroff 空间)}
+    设 $P$ 为偏序集. 称子集 $Q\subset P$ 为\emph{向上封闭集}是指对任意 $x\in Q,y\in P$, 若 $x\leq y$, 则 $y\in Q$. 定义 \emph{$P$ 上的 Alexandroff 空间} $\operatorname{Alex} P$ 是以 $P$ 为底层集合, 以\emph{向上封闭集}为开集的拓扑空间; 它满足定义 \ref{Alexandroff-space} 的条件. 记 $\upward{x} = \{y\in P\mid x\leq y\}$; 那么所有 $\upward{x}$ 构成 $\operatorname{Alex} P$ 的开集基, 且 $\upward{x}$ 是包含 $x$ 的所有开集的交. 由偏序集给出 Alexandroff 空间的构造是一个函子
     \[
-    \operatorname{Alex}\colon \mathsf {Poset} \to \mathsf {Top}.
+    \operatorname{Alex}\colon \mathsf {Poset} \to \mathsf {AlexSp}.
     \]
+    % 以向下封闭集为闭集
 \end{definition}
 
 \begin{prop}
-    {}
-    对任意偏序集 $P$, $P$ 上的预层可自然延拓为 $P$ 的 Alexandroff 拓扑上的层.
+	{(偏序集等价于 T0 Alexandroff 空间)}
+	记 $\text{T0}\mathsf {AlexSp}\hookrightarrow\mathsf {AlexSp}$ 为满足 T0 条件 (对任意两个不同的点, 存在开集包含其中一个而不包含另一个) 的 Alexandroff 空间的全子范畴, 则定义 \ref{Alex-space-on-poset} 给出了范畴等价 $$\operatorname{Alex}\colon \mathsf {Poset}\simeq \text{T0}\mathsf {AlexSp},$$ 其逆定义如下:
+	对一个 T0 Alexandroff 空间, 定义其底层集合上的关系 $\leq$ 使得 $x\leq y$ 当且仅当所有包含 $x$ 的开集都包含 $y$, 这给出了一个偏序集.
 \end{prop}
+
+\begin{prop}
+	[label={presheaf-on-poset-equivalent-sheaf-alexsp}]
+    {}
+    对任意偏序集 $P$ 有范畴等价
+    \[
+    \operatorname{Presh}(P^{\op})\simeq \mathsf {Fun}(P,\mathsf {Set}) \simeq \operatorname{Sh}(\operatorname{Alex} P).
+    \]
+\end{prop}
+\begin{proof}
+	设 $F$ 为 $\operatorname{Alex}P$ 上的层, 它限制在子范畴 $\{\upward{x}\mid x\in P\}^{\op} \simeq P$ 上即给出函子 $P\to\mathsf {Set}$.
+	另一方面, 对于函子 $G\colon P\to\mathsf {Set}$,
+	定义 $\operatorname{Alex} P$ 上的预层
+	$$
+	F\colon\operatorname{Open}(\operatorname{Alex}P)\to\mathsf {Set},\ U\mapsto \operatorname{lim}_{x\in U}G(x),
+	$$
+%	那么其在 $x\in P$ 上的茎为
+%	$$
+%	F_x :=\operatorname{colim}_{U\in\operatorname{Open}(\operatorname{Alex}P), x\in U}F(U) \simeq F(\upward{x}).
+%	$$
+%	对于 $w\leq x$, $F_x \to F_w$.
+	设 $U=\bigcup_{i\in I} U_i$ 为开覆盖, 对任意一族相容的元素 $(s_i\in F(U_i))_{i\in I}$,
+	设 $s_i = (t_x\in G(x))_{x\in U_i}$,
+	那么 $s:=(t_x)_{x\in U}\in F(U)$ 是满足 $s|_{U_i} = s_i$ 的唯一元素. 这说明 $F$ 是层.
+	容易验证以上两个构造互逆.
+\end{proof}
 
 % sheaf vs cosheaf
 %
@@ -126,26 +162,33 @@ Heisenberg 不确定性原理表明, 不交换的可观测量不可同时确定,
 
 \subsection{Bohr 意象}
 
+
 \begin{definition}
-    {(Bohr 意象)}
-    称 $\mathcal C(\mathcal A)$ 上的预层意象为 \emph{Bohr 意象}.
+    {(Bohr 景, Bohr \topos{})}
+    对于量子力学系统 $\mathcal A$, 定义其 \emph{Bohr 景}为拓扑空间 $\operatorname{Alex}\mathcal C(\mathcal A)$, \emph{Bohr \topos{}}为 $\operatorname{Sh}(\operatorname{Alex}\mathcal C(\mathcal A))$; 由命题 \ref{presheaf-on-poset-equivalent-sheaf-alexsp}, Bohr \topos{}也等价于函子范畴 $\mathsf {Fun}(\mathcal C(\mathcal A),\mathsf {Set})$.
+	进一步, Bohr \topos{}还配备如下环对象 (这样的结构称为\emph{环化\topos{}}, ringed topos),
+	$$
+	\underline{\mathcal A} \colon \mathcal C(\mathcal A)\to \mathsf {Set} ,\ C\mapsto C.
+	$$
+	它是 Bohr \topos{}中的 \emph{交换 $C^*$-代数}.
 \end{definition}
 
-一个量子系统的\emph{状态} (state) 是一个线性映射 $A \to \mathbb{C}$
+\subsubsection{Gelfand 对偶}
 
 \begin{definition}
     {(Gelfand 谱)}
-    对于交换 $C^*$-代数 $A$, 定义其 \emph{Gelfand 谱}
+    对于交换 $C^*$-代数 $\mathcal A$, 定义其 \emph{Gelfand 谱}
 $$
-\Sigma(A) := \{C^*\text{-代数同态}\,\lambda\colon A \to\mathbb{C}\},
+\Sigma(\mathcal A) := \{C^*\text{-代数同态}\,\lambda\colon \mathcal A \to\mathbb{C}\},
 $$
-其拓扑为使得所有映射 $\Sigma(A)\to\mathbb{C}, \lambda \mapsto \lambda (x)$ 都连续的最弱拓扑. 由 Gelfand--Mazur 定理, Gelfand 谱 $\Sigma(A)$ 也是 $A$ 的极大理想的集合.
+其拓扑为使得所有映射 $\Sigma(\mathcal A)\to\mathbb{C}, \lambda \mapsto \lambda (x)$ 都连续的最弱拓扑. 由 Gelfand--Mazur 定理, Gelfand 谱 $\Sigma(\mathcal A)$ 也是 $\mathcal A$ 的极大理想的集合.
 \end{definition}
 
-$\Sigma(A)$ 上拓扑的定义旨在保证每个元素 $x\in A$ 都对应 $\Sigma(A)$ 上的一个复值连续函数. 如下定理表明这个对应实际上是一个同构; 这是代数--几何对偶的一例.
+$\Sigma(\mathcal A)$ 上拓扑的定义旨在保证每个元素 $x\in A$ 都对应 $\Sigma(\mathcal A)$ 上的一个复值连续函数. 如下定理表明这个对应实际上是一个同构; 这是代数--几何对偶的一例.
 
+%--Naimark
 \begin{prop}
-    {(Gelfand--Naimark 对偶)}
+    {(Gelfand 对偶)}
     记 $\mathsf {CC}^*$ 为交换 $C^*$-代数的范畴, $\mathsf{CHaus}$ 为紧 Hausdorff 空间的范畴,
     那么 Gelfand 谱给出反变函子 $\Sigma\colon \big(\mathsf {CC}^*\big)^{\op} \to \mathsf {CHaus}$, 且有范畴等价
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -156,12 +199,16 @@ $\Sigma(A)$ 上拓扑的定义旨在保证每个元素 $x\in A$ 都对应 $\Sigm
     其中 $C(X,\mathbb{C})$ 是空间 $X$ 上复值连续函数的 $C^*$-代数.
 \end{prop}
 
-可观测量代数与状态空间互为对偶. 经典力学中, 可观测量是状态空间上的函数; 反过来, 状态空间上的点可视为可观测量代数到 $\mathbb{R}$ 的代数同态.
-完全类似地, 在量子力学中, 给定语境 $A$, 对应的 "状态空间" $\Sigma(A)$ 中的点就是 $A$ 到 $\mathbb{C}$ 的代数同态, 而 $A$ 中的可观测量则可视为状态空间 $\Sigma(A)$ 上的函数.
+\begin{remark}
+	{(Gelfand 对偶的适用范围)}
+	Gelfand 对偶的证明需要选择公理 (命题 \ref{axiom-of-choice}), 从而不能在一般的\topos{}中使用. 选择公理此处用于构造空间的\emph{点}; 若将紧 Hausdorff 空间推广为\emph{无点拓扑学}中的相应概念------\emph{紧完全正则位象} (compact completely regular locale), 则可得到 Gelfand 对偶的构造性证明 (见 \cite{CGDC}), 从而可以将其推广到任何\topos{}.
+\end{remark}
+
+对非交换的 $C^*$-代数, 我们也可赋予类似于 Gelfand 谱的一个 ``空间'', 只不过这个空间是以 Bohr \topos{}中的内位象的形式出现.
 
 \begin{definition}
     {(谱预层)}
-    对于语境 $A_1 \subset A_2$, 有限制映射 $\Sigma(A_2)\to\Sigma(A_1)$. 这定义了 $\mathcal C(\mathcal A)$ 上的预层 $\Sigma$.
+    对于量子力学系统 $\mathcal A$ 的两个经典语境 $A_1 \subset A_2$, 有限制映射 $\Sigma(A_2)\to\Sigma(A_1)$. 这定义了 $\mathcal C(\mathcal A)$ 上的预层 $\Sigma$.
 \end{definition}
 
 \begin{remark}

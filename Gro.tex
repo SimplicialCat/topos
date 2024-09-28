@@ -199,20 +199,24 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 	%\todo{第二个复合的计算}
 \end{proof}
 
+\begin{remark}
+	[label={etale-space-as-geometric-realization}]
+	{}
+	命题 \ref{etale-section-adjoint} 也可理解为预层的几何实现. 注意到 $X$ 的开集 $U\hookrightarrow X$ 本身是 $X$ 上的空间 (甚至是平展空间), 即有范畴的嵌入 $i\colon \operatorname{Open}(X) \hookrightarrow \mathsf {Top}/X$.
+	事实上, $\operatorname{Presh}(X)$ 与 $\mathsf {Top}/X$ 之间的上述伴随来自 $i$ 的米田扩张 (命题 \ref{nerve-and-realization})
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\operatorname{Open}(X)} \& {\operatorname{Presh}(X)} \\
+		\& {\mathsf {Top}/X.}
+		\arrow["i"', hook, from=1-1, to=2-2]
+		\arrow["\yo", from=1-1, to=1-2]
+		\arrow["\Lambda", dashed, from=1-2, to=2-2]
+	\end{tikzcd}\]
+	预层是可表函子的余极限 (命题 \ref{presheaf-as-colimit-of-representables}), 而预层对应的平展空间则是依这种余极限的模式, 将 $X$ 的开集 (作为 $X$ 上的空间) 粘在一起, 得到的空间:
+	\[
+	\Lambda_F = \operatorname{colim}_{\yo(U)\to F} (U\to X).
+	\]
+\end{remark}
 
-命题 \ref{etale-section-adjoint} 也可理解为预层的几何实现. 注意到 $X$ 的开集 $U\hookrightarrow X$ 本身是 $X$ 上的空间 (甚至是平展空间), 即有范畴的嵌入 $i\colon \operatorname{Open}(X) \hookrightarrow \mathsf {Top}/X$.
-事实上, $\operatorname{Presh}(X)$ 与 $\mathsf {Top}/X$ 之间的上述伴随来自 $i$ 的米田扩张 (命题 \ref{nerve-and-realization})
-\[\begin{tikzcd}[ampersand replacement=\&]
-	{\operatorname{Open}(X)} \& {\operatorname{Presh}(X)} \\
-	\& {\mathsf {Top}/X.}
-	\arrow["i"', hook, from=1-1, to=2-2]
-	\arrow["\yo", from=1-1, to=1-2]
-	\arrow["\Lambda", dashed, from=1-2, to=2-2]
-\end{tikzcd}\]
-预层是可表函子的余极限 (命题 \ref{presheaf-as-colimit-of-representables}), 而预层对应的平展空间则是依这种余极限的模式, 将 $X$ 的开集 (作为 $X$ 上的空间) 粘在一起, 得到的空间:
-\[
-\Lambda_F = \operatorname{colim}_{\yo(U)\to F} (U\to X).
-\]
 
 \begin{prop}
 	{}
@@ -597,7 +601,7 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 		\item $\phi(a,b) \leq \interpretation{a=a}\land \interpretation{b=b}$;
 		\item (关系的性质) $\phi(a_1,b_1) \land \interpretation{a_1=a_2}\land\interpretation{b_1=b_2}\leq \phi(a_2,b_2)$;
 		\item (像的唯一性) $\phi(a,b_1)\land\phi(a,b_2)\leq \interpretation{b_1=b_2}$;
-		\item (像的存在性) $\interpretation{a=a}\leq\bigvee\{\phi(a,b)\mid b\in B\}$.
+		\item (像的存在性) $\interpretation{a=a}=\bigvee\{\phi(a,b)\mid b\in B\}$.
 	\end{itemize}
 	$\mathcal O(X)$-值集合 $A$ 到自身的恒等态射由 $\interpretation{a_1=a_2}$ 给出.
 	对于两个态射 $\phi\colon A \to B, \psi\colon B \to C$, 定义其复合 $\psi\phi\colon A \to C$ 为
@@ -672,8 +676,8 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 \begin{remark}
 	{}
 	在 \ref{locales-and-logic} 节我们说明了\fm{}可视为几何逻辑下的命题理论, 其中的元素是命题 (或真值). 最简单的命题理论是 $\{\top,\bot\}$. %一个普通的集合 $A$ 配备关系 $\interpretation{a_1=a_2}=\begin{cases}	\top & a_1=a_2\\	\bot & a_1\neq a_2\end{cases}$ 即可视为 $\{\top,\bot\}$-值集合;
-	一个 $\{\top,\bot\}$-值集合即一个集合 $A$ 带有一个等价关系 $\sim$; 它同构于商集 $A/{\sim}$ (带有最小的等价关系).
-	$\mathcal O(X)$-值集合是这个概念的推广, 带有一种 ``取值于 $\mathcal O(X)$ 的等价关系''. 直观上, $\interpretation{a_1=a_2}$ 越大, $a_1,a_2$ 就 ``越相等''. 态射 $A\to B$ 则是取值于 $\mathcal O(X)$ 的函数关系; 直观上 $\phi(a,b)$ 越大, $b$ 就越适合作为 $a$ 在这个函数下的像.
+	一个 $\{\top,\bot\}$-值集合即一个集合 $A$ 带有一个等价关系 $\sim$; 它同构于商集 $A/{\sim}$ (商集 $A/{\sim}$ 作为 $\{\top,\bot\}$-值带有最小的等价关系).
+	$\mathcal O(X)$-值集合是这个概念的推广, 带有一种 ``取值于 $\mathcal O(X)$ 的等价关系''. 直观上, $\interpretation{a_1=a_2}$ 是 $a_1,a_2$ 相等的范围, 它是 $X$ 的一个开子空间. 态射 $A\to B$ 则是取值于 $\mathcal O(X)$ 的关系 $\phi(a,b)$; 直观上 $\phi(a,b)$ 是 $b$ 可以作为 $a$ 在这个函数下的像的范围.
 	$\mathcal O(X)$-值集合是\emph{直觉主义集合论} (intuitionistic set theory) 的模型.
 	需要注意的是两个同构的 $\mathcal O(X)$-值集合的底层集合未必同构.
 \end{remark}
@@ -707,23 +711,29 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 \end{definition}
 \footnotetext{单元子集这个名字可能有些不妥, 因为 ``空集'' (即取值 $\bot$ 的常值映射) 也满足这个条件.}
 
-
-\begin{definition}
-	[label={complete-OX-valued-set}]
-	{(完备 $\mathcal O(X)$-值集合)}
+\begin{propdef}
+	{($\mathcal O(X)$-值集合上的关系 $\sqsubseteq$)}
 	设 $A$ 为 $\mathcal O(X)$-值集合,
 	定义集合 $A$ 上的一个关系 $\sqsubseteq$ (\TeX 代码: \verb*|\sqsubseteq|),
 	\[
 	a\sqsubseteq b\quad\text{当且仅当}\quad \interpretation{a=b}=\interpretation{a=a}.
 	\]
-	容易验证 $a\sqsubseteq b$ 当且仅当 $\widetilde a\leq\widetilde b\colon A\to\mathcal O(X)$.
-	
+	那么 $a\sqsubseteq b$ 当且仅当 $\widetilde a\leq\widetilde b\colon A\to\mathcal O(X)$, 也即对任意 $c\in A$, $\interpretation{a=c}\leq\interpretation{b=c}$.
+\end{propdef}
+\begin{proof}
+	设 $a\sqsubseteq b$, 那么对任意 $c\in A$, $\interpretation{a=c} = \interpretation{a=c}\land\interpretation{a=a} = \interpretation{a=c}\land\interpretation{a=b}\leq \interpretation{b=c}$.
+	另一方面, 假设对任意 $c\in A$, $\interpretation{a=c}\leq\interpretation{b=c}$. 令 $c=a$ 即得 $\interpretation{a=a}\leq\interpretation{a=b}\leq\interpretation{a=a}$.
+\end{proof}
+
+\begin{definition}
+	[label={complete-OX-valued-set}]
+	{(完备 $\mathcal O(X)$-值集合)}
+	设 $A$ 为 $\mathcal O(X)$-值集合,
 	若以下条件成立, 则称 $A$ 为\emph{完备 $\mathcal O(X)$-值集合}:
 	\begin{itemize}
 		\item $\sqsubseteq$ 为偏序关系 (即若 $a\sqsubseteq b, b\sqsubseteq a$, 则 $a=b$);
-		\item 对任意 $a\in A$ 以及 $U\leq\interpretation{a=a}$, 都存在 $b\sqsubseteq a$ 满足 $\interpretation{b=b}=U$. (此时我们记 $b=a|_U$.).
+		\item 对任意 $a\in A$ 以及 $U\leq\interpretation{a=a}$, 都存在 $a'\sqsubseteq a$ 满足 $\interpretation{a'=a'}=U$. (此时我们记 $a'=a|_U$.).
 		\item 任意一族两两相容的元素 $\{a_i\}$ 在偏序 $\sqsubseteq$ 下有上确界 $s=\bigvee_i a_i$. 其中两个元素 $a,b\in A$ \emph{相容}是指 $\interpretation{a=b}=\interpretation{a=a}\land\interpretation{b=b}$, 即 $a$ 与 $b$ ``在两者共同存在时相等''.
-		注意到上确界 $s$ 的范围必然等于所有 $a_i$ 的范围的并, 因为, 记 $U$ 为所有 $a_i$ 的范围的并, 则对 $a_i$ 的任意上界 $s$, $s|_U$ 也是 $a_i$ 的上界.
 		% 这个定义难用的地方在于 s 和其它元素的关系不明. 我们希望 [[s=b]] 等于所有 [[a_i=b]] 之并.
 		%
 		% 限制到 b 上?
@@ -732,7 +742,22 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 	记完备 $\mathcal O(X)$-值集合在 $\mathsf {Set}(\mathcal O(X))$ 中构成的全子范畴为 $\mathsf {CSet}(\mathcal O(X))$.
 \end{definition}
 
-
+\begin{prop}
+	[label={complete-OX-valued-set-properties}]
+	{(完备 $\mathcal O(X)$-值集合的性质)}
+	设 $A$ 为完备 $\mathcal O(X)$-值集合, 那么
+	\begin{enumerate}[(1)]
+		\item 任意两个元素 $a,b\in A$ 有下确界 $a|_{\interpretation{a=b}} = b|_{\interpretation{a=b}}=a\land b$.
+		\item 任意一族两两相容的元素 $\{a_i\}$ 的上确界 $s$ 的范围等于所有 $a_i$ 的范围的并.
+	\end{enumerate}
+\end{prop}
+\begin{proof}~
+	\begin{enumerate}
+		[(1)]
+		\item 因为 $\interpretation{a=b}\leq\interpretation{a=a|_{\interpretation{a=b}}}$, $\interpretation{a=b}\leq\interpretation{b=b|_{\interpretation{a=b}}}$, 所以 $\interpretation{a=b}\leq\interpretation{a|_{\interpretation{a=b}}=b|_{\interpretation{a=b}}}$, 进而可知 $a|_{\interpretation{a=b}} = b|_{\interpretation{a=b}}$. 对任意 $c\in A$, 若 $c\sqsubseteq a$, $c\sqsubseteq b$, 则 $\interpretation{c=c}=\interpretation{c=b}\leq \interpretation{a=b}$, 进而 $\interpretation{c=c}\leq\interpretation{c=a}\land\interpretation{a=a|_{\interpretation{a=b}}}\leq\interpretation{c=a|_{\interpretation{a=b}}}$, 即 $c\sqsubseteq a|_{\interpretation{a=b}}$. 这说明 $a|_{\interpretation{a=b}}$ 是 $a,b$ 的下确界.
+		\item 记 $U$ 为所有 $a_i$ 的范围的并, 则对 $a_i$ 的任意上界 $s$, $s|_U$ 也是 $a_i$ 的上界. 由 $s$ 的最小性知 $s$ 的范围为 $U$.
+	\end{enumerate}
+\end{proof}
 
 \begin{prop}
 	{(完备 $\mathcal O(X)$-值集合的等价定义)}
@@ -747,7 +772,7 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 		\]
 		我们断言 $\sigma = \widetilde s$.
 		一方面, 因为 $a|_{\sigma(a)}\sqsubseteq s$, 所以
-		$$\sigma(a) = \interpretation{a|_{\sigma(a)}=a|_{\sigma(a)}}=\interpretation{s=a|_{\sigma(a)}}\leq\widetilde s(a).$$ 另一方面, $\sigma(s)$ 是所有 $\sigma(a)$ 中最大者, 而
+		$$\sigma(a) = \interpretation{a|_{\sigma(a)}=a|_{\sigma(a)}}=\interpretation{s=a|_{\sigma(a)}}\leq\interpretation{s=a}=\widetilde s(a).$$ 另一方面, $\sigma(s)$ 是所有 $\sigma(a)$ 中最大者, 而
 		$s$ 的范围等于所有 $\sigma(a)$ 的并, 故 $s$ 的范围等于 $\sigma(s)$; 这表明 $$\widetilde s(a)\leq\sigma(s)\land\interpretation{s=a}\leq\sigma(a).$$ 断言得证.
 		\item
 		假设 $A$ 的单元子集均形如 $\widetilde a$, 且 $a$ 唯一确定.
@@ -794,18 +819,20 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 \begin{prop}
 	[label={complete-OX-valued-set-morphism-represented}]
 	{(完备 $\mathcal O(X)$-值集合间态射的刻画)}
-	设 $\phi\colon (A,\epsilon) \to (B,\delta)$ 是 $\mathcal O(X)$-值集合的态射. 若 $B$ 完备, 则存在唯一的映射 $f\colon A\to B$ 使得 $\phi(a,b)=\delta(f(a),b)$. 进一步有
+	设 $\phi\colon A \to B$ 是 $\mathcal O(X)$-值集合的态射. 若 $B$ 完备, 则存在唯一的 (底层集合之间的) 映射 $f\colon A\to B$ 使得 $\phi(a,b)=\interpretation{f(a)=b}$. 进一步有
 	\begin{itemize}
-		\item $\epsilon(a_1,a_2)\leq \delta(f(a_1),f(a_2))$;
-		\item $\epsilon(a)=\delta(f(a))$.
+		\item $\interpretation{a_1=a_2}\leq \interpretation{f(a_1)=f(a_2)}$;
+		\item $\interpretation{a=a}=\interpretation{f(a)=f(a)}$;
+		\item $f$ 保持偏序关系 $\sqsubseteq$.
 	\end{itemize}
 \end{prop}
 \begin{proof}
-	对每个 $a\in A$ 考虑 $B$ 的单元子集 $b\mapsto \phi(a,b)$, 由完备性, 它可表示为 $\widetilde {f(a)}$ 的形式, 也即 $\phi(a,b)=\delta(f(a),b)$. 这确定了一个映射 $f\colon A\to B$. 注意到
+	对每个 $a\in A$ 考虑 $B$ 的单元子集 $b\mapsto \phi(a,b)$, 由完备性, 它可表示为 $\widetilde {f(a)}$ 的形式, 也即 $\phi(a,b)=\interpretation{f(a)=b}$. 这确定了一个映射 $f\colon A\to B$. 注意到
 	\begin{itemize}
-		\item $\epsilon(a)=\bigvee_{b\in B}\phi(a,b)=\bigvee_{b\in B}\delta(f(a),b)=\delta(f(a))$; %完成
-		\item $\epsilon(a_1,a_2) \leq \epsilon(a_1)=\delta(f(a_1))= \phi(a_1,f(a_1))$;
-		\item $\phi(a_1,f(a_1))\land \epsilon(a_1,a_2)\leq \phi(a_2,f(a_2))\leq \delta(f(a_1),f(a_2))$;
+		\item $\interpretation{a=a}=\bigvee_{b\in B}\phi(a,b)=\bigvee_{b\in B}\interpretation{f(a)=b}=\interpretation{f(a)=f(a)}$;
+		\item $\interpretation{a_1=a_2}\leq \interpretation{a_1=a_1}=\interpretation{f(a_1)=f(a_1)}= \phi(a_1,f(a_1))$;
+		\item $\phi(a_1,f(a_1))\land \interpretation{a_1=a_2}\leq \phi(a_2,f(a_2))\leq \interpretation{f(a_1)=f(a_2)}$;
+		\item 若 $a_1\sqsubseteq a_2$, 则 $\interpretation{f(a_1)=f(a_1)}=\interpretation{a_1=a_1}=\interpretation{a_1=a_2}\leq\interpretation{f(a_1)=f(a_2)}$.
 	\end{itemize}
 	这证明了所需的结论.
 \end{proof}
@@ -890,26 +917,98 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 		$\sigma_1(a_1)\land\interpretation{a_1=a_2}\land\interpretation{\sigma_1=\sigma_2}\leq\sigma_1(a_2)\land\interpretation{\sigma_1=\sigma_2}\leq\sigma_2(a_2)$.
 		\item $\sigma(a_1)\land\sigma(a_2)\leq\interpretation{a_1=a_2}$.
 		\item $\sigma_1(a)\land\sigma_2(a)\leq\interpretation{\sigma_1=\sigma_2}$.
-		\item $\forall_{\sigma\in\widetilde A}\sigma(a_1)\land\sigma(a_2)=\interpretation{a_1=a_2}$.
-		\item $\forall_{a\in A} \sigma_1(a)\land\sigma_2(a)=\interpretation{\sigma_1=\sigma_2}$.
+		\item $\bigvee_{\sigma\in\widetilde A}\sigma(a_1)\land\sigma(a_2)=\interpretation{a_1=a_2}$.
+		\item $\bigvee_{a\in A} \sigma_1(a)\land\sigma_2(a)=\interpretation{\sigma_1=\sigma_2}$.
 	\end{itemize}
 \end{proof}
 
+接下来我们将完备 $\mathcal O(X)$-值集合转化为 $X$ 上的平展空间.
+
 \begin{propdef}
 	{(函子 $\Delta$)}
+	定义函子 $\Delta\colon \mathsf {CSet}(\mathcal O(X)) \to \mathsf {Et}(X)$,% 如下: 设 $A$ 为完备 $\mathcal O(X)$-值集合, 令
+	$$
+	\Delta(A)=\operatorname{colim}_{a\in\mathcal A}(\interpretation{a=a} \to X) \in \mathsf {Loc}/X.
+	$$
+	其中余极限是 $\mathsf {Loc}/X$ 中的余极限, 指标范畴由定义 \ref{complete-OX-valued-set} 中的偏序 $\sqsubseteq$ 给出.
 \end{propdef}
+\begin{proof}
+	首先证明 $\Delta(A)$ 是 $X$ 上的平展空间. $\mathsf {Loc}/X$ 中的余极限即 $\mathsf {Loc}$ 中的余极限 (命题 \ref{over-colimit}), 即 $\mathsf {Frm}$ 中的极限
+	$$
+	\begin{aligned}
+		\mathcal O(\Delta(A)) &= \operatorname{lim}^{\mathsf {Frm}}_{a\in A}\mathcal O(\interpretation{a=a})\\
+		&=\Big\{(U_a)_{a\in A}\in\prod_{a\in A}\mathcal O(\interpretation{a=a})\Bigm| \forall a,b\in A(b\sqsubseteq a \Rightarrow U_b = U_a\land\interpretation{b=b})\Big\},
+	\end{aligned}
+	$$
+	$\interpretation{a=a}$ 对应 $\mathcal O(\Delta(A))$ 的元素 $(\interpretation{a=b})_{b\in A}$, 这些开子空间覆盖了 $\Delta(A)$.
+	因此 $\Delta(A)$ 确实是 $X$ 上的平展空间.
+	
+	下面验证 $\Delta$ 的函子性.
+	对于完备 $\mathcal O(X)$-值集合态射 $f\colon A\to B$ (命题 \ref{complete-OX-valued-set-morphism-represented}),
+	由于 $\interpretation{f(a)=f(a)}=\interpretation{a=a}$,
+	$f$ 保持 $\sqsubseteq$ (命题 \ref{complete-OX-valued-set-morphism-represented}),
+	指标范畴之间的函子诱导余极限之间的态射 $$
+	\Delta(A)=\operatorname{colim}_{a\in A}(\interpretation{a=a}) \to \operatorname{colim}_{b\in B}(\interpretation{b=b}) = \Delta(B).
+	$$
+	
+\end{proof}
+
+\begin{remark}
+	{}
+	与拓扑空间的情形类似 (见注 \ref{etale-space-as-geometric-realization}), $\Delta\Theta$ 是如下的米田扩张.
+	% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXG1hdGhjYWwgTyhYKSJdLFsxLDAsIlxcb3BlcmF0b3JuYW1le1ByZXNofShYKSJdLFsxLDEsIlxcbWF0aHNmIHtMb2N9L1giXSxbMCwxLCJcXHlvIl0sWzEsMiwiXFxEZWx0YVxcVGhldGEiXSxbMCwyLCJpIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal O(X)} \& {\operatorname{Presh}(X)} \\
+		\& {\mathsf {Loc}/X}
+		\arrow["\yo", from=1-1, to=1-2]
+		\arrow["i"', hook, from=1-1, to=2-2]
+		\arrow["\Delta\Theta", from=1-2, to=2-2]
+	\end{tikzcd}\]
+\end{remark}
 
 \begin{prop}
 	{}
+	对任意位象 $X$, 如下三个函子均为范畴等价.
 	% https://q.uiver.app/#q=WzAsMyxbMCwyLCJcXG9wZXJhdG9ybmFtZXtTaH0oWCkiXSxbMiwyLCJcXG1hdGhzZiB7Q1NldH0oXFxtYXRoY2FsIE8oWCkpIl0sWzEsMCwiXFxtYXRoc2Yge0V0fShYKSJdLFswLDEsIlxcVGhldGEiLDJdLFsyLDAsIlxcR2FtbWEiLDJdLFsxLDIsIlxcRGVsdGEiLDJdXQ==
 	\[\begin{tikzcd}[ampersand replacement=\&,column sep=-3pt]
 		\& {\mathsf {Et}(X)} \\
-		{\operatorname{Sh}(X)} \&\& {\mathsf {CSet}(\mathcal O(X))\hspace{-1em}}
+		{\operatorname{Sh}(X)} \&\& {\mathsf {CSet}(\mathcal O(X))\hspace{-1.5em}}
 		\arrow["\Theta"', from=2-1, to=2-3]
 		\arrow["\Gamma"', from=1-2, to=2-1]
 		\arrow["\Delta"', from=2-3, to=1-2]
 	\end{tikzcd}\]
 \end{prop}
+\begin{proof}
+	参见 \cite{Elephant} 定理 C1.3.11. 我们证明三个函子以任意方式复合均等价于恒等函子.
+	
+	先从 $X$ 上的层 $F$ 开始. 由定义,
+	$$
+	\Delta\Theta F = \operatorname{colim}_{s\in F(V),V\in\mathcal O(X)} V,
+	$$
+	其中每个截面 $s\in F(V)$ 可视为一个元素 $s\in\Theta(F)$, 其范围 $\interpretation{s=s}=V$, 对应一个位象态射 $\lambda_s \colon V\to\Delta\Theta F$, 也即平展空间 $\Delta\Theta F$ 在 $V$ 上的一个截面.
+	进一步, 对于 $W\leq V$,
+	$s|_W$ 对应的映射为 $\lambda_{s|_W} = W\hookrightarrow V\overset{\lambda_s}{\to}\Delta\Theta F$.
+	因此这一过程给出了层的同态 $\lambda \colon F \to \Gamma\Delta\Theta F$. 为了证明 $\lambda$ 为同构, 令 $\sigma$ 为 $\Delta\Theta F$ 在 $U\in\mathcal O(X)$ 上的任何一个截面,
+	对每个 $s\in F(V)$ 考虑平展空间的拉回
+	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJVIl0sWzEsMCwiViJdLFsxLDEsIlxcRGVsdGFcXFRoZXRhIEYiXSxbMCwwLCJVX3MiXSxbMCwyLCJcXGxhbWJkYV9zIiwyXSxbMSwyLCJcXHNpZ21hIl0sWzMsMF0sWzMsMV1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{W_s} \& U \\
+		V \& {\Delta\Theta F,\!\!}
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-1, to=2-1]
+		\arrow["\sigma", from=1-2, to=2-2]
+		\arrow["{\lambda_s}"', from=2-1, to=2-2]
+	\end{tikzcd}\]
+	则 $W_s$ 是 $X$ 的开子空间, $W_s\leq U\land V$ \footnote{这里 $U\land V$ 以及下面出现的 $\land$ 指的是作为 $X$ 的开子空间的交. $W_s$ 不一定等于 $U\land V$, 因为 $W_s$ 是 $U$ 和 $V$ 在 $X$ 上的一个平展空间中的交.}.
+	上图中的态射 $W_s\to \Delta\Theta F$ 作为 $\Delta\Theta F$ 在 $V_s$ 上的截面正是 $\sigma$ 在 $W_s$ 上的限制. 可以证明当 $s$ 取遍 $F$ 的元素时, $s|_{W_s}$ 构成 $F$ 的相容族 (即对任意 $s\in F(V), s'\in F(V')$, $W_s\land W_{s'} \leq\interpretation{s=s'}$), 由 $F$ 为层, 这些截面拼成了一个截面 $\bar\sigma\in F(U)$ 使得 $\lambda _{\bar\sigma} = \sigma$. 这证明了 $\lambda$ 为同构.
+	%\todo{elephant C1.3.11}
+	
+	从完备 $\mathcal O(X)$-值集合 $A$ 开始, 证明 $\Theta\Gamma\Delta A \simeq A$ 的方法与上述论证无异, 因为我们已经建立了完备 $\mathcal O(X)$-值集合与层之间的等价 (命题 \ref{sheaf-vs-complete-OX-valued-set}).
+	
+	最后, 设 $p\colon E\to X$ 为平展空间,
+	由定义, $\Theta\Gamma E$ 是 $E$ 在所有 $U\in\mathcal O(X)$ 上的截面 $s\colon U\to E$ 的集合, %这些态射给出了余极限出发的态射 $\mu\colon \Delta\Theta\Gamma E\to E$.
+	因为所有这些截面 $s\colon U\to E$ 构成了 $E$ 的开覆盖, 所以它们构成余极限余锥, 从而有 $\Delta\Theta\Gamma E=\operatorname{colim}_{s}U\simeq E$.
+\end{proof}
 
 %
 %\subsection{层与平展空间: \topos{}版本}
@@ -979,23 +1078,21 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 \begin{example}
     [label={Simplicial-Sets}]
     {(单纯集)}
-    令范畴 $\Delta$ 为有限全序集 $[0],[1],[2],\cdots$ 与保序映射构成的范畴, 其中 $[n] = \{0,1,\cdots,n\}$, 称映射 $f \colon [n] \to [m]$ 为保序映射是指当 $i\leq j$ 时 $f(i)\leq f(j)$.
-    我们将 $[n]$ 想象为 $n$ 维单纯形.
-    称范畴 $\Delta$ 为\emph{单纯范畴} (simplicial category).
-
-    $\Delta$ 上的预层称为\emph{单纯集} (simplicial set), 也就是可用单纯形来探测的空间. 记单纯集范畴为
+    令范畴 $\Delta$ 为有限全序集 $[0],[1],[2],\cdots$ 与保序映射构成的范畴, 其中 $[n] = \{0,1,\cdots,n\}$ (称映射 $f \colon [n] \to [m]$ 为保序映射是指当 $i\leq j$ 时 $f(i)\leq f(j)$),
+    $[n]$ 是抽象的 $n$ 维单纯形.
+    称范畴 $\Delta$ 为\emph{单纯形范畴} (simplex category). 单纯形范畴上的预层称为\emph{单纯集} (simplicial set), 其直观是可用单纯形来探测的空间. 记单纯集的范畴为
     $\mathsf {sSet}=\widehat {\Delta}=\mathsf {Fun}(\Delta^{\op},\mathsf {Set})$.
     
     对于单纯集 $X \colon 
     \Delta^{\op} \to \mathsf {Set}$,
-    $X([n])$ 表示 $X$ 中 $n$ 维单形的集合,
-    其中含有退化的单形.
+    $X([n])$ 的直观是 $X$ 中 $n$ 维单形的集合
+    (其中含有 ``退化'' 的单形).
     记米田嵌入 $\yo([n])$ 为 $\Delta^n$,
     米田引理告诉我们
     $$
     X([n]) \simeq \operatorname{Hom}_{\mathsf {sSet}}(\Delta^n,X),
     $$
-    因此如上关于 $X([n])$ 的解释是准确的.
+    因此上述 $X([n])$ 的直观是合理的.
 \end{example}
 
 \begin{example}
@@ -1033,6 +1130,8 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 
 下面我们说明小范畴 $\mathcal C$ 上的预层范畴 $\widehat {\mathcal C}$ 是一个\topos{}.
 
+\subsection{预层范畴中的极限与余极限}
+
 \begin{prop}
 	[label={presheaf-category-complete}]
 	{(预层范畴完备且余完备)}
@@ -1047,8 +1146,23 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
     余极限类似.
 \end{proof}
 
-特别地, 预层范畴 $\widehat {\mathcal C}$ 的终对象 (空图的极限) 是将所有对象 $c$ 对应到 $\mathsf {Set}$ 的终对象 $1$ 的预层, 而始对象 (空图的余极限) 将所有对象对应到 $\mathsf {Set}$ 的始对象 $0$.
-预层的积与和即是逐点的积与和.
+\begin{example}
+	{(预层范畴中常用的极限和余极限)}
+	\begin{itemize}
+		\item $\widehat {\mathcal C}$ 的终对象 (空图的极限) 是常值预层 $1$, 将所有对象 $c$ 对应到 $\mathsf {Set}$ 的终对象 $1$.
+		\item $\widehat {\mathcal C}$ 的始对象 (空图的余极限) 是常值预层 $0$.
+		\item $\widehat {\mathcal C}$ 中两个对象 $X,Y$ 的和与积满足
+		$$
+		(X+Y)(c)\simeq X(c)+Y(c),\quad (X\times Y)(c)\simeq X(c)\times Y(c).
+		$$
+		\item $\widehat {\mathcal C}$ 中态射 $f\colon X\to Y$ 的像 $\operatorname{im}f=\operatorname{coeq}(X\times_Y X\rightrightarrows X)\hookrightarrow Y$ (命题 \ref{epi--mono-factorization}) 是如下的预层:
+		$$
+		(\operatorname{im}f)(c)=\operatorname{im}(f_c\colon X(c)\to Y(c)).
+		$$
+	\end{itemize}
+\end{example}
+
+\subsection{预层范畴中的指数对象}
 
 \begin{prop}
 	[label={presheaf-category-exponential}]
@@ -1098,7 +1212,7 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 
 由于预层范畴的俯范畴也是预层范畴 (命题 \ref{slice-of-presheaf-is-presheaf-over-slice}), 我们得到 $\widehat {\mathcal C}$ 甚至是局部积闭范畴.
 
-\subsection{筛与预层范畴中的子对象}
+\subsection{预层范畴中的子对象分类子}
 
 本节的目标是描述预层范畴 $\widehat{\mathcal C}$ 中的子对象以及子对象分类子.
 
@@ -1132,6 +1246,7 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 \end{definition}
 
 \begin{remark}
+	[label={sieve-intuition}]
     {(筛的直观)}
     在现实生活中, 筛是一种能把大的东西挡住, 让小的东西通过的工具. 想象 $S$ 的元素为可以 ``通过'' $S$ 的箭头.
     若 $d \overset{f}{\longrightarrow} c$ 可以 ``通过'' $S$, 那么 $e \overset{g}{\longrightarrow} d \overset{f}{\longrightarrow} c$ 比 $d \overset{f}{\longrightarrow} c$ ``小'', 从而它也可以 ``通过'' $S$.
@@ -1146,8 +1261,9 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 \end{remark}
 
 \begin{example}
+	[label={sieve-in-poset}]
 	{(偏序集中的筛)}
-	对于偏序集 $P$ 的元素 $p$, 记 $\downarrow p = \{x\in P\mid x\leq p\}$. 那么 $p$ 上的筛可简单地描述为 $\downarrow p$ 的一个\emph{向下封闭子集}.
+	对于偏序集 $P$ 的元素 $p$, 记 $\downarrow p = \{x\in P\mid x\leq p\}$. 那么 $p$ 上的一个筛 $S$ 即是 $\downarrow p$ 的子集, 使得若 $x\in S$, $y\leq x$, 则 $y\in S$. 称这样的 $S$ 为 $\downarrow p$ 的\emph{向下封闭子集}.
 \end{example}
 
 \begin{example}
@@ -1180,7 +1296,7 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
     $$
     是 $c$ 上的筛. 很明显, 这两个对应是互逆的.
     注意 $X$ 的函子性恰好等价于筛 $S$ 为右理想.
-    容易验证筛 $S$ 沿态射 $f\colon d\to c$ 的拉回等同于 $\yo(c)$ 的子对象 $X$ 沿 $f$ 的拉回.
+    容易验证筛 $S$ 沿态射 $f\colon d\to c$ 的拉回等同于 $\yo(c)$ 的子对象 $X$ 沿 $f\colon \yo(d)\to \yo(c)$ 的拉回.
 \end{proof}
 
 在后文中, 我们将自由地运用上述对应, 将 $c$ 上的筛与 $\yo(c)$ 的子函子完全等同, 请读者务必熟悉.
@@ -1245,11 +1361,15 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
     设 $S$ 是 $c$ 上的筛, $f\colon d\to c$, 那么 $f\in S$ 当且仅当 $f^*S$ 为 $d$ 上的极大筛.
 \end{example}
 
-假设 $\widehat{\mathcal C}$ 中存在子对象分类子 $\Omega$, 那么由米田引理, 有自然同构
+\subsubsection{预层范畴的子对象分类子}
+
+假设 $\widehat{\mathcal C}$ 中存在子对象分类子 $\Omega$, 那么 $\Omega$ 是确定的: 由米田引理, 有自然同构
 $$
 \Omega(c) \simeq \operatorname{Hom}_{\widehat {\mathcal C}}(\yo(c),\Omega)
 \simeq \operatorname{Sub}_{\widehat {\mathcal C}}(\yo(c))\simeq \{\text{$c$ 上的筛}\}.
 $$
+下面证明这个预层确实是 $\widehat{\mathcal C}$ 的子对象分类子.
+
 \begin{prop}
 	[label={presheaf-category-subobject-classifier}]
 	{(预层范畴的子对象分类子)}
@@ -1262,9 +1382,10 @@ $$
     中的子对象 $\yo(c)$ 自身, 也即 $c$ 上的极大筛.
     设 $Y\to X$ 是 $\widehat{\mathcal C}$ 中的任意子对象.
     定义态射 $\chi \colon X \to \Omega$, 将 $x\in X(c)$ 对应到 $c$ 上的筛
-    $$
-    \chi_c(x) := \big\{f \colon d \to c \mid X(f)(x) \in Y(d)\big\}.
-    $$
+    \begin{equation}
+    	\chi_c(x) := \big\{f \colon d \to c \mid X(f)(x) \in Y(d)\big\}.
+    	\tag{$\star$}
+    \end{equation}
     注意 $\chi_c(x)$ 是极大筛当且仅当 $\operatorname{id}_c \in \chi_c(x)$, 也即 $x \in Y(c)$,
     所以子对象 $Y\to X$ 是如下的拉回.
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJYIl0sWzEsMSwiXFxPbWVnYSJdLFsxLDAsIjEiXSxbMCwwLCJZIl0sWzMsMF0sWzAsMSwiXFxjaGkiLDJdLFsyLDEsIlxcdG9wIl0sWzMsMl1d
@@ -1279,7 +1400,9 @@ $$
 	这证明了 $\Omega$ 是 $\widehat{\mathcal C}$ 的子对象分类子, 且 $\top\colon 1\to\Omega$ 是万有子对象.
 \end{proof}
 
-\begin{remark}{}
+\begin{remark}
+	[label={presheaf-subobject-classifier-motivation}]
+	{(特征函数的定义的解释)}
 	假设下图中右侧方块以及长方形为拉回,
 	可得左侧方块为拉回,
 	% https://q.uiver.app/#q=WzAsNixbMSwwLCJZIl0sWzEsMSwiWCJdLFswLDEsIlxceW8oYykiXSxbMiwwLCIxIl0sWzIsMSwiXFxPbWVnYSJdLFswLDAsIlxcY2hpX2MoeCkiXSxbMyw0LCJcXHRvcCJdLFsxLDQsIlxcY2hpIiwyXSxbMCwzXSxbMCwxXSxbMiwxLCJ4IiwyXSxbNSwyXSxbNSwwXV0=
@@ -1297,7 +1420,7 @@ $$
 	因此 $\chi_c(x) = \{f\in\yo(c)(d)\mid x\circ f\in Y(d)\}$.
 	注意到对于 $x\in X(c)$, 有 $x\in Y(c)$ 当且仅当上图中存在提升 $\yo(c)\to Y$,
 	当且仅当 $\chi_c(x) = \yo(c)$.
-	这解释了态射 $X\to\Omega$ 的构造.
+	这解释了态射 $\chi\colon X\to\Omega$ 的构造.
 \end{remark}
 
 综合上述论证, 我们得到
@@ -1315,6 +1438,16 @@ $$
     事实上, 一个 $G$-集 $X$ 的子对象 $Y$ 是其中 $G$-作用下封闭的子集. 其对应的特征函数 $X\to\{\top,\bot\}$ 就是子集 $Y$ 的特征函数.
 \end{example}
 
+%回忆\topos{}中的子对象分类子 $\Omega$ 有内蕴 Heyting 代数结构. 对于预层范畴的情形, 其结构态射可用筛具体写出.
+
+%\begin{prop}
+%	{}
+%	设 $R,S$ 是范畴 $\mathcal C$ 对象 $c$ 上的筛, 即 $\Omega(c)$ 的元素.
+%	\begin{itemize}
+%		\item 
+%		$R\land S$
+%	\end{itemize}
+%\end{prop}
 
 \section{景}
 
@@ -1330,25 +1463,27 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 本小节有许多的定义, 在读者看来这些定义可能有些冗余. 这或许是历史的遗留, 但每个定义有各自的长处.
 
 \begin{definition}{(覆盖结构)}
-    设范畴 $\mathcal C$ 具有拉回.
-    $\mathcal C$ 上的一个\emph{覆盖结构} (coverage) $T$ 是如下结构: 对每个对象 $c$ 指定一个集合 $T(c)$, 其元素为态射族 $\{f_i \colon c_i \to c\}_{i\in I}$, 称为 $c$ 的 $T$-\emph{覆盖族} (covering family), 满足
+    范畴 $\mathcal C$ 上的一个\emph{覆盖结构} (coverage) $T$ 是如下资料: 对每个对象 $c$ 指定一个集合 $T(c)$, 其元素为态射族 $\{f_i \colon c_i \to c\}_{i\in I}$, 称为 $c$ 的 $T$-\emph{覆盖族} (covering family), 满足
     \begin{itemize}
-    	\item (拉回下的稳定性) 若 $\{f_i \colon c_i \to c\}_{i\in I}\in T(c)$, $g \colon d \to c$,
-    	则 $\{g^*(f_i) \colon d_i \to d\}_{i\in I}\in T(d)$.
+    	\item (拉回下的稳定性) 若 $\{f_i \colon c_i \to c\}_{i\in I}\in T(c)$, 对任意态射 $g \colon d \to c$,
+    	存在 $\{h_j \colon d_j \to d\}_{j\in J}\in T(d)$
+    	使得每个 $gh_j$ 都穿过某个 $f_i$.
     \end{itemize}
-        
+	
     %带有覆盖结构的范畴 $(\mathcal C,T)$ 称为\emph{景} (site).
-    对于两个覆盖结构 $T,T'$, 若 $T$-覆盖族都是 $T'$-覆盖族, 则称 $T'$ 较\emph{细} (fine).
+    对于两个覆盖结构 $T,T'$, 若 $T\subset T'$, 则称 $T'$ 较\emph{细} (fine).
 \end{definition}
 
-对于拓扑空间的开集范畴, 拉回下的稳定性相当于若一族开集覆盖了 $U$, 那么它们也覆盖了 $U$ 的任何子集.
-
 \begin{remark}
-    {}
-    当 $\mathcal C$ 不存在拉回时, ``拉回下的稳定性'' 可改为: 若 $\{f_i \colon c_i \to c\}_{i\in I}\in T(c)$, $g \colon d \to c$,
-    则存在 $\{h_j \colon d_j \to d\}_{j\in J}\in T(d)$,
-    使得每个 $gh_j$ 都穿过某个 $f_i$.
+	{(具有拉回的范畴上的覆盖结构)}
+	对于具有拉回的范畴 $\mathcal C$, 我们通常要求覆盖结构满足如下更强的条件.
+	\begin{itemize}
+		\item (拉回下的稳定性) 若 $\{f_i \colon c_i \to c\}_{i\in I}\in T(c)$, $g \colon d \to c$,
+		则 $\{g^*(f_i) \colon d_i \to d\}_{i\in I}\in T(d)$.
+	\end{itemize}
 \end{remark}
+
+%对于拓扑空间的开集范畴, 拉回下的稳定性相当于若一族开集覆盖了 $U$, 那么它们也覆盖了 $U$ 的任何子集.
 
 %\begin{remark}{}
 %    上面定义的覆盖结构有时也称为范畴上的 \emph{Grothendieck 拓扑}, 但这个词的含义有时要窄一些.
@@ -1357,8 +1492,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 \begin{definition}
 	[label={sheaf-condition}]
 	{(关于态射族的层条件)}
-	
-	设 $F$ 是范畴 $\mathcal C$ 上的预层. 设 $M = \{f_i\colon c_i\to c\}_{i\in I}$ 是 $\mathcal C$ 中的一族态射. 称 $F$ 满足关于 $M$ 的\emph{层条件}, 是指对任意一组相容的元素 $(s_i\in F(c_i))_{i\in I}$,
+	设 $F$ 是范畴 $\mathcal C$ 上的预层. 设 $M = \{f_i\colon c_i\to c\}_{i\in I}$ 是 $\mathcal C$ 中的一族共终点的态射. 称 $F$ 满足关于 $M$ 的\emph{层条件}, 是指对任意一组相容的元素 $(s_i\in F(c_i))_{i\in I}$,
 	存在唯一的 $s\in F(c)$ 满足 $$F(f_i)(s)=s_i\,\forall i\in I.$$
 	其中, 一组元素 $(s_i\in F(c_i))_{i\in I}$ \emph{相容}是指对任意态射 $f\colon d \to c_i$, $g\colon d \to c_j$, 有 $$F(f)(s_i) = F(g)(s_j) \in F(d).$$
 	
@@ -1379,7 +1513,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	\operatorname{Hom}_{\widehat {\mathcal C}}(\yo(c),F) \to \operatorname{Hom}_{\widehat {\mathcal C}}(S,F)
 	$$
 	(分离性条件等价于它是单射.) 对比例 \ref{sieve-from-cover-subfunctor} 中的式 (\ref{sieve-subfunctor-equalizer}).
-	这个条件也可表述为 $F$ 是关于 $S\to \yo(c)$ 的\emph{局部对象} (定义 \ref{local-objects}), 对比后文中的定义 \ref{Lawvere--Tierney-topology-sheaf}.
+	$F$ 关于 $S$ 的层条件也可表述为 $F$ 是关于 $S\to \yo(c)$ 的\emph{局部对象} (定义 \ref{local-objects}), 这种表述的优势在于能一字不改地推广为 Lawvere--Tierney 拓扑的层条件 (定义 \ref{Lawvere--Tierney-topology-sheaf}).
 \end{definition}
 
 \begin{definition}
@@ -1388,8 +1522,8 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 \end{definition}
 
 \begin{remark}
-	{}
-	由定义, 覆盖结构越\emph{细}, 对应的层条件就越\emph{强}, 层就越\emph{少}.
+	{(覆盖结构的粗细)}
+	由定义, 覆盖结构越\emph{细}, 对应的层条件就越\emph{强}, 层就越\emph{少}. 注意, 覆盖结构的粗细与筛的粗细是两个不同的概念. 对于覆盖结构 $T\subset T'$, 我们称 $T'$ 较细; 对于筛 $S\subset S'$, 我们称 $S$ 较细 (见注 \ref{sieve-intuition}).
 \end{remark}
 
 \begin{definition}
@@ -1443,32 +1577,104 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 %筛 $S$ 覆盖态射 $f\colon d\to c$ 在直观上说的是 $S$ 覆盖了 $f$ 的像 (不一定是范畴论意义下的像).
 
 \begin{remark}
+	[label={saturation-condition-covering}]
 	{(关于饱和性条件)}
-	Grothendieck 拓扑的定义中, 要求覆盖族是筛且满足 ``极大筛'' 和 ``传递性'', 这些都是\emph{饱和性条件} (saturation condition), 我们随时可以关于这些条件 ``取闭包''; 而有没有这些条件对层条件不产生任何影响:
+	Grothendieck 拓扑的定义中, 要求覆盖族是筛且满足\emph{极大筛}和\emph{传递性}的条件, 这些都是\emph{饱和性条件} (saturation condition), 假设一个覆盖结构不满足这些条件, 我们也可以关于这些条件取 ``闭包'' 而不影响层条件:
 	\begin{itemize}
 		\item (筛) 一族态射 $M= \{f_i\colon c_i \to c\}_{i\in I}$ 的层条件等价于其生成的筛的层条件;
 		\item (极大筛) 极大筛的层条件是平凡的 (一族态射只要包含了 $\operatorname{id}_c$, 其层条件就是平凡的);
 		\item (传递性) 若预层 $F$ 满足 $\{f_i\colon c_i\to c\}_{i\in I}$ 的层条件, 且对每个 $i$ 都有一族态射 $\{h_{ij}\colon c_{ij}\to c_i\}_{j\in I_i}$ 使得 $F$ 满足其层条件, 那么 $F$ 也满足复合态射族 $\{f_i\circ h_{ij}\colon c_{ij}\to c\}_{i\in I,j\in I_i}$ 的层条件. (见 Elephant \cite{Elephant} C2.1 节引理 7.)
 	\end{itemize}
-	只有 ``拉回下的稳定性'' 是核心的, 这就是为什么我们分离出覆盖结构的概念.
+	因此在 Grothendieck 拓扑的定义中只有\emph{拉回下的稳定性}是关键的.
 \end{remark}
 
-\begin{propdef}
+\begin{prop}
+	[label={sieve-and-sheaf-condition}]
+	{(筛与层条件的关系)}
+	\begin{enumerate}[(1)]
+		\item 设 $R, S$ 是 $c$ 上的筛. 若预层 $F$ 满足关于 $R$ 的层条件, 且 $R\subset S$, 则 $F$ 也满足关于 $S$ 的层条件.
+		\item 设 $R, S$ 是 $c$ 上的筛. 若预层 $F$ 满足关于 $R$ 的层条件, 且对任意 $f\in R$, $F$ 满足关于 $f^*S$ 的层条件, 则 $F$ 也满足关于 $S$ 的层条件.\label{sieve-transitive-sheaf-condition}
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	~
+	\begin{enumerate}
+		[(1)]
+		\item 任意态射 $S\to F$ 复合 $R\hookrightarrow S$ 得到 $R\to F$, 从而唯一地延拓为 $\yo(c) \to F$.
+		\item 考虑集合 $S'= \{fh\mid f\in R, h\in f^*S\}$. 由注 \ref{saturation-condition-covering} 中关于传递性的讨论, $F$ 满足关于 $S'$ 的层条件. 而 $S'\subset S$, 故 $S'$ 生成的筛包含于 $S$; 由 (1), $F$ 满足关于 $S$ 的层条件.
+	\end{enumerate}
+\end{proof}
+
+\begin{prop}
+	[label={finest-topology-sheaf}]
+	{}
+	设 $F$ 是范畴 $\mathcal C$ 上的预层, 则 $\mathcal C$ 上存在一个最细的 Grothendieck 拓扑 $J_F$ 使得 $F$ 满足关于 $J_F$ 的层条件.
+\end{prop}
+\begin{proof}
+	定义覆盖结构 $J_F$ 如下,
+	$$
+	J_F(c) = \{\text{$c$ 上的筛 $S\hookrightarrow\yo(c)$} \mid \text{对任意 $f\colon d\to c$, $F$ 满足关于 $f^*S$ 的层条件}\}.
+	$$
+	由定义, 对任意 Grothendieck 拓扑 $J$, 若 $F$ 为 $J$-层, 则 (由 $J$-覆盖筛的拉回稳定性) $J\subset J_F$.
+	我们只需验证 $J_F$ 为 Grothendieck 拓扑.
+	\begin{itemize}
+		\item (极大筛) 极大筛的拉回仍是极大筛, 极大筛的层条件是平凡的, 故极大筛均属于 $J_F$.
+		\item (拉回下的稳定性) 假设 $S\in J_F(c)$, $f\colon d\to c$, 由于 $f^*S$ 的拉回也是 $S$ 的拉回, 故 $f^*S\in J_F(d)$.
+		\item (传递性)
+		假设 $S\in J_F(c)$,
+		且 $R$ 是 $c$ 上的另一个筛,
+		使得对任意 $(f\colon d\to c)\in S$, $f^*R\in J_F(d)$.
+		%
+		%		那么对任意 $h\colon d\to c$,
+		%			$F$ 满足关于 $f^*S$ 的层条件,
+		%			且对任意 $g\colon e\to d$,
+		%			$F$ 满足关于 $g^*f^*R$ 的层条件.
+		%
+		%由注 \ref{saturation-condition-covering} 关于传递性的讨论,
+		%
+		
+		由 $S\in J_F(c)$, 对任意 $h\colon b\to c$,
+		$F$ 满足 $h^*S$ 的层条件.
+		
+		对任意 $(k\colon a\to b)\in h^*S$, $(hk\colon a\to c)\in S$.
+		由 $R$ 的假设, $(hk)^*R = k^*h^*R\in J_F(a)$; 特别地, $F$ 满足关于 $k^*h^*R$ 的层条件.
+		
+		由以上结论及命题 \ref{sieve-and-sheaf-condition} (\ref{sieve-transitive-sheaf-condition}),
+		$F$ 满足关于 $h^*R$ 的层条件.
+		%
+		这说明 $R\in J_F(c)$.
+	\end{itemize}
+\end{proof}
+
+\begin{prop}
 	[label={coverage-generated-Grothendieck-topology}]
-	{(覆盖生成的 Grothendieck 拓扑)}
-	设范畴 $\mathcal C$ 上有覆盖结构 $T$. 那么\emph{存在唯一的} Grothendieck 拓扑 $J$ 给出与 $T$ 相同的层条件, 称为 $T$ 生成的 Grothendieck 拓扑.
-	具体地,
-	$$
-	J(c)=\{\text{$c$ 上的筛 $S$} \mid \cdots\}.
-	$$
-	\todo{}
-\end{propdef}
+	{(覆盖与 Grothendieck 拓扑的关系)}
+	设范畴 $\mathcal C$ 上有覆盖结构 $T$. 那么存在 Grothendieck 拓扑 $J$ 给出与 $T$ 相同的层条件.
+%	具体地,
+%	$$
+%	J(c)=\{\text{$c$ 上的筛 $S$} \mid \cdots\}.
+%	$$
+%	\todo{}
+\end{prop}
+\begin{proof}
+	令 $\overline{T}$ 为 $T$ 中的覆盖族生成的筛的集合, 
+	则 $T$ 的层条件等价于 $\overline{T}$ 的层条件.
+	令 $J$ 为所有包含 $\overline{T}$ 的 Grothendieck 拓扑的交, 则 $J$ 为 Grothendieck 拓扑. ($J$ 的表达式可显式写出, 此处略去.)
+	设 $F$ 为 $T$-层. 由命题 \ref{finest-topology-sheaf} 的证明, $\overline{T}\subset J_F$, 从而 $J\subset J_F$.
+	这说明 $F$ 为 $J$-层. 故 $J$ 给出与 $T$ 相同的层条件.
+	%\todo{}sieve-and-sheaf-condition
+\end{proof}
+
+\begin{remark}
+	{}
+	一般而言, 即使覆盖结构很简洁, 也难以根据命题 \ref{coverage-generated-Grothendieck-topology} 具体写出对应的 Grothendieck 拓扑. 覆盖结构与 Grothendieck 拓扑的关系正如一个群的生成元和群本身的关系.
+\end{remark}
 
 下面这个概念也被某些文献用作 Grothendieck 拓扑的定义.
 
 \begin{definition}
 	{(Grothendieck 拓扑基)}
-	设范畴 $\mathcal C$ 有拉回. 其上的一组 \emph{Grothendieck 拓扑基} (basis for a Grothendieck topology, 又称 Grothendieck 预拓扑, pretopology) $K$ 是如下结构:
+	设范畴 $\mathcal C$ 有拉回. 其上的一组 \emph{Grothendieck 拓扑基} (basis for a Grothendieck topology, 又称 \emph{Grothendieck 预拓扑}, pretopology) $K$ 是如下结构:
 	对每个对象 $c$ 指定一个集合 $K(c)$, 其元素为态射族 $\{f_i\colon c_i\to c\}_{i\in I}$, 满足
 	\begin{itemize}
 		\item (恒等) $\{\operatorname{id}_c\} \in K(c)$;
@@ -1486,67 +1692,67 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	为了表达的方便, 我们也将用覆盖结构或 Grothendieck 拓扑基来代指其生成的 Grothendieck 拓扑.
 \end{definition}
 
-\begin{remark}
-	{}
-	引入覆盖结构以及 Grothendieck 拓扑基等概念的目的大约是
-	\begin{itemize}
-		\item 方便给出 Grothendieck 拓扑 (不需要给出所有的筛);
-		\item 方便验证层条件 (不需要对所有的筛验证).
-	\end{itemize}
-	而 Grothendieck 拓扑的优势在于
-	\begin{itemize}
-		\item 唯一性 (命题 \ref{coverage-generated-Grothendieck-topology});
-		\item 与后文介绍的 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}) 的关系.
-	\end{itemize}
-\end{remark}
+%\begin{remark}
+%	{}
+%	引入\emph{覆盖结构}以及 \emph{Grothendieck 拓扑基}等概念的目的大约是
+%	\begin{itemize}
+%		\item 方便给出 Grothendieck 拓扑 (不需要给出所有的筛);
+%		\item 方便验证层条件 (不需要对所有的筛验证).
+%	\end{itemize}
+%%	而 Grothendieck 拓扑的优势在于
+%%	\begin{itemize}
+%%		\item 唯一性 (命题 \ref{coverage-generated-Grothendieck-topology});
+%%		\item 与后文介绍的 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}) 的关系.
+%%	\end{itemize}
+%	\emph{覆盖结构}与 Grothendieck 拓扑的关系正如一个群的生成元和群本身的关系.
+%\end{remark}
 
 \begin{definition}
 	{(景)}
 	带有 Grothendieck 拓扑的 (小) 范畴称为\emph{景}.
 \end{definition}
 
-我们不总是要求景是小的. 在许多要求景的 ``小'' 性的时候, 只需要其有一个小的 $J$-稠密子范畴 (定义 \ref{site-J-dense-subcategory}).
-
-如下定义出自 SGA 4 II.2 节 \cite{SGA4}.
-
 \begin{definition}
-	[label={canonical-topology}]
-	{(典范 Grothendieck 拓扑)}
-	对于范畴 $\mathcal C$ 上的 Grothendieck 拓扑 $J$, 若以下两个等价条件之一成立, 则称之为\emph{次典范} (subcanonical) Grothendieck 拓扑:
-	\begin{itemize}
-		\item 每个 $J$-覆盖筛 $S = \{f_i\colon c_i\to c\}$ 都构成\emph{余极限余锥} (colimit cocone), 使得 $c$ 成为 $c_i$ 的余极限; 这样的筛称为\emph{有效满} (effective-epimorphic) 的;
-		\item 每个可表函子 $\yo(c)$ 都是层.
-	\end{itemize}
-	这意味着我们可将 $\mathcal C$ 通过米田嵌入视为 $\operatorname{Sh}(\mathcal C,J)$ 的全子范畴.
-	定义\emph{典范 Grothendieck 拓扑}是最细的次典范 Grothendieck 拓扑.
+	[label={convention-coverage}]
+	{(Grothendieck 拓扑语境下的 ``覆盖'')}
+	当范畴 $\mathcal C$ 上有 Grothendieck 拓扑 $J$ 时, 作如下约定: 称一族态射 $\{f_i\colon c_i\to c\}$ \emph{覆盖}了对象 $c$ 是指其生成的筛 $$\{h\colon d\to c\mid \text{$h$ 穿过某个 $f_i$}\}$$ 是 $J$-覆盖筛.
 \end{definition}
+
+\begin{remark}
+	{(关于景的小性)}
+	我们一般要求景是小的, 但是许多结论可以推广到所谓\emph{本质小}的景, 即其有一个小的 $J$-稠密子范畴 (定义 \ref{site-J-dense-subcategory}).
+\end{remark}
+
+
 
 \subsection{常见的景}
 
 % 正如环中一族元素可以生成一个右理想, 范畴 $\mathcal C$ 中一族指向 $U$ 的箭头也可以生成一个筛. 容易看到, 将覆盖族替换为生成的筛, 不影响层的概念 (正如将环中的一族元素替换为其生成的理想, 不影响对应谱上的闭集一样). 因此我们不妨考虑仅由筛构成的覆盖结构.
 
 \begin{example}
-    {}
-    每个范畴 $\mathcal C$ 都构成一个平凡的景, 其上的覆盖结构是空的,
-    也即没有覆盖. 由定义, 这个景上的层是 $\mathcal C$ 上的预层.
+	{}
+	每个范畴 $\mathcal C$ 都构成一个平凡的景, 其上的覆盖结构为空.
+	该覆盖结构对应的 Grothendieck 拓扑称为\emph{平凡拓扑} $J_{\text{平凡}}$, 其中仅包含每个对象上的极大筛.
+	一族态射 $\{f_i\colon c_i\to c\}$ 覆盖 $c$ 当且仅当某个 $f_i$ 穿过 $\operatorname{id}_c$, 即 $f_i$ 为收缩.
+	由定义, 这个景上的层是 $\mathcal C$ 上的预层.
 \end{example}
 
 \begin{example}
     [label={topological-space-as-site}]
     {(拓扑空间)}
     拓扑空间 $X$ 的开集范畴 $\operatorname{Open}(X)$ 构成一个景, 其上的覆盖结构是\emph{开覆盖}.
-    每个可表函子 $\yo(U)$ 都是层, 即这个覆盖结构定义的 Grothendieck 拓扑是次典范的.
+    注意此时 ``拉回下的稳定性'' 即是说若一族开集 $\{U_i\}$ 覆盖了 $V$, 那么对于 $W\subset V$, $\{U_i\land W\}$ 覆盖了 $W$.
+    %因为每个可表函子 $\yo(U)$ 都是层, 所以这个覆盖结构定义的 Grothendieck 拓扑是次典范的.
 \end{example}
 
 %\todo{解释景的小性}
 
 \begin{example}
     {(拓扑空间范畴)}
-    ``拓扑空间范畴'' 上有一个由\emph{开覆盖}确定的覆盖结构.
-    严格地说, 设 $\mathsf T$ 是一个小的拓扑空间范畴\footnotemark, 对于 $X\in\mathsf T$ 令集合 $K(X)$ 由 $X$ 的所有开覆盖 $\{f_i\colon U_i\to X\}_{i\in I}$ 组成.
+    拓扑空间的范畴\footnotemark{}上有一个由\emph{开覆盖}确定的覆盖结构.
 \end{example}
 
-\footnotetext{拓扑空间范畴 $\mathsf {Top}$ 不是小范畴, 因为每个集合都能配上离散拓扑成为一个拓扑空间. 但是我们可以考虑其中小的子范畴, 如可分 Hausdorff 空间范畴 (回忆, 可分空间是指有可数稠密子集的空间).}
+\footnotetext{$\mathsf {Top}$ 不是小范畴, 因为每个集合都能配上离散拓扑成为一个拓扑空间. 但是出于实用的目的, 我们可以考虑其中小的子范畴, 如可分 Hausdorff 空间范畴 (回忆, 可分空间是指有可数稠密子集的空间).}
 
 \begin{example}
 	[label={locale-as-site}]
@@ -1566,51 +1772,53 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
     {(Cartesius 空间)}
     考虑 Cartesius 空间\footnotemark{}的范畴 $\mathsf {CartSp}$, 其中的对象为 $\mathbb{R}^0,\mathbb{R}^1,\mathbb{R}^2,\cdots$,
     态射为光滑映射.
-    称 $\mathbb{R}^n$ 的开覆盖 $\{U_i\}$ 为 \emph{好覆盖} (good cover) 是指 $U_i$ 以及任意有限个 $U_i$ 的交都同胚于 $\mathbb{R}^n$.
+    称 $\mathbb{R}^n$ 的开覆盖 $\{U_i\}$ 为 \emph{好覆盖} (good cover) 是指 $U_i$ 同胚于 $\mathbb{R}^n$, 且任意有限个 $U_i$ 的交 (假若非空) 都同胚于 $\mathbb{R}^n$.
     这给出了 $\mathsf {CartSp}$ 上的一个覆盖结构, 称之为 \emph{Cartesius 空间景}.
-    Cartesius 空间景上的层称作\emph{光滑空间} (smooth space).
+    Cartesius 空间景上的层称作\emph{光滑空间} (smooth space), 记 $\mathsf {SmoothSp}$ 为光滑空间的范畴.
     
-    记 $\mathsf {Man}$ 为 (光滑) 流形的范畴. 流形 $M$ 可视为光滑空间 $$\mathsf {CartSp}^\op\to\mathsf {Set},\ \mathbb{R}^n\mapsto \operatorname{Hom}_{\mathsf {Man}}(\mathbb{R}^n,M);$$
-    因此光滑空间是流形的推广, 是\emph{广义微分几何} (diffeology) 的研究对象.
+    记 $\mathsf {Man}$ 为 (光滑) 流形的范畴. 光滑空间是光滑流形的推广: 对于流形 $M$, 定义光滑空间 $$\underline{M}\colon \mathsf {CartSp}^\op\to\mathsf {Set},\ \mathbb{R}^n\mapsto \operatorname{Hom}_{\mathsf {Man}}(\mathbb{R}^n,M),$$
+    这给出了嵌入 $\mathsf {Man}\to \mathsf {SmoothSp}$.
+    光滑空间是\emph{广义微分几何} (diffeology) 的研究对象. 在量子场论中, 由于人们常常需要考虑 ``场的空间'' (例如两个流形之间的映射的空间), 操作其上的微分形式, 而它们不是传统意义上的流形, 故使用光滑空间的概念能够更清晰地显示几何意义. 参见 Fr\'ed\'eric Paugam \cite{MQF} 第 3 章.
     
     对于光滑空间 $X\colon \mathsf {CartSp}^\op\to\mathsf {Set}$, $X(\mathbb{R}^n)$ 是 ``$\mathbb{R}^n$ 到 $X$ 的光滑映射的集合'' (这不过是米田引理), 也即空间 $X$ 上 $n$ 维 ``广义坐标系'' 的集合. 层条件表示的是 ``广义坐标系'' 的\emph{粘合条件}, 即当 $\mathbb{R}^n=\bigcup U_i$ 为好覆盖时, 一族相容的广义坐标系 $U_i\to X$ 可粘合为广义坐标系 $\mathbb{R}^n\to X$.
     
-    一个重要的光滑空间是 ``微分形式的模空间'' $\Omega^k$, 它作为 $\mathsf {CartSp}$ 上的预层将 $\mathbb{R}^n$ 对应到其上 $k$-形式的集合 $\Omega^k(\mathbb{R}^n)$. 称其为微分形式的模空间是因为, 对任意流形 $M$ (视为光滑空间) 有自然同构
-    \[\operatorname{Hom}(M,\Omega^k) \simeq \Omega^k(M).\]
+    一个重要的光滑空间是 ``微分形式的模空间'' $\Omega^k$, 它作为 $\mathsf {CartSp}$ 上的预层将 $\mathbb{R}^n$ 对应到其上 $k$-形式的集合 $\Omega^k(\mathbb{R}^n)$. 称其为微分形式的模空间是因为, 对任意流形 $M$ 有自然同构
+    \[\operatorname{Hom}_{\mathsf {SmoothSp}}(\underline{M},\Omega^k) \simeq \Omega^k(M).\]
     容易验证 $\Omega^k$ 满足层条件, 即对于 $\mathbb{R}^n$ 的好覆盖 $\{U_i\}$, 每个 $U_i$ 上相容的微分形式可以给出 $\mathbb{R}^n$ 整体上的微分形式.
 \end{example}
 
-\footnotetext{注. Cartesius 是法国数学家 Ren\'e Descartes 的姓氏的拉丁化写法. 这里的 $\mathbb{R}^n$ 起到的作用正合 Descartes 的原意, 即给出空间的一部分上的坐标.}
+\footnotetext{注. Cartesius 是法国数学家 Ren\'e Descartes (``笛卡尔'') 的姓氏的拉丁化写法. %这里的 $\mathbb{R}^n$ 起到的作用正合 Descartes 的原意, 即给出空间的一部分上的坐标.
+}
 
 \begin{example}
 	{(超几何)}
-	超几何是 ``超交换代数\footnotemark{}'' 对应的几何, 是一些量子场论模型使用的语言.
+	$\mathbb{Z}/2\mathbb{Z}$-分次向量空间范畴有一个对称幺半范畴结构, 其交换同构 $V\otimes W\to W\otimes V$ 在奇部分的作用为 $v\otimes w\mapsto -w\otimes v$. 关于此对称幺半范畴结构的交换代数称为\emph{超交换代数}\footnotemark{}. 超几何是超交换代数对应的几何, 是一些量子场论 (如超对称场论, 超引力) 使用的语言.
 	考虑范畴 $\mathsf {SupCartSp}$ (超 Cartesius 空间), 其对象 $\mathbb{R}^{n|q} = \mathbb{R}^n\times\mathbb{R}^{0|q}$ 是 ``有 $n$ 个偶坐标和 $q$ 个奇坐标'' 的空间 (物理学家所使用的术语), 即超交换代数
 	$C^\infty (\mathbb{R}^n)\otimes \wedge^\bullet (\mathbb{R}^q)^*$
 	的形式对偶.
 	
-	定义超 Cartesius 空间的覆盖为 $\{\iota_i\times\operatorname{id}\colon U_i\times \mathbb{R}^{0|q}\to\mathbb{R}^{n}\times\mathbb{R}^{0|q}\}$, 使得 $\{\iota_i\colon U_i\to\mathbb{R}^n\}$ 构成好覆盖.
+	定义 $\mathsf {SupCartSp}$ 上的覆盖结构 $\{\iota_i\times\operatorname{id}\colon U_i\times \mathbb{R}^{0|q}\to\mathbb{R}^{n}\times\mathbb{R}^{0|q}\}$, 其中 $\{\iota_i\colon U_i\to\mathbb{R}^n\}$ 构成 $\mathbb{R}^n$ 的好覆盖.
 	于是 $\mathsf {SupCartSp}$ 成为一景, 其上的层称作\emph{超光滑空间} (super smooth space).
-	Schreiber \cite{HTTP} 介绍了物理中旋量场等结构用超几何语言的表述, 以及其它对象在\topos{}理论中的表述.
+	Urs Schreiber \cite{HTTP} 介绍了物理中旋量场等结构用超几何语言的表述, 以及其它对象在\topos{}理论中的表述.
 \end{example}
-\footnotetext{$\mathbb{Z}/2\mathbb{Z}$ 分次向量空间范畴有一个对称幺半范畴结构, 其交换同构 $V\otimes W\to W\times V$ 在奇部分的作用为 $v\otimes w\mapsto -w\otimes v$. 关于此对称幺半范畴结构的交换代数称为超交换代数. 对超几何与量子场论感兴趣的读者可阅读 IAS 的讲义 \cite{QFT}.}
+\footnotetext{对超几何与量子场论感兴趣的读者可阅读 IAS 的讲义 \cite{QFT}.}
 
 \begin{example}
     [label={zariski-site}]
     {(Zariski 景)}
     %固定环 $k$,
     考虑\emph{有限表现} (finitely presented) 环 (形如 $\mathbb{Z}[x_1,\cdots,x_n]/(f_1,\cdots,f_m)$ 的环) 的范畴 $\mathsf {Ring}_{\text{fp}}$. 这是一个小范畴\footnotemark.
-    我们考虑其对偶范畴 $\mathsf {Ring}_{\text{fp}}^{\op}$, 也即仿射概形的范畴.
+    考虑其对偶范畴 $\mathsf {Ring}_{\text{fp}}^{\op}$, 也即仿射概形的范畴.
     对于环 $A$, 我们记 $\operatorname{Spec} A \in \mathsf {Ring}_{\text{fp}}^{\op}$ 为 $A$ 在对偶范畴中的化身.
 
     回忆, Zariski 拓扑的标准开集 (但不一定是全部的开集) 形如 $\operatorname{Spec} A_f \to \operatorname{Spec}A$, 也即局部化的环同态 $A \to A_f$. 若 $n$ 个元素 $f_1,\cdots,f_n \in A$ 生成了单位理想 $(1)$ ($f_1,\cdots,f_n$ 构成了 $\operatorname{Spec}A$ 上的 ``单位分解''),
     规定 $\{\operatorname{Spec}A_{f_i} \to \operatorname{Spec}A\}$ 构成覆盖. 这定义了 $\mathsf {Ring}_{\text{fp}}^{\op}$ 上的一个覆盖结构, 这便是 \emph{Zariski 景}.
-    Zariski 景是\emph{综合代数几何} (synthetic algebraic geometry) 的基础
+    Zariski 景可以提供\emph{综合代数几何} (synthetic algebraic geometry) 的模型
 %
     %Zariski 景上的\emph{结构层} (structure sheaf) 是遗忘函子 $\mathsf{Ring}_{\text{fp}} \to \mathsf{Set}$.
     %\todo{这个层的意义}
     %这个层与综合微分几何中的 ``直线'' 有关
-    (定义 \ref{SDG-algebraic-model}; 关于综合代数几何, 见 \cite{FSAG}).
+    (见定义 \ref{SDG-algebraic-model}; 关于综合代数几何, 见 \cite{FSAG}).
 \end{example}
 
 \footnotetext{严格地说, 它是本质小 (essentially small) 范畴, 也即它的对象模掉同构之后构成一个集合.}
@@ -1621,20 +1829,75 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	{\small (本例需要一些背景知识.)} 平展景是 ``拓扑空间上开集范畴'' 在代数几何中的类比. 设 $X$ 为概形, 考虑概形范畴的俯范畴 $\mathsf {Sch}_{/X}$ 中由平展映射 $U\to X$ 构成的全子范畴 $\mathsf {Sch}_{/X,\text{\'et}}$. 这称作 $X$ 上的 (小)\emph{平展景} (small \'etale site).
 \end{example}
 
+\subsection{典范与次典范拓扑}
 
-\section{层化的 Grothendieck $+$构造}
+%如下定义出自 SGA 4 \cite{SGA4} II.2 节.
+
+\begin{propdef}
+	[label={canonical-topology}]
+	{(次典范和典范 Grothendieck 拓扑)}
+	对于范畴 $\mathcal C$ 上的 Grothendieck 拓扑 $J$, 若以下两个等价条件之一成立, 则称之为\emph{次典范} (subcanonical) Grothendieck 拓扑:
+	\begin{itemize}
+		\item 对每个 $J$-覆盖筛 $S = \{f_i\colon c_i\to c\}$, 考虑 $c_i$ 之间在 $c$ 上 (也即与 $f_i$ 相容) 的所有映射, $S$ 构成该图上的余极限余锥. 这样的筛又称为\emph{有效满} (effective-epimorphic) 的.
+		\item 每个可表函子 $\yo(c)$ 都是层, 也即米田嵌入 $\mathcal C\hookrightarrow\widehat {\mathcal C}$ 穿过 $\operatorname{Sh}(\mathcal C,J)$.
+	\end{itemize}
+	定义\emph{典范 Grothendieck 拓扑}是最细的次典范 Grothendieck 拓扑. (回忆, 称一个 Grothendieck 拓扑较细是指其中覆盖筛较多).
+\end{propdef}
+\begin{proof}
+	设 $S$ 为 $c$ 上的筛, $S$ 是有效满的当且仅当对任意对象 $d$, 任意态射 $S\to\yo(d)$ 唯一地延拓为态射 $\yo(c) \to \yo(d)$;
+	这就是说每个可表函子 $\yo(d)$ 都满足关于 $S$ 的层条件. 因此, 定义中的两个条件等价.
+	
+	由命题 \ref{finest-topology-sheaf}, 对每个 $c\in\mathcal C$ 存在一个使得 $\yo(c)$ 为层的最细的 Grothendieck 拓扑 $J_{\yo(c)}$.
+	进而存在使得所有 $\yo(c)$ 同时为层的最细的 Grothendieck 拓扑 $\bigcap_{c\in\mathcal C} J_{\yo(c)}$. 它就是最细的次典范 Grothendieck 拓扑.
+\end{proof}
+
+\begin{example}
+	{(常见的次典范 Grothendieck 拓扑)}
+	\begin{itemize}
+		\item 一个拓扑空间上的 Grothendieck 拓扑 (例 \ref{topological-space-as-site}) 是次典范的.
+		\item Zariski 景 (例 \ref{zariski-site}) 是次典范的.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	{(位象上的典范拓扑)}
+	位象 (\fm{}) 视为景 (例 \ref{locale-as-site}), 其上的 Grothendieck 拓扑是典范的, 因为\fm{}中一族元素的余极限是它们的并. 换言之, 位象的每个开子空间都可视为其上的层.
+\end{example}
+
+\begin{example}
+	[label={canonical-topology-on-topos}]
+	{(Grothendieck \topos{}上的典范拓扑)}
+	一个 Grothendieck \topos{} $\operatorname{Sh}(\mathcal C,J)$ 本身也可视为一个景, 其上的典范 Grothendieck 拓扑可描述如下: 一个筛 $\{f_i\colon U_i\to X\mid i\in I\}$ 是覆盖筛当且仅当下列等价条件之一成立.
+	\begin{itemize}
+		\item 筛 $\{f_i\colon U_i\to X\mid i\in I\}$ 构成余极限余锥;
+		\item $\bigvee_{i\in I}\operatorname{im}f_i=X$;
+		\item 对任意态射 $g,h\colon X\to Y$, 若 $gf_i=hf_i\,(\forall i\in I)$, 则 $g=h$. 满足这个条件的态射族又称为\emph{联合满射族} (jointly epic family).
+	\end{itemize}
+%	它, 当且仅当 $\bigvee_{i\in I}\operatorname{im}f_i=X$.
+%	(证明这两个条件等价是容易的. 假设一个筛 $\{f_i\colon U_i\to X\mid i\in I\}$ 构成余极限余锥, 由于每个 $f_i$ 都穿过 $\bigvee_{i\in I}\operatorname{im}f_i$, 余极限的泛性质告诉我们 $\operatorname{id}_X$ 也穿过 $\bigvee_{i\in I}\operatorname{im}f_i$. 另一方面, 假设 $\bigvee_{i\in I}\operatorname{im}f_i=X$, $gf_i$ 那么 $\operatorname{eq}$)
+	
+	%\todo{证明?}
+	$\operatorname{Sh}(\mathcal C,J)$ 作为景, 其上的层范畴 $\operatorname{Sh}(\operatorname{Sh}(\mathcal C,J),\text{典范})$ 等价于 $\operatorname{Sh}(\mathcal C,J)$ 本身.
+\end{example}
+
+%\begin{prop}
+%	{(Grothendieck \topos{}上的典范 Grothendieck 拓扑)}
+%	设 $\mathcal C$ 为 Grothendieck \topos{}
+%\end{prop}
+
+\section{层化与 Grothendieck $+$构造}
 
 %局部化是另一种等价的给出 ``范畴上的拓扑'' 的方式.
 
 % 附录
 
-回忆拓扑空间上一个开覆盖生成的筛等同于这个开覆盖中所有对象米田嵌入后的余极限 (例 \ref{sieve-from-cover-subfunctor}; 注意 $\yo$ 不保持余极限). 指定 $S$ 是\emph{覆盖筛}, 就是希望 $S\to\yo(c)$ 变为同构, 或者说将 $S$ 等同于 $\yo(c)$. 直观上, 这是 ``将 $c$ 的一个开覆盖中所有对象的并等同于 $c$ 本身'', 因为它们在原来的范畴中相等; 换言之, 我们希望在某种程度上弥补 ``自由余完备化'' 所破坏的余极限. 一种通用的将某些态射变为同构的方法是\emph{局部化} (附录 \ref{reflective-subcategory-and-localization} 节). 事实上, 层范畴是预层范畴的局部化, 而在层范畴中 $S$ 与 $\yo(c)$ 变成了同构的对象.
+回忆拓扑空间上一个开覆盖 $\{U_i\}$ 生成的筛 $S$ 可表示为余极限 $\operatorname{colim}\yo(U_i)$ (例 \ref{sieve-from-cover-subfunctor}). 自由余完备化 $\yo$ 不保持余极限, 而层化的效果即是使 $S\to\yo(c)$ 变为同构, \emph{层化弥补了自由余完备化所破坏的余极限}. 一种通用的将某些态射变为同构的方法是\emph{局部化} (附录 \ref{reflective-subcategory-and-localization} 节). 事实上, 层范畴是预层范畴的局部化, 而在层范畴中 $S$ 与 $\yo(c)$ 变成了同构的对象.
 % 下面这一段参考 nLab,
 % https://ncatlab.org/nlab/show/sheafification#ExistenceOfLeftAdjoint
 %
 % SGL V.3 定理 1
 %
-使用 Adámek 与 Rosický \cite{LPAC} 第 1 章引入的可表现范畴的一般理论 (附录 \ref{appendix-presentable-categories} 节), 可以得到层范畴的一种简单描述. 因为层范畴 $\operatorname{Sh}(\mathcal C,J)$ 是 $\widehat {\mathcal C}$ 中关于所有覆盖筛 $S\to\yo(c)$ 的局部对象的全子范畴. 由命题 \ref{local-object-reflective-subcategory}, $\operatorname{Sh}(\mathcal C,J)$ 是 $\widehat {\mathcal C}$ 的自反子范畴 (\cite{LPAC} 第 2 章 2D, 2E 节对此还有一种更加抽象的证明).
+使用 Adámek 与 Rosický \cite{LPAC} 引入的可表现范畴的一般理论 (附录 \ref{appendix-presentable-categories} 节), 可以得到层范畴的一种简单描述. 层范畴 $\operatorname{Sh}(\mathcal C,J)$ 是 $\widehat {\mathcal C}$ 中关于所有 $J$-覆盖筛 $S\to\yo(c)$ 的局部对象的全子范畴. 由命题 \ref{local-object-reflective-subcategory}, $\operatorname{Sh}(\mathcal C,J)$ 是 $\widehat {\mathcal C}$ 的自反子范畴 (\cite{LPAC} 第 2 章 2D, 2E 节对此还有一种更加抽象的证明).
 由命题 \ref{reflective-subcategories-are-localizations}, $\operatorname{Sh}(\mathcal C,J)$ 是 $\widehat {\mathcal C}$ 关于 $W = \{(S\to\yo(c))\in J(c)\}$ 生成的强饱和态射族 $\overline{W}$ (注 \ref{strongly-saturated-class-of-morphisms}) 的局部化.
 可以证明 $\overline{W}$ 是 $W$ 关于箭头范畴中 (小) 余极限的完备化. $\overline{W}$ 中的元素形如
 \[
@@ -1647,7 +1910,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	(X,Y)=\operatorname{colim}_{(X'\to X)\in\overline{W}}\operatorname{Hom}_{\widehat {\mathcal C}}(X',Y).
 	\tag{$\star$}
 \end{equation}
-我们不会给出上述论证的全部细节 (参见 \cite{nlab:sheafification}), 而是采取一种较具体的方式构造层化, 它被称为 \emph{Grothendieck $+$构造} (plus construction), 其与 $(\star)$ 至少在精神上是相似的.
+我们不会给出上述论证的全部细节 (参见 \cite{nlab:sheafification}), 而是采取另一种较具体的方式构造层化, 它被称为 \emph{Grothendieck $+$构造} (plus construction), 其与 $(\star)$ 至少在精神上是相似的.
 在证明层化的性质之后, 我们几乎不会再使用 $+$ 构造; 因此知道这种构造的存在就足够了.
 
 \begin{definition}
@@ -1660,7 +1923,16 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	$X^+\colon \mathcal {C}^{\op}\to\mathsf {Set}$ 的函子性来自拉回稳定性: 对任意态射 $f\colon c'\to c$, 有映射
 	$X^+(f)\colon X^+(c) \to X^+(c')$,
 	$[S\to X]\mapsto [f^*S\to S\to X]$.
-	很明显, 有典范的态射 $\eta_X\colon X \to X^+$ 将元素 $\yo(c) \to X$ 映射到 $[\yo(c) \to X]$.
+	很明显, 有典范的态射 $\eta_X\colon X \to X^+$ 将元素 $\yo(c) \to X$ 映射到 $[\yo(c) \to X]$, 并且 $\eta_X$ 关于 $X$ 有自然性, 即对于预层态射 $X\to Y$ 有交换图
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWSJdLFswLDEsIlheKyJdLFsxLDEsIlleKyJdLFswLDIsIlxcZXRhX1giLDJdLFsxLDMsIlxcZXRhX1kiXSxbMCwxXSxbMiwzXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		X \& Y \\
+		{X^+} \& {Y^+.}
+		\arrow[from=1-1, to=1-2]
+		\arrow["{\eta_X}"', from=1-1, to=2-1]
+		\arrow["{\eta_Y}", from=1-2, to=2-2]
+		\arrow[from=2-1, to=2-2]
+	\end{tikzcd}\]
 	%换言之, $\eta_F\colon F(c)\to F^+(c)$ 将 $x\in F(c)$ 映射到
 \end{definition}
 
@@ -1777,6 +2049,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 \end{prop}
 \begin{proof}
 	对预层 $X\in\widehat {\mathcal C}$ 与层 $F\in\operatorname{Sh}(\mathcal C,J)$,
+	由于 $\eta_F$ 为同构,
 	态射 $X\to F$ 对应于交换图
 	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiRiJdLFswLDEsIlheKyJdLFsxLDEsIkZeKyJdLFsxLDMsIlxcc2ltZXEiXSxbMCwyLCJcXGV0YV9YIiwyXSxbMCwxXSxbMiwzXV0=
 	\[\begin{tikzcd}[ampersand replacement=\&]
@@ -1851,13 +2124,54 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 \]
 这是局部化的一般现象.
 
+\begin{definition}
+	[label={sheafified-yoneda}]
+	{(景到层范畴的米田嵌入)}
+	定义景 $(\mathcal C,J)$ 的米田嵌入 $\yo_{(\mathcal C,J)}$ 为 $\mathcal C$ 的米田嵌入 $\yo\colon \mathcal C\to \widehat {\mathcal C}$ 与层化 $a\colon \widehat {\mathcal C}\to\operatorname{Sh}(\mathcal C,J)$ 的复合.
+\end{definition}
+
+由于米田嵌入 $\yo\colon \mathcal C\to\widehat {\mathcal C}$ 与层化均保持有限极限, 景的米田嵌入也保持有限极限.
+
+\begin{prop}
+	[label={sheaf-as-colimit-of-sheafified-representables}]
+	{}
+	层范畴 $\operatorname{Sh}(\mathcal C,J)$ 的对象 $F$ 可表示为形如 $\yo_{(\mathcal C,J)}(c)$ 的对象的余极限:
+	$$
+	F \simeq \operatorname{colim}_{\yo_{(\mathcal C,J)}(c) \to F}\yo_{(\mathcal C,J)}(c).
+	$$
+\end{prop}
+\begin{proof}
+	\begin{align*}
+		F&\simeq a(F)&\text{($F$ 为层)}\\
+		&\simeq a\big({\operatorname{colim}_{\yo(c)\to F}^{\widehat {\mathcal C}}\yo(c)}\big)&\text{(命题 \ref{presheaf-as-colimit-of-representables})}\\
+		&\simeq \operatorname{colim}_{\yo_{(\mathcal C,J)}(c)\to F}^{\operatorname{Sh}(\mathcal C,J)}\yo_{(\mathcal C,J)}(c)&\text{(左伴随保持余极限)}.
+	\end{align*}
+	另见命题 \ref{presheaf-reflective-subcategory-presentable} 的证明.
+\end{proof}
+
+下面的命题体现了层化的一种直观, 它将 $J$-覆盖变为 ``真正的'' 覆盖, 即范畴论意义上的满射.
+\begin{prop}
+	[label={cover-sheafified}]
+	{}
+	在景 $(\mathcal C,J)$ 中, 一族态射 $\{f_i\colon c_i\to c\}$ 覆盖 $c$ (定义 \ref{convention-coverage}) 当且仅当典范的态射
+	\begin{equation}
+		\widetilde{f}\colon \coprod_{i}\yo_{(\mathcal C,J)}(c_i)\to\yo_{(\mathcal C,J)}(c)
+		\tag{$\star$}
+	\end{equation}
+	为满射.
+\end{prop}
+\begin{proof}
+	此处仅证明 ``$\Rightarrow$'' 部分, ``$\Leftarrow$'' 的证明在下一节的命题 \ref{cover-sheafified-continued}. 假设 $\{f_i\colon c_i\to c\}$ 覆盖 $c$, 即这族态射生成的筛 $S$ 是 $J$-覆盖筛. 注意到 $\widehat {\mathcal C}$ 中自然的映射 $$f\colon\coprod_i \yo(c_i) \to S$$ 为满射. 由于层化保持余极限与满射 (命题 \ref{adjoints-preserve-mono-epi}), 而 $S$ 的层化为 $\yo_{(\mathcal C,J)}(c)$, 故对上述映射层化即得 $(\star)$ 为满射.
+\end{proof}
+
+
 \section{Grothendieck \topos{}}
 
-\subsection{层范畴的性质}
+%\subsection{层范畴的性质}
 
-本节的目标是证明对于景 $(\mathcal C,J)$, 层范畴 $\operatorname{Sh}(\mathcal C,J)$ 为\topos{}.
+本节的目标是证明对于 (小) 景 $(\mathcal C,J)$, 层范畴 $\operatorname{Sh}(\mathcal C,J)$ 为\topos{}.
 
-%\subsection{层范畴中的极限与余极限}
+\subsection{层范畴中的极限与余极限}
 
 \begin{prop}
 	[label={sheaf-limit}]
@@ -1882,7 +2196,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 % 由于层的拉回也是预层的拉回, 由单射的拉回刻画 (命题 \ref{mono-epi-pullback-pushout}), 层范畴中的子对象放在预层范畴中仍是子对象.
 
-\subsubsection{层范畴的子对象分类子}
+\subsection{层范畴中的子对象分类子}
 
 %回忆预层范畴 $\widehat {\mathcal C}$ 的子对象分类子为 $\Omega(c) = \{\text{$c$ 上的筛}\}$, 因为 $\yo(c)$ 的子对象等同于 $c$ 上的筛. 固定范畴 $\mathcal C$ 上的 Grothendieck 拓扑 $J$,
 本小节描述 $\operatorname{Sh}(\mathcal C,J)$ 的子对象分类子.
@@ -1950,37 +2264,71 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 %\todo{层范畴的子对象分类子, J-closed}
 
 
-回忆 $\mathcal C$ 上预层范畴的子对象分类子 $\Omega$ 为 $\Omega(c) = \{\text{$c$ 上的筛}\}$.
+回忆 $\mathcal C$ 上预层范畴的子对象分类子 $\Omega$ 为 $\Omega(c) = \{\text{$c$ 上的筛}\}$ (命题 \ref{presheaf-category-subobject-classifier}). $\operatorname{Sh}(\mathcal C,J)$ 的子对象分类子 $\Omega_J$ 是 $\Omega$ 的一个子函子.
 
 \begin{definition}
-	{(闭筛)}
-	设 $J$ 是范畴 $\mathcal C$ 上的 Grothendieck 拓扑. 对于 $c$ 上的筛 $S$, 若以下条件成立, 则称之为 $J$-\emph{闭筛} (closed sieve):
-	对任意态射 $f \colon d \to c$,
-	若 $f^*S\in J(d)$, 则 $f\in S$.
+	[label={closure-closed-sieve}]
+	{(筛的闭包, 闭筛)}
+	设 $J$ 是范畴 $\mathcal C$ 上的 Grothendieck 拓扑. 对于 $c$ 上的筛 $S$, 定义其\emph{闭包} $\overline{S}$ 为 $S$ 覆盖的态射的集合, 也即
+	$$
+	\overline{S} = \{f\colon d\to c\mid f^*S\in J(d)\}.
+	$$
+	若 $\overline{S}=S$, 则称 $S$ 为 $J$-\emph{闭筛} (closed sieve).
 \end{definition}
 
-闭筛的 ``闭'' 体现在它包含了所有被它覆盖的态射. 例如, 一个覆盖筛若为闭筛, 则必为极大筛.
-由定义, 闭筛的拉回仍是闭筛, 因此闭筛构成 $\Omega$ 的子函子 $\Omega_J \hookrightarrow\Omega$.
-
-回忆, Grothendieck 拓扑 $J$ 确定了 Lawvere--Tierney 拓扑 $j\colon \Omega\to\Omega$ (命题 \ref{Lawvere--Tierney-subsumes-Grothendieck}) 以及子对象的闭包运算 (命题 \ref{Lawvere--Tierney-closure}). 我们证明闭筛正是闭包为自身的筛 (视为 $\yo(c)$ 的子对象).
 \begin{prop}
-	{}
-	对任意筛 $S\to\yo(c)$, 其闭包 $\overline{S}$ 为闭筛. 闭筛的闭包为自身.
+	[label={closed-sieve-properties}]
+	{(闭筛的性质)}
+	设 $J$ 是范畴 $\mathcal C$ 上的 Grothendieck 拓扑. 对于 $c$ 上的筛 $S$,
+	\begin{itemize}
+		\item $S\leq \overline{S}$ (作为 $\yo(c)$ 的子对象);
+		\item $\overline{S}$ 是闭筛, 即 $\overline{\overline{S}}=\overline{S}$;
+		\item 拉回保持筛的闭包, 即 $f^*\overline{S}=\overline{f^*S}$;
+		\item $S\in J(c)$ 当且仅当 $\overline{S}$ 是极大筛.
+	\end{itemize}
 \end{prop}
 \begin{proof}
-	由命题 \ref{Lawvere--Tierney-closure} 与 \ref{Lawvere--Tierney-subsumes-Grothendieck}, $\overline{S}$ 是被 $S$ 覆盖的态射的集合, 因此当 $S$ 是闭筛时, $\overline{S}=S$.
-	由传递性 (命题 \ref{sieve-cover-arrow} (3)), 被 $\overline{S}$ 覆盖的态射也被 $S$ 覆盖. 故 $\overline{S}$ 为闭筛.
+	由 Grothendieck 拓扑以及筛的闭包的定义即证.
 \end{proof}
 
+%\begin{definition}
+%	{}
+%	闭筛的拉回仍是闭筛, 从而可定义子函子 $\Omega_J \hookrightarrow\Omega$,
+%	$$
+%	\Omega_J(c) = \{\text{$c$ 上的闭筛}\}.
+%	$$
+%\end{definition}
+%\begin{proof}
+%	设 $S\hookrightarrow\yo(c)$ 是闭筛, $h\colon c'\to c$ 为任意态射.
+%	若 $h^*S$ 覆盖 $g\colon d\to c'$,
+%	则 $S$ 覆盖 $gh\colon d\to c$;
+%	由 $S$ 为闭筛知 $hg\in S$,
+%	即 $g\in h^*S$, 这证明了 $h^*S$ 为闭筛.
+%\end{proof}
+
+在 \ref{section-LT-topology} 节我们将讲到, 对于 Grothendieck 拓扑 $J$ 确定的 Lawvere--Tierney 拓扑 $j\colon \Omega\to\Omega$ (命题 \ref{Lawvere--Tierney-subsumes-Grothendieck}), 筛的闭包正是子对象的闭包运算 (命题 \ref{Lawvere--Tierney-closure}).
+
+%\begin{prop}
+%	{}
+%	对任意筛 $S\to\yo(c)$, 其闭包 $\overline{S}$ 为闭筛. 闭筛的闭包为自身.
+%\end{prop}
+%\begin{proof}
+%	由命题 \ref{Lawvere--Tierney-closure} 与 \ref{Lawvere--Tierney-subsumes-Grothendieck}, $\overline{S}$ 是被 $S$ 覆盖的态射的集合, 因此当 $S$ 是闭筛时, $\overline{S}=S$.
+%	由传递性 (命题 \ref{sieve-cover-arrow} (3)), 被 $\overline{S}$ 覆盖的态射也被 $S$ 覆盖. 故 $\overline{S}$ 为闭筛.
+%\end{proof}
+
 \begin{example}
+	[label={closed-sieve-on-topological-space}]
 	{(拓扑空间上的闭筛)}
 	在拓扑空间 $X$ 上, 开集 $U$ 上的筛 $S$ 是闭筛当且仅当 $S$ 关于任意并封闭, 从而等价于 $S$ 是某个子开集 $V\subset U$ 生成的\emph{主筛} (定义 \ref{principal-sieve}).
+	注意, 闭筛的 ``闭'' 与闭子空间的 ``闭'' 无关.
 \end{example}
 
-\begin{prop}
+\begin{propdef}
+	[label={sheaf-subobject-classifier-closed-sieve}]
 	{}
-	设 $J$ 是范畴 $\mathcal C$ 上的 Grothendieck 拓扑. 那么 $\Omega_J(c) = \{\text{$c$ 上的闭筛}\}$ 是 $\operatorname{Sh}(\mathcal C,J)$ 的子对象分类子.
-\end{prop}
+	设 $J$ 是范畴 $\mathcal C$ 上的 Grothendieck 拓扑. 定义子函子 $\Omega_J\hookrightarrow\Omega$, $$\Omega_J(c) = \{\text{$c$ 上的闭筛}\},$$ 其中 $\Omega_J$ 构成函子是由于拉回保持筛的闭包. 那么 $\Omega_J$ 是 $J$-层, 且是 $\operatorname{Sh}(\mathcal C,J)$ 的子对象分类子.
+\end{propdef}
 \begin{proof}
 	首先说明 $\Omega_J$ 是层.
 	对任意覆盖筛 $R\in J(c)$,
@@ -2003,8 +2351,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	\end{itemize}
 
 	然后说明 $\Omega_J$ 是子对象分类子.
-	设 $X$ 为层, $Y\hookrightarrow X$ 为 $\widehat {\mathcal C}$ 中的子对象.
-	回忆作为预层的子对象, $Y$ 的特征函数 $\chi\colon X\to\Omega$ 由如下拉回图给出.
+	设 $X$ 为层, $Y\hookrightarrow X$ 为 $\widehat {\mathcal C}$ 中的子对象, 其特征函数 $\chi\colon X\to\Omega$ 满足对任意对象 $c\in\mathcal C$ 与 $x\in X(c)$ 下图的两个方块均为拉回 (注 \ref{presheaf-subobject-classifier-motivation}).
 	% https://q.uiver.app/#q=WzAsNixbMSwwLCJZIl0sWzEsMSwiWCJdLFswLDEsIlxceW8oYykiXSxbMCwwLCJcXGNoaV9jKHgpIl0sWzIsMSwiXFxPbWVnYSJdLFsyLDAsIjEiXSxbMywyXSxbMiwxLCJ4IiwyXSxbMywwXSxbMCwxXSxbMSw0LCJcXGNoaSIsMl0sWzAsNV0sWzUsNF1d
 	\[\begin{tikzcd}[ampersand replacement=\&]
 		{\chi_c(x)} \& Y \& 1 \\
@@ -2065,8 +2412,59 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	\end{itemize}
 \end{proof}
 
+如下命题是层范畴中子对象分类子的应用, 它补全了命题 \ref{cover-sheafified} 的证明.
+\begin{prop}
+	[label={cover-sheafified-continued}]
+	{}
+	在景 $(\mathcal C,J)$ 中, 对于一族态射 $\{f_i\colon c_i\to c\}$, 若典范的态射
+	\begin{equation}
+		\widetilde{f}\colon \coprod_{i}\yo_{(\mathcal C,J)}(c_i)\to\yo_{(\mathcal C,J)}(c)
+		\tag{$\star$}
+	\end{equation}
+	为满射, 则 $\{f_i\colon c_i\to c\}$ 覆盖 $c$ (定义 \ref{convention-coverage}).
+\end{prop}
+\begin{proof}
+	假设 $(\star)$ 为满射. 我们证明 $\{f_i\colon c_i\to c\}$ 生成的筛 $S$ 为覆盖筛, 即证明 $S$ 的闭包 $\overline{S}$ 为极大筛.
+	首先, 由于 $\overline{S}\hookrightarrow\yo(c)$ 是闭筛, 其对应的态射 $\chi_{\overline{S}}\colon\yo(c)\to\Omega$ 穿过 $\Omega_J\hookrightarrow\Omega$. 由于 $\Omega_J$ 是 $J$-层, 它进而穿过 $\eta_{\yo(c)}\colon\yo(c)\to\yo_{(\mathcal C,J)}(c)$, 如下图的最底下一行所示.
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\coprod_i \yo(c_i)} \&\& 1 \\
+		\& {\coprod_i \yo_{(\mathcal C,J)}(c_i)} \\
+		{\yo(c)} \& {\yo_{(\mathcal C,J)}(c)} \& {\Omega_J} \& \Omega
+		\arrow["{(1)}", dashed, from=1-1, to=1-3]
+		\arrow["{\eta_P}", from=1-1, to=2-2]
+		\arrow["{f}"', from=1-1, to=3-1]
+		\arrow["\top", from=1-3, to=3-3]
+		\arrow["{(2)}", dashed, from=2-2, to=1-3]
+		\arrow["{(\star)}"', two heads, from=2-2, to=3-2]
+		\arrow["{\eta_{\yo(c)}}", from=3-1, to=3-2]
+		\arrow["{\chi_{\overline{S}}}"', bend right=10, from=3-1, to=3-4]
+		\arrow["{(3)}"', dashed, from=3-2, to=1-3]
+		\arrow["{}", from=3-2, to=3-3]
+		\arrow["i", hook, from=3-3, to=3-4]
+	\end{tikzcd}\]
+	在上图中,
+	\begin{itemize}
+		\item 由于 $S\leq\overline{S}$, 存在态射 (1);
+		\item 由于层化的性质, 存在态射 (2);
+		\item 由于 $(\star)$ 为满射, 存在态射 (3).
+	\end{itemize}
+%	由层化的性质, 以 (1) (2) (3) 的顺序可得虚线态射存在.
+%	\todo{SGL III.7.7}
+	因此 $\overline{S}$ 为极大筛, 命题得证.
+\end{proof}
 
-\subsubsection{层范畴中的指数对象}
+上述命题可推广为\emph{局部满射}的判定. 局部满射指的是预层范畴中层化之后变为满射的态射.
+
+\begin{propdef}
+	{(局部满射)}
+	设 $(\mathcal C,J)$ 为景.
+	\begin{itemize}
+		\item 对于 $c\in\mathcal C$, $A\in\widehat {\mathcal C}$, 称态射 $f\colon A\to \yo(c)$ 为\emph{局部满射}是指 $\operatorname{im}f$ 为 $c$ 的覆盖筛.
+		\item \todo{CaS 16.1}
+	\end{itemize}
+\end{propdef}
+
+\subsection{层范畴中的指数对象}
 
 \begin{prop}
 	[label={sheaf-exponential-ideal}]
@@ -2104,111 +2502,44 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 \begin{remark}
 	{}
-	对于 Grothendieck \topos{} $\mathcal E$, 定义 \ref{Grothendieck-topos-definition} 中的景 $(\mathcal C,J)$ 远远不是唯一确定的. 这就如同一个群的生成元集合不是唯一确定的. 如下的\emph{比较原理} (命题 \ref{comparison-lemma}) 就是一例.
+	对于 Grothendieck \topos{} $\mathcal E$, 定义 \ref{Grothendieck-topos-definition} 中的景 $(\mathcal C,J)$ 远远不是唯一确定的. 这就如同一个群的生成元集合不是唯一确定的. 例如, 一个景的稠密子范畴对应的层范畴和原景上的层范畴等价, 这个命题称为\emph{比较原理} (命题 \ref{comparison-lemma}).
 \end{remark}
 
-\todo{把比较原理放在景的态射那一节, 由更一般的道理推出?}
+%\todo{把比较原理放在景的态射那一节, 由更一般的道理推出?}
 
-\begin{definition}
-	[label={site-J-dense-subcategory}]
-	{(景的稠密子范畴)}
-	设 $(\mathcal C,J)$ 为景, $\mathcal D$ 为 $\mathcal C$ 的全子范畴.
-	若对 $\mathcal C$ 的任意对象 $c$, 所有由 $\mathcal D$ 的对象到 $c$ 的态射生成 $c$ 的 $J$-覆盖,
-	则称 $\mathcal D$ 为 $J$-稠密子范畴.
-	定义限制在 $\mathcal D$ 上的 Grothendieck 拓扑 $J\big|_{\mathcal D}$: 令 $\mathcal D$ 中的一个筛为覆盖筛当且仅当它在 $\mathcal C$ 中生成的筛为覆盖筛.
-\end{definition}
 
-\begin{prop}
-	{}
-	设 $(\mathcal C,J)$ 为景, $\mathcal D$ 为 $\mathcal C$ 的 $J$-稠密子范畴, 且 $\mathcal D$ 为小范畴. 那么 $\mathcal C$ 上的 $J$-层在 $\mathcal D$ 上的限制为 $J\big|_{\mathcal D}$-层.
-\end{prop}
-\begin{proof}
-	设 $F$ 为 $J$-层, $S\in J\big|_{\mathcal D}(d)$, $s\colon S\to F$ 为任意态射.
-	记 $\widetilde {S}$ 为 $S$ 生成的 $\mathcal C$ 中的筛,
-	$\widetilde {S}$ 的元素形如 $fg$, $f\in S$.
-	定义态射 $\widetilde {S}\to F$ 将 $fg$ 映射到 $F(g)(s_f)$.
-	良定性的证明如下.
-	% https://q.uiver.app/#q=WzAsNCxbMSwxLCJkIl0sWzAsMCwiYyJdLFswLDEsImRfMSJdLFsxLDAsImRfMiJdLFsxLDIsImdfMSIsMl0sWzIsMCwiZl8xIiwyXSxbMSwzLCJnXzIiXSxbMywwLCJmXzIiXV0=
-%	\[\begin{tikzcd}[ampersand replacement=\&,sep=scriptsize]
-%		c \& {d_2} \\
-%		{d_1} \& d,
-%		\arrow["{g_1}"', from=1-1, to=2-1]
-%		\arrow["{f_1}"', from=2-1, to=2-2]
-%		\arrow["{g_2}", from=1-1, to=1-2]
-%		\arrow["{f_2}", from=1-2, to=2-2]
-%	\end{tikzcd}\]
-	假设
-	\[
-	f_1g_1 = f_2g_2\colon c\to d,\quad \text{其中}\,f_1,f_2\in S,
-	\]
-	设 $R$ 是由 $\mathcal D$ 的对象到 $c$ 的态射生成的覆盖筛,
-	对任意 $h\in R$, $F(h)F(g_1)(s_{f_1}) = s_{f_1g_1h} = s_{f_2g_2h} = F(h)F(g_2)(s_{f_2})$.
-	由于 $F$ 为 $J$-层,
-	这说明 $F(g_1)(s_{f_1}) = F(g_2)(s_{f_2})$, 良定性得证.
-	由此, 态射 $S\to F$ 唯一地延拓为 $\widetilde {S}\to F$.
-	又由 $F$ 为 $J$-层, 它唯一地延拓为 $\yo(d)\to F$.
-	这证明了 $F$ 为 $J\big|_{\mathcal D}$-层.
-	
-%	一种更简洁的证法是注意到 $\widetilde {S}$ 是 $S$ 沿嵌入 $i\colon \mathcal D\to \mathcal C$ 的左 Kan 扩张 (例 \ref{presheaf-category-adjunction})
-%	\[
-%	\widetilde {S}(c) = \{c\to d' \overset{f}{\to} d\mid f\in S(d')\} = \operatorname{colim}_{c\to d'} S(d') = i_! S(c),
-%	\]
-%	而 $\mathcal C$ 上预层 $F$ 在 $\mathcal D$ 上的限制为 $i^*F$. 由伴随 $i_! \dashv i^*$, 态射 $S\to i^*F$ 等同于态射 $i_!S \to F$.
-\end{proof}
-
-\begin{prop}
-	[label={comparison-lemma}]
-	{(比较原理)}
-	设 $(\mathcal C,J)$ 为景, $\mathcal D$ 为 $\mathcal C$ 的 $J$-稠密子范畴, 且 $\mathcal D$ 为小范畴. 那么 $\mathcal C$ 上的 $J$-层限制到 $\mathcal D$ 上给出了范畴等价
-	$$
-	\operatorname{Sh}(\mathcal C,J) \overset{\simeq}{\to} \operatorname{Sh}(\mathcal D,J\big|_{\mathcal D}).
-	$$
-\end{prop}
-\begin{proof}
-	考虑沿嵌入 $i\colon \mathcal D\to \mathcal C$ 的右 Kan 扩张 (例 \ref{presheaf-category-adjunction})
-	\[
-	i_*\colon \widehat {\mathcal D} \to \widehat {\mathcal C},
-	\quad
-	i_*F(c) = \lim_{d\to c}F(d).
-	\]
-	(其中极限的指标范畴由 $\mathcal D$ 的对象到 $c$ 的所有态射构成.)
-	我们断言 $i_*$ 给出了限制函子 $\operatorname{Sh}(\mathcal C,J) \to \operatorname{Sh}(\mathcal D,J\big|_{\mathcal D})$ 的逆.
-	\begin{itemize}
-		\item 设 $F$ 是 $\mathcal D$ 上的 $J\big|_{\mathcal D}$-层, 那么 $i_*F$ 的限制是 $F$: 对 $\mathcal D$ 的对象 $d$, $i_*F(d) = \operatorname{lim}_{d'\to d} F(d') = F(d)$. 我们还需要说明 $i_*F$ 是 $\mathcal C$ 上的 $J$-层.
-		对任意 $(S\to\yo(c))\in J(c)$,
-		由伴随 $i^*\dashv i_*$, 态射 $S \to i_*F$ 等同于 $i^*S \to F$;
-		$i^*S$ 是 $S$ 中从 $\mathcal D$ 出发的态射的集合. 由 $\mathcal D$ 是 $J$-稠密子范畴,
-		
-		\item 设
-		
-	\end{itemize}
-\end{proof}
 
 %\todo{在哪里讲稠密子范畴?}
 
 \begin{example}
+	[label={sheaf-topos-on-topological-space}]
 	{(拓扑空间上的层\topos{})}
-	对于拓扑空间 $X$, $\operatorname{Sh}(X)$ 是\topos{}, 其子对象分类子 $\Omega$ 为
+	对于拓扑空间 (或位象) $X$, $\operatorname{Sh}(X)$ 是\topos{}, 其子对象分类子 $\Omega$ (作为预层) 为
 	$$
 	\Omega(U) = \{\text{$U$ 的开子集}\}.
 	$$
+	这与命题 \ref{sheaf-subobject-classifier-closed-sieve} 的结论相符, 见例 \ref{closed-sieve-on-topological-space} 的讨论.
 \end{example}
 
 \begin{remark}
 	{(``小'' \topos{}与 ``大'' \topos{})}
-	粗略地说, 层以及层\topos{}有两种不同的风味.
-	一种是\emph{一个空间}上的层 (如例 \ref{topological-space-as-site}),
-	一种是\emph{一类空间的范畴}上的层 (如例 \ref{cartsp-site}).
+	层以及层\topos{}有两种不同的风味.
+	一种是\emph{一个空间}上的层 (例 \ref{topological-space-as-site}),
+	一种是\emph{一类空间的范畴}上的层, 如 $\mathsf {CartSp}$ 上的层 (例 \ref{cartsp-site}).
 	Grothendieck 称前者的\topos{}为\emph{小\topos{}} (petit topos),
 	后者的\topos{}为\emph{大\topos{}} (gros topos).
+	这种区分不是绝对的, 而仅仅是看法的不同.
+	任何一个固定的\topos{}都有两种看法:
+	``小'' \topos{}的看法将它看成一个广义空间 (上的层范畴),
+	而 ``大'' \topos{}的看法将它看成一类广义空间构成的范畴. 两种看法可以转化: 若将一个\topos{}视为一个广义空间, 那么它 (作为范畴) 等价于其上 ``平展空间'' 的范畴 (注 \ref{over-topos-etale-remark}).
 \end{remark}
 
 
 
 \subsection{位象型\topos{}}
 
-\topos{}可以视为 ``空间'' 概念的推广, 一个重要原因就是由层\topos{}可以重构出这个 ``空间''.
-对于拓扑空间或位象 $X$, 回忆 $\operatorname{Sh}(X)$ 的终对象 $1$ 是在所有开子集上取值为 $1$ 的层, 故 $\operatorname{Sh}(X)$ 的子终对象 (定义 \ref{subterminal-object-definition}) 是在每个开集上取值 $0$ 或 $1$ 的层. 由层条件, 当一个子终层 ($\operatorname{Sh}(X)$ 的子终对象) 在若干开子集 $U_i\in\mathcal O(X)$ 上取值为 $1$ 时, 它在 $\bigvee_i U_i$ 上取值也为 $1$; 因此存在这个层取值为 $1$ 的最大开子集. 这证明了如下的 ``重构'' 定理:
+\topos{}可以视为 ``空间'' 概念的推广, 因为由一个空间上的层\topos{}可以重构出这个空间.
+对于拓扑空间或位象 $X$, 回忆 $\operatorname{Sh}(X)$ 的终对象 $1$ 是在所有开子集上取值为 $1$ 的层, 故 $\operatorname{Sh}(X)$ 的子终对象 (定义 \ref{subterminal-object-definition}) 是在每个开集上取值 $0$ 或 $1$ 的层. 由层条件, 当一个子终层 ($\operatorname{Sh}(X)$ 的子终对象) 在若干开子集 $U_i\in\mathcal O(X)$ 上取值为 $1$ 时, 它在 $\bigvee_i U_i$ 上取值也为 $1$; 因此存在这个层取值为 $1$ 的最大开子集. 这证明了如下的重构定理:
 
 \begin{prop}
 	{(由层\topos{}重构位象)}
@@ -2247,17 +2578,19 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 \begin{example}
 	{(非位象型 Grothendieck \topos{}的例子)}
-	设 $G$ 为群, $G$-集范畴 $G\mathsf {Set} = \mathsf {Fun}(\mathsf BG^{\op},\mathsf {Set})$ 是 Grothendieck \topos{}, 但当 $G$ 非平凡时, $G\mathsf {Set}$ 不是位象型\topos{}. 这是因为, $G\mathsf {Set}$ 的子终对象仅有空集 $0$ 和单元集 $1$, 而对于 $G$-集合 $X$, 态射 $1\to X$ 是 $X$ 在 $G$-作用下的不动点. 一个 $G$-集合一般不能由它的不动点决定, 因此 $G\mathsf {Set}$ 不能由子终对象生成.
+	设 $G$ 为群, $G$-集范畴 $G\mathsf {Set} = \mathsf {Fun}(\mathsf BG^{\op},\mathsf {Set})$ 是 Grothendieck \topos{}, 但当 $G$ 非平凡时, $G\mathsf {Set}$ 不是位象型\topos{}. 这是因为, $G\mathsf {Set}$ 的子终对象仅有空集 $0$ 和单元集 $1$, 而 $G$-集合态射 $1\to S$ 是 $S$ 在 $G$-作用下的不动点. 一个 $G$-集合一般不能由它的不动点决定 ($G$-集合可以完全没有不动点), 因此 $G\mathsf {Set}$ 不能由子终对象生成.
 	
-	考虑一个带有 $G$-作用的拓扑空间 $T$ ($G$ 视为离散群). $G$-等变层范畴 $\operatorname{Sh}_G(T)$ 是 Grothendieck \topos{}, 但不一定是位象型\topos{}. 事实上, $\operatorname{Sh}_G(T)$ 的底层位象为 $\operatorname{Sh}(T/G)$.
+	考虑一个带有 $G$-作用的拓扑空间 $X$ ($G$ 视为离散群). $G$-等变层范畴 $\operatorname{Sh}_G(X)$ (定义 \ref{equivariant-sheaf}) 是 Grothendieck \topos{}, 但不一定是位象型\topos{}. 事实上, $\operatorname{Sh}_G(X)$ 的底层位象为商空间 $X/G$.
 \end{example}
 
 \section{Lawvere--Tierney 拓扑, 内蕴层化与局部化}
 
 \subsection{Lawvere--Tierney 拓扑}
 
-回忆 $\widehat {\mathcal C}$ 的子对象分类子 $\Omega$ 是 $\Omega(c) = \{\text{$c$ 上的筛}\}$ (命题 \ref{presheaf-category-subobject-classifier}). Grothendieck 拓扑 $J$ 给每个对象 $c$ 赋予一族筛, 也即赋予一个子集 $J(c)\subset \Omega(c)$. 由拉回下的稳定性, $J$ 构成 $\Omega$ 的子函子. 而由 $\Omega$ 为子对象分类子, $J\hookrightarrow \Omega$ 进一步对应一个态射 $j\colon \Omega \to \Omega$.
-这个态射可以承载 Grothendieck 拓扑的所有信息, 而好处在于仅涉及了\topos{}中的子对象分类子, 从而可在任何\topos{} (而不仅是预层范畴) 中谈论.
+\label{section-LT-topology}
+
+回忆 $\widehat {\mathcal C}$ 的子对象分类子 $\Omega$ 满足 $\Omega(c) = \{\text{$c$ 上的筛}\}$ (命题 \ref{presheaf-category-subobject-classifier}). Grothendieck 拓扑 $J$ 给每个对象 $c$ 赋予一族筛, 也即赋予一个子集 $J(c)\subset \Omega(c)$. 由拉回下的稳定性, $J$ 构成 $\Omega$ 的子函子. 而由 $\Omega$ 为子对象分类子, $J\hookrightarrow \Omega$ 进一步对应一个态射 $j\colon \Omega \to \Omega$.
+这个态射可以承载 Grothendieck 拓扑的所有信息, 而其好处在于仅涉及了\topos{}中的子对象分类子, 从而可在任何\topos{} (而不仅是预层范畴) 中谈论.
 下面的概念即是态射 $j$ 在一般\topos{}中的刻画.
 
 \begin{definition}
@@ -2277,10 +2610,27 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 		\begin{enumerate}[(1)]
 			\item $j\circ \top = \top$;
 			\item $j\circ j = j$;
-			\item $j$ 保持 $\land$, 即 $j\circ \land = \land\circ (j\times j)$. (等价的条件是 $j$ 保持 $\Omega$ 上内蕴的序关系.)
+			\item $j$ 保持 $\land$, 即 $j\circ \land = \land\circ (j\times j)$.
 		\end{enumerate}
 		%	\end{minipage}
 \end{definition}
+
+\begin{prop}
+	{}
+	%(等价的条件是 $j$ 保持 $\Omega$ 上内蕴的序关系)
+	将定义 \ref{Lawvere--Tierney-topology} 中的条件 (3) 改为
+	\begin{enumerate}
+		\item[(3')]
+		$j$ 保持 $\Omega$ 上内蕴的序关系 $\Rightarrow \colon\Omega\times\Omega\to\Omega$,
+		即 $j\circ{\Rightarrow} \leq {\Rightarrow}\circ (j\times j)$,
+	\end{enumerate}
+	($\Rightarrow$ 的定义见 \ref{Omega-implication})得到的定义是等价的.
+	\todo{检查}
+\end{prop}
+我们将用内语言证明这个命题, 见命题 \ref{internal-LT-equivalent-definition}.
+
+%\todo{Lawvere--Tierney 拓扑的例子, 子位象与内核}
+
 
 \begin{remark}
 	[label={Lawvere--Tierney-topology-as-modality}]
@@ -2293,7 +2643,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 由米田引理, 态射 $\Omega\to\Omega$ 等同于自然变换 $\operatorname{Sub}\to \operatorname{Sub}$, 即子对象的一种运算.
 
-\begin{prop}
+\begin{propdef}
 	[label={Lawvere--Tierney-closure}]
 	{(Lawvere--Tierney 拓扑与 ``闭包'')}
 	Lawvere--Tierney 拓扑 $j$ 等同于每个对象 $X$ 的子对象格 $\operatorname{Sub}(X)$ 上的一个 ``闭包'' 运算\footnotemark{}
@@ -2305,7 +2655,8 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 		\item[(0)] (自然性) 对态射 $f\colon Y\to X$, 有 $\overline{f^*A}=f^*\overline{A}$;
 		\item[(1)] 对于 $1$ 的子对象有 $\overline{1}=1$ (或等价地, 对任意子对象 $A\to X$, 有 $A \leq \overline{A}$);
 		\item[(2)] $\overline{\overline{A}}=\overline{A}$;
-		\item[(3)] $\overline{A\land B} = \overline{A}\land\overline{B}$ (或等价地, $A\leq B\Rightarrow \overline{A}\leq\overline{B}$).
+		\item[(3)] $\overline{A\land B} = \overline{A}\land\overline{B}$.% (等价的条件是, 若 $A\leq B$, 则 $\overline{A}\leq\overline{B}$).
+		% 如何陈述保序的条件?
 	\end{enumerate}
 	%\end{minipage}
 	%	\begin{minipage}
@@ -2332,13 +2683,28 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 		%	\end{minipage}
 	
 	因此 Lawvere--Tierney 拓扑也称作\emph{万有闭包运算} (universal closure operation).
-\end{prop}
+	称满足 $\overline{A}=A$ 的子对象 $A$ 为\emph{闭子对象} (closed subobject).
+\end{propdef}
 
 上述命题中的条件 $(1) (2) (3)$ 分别对应定义 \ref{Lawvere--Tierney-topology} 中的条件 $(1) (2) (3)$.
 其中条件 $(1)$ 等价于 $A\subset \overline{A}$ 是因为自然性 (对态射 $A\to X$, $A\to 1$ 分别使用自然性条件).
 这三个条件也对应位象理论中 ``内核'' 的条件 (定义 \ref{nuclei}).
 
-\footnotetext{不幸的是, 这个闭包的概念与拓扑学上的闭包不是一回事.}
+\begin{example}
+	{(子位象, 内核与 Lawvere--Tierney 拓扑)}
+	设 $Y\to X$ 是子位象, 对应内核 $j\colon \mathcal O(X)\to\mathcal O(X)$ (命题 \ref{nucleus-one-to-one-sublocale}).
+	回忆 $\operatorname{Sh}(X)$ 的子对象分类子 $\Omega$ 满足 $\Omega(U) = \{\text{$U$ 的开子空间}\}$ (例 \ref{sheaf-topos-on-topological-space}).
+	定义态射 $j\colon \Omega\to \Omega$,
+	$j(U)(V)= (Y\Rightarrow V)\land U$. 我们验证 $j$ 是 $\operatorname{Sh}(X)$ 上的 Lawvere--Tierney 拓扑:
+	\begin{itemize}
+		\item $j(U)(U)=(Y\Rightarrow U)\land U = U$, 即 $j\circ\top = \top$;
+		\item $j(U)\circ j(U) (V) = \big[Y\Rightarrow((Y\Rightarrow V)\land U)\big]\land U = (Y\Rightarrow V)\land U$, 即 $j\circ j = j$;
+		\item $j(U)(V\land W) = (Y\Rightarrow (V\land W))\land U = (Y\Rightarrow V)\land (Y\Rightarrow W)\land U = j(U)(V)\land j(U)(W),$ 即 $j$ 保持 $\land$.
+	\end{itemize}
+	%\todo{Omega 是什么?}
+\end{example}
+
+\footnotetext{这个闭包的概念与拓扑学上的闭包不是一回事.}
 
 \begin{definition}
 	{(稠密子对象)}
@@ -2431,11 +2797,42 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	如图, $F$ 的 $J$-层条件说明态射 $x^*A\to F$ 可唯一地延拓为 $\yo(c)\to F$, 这便唯一确定了自然变换 $X\to F$.\footnote{此处可作如下解释. $X$ 可表示为 $\yo(c)$ 的余极限 (命题 \ref{presheaf-as-colimit-of-representables}), 故态射 $X\to F$ 由所有态射 $\yo(c)\to F$ 唯一确定. 当然, 这个事实有更直接的解释: 预层的态射 $X\to F$ 由每个分量的态射 $X(c)\to F(c)$ 决定.}
 \end{proof}
 
+上述命题的另一个方向是 $\widehat {\mathcal C}$ 上的所有 Lawvere--Tierney 拓扑都是来自 $\mathcal C$ 上的 Grothendieck 拓扑.
+\begin{prop}
+	[label={LT-presheaf-topos-Grothendieck}]
+	{}
+	预层范畴 $\widehat {\mathcal C}$ 上的 Lawvere--Tierney 拓扑 $j$ 确定了 $\mathcal C$ 上的 Grothendieck 拓扑 $J$, 使得对于 $S\in\Omega(c)$,
+	$$
+	S\in J(c)\ \text{当且仅当}\ j_c(S) =\text{极大筛}.
+	$$
+\end{prop}
+
+
+
 \subsection{层范畴的性质}
+
+\subsubsection{层范畴中的有限极限}
+
+\begin{prop}
+	[label={j-sheaf-finite-limits}]
+	{}
+	设 $j\colon \Omega\to\Omega$ 是\topos{} $\mathcal C$ 上的 Lawvere--Tierney 拓扑, 则 $\operatorname{Sh}_j\mathcal C$ 具有有限极限, 且等同于 $\mathcal C$ 中的有限极限.
+\end{prop}
+\begin{proof}
+	这是局部对象的性质 (命题 \ref{local-objects-closed-limits}).
+\end{proof}
+
+由单射的拉回刻画 (命题 \ref{mono-epi-pullback-pushout}), 有如下推论.
+\begin{prop}
+	[label={j-sheaf-mono}]
+	{}
+	设 $j\colon \Omega\to\Omega$ 是\topos{} $\mathcal C$ 上的 Lawvere--Tierney 拓扑, 则 $\operatorname{Sh}_j\mathcal C$ 中一个态射是单射当且仅当它作为 $\mathcal C$ 中的态射是单射.
+\end{prop}
 
 \subsubsection{层范畴中的子对象}
 
 \begin{propdef}
+	[label={closed-subobject-classifier}]
 	{(闭子对象分类子)}
 	设 $j\colon \Omega\to\Omega$ 是\topos{} $\mathcal C$ 上的 Lawvere--Tierney 拓扑.
 	定义 $\Omega_j\hookrightarrow\Omega$ 为 $j$ 的不动点集, 也即 $\Omega_j = \operatorname{eq}(\operatorname{id},j\colon \Omega\rightrightarrows \Omega)$.
@@ -2445,19 +2842,20 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	\]
 \end{propdef}
 \begin{proof}
-	对 $X$ 的任意子对象 $A\hookrightarrow X$, $\overline{A}$ 的特征函数为 $j\circ\chi_A$.
-	因此 $\overline{A}=A$ 当且仅当 $j\circ \chi_A = \chi_A$, 当且仅当 $\chi_A$ 穿过 $\Omega_j\hookrightarrow\Omega$.
+	对 $X$ 的任意子对象 $A\hookrightarrow X$, 由 $\overline{A}$ 的定义, $\overline{A}$ 的特征函数为 $j\circ\chi_A$.
+	因此 $\overline{A}=A$ 当且仅当 $j\circ \chi_A = \chi_A$. 由 $\Omega_j$ 的定义, $j\circ \chi_A = \chi_A$ 当且仅当 $\chi_A$ 穿过 $\Omega_j\hookrightarrow\Omega$. 这说明 $\Omega_j$ 分类了闭子对象.
 \end{proof}
 
 注意 $\Omega_j$ 的构造与 ``内核对应的子位象'' (定义 \ref{nucleus-to-sublocale}) 相似.
 
 \begin{prop}
+	[label={closed-subobject-j-sheaf}]
 	{}
 	设 $j\colon \Omega\to\Omega$ 是\topos{} $\mathcal C$ 上的 Lawvere--Tierney 拓扑,
 	$X$ 为 $j$-层.
 	那么 $X$ 的子对象 $A\hookrightarrow X$ 是闭子对象当且仅当 $A$ 是 $j$-层.
 \end{prop}
-\begin{proof}
+\begin{proof}~
 	\begin{itemize}
 		\item 假设 $A\hookrightarrow X$ 是闭子对象.
 		对任意稠密子对象 $B\hookrightarrow Y$,
@@ -2472,7 +2870,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 			\arrow[hook, from=1-2, to=2-2]
 			\arrow["{\exists !}"{description}, dashed, from=2-1, to=1-2]
 		\end{tikzcd}\]
-		因为 $B \leq g^*A$, $B$ 稠密, 而 $g^*A$ 为闭子对象, 所以 $g^*A=Y$, 也即存在 $Y\to A$. 由 $A\hookrightarrow X$ 为单射, 这个态射 $Y\to A$ 是唯一的.
+		这表示 $B \leq g^*A$. 因为 $B\hookrightarrow Y$ 稠密, 而 $g^*A$ 为 $Y$ 的闭子对象, 所以 $g^*A=Y$, 也即存在上图中的态射 $Y\to A$. 由 $A\hookrightarrow X$ 为单射, 这个态射 $Y\to A$ 是唯一的.
 		这证明了 $A$ 为 $j$-层.
 		\item 假设 $A$ 为 $j$-层. 由下图中 $A\hookrightarrow\overline{A}$ 为稠密单射, 知 $\overline{A}\hookrightarrow X$ 穿过 $A\hookrightarrow X$ ($X$ 为 $j$-层保证了右下方三角形交换), 故 $\overline{A}=A$.
 		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzAsMSwiXFxvdmVybGluZXtBfSJdLFsxLDAsIkEiXSxbMSwxLCJYIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMSwzLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFswLDIsIlxcb3BlcmF0b3JuYW1le2lkfSJdLFsyLDMsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMiwiXFxleGlzdHMgISIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
@@ -2489,9 +2887,37 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 \end{proof}
 
 \begin{prop}
+	[label={Omega-j-j-sheaf}]
 	{}
-	是 $\operatorname{Sh}_j\mathcal C$ 的子对象分类子.
+	定义 \ref{closed-subobject-classifier} 中的 $\Omega_j$ 是 $j$-层.
 \end{prop}
+\begin{proof}
+	我们要证明任意稠密子对象 $m\colon A\hookrightarrow X$ 给出同构 $m^*\colon \operatorname{Hom}(X,\Omega_j) \to \operatorname{Hom}(A,\Omega_j)$;
+	由命题 \ref{closed-subobject-classifier},
+	这等价于
+	\[
+	m^*\colon \{\text{$X$ 的闭子对象}\} \to \{\text{$A$ 的闭子对象}\}, \,U\mapsto U\land A
+	\]
+	为双射.
+	对 $A$ 的闭子对象 $B\hookrightarrow A$,
+	回忆 $\exists_m B$ 表示 $B\hookrightarrow A \to X$ 作为 $X$ 的子对象 (定义 \ref{image-vs-exists}). 那么
+	$$
+	m^*\overline{\exists_m B} = \overline{m^*\exists_m B} = \overline{\exists_m B \land A} = \overline{B} = B.
+	$$
+	另一方面, 对于 $X$ 的闭子对象 $Y\hookrightarrow X$,
+	$$
+	\overline{\exists_m m^*Y} = \overline{Y\land A} = \overline{Y} \land \overline{A} = Y\land X = Y.
+	$$
+	这证明了所需的双射.
+\end{proof}
+
+\begin{prop}
+	{}
+	$\Omega_j$ 是 $\operatorname{Sh}_j\mathcal C$ 的子对象分类子.
+\end{prop}
+\begin{proof}
+	由命题 \ref{j-sheaf-mono}, \ref{closed-subobject-classifier}, \ref{closed-subobject-j-sheaf}, \ref{Omega-j-j-sheaf} 即证.
+\end{proof}
 
 \subsubsection{层范畴中的指数对象}
 
@@ -2501,7 +2927,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 	设 $j$ 是\topos{} $\mathcal C$ 上的 Lawvere--Tierney 拓扑, $F$ 是 $j$-层, $X$ 是任意对象, 那么指数对象 $F^X$ 是 $j$-层.
 \end{prop}
 
-这个命题的证明与 \ref{sheaf-exponential-ideal} 类似.
+这个命题与 \ref{sheaf-exponential-ideal} 一样是正合局部化的性质 (命题 \ref{exponential-ideal-cartesian-closed-reflective-subcategory}) 的特例.
 
 \subsection{层化与局部化}
 
@@ -2563,7 +2989,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
     \[
     (gf)_* = g_*f_*,\quad (gf)^* = f^*g^*.
     \]
-    由于 $f^*,g^*$ 均保持有限极限, 当然 $(gf)^*$ 也保持有限极限.
+    由于 $f^*,g^*$ 均保持有限极限, 当然 $(gf)^*$ 也保持有限极限, 于是有几何态射 $gf\colon\mathcal C\to\mathcal E$.
     
     设 $f,g\colon \mathcal C\to\mathcal D$ 为几何态射, 定义 $f$ 到 $g$ 的\emph{几何变换}为自然变换 $f^* \to g^*$, 也即自然变换 $g_*\to f_*$ (命题 \ref{adjoint-natural-transformation}).
     由此, \topos{}, 几何态射与几何变换构成 $2$-范畴 $\Top$.
@@ -2587,7 +3013,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
     % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiBDIl0sWzEsMCwiXFxtYXRoc2Yge1NldH0iXSxbMSwwLCJMIiwyLHsib2Zmc2V0IjoyfV0sWzAsMSwiXFxHYW1tYSIsMix7Im9mZnNldCI6Mn1dLFsyLDMsIiIsMix7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV1d
     \[\begin{tikzcd}[ampersand replacement=\&]
     	{\mathcal C} \& {\mathsf {Set},}
-    	\arrow[""{name=0, anchor=center, inner sep=0}, "L"', shift right=2, from=1-2, to=1-1]
+    	\arrow[""{name=0, anchor=center, inner sep=0}, "\Delta"', shift right=2, from=1-2, to=1-1]
     	\arrow[""{name=1, anchor=center, inner sep=0}, "\Gamma"', shift right=2, from=1-1, to=1-2]
     	\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
     \end{tikzcd}\]
@@ -2595,18 +3021,18 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 \end{propdef}
 
 \begin{proof}
-    由于左伴随 $L$ 保持余极限 (命题 \ref{adjoints-preserve-limits}),
-    且由定义保持有限极限 (特别地, 保持终对象 $1$), 故对任意集合 $S$ 有
+    由于 $\Delta$ 作为左伴随保持余极限 (命题 \ref{adjoints-preserve-limits}),
+    且由定义, $\Delta$ 保持有限极限 (特别地, 保持终对象 $1$), 故对任意集合 $S$ 有自然同构
     $$
-        L(S) \simeq L \Big(\coprod_{s\in S} 1\Big)
-        \simeq \coprod_{s\in S} L(1)
+        \Delta(S) \simeq \Delta \Big(\coprod_{s\in S} 1\Big)
+        \simeq \coprod_{s\in S} \Delta(1)
         \simeq \coprod_{s\in S} 1,
     $$
-    即 $L$ (在自然同构意义下) 唯一确定. 那么其右伴随也 (本质上) 唯一确定. 具体地, $\Gamma$ 是由 $1\in\mathcal C$ 表示的函子
+    即 $\Delta$ (在自然同构意义下) 唯一确定. 那么其右伴随也唯一确定. 具体地, $\Gamma$ 是由 $1\in\mathcal C$ 表示的函子
     $$\Gamma = \operatorname{Hom}_{\mathcal C}(1,-),$$
     这是因为
     \begin{align*}
-    	\operatorname{Hom}_{\mathcal C}(L(S),X)&
+    	\operatorname{Hom}_{\mathcal C}(\Delta(S),X)&
     	\simeq
     	\prod_{s\in S}\operatorname{Hom}_{\mathcal C}(1,X)\\
     	&\simeq
@@ -2616,11 +3042,34 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 \begin{remark}
 	[label={notation-constant-sheaf}]
-	{(常值层的记号)}
-	在层范畴的情形, 上述命题中的左伴随 $L$ 给出 ``常值层'' (例 \ref{global-sections}). 故不妨沿用常值层的记号, 对于集合 $S$, 记上述命题中的 $L(S)$ 为 $\underline{S}$.
+	{(常值层)}
+	在层范畴的情形, 上述命题中的左伴随 $\Delta$ 给出 ``常值层'' (例 \ref{global-sections}). 对于集合 $S$, 有时我们也将上述命题中的 $\Delta(S)$ 记为 $\underline{S}$.
 	对于集合 $S$ 的元素 $s\colon 1\to S$, 记其对应的整体元素为 $\underline{s}:= L(s) \colon 1\to \underline{S}$.
 \end{remark}
 
+位象 $X$ 的点是终位象 $1$ 到 $X$ 的映射 (定义 \ref{points-of-locale}); 类似地可定义\topos{}的点.
+
+\begin{definition}
+	{(\topos{}的点)}
+	\topos{} $\mathcal C$ 的一个\emph{点}是
+	$\mathsf {Set}$ (即 $\operatorname{Sh}(\text{pt})$) 到 $\mathcal C$ 的一个几何态射 $p\colon \operatorname{Sh}(\text{pt}) \to \mathcal C$.
+	%若这个几何态射是本质的, 则称之为\emph{本质点}.
+	该几何态射的逆像部分 $p^*\colon \mathcal C\to \mathsf {Set}$ 称为\emph{茎}.
+\end{definition}
+
+\begin{example}
+	{}
+	拓扑空间 $X$ 的一个点 $x$ 给出\topos{} $\operatorname{Sh}(X)$ 的一个点 (例 \ref{topological-space-point-stalk-skyscraper}).
+\end{example}
+
+% 清晰空间 (定义 \ref{sober-space}) 或
+
+\begin{prop}
+	{}
+	设 $X$ 是位象, 则层\topos{} $\operatorname{Sh}(X)$ 的点等同于 $X$ 的点.
+\end{prop}
+
+我们将在 \ref{section-site-morphism} 节讨论更多\topos{}的点.
 
 \begin{example}
 	{(\topos{}的俯范畴)}
@@ -2646,7 +3095,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 
 \begin{example}
 	{}
-	对于\topos{} $\mathcal C$ 中的态射 $f\colon X\to Y$, 拉回 $f^*\colon \mathcal C/Y \to \mathcal C/X$ 为逻辑态射, 因为它保持任何极限, 将子对象分类子 $\Omega\times Y\to Y$ 变为子对象分类子 $\Omega\times X\to X$, 且保持指数对象 (命题 \ref{pullback-preserve-exponential-objects}).
+	对于\topos{} $\mathcal C$ 中的态射 $f\colon X\to Y$, 拉回 $f^*\colon \mathcal C/Y \to \mathcal C/X$ 为逻辑态射, 因为它保持极限, 将子对象分类子 $\Omega\times Y\to Y$ 变为子对象分类子 $\Omega\times X\to X$, 且保持指数对象 (命题 \ref{pullback-preserve-exponential-objects}).
 \end{example}
 
 逻辑态射的意义在于它保持内语言中成立的语句, 见 \ref{logical-functor-internal} 节.
@@ -3199,15 +3648,15 @@ $$
 \todo{几何态射 SGL VII.2}
 
 
-\subsection{左正合与平坦函子}
+\section{景之间的态射}
 
-%\topos{}的态射可由景的态射诱导.
+\label{section-site-morphism}
 
-\todo{解释为什么要定义存在有限极限的景的态射}
+类比于拓扑空间的连续映射, \topos{}的态射可由景的态射诱导. 对于存在有限极限的景, 其态射的定义较为简单.
 
 \begin{definition}
-	{(存在有限极限的景的态射)}
-	设 $(\mathcal C,J),(\mathcal D,K)$ 是景, 且范畴 $\mathcal C,\mathcal D$ 存在有限极限. 定义\emph{景的态射} $F\colon \mathcal C\to\mathcal D$ 为满足如下条件的函子:
+	{(有限极限景的态射)}
+	设 $(\mathcal C,J),(\mathcal D,K)$ 是\emph{有限极限景}, 即范畴 $\mathcal C,\mathcal D$ 存在有限极限. 定义\emph{景的态射} $F\colon \mathcal C\to\mathcal D$ 为满足如下条件的函子:
 	\begin{itemize}
 		\item $F$ 保持有限极限 (``左正合'');
 		\item $F$ 保持覆盖, 也即对 $\mathcal C$ 中任意对象 $c$ 的 $J$-覆盖 $R$, $\{F(f)\mid f\in R\}$ 生成了 $F(c)$ 上的一个 $K$-覆盖筛.
@@ -3216,18 +3665,76 @@ $$
 
 \begin{example}
 	{}
-	\fm{}视为范畴存在有限极限. \fm{}的态射即是其作为景 (例 \ref{locale-as-site}) 的态射, 因为此时保持有限极限即是保持有限交, 保持覆盖即是保持任意并.
+	一个\fm{}视为范畴存在有限极限. \fm{}的态射即是其作为景 (例 \ref{locale-as-site}) 的态射, 因为此时保持有限极限即是保持有限交, 保持覆盖即是保持任意并.
 \end{example}
 
+\begin{prop}
+	{(有限极限景的态射诱导层\topos{}的几何态射)}
+	设 $(\mathcal C,J),(\mathcal D,K)$ 是有限极限景. 那么景的态射 $F\colon\mathcal C\to \mathcal D$ 诱导的预层范畴间的函子 $F^*\colon \widehat {\mathcal D}\to\widehat {\mathcal C}$ 限制为函子 $\operatorname{Sh}(\mathcal D,K)\to\operatorname{Sh}(\mathcal C,J)$.
+\end{prop}
+\begin{proof}
+	设 $X$ 为 $\mathcal D$ 上的 $K$-层, 我们证明 $F^*X=X\circ (F^{\op})$ 是 $\mathcal C$ 上的 $J$-层.
+	设 $R$ 为对象 $c\in\mathcal C$ 上的 $J$-覆盖筛, 且有相容族 $(s_f\in (F^*X)(c'))_{(f\colon c'\to c)\in R}$.
+	令 $S$ 为 $\{F(f)\mid f\in R\}$ 生成的 $F(c)$ 上的筛, 由条件, $S$ 为 $K$-覆盖筛. 我们要构造 $S$ 上的一个相容族. 对于 $(g\colon d\to F(c))\in S$, 选取 $(f\colon c'\to c)\in R$ 使得 $g$ 穿过 $F(f)$ (如图);
+	% https://q.uiver.app/#q=WzAsNSxbMywwLCJkIl0sWzIsMCwiRihjJykiXSxbMiwxLCJGKGMpIl0sWzAsMCwiYyciXSxbMCwxLCJjIl0sWzAsMiwiZyJdLFsxLDIsIkYoZikiLDJdLFswLDEsImgiLDJdLFszLDQsImYiLDJdLFs4LDYsIkYiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6NDAsInRhcmdldCI6NDB9fV1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{c'} \&\& {F(c')} \& d \\
+		c \&\& {F(c)}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "f"', from=1-1, to=2-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{F(f)}"', from=1-3, to=2-3]
+		\arrow["h"', from=1-4, to=1-3]
+		\arrow["g", from=1-4, to=2-3]
+		\arrow["F", shorten <=26pt, shorten >=26pt, Rightarrow, from=0, to=1]
+	\end{tikzcd}\]
+	定义 $t_g = X(h)(s_f)$. 需要证明该定义不依赖 $f,h$ 的选取. 假设 $(f\colon c'\to c),(k\colon c''\to c)\in S$ 使得 $g$ 穿过 $F(f)$ 与 $F(k)$, 考虑下图 (注意 $F$ 保持拉回, 故图中的方块为拉回),
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		\&\& d \\
+		{F(c')} \& {F(c'\times_c c'')} \\
+		{F(c)} \& {F(c'')}
+		\arrow["h"', from=1-3, to=2-1]
+		\arrow[from=1-3, to=2-2]
+		\arrow["\ell", from=1-3, to=3-2]
+		\arrow["{F(f)}"', from=2-1, to=3-1]
+		\arrow[from=2-2, to=2-1]
+		\arrow[from=2-2, to=3-2]
+		\arrow["F(k)",from=3-2, to=3-1]
+	\end{tikzcd}\]
+	这说明 $X(h)(s_f)=X(\ell)(s_k)$.
+\end{proof}
+
+\begin{prop}
+	{}
+	设 $(\mathcal C,J),(\mathcal D,K)$ 是有限极限景, 且 $(\mathcal D,K)$ 是次典范的 (定义 \ref{canonical-topology}). 对于 Grothendieck \topos{}的几何态射 $f\colon \operatorname{Sh}(\mathcal D,K) \to \operatorname{Sh}(\mathcal C,J)$,
+	假设 $f^*$ 保持米田嵌入 (定义 \ref{sheafified-yoneda}), 即存在函子 $F\colon \mathcal C\to \mathcal D$ 使得下图交换,
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXG1hdGhjYWwgQyJdLFswLDEsIlxcb3BlcmF0b3JuYW1le1NofShcXG1hdGhjYWwgQyxKKSJdLFsxLDEsIlxcb3BlcmF0b3JuYW1le1NofShcXG1hdGhjYWwgRCxLKSJdLFsxLDAsIlxcbWF0aGNhbCBEIl0sWzAsMSwiXFx5b197KFxcbWF0aGNhbCBDLEopfSIsMl0sWzMsMiwiXFx5b197KFxcbWF0aGNhbCBELEspfSJdLFswLDMsIkYiXSxbMSwyLCJmXioiLDJdXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal C} \& {\mathcal D} \\
+		{\operatorname{Sh}(\mathcal C,J)} \& {\operatorname{Sh}(\mathcal D,K)}
+		\arrow["F", from=1-1, to=1-2]
+		\arrow["{\yo_{(\mathcal C,J)}}"', from=1-1, to=2-1]
+		\arrow["{\yo_{(\mathcal D,K)}}", from=1-2, to=2-2]
+		\arrow["{f^*}"', from=2-1, to=2-2]
+	\end{tikzcd}\]
+	那么 $F$ 为景的态射.
+\end{prop}
+\begin{proof}
+	由于 $f^*$ 和 $\yo_{(\mathcal C,J)}$ 保持有限极限, 且 $\yo_{(\mathcal D,K)}$ 为全忠实函子, 故 $F$ 保持有限极限.
+%	由于 $f^*$ 保持余极限, 而 $\operatorname{Sh}(\mathcal C,D)$ 的每个对象都是形如 $\yo_{(\mathcal C,J)}(c)$ 的对象的余极限 (命题 \ref{sheaf-as-colimit-of-sheafified-representables}),
+\todo{}
+\end{proof}
 
 
-在没有有限极限的范畴上, 我们也可以模拟 ``保持有限极限'' 这一现象.
+
+\subsection{$\mathsf {Set}$-值平坦函子}
+
+在没有有限极限的范畴上, 我们引入\emph{平坦函子}来模拟 ``保持有限极限'' 这一现象. 平坦函子也是定义景之间的态射所需的关键概念. 最简单的情形是取值于集合范畴的函子.
+
 \begin{propdef}
 	[label={Set-valued-flat-functor}]
 	{($\mathsf {Set}$-值平坦函子)}
 	设 $\mathcal C$ 为任意范畴, 对函子 $F\colon \mathcal C\to \mathsf {Set}$, 以下条件等价.
 	\begin{enumerate}[(1)]
-		\item $F$ 的元素的范畴 $\displaystyle\int^{\mathcal C}F$ (定义 \ref{slice-over-presheaf}) 为余滤范畴 (定义 \ref{filtered-category}).
+		\item $F$ 的元素的范畴 $\displaystyle\int^{\mathcal C}F$ (定义 \ref{slice-over-presheaf}) 为余滤范畴 (定义 \ref{cofiltered-category}).
 		\item $F$ 是可表函子 (即形如 $\operatorname{Hom}_{\mathcal C}(c,-)$ 的函子) 的滤余极限.
 		\item $F$ 的米田扩张 $L = {-\otimes_{\mathcal C} F}\colon \widehat {\mathcal C}\to\mathsf {Set}$ (命题 \ref{nerve-and-realization}) 保持有限极限.
 	\end{enumerate}
@@ -3253,31 +3760,47 @@ $$
 			&\simeq \operatorname{colim}_j\operatorname{colim}_{\yo(c)\to X}\operatorname{Hom}(c_j,c)\\
 			&\simeq \operatorname{colim}_j X(c_j),
 		\end{align*}
-		由命题 \ref{lambda-filtered-colimit-commutes-with-lambda-small-limit} (取 $\lambda = \aleph_0$), $J$-余极限与有限极限交换,
+		由命题 \ref{filtered-colimit-commutes-with-finite-limit}, $J$-余极限与有限极限交换,
 		故 $L$ 保持有限极限.
 		\item $(3)\Rightarrow (1)$. %证明见 \cite{HCA1} 6.3.8 以及 \cite{SGL} VII.6.3.
-		首先我们陈述一个简单的事实: 一个小范畴 $I$ 是余滤范畴当且仅当 $$\varnothing\qquad \qquad\bullet\ \ \bullet\qquad\qquad \bullet\rightrightarrows\bullet$$ 三种形状的图都有锥.
-		其中空图有锥的意思是 $I$ 非空.
-		\begin{itemize}
-			\item 空图 $\varnothing$. 因为 $L$ 保持终对象, $L(1)=1$, 固然 $F$ 非空, 那么 $\displaystyle\int^{\mathcal C} F$ 非空.
-			\item 图 $\bullet\ \ \bullet$. 因为 $L$ 保持乘积, 典范的映射 $$L(\yo(c)\times \yo(d))\simeq \operatorname{colim}_{\yo(e)\to\yo(c)\times\yo(d)}F(e) \longrightarrow F(c)\times F(d)$$
-			为同构, 故
-			$\displaystyle\int^{\mathcal C} F$
-			中两个对象 $(c,x),(d,y)$ 上总有锥.
-			%对任意 $x\in F(c), y\in F(d)$, %存在 $\mathcal C$ 的对象 $e$, $z\in F(e)$ 以及态射 $f\colon e\to c, g\colon e\to d$ 使得 $F(f)(z)=x, F(g)(z)=y$.
-			\item 图 $\bullet\rightrightarrows\bullet$.
-			因为 $L$ 保持等化子, 对任意态射 $f,g\colon c\rightrightarrows d$, 令 $$P=\operatorname{eq}\big(\yo(f),\yo(g)\colon \yo(c)\rightrightarrows \yo(d)\big),\quad
-			P(e)=\{h\colon e\to c\mid fh=gh\},$$ 则有等化子
-			% https://q.uiver.app/#q=WzAsMyxbMSwwLCJGKGMpIl0sWzIsMCwiRihkKS4iXSxbMCwwLCJMKFApIl0sWzAsMSwiRihmKSIsMCx7Im9mZnNldCI6LTF9XSxbMCwxLCJGKGcpIiwyLHsib2Zmc2V0IjoxfV0sWzIsMF1d
-			\[\begin{tikzcd}[ampersand replacement=\&]
-				{L(P)\simeq\operatorname{colim}_{\yo(e)\to P}F(e)} \& {F(c)} \& {F(d),}
-				\arrow["{F(f)}", shift left, from=1-2, to=1-3]
-				\arrow["{F(g)}"', shift right, from=1-2, to=1-3]
-				\arrow[from=1-1, to=1-2]
-			\end{tikzcd}\]
-			故 $\displaystyle\int^{\mathcal C} F$
-			中的图 $(c,x)\rightrightarrows (d,y)$ 上总有锥.
-		\end{itemize}
+		
+		设 $I$ 为有限范畴, $\displaystyle X\colon I\to \int^{\mathcal C}F$ 为图, 我们要证明 $X$ 上有锥. 对于 $i\in I$, 记 $X(i)=(c_i,x_i)$, 其中 $x_i\in F(c_i)$. 注意到 $X$ 可视为 $\lim_{i\in I}F(c_i)$ 的元素.
+		因为 $L$ 保持有限极限, 典范的映射
+		$$
+		L(\operatorname{lim}_{i\in I}\yo(c_i)) 
+		\to
+		\operatorname{lim}_{i\in I}L(\yo(c_i))\simeq\operatorname{lim}_{i\in I}F(c_i)
+		$$
+		为同构. 而
+		$$
+		L(\operatorname{lim}_{i\in I}\yo(c_i))\simeq \operatorname{colim}_{\yo(c)\to \operatorname{lim}_{i\in I}\yo(c_i)}F(c),
+		$$
+		故存在一个态射 $f\colon \yo(c)\to \lim_{i\in I}\yo(c_i)$, 即一个锥 $(f_i\colon c\to c_i)_{i\in I}$,
+		以及 $x\in F(c)$,
+		使得 $F(f_i)(x)=x_i\in F(c_i)$. 这就是说 $X$ 上有锥.
+		
+%		首先我们陈述一个简单的事实: 一个小范畴 $I$ 是余滤范畴当且仅当 $$\varnothing\qquad \qquad\bullet\ \ \bullet\qquad\qquad \bullet\rightrightarrows\bullet$$ 三种形状的图都有锥.
+%		其中空图有锥的意思是 $I$ 非空. 我们分别证明 $\displaystyle\int^{\mathcal C}F$ 上存在这三种锥.
+%		\begin{itemize}
+%			\item 空图 $\varnothing$. 因为 $L$ 保持终对象, $L(1)=1$, 固然 $F$ 非空, 那么 $\displaystyle\int^{\mathcal C} F$ 非空.
+%			\item 图 $\bullet\ \ \bullet$. 因为 $L$ 保持乘积, 典范的映射 $$L(\yo(c)\times \yo(d))\simeq \operatorname{colim}_{\yo(e)\to\yo(c)\times\yo(d)}F(e) \longrightarrow F(c)\times F(d)$$
+%			为同构, 故
+%			$\displaystyle\int^{\mathcal C} F$
+%			中两个对象 $(c,x),(d,y)$ 上总有锥.
+%			%对任意 $x\in F(c), y\in F(d)$, %存在 $\mathcal C$ 的对象 $e$, $z\in F(e)$ 以及态射 $f\colon e\to c, g\colon e\to d$ 使得 $F(f)(z)=x, F(g)(z)=y$.
+%			\item 图 $\bullet\rightrightarrows\bullet$.
+%			因为 $L$ 保持等化子, 对任意态射 $f,g\colon c\rightrightarrows d$, 令 $$P=\operatorname{eq}\big(\yo(f),\yo(g)\colon \yo(c)\rightrightarrows \yo(d)\big),\quad
+%			P(e)=\{h\colon e\to c\mid fh=gh\},$$ 则有等化子
+%			% https://q.uiver.app/#q=WzAsMyxbMSwwLCJGKGMpIl0sWzIsMCwiRihkKS4iXSxbMCwwLCJMKFApIl0sWzAsMSwiRihmKSIsMCx7Im9mZnNldCI6LTF9XSxbMCwxLCJGKGcpIiwyLHsib2Zmc2V0IjoxfV0sWzIsMF1d
+%			\[\begin{tikzcd}[ampersand replacement=\&]
+%				{L(P)\simeq\operatorname{colim}_{\yo(e)\to P}F(e)} \& {F(c)} \& {F(d),}
+%				\arrow["{F(f)}", shift left, from=1-2, to=1-3]
+%				\arrow["{F(g)}"', shift right, from=1-2, to=1-3]
+%				\arrow[from=1-1, to=1-2]
+%			\end{tikzcd}\]
+%			故 $\displaystyle\int^{\mathcal C} F$
+%			中的图 $(c,x)\rightrightarrows (d,y)$ 上总有锥.
+%		\end{itemize}
 	\end{itemize}
 	%	记 $F$ 的米田扩张为 $L\colon \widehat {\mathcal C}\to\mathsf {Set}$.
 	%	我们需要一个关键的性质, 即张量积 (定义 \ref{functor-tensor-product}) 的对称性
@@ -3306,41 +3829,42 @@ $$
 		%	\end{itemize}
 \end{proof}
 
-
-
-\begin{example}
-	{}
-	集合范畴 $\mathsf {Set}$ 可表示为有限集范畴 $\mathsf {Fin}$ 上的 $\mathsf {Set}$-值平坦函子的范畴:
-	\[
-	\mathsf {Set} \simeq \mathsf {Flat}(\mathsf {Fin},\mathsf {Set}), \quad S\mapsto \operatorname{Hom}(-,S).
-	\]
-	这反映了任意集合都可表示为有限集的滤余极限. 以 ``探测'' 的观点 (注 \ref{remark-probe}), 一个集合可由有限集到它的所有映射探测.
-\end{example}
-
-
-
-\subsection{\topos{}的点}
-
-位象 $X$ 的点是终位象 $1$ 到 $X$ 的映射 (定义 \ref{points-of-locale}); 类似地可定义\topos{}的点.
-
-\begin{definition}
-	{(\topos{}的点)}
-	\topos{} $\mathcal C$ 的一个\emph{点}是
-	$\mathsf {Set}$ 到 $\mathcal C$ 的一个几何态射.
-	%若这个几何态射是本质的, 则称之为\emph{本质点}.
-\end{definition}
-
-\begin{example}
-	{}
-	拓扑空间 $X$ 的一个点 $x$ 给出\topos{} $\operatorname{Sh}(X)$ 的一个点 (例 \ref{topological-space-point-stalk-skyscraper}).
-\end{example}
-
 \begin{prop}
 	{}
-	设 $X$ 是清晰空间或位象 (参见命题 \ref{top-loc-adjunction}), 则层\topos{} $\operatorname{Sh}(X)$ 的点一一对应于 $X$ 的点.
+	平坦函子 $\mathcal C\to \mathsf {Set}$ 保持所有 $\mathcal C$ 中存在的有限极限 (意指 $\mathcal C$ 中不一定存在有限极限, 存在一个则保持一个).
+	若 $\mathcal C$ 存在所有有限极限, 那么一个函子 $F\colon \mathcal C\to \mathsf {Set}$ 平坦当且仅当 $F$ 保持有限极限.
 \end{prop}
+\begin{proof}~
+	\begin{itemize}
+		\item 若 $F=\operatorname{Hom}_{\mathcal C}(c,-)$ 为可表函子, 则 $F$ 当然保持所有 $\mathcal C$ 中存在的有限极限.
+		\item 若 $F\colon \mathcal C\to\mathsf {Set}$ 为平坦函子, 即可表函子的滤余极限, 则由于滤余极限与有限极限交换 (命题 \ref{filtered-colimit-commutes-with-finite-limit}), $F$ 亦保持所有 $\mathcal C$ 中存在的有限极限.
+		\item 假设 $\mathcal C$ 存在所有有限极限, 而 $F\colon \mathcal C\to \mathsf {Set}$ 保持有限极限. 我们证明 $\displaystyle\int^{\mathcal C}F$ 为余滤范畴. 设 $I$ 为有限范畴, $X\colon I\to \displaystyle\int^{\mathcal C}F$ 为图, 记 $X(i)=(c_i,x_i)$, 其中 $x_i\in F(c_i)$. 注意到 $X$ 可视为 $\lim_{i\in I}F(c_i)$ 的元素. 因为 $F$ 保持有限极限, 典范的映射 $$F(\lim_{i\in I}c_i)\to \lim_{i\in I} F(c_i)$$ 为同构. 故存在 $x\in F(\lim_{i\in I}c_i)$ 使得 $F(p_i)(x)=x_i$ ($p_i\colon \lim_{i\in I}c_i \to c_i$ 为投影). 这说明 $X$ 上有锥.
+	\end{itemize}
+\end{proof}
+
+%\begin{example}
+%	{}
+%	%由命题 \ref{presentable-category-ind-compact}, 
+%	一个集合可表示为其所有有限子集的滤余极限. 因此集合范畴 $\mathsf {Set}$ 等价于有限集范畴 $\mathsf {Fin}$ 上的 $\mathsf {Set}$-值平坦函子的范畴:
+%	\[
+%	\mathsf {Set} %\simeq \mathsf {Ind}(\mathsf {Fin})
+%	\simeq \mathsf {Flat}(\mathsf {Fin},\mathsf {Set}), \quad S\mapsto \operatorname{Hom}(-,S).
+%	\]
+%	%以 ``探测'' 的观点 (注 \ref{remark-probe}), 一个集合可由有限集到它的所有映射探测.
+%\end{example}
+
+%\begin{definition}
+%	{(平坦)}
+%	% representably flat
+%	% 但是似乎应该先讲意象的点
+%	
+%\end{definition}
+
+\subsection{预层\topos{}的点}
+
 
 \begin{example}
+	[label={point-of-presheaf-topos-vs-set-valued-flat-functor}]
 	{(预层\topos{}的点)}
 	预层\topos{} $\widehat {\mathcal C}$ 的点即伴随
 	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsIlxcd2lkZWhhdHtcXG1hdGhzZiBDfSJdLFswLDEsIlIiLDIseyJvZmZzZXQiOjJ9XSxbMSwwLCJMIiwyLHsib2Zmc2V0IjoyfV0sWzMsMiwiIiwyLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
@@ -3350,12 +3874,14 @@ $$
 		\arrow[""{name=1, anchor=center, inner sep=0}, "L"', shift right=2, from=1-2, to=1-1]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
 	\end{tikzcd}\]
-	其中 $L$ 保持有限极限. 注意 $L$ 由它在可表函子上的行为 $\mathcal C\overset{\yo}{\to}\widehat {\mathcal C}\overset{L}{\to}\mathsf {Set}$ 唯一决定. 由定义 \ref{Set-valued-flat-functor}, $\widehat {\mathcal C}$ 的点等同于 $\mathsf {Set}$-值平坦函子 $\mathcal C\to\mathsf {Set}$.
+	其中 $L$ 保持有限极限. %注意 $L$ 由它在可表函子上的行为 $\mathcal C\overset{\yo}{\to}\widehat {\mathcal C}\overset{L}{\to}\mathsf {Set}$ 唯一决定.
+	由命题 \ref{Set-valued-flat-functor}, $L\circ\yo\colon \mathcal C\to\mathsf {Set}$ 是 $\mathsf {Set}$-值平坦函子. 这说明 $\widehat {\mathcal C}$ 的点等同于 $\mathsf {Set}$-值平坦函子 $\mathcal C\to\mathsf {Set}$.
+	对偶地, $\mathsf {Set}^ {\mathcal C}$ 的点等同于 $\mathsf {Set}$-值平坦函子 $\mathcal C^{\op}\to\mathsf {Set}$, 等同于 $\mathcal C$ 的 $\text{ind}$-对象 (注 \ref{flat-functor-vs-ind-object}).
 \end{example}
 
 \begin{example}
 	[label={presheaf-category-essential-point}]
-	{(预层\topos{}的本质点)}
+	{}
 	范畴 $\mathcal C$ 的对象 $c$ 可视为终范畴 $1$ 到 $\mathcal C$ 的函子; 由命题 \ref{presheaf-topos-essential-geometric-morphism}, 这给出了三元伴随
 	\[\begin{tikzcd}[every label/.append style = {font = \small},background color=\examplecolor,ampersand replacement=\&]
 		{\mathsf {Set}} \&\& {\widehat {\mathcal {C}},}
@@ -3371,15 +3897,16 @@ $$
 		\item $c^*(X) = X(c) = \operatorname{Hom}_{\widehat {\mathcal C}}(\yo(c),X)$;
 		\item $c_*(S)(c') = S^{\operatorname{Hom}_{\mathcal C}(c,c')}$.
 	\end{itemize}
-	它不仅是预层\topos{} $\widehat {\mathcal C}$ 的一个点, 而且是一个本质点 (定义 \ref{essential-geometric-morphism}).
 	%本质点.
-	它对应 $\mathsf {Set}$-值平坦函子 $\operatorname{Hom}_{\mathcal C}(c,-)$.
+	它对应 $\mathsf {Set}$-值平坦函子 $\operatorname{Hom}_{\mathcal C}(c,-)\colon \mathcal C\to \mathsf {Set}$.
+	
+	本例中的点是 $\widehat {\mathcal C}$ 的\emph{本质点} (定义 \ref{essential-geometric-morphism}), 但不一定是全部的本质点. 关于\topos{}的本质点的刻画, 见命题 \ref{topos-essential-points}.
 \end{example}
 
 \begin{example}
 	{(``无穷远点'')}
-	设 $\mathsf N$ 为自然数的范畴 $0\to 1 \to 2\to\cdots.$
-	\topos{} $\mathsf {Set}^{\mathsf N}$ 除了有每个自然数对应的一个点 (例 \ref{presheaf-category-essential-point}) 之外, 还有一个 ``无穷远点'':
+	设 $\mathsf N$ 为自然数的偏序集 $0\to 1 \to 2\to\cdots.$
+	\topos{} $\mathsf {Set}^{\mathsf N}$ 除了有每个自然数对应的一个点 (例 \ref{presheaf-category-essential-point}) 之外, 还有一个 ``无穷远'' 的点
 	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzZiB7U2V0fSJdLFsxLDAsIlxcbWF0aHNmIHtTZXR9XntcXG1hdGhzZiBOfSJdLFswLDEsIlxcb3BlcmF0b3JuYW1le2NvbnN0fSIsMix7Im9mZnNldCI6Mn1dLFsxLDAsIlxcb3BlcmF0b3JuYW1le2NvbGltfSIsMix7Im9mZnNldCI6Mn1dLFszLDIsIiIsMCx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV1d
 	\[\begin{tikzcd}[ampersand replacement=\&]
 		{\mathsf {Set}} \& {\mathsf {Set}^{\mathsf N},}
@@ -3389,9 +3916,40 @@ $$
 	\end{tikzcd}\]
 	其直像部分将集合 $S$ 对应到常值函子 $\underline{S}$,
 	逆像部分将函子 $F\colon \mathsf N\to\mathsf {Set}$ 对应到余极限 $\operatorname{colim}F$.
+	根据例 \ref{point-of-presheaf-topos-vs-set-valued-flat-functor} 的对应, 这个无穷远点对应的 $\mathsf{Set}$-值平坦函子 $\mathsf{N}^{\op}\to\mathsf {Set}$ 是常值函子 $1$, 也是 $\yo(0)\to\yo(1)\to\yo(2)\to\cdots$ 的余极限, 即 $0\to 1\to 2\to\cdots$ 的\emph{形式余极限}. 当然, 这是一个滤余极限.
 \end{example}
 
-现在讨论层\topos{}的点.
+
+\subsection{景取值的平坦函子}
+
+\begin{definition}
+	[label={site-valued-flat-functor}]
+	{(景取值的平坦函子)}
+	设 $\mathcal C$ 为范畴, $\mathcal E$ 为景. 若函子 $F\colon \mathcal C\to \mathcal E$ 满足如下条件, 则称之为\emph{平坦函子}:
+	对 $\mathcal C$ 中的任意图表 $X\colon I\to \mathcal C$ 以及 $F\circ X$ 上的任意锥 $T=(u\to FX_i)_{i\in I}$,
+	$$
+	\Big\{h\colon v\to u \,\Big|\, \text{$T\circ h= \{f\circ h\mid f\in T\}$ 穿过 $X$ 上某个锥的 $F$-像}\Big\}
+	$$
+	是 $u$ 上的覆盖筛.
+\end{definition}
+
+\begin{example}
+	{}
+	设 $\mathcal E=\mathsf {Set}$ 带有典范拓扑 (定义 \ref{canonical-topology}), 则 $\mathcal E$-值平坦函子与定义 \ref{Set-valued-flat-functor} 中的 $\mathsf {Set}$-值平坦函子的概念一致.
+\end{example}
+
+\subsection{层\topos{}的点}
+
+%\begin{prop}
+%	{(平坦连续函子)}
+%	设 $F\colon \mathcal C\to \mathsf {Set}$ 为平坦函子,
+%	则如下条件等价,
+%	\begin{itemize}
+%		\item $F$ 为连续函子;
+%		\item 对任意 $J$-覆盖筛 $\{f_i\colon c_i\to c\}$, 映射族 $\{F(f_i)\colon F(c_i)\to F(c)\}$ 覆盖 $F(c)$.
+%		\item $F$ 是某个几何态射 $\mathsf {Set} \to $
+%	\end{itemize}
+%\end{prop}
 
 \begin{prop}
 	{(层\topos{}的点)}
@@ -3401,17 +3959,34 @@ $$
 	\begin{enumerate}
 		[(1)]
 		\item \todo{SGL p382}
+		$f$ 穿过嵌入 $\operatorname{Sh}(\mathcal C,J)\hookrightarrow \widehat {\mathcal C}$;
+		\item $f$ 的逆像部分 $f^*\colon \widehat {\mathcal C} \to \mathsf {Set}$ 将任意 $J$-覆盖筛 $S\hookrightarrow\yo(c)$ 变为同构.
 	\end{enumerate}
 \end{prop}
 
-\subsection{景的态射}
-
-\todo{covering-flatness}
+\begin{proof}
+	\todo{前置 SGL VII.4.2}
+\end{proof}
 
 \begin{definition}
-	{(覆盖平坦函子)}
-	
+	{(景到集合范畴的连续函子)}
+	设 $(\mathcal C,J)$ 为景, 对于函子 $F\colon \mathcal C\to \mathsf {Set}$, 若 $F$ 将 $J$-覆盖筛 (视为 $\mathcal C$ 中的余锥) 变为 $\mathsf {Set}$ 中的余极限余锥, 则称之为景 $(\mathcal C,J)$ 到 $\mathsf {Set}$ 的\emph{连续}函子.
 \end{definition}
+
+\begin{definition}
+	{(有足够多点的\topos{})}
+	若\topos{} $\mathcal C$ 中的同构可由茎探测, 则称其具有\emph{足够多的点} (enough points).
+	所谓同构可由茎探测, 是指一个态射 $f\colon X\to Y$ 为同构当且仅当对 $\mathcal C$ 的任意点 $p\colon \operatorname{Sh}(\text{pt}) \to \mathcal C$, 都有 $p^*f\colon p^*X\to p^*Y$ 为同构.
+\end{definition}
+
+\subsection{景之间的态射}
+
+%\todo{covering-flatness}
+
+%\begin{definition}
+%	{(覆盖平坦函子)}
+%	
+%\end{definition}
 \begin{definition}
 	[label={morphism-of-sites}]
 	{(景的态射)}
@@ -3425,6 +4000,104 @@ $$
 	设 $F\colon (\mathcal C,J)\to (\mathcal D,K)$ 是定义 \ref{morphism-of-sites} 中的景的态射,
 	那么其诱导的函子 $F^*\colon \widehat {\mathcal D} \to \widehat {\mathcal C}$ 限制为函子 $\operatorname{Sh}(\mathcal D,K) \to \operatorname{Sh}(\mathcal C,J)$.
 \end{prop}
+
+\subsection{比较原理}
+
+\begin{definition}
+	[label={site-J-dense-subcategory}]
+	{(景的稠密子范畴)}
+	设 $(\mathcal C,J)$ 为景, $\mathcal D$ 为 $\mathcal C$ 的全子范畴.
+	若对 $\mathcal C$ 的任意对象 $c$, 所有由 $\mathcal D$ 的对象到 $c$ 的态射生成 $c$ 的 $J$-覆盖,
+	则称 $\mathcal D$ 为 $J$-稠密子范畴.
+	定义限制在 $\mathcal D$ 上的 Grothendieck 拓扑 $J\big|_{\mathcal D}$: 令 $\mathcal D$ 中的一个筛为覆盖筛当且仅当它在 $\mathcal C$ 中生成的筛为覆盖筛.
+\end{definition}
+
+\begin{prop}
+	{}
+	设 $(\mathcal C,J)$ 为景, $\mathcal D$ 为 $\mathcal C$ 的 $J$-稠密子范畴, 且 $\mathcal D$ 为小范畴. 那么 $\mathcal C$ 上的 $J$-层在 $\mathcal D$ 上的限制为 $J\big|_{\mathcal D}$-层.
+\end{prop}
+\begin{proof}
+	设 $F$ 为 $J$-层, $S\in J\big|_{\mathcal D}(d)$, $s\colon S\to F$ 为任意态射.
+	记 $\widetilde {S}$ 为 $S$ 生成的 $\mathcal C$ 中的筛,
+	$\widetilde {S}$ 的元素形如 $fg$, $f\in S$.
+	定义态射 $\widetilde {S}\to F$ 将 $fg$ 映射到 $F(g)(s_f)$.
+	良定性的证明如下.
+	% https://q.uiver.app/#q=WzAsNCxbMSwxLCJkIl0sWzAsMCwiYyJdLFswLDEsImRfMSJdLFsxLDAsImRfMiJdLFsxLDIsImdfMSIsMl0sWzIsMCwiZl8xIiwyXSxbMSwzLCJnXzIiXSxbMywwLCJmXzIiXV0=
+	%	\[\begin{tikzcd}[ampersand replacement=\&,sep=scriptsize]
+		%		c \& {d_2} \\
+		%		{d_1} \& d,
+		%		\arrow["{g_1}"', from=1-1, to=2-1]
+		%		\arrow["{f_1}"', from=2-1, to=2-2]
+		%		\arrow["{g_2}", from=1-1, to=1-2]
+		%		\arrow["{f_2}", from=1-2, to=2-2]
+		%	\end{tikzcd}\]
+	假设
+	\[
+	f_1g_1 = f_2g_2\colon c\to d,\quad \text{其中}\,f_1,f_2\in S,
+	\]
+	设 $R$ 是由 $\mathcal D$ 的对象到 $c$ 的态射生成的覆盖筛,
+	对任意 $h\in R$, $F(h)F(g_1)(s_{f_1}) = s_{f_1g_1h} = s_{f_2g_2h} = F(h)F(g_2)(s_{f_2})$.
+	由于 $F$ 为 $J$-层,
+	这说明 $F(g_1)(s_{f_1}) = F(g_2)(s_{f_2})$, 良定性得证.
+	由此, 态射 $S\to F$ 唯一地延拓为 $\widetilde {S}\to F$.
+	又由 $F$ 为 $J$-层, 它唯一地延拓为 $\yo(d)\to F$.
+	这证明了 $F$ 为 $J\big|_{\mathcal D}$-层.
+	
+	%	一种更简洁的证法是注意到 $\widetilde {S}$ 是 $S$ 沿嵌入 $i\colon \mathcal D\to \mathcal C$ 的左 Kan 扩张 (例 \ref{presheaf-category-adjunction})
+	%	\[
+	%	\widetilde {S}(c) = \{c\to d' \overset{f}{\to} d\mid f\in S(d')\} = \operatorname{colim}_{c\to d'} S(d') = i_! S(c),
+	%	\]
+	%	而 $\mathcal C$ 上预层 $F$ 在 $\mathcal D$ 上的限制为 $i^*F$. 由伴随 $i_! \dashv i^*$, 态射 $S\to i^*F$ 等同于态射 $i_!S \to F$.
+\end{proof}
+
+\begin{prop}
+	[label={comparison-lemma}]
+	{(比较原理)}
+	设 $(\mathcal C,J)$ 为景, $\mathcal D$ 为 $\mathcal C$ 的 $J$-稠密子范畴, 且 $\mathcal D$ 为小范畴. 那么 $\mathcal C$ 上的 $J$-层限制到 $\mathcal D$ 上给出了范畴等价
+	$$
+	\operatorname{Sh}(\mathcal C,J) \overset{\simeq}{\to} \operatorname{Sh}(\mathcal D,J\big|_{\mathcal D}).
+	$$
+\end{prop}
+\begin{proof}
+	考虑沿嵌入 $i\colon \mathcal D\to \mathcal C$ 的右 Kan 扩张 (例 \ref{presheaf-category-adjunction})
+	\[
+	i_*\colon \widehat {\mathcal D} \to \widehat {\mathcal C},
+	\quad
+	i_*F(c) = \lim_{d\to c}F(d).
+	\]
+	(其中极限的指标范畴由 $\mathcal D$ 的对象到 $c$ 的所有态射构成.)
+	我们断言 $i_*$ 给出了限制函子 $\operatorname{Sh}(\mathcal C,J) \to \operatorname{Sh}(\mathcal D,J\big|_{\mathcal D})$ 的逆.
+	\begin{itemize}
+		\item 设 $F$ 是 $\mathcal D$ 上的 $J\big|_{\mathcal D}$-层, 那么 $i_*F$ 的限制是 $F$: 对 $\mathcal D$ 的对象 $d$, $i_*F(d) = \operatorname{lim}_{d'\to d} F(d') = F(d)$. 我们还需要说明 $i_*F$ 是 $\mathcal C$ 上的 $J$-层.
+		对任意 $(S\to\yo(c))\in J(c)$,
+		由伴随 $i^*\dashv i_*$, 态射 $S \to i_*F$ 等同于 $i^*S \to F$;
+		$i^*S$ 是 $S$ 中从 $\mathcal D$ 出发的态射的集合. 由 $\mathcal D$ 是 $J$-稠密子范畴,
+		
+		\item 设
+		
+	\end{itemize}
+\end{proof}
+
+\begin{example}
+	{(拓扑空间的基)}
+	设 $X$ 为拓扑空间 (或位象), 那么稠密子范畴 $\mathcal B\hookrightarrow\operatorname{Open}(X)$ 等同于 $X$ 的\emph{拓扑基}, 满足 $\operatorname{Open}(X)$ 的每个对象均为 $\mathcal B$ 的某些对象的并. 此时比较原理指出 $\operatorname{Sh}(X)\simeq\operatorname{Sh}(\mathcal B)$, 即 $X$ 上的层完全由其在 $\mathcal B$ 上的取值决定.
+\end{example}
+
+\begin{example}
+	{(流形范畴)}
+	考虑流形范畴 $\mathsf {Man}$ 带有 ``好覆盖'' 生成的覆盖结构, 则 $\mathsf {CartSp}$ (例 \ref{cartsp-site}) 为其稠密子范畴: 任何流形 $M$ 都具有由一族坐标卡 $\mathbb{R}^n\to M$ 构成的好覆盖.
+	
+	命题 \ref{comparison-lemma} 的证明中使用的右 Kan 扩张
+	$$
+	i_*F(c) = \lim_{d\to c}F(d)
+	$$
+	在本例中具有清晰的直观.
+	考虑 ``微分形式的模空间'' $\Omega^k\in\operatorname{Sh}(\mathsf {CartSp})$, 我们希望将其延拓为 $\mathsf {Man}$ 上的层, 从而定义任何流形上的微分形式.
+	要给出流形 $M$ 上的一个微分形式, 只须对每个坐标卡 $\mathbb{R}^n\to M$ 给出 $\mathbb{R}^n$ 上的一个微分形式, 使得任何两个坐标卡相交处所给的微分形式相容. 换言之, 我们定义
+	$$
+	\Omega^k(M) = \lim_{\mathbb{R}^n\to M}\Omega^k(\mathbb{R}^n).
+	$$
+\end{example}
 
 \section{\topos{}的几何性质}
 
@@ -3562,24 +4235,54 @@ $$
 	\todo{}
 \end{proof}
 
-\subsection{本质几何态射与局部连通\topos{}}
+\subsection{本质几何态射}
 
 \begin{definition}
 	[label={essential-geometric-morphism}]
 	{(本质几何态射)}
 	对于 Grothendieck \topos{}的几何态射 $f\colon\mathcal C\to\mathcal D$,
-	若 $f^*$ 有左伴随 $f_!$ (也即有三元伴随 $f_! \dashv f^* \dashv f_*$), 则称之为\emph{本质几何态射} (essential geometric morphism).
+	若 $f^*$ 有左伴随 $f_!$ (也即有三元伴随 $f_! \dashv f^* \dashv f_*$), 则称之为\emph{本质几何态射} (essential geometric morphism). 本质几何态射 $\mathsf {Set}\to \mathcal C$ 又称为 $\mathcal C$ 的\emph{本质点}.
 \end{definition}
 
+\begin{prop}
+	[label={topos-essential-points}]
+	{(\topos{}本质点的刻画)}
+	在范畴 $\mathcal C$ 中, 若对象 $X$ 满足 $\operatorname{Hom}_{\mathcal C}(X,-)$ 保持余极限, 则称 $X$ 为\emph{微小对象} (tiny object, 又称\emph{紧对象}, compact object). (其直观可参见注 \ref{infinitesimal-object-intuition}.)
+	那么一个 Grothendieck \topos{} $\mathcal C$ 的本质点等价于 $\mathcal C$ 的微小对象.
+\end{prop}
+\begin{proof}
+	设 $f\colon \mathsf {Set}\to \mathcal C$ 为本质点. 由于 $f_!\dashv f^*$, 可知 $f_!$ 保持余极限, 故 $f_!$ 完全由 $f_!(1)$ 决定. 令 $F=f_!(1)$, 则有
+	$$
+	f^* \simeq \operatorname{Hom}_{\mathsf {Set}}(1,f^*-)\simeq \operatorname{Hom}_{ {\mathcal C}}(f_!1,-)\simeq\operatorname{Hom}_{ {\mathcal C}}(F,-).
+	$$
+	又 $f^*$ 保持余极限, 故 $\operatorname{Hom}_{ {\mathcal C}}(F,-)$ 保持余极限, 即 $F$ 为微小对象.
+	反之, 设 $F$ 为微小对象, 则 $\operatorname{Hom}_{ {\mathcal C}}(F,-)$ 保持极限和余极限. 由伴随函子定理, $\operatorname{Hom}_{ {\mathcal C}}(F,-)$ 具有左右伴随, 故构成本质几何态射.
+\end{proof}
+
 \begin{example}
-	{(俯范畴之间的几何态射)}
-	对于\topos{} $\mathcal C$, 其中的态射 $f\colon X\to Y$ 诱导的几何态射 $f\colon \mathcal C/X \to\mathcal C/Y$ 是本质几何态射 (命题 \ref{over-topos-essential-geometric-morphism}).
+	{(俯范畴之间的基变换几何态射)}
+	对于 Grothendieck \topos{} $\mathcal C$, 其中的态射 $f\colon X\to Y$ 诱导的几何态射 $f\colon \mathcal C/X \to\mathcal C/Y$ 是本质几何态射 (命题 \ref{over-topos-essential-geometric-morphism}).
 \end{example}
 
 \begin{example}
 	{($G$-集范畴之间的几何态射)}
 	群同态 $\phi\colon G\to H$ 诱导的几何态射 $\phi\colon G\mathsf {Set}\to H\mathsf {Set}$ 是本质的 (命题 \ref{group-homomorphism-adjoint-triple}). 
 \end{example}
+
+%\begin{prop}
+%	[label={topos-essential-points}]
+%	{(\topos{}本质点的刻画)}
+%	\topos{} $\mathcal C$ 的本质点 $\widehat {\mathcal C}$ 等价于 $\widehat {\mathcal C}$ 中可表函子的收缩. 一个对象 $X$ 的收缩是指子对象 $i\colon Y\to X$ 以及收缩 $r\colon X\to Y$, 满足 $ri=\operatorname{id}_Y$.
+%\end{prop}
+%\begin{proof}
+%	设 $f\colon \mathsf {Set}\to $ 为本质点. 由于 $f_!\dashv f^*$, 可知 $f_!$ 保持余极限, 故 $f_!$ 完全由 $f_!(1)$ 决定. 令 $F=f_!(1)$, 则有
+%	$$
+%	f^* \simeq \operatorname{Hom}_{\mathsf {Set}}(1,f^*-)\simeq \operatorname{Hom}_{\widehat {\mathcal C}}(f_!1,-)\simeq\operatorname{Hom}_{\widehat {\mathcal C}}(F,-).
+%	$$
+%	故 $\operatorname{Hom}_{\widehat {\mathcal C}}(F,-)$ 保持余极限.
+%\end{proof}
+
+
 
 \begin{definition}
 	{(局部连通\topos{})}
@@ -3588,10 +4291,22 @@ $$
 
 对于局部连通\topos{} $f\colon \mathcal C\to\mathsf {Set}$, $f_!$ 的直观是 ``连通分支的集合'' $\Pi_0$ (见 \ref{cohesion-basics} 节).
 
+\subsection{紧合几何态射}
+
+% Mike Shulman
+
+在拓扑空间范畴中, 称映射 $f\colon X\to Y$ 为\emph{紧合映射} (proper map) 是指 $Y$ 的任何紧子集的原像是紧集. 紧合映射是紧性的推广: 一个空间 $X$ 紧等价于映射 $X\to 1$ 是紧合映射.
+
+\begin{definition}
+	{(紧合几何态射)}
+\end{definition}
+
 % \section{轨形}
 
 % Moerdijk - Orbifolds
 % In the language of [SGA4], a ringed topos represents an orbifold iff it is a “separated smooth ´etendue”.
+
+
 
 \section{Giraud 定理}
 
@@ -3762,19 +4477,115 @@ Giraud\footnote{Jean Giraud (1936--2007), 法国数学家, Grothendieck 的学�
 		而 $\widetilde y\widetilde L$ 保持余极限, $\operatorname{Sh}(\mathcal D,J)$ 的对象可写为可表函子 $\yo(d)$ 的余极限, 故 $\widetilde y\widetilde L\simeq\operatorname{id}_{\operatorname{Sh}(\mathcal D,J)}$. 这证明了 $\mathcal C\simeq\operatorname{Sh}(\mathcal D,J)$.
 \end{proof}
 
-Giraud 定理可以在一些不容易构造景的情形证明一个范畴是 Grothendieck \topos{}.
+Giraud 定理可以在一些不容易构造景的情形证明一个范畴是 Grothendieck \topos{}, 例如下面介绍的等变层范畴.
 
-\begin{example}
-	{(Giraud 定理的应用: 等变层范畴)}
-	%\todo{equivariant sheaves, Elephant C.5}
+\section{等变层与拓扑群胚}
+
+\begin{definition}
+	[label={equivariant-sheaf}]
+	{(等变层)}
 	设 $X$ 为拓扑空间, 带有拓扑群 $G$ 的左作用 $\mu\colon G\times X\to X$. 定义 $X$ 上的 \emph{$G$-空间}为 $X$ 上带有 $G$-左作用的空间 $p\colon E\to X$, 且 $p$ 保持 $G$-左作用; $G$-空间之间的态射为保持 $G$-左作用的态射. 定义 $X$ 上的 \emph{$G$-等变层} ($G$-equivariant sheaf) 为平展的 $G$-空间 $p\colon E\to X$, 即 $p$ 为局部同胚.
 	记 $X$ 上的 $G$-等变层在 $G$-空间范畴中构成的全子范畴为 $\operatorname{Sh}_G(X)$.
+\end{definition}
+
+%(Giraud 定理的应用: 等变层范畴)
+\begin{prop}
+	{}
+	对任意带有拓扑群 $G$ 左作用的空间 $X$, $\operatorname{Sh}_G(X)$ 是意象.
+\end{prop}
+\begin{proof}
+	%\todo{equivariant sheaves, Elephant C.5}
 	\begin{itemize}
 		\item $\operatorname{Sh}_G(X)$ 由所有形如 $\bigcup_{g\in G}gU$ ($U\in\operatorname{Open}(X)$) 的对象生成.
 		\item %考虑忘掉 $G$-作用给出的忠实函子 $\operatorname{Sh}_G(X) \to \operatorname{Sh}(X)$.
 		$\operatorname{Sh}_G(X)$ 中存在有限极限和任意余极限, 且等同于 $\operatorname{Sh}(X)$ 中的有限极限和余极限. 这说明 $\operatorname{Sh}_G(X)$ 与 $\operatorname{Sh}(X)$ 同样满足 Giraud 定理的后三个条件.
 	\end{itemize}
 	由以上的事实及 Giraud 定理, $\operatorname{Sh}_G(X)$ 为 Grothendieck \topos{}.
+\end{proof}
+
+等变层是\emph{拓扑群胚上的层}的特例.
+
+\begin{definition}
+	{(拓扑群胚)}
+	\emph{拓扑群胚}是群胚理论在 $\mathsf{Top}$ 中的模型. 具体地, 一个拓扑群胚包含如下资料,
+	\begin{itemize}
+		\item 两个拓扑空间 $G_1,G_0$, 分别表示态射的空间与对象的空间;
+		\item 连续映射 $s,t\colon G_1\rightrightarrows G_0$, 分别表示态射的起点与终点;
+		\item $m\colon G_1\times_{G_0}G_1\to G_1$ (其中 $G_1\times_{G_0} G_1$ 是 $s$ 与 $t$ 的拉回), 表示态射的复合;
+		\item $i\colon G_1\to G_1$, 表示态射的逆;
+		\item $e\colon G_0\to G_1$, 表示恒等态射;
+	\end{itemize}
+	满足 $tm=t\pi_1$, $sm=s\pi_2$, $si=t,ti=s$, $se=te=\operatorname{id}_{G_0}$,
+	以及结合律, 单位律.
+	% https://q.uiver.app/#q=WzAsOCxbMCwwLCJHXzEiXSxbMSwwLCJHXzFcXHRpbWVzX3tHXzB9R18xIl0sWzEsMSwiR18xIl0sWzIsMCwiR18xIl0sWzMsMCwiR18xXFx0aW1lc197R18wfUdfMVxcdGltZXNfe0dfMH1HXzEiXSxbNCwwLCJHXzFcXHRpbWVzX3tHXzB9R18xIl0sWzMsMSwiR18xXFx0aW1lc197R18wfUdfMSJdLFs0LDEsIkdfMVxcdGltZXNfe0dfMH1HXzEiXSxbMCwxLCIoZSxcXG9wZXJhdG9ybmFtZXtpZH0pIl0sWzEsMiwibSJdLFswLDIsIlxcb3BlcmF0b3JuYW1le2lkfSIsMl0sWzMsMSwiKFxcb3BlcmF0b3JuYW1le2lkfSxlKSIsMl0sWzMsMiwiXFxvcGVyYXRvcm5hbWV7aWR9Il0sWzQsNiwiXFxvcGVyYXRvcm5hbWV7aWR9XFx0aW1lcyBtIiwyXSxbNiw3LCJtIiwyXSxbNCw1LCJtXFx0aW1lc1xcb3BlcmF0b3JuYW1le2lkfSJdLFs1LDcsIm0iXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
+		{G_1} \& {G_1\times_{G_0}G_1} \& {G_1} \& {G_1\times_{G_0}G_1\times_{G_0}G_1} \& {G_1\times_{G_0}G_1} \\
+		\& {G_1} \&\& {G_1\times_{G_0}G_1} \& {G_1\times_{G_0}G_1}
+		\arrow["{(e,\operatorname{id})}", from=1-1, to=1-2]
+		\arrow["{\operatorname{id}}"', from=1-1, to=2-2]
+		\arrow["m", from=1-2, to=2-2]
+		\arrow["{(\operatorname{id},e)}"', from=1-3, to=1-2]
+		\arrow["{\operatorname{id}}", from=1-3, to=2-2]
+		\arrow["{m\times\operatorname{id}}", from=1-4, to=1-5]
+		\arrow["{\operatorname{id}\times m}"', from=1-4, to=2-4]
+		\arrow["m", from=1-5, to=2-5]
+		\arrow["m"', from=2-4, to=2-5]
+	\end{tikzcd}\]
+	记该拓扑群胚为 $G_1\rightrightarrows G_0$.
+\end{definition}
+
+\begin{example}
+	{(常见的拓扑群胚)}
+	\begin{itemize}
+		\item 当 $G_0$ 为一个点时, 拓扑群胚 $G_1\rightrightarrows G_0$ 退化为拓扑群 $G_1$.
+		\item 一个拓扑空间 $X$ 可视为平凡的拓扑群胚 $\operatorname{id},\operatorname{id}\colon X\to X$.
+		\item 由拓扑空间 $X$ 还可构造另一个拓扑群胚 $\pi_1,\pi_2\colon X\times X\rightrightarrows X$.
+		\item 对于拓扑群 $G$ 的主丛 $p\colon P \to X$, 有 \emph{Atiyah 群胚} $p\pi_1,p\pi_2\colon (P\times P)/G\rightrightarrows X$. 它可理解为 $X$ 各个点上的纤维以及纤维之间 (作为 $G$-右作用) 的同构构成的群胚.
+		\item 设空间 $X$ 带有拓扑群 $G$ 的左作用 $\mu\colon G\times X\to X$, 则 $(\pi_2,\mu\colon G\times X\rightrightarrows X)$ 为拓扑群胚, 称为\emph{作用群胚} (action groupoid).
+	\end{itemize}
 \end{example}
+
+\begin{definition}
+	{(拓扑群胚上的层)}
+	设 $\mathcal G = (G_1\rightrightarrows G_0)$ 为拓扑群胚.
+	对于 $G_0$ 上的空间 $p\colon E\to G_0$,
+	定义其上的 $\mathcal G$-\emph{左作用}为连续映射 $\rho\colon G_1\times_{G_0}E \to E$ (其中 $G_1\times_{G_0}E$ 为 $s$ 与 $p$ 的拉回),
+	满足 $p\rho=t\pi_1$, 以及如下交换图.
+	% https://q.uiver.app/#q=WzAsNyxbMSwwLCJHXzFcXHRpbWVzX3tHXzB9IEUiXSxbMSwxLCJFIl0sWzAsMCwiRSJdLFsyLDAsIkdfMVxcdGltZXNfe0dfMH1HXzFcXHRpbWVzX3tHXzB9IEUiXSxbMywwLCJHXzFcXHRpbWVzX3tHXzB9IEUiXSxbMywxLCJFIl0sWzIsMSwiR18xXFx0aW1lc197R18wfSBFIl0sWzAsMSwiXFxyaG8iXSxbMiwxLCJcXG9wZXJhdG9ybmFtZXtpZH0iLDJdLFsyLDAsIihlLFxcb3BlcmF0b3JuYW1le2lkfSkiXSxbMyw2LCJtXFx0aW1lc1xcb3BlcmF0b3JuYW1le2lkfV9FIiwyXSxbMyw0LCJcXG9wZXJhdG9ybmFtZXtpZH1fe0dfMX1cXHRpbWVzXFxyaG8iXSxbNiw1LCJcXHJobyIsMl0sWzQsNSwiXFxyaG8iXV0=
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		E \& {G_1\times_{G_0} E} \& {G_1\times_{G_0}G_1\times_{G_0} E} \& {G_1\times_{G_0} E} \\
+		\& E \& {G_1\times_{G_0} E} \& E
+		\arrow["{(e,\operatorname{id})}", from=1-1, to=1-2]
+		\arrow["{\operatorname{id}}"', from=1-1, to=2-2]
+		\arrow["\rho", from=1-2, to=2-2]
+		\arrow["{\operatorname{id}_{G_1}\times\rho}", from=1-3, to=1-4]
+		\arrow["{m\times\operatorname{id}_E}"', from=1-3, to=2-3]
+		\arrow["\rho", from=1-4, to=2-4]
+		\arrow["\rho"', from=2-3, to=2-4]
+	\end{tikzcd}\]
+	定义 $\mathcal G$ 上的层为 $G_0$ 上带有 $\mathcal G$-左作用的平展空间.
+	$\mathcal G$ 上的层以及保持 $\mathcal G$-左作用的态射构成范畴 $\operatorname{Sh}(\mathcal G)$.
+	这个范畴是一个\topos{}, 也称为 $\mathcal G$ 的\emph{分类\topos{}} (classifying topos).
+\end{definition}
+
+\begin{example}
+	[label={examples-sheaves-topological-groupoid}]
+	{(常见拓扑群胚上的层)}
+	\begin{itemize}
+		\item $G_0$ 为一点的情形, $\mathcal G$ 上的层即为带有 $G_1$-左作用的离散空间.
+		\item 拓扑空间 $X$ 作为平凡的拓扑群胚, 其上的层即为 $X$ 上通常的层.
+		\item 对于非空空间 $X$, 拓扑群胚 $X\times X\rightrightarrows X$ 上的层范畴等价于 $\mathsf {Set}$, 即一点上的层范畴.
+		\item 对于拓扑群 $G$ 在空间 $X$ 上作用的作用群胚, 其上的层即为等变层 (定义 \ref{equivariant-sheaf}).
+	\end{itemize}
+\end{example}
+
+例 \ref{examples-sheaves-topological-groupoid} 表明拓扑群胚上的层\topos{}是许多概念的共同推广. 而下面的命题说明了拓扑群胚究竟推广到何种地步.
+
+\begin{prop}
+	{}
+	任何一个有足够多点的\topos{}都等价于某个拓扑群胚上的层\topos{}.
+\end{prop}
+
+证明见 \cite{RTTG}.
 
 % \section{平展上同调与}

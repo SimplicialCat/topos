@@ -1,0 +1,677 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  23 AUG 2024 15:07
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**infty-lan.tex
+(./infty-lan.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-03-30>
+! Undefined control sequence.
+l.1 \chapter
+            {$\infty$-范畴的形式语言}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.1 \chapter{$
+              \infty$-范畴的形式语言}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1.
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 形 ("5F62) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no 语 ("8BED) in font nullfont!
+Missing character: There is no 言 ("8A00) in font nullfont!
+
+Overfull \hbox (30.00002pt too wide) in paragraph at lines 1--2
+[]$\OMS/cmsy/m/n/10 1$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.5 像
+     许多 $\infty$-范畴论的文献一样, 本书使用 $\infty$-范畴的一种公理化语言. 我们不是从 $\infty$-范畴的任何一种定义 (或模型) 出发, 而是以公理的形式刻画期望中 $\infty$-范畴的行为. 这样我们可以获得\emph{模型无关} (model-independent) 的结果.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 像 ("50CF) in font nullfont!
+Missing character: There is no 许 ("8BB8) in font nullfont!
+Missing character: There is no 多 ("591A) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 论 ("8BBA) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 文 ("6587) in font nullfont!
+Missing character: There is no 献 ("732E) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 样 ("6837) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 本 ("672C) in font nullfont!
+Missing character: There is no 书 ("4E66) in font nullfont!
+Missing character: There is no 使 ("4F7F) in font nullfont!
+Missing character: There is no 用 ("7528) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 种 ("79CD) in font nullfont!
+Missing character: There is no 公 ("516C) in font nullfont!
+Missing character: There is no 理 ("7406) in font nullfont!
+Missing character: There is no 化 ("5316) in font nullfont!
+Missing character: There is no 语 ("8BED) in font nullfont!
+Missing character: There is no 言 ("8A00) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 从 ("4ECE) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 任 ("4EFB) in font nullfont!
+Missing character: There is no 何 ("4F55) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 种 ("79CD) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 或 ("6216) in font nullfont!
+Missing character: There is no 模 ("6A21) in font nullfont!
+Missing character: There is no 型 ("578B) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 出 ("51FA) in font nullfont!
+Missing character: There is no 发 ("53D1) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 而 ("800C) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 以 ("4EE5) in font nullfont!
+Missing character: There is no 公 ("516C) in font nullfont!
+Missing character: There is no 理 ("7406) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 形 ("5F62) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no 刻 ("523B) in font nullfont!
+Missing character: There is no 画 ("753B) in font nullfont!
+Missing character: There is no 期 ("671F) in font nullfont!
+Missing character: There is no 望 ("671B) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 行 ("884C) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 这 ("8FD9) in font nullfont!
+Missing character: There is no 样 ("6837) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 可 ("53EF) in font nullfont!
+Missing character: There is no 以 ("4EE5) in font nullfont!
+Missing character: There is no 获 ("83B7) in font nullfont!
+Missing character: There is no 得 ("5F97) in font nullfont!
+Missing character: There is no 模 (U+6A21) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 型 (U+578B) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 无 (U+65E0) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 关 (U+5173) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 结 ("7ED3) in font nullfont!
+Missing character: There is no 果 ("679C) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 5--6
+[]
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 5--6
+\OMS/cmsy/m/n/10 1$
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 5--6
+\OMS/cmsy/m/n/10 1$
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 5--6
+\OMS/cmsy/m/n/10 1$
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 5--6
+\OMS/cmsy/m/n/10 1$
+ []
+
+
+Overfull \hbox (11.2pt too wide) in paragraph at lines 5--6
+\TU/lmr/m/it/10 模型无关
+ []
+
+! Undefined control sequence.
+l.7 \section
+            {$\infty$-范畴中的结构与性质}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.7 \section{$
+              \infty$-范畴中的结构与性质}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 结 ("7ED3) in font nullfont!
+Missing character: There is no 构 ("6784) in font nullfont!
+Missing character: There is no 与 ("4E0E) in font nullfont!
+Missing character: There is no 性 ("6027) in font nullfont!
+Missing character: There is no 质 ("8D28) in font nullfont!
+
+Overfull \hbox (30.00002pt too wide) in paragraph at lines 7--8
+[]$\OMS/cmsy/m/n/10 1$ 
+ []
+
+! Undefined control sequence.
+l.9 \subsection
+               {连通性与截断性}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.9 \subsection{连
+                 通性与截断性}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 通 ("901A) in font nullfont!
+Missing character: There is no 性 ("6027) in font nullfont!
+Missing character: There is no 与 ("4E0E) in font nullfont!
+Missing character: There is no 截 ("622A) in font nullfont!
+Missing character: There is no 断 ("65AD) in font nullfont!
+Missing character: There is no 性 ("6027) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 9--10
+[] 
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment definition undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                            
+l.13 \begin{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.14 ^^I{(
+          $n$-截断 $\infty$-群胚)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 截 ("622A) in font nullfont!
+Missing character: There is no 断 ("65AD) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 整 ("6574) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 称 ("79F0) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no 截 (U+622A) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 断 (U+65AD) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 或 ("6216) in font nullfont!
+Missing character: There is no 称 ("79F0) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 群 (U+7FA4) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 胚 (U+80DA) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 指 ("6307) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 所 ("6240) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 大 ("5927) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 阶 ("9636) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 同 ("540C) in font nullfont!
+Missing character: There is no 伦 ("4F26) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 均 ("5747) in font nullfont!
+Missing character: There is no 平 ("5E73) in font nullfont!
+Missing character: There is no 凡 ("51E1) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...ne \space ended by \protect \end {\detokenize {definition}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.16 \end{definition}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (26.00235pt too wide) in paragraph at lines 14--17
+[]$\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 14--17
+\OMS/cmsy/m/n/10 1$
+ []
+
+
+Overfull \hbox (16.55786pt too wide) in paragraph at lines 14--17
+\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^U
+ []
+
+
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 14--17
+\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 14--17
+\OMS/cmsy/m/n/10 1$
+ []
+
+
+Overfull \hbox (9.06943pt too wide) in paragraph at lines 14--17
+\OML/cmm/m/it/10 X$
+ []
+
+
+Overfull \hbox (9.58235pt too wide) in paragraph at lines 14--17
+\OML/cmm/m/it/10 n$\TU/lmr/m/it/10 -
+ []
+
+
+Overfull \hbox (5.6pt too wide) in paragraph at lines 14--17
+\TU/lmr/m/it/10 截断
+ []
+
+
+Overfull \hbox (9.58235pt too wide) in paragraph at lines 14--17
+\OML/cmm/m/it/10 n$\TU/lmr/m/it/10 -
+ []
+
+
+Overfull \hbox (5.6pt too wide) in paragraph at lines 14--17
+\TU/lmr/m/it/10 群胚
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 14--17
+\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (49.09955pt too wide) in paragraph at lines 14--17
+\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) (\OML/cmm/m/it/10 k >
+ []
+
+
+Overfull \hbox (9.89125pt too wide) in paragraph at lines 14--17
+\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )$
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment definition undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                            
+l.18 \begin{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.19 ^^I{(
+          $n$-群胚)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 整 ("6574) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 称 ("79F0) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no 截 (U+622A) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 断 (U+65AD) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 指 ("6307) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 关 ("5173) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 局 ("5C40) in font nullfont!
+Missing character: There is no 部 ("90E8) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 象 ("8C61) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...ne \space ended by \protect \end {\detokenize {definition}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.21 \end{definition}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (26.00235pt too wide) in paragraph at lines 19--22
+[]$\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (16.55786pt too wide) in paragraph at lines 19--22
+\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^U
+ []
+
+
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 19--22
+\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 19--22
+\OMS/cmsy/m/n/10 1$
+ []
+
+
+Overfull \hbox (9.06943pt too wide) in paragraph at lines 19--22
+\OML/cmm/m/it/10 X$
+ []
+
+
+Overfull \hbox (9.58235pt too wide) in paragraph at lines 19--22
+\OML/cmm/m/it/10 n$\TU/lmr/m/it/10 -
+ []
+
+
+Overfull \hbox (5.6pt too wide) in paragraph at lines 19--22
+\TU/lmr/m/it/10 截断
+ []
+
+
+Overfull \hbox (9.06943pt too wide) in paragraph at lines 19--22
+\OML/cmm/m/it/10 X$
+ []
+
+
+Overfull \hbox (40.05443pt too wide) in paragraph at lines 19--22
+\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[] \OMS/cmsy/m/n/10 !
+ []
+
+
+Overfull \hbox (10.00003pt too wide) in paragraph at lines 19--22
+\OMS/cmsy/m/n/10 ^^Cg$
+ []
+
+
+! LaTeX Error: Environment example undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment example undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                         
+l.23 \begin{example}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.24 ^^I{(
+          低维群胚的例子)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 低 ("4F4E) in font nullfont!
+Missing character: There is no 维 ("7EF4) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 例 ("4F8B) in font nullfont!
+Missing character: There is no 子 ("5B50) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 同 ("540C) in font nullfont!
+Missing character: There is no 伦 ("4F26) in font nullfont!
+Missing character: There is no 等 ("7B49) in font nullfont!
+Missing character: There is no 价 ("4EF7) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 意 ("610F) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+Missing character: There is no 下 ("4E0B) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 24--26
+[] 
+ []
+
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+Missing character: There is no 点 ("70B9) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.55562pt too wide) in paragraph at lines 27--28
+\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 2)$ 
+ []
+
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 空 ("7A7A) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 或 ("6216) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+Missing character: There is no 点 ("70B9) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.55562pt too wide) in paragraph at lines 28--29
+\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)$ 
+ []
+
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 也 ("4E5F) in font nullfont!
+Missing character: There is no 即 ("5373) in font nullfont!
+Missing character: There is no 离 ("79BB) in font nullfont!
+Missing character: There is no 散 ("6563) in font nullfont!
+Missing character: There is no 群 ("7FA4) in font nullfont!
+Missing character: There is no 胚 ("80DA) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 29--30
+\OT1/cmr/m/n/10 0$ 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{example}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...vline \space ended by \protect \end {\detokenize {example}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.31 \end{example}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.33 \subsection
+                {东西, 结构, 性质}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 东 ("4E1C) in font nullfont!
+Missing character: There is no 西 ("897F) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 结 ("7ED3) in font nullfont!
+Missing character: There is no 构 ("6784) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 性 ("6027) in font nullfont!
+Missing character: There is no 质 ("8D28) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 33--34
+[]
+ []
+
+)
+! Emergency stop.
+<*> infty-lan.tex
+                 
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 25 strings out of 476675
+ 462 string characters out of 5807327
+ 1843290 words of memory out of 5000000
+ 20379 multiletter control sequences out of 15000+600000
+ 512295 words of font info for 33 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 18i,2n,12p,204b,70s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

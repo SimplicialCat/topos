@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{stmaryrd}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usetikzlibrary{decorations.pathmorphing}
+
+\usepackage{enumerate}
+
+\newcommand{\philoquote}[2]{
+	~\\
+	\begin{center}
+		\begin{minipage}{0.7\linewidth}
+			{\quad\sffamily #1}\\
+			\begin{flushright}
+				\textsf{#2}
+			\end{flushright}
+		\end{minipage}
+	\end{center}
+	~\\
+}
+
+\usepackage{geometry}
+\geometry{
+	b5paper,
+	left=15mm,
+	right=15mm,
+	top=20mm,
+	bottom=20mm
+}
+
+\input{toposCommands}
+
+\input{colorboxes-printing}
+
+
+\begin{document}
+	
+	\section{Claudio Fontanari: 模空间}
+	
+	\section{Joseph Bernstein: 什么是群表示}
+	% 9/9 15:20
+	\begin{definition}
+		{(商群胚)}
+		设群 $G$ 作用于集合 $X$, 定义\emph{商群胚} (quotient groupoid) $X/G$ 为
+	\end{definition}
+	
+	\begin{prop}
+		{}
+		$$
+		\operatorname{Sh}(X/G) \simeq \operatorname{Sh}_G (X).
+		$$
+	\end{prop}
+	
+	\section{Pivet: $2$-范畴上的层}
+	% 9/10 13:45
+	
+	
+	\section{Peter Haine: 由平展\topos{}重构概形}
+	
+	
+	
+	
+	\section{景的态射与余态射}
+	
+	\section{Matthias Ritter (Hutzler): 综合代数几何}
+	% 9/11 11:40
+	
+	我们使用的综合代数几何的语言是用同伦类型论表述的 Zariski ($\infty$-){\topos{}}的内语言.
+	
+	\begin{definition}
+		{(射影空间)}
+		$$
+		\mathbb P^n := \sum_{L \subset R^{n+1}\,\text{子模}} \|L\simeq R^1 \|_{\text{prop}}.
+		$$
+	\end{definition}
+	
+	\begin{definition}
+		{(抽象直线的空间, 线丛, Picard 群)}
+		定义\emph{抽象直线的空间} (space of abstract lines)
+		$$
+		BR^\times := \sum_{L: R\mathsf{Mod}} \| L\simeq R^1\|_{\text{prop}}.
+		$$
+		
+		由于 $R$-模的张量积满足 $R^1\otimes R^1\simeq R^1$, 有运算
+		$$
+		\otimes\colon BR^\times \times BR^\times \to BR^\times,
+		$$
+		且 $\otimes$ 构成 $BR^\times$ 上的 (高阶) 群结构, 单位为 $R^1$, 逆为 $L\mapsto L^\vee=\operatorname{Hom}(L,R^1)$.
+		
+		定义空间 (类型) $X$ 上的\emph{线丛}为映射 $X\to BR^\times$.
+		定义 $X$ 的 \emph{Picard 群}为
+		$$
+		\operatorname{Pic}(X) := \|X\to BR^\times\|_{\text{set}}.
+		$$
+	\end{definition}
+	
+	\begin{example}
+		{(重言线丛, $\mathcal O(d)$)}
+		射影空间 $\mathbb P^n$ 上的\emph{重言线丛} $\mathcal O(-1)$ 定义为
+		$$
+		\mathcal O(-1) \colon \mathbb P^n \to BR^\times,\, L\mapsto L.
+		$$
+		定义 $\mathcal O(d)$ 为 $\mathcal O(-1)$ 的 $(-d)$ 次张量积.
+	\end{example}
+	
+	\begin{prop}
+		{}
+		$$
+		\operatorname{Pic}(\mathbb P^n) \simeq\mathbb Z.
+		$$
+	\end{prop}
+	
+	\section{Michael Shulman: \topos{}图表的内语言}
+	
+	\begin{definition}
+		{(\topos{}的图表)}
+		定义一个\emph{\topos{}的图表}是一个 $2$-函子 $\mathcal M \to \Top$, 其中 $\mathcal M$ 是任意 $2$-范畴, $\Top$ 是\topos{}的 $2$-范畴.
+	\end{definition}
+	
+	\begin{example}
+		{}
+		以下结构均为\topos{}的图表的特例.
+		\begin{itemize}
+			\item $\mathcal S$-\topos{}, 也即几何态射 $f\colon \mathcal E \to \mathcal S$;
+			\item 局部 $\mathcal S$-\topos{}, 也即几何态射 $f\colon \mathcal E \to \mathcal S$ 及其 ...%左伴随 $c\colon \mathcal S\to\mathcal E$, 满足单位 $cf\to 1$ 为同构;
+			\item 完全连通 $\mathcal S$-\topos{}.
+		\end{itemize}
+	\end{example}
+\end{document}

@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'topos.blg'
+[73] biber-MSWIN64:340> INFO - === 
+[104] Biber.pm:419> INFO - Reading 'topos.bcf'
+[177] Biber.pm:979> INFO - Found 30 citekeys in bib section 0
+[185] Biber.pm:4419> INFO - Processing section 0
+[193] Biber.pm:4610> INFO - Looking for bibtex file 'Topos.bib' for section 0
+[254] bibtex.pm:1713> INFO - LaTeX decoding ...
+[278] bibtex.pm:1519> INFO - Found BibTeX data source 'Topos.bib'
+[359] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[359] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[359] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[359] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[375] bbl.pm:660> INFO - Writing 'topos.bbl' with encoding 'UTF-8'
+[382] bbl.pm:763> INFO - Output to topos.bbl

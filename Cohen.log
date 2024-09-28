@@ -1,0 +1,1403 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  1 AUG 2024 14:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Cohen.tex
+(./Cohen.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-03-30>
+! Undefined control sequence.
+l.1 \section
+            {Cohen 力迫法}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.1 \section{C
+              ohen 力迫法}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no 力 ("529B) in font nullfont!
+Missing character: There is no 迫 ("8FEB) in font nullfont!
+Missing character: There is no 法 ("6CD5) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.5 1
+     874 年, Georg Cantor 证明了自然数与实数 (又称连续统) 之间不存在一一对应\footnote{不过他的第一个证明并非现在流行的对角线论证.}. Cantor 接着于 1878 年提出了\emph{连续统假设} (continuum hypothesis),
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 年 ("5E74) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no G ("47) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no 了 ("4E86) in font nullfont!
+Missing character: There is no 自 ("81EA) in font nullfont!
+Missing character: There is no 然 ("7136) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 与 ("4E0E) in font nullfont!
+Missing character: There is no 实 ("5B9E) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 又 ("53C8) in font nullfont!
+Missing character: There is no 称 ("79F0) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 统 ("7EDF) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 之 ("4E4B) in font nullfont!
+Missing character: There is no 间 ("95F4) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 存 ("5B58) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 应 ("5E94) in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+! Undefined control sequence.
+\@footnotetext #1->\insert \footins {\reset@font \footnotesize 
+                                                               \interlinepenalty \interfootnotelinepenalty \splittopskip \footnotesep \splitmaxdepth \dp \strutbox \floatingpenalty \@MM \hsize \columnwidth \@parboxrestore \def \@currentcounter {footnot...
+l.5 1874 年, Georg Cantor 证明了自然数与实数 (又称连续统) 之间不存在一一对应\footnote{不过他的第一个证明并非现在流行的对角线论证.}
+                                                                                     . Cantor 接着于 1878 年提出了\emph{连续统假设} (continuum hypothesis),
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@footnotetext ...itmaxdepth \dp \strutbox \floatingpenalty \@MM \hsize \columnwidth \@parboxrestore \def \@currentcounter {footnote}\protected@edef \@currentlabel {\csname p@footnote\endcsname \@thefnmark }\color@begingroup \@makefntext 
+                                                                                                                                                                                                                                              {\rule \z@ \f...
+l.5 1874 年, Georg Cantor 证明了自然数与实数 (又称连续统) 之间不存在一一对应\footnote{不过他的第一个证明并非现在流行的对角线论证.}
+                                                                                     . Cantor 接着于 1878 年提出了\emph{连续统假设} (continuum hypothesis),
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 不 (U+4E0D) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 过 (U+8FC7) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 他 (U+4ED6) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 的 (U+7684) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 第 (U+7B2C) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 个 (U+4E2A) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 证 (U+8BC1) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 明 (U+660E) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 并 (U+5E76) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 非 (U+975E) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 现 (U+73B0) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 在 (U+5728) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 流 (U+6D41) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 行 (U+884C) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 的 (U+7684) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 对 (U+5BF9) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 角 (U+89D2) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 线 (U+7EBF) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 论 (U+8BBA) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 证 (U+8BC1) in font [lmroman10-regular]:mapping=tex-text;!
+
+Overfull \hbox (61.58pt too wide) in paragraph at lines 5--5
+[][]\TU/lmr/m/n/10 不过他的第一个证明并非现在流行的对角线论证.| 
+ []
+
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no 接 ("63A5) in font nullfont!
+Missing character: There is no 着 ("7740) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no 年 ("5E74) in font nullfont!
+Missing character: There is no 提 ("63D0) in font nullfont!
+Missing character: There is no 出 ("51FA) in font nullfont!
+Missing character: There is no 了 ("4E86) in font nullfont!
+Missing character: There is no 连 (U+8FDE) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 续 (U+7EED) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 统 (U+7EDF) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 假 (U+5047) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 设 (U+8BBE) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no u ("75) in font nullfont!
+Missing character: There is no u ("75) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no y ("79) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 5--6
+[]
+ []
+
+
+Overfull \hbox (4.483pt too wide) in paragraph at lines 5--6
+[]
+ []
+
+
+Overfull \hbox (14.0pt too wide) in paragraph at lines 5--6
+\TU/lmr/m/it/10 连续统假设
+ []
+
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 自 ("81EA) in font nullfont!
+Missing character: There is no 然 ("7136) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no 与 ("4E0E) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 统 ("7EDF) in font nullfont!
+Missing character: There is no 之 ("4E4B) in font nullfont!
+Missing character: There is no 间 ("95F4) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 存 ("5B58) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 它 ("5B83) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 基 ("57FA) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (32.85896pt too wide) detected at line 8
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.10 1
+      940 年, Kurt G\"odel 证明连续统假设与 Zermelo--Fraenkel 集合论相容. 1963 年, Paul Cohen 证明了连续统假设独立于带有选择公理的 Zermelo--Fraenkel 集合论 (ZFC), 即 ZFC 既不能证明, 也不能证伪连续统假设.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no 年 ("5E74) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no K ("4B) in font nullfont!
+Missing character: There is no u ("75) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no G ("47) in font nullfont!
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 10.
+(d:/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for +lmr on input line 10.
+LaTeX Font Info:    No file lmr.fd. on input line 10.
+LaTeX Font Info:    Trying to load font information for +cmr on input line 10.
+LaTeX Font Info:    No file cmr.fd. on input line 10.
+
+
+LaTeX Font Warning: Font shape `/lmr/m/n' undefined
+(Font)              using `/cmr/m/n' instead on input line 10.
+
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `/cmr/m/n' instead on input line 10.
+
+! Corrupted NFSS tables.
+wrong@fontshape ->csname D@f@encoding endcsname edef reserved@a {csname curr@fontshape endcsname }ifx last@fontshape reserved@a errmessage {Corrupted NFSS tables}
+                                                                                                                                                                  error@fontshape else let f@shape default@shape expandafter ifx csname curr@fontshape endc...
+l.10 1940 年, Kurt G\"o
+                      del 证明连续统假设与 Zermelo--Fraenkel 集合论相容. 1963 年, Paul Cohen 证明了连续统假设独立于带有选择公理的 Zermelo--Fraenkel 集合论 (ZFC), 即 ZFC 既不能证明, 也不能证伪连续统假设.
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `OT1/cmr/m/n' instead on input line 10.
+
+
+LaTeX Font Warning: Font shape `/lmr/m/n' undefined
+(Font)              using `/cmr/m/n' instead on input line 10.
+
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 统 ("7EDF) in font nullfont!
+Missing character: There is no 假 ("5047) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 与 ("4E0E) in font nullfont!
+Missing character: There is no Z ("5A) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no 论 ("8BBA) in font nullfont!
+Missing character: There is no 相 ("76F8) in font nullfont!
+Missing character: There is no 容 ("5BB9) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 9 ("39) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no 年 ("5E74) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no P ("50) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no u ("75) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no 了 ("4E86) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 统 ("7EDF) in font nullfont!
+Missing character: There is no 假 ("5047) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 独 ("72EC) in font nullfont!
+Missing character: There is no 立 ("7ACB) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 带 ("5E26) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 选 ("9009) in font nullfont!
+Missing character: There is no 择 ("62E9) in font nullfont!
+Missing character: There is no 公 ("516C) in font nullfont!
+Missing character: There is no 理 ("7406) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no Z ("5A) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no 论 ("8BBA) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no Z ("5A) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 即 ("5373) in font nullfont!
+Missing character: There is no Z ("5A) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no 既 ("65E2) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 能 ("80FD) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 也 ("4E5F) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 能 ("80FD) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 伪 ("4F2A) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 统 ("7EDF) in font nullfont!
+Missing character: There is no 假 ("5047) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 10--11
+[]
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 10--11
+\OT1/lmr/m/n/10 ^^?\/cmr/m/n/10 o
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.14 在
+       \ref{Boolean-topos} 节我们介绍了 Boole \topos{}. 我们可以在这样的\topos{}中做 ``经典数学''. 下面的内容本质上等同于 Cohen 证明连续统假设独立于 ZFC 所使用的方法, 只不过翻译到了\topos{}的语境.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 在 ("5728) in font nullfont!
+! Undefined control sequence.
+<write> ^^JLaTeX Warning: Reference `Boolean-topos' on page \thepage 
+                                                                     \space undefined\on@line .^^J
+l.14 在 \ref{Boolean-topos}
+                           节我们介绍了 Boole \topos{}. 我们可以在这样的\topos{}中做 ``经典数学''. 下面的内容本质上等同于 Cohen 证明连续统假设独立于 ZFC 所使用的方法, 只不过翻译到了\topos{}的语境.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `Boolean-topos' on page  undefined on input line 14.
+
+Missing character: There is no 节 ("8282) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 介 ("4ECB) in font nullfont!
+Missing character: There is no 绍 ("7ECD) in font nullfont!
+Missing character: There is no 了 ("4E86) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+! Undefined control sequence.
+l.14 在 \ref{Boolean-topos} 节我们介绍了 Boole \topos
+                                              {}. 我们可以在这样的\topos{}中做 ``经典数学''. 下面的内容本质上等同于 Cohen 证明连续统假设独立于 ZFC 所使用的方法, 只不过翻译到了\topos{}的语境.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 可 ("53EF) in font nullfont!
+Missing character: There is no 以 ("4EE5) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 这 ("8FD9) in font nullfont!
+Missing character: There is no 样 ("6837) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+! Undefined control sequence.
+l.14 在 \ref{Boolean-topos} 节我们介绍了 Boole \topos{}. 我们可以在这样的\topos
+                                                                {}中做 ``经典数学''. 下面的内容本质上等同于 Cohen 证明连续统假设独立于 ZFC 所使用的方法, 只不过翻译到了\topos{}的语境.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 做 ("505A) in font nullfont!
+Missing character: There is no ` ("60) in font nullfont!
+Missing character: There is no ` ("60) in font nullfont!
+Missing character: There is no 经 ("7ECF) in font nullfont!
+Missing character: There is no 典 ("5178) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 学 ("5B66) in font nullfont!
+Missing character: There is no ' ("27) in font nullfont!
+Missing character: There is no ' ("27) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 下 ("4E0B) in font nullfont!
+Missing character: There is no 面 ("9762) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 内 ("5185) in font nullfont!
+Missing character: There is no 容 ("5BB9) in font nullfont!
+Missing character: There is no 本 ("672C) in font nullfont!
+Missing character: There is no 质 ("8D28) in font nullfont!
+Missing character: There is no 上 ("4E0A) in font nullfont!
+Missing character: There is no 等 ("7B49) in font nullfont!
+Missing character: There is no 同 ("540C) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 统 ("7EDF) in font nullfont!
+Missing character: There is no 假 ("5047) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 独 ("72EC) in font nullfont!
+Missing character: There is no 立 ("7ACB) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no Z ("5A) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no 所 ("6240) in font nullfont!
+Missing character: There is no 使 ("4F7F) in font nullfont!
+Missing character: There is no 用 ("7528) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 方 ("65B9) in font nullfont!
+Missing character: There is no 法 ("6CD5) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 只 ("53EA) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 过 ("8FC7) in font nullfont!
+Missing character: There is no 翻 ("7FFB) in font nullfont!
+Missing character: There is no 译 ("8BD1) in font nullfont!
+Missing character: There is no 到 ("5230) in font nullfont!
+Missing character: There is no 了 ("4E86) in font nullfont!
+! Undefined control sequence.
+l.14 在 \ref{Boolean-topos} 节我们介绍了 Boole \topos{}. 我们可以在这样的\topos{}中做 ``经典数学''. 下面的内容本质上等同于 Cohen 证明连续统假设独立于 ZFC 所使用的方法, 只不过翻译到了\topos
+                                                                                                                                     {}的语境.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 语 ("8BED) in font nullfont!
+Missing character: There is no 境 ("5883) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
+[]
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 14--15
+[]
+ []
+
+
+! LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment prop undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                      
+l.16 \begin{prop}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.18 ^^I存
+         在一个 Boole \topos{}, 其中选择公理成立, 而连续统假设不成立.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 存 ("5B58) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+! Undefined control sequence.
+l.18 ^^I存在一个 Boole \topos
+                         {}, 其中选择公理成立, 而连续统假设不成立.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 选 ("9009) in font nullfont!
+Missing character: There is no 择 ("62E9) in font nullfont!
+Missing character: There is no 公 ("516C) in font nullfont!
+Missing character: There is no 理 ("7406) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 立 ("7ACB) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 而 ("800C) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 统 ("7EDF) in font nullfont!
+Missing character: There is no 假 ("5047) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 立 ("7ACB) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...renvline \space ended by \protect \end {\detokenize {prop}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.19 \end{prop}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 18--20
+[]
+ []
+
+! Undefined control sequence.
+l.21 \subsubsection
+                   {基础知识}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.21 \subsubsection{基
+                     础知识}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 基 ("57FA) in font nullfont!
+Missing character: There is no 础 ("7840) in font nullfont!
+Missing character: There is no 知 ("77E5) in font nullfont!
+Missing character: There is no 识 ("8BC6) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 21--22
+[] 
+ []
+
+
+! LaTeX Error: Environment propdef undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment propdef undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                         
+l.23 \begin{propdef}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.24 ^^I{(
+          双重否定作为 Lawvere--Tierney 拓扑)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 双 ("53CC) in font nullfont!
+Missing character: There is no 重 ("91CD) in font nullfont!
+Missing character: There is no 否 ("5426) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 作 ("4F5C) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no w ("77) in font nullfont!
+Missing character: There is no v ("76) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no y ("79) in font nullfont!
+Missing character: There is no 拓 ("62D3) in font nullfont!
+Missing character: There is no 扑 ("6251) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+! Undefined control sequence.
+l.25 ^^I在一个\topos
+                 {}中, $\neg\neg\colon \Omega\to\Omega$ 定义了其上的 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+Missing character: There is no 了 ("4E86) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 上 ("4E0A) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no L ("4C) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no w ("77) in font nullfont!
+Missing character: There is no v ("76) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no y ("79) in font nullfont!
+Missing character: There is no 拓 ("62D3) in font nullfont!
+Missing character: There is no 扑 ("6251) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+! Undefined control sequence.
+<write> ^^JLaTeX Warning: Reference `Lawvere--Tierney-topology' on page \thepage 
+                                                                                 \space undefined\on@line .^^J
+l.25 ^^I在一个\topos{}中, $\neg\neg\colon \Omega\to\Omega$ 定义了其上的 Lawvere--Tierney 拓扑 (定义 \ref{Lawvere--Tierney-topology}
+                                                                                                                     ).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `Lawvere--Tierney-topology' on page  undefined on input line 25.
+
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{propdef}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...vline \space ended by \protect \end {\detokenize {propdef}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.26 \end{propdef}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment proof undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment proof undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                       
+l.27 \begin{proof}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 24--28
+[]
+ []
+
+
+Overfull \hbox (37.77774pt too wide) in paragraph at lines 24--28
+\OMS/cmsy/m/n/10 ::\/cmr/m/n/10 : 
+ \OMS/cmsy/m/n/10 !
+ []
+
+
+Overfull \hbox (7.22223pt too wide) in paragraph at lines 24--28
+\/cmr/m/n/10 
+$
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 24--28
+[]
+ []
+
+Missing character: There is no 由 ("7531) in font nullfont!
+Missing character: There is no 命 ("547D) in font nullfont!
+Missing character: There is no 题 ("9898) in font nullfont!
+! Undefined control sequence.
+<write> ^^JLaTeX Warning: Reference `bot-neg-top' on page \thepage 
+                                                                   \space undefined\on@line .^^J
+l.29 ^^I^^I\item 由命题 \ref{bot-neg-top}
+                                      , $\not\top=\bot$; 而由定义 \ref{definition-not}, $\neg\bot=\top$. 这说明 $\neg\neg\top=\top$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `bot-neg-top' on page  undefined on input line 29.
+
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no 而 ("800C) in font nullfont!
+Missing character: There is no 由 ("7531) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+! Undefined control sequence.
+<write> ^^JLaTeX Warning: Reference `definition-not' on page \thepage 
+                                                                      \space undefined\on@line .^^J
+l.29 ^^I^^I\item 由命题 \ref{bot-neg-top}, $\not\top=\bot$; 而由定义 \ref{definition-not}
+                                                                                  , $\neg\bot=\top$. 这说明 $\neg\neg\top=\top$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `definition-not' on page  undefined on input line 29.
+
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 这 ("8FD9) in font nullfont!
+Missing character: There is no 说 ("8BF4) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 29--30
+[]
+ []
+
+
+Overfull \hbox (18.33331pt too wide) in paragraph at lines 29--30
+\OMS/cmsy/m/n/10 > \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 29--30
+\OMS/cmsy/m/n/10 ?$
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 29--30
+[]
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 29--30
+\OMS/cmsy/m/n/10 :? \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 29--30
+\OMS/cmsy/m/n/10 >$
+ []
+
+
+Overfull \hbox (31.66669pt too wide) in paragraph at lines 29--30
+\OMS/cmsy/m/n/10 ::> \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 29--30
+\OMS/cmsy/m/n/10 >$ 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{proof}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...envline \space ended by \protect \end {\detokenize {proof}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.31 \end{proof}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no 下 ("4E0B) in font nullfont!
+Missing character: There is no 面 ("9762) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no 关 ("5173) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 层 ("5C42) in font nullfont!
+Missing character: There is no 构 ("6784) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no 意 ("610F) in font nullfont!
+Missing character: There is no 象 ("8C61) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 33--34
+[]
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 33--34
+\OMS/cmsy/m/n/10 ::$
+ []
+
+
+! LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment prop undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                      
+l.35 \begin{prop}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 任 ("4EFB) in font nullfont!
+Missing character: There is no 意 ("610F) in font nullfont!
+! Undefined control sequence.
+l.37 ^^I对任意\topos
+                 {} $\mathcal C$, $\operatorname{Sh}_{\neg\neg}\mathcal C$ 为 Boole \topos{}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , ("2C) in font nullfont!
+! Undefined control sequence.
+<recently read> \operatorname 
+                              
+l.37 ^^I对任意\topos{} $\mathcal C$, $\operatorname
+                                                {Sh}_{\neg\neg}\mathcal C$ 为 Boole \topos{}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+! Undefined control sequence.
+l.37 ^^I对任意\topos{} $\mathcal C$, $\operatorname{Sh}_{\neg\neg}\mathcal C$ 为 Boole \topos
+                                                                                         {}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...renvline \space ended by \protect \end {\detokenize {prop}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.38 \end{prop}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment proof undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment proof undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                       
+l.39 \begin{proof}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no 由 ("7531) in font nullfont!
+Missing character: There is no B ("42) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+! Undefined control sequence.
+l.40 ^^I由 Boole \topos
+                      {}的内语言刻画 (\ref{internal-Boolean-topos}), 我们要在 $\operatorname{Sh}_{\neg\neg}\mathcal C$ 中证明 $\forall p\in\Omega (p\lor \neg p)$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 内 ("5185) in font nullfont!
+Missing character: There is no 语 ("8BED) in font nullfont!
+Missing character: There is no 言 ("8A00) in font nullfont!
+Missing character: There is no 刻 ("523B) in font nullfont!
+Missing character: There is no 画 ("753B) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+! Undefined control sequence.
+<write> ^^JLaTeX Warning: Reference `internal-Boolean-topos' on page \thepage 
+                                                                              \space undefined\on@line .^^J
+l.40 ^^I由 Boole \topos{}的内语言刻画 (\ref{internal-Boolean-topos}
+                                                            ), 我们要在 $\operatorname{Sh}_{\neg\neg}\mathcal C$ 中证明 $\forall p\in\Omega (p\lor \neg p)$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `internal-Boolean-topos' on page  undefined on input line 40.
+
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 要 ("8981) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+! Undefined control sequence.
+<recently read> \operatorname 
+                              
+l.40 ^^I由 Boole \topos{}的内语言刻画 (\ref{internal-Boolean-topos}), 我们要在 $\operatorname
+                                                                                  {Sh}_{\neg\neg}\mathcal C$ 中证明 $\forall p\in\Omega (p\lor \neg p)$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+! Undefined control sequence.
+l.42 ^^I\todo
+             {}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{proof}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...envline \space ended by \protect \end {\detokenize {proof}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.43 \end{proof}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 37--44
+[]
+ []
+
+
+Overfull \hbox (5.84865pt too wide) in paragraph at lines 37--44
+\OMS/cmsy/m/n/10 C$
+ []
+
+
+Overfull \hbox (29.59634pt too wide) in paragraph at lines 37--44
+[][]\OMS/cmsy/m/n/10 C$
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 37--44
+[]
+ []
+
+
+Overfull \hbox (29.59634pt too wide) in paragraph at lines 37--44
+[][]\OMS/cmsy/m/n/10 C$
+ []
+
+
+Overfull \hbox (20.03122pt too wide) in paragraph at lines 37--44
+\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (22.80907pt too wide) in paragraph at lines 37--44
+\/cmr/m/n/10 
+(\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 _
+ []
+
+
+Overfull \hbox (15.58684pt too wide) in paragraph at lines 37--44
+\OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 p\/cmr/m/n/10 )$
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment definition undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                            
+l.45 \begin{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 基 ("57FA) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 比 ("6BD4) in font nullfont!
+Missing character: There is no 较 ("8F83) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+! Undefined control sequence.
+l.47 ^^I对于一个\topos
+                  {}中的两个对象 $X,Y$, 若存在单射 $X\to Y$, 且 $\operatorname{Epi}(X,Y)\simeq 0$, 则称 $X$ 的基数小于 $Y$, 记为 $X<Y$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 两 ("4E24) in font nullfont!
+Missing character: There is no 个 ("4E2A) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 象 ("8C61) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 若 ("82E5) in font nullfont!
+Missing character: There is no 存 ("5B58) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 单 ("5355) in font nullfont!
+Missing character: There is no 射 ("5C04) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 且 ("4E14) in font nullfont!
+! Undefined control sequence.
+<recently read> \operatorname 
+                              
+l.47 ^^I对于一个\topos{}中的两个对象 $X,Y$, 若存在单射 $X\to Y$, 且 $\operatorname
+                                                                  {Epi}(X,Y)\simeq 0$, 则称 $X$ 的基数小于 $Y$, 记为 $X<Y$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 则 ("5219) in font nullfont!
+Missing character: There is no 称 ("79F0) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 基 ("57FA) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 小 ("5C0F) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 记 ("8BB0) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...ne \space ended by \protect \end {\detokenize {definition}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.48 \end{definition}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 46--49
+[]
+ []
+
+
+Overfull \hbox (20.98607pt too wide) in paragraph at lines 46--49
+\OML/cmm/m/it/10 X; Y$
+ []
+
+
+Overfull \hbox (21.84715pt too wide) in paragraph at lines 46--49
+\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 !
+ []
+
+
+Overfull \hbox (8.02779pt too wide) in paragraph at lines 46--49
+\OML/cmm/m/it/10 Y$
+ []
+
+
+Overfull \hbox (55.75407pt too wide) in paragraph at lines 46--49
+[]\/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y\/cmr/m/n/10 ) \OMS/cmsy/m/n/10 '
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 46--49
+\/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (9.06943pt too wide) in paragraph at lines 46--49
+\OML/cmm/m/it/10 X$
+ []
+
+
+Overfull \hbox (8.02779pt too wide) in paragraph at lines 46--49
+\OML/cmm/m/it/10 Y$
+ []
+
+
+Overfull \hbox (19.62494pt too wide) in paragraph at lines 46--49
+\OML/cmm/m/it/10 X <
+ []
+
+
+Overfull \hbox (8.02779pt too wide) in paragraph at lines 46--49
+\OML/cmm/m/it/10 Y$
+ []
+
+Missing character: There is no 回 ("56DE) in font nullfont!
+Missing character: There is no 忆 ("5FC6) in font nullfont!
+! Undefined control sequence.
+<recently read> \operatorname 
+                              
+l.50 回忆 $\operatorname
+                      {Epi}(X,Y)$ 的定义 (\ref{set-of-epimorphisms}), $\operatorname{Epi}(X,Y)\simeq 0$ 当且仅当公式 $\forall f\in Y^X\,\neg(\operatorname{im}f = Y)$ 成立.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+! Undefined control sequence.
+<write> ^^JLaTeX Warning: Reference `set-of-epimorphisms' on page \thepage 
+                                                                           \space undefined\on@line .^^J
+l.50 回忆 $\operatorname{Epi}(X,Y)$ 的定义 (\ref{set-of-epimorphisms}
+                                                                ), $\operatorname{Epi}(X,Y)\simeq 0$ 当且仅当公式 $\forall f\in Y^X\,\neg(\operatorname{im}f = Y)$ 成立.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `set-of-epimorphisms' on page  undefined on input line 50.
+
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+! Undefined control sequence.
+<recently read> \operatorname 
+                              
+l.50 回忆 $\operatorname{Epi}(X,Y)$ 的定义 (\ref{set-of-epimorphisms}), $\operatorname
+                                                                                 {Epi}(X,Y)\simeq 0$ 当且仅当公式 $\forall f\in Y^X\,\neg(\operatorname{im}f = Y)$ 成立.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 当 ("5F53) in font nullfont!
+Missing character: There is no 且 ("4E14) in font nullfont!
+Missing character: There is no 仅 ("4EC5) in font nullfont!
+Missing character: There is no 当 ("5F53) in font nullfont!
+Missing character: There is no 公 ("516C) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+! Undefined control sequence.
+l.50 回忆 $\operatorname{Epi}(X,Y)$ 的定义 (\ref{set-of-epimorphisms}), $\operatorname{Epi}(X,Y)\simeq 0$ 当且仅当公式 $\forall f\in Y^X\,\neg(\operatorname
+                                                                                                                                                 {im}f = Y)$ 成立.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 立 ("7ACB) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 50--51
+[]
+ []
+
+
+Overfull \hbox (45.19856pt too wide) in paragraph at lines 50--51
+[]\/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y\/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 50--51
+[]
+ []
+
+
+Overfull \hbox (55.75407pt too wide) in paragraph at lines 50--51
+[]\/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y\/cmr/m/n/10 ) \OMS/cmsy/m/n/10 '
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 50--51
+\/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (20.97223pt too wide) in paragraph at lines 50--51
+\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (56.60515pt too wide) in paragraph at lines 50--51
+\OML/cmm/m/it/10 Y[] \OMS/cmsy/m/n/10 :\/cmr/m/n/10 ([]\OML/cmm/m/it/10 f \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (11.91669pt too wide) in paragraph at lines 50--51
+\OML/cmm/m/it/10 Y\/cmr/m/n/10 )$
+ []
+
+)
+! Emergency stop.
+<*> Cohen.tex
+             
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 91 strings out of 476675
+ 1774 string characters out of 5807327
+ 1844290 words of memory out of 5000000
+ 20433 multiletter control sequences out of 15000+600000
+ 515262 words of font info for 37 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 24i,5n,32p,290b,141s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

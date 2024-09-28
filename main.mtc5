@@ -1,25 +1,5 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Mitchell--B\'enabou 语言}{\reset@font\mtcSfont 140}{section.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Kripke--Joyal 语义}{\reset@font\mtcSfont 146}{section.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层语义}{\reset@font\mtcSSfont 148}{Item.55}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}模态与层化}{\reset@font\mtcSfont 150}{section.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}内位象}{\reset@font\mtcSfont 152}{section.4.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}非标准分析, 滤商与超滤范畴}{\reset@font\mtcSfont 153}{section.4.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 基本概念}{\reset@font\mtcSSfont 153}{section.4.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 滤商}{\reset@font\mtcSSfont 153}{tcb@cnt@remark.4.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 超滤范畴}{\reset@font\mtcSSfont 153}{tcb@cnt@remark.4.5.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.6}可计算性理论与有效意象}{\reset@font\mtcSfont 153}{section.4.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 基础知识}{\reset@font\mtcSSfont 153}{section.4.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.7}综合微分几何与光滑无穷小分析}{\reset@font\mtcSfont 155}{section.4.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 综合微分几何的理论}{\reset@font\mtcSSfont 155}{section.4.7}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Kock--Lawvere 公理与导数}{\reset@font\mtcPfont 156}{tcb@cnt@remark.4.7.5}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Weil 代数与无穷小几何对象}{\reset@font\mtcPfont 157}{tcb@cnt@remark.4.7.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 综合微分几何的模型}{\reset@font\mtcSSfont 159}{tcb@cnt@remark.4.7.16}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode ``代数'' 模型}{\reset@font\mtcSSSfont 160}{tcb@cnt@remark.4.7.16}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 光滑代数}{\reset@font\mtcSSSfont 162}{tcb@cnt@remark.4.7.23}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.8}量子理论与 Bohr 意象}{\reset@font\mtcSfont 164}{section.4.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $C^*$-代数, 经典语境与 Bohr 景}{\reset@font\mtcSSfont 165}{section.4.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Bohr 意象}{\reset@font\mtcSSfont 167}{tcb@cnt@remark.4.8.12}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Bohr 意象中的命题}{\reset@font\mtcSSfont 168}{tcb@cnt@remark.4.8.17}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.9}Cohen 力迫法}{\reset@font\mtcSfont 168}{section.4.9}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 基础知识}{\reset@font\mtcSSSfont 169}{tcb@cnt@remark.4.9.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.10}凝聚态数学}{\reset@font\mtcSfont 169}{section.4.10}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Mitchell--B\'enabou 语言}{\reset@font\mtcSfont 153}{section.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Kripke--Joyal 语义}{\reset@font\mtcSfont 160}{section.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 层语义}{\reset@font\mtcSSfont 162}{Item.64}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}模态与层化}{\reset@font\mtcSfont 164}{section.4.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}内位象}{\reset@font\mtcSfont 167}{section.4.4}}

@@ -1,0 +1,330 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  31 JUL 2024 16:36
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**condensed.tex
+(./condensed.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-03-30>
+! Undefined control sequence.
+l.1 \section
+            {凝聚态数学}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.1 \section{凝
+              聚态数学}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 学 ("5B66) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[] 
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment definition undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                            
+l.5 \begin{definition}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.6 ^^I{(
+         投射有限集景)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 投 ("6295) in font nullfont!
+Missing character: There is no 射 ("5C04) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 限 ("9650) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 景 ("666F) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 投 (U+6295) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 射 (U+5C04) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 有 (U+6709) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 限 (U+9650) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 集 (U+96C6) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 景 (U+666F) in font [lmroman10-italic]:mapping=tex-text;!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 7.
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 投 ("6295) in font nullfont!
+Missing character: There is no 射 ("5C04) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 限 ("9650) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 配 ("914D) in font nullfont!
+Missing character: There is no 备 ("5907) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 限 ("9650) in font nullfont!
+Missing character: There is no 联 ("8054) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no 满 ("6EE1) in font nullfont!
+Missing character: There is no 射 ("5C04) in font nullfont!
+Missing character: There is no 族 ("65CF) in font nullfont!
+Missing character: There is no 生 ("751F) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 覆 ("8986) in font nullfont!
+Missing character: There is no 盖 ("76D6) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...ne \space ended by \protect \end {\detokenize {definition}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.8 \end{definition}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--9
+[]
+ []
+
+
+Overfull \hbox (16.8pt too wide) in paragraph at lines 6--9
+\TU/lmr/m/it/10 投射有限集景
+ []
+
+
+Overfull \hbox (28.05563pt too wide) in paragraph at lines 6--9
+[]$
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment definition undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                            
+l.10 \begin{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.11 ^^I{(
+          凝聚态集合)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 凝 (U+51DD) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 聚 (U+805A) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 态 (U+6001) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 集 (U+96C6) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no 合 (U+5408) in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 投 ("6295) in font nullfont!
+Missing character: There is no 射 ("5C04) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 限 ("9650) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 景 ("666F) in font nullfont!
+Missing character: There is no 上 ("4E0A) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 层 ("5C42) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 记 ("8BB0) in font nullfont!
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 范 ("8303) in font nullfont!
+Missing character: There is no 畴 ("7574) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...ne \space ended by \protect \end {\detokenize {definition}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.13 \end{definition}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 11--14
+[]
+ []
+
+
+Overfull \hbox (14.0pt too wide) in paragraph at lines 11--14
+\TU/lmr/m/it/10 凝聚态集合
+ []
+
+
+Overfull \hbox (28.05563pt too wide) in paragraph at lines 11--14
+[]$
+ []
+
+
+Overfull \hbox (21.72226pt too wide) in paragraph at lines 11--14
+[]$
+ []
+
+
+! LaTeX Error: Environment example undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Environment example undefined.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                         
+l.15 \begin{example}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ->\errmessage  LaTeX Error: Missing \protect \begin {document}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.16 ^^I{(
+          拓扑空间视为凝聚态集合)}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 拓 ("62D3) in font nullfont!
+Missing character: There is no 扑 ("6251) in font nullfont!
+Missing character: There is no 空 ("7A7A) in font nullfont!
+Missing character: There is no 间 ("95F4) in font nullfont!
+Missing character: There is no 视 ("89C6) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 拓 ("62D3) in font nullfont!
+Missing character: There is no 扑 ("6251) in font nullfont!
+Missing character: There is no 空 ("7A7A) in font nullfont!
+Missing character: There is no 间 ("95F4) in font nullfont!
+Missing character: There is no 可 ("53EF) in font nullfont!
+Missing character: There is no 视 ("89C6) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 凝 ("51DD) in font nullfont!
+Missing character: There is no 聚 ("805A) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no 集 ("96C6) in font nullfont!
+Missing character: There is no 合 ("5408) in font nullfont!
+! Undefined control sequence.
+l.17 ^^I拓扑空间 $X$ 可视为凝聚态集合 $\underline{X}\colon S\mapsto \operatorname
+                                                                     {Hom}_{\mathsf {Top}}(S,X)$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no . ("2E) in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{example}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...vline \space ended by \protect \end {\detokenize {example}}.^^J^^JSee the LaTeX manual or LaTeX Companion for explanation.^^JType  H <return>  for immediate help\@err@                                                                   
+                                                                                                                                                                                                                                              
+l.18 \end{example}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+! Emergency stop.
+<*> condensed.tex
+                 
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 28 strings out of 476675
+ 500 string characters out of 5807327
+ 1842290 words of memory out of 5000000
+ 20380 multiletter control sequences out of 15000+600000
+ 513200 words of font info for 36 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 18i,4n,15p,266b,72s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

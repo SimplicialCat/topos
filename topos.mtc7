@@ -1,26 +1,26 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.1}非标准分析}{\reset@font\mtcSfont 183}{section.6.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 基本概念}{\reset@font\mtcSSfont 183}{section.6.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 滤商}{\reset@font\mtcSSfont 184}{tcb@cnt@remark.6.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 超滤范畴}{\reset@font\mtcSSfont 184}{tcb@cnt@remark.6.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.2}可计算性理论与有效意象}{\reset@font\mtcSfont 184}{section.6.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 基础知识}{\reset@font\mtcSSfont 184}{section.6.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.3}代数几何的函子观点}{\reset@font\mtcSfont 186}{section.6.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode ``小'' 意象{}与 ``大'' 意象{}}{\reset@font\mtcSSfont 188}{tcb@cnt@remark.6.3.7}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.4}综合微分几何与光滑无穷小分析}{\reset@font\mtcSfont 188}{section.6.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 综合微分几何的理论}{\reset@font\mtcSSfont 188}{section.6.4}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Kock--Lawvere 公理与导数}{\reset@font\mtcPfont 189}{tcb@cnt@remark.6.4.5}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Weil 代数与无穷小几何对象}{\reset@font\mtcPfont 190}{tcb@cnt@remark.6.4.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 综合微分几何的模型}{\reset@font\mtcSSfont 192}{tcb@cnt@remark.6.4.16}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode ``代数'' 模型}{\reset@font\mtcSSSfont 193}{tcb@cnt@remark.6.4.16}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 光滑代数}{\reset@font\mtcSSSfont 194}{tcb@cnt@remark.6.4.22}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.5}量子理论与 Bohr 意象}{\reset@font\mtcSfont 196}{section.6.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $C^*$-代数, 经典语境与 Bohr 景}{\reset@font\mtcSSfont 197}{section.6.5}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 偏序集上的层}{\reset@font\mtcSSSfont 199}{tcb@cnt@remark.6.5.9}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Bohr 意象}{\reset@font\mtcSSfont 200}{tcb@cnt@remark.6.5.13}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Gelfand 对偶}{\reset@font\mtcSSSfont 200}{tcb@cnt@remark.6.5.14}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Bohr 意象中的命题}{\reset@font\mtcSSfont 201}{tcb@cnt@remark.6.5.19}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.6}连续统假设的独立性}{\reset@font\mtcSfont 202}{section.6.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 双重否定与稠密拓扑}{\reset@font\mtcSSfont 202}{section.6.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 意象{}中基数的比较}{\reset@font\mtcSSfont 204}{tcb@cnt@remark.6.6.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 连续统假设反例的构造}{\reset@font\mtcSSfont 205}{tcb@cnt@remark.6.6.8}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.7}凝聚态数学}{\reset@font\mtcSfont 208}{section.6.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.1}非标准分析}{\reset@font\mtcSfont 191}{section.6.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 基本概念}{\reset@font\mtcSSfont 191}{section.6.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 滤商}{\reset@font\mtcSSfont 191}{tcb@cnt@remark.6.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 超滤范畴}{\reset@font\mtcSSfont 191}{tcb@cnt@remark.6.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.2}可计算性理论与有效意象}{\reset@font\mtcSfont 192}{section.6.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 基础知识}{\reset@font\mtcSSfont 192}{section.6.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.3}代数几何的函子观点}{\reset@font\mtcSfont 194}{section.6.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode ``小'' 意象{}与 ``大'' 意象{}}{\reset@font\mtcSSfont 196}{tcb@cnt@remark.6.3.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.4}综合微分几何与光滑无穷小分析}{\reset@font\mtcSfont 196}{section.6.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 综合微分几何的理论}{\reset@font\mtcSSfont 196}{section.6.4}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Kock--Lawvere 公理与导数}{\reset@font\mtcPfont 197}{tcb@cnt@remark.6.4.5}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Weil 代数与无穷小几何对象}{\reset@font\mtcPfont 198}{tcb@cnt@remark.6.4.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 综合微分几何的模型}{\reset@font\mtcSSfont 200}{tcb@cnt@remark.6.4.16}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode ``代数'' 模型}{\reset@font\mtcSSSfont 200}{tcb@cnt@remark.6.4.16}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 光滑代数}{\reset@font\mtcSSSfont 202}{tcb@cnt@remark.6.4.22}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.5}量子理论与 Bohr 意象}{\reset@font\mtcSfont 204}{section.6.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $C^*$-代数, 经典语境与 Bohr 景}{\reset@font\mtcSSfont 205}{section.6.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode 偏序集上的层}{\reset@font\mtcSSSfont 207}{tcb@cnt@remark.6.5.9}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Bohr 意象}{\reset@font\mtcSSfont 208}{tcb@cnt@remark.6.5.13}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Gelfand 对偶}{\reset@font\mtcSSSfont 208}{tcb@cnt@remark.6.5.14}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Bohr 意象中的命题}{\reset@font\mtcSSfont 209}{tcb@cnt@remark.6.5.19}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.6}连续统假设的独立性}{\reset@font\mtcSfont 209}{section.6.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 双重否定与稠密拓扑}{\reset@font\mtcSSfont 210}{section.6.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 意象{}中基数的比较}{\reset@font\mtcSSfont 211}{tcb@cnt@remark.6.6.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 连续统假设反例的构造}{\reset@font\mtcSSfont 212}{tcb@cnt@remark.6.6.8}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.7}凝聚态数学}{\reset@font\mtcSfont 215}{section.6.7}}

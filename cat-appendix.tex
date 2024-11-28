@@ -2111,7 +2111,7 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	$R(d) = \operatorname{Hom}_{\mathcal C}(F-,d)$;
 	其左伴随 $L$ 由如下余极限给出:
 	$$
-	L (X) = X\otimes_{\mathcal C} F \operatorname{colim}\Big(
+	L (X) = X\otimes_{\mathcal C} F = \operatorname{colim}\Big(
 	F\circ \pi_X \colon 
 	{\displaystyle\int_{\mathcal C}X} \to {\mathcal D}
 	\Big)
@@ -2296,7 +2296,145 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	%范畴 $\mathsf {Flat}(\mathcal C^{\op},\mathsf {Set})$ 又记作 $\mathsf {Ind}(\mathcal C)$,
 	对于范畴 $\mathcal C$, 定义 $\mathcal C$ 的一个 ``$\text{ind}$-对象\footnotemark{}'' 为 $\widehat {\mathcal C}$ 中可表函子的一个滤余极限. 记 ``$\text{ind}$-对象\footnotemark{}'' 构成的 $\widehat {\mathcal C}$ 的全子范畴为 $\mathsf {Ind}(\mathcal C)$.
 \end{definition}
-\footnotetext{``$\text{ind}$-对象'' 中 $\text{ind}$ 来自\emph{归纳极限} (inductive limit), 它是滤余极限的别名. 由于找不到合适的译名, 姑且以 ``$\text{ind}$-对象'' 称之. 但也有作者用 inductive limit 表示一般的余极限, 如 \cite{SGA4}; 他们的滤余极限是 \emph{limites inductives filtrantes} (filtered inductive limits).}
+\footnotetext{``$\text{ind}$-对象'' 中 $\text{ind}$ 来自 inductive limit, 它是滤余极限的别名. 由于这个概念已经广为人知, 且找不到合适的中文译名, 姑且以 ``$\text{ind}$-对象'' 称之. 但也有作者用 inductive limit 表示一般的余极限, 如 \cite{SGA4}; 他们的滤余极限是 \emph{limites inductives filtrantes} (filtered inductive limits).}
+
+范畴 $\mathcal C$ 的 ``$\text{ind}$-对象'' 有另一种刻画, 即 $\mathcal C^{\op}$ 到 $\mathsf{Set}$ 的平坦函子.
+
+\subsection{$\mathsf {Set}$-值平坦函子}
+
+在没有有限极限的范畴上, 我们引入\emph{平坦函子}来模拟 ``保持有限极限'' 这一现象. 平坦函子也是定义景之间的态射所需的关键概念. 最简单的情形是取值于集合范畴的函子.
+
+\begin{propdef}
+	[label={Set-valued-flat-functor}]
+	{($\mathsf {Set}$-值平坦函子)}
+	设 $\mathcal C$ 为任意范畴, 对函子 $F\colon \mathcal C\to \mathsf {Set}$, 以下条件等价.
+	\begin{enumerate}[(1)]
+		\item $F$ 的元素的范畴 $\displaystyle\int^{\mathcal C}F$ (定义 \ref{slice-over-presheaf}) 为余滤范畴 (定义 \ref{cofiltered-category}).
+		\item $F$ 是可表函子 (即形如 $\operatorname{Hom}_{\mathcal C}(c,-)$ 的函子) 的滤余极限.
+		\item $F$ 的米田扩张 $L = {-\otimes_{\mathcal C} F}\colon \widehat {\mathcal C}\to\mathsf {Set}$ (命题 \ref{nerve-and-realization}) 保持有限极限.
+	\end{enumerate}
+	称满足上述条件的函子为 \emph{$\mathsf {Set}$-值平坦函子} ($\mathsf {Set}$-valued flat functor).
+	$F$ 的米田扩张也可视为与 $F$ 作张量积 (定义 \ref{functor-tensor-product}, 注 \ref{generalized-tensor-hom}), 这解释了 ``平坦'' 这个名称 (在代数中, 称一个模 $M$ 平坦是指张量积 ${-}\otimes M$ 左正合).
+	记 $\mathcal C$ 上的 $\mathsf {Set}$-值平坦函子构成的 $\mathsf {Fun}(\mathcal C,\mathsf {Set})$ 的全子范畴为 $\mathsf {Flat}(\mathcal C,\mathsf {Set})$.
+\end{propdef}
+\begin{proof}
+	~
+	\begin{itemize}
+		\item $(1)\Rightarrow (2)$.
+		由命题 \ref{presheaf-as-colimit-of-representables} 的对偶版本即得. 具体地,
+		\[
+		F = \operatorname{colim}\Big( \Big(\int^{\mathcal C}F\Big)^{\op} \overset{\pi^{\op}}{\to} \mathcal C^{\op} \overset{\yo^*}{\to} \mathsf {Fun}(\mathcal C,\mathsf {Set}) \Big),
+		\]
+		其中 $\yo^*$ 是 $\mathcal C^{\op}$ 的米田嵌入. 由 $\displaystyle\int^{\mathcal C}F$ 为余滤范畴, 知 $\displaystyle\Big(\int^{\mathcal C}F\Big)^{\op}$ 为滤范畴.
+		\item $(2)\Rightarrow (3)$.
+		设 $F$ 为滤余极限 $\operatorname{colim}_j\operatorname{Hom}_{\mathcal C}(c_j,-)$, 其中指标范畴 $J$ 为滤范畴.
+		那么 $F$ 的米田扩张为 $L\colon \widehat {\mathcal C}\to\mathsf {Set}$ 为
+		\begin{align*}
+			L(X)&\simeq \operatorname{colim}_{\yo(c)\to X} F(c)\\
+			&\simeq \operatorname{colim}_{\yo(c)\to X}\operatorname{colim}_j\operatorname{Hom}(c_j,c)\\
+			&\simeq \operatorname{colim}_j\operatorname{colim}_{\yo(c)\to X}\operatorname{Hom}(c_j,c)\\
+			&\simeq \operatorname{colim}_j X(c_j),
+		\end{align*}
+		由命题 \ref{filtered-colimit-commutes-with-finite-limit}, $J$-余极限与有限极限交换,
+		故 $L$ 保持有限极限.
+		\item $(3)\Rightarrow (1)$. %证明见 \cite{HCA1} 6.3.8 以及 \cite{SGL} VII.6.3.
+		
+		设 $I$ 为有限范畴, $\displaystyle X\colon I\to \int^{\mathcal C}F$ 为图, 我们要证明 $X$ 上有锥. 对于 $i\in I$, 记 $X(i)=(c_i,x_i)$, 其中 $x_i\in F(c_i)$. 注意到 $X$ 可视为 $\lim_{i\in I}F(c_i)$ 的元素.
+		因为 $L$ 保持有限极限, 典范的映射
+		$$
+		L(\operatorname{lim}_{i\in I}\yo(c_i)) 
+		\to
+		\operatorname{lim}_{i\in I}L(\yo(c_i))\simeq\operatorname{lim}_{i\in I}F(c_i)
+		$$
+		为同构. 而
+		$$
+		L(\operatorname{lim}_{i\in I}\yo(c_i))\simeq \operatorname{colim}_{\yo(c)\to \operatorname{lim}_{i\in I}\yo(c_i)}F(c),
+		$$
+		故存在一个态射 $f\colon \yo(c)\to \lim_{i\in I}\yo(c_i)$, 即一个锥 $(f_i\colon c\to c_i)_{i\in I}$,
+		以及 $x\in F(c)$,
+		使得 $F(f_i)(x)=x_i\in F(c_i)$. 这就是说 $X$ 上有锥.
+		
+		%		首先我们陈述一个简单的事实: 一个小范畴 $I$ 是余滤范畴当且仅当 $$\varnothing\qquad \qquad\bullet\ \ \bullet\qquad\qquad \bullet\rightrightarrows\bullet$$ 三种形状的图都有锥.
+		%		其中空图有锥的意思是 $I$ 非空. 我们分别证明 $\displaystyle\int^{\mathcal C}F$ 上存在这三种锥.
+		%		\begin{itemize}
+			%			\item 空图 $\varnothing$. 因为 $L$ 保持终对象, $L(1)=1$, 固然 $F$ 非空, 那么 $\displaystyle\int^{\mathcal C} F$ 非空.
+			%			\item 图 $\bullet\ \ \bullet$. 因为 $L$ 保持乘积, 典范的映射 $$L(\yo(c)\times \yo(d))\simeq \operatorname{colim}_{\yo(e)\to\yo(c)\times\yo(d)}F(e) \longrightarrow F(c)\times F(d)$$
+			%			为同构, 故
+			%			$\displaystyle\int^{\mathcal C} F$
+			%			中两个对象 $(c,x),(d,y)$ 上总有锥.
+			%			%对任意 $x\in F(c), y\in F(d)$, %存在 $\mathcal C$ 的对象 $e$, $z\in F(e)$ 以及态射 $f\colon e\to c, g\colon e\to d$ 使得 $F(f)(z)=x, F(g)(z)=y$.
+			%			\item 图 $\bullet\rightrightarrows\bullet$.
+			%			因为 $L$ 保持等化子, 对任意态射 $f,g\colon c\rightrightarrows d$, 令 $$P=\operatorname{eq}\big(\yo(f),\yo(g)\colon \yo(c)\rightrightarrows \yo(d)\big),\quad
+			%			P(e)=\{h\colon e\to c\mid fh=gh\},$$ 则有等化子
+			%			% https://q.uiver.app/#q=WzAsMyxbMSwwLCJGKGMpIl0sWzIsMCwiRihkKS4iXSxbMCwwLCJMKFApIl0sWzAsMSwiRihmKSIsMCx7Im9mZnNldCI6LTF9XSxbMCwxLCJGKGcpIiwyLHsib2Zmc2V0IjoxfV0sWzIsMF1d
+			%			\[\begin{tikzcd}[ampersand replacement=\&]
+				%				{L(P)\simeq\operatorname{colim}_{\yo(e)\to P}F(e)} \& {F(c)} \& {F(d),}
+				%				\arrow["{F(f)}", shift left, from=1-2, to=1-3]
+				%				\arrow["{F(g)}"', shift right, from=1-2, to=1-3]
+				%				\arrow[from=1-1, to=1-2]
+				%			\end{tikzcd}\]
+			%			故 $\displaystyle\int^{\mathcal C} F$
+			%			中的图 $(c,x)\rightrightarrows (d,y)$ 上总有锥.
+			%		\end{itemize}
+	\end{itemize}
+	%	记 $F$ 的米田扩张为 $L\colon \widehat {\mathcal C}\to\mathsf {Set}$.
+	%	我们需要一个关键的性质, 即张量积 (定义 \ref{functor-tensor-product}) 的对称性
+	%	\[
+	%	X\otimes_{\mathcal C} F \simeq F\otimes_{\mathcal C^{\op}} X.
+	%	\quad (X\colon \mathcal C^{\op}\to\mathsf {Set}, F\colon \mathcal C\to \mathsf {Set})
+	%	\]
+	%	这个事实也可由如下余极限的交换性得出.
+	%	\[
+	%	\operatorname{colim}_{\yo(c)\to X}F(c)\simeq\operatorname{colim}_{\yo(c)\to X \atop \yo(c')\to F}\operatorname{Hom}_{\mathcal C}(c,c')\simeq\operatorname{colim}_{\yo(c')\to F}X(c').
+	%	\]
+	%	因此
+	%	$$
+	%	L(X)  \simeq \operatorname{colim}_{\yo(c)\to F}X(c)
+	%	\simeq\big({\operatorname{colim}_{\yo(c)\to F}\operatorname{ev}_{c}}\big)X,
+	%	$$
+	%	其中 $\operatorname{ev}_c\colon \widehat {\mathcal C}\to\mathsf {Set}$ 是 $c$ 处的取值函子.
+	%	\begin{itemize}
+		%		\item $(1)\Rightarrow (2)$.
+		%		由假设, $\operatorname{colim}_{\yo(c)\to F}\operatorname{ev}_{c}$ 是一个滤余极限, 它与有限极限交换 (命题 \ref{lambda-filtered-colimit-commutes-with-lambda-small-limit}, 取 $\lambda = \aleph_0$), 故 $L$ 保持有限极限.
+		%		\item $(2)\Rightarrow (1)$.
+		%%		\[
+		%%		1\simeq L(1)\simeq
+		%%		\]
+		%		
+		%	\end{itemize}
+\end{proof}
+
+\begin{prop}
+	{(平坦函子保持所有存在的有限极限)}
+	平坦函子 $\mathcal C\to \mathsf {Set}$ 保持所有 $\mathcal C$ 中存在的有限极限 (意思是,  $\mathcal C$ 中不一定存在有限极限, 但只要某个有限极限恰好存在, 则被该函子保持).
+	若 $\mathcal C$ 存在所有有限极限, 那么一个函子 $F\colon \mathcal C\to \mathsf {Set}$ 平坦当且仅当 $F$ 保持有限极限.
+\end{prop}
+\begin{proof}~
+	\begin{itemize}
+		\item 若 $F=\operatorname{Hom}_{\mathcal C}(c,-)$ 为可表函子, 则 $F$ 当然保持所有 $\mathcal C$ 中存在的有限极限.
+		\item 若 $F\colon \mathcal C\to\mathsf {Set}$ 为平坦函子, 即可表函子的滤余极限, 则由于滤余极限与有限极限交换 (命题 \ref{filtered-colimit-commutes-with-finite-limit}), $F$ 亦保持所有 $\mathcal C$ 中存在的有限极限.
+		\item 假设 $\mathcal C$ 存在所有有限极限, 而 $F\colon \mathcal C\to \mathsf {Set}$ 保持有限极限. 我们证明 $\displaystyle\int^{\mathcal C}F$ 为余滤范畴. 设 $I$ 为有限范畴, $X\colon I\to \displaystyle\int^{\mathcal C}F$ 为图, 记 $X(i)=(c_i,x_i)$, 其中 $x_i\in F(c_i)$. 注意到 $X$ 可视为 $\lim_{i\in I}F(c_i)$ 的元素. 因为 $F$ 保持有限极限, 典范的映射 $$F(\lim_{i\in I}c_i)\to \lim_{i\in I} F(c_i)$$ 为同构. 故存在 $x\in F(\lim_{i\in I}c_i)$ 使得 $F(p_i)(x)=x_i$ ($p_i\colon \lim_{i\in I}c_i \to c_i$ 为投影). 这说明 $X$ 上有锥.
+	\end{itemize}
+\end{proof}
+
+%\begin{example}
+%	{}
+%	%由命题 \ref{presentable-category-ind-compact}, 
+%	一个集合可表示为其所有有限子集的滤余极限. 因此集合范畴 $\mathsf {Set}$ 等价于有限集范畴 $\mathsf {Fin}$ 上的 $\mathsf {Set}$-值平坦函子的范畴:
+%	\[
+%	\mathsf {Set} %\simeq \mathsf {Ind}(\mathsf {Fin})
+%	\simeq \mathsf {Flat}(\mathsf {Fin},\mathsf {Set}), \quad S\mapsto \operatorname{Hom}(-,S).
+%	\]
+%	%以 ``探测'' 的观点 (注 \ref{remark-probe}), 一个集合可由有限集到它的所有映射探测.
+%\end{example}
+
+%\begin{definition}
+%	{(平坦)}
+%	% representably flat
+%	% 但是似乎应该先讲意象的点
+%	
+%\end{definition}
+
 
 \begin{remark}
 	[label={remark-ind-elements-filtered}]
@@ -2310,27 +2448,41 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 	对于范畴 $\mathcal C$, $\mathsf {Ind}(\mathcal C)$ 具有滤余极限.
 \end{prop}
 \begin{proof}
-	当 $\mathcal C$ 具有有限余极限时, $F\colon \mathcal C^{\op}\to\mathsf {Set}$ 平坦当且仅当 $F$ 保持有限极限, 故命题可证明如下. 设 $J$ 为滤范畴, 考虑图表 $F\colon J \to \mathsf{Ind}(\mathcal C)$. 对任意有限图表 $X\colon I\to \mathcal C$,
-	$$
-	\operatorname{colim}_{j\in J}F_j (\operatorname{lim}_{i\in I}X_i) \simeq \operatorname{colim}_{j\in J}\operatorname{lim}_{i\in I}F_j (X_i)\simeq \operatorname{lim}_{i\in I}\operatorname{colim}_{j\in J}F_j (X_i),
-	$$
-	故
-	$\operatorname{colim}_{j\in J}F_j\in \mathsf{Ind}(\mathcal C)$.
+%	当 $\mathcal C$ 具有有限余极限时, %$F\colon \mathcal C^{\op}\to\mathsf {Set}$ 平坦当且仅当 $F$ 保持有限极限,
+%	$\mathsf {Ind}(\mathcal C)$ 等价于保持有限极限的函子 $\mathcal C^{\op}\to\mathsf {Set}$ 的范畴, 故要证的命题来自 ``滤余极限与有限极限交换'': 设 $J$ 为滤范畴, 考虑图表 $F\colon J \to \mathsf{Ind}(\mathcal C)$. 对任意有限图表 $X\colon I\to \mathcal C$,
+%	$$
+%	\operatorname{colim}_{j\in J}F_j (\operatorname{lim}_{i\in I}X_i) \simeq \operatorname{colim}_{j\in J}\operatorname{lim}_{i\in I}F_j (X_i)\simeq \operatorname{lim}_{i\in I}\operatorname{colim}_{j\in J}F_j (X_i),
+%	$$
+%	故
+%	$\operatorname{colim}_{j\in J}F_j\in \mathsf{Ind}(\mathcal C)$.
+%	
+%	\todo{Kashiwara, Categories and Sheaves, 6.1.8}
+	
+	设 $J$ 为滤范畴, 考虑图表 $F\colon J\to \mathsf{Ind}(\mathcal C)$,
+	令 $G$ 为复合 $J\overset{F}{\to}\mathsf {Ind}(\mathcal C)\hookrightarrow\widehat {\mathcal C}$ 的余极限, 我们证明 $G\in\mathsf{Ind}(\mathcal C)$, 即 $\displaystyle\int_{\mathcal C}G$ 为滤范畴.
+	
+	对任意有限图表
+	$\displaystyle X\colon I\to \int_{\mathcal C} G$,
+	记 $X(i) = (c_i,g_i)$, 则
+	%\todo{}
+	$X$ 可视为 $\operatorname{lim}_{i\in I} \operatorname{colim}_{j\in J} F_j(c_i)$ 的元素, 而由 $J$-余极限与 $I$-极限交换, $X$ 又可视为 $\operatorname{colim}_{j\in J}\operatorname{lim}_{i\in I} F_j(c_i)$ 的元素, 即存在 $j$ 使得 $X$ 穿过 $\displaystyle I\to \int_{\mathcal C}F_j$. 已知 $\displaystyle\int_{\mathcal C}F_j$ 是滤范畴, 故 $X$ 上有锥. 结论得证.
 \end{proof}
 
 \begin{prop}
+	[label={completion-wrt-filtered-colimits}]
 	{(关于滤余极限的完备化)}
-	对任意具有滤余极限的范畴 $\mathcal D$, 函子 $\mathcal C\to \mathcal D$ 可本质唯一地延拓为保持滤余极限的函子 $\mathsf {Ind}(\mathcal C) \to \mathcal D$.
+	对于范畴 $\mathcal C$, $\mathsf {Ind}(\mathcal C)$ 是其\emph{关于滤余极限的完备化}. 这就是说, 对任意具有滤余极限的范畴 $\mathcal D$, 函子 $\mathcal C\to \mathcal D$ 可本质唯一地延拓为保持滤余极限的函子 $\mathsf {Ind}(\mathcal C) \to \mathcal D$.
 \end{prop}
 
 \begin{proof}
-	首先注意到函子 $F\colon \mathcal C\to \mathcal D$ 自然诱导了函子 $\mathsf {Ind}(F)\colon \mathsf {Ind}(\mathcal C) \to \mathsf {Ind}(\mathcal D)$,
+	设有函子 $F\colon \mathcal C\to \mathcal D$. 定义 $\widetilde {F}\colon \mathsf {Ind}(\mathcal C) \to \mathcal D$,
 	$$
-	\mathsf {Ind}(F)(X) := \operatorname{colim}_{\yo(c) \to X} F(c).
+	\widetilde {F}(X) := \operatorname{colim}_{\yo(c) \to X} F(c).
 	$$
 	(由注 \ref{remark-ind-elements-filtered}, 该余极限为滤余极限, 故存在于 $\mathcal D$ 中.)
-	这与米田扩张 (命题 \ref{nerve-and-realization}) 类似.
+	考虑到保持滤余极限的要求, 函子 $\widetilde {F}$ 在 $X$ 上的取值被可表函子上的取值唯一确定. 这与米田扩张 (命题 \ref{nerve-and-realization}) 类似.
 	%它将 $\operatorname{colim}_{i\in I}\yo(c_i)$ 映射到 $\operatorname{colim}_{i\in I}\yo(F(c_i))$.
+	%\todo{}
 \end{proof}
 
 \begin{remark}
@@ -2377,8 +2529,8 @@ Frobenius 互反律是在代数拓扑, 表示论, 逻辑等等许多场合出现
 \begin{definition}
 	[label={pro-object}]
 	{($\text{pro}$-对象)}
-	对于范畴 $\mathcal C$, 定义 $\mathcal C$ 的一个 ``$\text{pro}$-对象\footnotemark{}'' 为 $\mathsf {Fun}(\mathcal C,\mathsf {Set})$ 中可表函子的一个余滤极限. 记 ``$\text{pro}$-对象'' 构成的 $\mathsf {Fun}(\mathcal C,\mathsf {Set})^{\op}$ 的全子范畴为 $\mathsf {Pro}(\mathcal C)$.
-	由定义, 有 $$\mathsf {Pro}(\mathcal C)\simeq\mathsf {Ind}(\mathcal C^{\op})^{\op}.$$
+	对于范畴 $\mathcal C$, 定义 $\mathcal C$ 的一个 ``$\text{pro}$-对象\footnotemark{}'' 为 $\mathsf {Fun}(\mathcal C,\mathsf {Set})$ 中可表函子的一个余滤极限; 与 $\text{ind}$-对象完全对偶, $\text{pro}$-对象可视为 $\mathcal C$ 的对象的形式余滤极限. 记 ``$\text{pro}$-对象'' 构成的 $\mathsf {Fun}(\mathcal C,\mathsf {Set})^{\op}$ 的全子范畴为 $\mathsf {Pro}(\mathcal C)$.
+	由定义, 有 $$\mathsf {Pro}(\mathcal C)\simeq\mathsf {Ind}(\mathcal C^{\op})^{\op}\simeq \mathsf {Flat}(\mathcal C,\mathsf {Set})^{\op}.$$
 \end{definition}
 \footnotetext{``$\text{pro}$-对象'' 中 $\text{pro}$ 来自\emph{投射极限} (projective limit), 它是余滤极限的别名. 但也有作者用 projective limit 表示一般的极限.}
 
@@ -2894,23 +3046,130 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	\end{itemize}
 \end{definition}
 
+在范畴论文献中常见如下的图示. 左图表示对任意 $F\to p^*G$ 存在唯一的 $p_!F\to G$, 右图表示对任意 $p^*G\to F$ 存在唯一的 $G\to p_*F$.
+% https://q.uiver.app/#q=WzAsNixbMCwyLCJcXG1hdGhjYWwgQyJdLFsyLDIsIlxcbWF0aGNhbCBDJyJdLFsyLDAsIlxcbWF0aGNhbCBEIl0sWzMsMiwiXFxtYXRoY2FsIEMiXSxbNSwyLCJcXG1hdGhjYWwgQyciXSxbNSwwLCJcXG1hdGhjYWwgRCJdLFswLDIsIkYiXSxbMCwxLCJwIiwyXSxbMSwyLCJwXyEgRiJdLFszLDUsIkYiXSxbMyw0LCJwIiwyXSxbNCw1LCJwXypGIl0sWzEsMiwiRyIsMix7ImN1cnZlIjozfV0sWzQsNSwiRyIsMix7ImxhYmVsX3Bvc2l0aW9uIjo3MCwiY3VydmUiOjN9XSxbOCwxMiwiIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEzLDExLCIiLDEseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwxLCIiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjB9fV0sWzQsOSwiIiwwLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjIwfX1dXQ==
+\[\begin{tikzcd}[ampersand replacement=\&,column sep=2em]
+	\&\& {\mathcal D} \&\&\& {\mathcal D} \\
+	\\
+	{\mathcal C} \&\& {\mathcal C'} \& {\mathcal C} \&\& {\mathcal C'}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", from=3-1, to=1-3]
+	\arrow["p"', from=3-1, to=3-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{p_! F}", from=3-3, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "G"', bend right=60, from=3-3, to=1-3]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "F", from=3-4, to=1-6]
+	\arrow["p"', from=3-4, to=3-6]
+	\arrow[""{name=4, anchor=center, inner sep=0}, "{p_*F}", from=3-6, to=1-6]
+	\arrow[""{name=5, anchor=center, inner sep=0}, "G"', bend right=60, from=3-6, to=1-6]
+	\arrow[shorten <=6pt, Rightarrow, from=0, to=3-3]
+	\arrow[shorten <=4pt, shorten >=4pt, Rightarrow, dashed, from=1, to=2]
+	\arrow[shorten <=4pt, shorten >=4pt, Rightarrow, dashed, from=5, to=4]
+	\arrow[shorten >=6pt, Rightarrow, from=3-6, to=3]
+\end{tikzcd}\]
+
+沿 $p$ 的左右 Kan 扩张是 $p^*$ 的左右伴随, 而伴随可以复合, 因此沿复合函子的左右 Kan 扩张是两个相应 Kan 扩张的复合. 这又称为 Kan 扩张的\emph{函子性}. 极限和余极限的 ``Fubini 定理'' (\ref{limits-Fubini}) 是 Kan 扩张函子性的应用.
+
 \begin{example}
-	{(极限)}
+	[label={limits-colimts-kan-extension}]
+	{(极限和余极限)}
 	取定义 \ref{local-Kan-extension} 中的 $\mathcal C'$ 为终范畴 $1$, 那么 $\mathsf {Fun}(\mathcal C',\mathcal D)\simeq\mathcal D$, 函子 $p^*\colon \mathcal D \to \mathsf {Fun}(\mathcal C,\mathcal D)$
 	将 $\mathcal D$ 的对象 $d$ 对应到常值函子 $\operatorname{const}_d \colon \mathcal C \to \mathcal D$.
 	
 	对函子 $F \colon \mathcal C \to \mathcal D$,
 	\begin{itemize}
-		\item $F$ 的左 Kan 扩张是余极限,
+		\item $F$ 沿 $\mathcal C\to 1$ 的左 Kan 扩张是余极限 $\operatorname{colim}F\colon 1\to\mathcal D$, 因为
 		$$
 		\operatorname{Hom}_{\mathsf {Fun}(\mathcal C,\mathcal D)}(F,\operatorname{const}_d)\simeq \operatorname{Hom}_{\mathcal D}(\operatorname{colim}F,d);
 		$$
-		\item $F$ 的右 Kan 扩张是极限,
+		\item $F$ 沿 $\mathcal C\to 1$ 的右 Kan 扩张是极限 $\operatorname{lim} F\colon 1\to\mathcal D$, 因为
 		$$
 		\operatorname{Hom}_{\mathsf {Fun}(\mathcal C,\mathcal D)}(\operatorname{const}_d,F)\simeq \operatorname{Hom}_{\mathcal D}(d,\lim F).
 		$$
 	\end{itemize}
 	
+\end{example}
+
+沿 $p\colon\mathcal C\to 1$ 的左右 Kan 扩张是余极限和极限, 那么一般地, 沿 $p\colon\mathcal C\to\mathcal C'$ 的左右 Kan 扩张可理解为沿 $p$ 的每个 ``纤维'' 作余极限和极限. 这就是说 (余) 极限与左右 Kan 扩张的关系是一种 ``绝对'' 与 ``相对'' 的关系. 下面的命题具体描述了 Kan 扩张和 (余) 极限的关系.
+
+\begin{prop}
+	[label={Kan-extension-in-terms-of-limits}]
+	{(Kan 扩张的一种具体表达式)}
+	考虑函子 $p\colon \mathcal C\to \mathcal C'$, $F\colon \mathcal C\to\mathcal D$.
+	\begin{itemize}
+		\item 若 $\mathcal D$ 为余完备范畴 (具有所有余极限), 则 $F$ 沿 $p$ 的左 Kan 扩张 $p_!F$ 存在, 且
+		$$p_! F(c') \simeq \operatorname{colim}_{pc\to c'}F(c);$$
+		\item 若 $\mathcal D$ 为完备范畴 (具有所有极限), 则 $F$ 沿 $p$ 的右 Kan 扩张 $p_*F$ 存在, 且
+		$$
+		p_* F(c')\simeq
+		\operatorname{lim}_{c'\to pc}F(c).
+		$$
+	\end{itemize}
+\end{prop}
+
+\begin{example}
+	[label={limits-Fubini}]
+	{(极限和余极限的 ``Fubini 定理'')}
+	考虑两个指标范畴 $\mathcal C_1,\mathcal C_2$, 函子 $F\colon \mathcal C_1\times\mathcal C_2\to\mathcal D$ 的余极限有两种计算方法:
+	% https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXG1hdGhzZiB7RnVufShcXG1hdGhjYWwgQ18xXFx0aW1lcyBcXG1hdGhjYWwgQ18yLFxcbWF0aGNhbCBEKSJdLFsyLDEsIlxcbWF0aHNmIHtGdW59KFxcbWF0aGNhbCBDXzIsXFxtYXRoY2FsIEQpIl0sWzMsMCwiXFxtYXRoc2Yge0Z1bn0oXFxtYXRoY2FsIENfMSxcXG1hdGhjYWwgRCkiXSxbMywxLCJcXG1hdGhjYWwgRCJdLFswLDAsIlxcbWF0aHNmIHtGdW59KFxcbWF0aGNhbCBDXzFcXHRpbWVzIFxcbWF0aGNhbCBDXzIsXFxtYXRoY2FsIEQpIl0sWzEsMCwiXFxtYXRoc2Yge0Z1bn0oXFxtYXRoY2FsIENfMSxcXG1hdGhjYWwgRCkiXSxbMCwxLCJcXG1hdGhzZiB7RnVufShcXG1hdGhjYWwgQ18yLFxcbWF0aGNhbCBEKSJdLFsxLDEsIlxcbWF0aGNhbCBEIl0sWzAsMSwiKFxccGlfMilfISIsMl0sWzEsMywiKFxcbWF0aGNhbCBDXzIpXyEiLDJdLFswLDIsIihcXHBpXzEpXyEiXSxbMiwzLCIoXFxtYXRoY2FsIENfMSlfISJdLFs2LDQsIlxccGlfMl4qIl0sWzUsNCwiXFxwaV8xXioiLDJdLFs3LDYsIlxcbWF0aGNhbCBDXzJeKiJdLFs3LDUsIlxcbWF0aGNhbCBDXzFeKiIsMl1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {Fun}(\mathcal C_1\times \mathcal C_2,\mathcal D)} \& {\mathsf {Fun}(\mathcal C_1,\mathcal D)} \& {\mathsf {Fun}(\mathcal C_1\times \mathcal C_2,\mathcal D)} \& {\mathsf {Fun}(\mathcal C_1,\mathcal D)} \\
+		{\mathsf {Fun}(\mathcal C_2,\mathcal D)} \& {\mathcal D} \& {\mathsf {Fun}(\mathcal C_2,\mathcal D)} \& {\mathcal D}
+		\arrow["{\pi_1^*}"', from=1-2, to=1-1]
+		\arrow["{(\pi_1)_!}", from=1-3, to=1-4]
+		\arrow["{(\pi_2)_!}"', from=1-3, to=2-3]
+		\arrow["{(\mathcal C_1)_!}", from=1-4, to=2-4]
+		\arrow["{\pi_2^*}", from=2-1, to=1-1]
+		\arrow["{\mathcal C_1^*}"', from=2-2, to=1-2]
+		\arrow["{\mathcal C_2^*}", from=2-2, to=2-1]
+		\arrow["{(\mathcal C_2)_!}"', from=2-3, to=2-4]
+	\end{tikzcd}\]
+	\begin{itemize}
+		\item 先沿投影函子 $\pi_2\colon \mathcal C_1\times \mathcal C_2\to\mathcal C_2$ 左 Kan 扩张, 再沿 $\mathcal C_2\to 1$ 左 Kan 扩张, 得到
+		$$
+		\operatorname{colim}_{c_1\in\mathcal C_1,c_2\in\mathcal C_2}
+		F(c_1,c_2)
+		\simeq \operatorname{colim}_{c_2\in\mathcal C_2}
+		\big({\operatorname{colim}_{c_1\in\mathcal C_1}F(c_1,c_2)}\big);
+		$$
+		\item 先沿投影函子 $\pi_1\colon \mathcal C_1\times \mathcal C_2\to\mathcal C_1$ 左 Kan 扩张, 再沿 $\mathcal C_1\to 1$ 左 Kan 扩张, 得到
+		$$
+		\operatorname{colim}_{c_1\in\mathcal C_1,c_2\in\mathcal C_2} F(c_1,c_2) \simeq \operatorname{colim}_{c_1\in\mathcal C_1}\big({\operatorname{colim}_{c_2\in\mathcal C_2}F(c_1,c_2)}\big).
+		$$
+	\end{itemize}
+	这个结论就像 Fubini 定理, 又叫 ``任意余极限与任意余极限交换''. 当然, 将以上所有余极限换成极限, 左 Kan 扩张换成右 Kan 扩张, 结论仍成立.
+	
+	极限和余极限不一定交换, 但总有一个自然的态射. 注意到左下图总是交换的 (两种复合都得到 $\mathsf {Fun}(\mathcal C_1,\mathcal D)$ 中的常值函子). 从而取两个竖直函子的右伴随可得右下图的自然变换
+	$$
+	(\mathcal C_2)_!(\pi_2)_*
+	\to
+	(\mathcal C_1)_*(\mathcal C_1)^*(\mathcal C_2)_!(\pi_2)_*
+	\to
+	(\mathcal C_1)_*(\pi_1)_!(\pi_2)^*(\pi_2)_*
+	\to
+	(\mathcal C_1)_*(\pi_1)_!,
+	$$
+	虽然它一般不是自然同构.
+	% https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXG1hdGhzZiB7RnVufShcXG1hdGhjYWwgQ18xXFx0aW1lcyBcXG1hdGhjYWwgQ18yLFxcbWF0aGNhbCBEKSJdLFsyLDEsIlxcbWF0aHNmIHtGdW59KFxcbWF0aGNhbCBDXzIsXFxtYXRoY2FsIEQpIl0sWzMsMCwiXFxtYXRoc2Yge0Z1bn0oXFxtYXRoY2FsIENfMSxcXG1hdGhjYWwgRCkiXSxbMywxLCJcXG1hdGhjYWwgRCJdLFswLDAsIlxcbWF0aHNmIHtGdW59KFxcbWF0aGNhbCBDXzFcXHRpbWVzIFxcbWF0aGNhbCBDXzIsXFxtYXRoY2FsIEQpIl0sWzEsMCwiXFxtYXRoc2Yge0Z1bn0oXFxtYXRoY2FsIENfMSxcXG1hdGhjYWwgRCkiXSxbMCwxLCJcXG1hdGhzZiB7RnVufShcXG1hdGhjYWwgQ18yLFxcbWF0aGNhbCBEKSJdLFsxLDEsIlxcbWF0aGNhbCBEIl0sWzAsMSwiKFxccGlfMilfKiIsMl0sWzEsMywiKFxcbWF0aGNhbCBDXzIpXyEiLDJdLFswLDIsIihcXHBpXzEpXyEiXSxbMiwzLCIoXFxtYXRoY2FsIENfMSlfKiJdLFs2LDQsIlxccGlfMl4qIl0sWzQsNSwiKFxccGlfMSlfISJdLFs2LDcsIihcXG1hdGhjYWwgQ18yKV8hIiwyXSxbNyw1LCJcXG1hdGhjYWwgQ18xXioiLDJdLFsxLDIsIiIsMSx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH0sImxldmVsIjoyfV1d
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathsf {Fun}(\mathcal C_1\times \mathcal C_2,\mathcal D)} \& {\mathsf {Fun}(\mathcal C_1,\mathcal D)} \& {\mathsf {Fun}(\mathcal C_1\times \mathcal C_2,\mathcal D)} \& {\mathsf {Fun}(\mathcal C_1,\mathcal D)} \\
+		{\mathsf {Fun}(\mathcal C_2,\mathcal D)} \& {\mathcal D} \& {\mathsf {Fun}(\mathcal C_2,\mathcal D)} \& {\mathcal D}
+		\arrow["{(\pi_1)_!}", from=1-1, to=1-2]
+		\arrow["{(\pi_1)_!}", from=1-3, to=1-4]
+		\arrow["{(\pi_2)_*}"', from=1-3, to=2-3]
+		\arrow["{(\mathcal C_1)_*}", from=1-4, to=2-4]
+		\arrow["{\pi_2^*}", from=2-1, to=1-1]
+		\arrow["{(\mathcal C_2)_!}"', from=2-1, to=2-2]
+		\arrow["{\mathcal C_1^*}"', from=2-2, to=1-2]
+		\arrow[shorten <=6pt, shorten >=6pt, Rightarrow, from=2-3, to=1-4]
+		\arrow["{(\mathcal C_2)_!}"', from=2-3, to=2-4]
+	\end{tikzcd}\]
+	这就是说总有自然态射
+	$$
+	\operatorname{colim}_{c_2\in\mathcal C_2}
+	\big({\operatorname{lim}_{c_1\in\mathcal C_1}F(c_1,c_2)}\big)
+	\to
+	\operatorname{lim}_{c_1\in\mathcal C_1}
+	\big({\operatorname{colim}_{c_2\in\mathcal C_2}F(c_1,c_2)}\big).
+	$$
 \end{example}
 
 \begin{example}
@@ -2921,6 +3180,7 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 	$$
 	\yo_{!} F (X) = \operatorname{colim}_{\yo(c)\to X} F(c).
 	$$
+	这与命题 \ref{Kan-extension-in-terms-of-limits} 相符.
 \end{example}
 
 \begin{example}
@@ -2940,16 +3200,32 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 		\item 对 $F\in \widehat {\mathcal C}$,
 		$
 		p_!(F)(c') = \operatorname{colim}_{c'\to pc} F(c)
-		$ (一个特例: 拓扑空间上预层的\emph{逆像});
-		\item 对 $F\in \widehat {\mathcal C'}$,
-		$p^*(F)(c) = F(pc)$ (一个特例: 拓扑空间上预层的\emph{直像});% 这是预层的\emph{直像}\footnotemark{};
+		$;%, 一个特例是拓扑空间上预层的\emph{逆像};
+		\item 对 $G\in \widehat {\mathcal C'}$,
+		$p^*(G)(c) = G(pc)$;%, 一个特例是拓扑空间上预层的\emph{直像};% 这是预层的\emph{直像}\footnotemark{};
 		\item 对 $F\in \widehat {\mathcal C}$,
 		$p_*(F)(c') = \operatorname{lim}_{pc\to c'} F(c)$.
 	\end{itemize}
-	此处的 $p_!$ 与 $p_*$ 分别是沿 $p^{\op}\colon \mathcal C^{\op} \to (\mathcal C')^{\op}$ 的左右 Kan 扩张. 这说明当定义 \ref{Kan-extension-definition} 中的 $\mathcal D$ 取 $\mathsf {Set}$ 时, 左右 Kan 扩张总存在. 更一般地, 当 $\mathcal D$ 余完备时左 Kan 扩张 $p_!$ 存在, 当 $\mathcal D$ 完备时右 Kan 扩张 $p_*$ 存在.
+	此处指标范畴中是 $\mathcal C'$ 中的态射, 并且此处的记号隐藏了一个对偶: $p_!$ 与 $p_*$ 分别是沿 $p^{\op}\colon \mathcal C^{\op} \to (\mathcal C')^{\op}$ 的左右 Kan 扩张. %这说明当定义 \ref{Kan-extension-definition} 中的 $\mathcal D$ 取 $\mathsf {Set}$ 时, 左右 Kan 扩张总存在. 更一般地, 当 $\mathcal D$ 余完备时左 Kan 扩张 $p_!$ 存在, 当 $\mathcal D$ 完备时右 Kan 扩张 $p_*$ 存在.
+	不难发现以上的结果与命题 \ref{Kan-extension-in-terms-of-limits} 相符.
+	
+	%一个有用的事实
+	%$$
+	%p_! \yo(c) \simeq \yo_{p(c)}.
+	%$$
+	
+	需要注意的是, 拓扑空间上预层的直像与逆像是本例的特殊情况, 但记号又有不同. 对于拓扑空间映射 $f\colon X\to Y$, 有函子 $f^{-1}\colon \text{Open}(Y)\to\text{Open}(X)$, 则
+	\begin{itemize}
+		\item $(f^{-1})_!$ 是拓扑空间上预层的\emph{逆像}, 在定义 \ref{topological-space-sheaf-inverse-image} 中又记为 $f^{\text{预}}$.
+		\item $(f^{-1})^*$ 是拓扑空间上预层的\emph{直像}, 在定义 \ref{topological-space-sheaf-direct-image} 中又记为 $f_*$.
+	\end{itemize}
 \end{example}
 %\footnotetext{关于方向观念的注解. 函子 $p$ 通常对应着一个反方向的态射, 例如拓扑空间的映射 $X\to Y$ 是反方向的函子 $\operatorname{Open}(Y)\to\operatorname{Open}(X)$. 因此}
 %\todo{用 Kan 扩张定义预层的逆像}
+
+
+
+
 
 \section{单子论}
 
@@ -3520,7 +3796,10 @@ $\lambda$-可表现性是反映一个对象在某种意义上比较小的性质.
 \end{definition}
 
 Lawvere 理论将一个代数理论的运算记录在范畴 $T$ 的态射中, 态射 $n \to 1$ 为 $n$ 元运算. 例如在群的理论中, 乘法是一个态射 $2 \to 1$, 而取逆是一个态射 $1\to 1$.
-Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (比较定义 \ref{first-order-theory-syntactic-category}).
+
+Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``语法范畴'' (比较定义 \ref{first-order-theory-syntactic-category}).
+
+注意范畴 $\mathbb T$ 中的对象 $n$ 是 $n$ 个 $1$ 的乘积, 而不是和; 应该将对象 $n$ 理解为 $x^n$, 其中 $x$ 是该理论的一个抽象模型.
 
 \begin{definition}
 	{(Lawvere 理论的模型)}
@@ -3695,6 +3974,21 @@ Lawvere 理论对应的范畴 $\mathbb T$ 是一种 ``句法范畴'' (比较定�
 	该理论由 $0$ 个运算符号和 $0$ 个公理所表现.
 	由于我们一般以集合范畴中模型的名称来命名一个 Lawvere 理论, 平凡的 Lawvere 理论也可称作 ``集合的 Lawvere 理论''.
 	$\mathbb N^{\op}$ 是一个对象生成的自由有限乘积范畴, 也即对任意具有有限乘积的范畴 $\mathcal C$, 其中的对象等同于保积函子 $\mathbb N^{\op} \to \mathcal C$.
+\end{example}
+
+\begin{example}
+	[label={subterminal-object-Lawvere-theory}]
+	{(子终对象的 Lawvere 理论)}
+	``子终对象的 Lawvere 理论'' 由 $0$ 个运算符号和一个公理 $x=y$ 所表现. 这个理论在 $\mathsf {Set}$ 中的模型是满足任何两个元素都相等的集合, 故只有空集 $0$ 和单元集 $1$.
+	一般地, 范畴 $\mathcal C$ 中的模型是 $\mathcal C$ 的对象 $X$, 满足 $X\times X$ 到 $X$ 的两个投影是同一个态射, 这等价于 $X\to 1$ 为单射, 即 $X$ 为子终对象 (定义 \ref{subterminal-object-definition}).
+	这个 Lawvere 理论背后的范畴 $\mathbb T$ 如下:
+	$$
+	\operatorname{Hom}(n,m)=\begin{cases}
+		0 & \text{$n=0,m>0$;}\\
+		1 & \text{其它情形.}
+	\end{cases}
+	$$
+	由于这个范畴中所有正整数互相同构, 它也等价于两个对象的范畴 $\bullet\to\bullet$.
 \end{example}
 
 \begin{example}

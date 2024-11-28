@@ -291,6 +291,7 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 %\paragraph{直像}
 
 \begin{definition}
+	[label={topological-space-sheaf-direct-image}]
 	{(拓扑空间上的预层的直像)}
 	拓扑空间的连续映射 $f\colon X \to Y$ 诱导开集范畴之间的函子 $f^{-1} \colon \operatorname{Open}(Y) \to \operatorname{Open}(X)$,
 	从而有预层范畴之间的函子
@@ -424,6 +425,7 @@ Grothendieck 的想法是, 一个\topos{}不一定来自普通的拓扑空间, �
 另外, 层的逆像也可由预层的逆像层化得到. 下面我们说明这一点.
 
 \begin{definition}
+	[label={topological-space-sheaf-inverse-image}]
 	{(拓扑空间上预层的逆像)}
 	对于拓扑空间的连续映射 $f\colon X \to Y$, 预层的逆像函子 $f^{\text{预}}\colon \operatorname{Presh}(Y)\to\operatorname{Presh}(X)$ 是沿 $f^{-1}\colon \operatorname{Open}(Y) \to \operatorname{Open}(X)$ 的左 Kan 扩张 (例 \ref{presheaf-category-adjunction}), 其具体表达式为
 	\[
@@ -1096,6 +1098,7 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
 \end{example}
 
 \begin{example}
+	[label={directed-graph}]
     {(有向图)}
     有向图可用类似于单纯集 (例 \ref{Simplicial-Sets}) 的方式定义.
     考虑范畴
@@ -1145,6 +1148,8 @@ $\mathcal O(X)$-值集合态射 $A\to B$ 也可由集合的映射 $A\to B$ 表�
     $$
     余极限类似.
 \end{proof}
+
+事实上, 函子范畴 $\mathsf{Fun}(\mathcal C,\mathcal D)$ 中的极限和余极限都是逐点的 (假设相应的极限在 $\mathcal D$ 中存在). 这可以解释为 Kan 扩张的函子性, 因为极限和余极限是 Kan 扩张的特殊情况 (例 \ref{limits-colimts-kan-extension}).
 
 \begin{example}
 	{(预层范畴中常用的极限和余极限)}
@@ -1708,6 +1713,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 %\end{remark}
 
 \begin{definition}
+	[label={site-definition}]
 	{(景)}
 	带有 Grothendieck 拓扑的 (小) 范畴称为\emph{景}.
 \end{definition}
@@ -2542,6 +2548,7 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 对于拓扑空间或位象 $X$, 回忆 $\operatorname{Sh}(X)$ 的终对象 $1$ 是在所有开子集上取值为 $1$ 的层, 故 $\operatorname{Sh}(X)$ 的子终对象 (定义 \ref{subterminal-object-definition}) 是在每个开集上取值 $0$ 或 $1$ 的层. 由层条件, 当一个子终层 ($\operatorname{Sh}(X)$ 的子终对象) 在若干开子集 $U_i\in\mathcal O(X)$ 上取值为 $1$ 时, 它在 $\bigvee_i U_i$ 上取值也为 $1$; 因此存在这个层取值为 $1$ 的最大开子集. 这证明了如下的重构定理:
 
 \begin{prop}
+	[label={localic-topos-subterminal}]
 	{(由层\topos{}重构位象)}
 	拓扑空间或位象 $X$ 上的层\topos{} $\operatorname{Sh}(X)$ 的子终对象一一对应于 $X$ 的开子集. 换言之, $X$ 的开子集\fm{}同构于 $\operatorname{Sh}(X)$ 的子终对象的格:
 	$$
@@ -2575,6 +2582,27 @@ Grothendieck 意识到, 层的概念所需的关键信息是一个对象 $U$ 何
 		Giraud 定理的证明 (\ref{Giraud-theorem}) 表明 $\mathcal C\simeq\operatorname{Sh}(\operatorname{Sub}(1))$, 故 $\mathcal C$ 为位象型\topos{}.
 	\end{itemize}
 \end{proof}
+
+\begin{prop}
+	[label={localic-reflection-property}]
+	{(位象反映)}
+	位象型\topos{}在所有 Grothendieck \topos{}中构成自反子范畴, 即位象反映是取位象上层范畴的左伴随:
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhjYWwgTG9jIl0sWzEsMCwiXFxUb3AiXSxbMCwxLCJcXG9wZXJhdG9ybmFtZXtTaH0iLDIseyJvZmZzZXQiOjIsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMCwiXFxtYXRoY2FsIENcXG1hcHN0byBcXG9wZXJhdG9ybmFtZXtTdWJ9X3tcXG1hdGhjYWwgQ30oMSkiLDIseyJvZmZzZXQiOjJ9XSxbMywyLCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{\mathcal Loc} \& \Top
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\operatorname{Sh}}"', shift right=2, hook, from=1-1, to=1-2]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\mathcal C\mapsto \operatorname{Sub}_{\mathcal C}(1)}"', shift right=2, from=1-2, to=1-1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=1, to=0]
+	\end{tikzcd}\]
+	这就是说, 一个 Grothendieck \topos{} $\mathcal C$ 到一个位象型\topos{} $\operatorname{Sh}(X)$ 的几何态射等同于 $\mathcal C$ 的位象反映到 $X$ 的位象态射.
+\end{prop}
+\begin{proof}
+	(略证) 几何态射 $f\colon \mathcal C\to\operatorname{Sh}(X)$ 的逆像部分 $f^*\colon \operatorname{Sh}(X)\to\mathcal C$ 保持有限极限,
+	从而保持子终对象, 给出一个映射 $f^*\colon \mathcal O(X)\to\operatorname{Sub}_{\mathcal C}(1)$; 进一步, $f^*$ 保持任意余极限, 故上述映射为\fm{}的同态;
+	而 $\operatorname{Sh}(X)$ 由子终对象生成, 故几何态射 $f$ 被上述\fm{}同态唯一确定.
+\end{proof}
+
+最后我们再给出一个例子说明什么样的\topos{}不是位象型\topos{}.
 
 \begin{example}
 	{(非位象型 Grothendieck \topos{}的例子)}
@@ -3627,9 +3655,8 @@ $$
 \begin{prop}
 	[label={presheaf-topos-tensor-hom-adjunction}]
 	{(张量--同态伴随)}
-	设 $X\colon \mathcal C^{\op}\to\mathsf {Set}$,
-	$Z\colon \mathcal C\times\mathcal D^{\op}\to \mathsf {Set}$,
-	$Y\colon \mathcal D^{\op} \to \mathsf {Set}$, 那么有伴随
+	%设 $X\colon \mathcal C^{\op}\to\mathsf {Set}$, $Z\colon \mathcal C\times\mathcal D^{\op}\to \mathsf {Set}$, $Y\colon \mathcal D^{\op} \to \mathsf {Set}$, 那么
+	设 $\mathcal C$, $\mathcal D$ 为范畴. 对任意函子 $Z\colon \mathcal C\times\mathcal D^{\op}\to \mathsf {Set}$, 有伴随
 	% https://q.uiver.app/#q=WzAsMixbMSwwLCJcXHdpZGVoYXQge1xcbWF0aGNhbCBDfSJdLFswLDAsIlxcd2lkZWhhdCB7XFxtYXRoY2FsIER9Il0sWzAsMSwiLVxcb3RpbWVzX3tcXG1hdGhjYWwgQ31aIiwyLHsib2Zmc2V0IjoyfV0sWzEsMCwiXFxvcGVyYXRvcm5hbWV7SG9tfV97XFxtYXRoY2FsIER9KFosLSkiLDIseyJvZmZzZXQiOjJ9XSxbMiwzLCIiLDIseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dXQ==
 	\[\begin{tikzcd}[ampersand replacement=\&]
 		{\widehat {\mathcal D}} \& {\widehat {\mathcal C},}
@@ -3637,7 +3664,7 @@ $$
 		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{Hom}_{\mathcal D}(Z,-)}"', shift right=2, from=1-1, to=1-2]
 		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 	\end{tikzcd}\]
-	也即自然同构
+	也即对函子 $X\colon \mathcal C^{\op}\to\mathsf {Set}$, $Y\colon \mathcal D^{\op} \to \mathsf {Set}$ 有自然同构
 	$$
 	\operatorname{Hom}_{\widehat {\mathcal D}}(X\otimes_{\mathcal C} Z,Y) \simeq \operatorname{Hom}_{\widehat {\mathcal C}}(X,\operatorname{Hom}_{\mathcal D}(Z,Y)).
 	$$
@@ -3647,6 +3674,83 @@ $$
 
 \todo{几何态射 SGL VII.2}
 
+\begin{remark}
+	{(环上的模范畴的张量--同态伴随, 诱导和余诱导表示)}
+	环上的模范畴有与命题 \ref{presheaf-topos-tensor-hom-adjunction} 完全类似的张量--同态伴随, 并且环的同态有与命题 \ref{presheaf-topos-essential-geometric-morphism} 完全类似的三元伴随, 这个三元伴随的最左和最右部分在代数上分别称作\emph{诱导表示} (induced representation) 和\emph{余诱导表示} (coinduced representation). 具体地,
+	设 $R,S$ 为 (不一定交换的) 环, 记 $R\mathsf {Mod}, S\mathsf {Mod}$ 为对应的左模范畴, 对任意 (左 $S$, 右 $R$)-模 $Z$, 有伴随
+	\[\begin{tikzcd}[ampersand replacement=\&]
+		{S\mathsf {Mod}} \& {R\mathsf {Mod},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{Z\otimes_{R}-}"', shift right=2, from=1-2, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{Hom}_{S}(Z,-)}"', shift right=2, from=1-1, to=1-2]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+	\end{tikzcd}\]
+	设有环同态 $\phi\colon R\to S$, 那么 $S$ 可视为 (左 $R$, 右 $S$)-模或 (左 $S$, 右 $R$)-模, 从而诱导了三元伴随
+	\[\begin{tikzcd}[every label/.append style = {font = \small},background color=\remarkcolor,ampersand replacement=\&]
+		{R\mathsf {Mod}} \&\& {S\mathsf {Mod},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{\phi^*}"'{description,pos=0.3}, from=1-3, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{\phi_*}"{description,pos=0.3}, shift right=5, from=1-1, to=1-3]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{\phi_!}"{description,pos=0.3}, shift left=5, from=1-1, to=1-3]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=0]
+	\end{tikzcd}\]
+	其中
+	$$
+	\begin{array}{llll}
+		\phi_! &= {{S}} \otimes_{R} ({-}),& &\text{ ``诱导表示''}\\
+		\phi^* &= \operatorname{Hom}_{S} ({{S}},-)&\simeq {S} \otimes_{S}(-) , &\text{ ``限制表示''}\\
+		\phi_* &&= \operatorname{Hom}_{R} ({S},-).&\text{ ``余诱导表示''}
+	\end{array}
+	$$
+\end{remark}
+
+\begin{example}
+	{(有向图与单纯集)}
+	回忆有向图可视为 $\mathcal C = \{[0]\rightrightarrows [1]\}$ 上的预层 (例 \ref{directed-graph}), 而范畴 $\mathcal C$ 是 $\Delta$ 的子范畴. 嵌入 $i\colon \mathcal C\to\Delta$ 诱导了有向图范畴 $\mathsf {diGrph}$ 与单纯集范畴 $\mathsf {sSet}$ 之间的三元伴随
+	\[\begin{tikzcd}[every label/.append style = {font = \small},background color=\examplecolor,ampersand replacement=\&]
+		{\mathsf {diGrph}} \&\& {\mathsf {sSet},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{i^*}"'{description,pos=0.3}, from=1-3, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{i_*}"{description,pos=0.3}, shift right=5, from=1-1, to=1-3]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{i_!}"{description,pos=0.3}, shift left=5, from=1-1, to=1-3]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=0]
+	\end{tikzcd}\]
+	展开定义得到如下描述.
+	\begin{itemize}
+		\item 对于有向图 $G$,
+		%$i_!\colon \mathsf {diGrph}\to\mathsf {sSet}$, 
+		有 $(i_!G)_n \simeq G_0 + n\times G_1$,
+		直观上 $i_!G$ 是向 $G$ 中添加尽可能少的元素使之成为单纯集.
+		\item 对于单纯集 $X$, $i^*X$ 是有向图 $(X_0,X_1)$.
+		\item 对于有向图 $G$, 有 $(i_*G)_n\simeq\operatorname{Hom}_{\mathsf {diGrph}}(i^*\Delta^n,G)$,
+		其中 $i^*\Delta^n$ 是 $\Delta^n$ 的 ``$1$-骨架'',
+		直观上 $i_*G$ 是向 $G$ 中添加尽可能多的元素使之成为单纯集.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	{(单纯集的骨架和余骨架)}
+	固定一个自然数 $n$. 考虑 $\Delta$ 中 $[0],[1],\cdots,[n]$ 构成的全子范畴 $\Delta_{\leq n}$. 记 $\Delta_{\leq n}$ 上的预层范畴为 $\mathsf {sSet}_{\leq n}$. 那么嵌入 $i\colon \Delta_{\leq n} \to\Delta$ 给出三元伴随
+	\[\begin{tikzcd}[every label/.append style = {font = \small},background color=\examplecolor,ampersand replacement=\&]
+		{\mathsf {sSet}_{\leq n}} \&\& {\mathsf {sSet},}
+		\arrow[""{name=0, anchor=center, inner sep=0}, "{i^*}"'{description,pos=0.3}, from=1-3, to=1-1]
+		\arrow[""{name=1, anchor=center, inner sep=0}, "{i_*}"{description,pos=0.3}, shift right=5, from=1-1, to=1-3]
+		\arrow[""{name=2, anchor=center, inner sep=0}, "{i_!}"{description,pos=0.3}, shift left=5, from=1-1, to=1-3]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=2, to=0]
+	\end{tikzcd}\]
+	其中
+	\begin{itemize}
+		\item $i_!$ 是添加尽可能少的元素成为单纯集;
+		\item $i^*$ 是截取 $n$ 维及以下的单形;
+		\item $i_*$ 是添加尽可能多的元素成为单纯集.
+	\end{itemize}
+	定义上述函子的复合
+	\begin{itemize}
+		\item $\operatorname{sk}_n := i_!i^*\colon \mathsf {sSet}\to\mathsf {sSet}$ 为单纯集的 \emph{$n$-骨架} (skeleton);
+		\item $\operatorname{cosk}_n:= i_*i^*\colon \mathsf {sSet}\to\mathsf {sSet}$ 为单纯集的 \emph{$n$-余骨架} (coskeleton).
+	\end{itemize}
+	由三元伴随的性质 (命题 \ref{adjoint-triple-induces-adjunction}), 有 $\operatorname{sk}_n\dashv \operatorname{cosk}_n$.
+\end{example}
 
 \section{景之间的态射}
 
@@ -3725,140 +3829,6 @@ $$
 
 
 
-\subsection{$\mathsf {Set}$-值平坦函子}
-
-在没有有限极限的范畴上, 我们引入\emph{平坦函子}来模拟 ``保持有限极限'' 这一现象. 平坦函子也是定义景之间的态射所需的关键概念. 最简单的情形是取值于集合范畴的函子.
-
-\begin{propdef}
-	[label={Set-valued-flat-functor}]
-	{($\mathsf {Set}$-值平坦函子)}
-	设 $\mathcal C$ 为任意范畴, 对函子 $F\colon \mathcal C\to \mathsf {Set}$, 以下条件等价.
-	\begin{enumerate}[(1)]
-		\item $F$ 的元素的范畴 $\displaystyle\int^{\mathcal C}F$ (定义 \ref{slice-over-presheaf}) 为余滤范畴 (定义 \ref{cofiltered-category}).
-		\item $F$ 是可表函子 (即形如 $\operatorname{Hom}_{\mathcal C}(c,-)$ 的函子) 的滤余极限.
-		\item $F$ 的米田扩张 $L = {-\otimes_{\mathcal C} F}\colon \widehat {\mathcal C}\to\mathsf {Set}$ (命题 \ref{nerve-and-realization}) 保持有限极限.
-	\end{enumerate}
-	称满足上述条件的函子为 \emph{$\mathsf {Set}$-值平坦函子} ($\mathsf {Set}$-valued flat functor).
-	$F$ 的米田扩张也可视为与 $F$ 作张量积 (定义 \ref{functor-tensor-product}, 注 \ref{generalized-tensor-hom}), 这解释了 ``平坦'' 这个名称 (在代数中, 称一个模 $M$ 平坦是指张量积 ${-}\otimes M$ 左正合).
-	记 $\mathcal C$ 上的 $\mathsf {Set}$-值平坦函子构成的 $\mathsf {Fun}(\mathcal C,\mathsf {Set})$ 的全子范畴为 $\mathsf {Flat}(\mathcal C,\mathsf {Set})$.
-\end{propdef}
-\begin{proof}
-	~
-	\begin{itemize}
-		\item $(1)\Rightarrow (2)$.
-		由命题 \ref{presheaf-as-colimit-of-representables} 的对偶版本即得. 具体地,
-		\[
-		F = \operatorname{colim}\Big( \Big(\int^{\mathcal C}F\Big)^{\op} \overset{\pi^{\op}}{\to} \mathcal C^{\op} \overset{\yo^*}{\to} \mathsf {Fun}(\mathcal C,\mathsf {Set}) \Big),
-		\]
-		其中 $\yo^*$ 是 $\mathcal C^{\op}$ 的米田嵌入. 由 $\displaystyle\int^{\mathcal C}F$ 为余滤范畴, 知 $\displaystyle\Big(\int^{\mathcal C}F\Big)^{\op}$ 为滤范畴.
-		\item $(2)\Rightarrow (3)$.
-		设 $F$ 为滤余极限 $\operatorname{colim}_j\operatorname{Hom}_{\mathcal C}(c_j,-)$, 其中指标范畴 $J$ 为滤范畴.
-		那么 $F$ 的米田扩张为 $L\colon \widehat {\mathcal C}\to\mathsf {Set}$ 为
-		\begin{align*}
-			L(X)&\simeq \operatorname{colim}_{\yo(c)\to X} F(c)\\
-			&\simeq \operatorname{colim}_{\yo(c)\to X}\operatorname{colim}_j\operatorname{Hom}(c_j,c)\\
-			&\simeq \operatorname{colim}_j\operatorname{colim}_{\yo(c)\to X}\operatorname{Hom}(c_j,c)\\
-			&\simeq \operatorname{colim}_j X(c_j),
-		\end{align*}
-		由命题 \ref{filtered-colimit-commutes-with-finite-limit}, $J$-余极限与有限极限交换,
-		故 $L$ 保持有限极限.
-		\item $(3)\Rightarrow (1)$. %证明见 \cite{HCA1} 6.3.8 以及 \cite{SGL} VII.6.3.
-		
-		设 $I$ 为有限范畴, $\displaystyle X\colon I\to \int^{\mathcal C}F$ 为图, 我们要证明 $X$ 上有锥. 对于 $i\in I$, 记 $X(i)=(c_i,x_i)$, 其中 $x_i\in F(c_i)$. 注意到 $X$ 可视为 $\lim_{i\in I}F(c_i)$ 的元素.
-		因为 $L$ 保持有限极限, 典范的映射
-		$$
-		L(\operatorname{lim}_{i\in I}\yo(c_i)) 
-		\to
-		\operatorname{lim}_{i\in I}L(\yo(c_i))\simeq\operatorname{lim}_{i\in I}F(c_i)
-		$$
-		为同构. 而
-		$$
-		L(\operatorname{lim}_{i\in I}\yo(c_i))\simeq \operatorname{colim}_{\yo(c)\to \operatorname{lim}_{i\in I}\yo(c_i)}F(c),
-		$$
-		故存在一个态射 $f\colon \yo(c)\to \lim_{i\in I}\yo(c_i)$, 即一个锥 $(f_i\colon c\to c_i)_{i\in I}$,
-		以及 $x\in F(c)$,
-		使得 $F(f_i)(x)=x_i\in F(c_i)$. 这就是说 $X$ 上有锥.
-		
-%		首先我们陈述一个简单的事实: 一个小范畴 $I$ 是余滤范畴当且仅当 $$\varnothing\qquad \qquad\bullet\ \ \bullet\qquad\qquad \bullet\rightrightarrows\bullet$$ 三种形状的图都有锥.
-%		其中空图有锥的意思是 $I$ 非空. 我们分别证明 $\displaystyle\int^{\mathcal C}F$ 上存在这三种锥.
-%		\begin{itemize}
-%			\item 空图 $\varnothing$. 因为 $L$ 保持终对象, $L(1)=1$, 固然 $F$ 非空, 那么 $\displaystyle\int^{\mathcal C} F$ 非空.
-%			\item 图 $\bullet\ \ \bullet$. 因为 $L$ 保持乘积, 典范的映射 $$L(\yo(c)\times \yo(d))\simeq \operatorname{colim}_{\yo(e)\to\yo(c)\times\yo(d)}F(e) \longrightarrow F(c)\times F(d)$$
-%			为同构, 故
-%			$\displaystyle\int^{\mathcal C} F$
-%			中两个对象 $(c,x),(d,y)$ 上总有锥.
-%			%对任意 $x\in F(c), y\in F(d)$, %存在 $\mathcal C$ 的对象 $e$, $z\in F(e)$ 以及态射 $f\colon e\to c, g\colon e\to d$ 使得 $F(f)(z)=x, F(g)(z)=y$.
-%			\item 图 $\bullet\rightrightarrows\bullet$.
-%			因为 $L$ 保持等化子, 对任意态射 $f,g\colon c\rightrightarrows d$, 令 $$P=\operatorname{eq}\big(\yo(f),\yo(g)\colon \yo(c)\rightrightarrows \yo(d)\big),\quad
-%			P(e)=\{h\colon e\to c\mid fh=gh\},$$ 则有等化子
-%			% https://q.uiver.app/#q=WzAsMyxbMSwwLCJGKGMpIl0sWzIsMCwiRihkKS4iXSxbMCwwLCJMKFApIl0sWzAsMSwiRihmKSIsMCx7Im9mZnNldCI6LTF9XSxbMCwxLCJGKGcpIiwyLHsib2Zmc2V0IjoxfV0sWzIsMF1d
-%			\[\begin{tikzcd}[ampersand replacement=\&]
-%				{L(P)\simeq\operatorname{colim}_{\yo(e)\to P}F(e)} \& {F(c)} \& {F(d),}
-%				\arrow["{F(f)}", shift left, from=1-2, to=1-3]
-%				\arrow["{F(g)}"', shift right, from=1-2, to=1-3]
-%				\arrow[from=1-1, to=1-2]
-%			\end{tikzcd}\]
-%			故 $\displaystyle\int^{\mathcal C} F$
-%			中的图 $(c,x)\rightrightarrows (d,y)$ 上总有锥.
-%		\end{itemize}
-	\end{itemize}
-	%	记 $F$ 的米田扩张为 $L\colon \widehat {\mathcal C}\to\mathsf {Set}$.
-	%	我们需要一个关键的性质, 即张量积 (定义 \ref{functor-tensor-product}) 的对称性
-	%	\[
-	%	X\otimes_{\mathcal C} F \simeq F\otimes_{\mathcal C^{\op}} X.
-	%	\quad (X\colon \mathcal C^{\op}\to\mathsf {Set}, F\colon \mathcal C\to \mathsf {Set})
-	%	\]
-	%	这个事实也可由如下余极限的交换性得出.
-	%	\[
-	%	\operatorname{colim}_{\yo(c)\to X}F(c)\simeq\operatorname{colim}_{\yo(c)\to X \atop \yo(c')\to F}\operatorname{Hom}_{\mathcal C}(c,c')\simeq\operatorname{colim}_{\yo(c')\to F}X(c').
-	%	\]
-	%	因此
-	%	$$
-	%	L(X)  \simeq \operatorname{colim}_{\yo(c)\to F}X(c)
-	%	\simeq\big({\operatorname{colim}_{\yo(c)\to F}\operatorname{ev}_{c}}\big)X,
-	%	$$
-	%	其中 $\operatorname{ev}_c\colon \widehat {\mathcal C}\to\mathsf {Set}$ 是 $c$ 处的取值函子.
-	%	\begin{itemize}
-		%		\item $(1)\Rightarrow (2)$.
-		%		由假设, $\operatorname{colim}_{\yo(c)\to F}\operatorname{ev}_{c}$ 是一个滤余极限, 它与有限极限交换 (命题 \ref{lambda-filtered-colimit-commutes-with-lambda-small-limit}, 取 $\lambda = \aleph_0$), 故 $L$ 保持有限极限.
-		%		\item $(2)\Rightarrow (1)$.
-		%%		\[
-		%%		1\simeq L(1)\simeq
-		%%		\]
-		%		
-		%	\end{itemize}
-\end{proof}
-
-\begin{prop}
-	{}
-	平坦函子 $\mathcal C\to \mathsf {Set}$ 保持所有 $\mathcal C$ 中存在的有限极限 (意指 $\mathcal C$ 中不一定存在有限极限, 存在一个则保持一个).
-	若 $\mathcal C$ 存在所有有限极限, 那么一个函子 $F\colon \mathcal C\to \mathsf {Set}$ 平坦当且仅当 $F$ 保持有限极限.
-\end{prop}
-\begin{proof}~
-	\begin{itemize}
-		\item 若 $F=\operatorname{Hom}_{\mathcal C}(c,-)$ 为可表函子, 则 $F$ 当然保持所有 $\mathcal C$ 中存在的有限极限.
-		\item 若 $F\colon \mathcal C\to\mathsf {Set}$ 为平坦函子, 即可表函子的滤余极限, 则由于滤余极限与有限极限交换 (命题 \ref{filtered-colimit-commutes-with-finite-limit}), $F$ 亦保持所有 $\mathcal C$ 中存在的有限极限.
-		\item 假设 $\mathcal C$ 存在所有有限极限, 而 $F\colon \mathcal C\to \mathsf {Set}$ 保持有限极限. 我们证明 $\displaystyle\int^{\mathcal C}F$ 为余滤范畴. 设 $I$ 为有限范畴, $X\colon I\to \displaystyle\int^{\mathcal C}F$ 为图, 记 $X(i)=(c_i,x_i)$, 其中 $x_i\in F(c_i)$. 注意到 $X$ 可视为 $\lim_{i\in I}F(c_i)$ 的元素. 因为 $F$ 保持有限极限, 典范的映射 $$F(\lim_{i\in I}c_i)\to \lim_{i\in I} F(c_i)$$ 为同构. 故存在 $x\in F(\lim_{i\in I}c_i)$ 使得 $F(p_i)(x)=x_i$ ($p_i\colon \lim_{i\in I}c_i \to c_i$ 为投影). 这说明 $X$ 上有锥.
-	\end{itemize}
-\end{proof}
-
-%\begin{example}
-%	{}
-%	%由命题 \ref{presentable-category-ind-compact}, 
-%	一个集合可表示为其所有有限子集的滤余极限. 因此集合范畴 $\mathsf {Set}$ 等价于有限集范畴 $\mathsf {Fin}$ 上的 $\mathsf {Set}$-值平坦函子的范畴:
-%	\[
-%	\mathsf {Set} %\simeq \mathsf {Ind}(\mathsf {Fin})
-%	\simeq \mathsf {Flat}(\mathsf {Fin},\mathsf {Set}), \quad S\mapsto \operatorname{Hom}(-,S).
-%	\]
-%	%以 ``探测'' 的观点 (注 \ref{remark-probe}), 一个集合可由有限集到它的所有映射探测.
-%\end{example}
-
-%\begin{definition}
-%	{(平坦)}
-%	% representably flat
-%	% 但是似乎应该先讲意象的点
-%	
-%\end{definition}
 
 \subsection{预层\topos{}的点}
 
@@ -3876,7 +3846,7 @@ $$
 	\end{tikzcd}\]
 	其中 $L$ 保持有限极限. %注意 $L$ 由它在可表函子上的行为 $\mathcal C\overset{\yo}{\to}\widehat {\mathcal C}\overset{L}{\to}\mathsf {Set}$ 唯一决定.
 	由命题 \ref{Set-valued-flat-functor}, $L\circ\yo\colon \mathcal C\to\mathsf {Set}$ 是 $\mathsf {Set}$-值平坦函子. 这说明 $\widehat {\mathcal C}$ 的点等同于 $\mathsf {Set}$-值平坦函子 $\mathcal C\to\mathsf {Set}$.
-	对偶地, $\mathsf {Set}^ {\mathcal C}$ 的点等同于 $\mathsf {Set}$-值平坦函子 $\mathcal C^{\op}\to\mathsf {Set}$, 等同于 $\mathcal C$ 的 $\text{ind}$-对象 (注 \ref{flat-functor-vs-ind-object}).
+	对偶地, $\mathsf {Set}^ {\mathcal C}$ 的点等同于 $\mathsf {Set}$-值平坦函子 $\mathcal C^{\op}\to\mathsf {Set}$, 等同于 $\mathcal C$ 的 $\text{ind}$-对象.
 \end{example}
 
 \begin{example}
@@ -3974,6 +3944,7 @@ $$
 \end{definition}
 
 \begin{definition}
+	[label={topos-enough-points}]
 	{(有足够多点的\topos{})}
 	若\topos{} $\mathcal C$ 中的同构可由茎探测, 则称其具有\emph{足够多的点} (enough points).
 	所谓同构可由茎探测, 是指一个态射 $f\colon X\to Y$ 为同构当且仅当对 $\mathcal C$ 的任意点 $p\colon \operatorname{Sh}(\text{pt}) \to \mathcal C$, 都有 $p^*f\colon p^*X\to p^*Y$ 为同构.
@@ -4481,6 +4452,8 @@ Giraud 定理可以在一些不容易构造景的情形证明一个范畴是 Gro
 
 \section{等变层与拓扑群胚}
 
+本节中的 ``拓扑空间'' 可以是通常的拓扑空间, 也可以是位象, 因为我们不会使用空间的 ``点'' 的概念.
+
 \begin{definition}
 	[label={equivariant-sheaf}]
 	{(等变层)}
@@ -4493,7 +4466,7 @@ Giraud 定理可以在一些不容易构造景的情形证明一个范畴是 Gro
 	{}
 	对任意带有拓扑群 $G$ 左作用的空间 $X$, $\operatorname{Sh}_G(X)$ 是意象.
 \end{prop}
-\begin{proof}
+\begin{proof}~
 	%\todo{equivariant sheaves, Elephant C.5}
 	\begin{itemize}
 		\item $\operatorname{Sh}_G(X)$ 由所有形如 $\bigcup_{g\in G}gU$ ($U\in\operatorname{Open}(X)$) 的对象生成.
@@ -4537,9 +4510,9 @@ Giraud 定理可以在一些不容易构造景的情形证明一个范畴是 Gro
 \begin{example}
 	{(常见的拓扑群胚)}
 	\begin{itemize}
-		\item 当 $G_0$ 为一个点时, 拓扑群胚 $G_1\rightrightarrows G_0$ 退化为拓扑群 $G_1$.
-		\item 一个拓扑空间 $X$ 可视为平凡的拓扑群胚 $\operatorname{id},\operatorname{id}\colon X\to X$.
-		\item 由拓扑空间 $X$ 还可构造另一个拓扑群胚 $\pi_1,\pi_2\colon X\times X\rightrightarrows X$.
+		\item 当 $G_0$ 为一个点时, 拓扑群胚 $G_1\rightrightarrows G_0$ 等同于拓扑群 $G_1$, 即 ``一个对象的群胚''.
+		\item 一个拓扑空间 $X$ 可视为平凡的拓扑群胚 $\operatorname{id},\operatorname{id}\colon X\to X$, 即 ``仅有恒等态射的群胚''.
+		\item 由拓扑空间 $X$ 还可构造另一个拓扑群胚 $\pi_1,\pi_2\colon X\times X\rightrightarrows X$, 即 ``每两个对象之间有唯一的同构的群胚''.
 		\item 对于拓扑群 $G$ 的主丛 $p\colon P \to X$, 有 \emph{Atiyah 群胚} $p\pi_1,p\pi_2\colon (P\times P)/G\rightrightarrows X$. 它可理解为 $X$ 各个点上的纤维以及纤维之间 (作为 $G$-右作用) 的同构构成的群胚.
 		\item 设空间 $X$ 带有拓扑群 $G$ 的左作用 $\mu\colon G\times X\to X$, 则 $(\pi_2,\mu\colon G\times X\rightrightarrows X)$ 为拓扑群胚, 称为\emph{作用群胚} (action groupoid).
 	\end{itemize}
@@ -4572,7 +4545,8 @@ Giraud 定理可以在一些不容易构造景的情形证明一个范畴是 Gro
 	[label={examples-sheaves-topological-groupoid}]
 	{(常见拓扑群胚上的层)}
 	\begin{itemize}
-		\item $G_0$ 为一点的情形, $\mathcal G$ 上的层即为带有 $G_1$-左作用的离散空间.
+		\item $G_0$ 为一点, $G_1$ 为普通的群 (视为离散拓扑群) 的情形, $\mathcal G$ 上的层即为带有 $G_1$-左作用的集合.
+		\item $G_0$ 为一点, $G_1$ 为拓扑群的情形, $\mathcal G$ 上的层即为带有\emph{连续} $G_1$-左作用的离散空间.
 		\item 拓扑空间 $X$ 作为平凡的拓扑群胚, 其上的层即为 $X$ 上通常的层.
 		\item 对于非空空间 $X$, 拓扑群胚 $X\times X\rightrightarrows X$ 上的层范畴等价于 $\mathsf {Set}$, 即一点上的层范畴.
 		\item 对于拓扑群 $G$ 在空间 $X$ 上作用的作用群胚, 其上的层即为等变层 (定义 \ref{equivariant-sheaf}).
@@ -4583,7 +4557,7 @@ Giraud 定理可以在一些不容易构造景的情形证明一个范畴是 Gro
 
 \begin{prop}
 	{}
-	任何一个有足够多点的\topos{}都等价于某个拓扑群胚上的层\topos{}.
+	任何一个有足够多点的\topos{} (定义 \ref{topos-enough-points}) 都等价于某个拓扑群胚上的层\topos{}.
 \end{prop}
 
 证明见 \cite{RTTG}.

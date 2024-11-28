@@ -1,10 +1,13 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}语法范畴: 语法--语义对偶}{\reset@font\mtcSfont 175}{section.5.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 类型论的语境范畴}{\reset@font\mtcSSfont 177}{tcb@cnt@remark.5.1.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 语法景}{\reset@font\mtcSSfont 178}{tcb@cnt@remark.5.1.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}分类意象{}}{\reset@font\mtcSfont 178}{section.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $G$-旋子的分类意象{}}{\reset@font\mtcSSfont 179}{section.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 对象的分类意象}{\reset@font\mtcSSfont 181}{tcb@cnt@remark.5.2.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子终对象的分类意象}{\reset@font\mtcSSfont 182}{tcb@cnt@remark.5.2.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 群的分类意象{}}{\reset@font\mtcSSfont 182}{tcb@cnt@remark.5.2.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 环的分类意象{}}{\reset@font\mtcSSfont 182}{tcb@cnt@remark.5.2.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 几何理论的分类意象{}}{\reset@font\mtcSSfont 182}{tcb@cnt@remark.5.2.8}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}语法范畴: 语法--语义对偶}{\reset@font\mtcSfont 177}{section.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 命题理论的语法范畴}{\reset@font\mtcSSfont 182}{tcb@cnt@remark.5.1.11}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 类型论的语境范畴}{\reset@font\mtcSSfont 182}{tcb@cnt@remark.5.1.11}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 语法景}{\reset@font\mtcSSfont 182}{tcb@cnt@remark.5.1.12}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}分类意象{}}{\reset@font\mtcSfont 183}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode $G$-旋子的分类意象{}}{\reset@font\mtcSSfont 184}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 对象的分类意象}{\reset@font\mtcSSfont 186}{tcb@cnt@remark.5.2.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子终对象的分类意象}{\reset@font\mtcSSfont 187}{tcb@cnt@remark.5.2.9}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 命题理论的分类意象{}}{\reset@font\mtcSSfont 187}{tcb@cnt@remark.5.2.10}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 群的分类意象{}}{\reset@font\mtcSSfont 188}{tcb@cnt@remark.5.2.14}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 环的分类意象{}}{\reset@font\mtcSSfont 189}{tcb@cnt@remark.5.2.16}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 向量空间的分类意象{}}{\reset@font\mtcSSfont 189}{tcb@cnt@remark.5.2.16}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 几何理论的分类意象{}}{\reset@font\mtcSSfont 189}{tcb@cnt@remark.5.2.16}}

@@ -37,19 +37,22 @@
 %\subsection{一阶理论的语法范畴}
 
 附录 \ref{universal-algebra} 节介绍了 Lawvere 理论. 一个 Lawvere 理论 $\mathbb T$ 作为范畴可视为其万有模型所在的范畴 (注 \ref{walking-model}). 在万有模型中成立的公式恰是理论 $\mathbb T$ 中可证的所有公式.
-一般地, 对于一阶理论 $\mathbb T$, 我们可以构造一个包含万有模型的范畴 $\mathcal C_{\mathbb T}$, 其对象和态射是理论 $\mathbb T$ 的任何模型按照 $\mathbb T$ 的语法的要求所必须具备的对象和态射.
+一般地, 对于一阶理论 $\mathbb T$, 我们可以构造一个包含万有模型的范畴 $\mathcal C_{\mathbb T}$, 其对象和态射是理论 $\mathbb T$ 的任何模型按照 $\mathbb T$ 的语法的要求所必须具备的对象和态射,
+%这个范畴也可视为对应的理论中按照一套指定的语法可构造的所有对象和态射,
+故称之为\emph{语法范畴} (syntactic category).
+一个理论的语法范畴也可视为这个理论 ``无坐标'' 式的表示.
 
 \begin{definition}
 	[label={first-order-theory-syntactic-category}]
 	{(几种一阶理论的语法范畴)}
-	设 $\mathbb T$ 是符号表 $\Sigma$ 上的几何 (正则, 凝聚, 一阶) 理论 (定义 \ref{kinds-of-theories}). 定义其\emph{语法范畴} (syntactic category) $\mathcal C_{\mathbb T}$ 为如下的范畴,
+	设 $\mathbb T$ 是符号表 $\Sigma$ 上的几何 (\regular{}, \coherent{}, 一阶) 理论 (定义 \ref{kinds-of-theories}). 定义其\emph{语法范畴} (syntactic category) $\mathcal C_{\mathbb T}$ 为如下的范畴,
 	\begin{itemize}
-		\item 其对象是 $\Sigma$ 上带语境的几何 (正则, 凝聚, 一阶) 公式 $(\vec x , \phi)$ 的 $\alpha$-等价类, $\alpha$ 等价是指两个公式仅有变量名的差异.
+		\item 其对象是 $\Sigma$ 上带语境的几何 (\regular{}, \coherent{}, 一阶) 公式 $(\vec x , \phi)$ 的 $\alpha$-等价类, $\alpha$ 等价是指两个公式仅有变量名的差异.
 		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的态射 (其中不妨设语境 $\vec x , \vec y$ 不交) 是公式 $\theta(\vec x,\vec y)$ 的 $\mathbb T$-可证等价类, 满足 $\mathbb T$-可证的\emph{函数性} (functionality), 即如下相继式 $\mathbb T$-可证:
 		\begin{itemize}
 			\item $\theta\vdash_{\vec x,\vec y} \phi \wedge \psi$;
 			\item (像的存在性) $\phi\vdash_{\vec x} \exists \vec y \,\theta$;
-			\item (像的唯一性) $\theta \wedge \theta[\vec z/\vec y] \vdash_{\vec x,\vec y,\vec z} \vec y = \vec z$, 这里 $\theta[\vec z / \vec y]$ 是指将 $\theta$ 中的 $\vec y$ 替换为 $\vec z$, $\vec y = \vec z$ 表示 $(y_1=z_1)\land \cdots\land (y_n=z_n)$.
+			\item (像的唯一性) $\theta \wedge \theta[\vec z/\vec y] \vdash_{\vec x,\vec y,\vec z} \vec y = \vec z$, 这里 $\theta[\vec z / \vec y]$ 是指将公式 $\theta$ 中的 $\vec y$ 替换为 $\vec z$, 公式 $\vec y = \vec z$ 是 $(y_1=z_1)\land \cdots\land (y_n=z_n)$ 的简略写法.
 		\end{itemize}
 		直观上, $\theta(\vec x,\vec y)$ 是公式之间的变量代换.
 		\item 对象 $(\vec x,\phi)$ 到自身的恒等态射为 $\phi\land (\vec x = \vec x')$.
@@ -60,14 +63,123 @@
 	\end{itemize}
 \end{definition}
 
+\begin{remark}
+	{}
+	我们将带语境的公式 $(\vec x,\phi)$ 想象为 ``$\vec x$ 的所有可能取值中满足公式 $\psi$ 的那些值的集合''.
+	由此不难想象\regular{} (\coherent{}, 几何) 理论的语法范畴 $\mathcal C_{\mathbb T}$ 具有如下范畴论结构. %我们略去具体的验证.
+	\begin{itemize}
+		\item 终对象为 $(\varnothing,\top)$; 对任何对象 $(\vec x,\phi)$, 其到终对象的唯一态射由公式 $\phi$ 给出.
+		\item 两个对象 $(\vec x,\phi)$, $(\vec y,\psi)$ 的乘积为 $\big((\vec x,\vec y),\phi\land\psi\big)$, 乘积到 $(\vec x,\phi)$ 的投影映射由如下公式给出:
+		$$
+		\theta (\vec x,\vec y,\vec x')=\phi\land\psi\land (\vec x'=\vec x).
+		$$
+		(为防止变量名重复, 将原来的 $\vec x$ 替换为 $\vec x'$.)
+		\item 指向同一对象的两个态射的拉回为
+		% https://q.uiver.app/#q=WzAsMyxbMCwxLCIoXFx2ZWMgeCxcXHBoaSkiXSxbMSwwLCIoXFx2ZWMgeSxcXHBzaSkiXSxbMSwxLCIoXFx2ZWMgeixcXGNoaSkiXSxbMCwyLCJbXFx0aGV0YV0iLDJdLFsxLDIsIltcXGdhbW1hXSJdXQ==
+		\[
+		\lim\Bigg(\begin{tikzcd}[ampersand replacement=\&,sep=small]
+			\& {(\vec y,\psi)} \\
+			{(\vec x,\phi)} \& {(\vec z,\chi)}
+			\arrow["{[\gamma]}", from=1-2, to=2-2]
+			\arrow["{[\theta]}"', from=2-1, to=2-2]
+		\end{tikzcd}\Bigg)\simeq
+		\big((\vec x,\vec y),\exists \vec z\,(\theta\land\gamma)\big),
+		\]
+		该对象到 $(\vec x,\phi)$ 的投影映射由如下公式给出:
+		$$
+		\theta (\vec x,\vec y,\vec x') = \exists \vec z\,(\theta\land\gamma)\land(\vec x'=\vec x).
+		$$
+		(注意当 $\vec z$ 是零个变量时, 公式 $\exists z\, \theta$ 应当理解为 $\theta$ 本身, 所以前一条中的乘积是这里拉回的特殊情形)
+	\end{itemize}
+	承认上述构造的正确性, 那么 $\mathcal C_{\mathbb T}$ 具有有限极限. 进一步, 根据理论的丰富程度, 其语法范畴还有更多结构 (命题 \ref{syntactic-category-structures}), 其子对象的格上具有与该理论背后的逻辑相应的运算.
+\end{remark}
+
+\begin{prop}
+	{(语法范畴中的子对象的结构)}
+	设 $\mathbb T$ 是定义 \ref{first-order-theory-syntactic-category} 中的理论, 则
+	$\mathcal C_{\mathbb T}$ 中的所有子对象都同构于如下形式的子对象:
+	\[
+	(\vec x,\psi)\overset{[\theta]}{\hookrightarrow} (\vec x,\phi),\quad \theta = (\psi\land (\vec x'=\vec x)),
+	\]
+	其中 $\psi\vdash_{\vec x}\phi$ 是 $\mathbb T$-可证的.
+\end{prop}
+
+证明参见 \cite{Elephant} D1.4.4.
+
+\begin{prop}
+	{(语法范畴中子对象的拉回)}
+	设 $\mathbb T$ 是定义 \ref{first-order-theory-syntactic-category} 中的理论, 则
+	$\mathcal C_{\mathbb T}$ 中子对象 $(\vec x,\psi)\overset{[\theta]}{\hookrightarrow} (\vec x,\phi)$ 沿态射 $[\theta]\colon (\vec z,\chi)\to (\vec x,\phi)$ 的拉回为
+	\[
+	\big((\vec x,\vec z),\theta\land\psi\big).
+	\]
+\end{prop}
+
+\begin{prop}
+	[label={syntactic-category-structures}]
+	{(语法范畴的更多范畴论结构)}
+	\regular{} (\coherent{}, 几何) 理论的语法范畴是\regular{} (\coherent{}, 几何) 范畴 (定义 \ref{regular-category}--\ref{geometric-category}).
+\end{prop}
+\begin{proof} (略证)
+	设 $\mathbb T$ 为\regular{}理论. 对于 $\mathcal C_{\mathbb T}$ 中的态射 $[\theta]\colon (\vec x,\varphi)\to (\vec y,\psi)$, 定义其像为 $(\vec y,\psi)$ 的子对象
+		$$
+		\operatorname{im}[\theta] :=
+		(\vec y,\exists \vec x\,\theta)\hookrightarrow (\vec y,\psi).
+		$$
+		%(这个态射是覆盖当且仅当 $\psi\vdash_{\vec y}\exists \vec x\,\theta$ 在 $\mathbb T$ 中可证.)
+		下面说明 $\mathcal C_{\mathbb T}$ 中的拉回保持像: 考虑拉回图
+		\[
+		\begin{tikzcd}[ampersand replacement=\&,sep=small]
+			\big((\vec x,\vec y),\exists \vec z\,(\theta\land\gamma)\big) \& {(\vec y,\psi)} \\
+			{(\vec x,\phi)} \& {(\vec z,\chi)}
+			\arrow["{[\gamma]}", from=1-2, to=2-2]
+			\arrow["{[\theta]}"', from=2-1, to=2-2]
+			\arrow["{[\exists\vec z (\theta\land\gamma)\land (\vec x'=x)]}"',from=1-1,to=2-1]
+			\arrow[from=1-1,to=1-2]
+		\end{tikzcd},
+		\]
+		不难证明左边态射的像, 以及右边态射的像的拉回, 均同构于
+		\[
+		\big(
+		\vec x,
+		\exists (\vec y,\vec z)\,
+		(\theta\land\gamma)
+		\big).
+		\]
+	
+	设 $\mathbb T$ 是\coherent{}理论, 则 $\mathcal C_{\mathbb T}$ 中的子对象格存在有限并: $(\vec x,\phi)$ 的子对象 $(\vec x,\chi)$, $(\vec x,\psi)$ 的并为
+	$(\vec x,\chi\lor\psi)$. 拉回保持子对象的并是由于 $\land$ 对 $\lor$ 的分配公理 (定义 \ref{deduction-system-first-order-logic}).
+	
+	设 $\mathbb T$ 是几何理论, 则类似地, $\mathcal C_{\mathbb T}$ 中的子对象格存在任意并, 且拉回保持任意并.
+\end{proof}
+
 \begin{definition}
 	{(代数理论的语法范畴)}
 	设 $\mathbb T$ 是符号表 $\Sigma$ 上的代数理论. 定义其\emph{语法范畴} $\mathcal C_{\mathbb T}^{\text{alg}}$ 为如下的范畴,
 	\begin{itemize}
-		\item 其对象是 $\Sigma$ 上带语境的原子公式的有限合取.
+		\item 其对象 $(\vec x,\phi)$ 是 $\Sigma$ 上带语境的原子公式的有限合取, 即 $\phi = (s_1=t_1)\land\cdots\land (s_n=t_n)$, 其中对每个 $i$, $s_i,t_i$ 是相同类型的项.
 		\item 对象 $(\vec x , \phi)$ 到 $(\vec y , \psi)$ 的态射是一列项 $\vec t = (t_1(\vec x),\cdots,t_m(\vec x))$, 使得 $\phi\vdash_{\vec x} \psi(t_1(\vec x),\cdots,t_m(\vec x))$ 是 $\mathbb T$-可证的. 直观上, $\vec t$ 是公式之间的变量代换.
 	\end{itemize}
 \end{definition}
+
+\begin{remark}
+	{}
+	设 $\mathbb T$ 是代数理论, 那么 $\mathcal C_{\mathbb T}^{\text{alg}}$ 具有有限极限:
+	\begin{itemize}
+		\item 终对象为 $(\varnothing,\top)$.
+		\item 指向同一对象的两个态射的拉回为
+		% https://q.uiver.app/#q=WzAsMyxbMCwxLCIoXFx2ZWMgeCxcXHBoaSkiXSxbMSwwLCIoXFx2ZWMgeSxcXHBzaSkiXSxbMSwxLCIoXFx2ZWMgeixcXGNoaSkiXSxbMCwyLCJbXFx0aGV0YV0iLDJdLFsxLDIsIltcXGdhbW1hXSJdXQ==
+		\[
+		\lim\Bigg(\begin{tikzcd}[ampersand replacement=\&,sep=small]
+			\& {(\vec y,\psi)} \\
+			{(\vec x,\phi)} \& {(\vec z,\chi)}
+			\arrow["{\vec s}", from=1-2, to=2-2]
+			\arrow["{\vec t}"', from=2-1, to=2-2]
+		\end{tikzcd}\Bigg)\simeq
+		\big((\vec x,\vec y),\phi\land\psi\land (\vec s=\vec t)\big).
+		\]
+	\end{itemize}
+\end{remark}
 
 \begin{remark}
 	{}
@@ -77,18 +189,35 @@
 \begin{prop}
 	[label={context-dual-to-fin-gen-models}]
 	{}
-	代数理论 $\mathbb T$ 的语法范畴等价于其有限生成模型的范畴的对偶范畴.
+	代数理论 $\mathbb T$ 的语法范畴等价于其有限表现模型的范畴的对偶范畴.
 \end{prop}
 
 下面的例子解释了命题 \ref{context-dual-to-fin-gen-models} 的直观.
 
 \begin{example}
 	{}
-	考虑 $\mathbb T_{\text{Grp}}$ 的两个有限生成模型, 即有限生成群 $G = \langle x,y\mid x^2=y^3 \rangle$, $H = \langle z \rangle \simeq \mathbb{Z}$. 它们也可视为带语境的公式: $G$ 是语境 $(x,y)$ 下的公式 $x^2=y^3$, 而 $H$ 是语境 $z$ 下的公式 $\top$.
+	考虑 $\mathbb T_{\text{Grp}}$ 的两个有限表现模型 $G = \langle x,y\mid x^2=y^3 \rangle$, $H = \langle z \rangle \simeq \mathbb{Z}$. 它们也可视为带语境的公式: $G$ 是语境 $(x,y)$ 下的公式 $x^2=y^3$, 而 $H$ 是语境 $z$ 下的公式 $\top$.
 	%一个带语境的公式给出一个函子 $\mathsf {Grp} \to \mathsf {Set}$
 	我们有公式之间的代换 $$\langle z \rangle \to \langle x,y\mid x^2=y^3 \rangle, (x,y)=(z^3,z^2),$$
-	(注意到 $\top\vdash_{z} (z^3)^2=(z^2)^3$ 是 $\mathbb T_{\text{Grp}}$-可证的.) 它对应着反方向的群同态 $G\to H, x\mapsto z^3, y\mapsto z^2$.
+	(注意到 $\top\vdash_{z} (z^3)^2=(z^2)^3$ 是 $\mathbb T_{\text{Grp}}$-可证的.) 它对应着反方向的群同态 $G\to H, x\mapsto z^3, y\mapsto z^2$. 这解释了等价 $\mathbb T_{\text{Grp}}\simeq \mathsf{Grp}_{\text{fp}}^{\op}$.
+	
+	对范畴 $\mathcal C$ 中群理论的任意模型 $F$, 视为保持有限极限的函子 $F\colon \mathbb T_{\text{Grp}}\to \mathcal C$,
+	有
+	$$
+	F(G) = \{(x,y)\in F^2\mid x^2=y^3\},\quad
+	F(H) = \{z\in F\mid\top\} =F.
+	$$
+	群同态 $G\to H$ 对应着 $F(H)$ 到 $F(G)$ 的态射 $z\mapsto (z^3,z^2)$.
 \end{example}
+
+\begin{remark}
+	{}
+	如下的思维或许是有益的: 对于代数理论的语法范畴 $\mathbb T$, 我们想象其对象为 ``代数簇'', 也即 ``仿射空间'' 中由一系列公式确定的子集, 它是一个几何对象; 而公式的代换是 ``代数簇'' 之间的映射.
+\end{remark}
+
+\subsection{命题理论的语法范畴}
+
+
 
 \subsection{类型论的语境范畴}
 
@@ -115,6 +244,14 @@
 	\end{itemize}
 \end{definition}
 
+\begin{prop}{}
+	Grothendieck 拓扑 $J^{\text{reg}}, J^{\text{coh}},J^{\text{geom}}$ 均为次典范拓扑 (定义 \ref{canonical-topology}), 从而有米田嵌入
+	$\yo_{(\mathcal C,\text{reg})}\colon \mathcal C\to\operatorname{Sh}(\mathcal C,J^{\text{reg}})$ 等等.
+\end{prop}
+\begin{proof}
+	设 $\mathcal C$ 是\coherent{}范畴, $S\hookrightarrow\yo(c)$ 为 $J_{\mathcal C}^{\text{coh}}$-覆盖筛, 它包含一族有限个态射 $\{f_i\colon c_i\to c\}_{1\leq i \leq n}$, 满足 $\bigvee_{i=1}^n\operatorname{im}f_i = \operatorname{id}_c$.
+\end{proof}
+
 \section{分类\topos{}}
 
 \philoquote{
@@ -140,7 +277,7 @@ $$
 G\mathsf{Bund} (X) \simeq [X,BG];
 $$
 从而恒等映射 $\operatorname{id}_{BG}$ 对应着 $BG$ 上一个\emph{万有 $G$-主丛} $EG \to BG$,
-``万有'' 意指任何 $G$-主丛都是通过某个映射 $X \to BG$ 将其拉回得到.
+任何空间 $X$ 上的 $G$-主丛都是通过某个映射 $X \to BG$ 将万有 $G$-主丛拉回得到.
 
 类似地, 在许多情形下, \topos{} $\mathcal C$ 上的一种结构 $T$ (即某个理论的模型) 可由它到一个特殊的\topos{}的态射来分类, 这就是\emph{分类\topos{}}的概念;
 某种结构 $T$ 的分类\topos{}可视为 ``所有 $T$ 构成的空间'', 也可称作 $T$ 的\emph{模空间}.
@@ -177,7 +314,7 @@ $$
 %	对于群 $G$ 的元素 $g\colon 1\to G$, 以 $g$ 表示其给出的 $\gamma^*(G)$ 的整体元素 $\gamma^*(g)\colon 1\to \gamma^*(G)$.
 %\end{definition}
 
-下面的概念是 ``空间上的 $G$-主丛'' 的推广, 取自 \cite{SGL} VIII.2 节.
+下面的概念是 ``空间上的 $G$-主丛'' 的推广. %取自 \cite{SGL} VIII.2 节.
 \begin{definition}
 	[label={G-torsors-over-topos}]
 	{(\topos{}上的 $G$-旋子)}
@@ -273,34 +410,110 @@ $$
 \subsection{对象的分类\topos}
 
 \begin{prop}
-	{(对象分类子)}
-	记 $\mathsf {Fin}$ 为有限集合的范畴. \topos{} $\mathsf {Set}^{\mathsf {Fin}}$ 是\emph{对象分类子} (object classifier),
-	即对任何\topos{} $\mathcal C$, 有范畴等价
-	$$
-	\mathcal C\simeq \operatorname{Hom}(\mathcal C,\mathsf {Set}^{\mathsf {Fin}}).
-	$$
-	
+	[label={fin-free-finite-colimit-category}]
+	{}
+	记 $\mathsf {Fin}$ 为有限集合的范畴, 那么 $\mathsf {Fin}$ 是一个对象在有限余极限下自由生成的范畴, 即对任意具有有限余极限的范畴 $\mathcal C$,
+	$\mathcal C$ 的对象等同于保持有限余极限的函子 $\mathsf {Fin}\to \mathcal C$.
 \end{prop}
 \begin{proof}
-	$\mathsf {Fin}^{\op}$ 是一个对象自由生成的有限乘积范畴, 也即对任何具有有限乘积的范畴 $\mathcal C$, 其对象等同于保持有限乘积的函子 $\mathsf {Fin}^{\op}\to \mathcal C$. 而由自由余完备化的性质 (命题 \ref{free-cocompletion}), 后者又对应一个函子 $\mathsf {Set}^{\mathsf {Fin}}=\widehat {\mathsf {Fin}^{\op}} \to \mathcal C$, 其保持有限乘积与任意余极限.
+	$\mathcal C$ 的对象 $X$ 对应函子
+	$$\mathsf {Fin}\to\mathcal C, \quad n\mapsto X+\cdots+X \text{($n$ 个 $X$)},
+	$$
+	这个函子保持有限余极限. 另一方面, 任何保持有限余极限的函子 $F\colon \mathsf {Fin}\to\mathcal C$ 都满足 $F(n)$ 同构于 $n$ 个 $F(1)$ 的和.
 \end{proof}
 
+%\begin{proof}
+%	设 $F\colon \mathsf {Fin}\to\mathcal C$ 保持有限极限, 则 $F(n)\simeq F(1)+\cdots + F(1)$ ($n$ 个),
+%\end{proof}
+
+\begin{prop}
+	[label={object-classifier}]
+	{(对象的分类\topos{})}
+	\topos{} $\mathsf {Set}^{\mathsf {Fin}}$ 是对象的分类\topos{}, 又称\emph{对象分类子} (object classifier),
+	即对任何\topos{} $\mathcal C$, 有范畴等价
+	$$
+	\mathcal C\simeq \operatorname{Hom}_{\Top}(\mathcal C,\mathsf {Set}^{\mathsf {Fin}}).
+	$$
+\end{prop}
+\begin{proof}
+	由命题 \ref{fin-free-finite-colimit-category}, $\mathsf {Fin}^{\op}$ 是一个对象在有限极限下自由生成的范畴, 也即对任何具有有限极限的范畴 $\mathcal C$, 其对象等同于保持有限极限的函子 $\mathsf {Fin}^{\op}\to \mathcal C$. 而由自由余完备化的性质 (命题 \ref{free-cocompletion}, 且注意到米田嵌入保持有限极限), 后者又对应一个函子 $\mathsf {Set}^{\mathsf {Fin}}=\widehat {\mathsf {Fin}^{\op}} \to \mathcal C$, 其保持有限极限与任意余极限; 于是这等同于几何态射 $\mathcal C\to \mathsf {Set}^{\mathsf {Fin}}$.
+\end{proof}
+
+\begin{remark}
+	{}
+	命题 \ref{object-classifier} 可类比于环的如下命题: 对任何环 $R$, 有双射
+	$$
+	R \simeq \operatorname{Hom}_{\mathsf {Ring}}(\mathbb{Z}[x],R).
+	$$
+	环 $\mathbb{Z}[x]$ 中的元素 $x$ 是环的 ``万有元素'', 任何环 $R$ 的任何元素都可以唯一地通过环同态 $\mathbb{Z}[x]\to R$ 中 $x$ 的像给出.
+\end{remark}
+
+要找出 $\mathsf {Set}^{\mathsf {Fin}}$ 中的 ``万有对象'', 在命题 \ref{object-classifier} 中取 $\mathcal C=\mathsf {Set}^{\mathsf {Fin}}$,
+考虑恒等函子 $\operatorname{id}_{\mathcal C}$. 它对应的函子 $\mathsf {Fin}^{\op}\to \mathsf {Set}^{\mathsf {Fin}}$ 就是米田嵌入 $\yo_{\mathsf {Fin}^{\op}}$. 对象 $1\in\mathsf {Fin}^{\op}$ 在 $\yo_{\mathsf {Fin}^{\op}}$ 下的像为
+$\operatorname{Hom}_{\mathsf {Fin}^{\op}}(-,1)=\operatorname{Hom}_{\mathsf {Fin}}(1,-)$ 也即嵌入函子 $i\colon \mathsf {Fin}\to\mathsf {Set}$. 因此, 任何\topos{} $\mathcal C$ 中的任何对象都可以唯一地通过几何态射 $\mathcal C\to\mathsf {Set}^{\mathsf {Fin}}$ 将 $i$ 拉回得到.
 
 \subsection{子终对象的分类\topos}
 
-考虑范畴 $\mathsf 2 = \{\bullet\longrightarrow\bullet\}$. 例 \ref{varying-set-topos} 介绍的 ``变集范畴'' $\mathsf {Fun}(\mathsf {2},\mathsf {Set})\simeq\widehat {\mathsf {2}}$ 还有一个特殊的名字叫 \emph{Sierpi\'nski \topos{}}, 因为它与 Sierpi\'nski 空间有关.
+考虑范畴 $\mathsf 2 = \{0 \to 1\}$. \topos{} $\mathsf {Fun}(\mathsf {2},\mathsf {Set})$ (例 \ref{varying-set-topos}) 又称 \emph{Sierpi\'nski \topos{}}, 因为它又是 Sierpi\'nski 空间上的层范畴. (Sierpi\'nski 空间是有两个点 $a,b$ 和三个开集 $\varnothing,\{a\},\{a,b\}$ 的拓扑空间; 其上的层在 $\varnothing$ 上取值 $1$, 在 $\{a\}\hookrightarrow \{a,b\}$ 上的取值为 $\mathsf {Set}$ 中的任意箭头, 即 $\mathsf 2$ 上的预层.)
 
-\begin{propdef}
-	[label={Sierpinski-space}]
-	{(Sierpi\'nski 空间)}
-	开集函子 $\operatorname{Open}\colon \mathsf {Top}\to \mathsf {Set}$ 是可表函子, 其表示对象称为 \emph{Sierpi\'nski 空间}.
-\end{propdef}
+%\begin{propdef}
+%	[label={Sierpinski-space}]
+%	{(Sierpi\'nski 空间)}
+%	开集函子 $\operatorname{Open}\colon \mathsf {Top}\to \mathsf {Set}$ 是可表函子, 其表示对象为 \emph{Sierpi\'nski 空间}.
+%\end{propdef}
 
-\todo{}
+\begin{prop}
+	[label={subterminal-classifying-topos}]
+	{(子终对象的分类\topos{})}
+	\topos{} $\mathcal C$ 的子终对象一一对应于 $\mathcal C$ 到 Sierpi\'nski \topos{} $\mathsf {Fun}(\mathsf 2,\mathsf {Set})$ 的几何态射.
+\end{prop}
+\begin{proof}
+	对任何具有有限极限的范畴 $\mathcal C$, 其子终对象等同于保持有限极限的函子 $\mathsf 2\to\mathcal C$. 这是因为, 若 $f\colon \mathsf 2\to\mathcal C$ 保持有限极限, 则 $f(1)$ 是 $\mathcal C$ 的终对象 $1$, 而 $\Delta_0\colon 0\to 0\times 0$ 诱导的态射 $f(0)\to f(0\times 0)\simeq f(0)\times f(0)$ 为同构, 这说明 $f(0)$ 为子终对象 (命题 \ref{subterminal-object-equivalent-definition}), 反之亦然. (另一种看法是范畴 $\mathsf 2$ 等价于子终对象的 Lawvere 理论, 见例 \ref{subterminal-object-Lawvere-theory}.)
+	与命题 \ref{object-classifier} 的证明类似, 可得保持有限乘积的函子 $\mathsf 2\to\mathcal C$ 等同于几何态射 $\mathcal C\to\mathsf {Fun}(\mathsf 2,\mathsf {Set})$.
+\end{proof}
+%\todo{}
+
+
+
+\subsection{命题理论的分类\topos{}}
+
+%  Theorem
+% Localic toposes are precisely the classifying toposes of propositional theories.
+
+\ref{locales-and-logic} 节介绍的位象与几何命题理论的关系是一种特殊的分类\topos{}.
+
+\begin{prop}
+	[label={geometric-propositional-theory-classifying-topos}]
+	{}
+	几何命题理论 $\mathbb T$ 的 Lindenbaum 代数 $\LA_{\mathbb T}$ (定义 \ref{geometric-propositional-theory-Lindenbaum-algebra}) 上的层范畴 $\operatorname{Sh}(\LA_{\mathbb T})$ 是 $\mathbb T$ 的分类\topos{}. %进而, 位象型\topos{}恰为几何命题理论的分类\topos{}.
+\end{prop}
+\begin{proof}
+	回忆对任何位象 $X$ 有 $\operatorname{Sub}_{\operatorname{Sh}(X)}(1)\simeq \mathcal O(X)$ (命题 \ref{localic-topos-subterminal}). 理论 $\mathbb T$ 在\topos{} $\mathcal C$ 中的一个模型是对 $\mathbb T$ 的每个符号 $p\in\Sigma$ 指定一个子终对象 $U_p\to 1$, 满足 $\mathbb T$ 的每条公理 (参见定义 \ref{model-first-order-theory-in-category}), 这等同于\fm{}的同态 $\LA_{\mathbb T}\to\operatorname{Sub}_{\mathcal C}(1)$, 而由位象反映的性质 (命题 \ref{localic-reflection-property}) 这等同于几何态射
+	$\mathcal C\to \operatorname{Sh}(\LA_{\mathbb T})$.
+\end{proof}
+
+\begin{remark}
+	{}
+	位象与几何命题理论是一个代数--几何对偶的两面. 从另一面看命题 \ref{geometric-propositional-theory-classifying-topos}, 回忆任何位象都给出一个典范的几何命题理论 $\mathbb T_X$ (命题 \ref{canonical-geometric-propositional-theory-of-locale}),
+	我们看到任何位象 $X$ 都可视为分类\topos{}; ``位象型\topos{}'' 和 ``几何命题理论的分类\topos{}'' 是同一类东西.
+\end{remark}
+
+\begin{example}
+	{}
+	由一个符号和零条公理构成的命题理论 $\mathbb T_1$ (例 \ref{examples-geometric-propositional-theories}) 在\topos{}中的一个模型等同于一个子终对象. $\mathbb T_1$ 的 Lindenbaum 代数对应 Sierpi\'nski 空间, 因此由命题 \ref{geometric-propositional-theory-classifying-topos}, 子终对象的分类\topos{}是 Sierpinski \topos{} (命题 \ref{subterminal-classifying-topos}).
+\end{example}
+
+\begin{example}
+	{(实数的分类\topos{})}
+	实数的理论 $\mathbb T_{\mathbb R}$ (例 \ref{locale-of-real-numbers}) 在\topos{} $\mathcal C$ 中的模型可理解为 $\mathcal C$ 的 ``内蕴实数'', 或 ``每个点上有一个实数''. 特别地, $\mathbb T_{\mathbb R}$ 在层\topos{} $\operatorname{Sh}(X)$ 中的一个模型等同于一个位象态射 $X\to\mathbb R$, 即 ``$X$ 的每点上有一个实数''.
+	由命题 \ref{geometric-propositional-theory-classifying-topos},
+	$\mathbb T_{\mathbb R}$ 的分类\topos{}是 $\operatorname{Sh}(\mathbb R)$.
+	当然, 在本例中可把 $\mathbb R$ 替换为任何位象.
+\end{example}
 
 \subsection{群的分类\topos{}}
 
-本节构造群的分类\topos{}. 群是一种 Lawvere 理论 (附录 \ref{universal-algebra} 节); 下面的论述适用于一般的 Lawvere 理论, 从而逐字逐句地替换可得到环, Boole 代数等结构的分类\topos{}.
+%本节构造 Lawvere 理论 (见附录 \ref{universal-algebra} 节) 的分类\topos{}, 为了理解的方便, 以群的理论为例. %下面的论述环, Boole 代数等结构的分类\topos{}.
 %
 % 回忆范畴中的群对象的概念. 设范畴 $\mathcal C$ 有有限积 (包括始对象 $1$), 那么 $\mathcal C$ 中的\emph{群}为对象 $G$, 带有元素 $e \colon 1 \to G$, 乘法 $\cdot \colon G\times G \to G$, 满足群的交换图.
 
@@ -316,22 +529,58 @@ $$
 %\end{tikzcd}\]
 %(这里使用了 \ref{Mitchell--Benabou-language} 节介绍的 Mitchell--B\'enabou 语言.)
 
-设范畴 $\mathcal C$ 有有限积. $\mathcal C$ 中的群对象构成一个范畴 $\mathsf {Grp}(\mathcal C)$.
-\ref{universal-algebra} 节提到它等同于群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$ 到 $\mathcal C$ 的保持有限积的函子的范畴.
-进一步, 对于两个具有有限积的范畴 $\mathcal C,\mathcal D$, 以及保持有限积的函子 $f \colon \mathcal C \to \mathcal D$, 有对应的函子
-$\mathsf {Grp}(\mathcal C) \to \mathsf {Grp}(\mathcal D)$.% $\mathsf {Ring}(\mathcal C) \to \mathsf {Ring}(\mathcal D)$.
+%设范畴 $\mathcal C$ 有有限积. $\mathcal C$ 中的群对象构成一个范畴 $\mathsf {Grp}(\mathcal C)$.
+%\ref{universal-algebra} 节提到它等同于群的 Lawvere 理论 $\mathbb T_{\text{Grp}}$ 到 $\mathcal C$ 的保持有限积的函子的范畴.
+%进一步, 对于两个具有有限积的范畴 $\mathcal C,\mathcal D$, 以及保持有限积的函子 $f \colon \mathcal C \to \mathcal D$, 有对应的函子
+%$\mathsf {Grp}(\mathcal C) \to \mathsf {Grp}(\mathcal D)$.% $\mathsf {Ring}(\mathcal C) \to \mathsf {Ring}(\mathcal D)$.
 
-对于\topos{}间的几何态射 $f \colon \mathcal C \to \mathcal D$, 其逆像部分 (见定义 \ref{geometric-morphism}) $f^* \colon \mathcal D \to \mathcal C$ 保持有限极限, 故保持有限积, 从而诱导了函子 $\mathsf {Grp}(\mathcal D) \to \mathsf {Grp}(\mathcal C)$;
-这表示 $\mathsf {Grp}(-)$ 关于\topos{}是 ``反变'' 的.
+%对于\topos{}间的几何态射 $f \colon \mathcal C \to \mathcal D$, 其逆像部分 (见定义 \ref{geometric-morphism}) $f^* \colon \mathcal D \to \mathcal C$ 保持有限极限, 故保持有限积, 从而诱导了函子 $\mathsf {Grp}(\mathcal D) \to \mathsf {Grp}(\mathcal C)$;
+%这表示 $\mathsf {Grp}(-)$ 关于\topos{}是 ``反变'' 的.
 
-下面我们将构造一个\topos{} $\mathcal E$, 称为\emph{群的分类\topos{}}, 使得有自然的范畴等价
-$$
-\mathsf {Grp}(\mathcal C) \simeq \mathsf{Hom}(\mathcal C,\mathcal E).
-$$
+记 $\mathsf {Grp}_{\text{fp}}$ 为有限表现群的范畴.
+群的理论作为代数理论, 其语法范畴等价于 $\mathsf {Grp}_{\text{fp}}^{\op}$ (命题 \ref{context-dual-to-fin-gen-models}). 因此, \topos{} $\mathcal C$ 中的群等同于保持有限极限的函子 $\mathsf {Grp}_{\text{fp}}^{\op} \to \mathcal C$. 再应用预层范畴的性质, 我们得到如下结论.
 
+\begin{prop}
+	{(群的分类\topos{})}
+	\topos{} $\mathsf {Fun}(\mathsf {Grp}_{\text{fp}},\mathsf {Set})$ 是\emph{群的分类\topos{}}, 即对任何\topos{} $\mathcal C$ 有范畴等价
+	$$
+	\mathsf {Grp}(\mathcal C) \simeq \mathsf{Hom}_{\Top}(\mathcal C,\mathsf {Fun}(\mathsf {Grp}_{\text{fp}},\mathsf {Set})).
+	$$
+\end{prop}
+%\begin{proof}
+%	
+%	%这个道理与 Lawvere 理论 (例 \ref{}) 是类似的, 只是从 ``有限乘积理论'' 升级成了 ``有限极限理论''
+%\end{proof}
+
+\begin{remark}
+	{}
+	范畴 $\mathsf {Fun}(\mathsf {Grp}_{\text{fp}},\mathsf {Set})$ 的一个对象可理解为 ``由一个抽象的群 $\mathbb G$ 出发可定义的一个抽象的集合'', 例如
+	\begin{itemize}
+		\item 最简单的, ``$\{x\in\mathbb G\mid\top\}$'', 作为函子 $\mathsf {Grp}_{\text{fp}}\to \mathsf {Set}$ 它将一个有限表现群 $G$ 对应到 $G$ 的底层集合, 它是可表函子
+		$$
+		\operatorname{Hom}_{\mathsf {Grp}_{\text{fp}}}
+		(\langle x\rangle,-);
+		$$
+		\item ``$\{(x,y)\in \mathbb G^2\mid x^2=y^3\}$'', 作为函子 $\mathsf {Grp}_{\text{fp}}\to \mathsf {Set}$ 它将一个有限表现群 $G$ 对应到集合 $\{(x,y)\in G\mid x^2=y^3\}$, 它是可表函子
+		$$
+		\operatorname{Hom}_{\mathsf {Grp}_{\text{fp}}}
+		(\langle x,y\mid x^2=y^3\rangle,-);
+		$$
+		\item ``$\{x\in \mathbb G\mid \text{$x$ 为挠元}\}$'', 作为函子 $\mathsf {Grp}_{\text{fp}}\to \mathsf {Set}$ 它将一个有限表现群 $G$ 对应到它的挠元的集合, 这个函子不可表, 它是可表函子的余极限
+		$$
+		\operatorname{colim}_{n\in\mathbb{N}}\operatorname{Hom}_{\mathsf {Grp}_{\text{fp}}}(\langle x\mid x^n=1\rangle,-).
+		$$
+	\end{itemize}
+	%另外, 还有与注 \ref{remark-probe} 对偶的一种观点. 想象函子 $G\colon \mathsf {Grp}_{\text{fp}}\to \mathsf {Set}$ 为一个广义的 ``群'', 我们了解这个 ``群'' 仅有的手段就是把它映射到一个有限生成群里.
+	这个 ``抽象的群'' $\mathbb G$ 就是群的理论在\topos{}中的万有模型; 群的理论在任何\topos{} $\mathcal C$ 中的任何模型都是通过某个几何态射 $f\colon \mathcal C\to \mathsf {Fun}(\mathsf {Grp}_{\text{fp}},\mathsf {Set})$ 将 $\mathbb G$ 拉回得到.
+\end{remark}
 \subsection{环的分类\topos{}}
 
 \todo{单独讲一下和代数几何的关系}
+
+\subsection{向量空间的分类\topos{}}
+
+
 
 % 参考 Caramello 的 TST
 

@@ -1,18 +1,18 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}范畴论基本概念}{\reset@font\mtcSfont 10}{section.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 极限与余极限}{\reset@font\mtcSSfont 10}{section.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 指数对象与积闭范畴}{\reset@font\mtcSSfont 11}{tcb@cnt@remark.1.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子对象分类子}{\reset@font\mtcSSfont 14}{tcb@cnt@remark.1.1.11}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 幂对象}{\reset@font\mtcSSfont 19}{tcb@cnt@remark.1.1.25}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 俯范畴与局部积闭性}{\reset@font\mtcSSfont 20}{tcb@cnt@remark.1.1.27}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}意象{}}{\reset@font\mtcSfont 25}{section.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}更多范畴论结构}{\reset@font\mtcSfont 27}{section.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 0 和 1}{\reset@font\mtcSSfont 27}{section.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 单射与满射}{\reset@font\mtcSSfont 28}{tcb@cnt@remark.1.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 正则单射与满射, 等价关系}{\reset@font\mtcSSfont 29}{tcb@cnt@remark.1.3.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 像}{\reset@font\mtcSSfont 31}{tcb@cnt@remark.1.3.17}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 满--单分解}{\reset@font\mtcSSfont 33}{tcb@cnt@remark.1.3.23}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子终对象}{\reset@font\mtcSSfont 34}{tcb@cnt@remark.1.3.25}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子对象的格与 Heyting 代数}{\reset@font\mtcSSfont 36}{tcb@cnt@remark.1.3.31}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 自然数对象}{\reset@font\mtcSSfont 43}{tcb@cnt@remark.1.3.55}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 无交和}{\reset@font\mtcSSfont 43}{tcb@cnt@remark.1.3.59}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Boole 意象{}与选择公理}{\reset@font\mtcSSfont 46}{tcb@cnt@remark.1.3.62}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}范畴论基本概念}{\reset@font\mtcSfont 12}{section.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 极限与余极限}{\reset@font\mtcSSfont 12}{section.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 指数对象与积闭范畴}{\reset@font\mtcSSfont 13}{tcb@cnt@remark.1.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子对象分类子}{\reset@font\mtcSSfont 16}{tcb@cnt@remark.1.1.11}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 幂对象}{\reset@font\mtcSSfont 21}{tcb@cnt@remark.1.1.25}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 俯范畴与局部积闭性}{\reset@font\mtcSSfont 22}{tcb@cnt@remark.1.1.27}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}意象{}}{\reset@font\mtcSfont 27}{section.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}更多范畴论结构}{\reset@font\mtcSfont 29}{section.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 0 和 1}{\reset@font\mtcSSfont 29}{section.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 单射与满射}{\reset@font\mtcSSfont 30}{tcb@cnt@remark.1.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 正则单射与满射, 等价关系}{\reset@font\mtcSSfont 31}{tcb@cnt@remark.1.3.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 像}{\reset@font\mtcSSfont 33}{tcb@cnt@remark.1.3.17}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 满--单分解}{\reset@font\mtcSSfont 35}{tcb@cnt@remark.1.3.23}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子终对象}{\reset@font\mtcSSfont 36}{tcb@cnt@remark.1.3.25}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 子对象的格与 Heyting 代数}{\reset@font\mtcSSfont 38}{tcb@cnt@remark.1.3.31}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 自然数对象}{\reset@font\mtcSSfont 45}{tcb@cnt@remark.1.3.55}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode 无交和}{\reset@font\mtcSSfont 45}{tcb@cnt@remark.1.3.59}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Boole 意象{}与选择公理}{\reset@font\mtcSSfont 48}{tcb@cnt@remark.1.3.62}}

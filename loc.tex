@@ -291,6 +291,7 @@
 %\footnotetext{\url{https://planetmath.org/regularopenalgebra}}
 
 \begin{example}
+	[label={N-to-R-surjection}]
 	{(没有点的位象的例子: $\mathbb{N}$ 到 $\mathbb{R}$ 的满射的位象)}
 	我们定义 ``$\mathbb{N}$ 到 $\mathbb{R}$ 的满射的位象''. 考虑由元素 $U_{n,x}\,(n\in\mathbb{N},x\in\mathbb{R})$ 生成的\fm{} ($U_{n,x}$ 的直观是这个位象中 ``满足 $f(n)=x$ 的元素构成的子集''), 商掉如下关系:
 	\begin{itemize}
@@ -356,7 +357,7 @@
 \begin{remark}
 	{(子位象等同于商\fm{})}
 	由命题 \ref{sublocale-frame-equivalence-relation}, 子位象 $Y\to X$ 一一对应于 $\mathcal O(X)$ 上关于有限交与任意并封闭的等价关系 $\equiv_Y$, 即 ``商\fm{}''. 直观上, 若 $U,V\in\mathcal O(X)$ 满足 $U\equiv_Y V$, 则 $U,V$ 与子空间 $Y$ 的 ``交'' 相同.
-	对于 $U\in\mathcal O(X)$, $f^*U$
+	%对于 $U\in\mathcal O(X)$, $f^*U$
 \end{remark}
 
 
@@ -1042,7 +1043,7 @@ f_!(U\cap f^*(V)) = f_!(U)\cap V.
 
 Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是一个理论中的 ``命题的代数''; 在经典逻辑的情形, 它就是 \emph{Boole 代数} (定义 \ref{Boolean-algebra}). 根据 Stone 表示定理, Boole 代数在代数--几何对偶中对应 \emph{Stone 空间}.
 
-设 $\Sigma$ 是由若干命题符号 $p,q,r,\cdots$ 组成的符号表\footnote{在定义 \ref{def-first-order-signature} 的框架中, 我们可以说 $\Sigma$ 包括 $0$ 个类型, $0$ 个函数符号 (固然, 因为 $\Sigma$ 中没有类型), 以及若干个 $0$ 元关系符号 $p,q,r,\cdots$. 这样的理论也成为\emph{零阶理论} (zeroth-order theory).}.
+设 $\Sigma$ 是由若干命题符号 $p,q,r,\cdots$ 组成的符号表\footnote{在定义 \ref{def-first-order-signature} 的框架中, 我们可以说 $\Sigma$ 包括 $0$ 个类型, $0$ 个函数符号 (固然, 因为 $\Sigma$ 中没有类型), 以及若干个 $0$ 元关系符号 $p,q,r,\cdots$. 这样的理论也称为\emph{零阶理论} (zeroth-order theory).}.
 定义 $\mathsf {Sen}_\Sigma$ 为 $\Sigma$ 上由 $\lor$, $\land$, $\neg$, $\Rightarrow$, $\top$, $\bot$ 组成的公式\footnote{这里的公式也可以放在定义 \ref{formula} 的框架中. 注意, 在这个框架中没有等式 $p=q$, 因为 $p,q$ 不是某个类型的项 ($\Sigma$ 中没有类型), 而是 $0$ 元关系符号.}的集合, 包括 $(p\land q)\Rightarrow r$, $p\lor\neg p$, $p\Rightarrow\bot$ 等等.
 
 \newcommand{\LA}{\mathcal {LA}}
@@ -1226,13 +1227,14 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 参见定义 \ref{inference-rules}.
 
 \begin{definition}
+	[label={geometric-propositional-theory-Lindenbaum-algebra}]
 	{}
 	设 $\mathbb T$ 为 $\Sigma$ 上的几何理论. 定义 $\mathbb T$ 的 \emph{Lindenbaum 代数} $\LA_{\mathbb T}$ 为 $\Sigma$ 上\emph{几何公式}的 $\mathbb T$-\emph{可证等价类}构成的\fm{}. 当然, 其上的序关系 $\leq$ 是 $\vdash$.
 \end{definition}
 
 \begin{remark}
 	[label={frame-from-generators-relations}]
-	{(生成元与关系)}
+	{(生成元与关系定义的\fm{})}
 	上面的推理规则保证公式的可证等价类构成\fm{}; 它可视为由 $\Sigma$ 中的命题符号作为\emph{生成元}, $\mathbb T$ 中的公理作为\emph{关系}生成的\fm{}. 这里的关系可以是不等式 $p\leq q$, 也可以是等式 $p=q$ (两者可以互相转化, $p\leq q$ 等价于 $p\land q = p$, $p=q$ 等价于 $p\leq q,q\leq p$). 向一个理论 $\mathbb T$ 添加公理, 相当于添加\fm{}生成元之间的关系, 因此对应于取 $\LA_{\mathbb T}$ 的子位象 (定义 \ref{sublocales}).
 	
 	与 Lawvere 理论不同, \fm{}的结构包含了任意集合大小的运算, 一般而言这可能导致所有公式的 ``集合'' 过大而不构成集合. 但\fm{}的特殊性在于, 任何公式都 (在 $\mathbb T$-可证的意义下) 等同于 $\Sigma$ 中的符号先取有限交再任意并的形式, 正如点集拓扑学中由\emph{子基} (subbasis) 生成拓扑一样. 因此全体公式的 \emph{$\mathbb T$-可证等价类}确实构成一个集合.
@@ -1241,7 +1243,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 
 \begin{definition}
 	{(几何理论的模型)}
-	对\fm{} $A$, $\mathbb T$ 的 $A$-模型是一个函数 $f\colon \Sigma\to A$, 它自然诱导几何公式 (的等价类) 到 $A$ 的映射 $\bar f$, 使得 $\bar f(\mathbb T)\subset \{\top\}$. \emph{标准模型}是指取值于\fm{} $\{\top,\bot\}$ 的模型.
+	对\fm{} $A$, 定义 $\mathbb T$ 的 \emph{$A$-模型}为函数 $f\colon \Sigma\to A$, 它自然诱导几何公式 (的等价类) 到 $A$ 的映射 $\bar f$, 满足 $\mathbb T$ 的每条公理 ($\bar f$ 满足公理 $\phi\vdash\psi$ 的意思是 $\bar f(\phi)\leq\bar f(\psi)$). \emph{标准模型}是指取值于\fm{} $\{\top,\bot\}$ 的模型.
 \end{definition}
 
 与命题 \ref{model-boolealg-homomorphism} 完全类似, 有如下的事实.
@@ -1253,22 +1255,25 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 \begin{remark}
 	[label={classifying-locale}]
 	{(直观: 分类空间)}
-	$\LA_{\mathbb T}$ 对应的位象可想象为 ``$\mathbb T$ 的模型的空间'', 它是一种 ``分类空间''; 上述命题印证了这一直观: ``$\mathbb T$ 的模型的空间'' 中的点正是 $\mathbb T$ 的模型. 但是一个空间不能由它的点完全决定, 正如一个理论不能由它的 (标准) 模型完全决定.
+	$\LA_{\mathbb T}$ 对应的位象可想象为 ``$\mathbb T$ 的模型的空间'', 它是一种 ``分类空间''; 上述命题印证了这一直观: ``$\mathbb T$ 的模型的空间'' 中的点正是 $\mathbb T$ 的模型. 但是一个空间不能由它的点完全决定, 因此一个理论不能由它的 (标准) 模型完全决定. 一些理论没有标准模型 (见例 \ref{N-to-R-surjection}), 但它并不是\emph{不相容}的 (即由该理论的公理不能导出矛盾), 原因就在于此.
 \end{remark}
 
 \begin{example}
-	{(一些简单的几何理论)}
+	[label={examples-geometric-propositional-theories}]
+	{(一些简单的几何命题理论)}
 	\begin{itemize}
 		\item 记 $\mathbb T_{-1}$ 为零个命题符号与一条公理 $\top\vdash \bot$ 构成的理论, 这是一个\emph{不相容} (inconsistent) 的理论,
 		\[
 		\LA_{\mathbb T_{-1}} = \{\bot\},
 		\]
 		它对应空位象 $\varnothing$ (例 \ref{initial-locale}).
+		对任何非平凡\fm{} $A$, 理论 $\mathbb T_{-1}$ 没有 $A$-模型.
 		\item 记 $\mathbb T_0$ 为零个命题符号与零条公理构成的理论, 则
 		\[
 		\LA_{\mathbb T_0} = \{\bot \to \top\},
 		\]
 		它对应终位象 $1$ (例 \ref{terminal-locale}).
+		对任何\fm{} $A$, 理论 $\mathbb T_{0}$ 有且仅有一个 $A$-模型.
 		\item 记 $\mathbb T_1$ 为一个命题符号 $p$ 与零条公理构成的理论, 则
 		\[
 		\LA_{\mathbb T_1} =
@@ -1312,6 +1317,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 \end{example}
 
 \begin{prop}
+	[label={canonical-geometric-propositional-theory-of-locale}]
 	{}
 	对任意位象 $X$, 都存在一个几何理论 $\mathbb T_X$ 以 $\mathcal O(X)$ 为 Lindenbaum 代数.
 \end{prop}
@@ -1332,6 +1338,7 @@ Lindenbaum 代数是用代数方法研究逻辑的工具. 粗略地说, 它是�
 \end{remark}
 
 \begin{example}
+	[label={locale-of-real-numbers}]
 	{(实数位象)}
 	实数位象可由如下几何理论 $\mathbb T_{\mathbb{R}}$ 给出: 其中包含命题符号 $P_{a,b}\,(a,b\in \mathbb{Q})$, 直观为 ``某实数属于开区间 $(a,b)$'', 且有如下的公理.
 	\begin{itemize}

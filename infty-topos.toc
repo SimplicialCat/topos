@@ -1,21 +1,29 @@
 \contentsline {chapter}{\numberline {0}前言}{5}{chapter.0}%
-\contentsline {chapter}{\numberline {1}$\infty $-范畴的形式语言}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}$\infty $-范畴中的结构与性质}{7}{section.1.1}%
-\contentsline {subsection}{连通性与截断性}{7}{section.1.1}%
-\contentsline {subsection}{东西, 结构, 性质}{8}{tcb@cnt@remark.1.1.3}%
-\contentsline {chapter}{\numberline {2}$\infty $-意象{}的范畴论结构}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Grothendieck 拓扑与层}{10}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Giraud 定理}{10}{section.2.2}%
-\contentsline {chapter}{\numberline {3}$\infty $-意象{}与上同调}{11}{chapter.3}%
-\contentsline {subsection}{例}{11}{tcb@cnt@remark.3.0.1}%
-\contentsline {chapter}{\numberline {4}$\infty $-意象{}与 $\infty $-丛}{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5}凝集{}意象{}}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}凝集{}的动机, 基本概念}{15}{section.5.1}%
-\contentsline {chapter}{\numberline {A}$\infty $-范畴的模型}{19}{appendix.A}%
-\contentsline {section}{\numberline {A.1}$\infty $-范畴: 单纯集模型}{19}{section.A.1}%
-\contentsline {subsection}{同伦}{23}{tcb@cnt@remark.A.1.12}%
-\contentsline {subsection}{单纯范畴}{24}{tcb@cnt@remark.A.1.15}%
-\contentsline {subsection}{伴随}{27}{tcb@cnt@remark.A.1.25}%
-\contentsline {subsection}{极限与余极限}{28}{tcb@cnt@remark.A.1.27}%
-\contentsline {subsection}{$\operatorname {Hom}$ 函子, 预层与 $\infty $-米田引理}{31}{tcb@cnt@remark.A.1.34}%
-\contentsline {section}{\numberline {A.2}$n$-范畴}{32}{section.A.2}%
+\contentsline {chapter}{\numberline {1}$\infty $-范畴的语言}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.0}同伦类型论基础}{8}{section.1.0}%
+\contentsline {subsection}{集合, 逻辑与截断性}{11}{tcb@cnt@remark.1.0.12}%
+\contentsline {section}{\numberline {1.1}基本概念}{12}{section.1.1}%
+\contentsline {section}{\numberline {1.2}$\infty $-范畴中的结构与性质}{13}{section.1.2}%
+\contentsline {subsection}{连通性与截断性}{13}{section.1.2}%
+\contentsline {subsection}{$n$-范畴}{14}{tcb@cnt@remark.1.2.3}%
+\contentsline {subsection}{东西, 结构, 性质}{15}{tcb@cnt@remark.1.2.6}%
+\contentsline {subsection}{伴随}{15}{tcb@cnt@remark.1.2.6}%
+\contentsline {subsection}{极限与余极限}{16}{tcb@cnt@remark.1.2.8}%
+\contentsline {subsection}{$\operatorname {Hom}$ 函子, 预层与 $\infty $-米田引理}{19}{tcb@cnt@remark.1.2.15}%
+\contentsline {chapter}{\numberline {2}$\infty $-层与 Grothendieck $\infty $-意象{}}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Grothendieck 拓扑与层}{21}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Giraud 定理}{22}{section.2.2}%
+\contentsline {chapter}{\numberline {3}$\infty $-意象{}与上同调}{23}{chapter.3}%
+\contentsline {subsection}{空间的奇异上同调}{23}{tcb@cnt@remark.3.0.1}%
+\contentsline {subsection}{等变上同调}{23}{tcb@cnt@remark.3.0.1}%
+\contentsline {subsection}{群上同调}{23}{tcb@cnt@remark.3.0.1}%
+\contentsline {subsection}{层上同调}{23}{tcb@cnt@remark.3.0.1}%
+\contentsline {chapter}{\numberline {4}$\infty $-意象{}与 $\infty $-丛}{25}{chapter.4}%
+\contentsline {chapter}{\numberline {5}凝集{}意象{}}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}凝集{}的动机, 基本概念}{27}{section.5.1}%
+\contentsline {chapter}{\numberline {A}$\infty $-范畴论的补充知识}{31}{appendix.A}%
+\contentsline {section}{\numberline {A.1}$\infty $-范畴的单纯集模型}{31}{section.A.1}%
+\contentsline {subsection}{同伦}{35}{tcb@cnt@remark.A.1.12}%
+\contentsline {subsection}{单纯范畴}{36}{tcb@cnt@remark.A.1.15}%
+\contentsline {section}{\numberline {A.2}Ind 完备化}{39}{section.A.2}%
+\contentsline {section}{\numberline {A.3}可表现 $\infty $-范畴}{39}{section.A.3}%

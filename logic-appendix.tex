@@ -1,4 +1,4 @@
-\chapter{形式逻辑基础}
+\chapter{形式逻辑和范畴逻辑基础}
 
 \label{logic-appendix}
 
@@ -585,10 +585,11 @@ $$
 
 \section{一阶逻辑的范畴语义}
 
-\subsection{一阶语言在范畴中的解释}
-
 一阶语言可在具有合适结构的范畴中获得\emph{解释} (interpretation), 又称\emph{范畴语义} (categorical semantics).
 由此我们可以谈论这种语言上的理论在范畴中的模型.
+人们最常谈论的 ``模型'' 是集合范畴 $\mathsf{Set}$ 中的模型, 例如, 不加修饰的 ``群'' 默认就是指  $\mathsf{Set}$ 中的群. 然而在不同范畴中获得解释的潜力往往是一个理论的意义和魅力所在.
+
+\subsection{一阶语言在范畴中的解释}
 
 \begin{definition}
 	[label={sigma-structures-in-category}]
@@ -598,9 +599,9 @@ $$
 	\begin{itemize}
 		\item 对 $\Sigma$ 中的每个类型 $A$, 指定 $\mathcal C$ 的对象 $MA$;
 		\item 对 $\Sigma$ 中的每个函数符号 $f\colon A_1\cdots A_n \to B$, 指定 $\mathcal C$ 的态射
-		$Mf \colon MA_1\times\cdots\times MA_n \to MB$;
+		$Mf \colon MA_1\times\cdots\times MA_n \to MB$ (特别地, $n=0$ 时, 对每个常数符号 $f\in B$, 指定一个整体元素 $Mf\colon 1\to B$);
 		\item 对 $\Sigma$ 中的每个关系符号 $R \hookrightarrow A_1\cdots A_n$, 指定 $\mathcal C$ 中的子对象
-		$MR \hookrightarrow MA_1\times\cdots\times MA_n$.
+		$MR \hookrightarrow MA_1\times\cdots\times MA_n$ (特别地, $n=0$ 时, 对每个原子命题 $p$, 指定一个子终对象 $Mp\hookrightarrow 1$).
 	\end{itemize}
 	
 	范畴 $\mathcal C$ 中两个 $\Sigma$-结构之间的态射 $h\colon M\to N$ 是一族态射 $h_A \colon MA \to NA$, 满足合适的交换图. 所有 $\Sigma$-结构构成一个范畴 $\Sigma\text{-}\mathsf{Str}(\mathcal C)$.
@@ -771,17 +772,19 @@ $$
 \subsection{一阶理论在范畴中的模型}
 
 \begin{definition}
+	[label={satisfaction-of-sequent}]
 	{($\Sigma$-结构对相继式的满足)}
 	设 $M$ 是范畴 $\mathcal C$ 上的 $\Sigma$-结构, $\phi\vdash_{\vec x}\psi$ 是一个相继式.
 	称 $M$ \emph{满足} $\phi\vdash_{\vec x}\psi$ (记作 $M\models(\phi\vdash_{\vec x}\psi)$) 是指 $\interpretation{\vec x.\phi}_M \leq \interpretation{\vec x.\psi}_M$.
 \end{definition}
 
 \begin{definition}
+	[label={model-first-order-theory-in-category}]
 	{(一阶理论在范畴中的模型)}
 	% TST p.37
 	设 $\mathbb T$ 是符号表 $\Sigma$ 上的一阶理论, $M$ 是范畴 $\mathcal C$ 上的 $\Sigma$-结构,
 	且 $\mathbb T$ 的公理在 $\mathcal C$ 中可解释.
-	若 $M$ 满足 $\mathbb T$ 的所有公理, 则称 $M$ 为 $\mathbb T$ 在 $\mathcal C$ 中的一个\emph{模型} (model).
+	若 $M$ 满足 $\mathbb T$ 的所有公理 (定义 \ref{satisfaction-of-sequent}), 则称 $M$ 为 $\mathbb T$ 在 $\mathcal C$ 中的一个\emph{模型} (model).
 	记 $\mathbb T$ 的模型在 $\Sigma\text{-}\mathsf{Str}(\mathcal C)$ 中构成的满子范畴为 $\mathbb T\text{-Mod}(\mathcal C)$.
 \end{definition}
 
@@ -863,10 +866,13 @@ $$
 一种理论 (如前面提到的\regular{}, \coherent{}, 几何理论) 与一种有特定结构的范畴相对应; 这些范畴, 其间保持特定结构的函子, 以及这些函子之间的自然变换构成一个 $2$-范畴. 那么这个 $2$-范畴包含了这一种理论的全部信息. 于是我们抽象出下面的概念.
 
 \begin{definition}
+	[label={definition-doctrine}]
 	{(教条)}
 	定义一个\emph{教条}\footnotemark{} (doctrine) 为一个 $2$-范畴. 称该 $2$-范畴的对象为\emph{理论}, 称两个理论 $C_1,C_2$ 之间的态射 $C_1\to C_2$ 为理论 $C_1$ 在 $C_2$ 中的\emph{模型}. 理论 $C_1$ 在 $C_2$ 中的\emph{模型的范畴}即为范畴 $\operatorname{Hom}(C_1,C_2)$.
 \end{definition}
 \footnotetext{``教条'' 可能不是最好的翻译, 但由于本书其它地方不会使用这一概念, 此处姑且用之.}
+
+这个定义在数学上没有什么内容, 它只是反映出我们的一种观点.
 
 \begin{remark}
 	{(生成元--关系与无坐标表示)}
@@ -875,7 +881,12 @@ $$
 
 \begin{example}
 	{(有限乘积范畴的教条)}
-	具有有限乘积的范畴构成一个教条, 其中态射为保持有限乘积的函子. 群的理论 $\mathbb T_{\text{Grp}}$, 以及任何一个 Lawvere 理论, 都是这个教条的对象. 群的理论在另一具有有限乘积的范畴 $\mathcal C$ 中的一个模型 (也即 $\mathcal C$ 中的一个群) 正是一个态射 $\mathbb T_{\text{Grp}} \to \mathcal C$.
+	具有有限乘积的范畴构成一个教条, 其中态射为保持有限乘积的函子. 群的理论 $\mathbb T_{\text{Grp}}$, 以及任何一个 Lawvere 理论 (作为语法范畴), 都是这个教条的对象. 群的理论在另一具有有限乘积的范畴 $\mathcal C$ 中的一个模型 (也即 $\mathcal C$ 中的一个群) 正是一个态射 $\mathbb T_{\text{Grp}} \to \mathcal C$.
+\end{example}
+
+\begin{example}
+	{(有限极限范畴的教条)}
+	具有有限极限的范畴构成一个教条, 其中态射为保持有限极限的函子. 本质代数理论 (定义 \ref{kinds-of-theories}) 的语法范畴 (定义 \ref{first-order-theory-syntactic-category}) 是这个教条的对象.
 \end{example}
 
 类似地, \regular{}范畴, 几何范畴等等与几种逻辑相关的几种范畴都构成教条. %对任何 ``提纲'' (定义 \ref{sketches}) 

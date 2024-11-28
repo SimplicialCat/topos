@@ -2362,11 +2362,14 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">FHC</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">HTTP</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">DCCT</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">HTT</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">HTT</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">HTT</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">hottbook</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">riehl2023typetheorysyntheticinftycategories</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">hottbook</bcf:citekey>
     <bcf:citekey order="6" intorder="1">HTT</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">DCCT</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">HTT</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">HTT</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

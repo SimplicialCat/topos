@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  23 AUG 2024 18:14
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.3)  17 NOV 2024 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1088,83 +1088,83 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
  (./infty-topos.aux)
 \openout1 = `infty-topos.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 149.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 149.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 149.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 149.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 149.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 149.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 149.
-LaTeX Font Info:    Redeclaring math accent \check on input line 149.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 149.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 149.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 149.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 149.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 149.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 155.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 155.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 155.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 155.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 155.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 155.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 155.
+LaTeX Font Info:    Redeclaring math accent \check on input line 155.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 155.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 155.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 155.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 155.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 149.
+(Font)              `operators' in the math version `normal' on input line 155.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 149.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 155.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 149.
+(Font)              `operators' in the math version `bold' on input line 155.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 149.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 155.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 149.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 149.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 149.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 149.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 149.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 155.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 149.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 149.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 149.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 155.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 149.
-Package hyperref Info: Link coloring OFF on input line 149.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 155.
+Package hyperref Info: Link coloring OFF on input line 155.
  (./infty-topos.out) (./infty-topos.out)
 \@outlinefile=\write6
 \openout6 = `infty-topos.out'.
@@ -1218,8 +1218,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'infty-topos.bbl' found.
  (./infty-topos.bbl)
-Package biblatex Info: Reference section=0 on input line 149.
-Package biblatex Info: Reference segment=0 on input line 149.
+Package biblatex Info: Reference section=0 on input line 155.
+Package biblatex Info: Reference segment=0 on input line 155.
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
@@ -1231,7 +1231,7 @@ Package minitoc(hints) Warning: W0099
 (minitoc(hints))                with the minitoc package.
 
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM infty-topos.toc on input line 151.
+(minitoc)             PREPARING MINITOCS FROM infty-topos.toc on input line 157.
 Package minitoc Info: I0033
 (minitoc)             Writing infty-topos.mtc1.
 \openout5 = `infty-topos.mtc1'.
@@ -1260,51 +1260,51 @@ Package minitoc Info: I0033
 (minitoc)             Writing infty-topos.mtc7.
 \openout5 = `infty-topos.mtc7'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 153.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 159.
 (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 153.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 159.
  (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 153.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 159.
  (d:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <22.08249> not available
-(Font)              size <20.74> substituted on input line 153.
+(Font)              size <20.74> substituted on input line 159.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 153.
+(Font)              size <17.28> substituted on input line 159.
 
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 153.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 159.
 (d:/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <22.08249> not available
-(Font)              size <20.74> substituted on input line 153.
+(Font)              size <20.74> substituted on input line 159.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 153.
+(Font)              size <17.28> substituted on input line 159.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <18.06749> not available
-(Font)              size <17.28> substituted on input line 153.
+(Font)              size <17.28> substituted on input line 159.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 153.
+(Font)              size <14.4> substituted on input line 159.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <18.06749> not available
-(Font)              size <17.28> substituted on input line 153.
+(Font)              size <17.28> substituted on input line 159.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 153.
+(Font)              size <14.4> substituted on input line 159.
 
 [1
 
@@ -1387,19 +1387,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
+[7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+Underfull \vbox (badness 2269) has occurred while \output is active []
+
+ [11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9.
+(hyperref)                removing `math shift' on input line 282.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 9.
+(hyperref)                removing `\infty' on input line 282.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9.
+(hyperref)                removing `math shift' on input line 282.
 
-[7]) (./infty-cat.tex [8]
+
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \vbox (badness 4805) has occurred while \output is active []
+
+ [16] [17]
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
+(Font)              size <8> substituted on input line 639.
+
+
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <7.52812> not available
+(Font)              size <8> substituted on input line 639.
+
+
+Underfull \vbox (badness 7064) has occurred while \output is active []
+
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+
+ []
+
+[19]) (./infty-cat.tex [20]
 Chapter 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1414,27 +1469,27 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\infty' on input line 1.
 
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
 
 \openout5 = `infty-topos.mtc'.
 
 \openout5 = `infty-topos.mtc'.
 
-(./infty-topos.mtc3) [9
+(./infty-topos.mtc3)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]) (./infty-coh.tex [10]
+ [21
+
+]) (./infty-coh.tex [22]
 Chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1448,9 +1503,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-) (./infty-bun.tex [11
+) (./infty-bun.tex [23
 
-] [12
+] [24
 
 ]
 Chapter 4.
@@ -1478,7 +1533,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-) (./infty-cohesion.tex [13] [14
+) (./infty-cohesion.tex [25] [26
 
 ]
 Chapter 5.
@@ -1501,11 +1556,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
 \openout5 = `infty-topos.mtc'.
 
-(./infty-topos.mtc6) [15]
+(./infty-topos.mtc6) [27]
 
-LaTeX Warning: Reference `cartsp-site' on page 16 undefined on input line 78.
+LaTeX Warning: Reference `cartsp-site' on page 28 undefined on input line 78.
 
-[16]) (./infty-cat-appendix.tex [17] [18
+[28]) (./infty-cat-appendix.tex [29] [30
 
 ]
 附录 A.
@@ -1559,22 +1614,14 @@ Package fontspec Info: Font family 'IPAexMincho(0)' created for font
 
 Underfull \vbox (badness 1389) has occurred while \output is active []
 
- [19]
+ [31]
 
-LaTeX Warning: Reference `sset-geometric-realization' on page 20 undefined on input line 74.
+LaTeX Warning: Reference `sset-geometric-realization' on page 32 undefined on input line 74.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 91.
-
-
-LaTeX Font Warning: Font shape `U/stmry/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 91.
-
+ [32]
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -1598,59 +1645,37 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-[21]
+ [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 230.
+ [34]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 229.
  (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [23] [24]
+) [35] [36]
 
-LaTeX Warning: Reference `Gpd-Cat-adjunction' on page 25 undefined on input line 309.
+LaTeX Warning: Reference `Gpd-Cat-adjunction' on page 37 undefined on input line 308.
 
-[25]
+[37]
 
-LaTeX Warning: Reference `nerve-and-realization' on page 26 undefined on input line 370.
+LaTeX Warning: Reference `nerve-and-realization' on page 38 undefined on input line 369.
 
-[26]
-
-LaTeX Warning: Reference `terminal-object-2-categorical' on page 27 undefined on input line 480.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
-Underfull \vbox (badness 5431) has occurred while \output is active []
-
- [28] [29]
-Underfull \vbox (badness 7064) has occurred while \output is active []
-
- [30]
-Underfull \hbox (badness 10000) in paragraph at lines 722--722
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 722--722
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
-
- []
-
-[31]
+[38]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 742.
+(hyperref)                removing `math shift' on input line 433.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 742.
+(hyperref)                removing `\infty' on input line 433.
 
-) [32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 433.
+
+) [39] [40
+
+]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the infty-topos.maf file.
@@ -1662,9 +1687,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the infty-topos.log file.
 
-[33
-
-] (./infty-topos.aux)
+[41] (./infty-topos.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.34248pt have occurred.
@@ -1673,18 +1696,18 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `infty-topos.out' has not changed.
-(rerunfilecheck)             Checksum: 4F318E30DC6DBFCC814A2F66D424629B;1374.
+(rerunfilecheck)             Checksum: A3B4579A0CEB2675781477A0B7CFCC41;1754.
 Package logreq Info: Writing requests to 'infty-topos.run.xml'.
 \openout1 = `infty-topos.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42447 strings out of 476675
- 910430 string characters out of 5807327
- 1889290 words of memory out of 5000000
- 61751 multiletter control sequences out of 15000+600000
- 540101 words of font info for 225 fonts, out of 8000000 for 9000
+ 42444 strings out of 476675
+ 910169 string characters out of 5807327
+ 1888290 words of memory out of 5000000
+ 61748 multiletter control sequences out of 15000+600000
+ 539629 words of font info for 223 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 100i,21n,104p,739b,4780s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,21n,104p,739b,4799s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on infty-topos.pdf (33 pages).
+Output written on infty-topos.pdf (41 pages).

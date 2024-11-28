@@ -72,6 +72,43 @@
       \field{title}{Higher Topos Theory}
       \field{year}{2009}
     \endentry
+    \entry{riehl2023typetheorysyntheticinftycategories}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=45a94503b2898b54c4e429a46414d3ad}{%
+           family={Riehl},
+           familyi={R\bibinitperiod},
+           given={Emily},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a49cc4742950659ae680e1c40f2295a9}{%
+           family={Shulman},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb6203c6abcbbc35b688a8a27744a263}
+      \strng{fullhash}{bb6203c6abcbbc35b688a8a27744a263}
+      \strng{bibnamehash}{bb6203c6abcbbc35b688a8a27744a263}
+      \strng{authorbibnamehash}{bb6203c6abcbbc35b688a8a27744a263}
+      \strng{authornamehash}{bb6203c6abcbbc35b688a8a27744a263}
+      \strng{authorfullhash}{bb6203c6abcbbc35b688a8a27744a263}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.CT}
+      \field{eprinttype}{arXiv}
+      \field{title}{A type theory for synthetic $\infty$-categories}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 1705.07442
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1705.07442
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1705.07442
+      \endverb
+    \endentry
     \entry{DCCT}{book}{}
       \name{author}{1}{}{%
         {{hash=22bb4311878b35b2db2b84b4f2ade791}{%
@@ -89,7 +126,6 @@
       \strng{authorbibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
       \strng{authornamehash}{22bb4311878b35b2db2b84b4f2ade791}
       \strng{authorfullhash}{22bb4311878b35b2db2b84b4f2ade791}
-      \field{extraname}{1}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -102,33 +138,32 @@
       \verb https://ncatlab.org/schreiber/files/dcct170811.pdf
       \endverb
     \endentry
-    \entry{HTTP}{misc}{}
+    \entry{hottbook}{book}{}
       \name{author}{1}{}{%
-        {{hash=22bb4311878b35b2db2b84b4f2ade791}{%
-           family={Schreiber},
-           familyi={S\bibinitperiod},
-           given={Urs},
-           giveni={U\bibinitperiod}}}%
+        {{hash=eb3cec164c1f4cb5cd7394d2677e2a1c}{%
+           family={{Univalent Foundations Program}},
+           familyi={U\bibinitperiod},
+           given={The},
+           giveni={T\bibinitperiod}}}%
       }
-      \strng{namehash}{22bb4311878b35b2db2b84b4f2ade791}
-      \strng{fullhash}{22bb4311878b35b2db2b84b4f2ade791}
-      \strng{bibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
-      \strng{authorbibnamehash}{22bb4311878b35b2db2b84b4f2ade791}
-      \strng{authornamehash}{22bb4311878b35b2db2b84b4f2ade791}
-      \strng{authorfullhash}{22bb4311878b35b2db2b84b4f2ade791}
-      \field{extraname}{2}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \list{location}{1}{%
+        {Institute for Advanced Study}%
+      }
+      \list{publisher}{1}{%
+        {\url{https://homotopytypetheory.org/book}}%
+      }
+      \strng{namehash}{eb3cec164c1f4cb5cd7394d2677e2a1c}
+      \strng{fullhash}{eb3cec164c1f4cb5cd7394d2677e2a1c}
+      \strng{bibnamehash}{eb3cec164c1f4cb5cd7394d2677e2a1c}
+      \strng{authorbibnamehash}{eb3cec164c1f4cb5cd7394d2677e2a1c}
+      \strng{authornamehash}{eb3cec164c1f4cb5cd7394d2677e2a1c}
+      \strng{authorfullhash}{eb3cec164c1f4cb5cd7394d2677e2a1c}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Higher Topos Theory in Physics}
-      \field{year}{2023}
-      \verb{urlraw}
-      \verb https://ncatlab.org/schreiber/show/Higher+Topos+Theory+in+Physics
-      \endverb
-      \verb{url}
-      \verb https://ncatlab.org/schreiber/show/Higher+Topos+Theory+in+Physics
-      \endverb
+      \field{title}{Homotopy Type Theory: Univalent Foundations of Mathematics}
+      \field{year}{2013}
     \endentry
   \enddatalist
 \endrefsection

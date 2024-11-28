@@ -1,6 +1,6 @@
-\chapter{$\infty$-范畴的模型}
+\chapter{$\infty$-范畴论的补充知识}
 
-\section{$\infty$-范畴: 单纯集模型}
+\section{$\infty$-范畴的单纯集模型}
 
 粗略地说, 一个 $\infty$-范畴含有如下成分: 对象, 对象之间的态射, 态射之间的 $2$-态射, $\cdots$, $k$-态射之间的 $(k+1)$-态射, 以至于无穷. 我们使用的 $\infty$-范畴又称 $(\infty ,1)$-范畴, 意为对所有 $k>1$, $k$-态射都可逆.
 
@@ -188,7 +188,6 @@
 
 \subsection{同伦}
 
-\newcommand{\Ho}{\text{Ho}}
 
 \begin{propdef}
 	{(态射的同伦, 同伦范畴)}
@@ -387,8 +386,7 @@ $\infty$-范畴的另一种模型是用单纯范畴描述的, 其优点包括
 	纤维性单纯范畴的融贯脉是 $\infty$-范畴.
 \end{prop}
 
-\newcommand{\infCatinfcat}{{\infty\mathcal {C}\hspace{-1pt}at}}
-\newcommand{\infGpdinfcat}{{\infty\mathcal {G}\hspace{-1pt}pd}}
+
 \begin{definition}
 	{($\infty$-范畴的 $\infty$-范畴)}
 	定义 $\infty$-范畴的 $\infty$-范畴, 以及 $\infty$-群胚的 $\infty$-范畴为
@@ -409,386 +407,39 @@ $\infty$-范畴的另一种模型是用单纯范畴描述的, 其优点包括
 %	$$
 %\end{definition}
 
-\subsection{伴随}
-
-%在定义极限和余极限之前, 我们需要指出 $\infty$-范畴之间的伴随. 注意以下陈述是模型无关的.
-
-\begin{definition}
-	{($\infty$-范畴之间的伴随)}
-	$\infty$-范畴之间的一对伴随 \begin{tikzcd}[ampersand replacement=\&]
-		{\mathcal D} \& {\mathcal C}
-		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
-		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
-		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
-	\end{tikzcd}
-	是如下资料,
-	\begin{itemize}
-		\item 两个 $\infty$-范畴 $\mathcal C,\mathcal D$,
-		\item 两个函子 $F\colon \mathcal C\to \mathcal D$ (称为\emph{左伴随}), $G\colon \mathcal D\to \mathcal C$ (称为\emph{右伴随}),
-		\item 两个自然变换 $\eta\colon \operatorname{id}_{\mathcal C}\to GF$ (称为\emph{单位}), $\varepsilon\colon FG\to\operatorname{id}_{\mathcal D}$ (称为\emph{余单位});
-	\end{itemize}
-	满足如下 $2$-态射的关系,
-	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
-		{\mathcal C} \&\& {\mathcal C} \\
-		\& {\mathcal D} \&\& {\mathcal D}
-		\arrow["F"', from=1-1, to=2-2]
-		\arrow["G"{description}, from=2-2, to=1-3]
-		\arrow["F", from=1-3, to=2-4]
-		\arrow[""{name=0, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal C}}", from=1-1, to=1-3]
-		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal D}}"', from=2-2, to=2-4]
-		\arrow["\eta"', shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=2-2]
-		\arrow["\varepsilon", shorten <=3pt, shorten >=3pt, Rightarrow, from=1-3, to=1]
-	\end{tikzcd}\hspace{-1em}\sim \operatorname{id}_F,
-	\begin{tikzcd}[ampersand replacement=\&,column sep=1.5em]
-		\& {\mathcal C} \&\& {\mathcal C} \\
-		{\mathcal D} \&\& {\mathcal D}
-		\arrow["G", from=2-1, to=1-2]
-		\arrow["F"{description}, from=1-2, to=2-3]
-		\arrow["G"', from=2-3, to=1-4]
-		\arrow[""{name=0, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal D}}"', from=2-1, to=2-3]
-		\arrow[""{name=1, anchor=center, inner sep=0}, "{\operatorname{id}_{\mathcal C}}", from=1-2, to=1-4]
-		\arrow["\varepsilon", shorten <=3pt, shorten >=3pt, Rightarrow, from=1-2, to=0]
-		\arrow["\eta"', shorten <=3pt, shorten >=3pt, Rightarrow, from=1, to=2-3]
-	\end{tikzcd}\hspace{-1em}\sim\operatorname{id}_{G},\]
-	其中第一个式子中 $\sim$ 表示 $\operatorname{id}_F$ 是 $\infty$-范畴 $\mathsf {Fun}(\mathcal C,\mathcal D)$ 中两个态射 $F\to FGF$, $FGF\to F$ 的一个复合.
-	
-	记 $\Ho_2(\infCatinfcat)$ 为 $\infCatinfcat$ 的\emph{同伦 $2$-范畴}, 其中 $\operatorname{Hom}_{\Ho_2(\infCatinfcat)}(\mathcal C,\mathcal D) := \Ho{}(\operatorname{Fun}(\mathcal C,\mathcal D))$. 由定义, $\infty$-范畴之间的伴随等同于 $\Ho_2(\infCatinfcat)$ 中的伴随.
-\end{definition}
-
-\begin{prop}
-	{($\infty$-范畴之间的伴随与 $\operatorname{Hom}$-函子)}
-	设 \begin{tikzcd}[ampersand replacement=\&]
-		{\mathcal D} \& {\mathcal C}
-		\arrow[""{name=0, anchor=center, inner sep=0}, "F"', shift right=2, from=1-2, to=1-1]
-		\arrow[""{name=1, anchor=center, inner sep=0}, "G"', shift right=2, from=1-1, to=1-2]
-		\arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
-	\end{tikzcd} 为 $\infty$-范畴之间的伴随, 则对任意对象 $C\in\mathcal C$, $D\in\mathcal D$, 函子
-	\[
-	\operatorname{Hom}_{\mathcal D}(F(C),D) \overset{G}{\longrightarrow} \operatorname{Hom}_{\mathcal C}(GF(C),G(D))
-	\overset{\eta_C^*}{\longrightarrow}
-	\operatorname{Hom}_{\mathcal C}(C,G(D))
-	\]
-	为\emph{同伦等价}.
-\end{prop}
-
-\subsection{极限与余极限}
-
-\begin{definition}
-	{(终对象, 始对象)}
-	设 $\mathcal X$ 为 $\infty$-范畴, $x$ 为 $\mathcal X$ 中的对象. 若对任意对象 $y$, $\operatorname{Hom}_{\mathcal X}(y,x)$ 都可缩, 则称 $x$ 为 $\mathcal X$ 的一个\emph{终对象}. 对偶地定义\emph{始对象}.
-	
-	等价的定义是, $\mathcal X$ 的终对象是 (唯一的) 函子 $\mathcal X\to 1$ 的\emph{右伴随} $1\to\mathcal X$, $\mathcal X$ 的始对象是函子 $\mathcal X\to 1$ 的\emph{左伴随} $1\to\mathcal X$; 这告诉我们终对象和始对象的概念实际上存在于 $\infty$-范畴构成的 \emph{$2$-范畴}中, 见例 \ref{terminal-object-2-categorical}.
-\end{definition}
-
-\begin{definition}
-	{(俯范畴, 仰范畴)}
-	设 $\mathcal X$ 为 $\infty$-范畴, $x$ 为 $\mathcal X$ 中的对象. 定义\emph{俯范畴} $\mathcal X/x$ 为如下的拉回:
-	% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXERlbHRhXjAiXSxbMSwxLCJYIl0sWzEsMCwiXFxtYXRoc2Yge0Z1bn0oXFxEZWx0YV4xLFgpIl0sWzAsMCwiWC94Il0sWzAsMSwieCIsMl0sWzIsMSwiMSJdLFszLDBdLFszLDJdXQ==
-	\[\begin{tikzcd}[ampersand replacement=\&,column sep=1em,row sep=2em]
-		{{\mathcal X}/x} \& {\mathsf {Fun}(\Delta^1,{\mathcal X})\hspace{-1em}} \\
-		{\Delta^0} \& {\mathcal X}
-		\arrow["x"', from=2-1, to=2-2]
-		\arrow["t", from=1-2, to=2-2]
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=1-1, to=1-2]
-	\end{tikzcd}\]
-	其中 $t\colon \mathsf {Fun}(\Delta^1,X)\to X$ 将 ${\mathcal X}$ 的态射对应到其终点.
-\end{definition}
-
-由定义, 俯范畴 $\mathcal {\mathcal X}/x$ 的对象是 ${\mathcal X}$ 中以 $x$ 为终点的箭头.
-可以说明 $\operatorname{id}_x$ 是 ${\mathcal X}/x$ 的终对象.
-
-\begin{definition}
-	{(极限, 余极限)}
-	设 $\mathcal C$ 为 $\infty$-范畴, $I$ 为单纯集 (称为\emph{指标集}或\emph{指标范畴}), $F\colon I\to\mathcal C$ 为单纯集映射 (称为 $\mathcal C$ 中的一个\emph{图表}).
-	类似于普通范畴中极限的定义, 我们可以构造一个 (广义的) ``俯范畴'' $\mathcal C_{/F}$, 其对象为 $\mathcal C$ 的对象到 $F$ 的锥. 具体地, $\mathcal C_{/F}$ 为如下拉回.
-	\[\begin{tikzcd}[ampersand replacement=\&]
-		{\mathcal C_{/F}} \& {({\mathcal C}^I)_{/F}} \\
-		{\mathcal C} \& {{\mathcal C}^I}
-		\arrow["{\text{常值}}"', from=2-1, to=2-2]
-		\arrow[from=1-2, to=2-2]
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=1-1, to=1-2]
-	\end{tikzcd}\]
-	其中 $\text{``常值''}\colon \mathcal C\simeq\mathcal C^{\Delta^0}\to \mathcal C^I$ 是 $I\to \Delta^0$ 的拉回, 它将 $\mathcal C$ 的对象 $x\colon \Delta^0\to\mathcal C$ 对应到 $x$ 处的 ``常值图表'' $I\to\Delta^0\to\mathcal C$, 就像普通范畴的情形一样.
-	定义图 $F$ 的\emph{极限}为 ``俯范畴'' $\mathcal C_{/F}$ 的终对象; 对偶地, 定义 $F$ 的\emph{余极限}为 ``仰范畴'' $\mathcal C_{F/}$ 的始对象.
-\end{definition}
-
-\begin{remark}
-	{(同伦极限, 同伦余极限)}
-	$\infty$-范畴中的极限和余极限与所谓\emph{同伦极限, 同伦余极限}有关.
-	
-	拓扑空间范畴 $\mathsf {Top}$ 中的极限和余极限不是\emph{同伦不变}的. 例如, 下图 (a) 的推出是 $S^{n+1}$ ($S^n$ 是 $n$ 维球面, $D^{n+1}$ 是 $(n+1)$ 维圆盘, $S^n\to D^{n+1}$ 是圆盘的边界), 将 $D^{n+1}$ 替换为与之同伦等价的一个点 $*$ 得到图 (b), 但 (b) 的推出却不是 $S^{n+1}$, 而是一个点 $*$.
-	相比之下, \emph{同伦极限, 同伦余极限}则是同伦不变的概念; 例如 (a), (b) 的同伦推出都是 $S^{n+1}$.
-	\[
-	\begin{array}
-		{ccc}
-		\begin{tikzcd}[ampersand replacement=\&,column sep=small]
-			{S^{n}} \& {D^{n+1}} \\
-			{*} \& {}
-			\arrow[from=1-1, to=2-1]
-			%\arrow[from=2-1, to=2-2]
-			\arrow[from=1-1, to=1-2]
-			%\arrow[from=1-2, to=2-2]
-		\end{tikzcd} & \begin{tikzcd}[ampersand replacement=\&,column sep=small]
-			{S^{n}} \& {*} \\
-			{*} \& {}
-			\arrow[from=1-1, to=2-1]
-			%\arrow[from=2-1, to=2-2]
-			\arrow[from=1-1, to=1-2]
-			%\arrow[from=1-2, to=2-2]
-		\end{tikzcd} & \begin{tikzcd}[ampersand replacement=\&,column sep=small]
-			{A} \& {X} \\
-			{Y} \& {}
-			\arrow["g"',from=1-1, to=2-1]
-			%\arrow[from=2-1, to=2-2]
-			\arrow["f",from=1-1, to=1-2]
-			%\arrow[from=1-2, to=2-2]
-		\end{tikzcd}\\
-		\text{(a)} & \text{(b)} & \text{(c)}
-	\end{array}
-	\]
-	对一般的两个映射 $f\colon A\to X$, $g\colon A\to Y$, 以 $\mathbb I$ 表示单位区间 $[0,1]$, 图 (c) 的同伦推出可构造为商空间
-	$$
-	X \sqcup (A\times \mathbb I) \sqcup Y \Big/ \sim,\quad\text{其中}\quad
-	(a,0)\sim f(a), (a,1)\sim g(a).
-	$$
-	%	它也可表示为
-	%	$$
-	%	\operatorname{coeq}\Big[
-	%	A\times [0,1] \rightrightarrows \Big(X \sqcup  Y\Big)
-	%	\Big]
-	%	$$
-	直观上这是将以 $A$ 为底的柱形两端分别粘到 $X$ 和 $Y$ 上所得的空间. 对于每个点 $a\in A$, 普通的推出粗暴地将 $f(a),g(a)$ 粘在一起, 而同伦推出只是在两者之间连了一条线段. 连一条线段与直接粘起来看似 (在同伦的意义下) 等价, 实则保留了更多的信息: 因为两点之间可连多条线段, 即可\emph{以多种方式}粘在一起.
-	\begin{center}
-		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-		
-		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-			
-			%Shape: Parallelogram [id:dp15297514694080894] 
-			\draw   (96.58,101.28) -- (96.58,163.07) -- (64.71,136.59) -- (64.71,74.8) -- cycle ;
-			%Shape: Ellipse [id:dp019834245813657114] 
-			\draw   (73.2,118.93) .. controls (73.2,111.13) and (76.54,104.81) .. (80.65,104.81) .. controls (84.76,104.81) and (88.09,111.13) .. (88.09,118.93) .. controls (88.09,126.73) and (84.76,133.06) .. (80.65,133.06) .. controls (76.54,133.06) and (73.2,126.73) .. (73.2,118.93) -- cycle ;
-			%Shape: Ellipse [id:dp40259616007577415] 
-			\draw   (198.2,118.93) .. controls (198.2,111.13) and (201.54,104.81) .. (205.65,104.81) .. controls (209.76,104.81) and (213.09,111.13) .. (213.09,118.93) .. controls (213.09,126.73) and (209.76,133.06) .. (205.65,133.06) .. controls (201.54,133.06) and (198.2,126.73) .. (198.2,118.93) -- cycle ;
-			%Shape: Parallelogram [id:dp06847355000424948] 
-			\draw   (221.58,101.28) -- (221.58,163.07) -- (189.71,136.59) -- (189.71,74.8) -- cycle ;
-			%Straight Lines [id:da049979386851016994] 
-			\draw    (80.65,104.81) -- (205.65,104.81) ;
-			%Straight Lines [id:da5162984256492849] 
-			\draw    (80.65,133.06) -- (205.65,133.06) ;
-			%Shape: Ellipse [id:dp7242785411673776] 
-			\draw   (137.09,118.93) .. controls (137.09,111.13) and (140.42,104.81) .. (144.53,104.81) .. controls (148.64,104.81) and (151.97,111.13) .. (151.97,118.93) .. controls (151.97,126.73) and (148.64,133.06) .. (144.53,133.06) .. controls (140.42,133.06) and (137.09,126.73) .. (137.09,118.93) -- cycle ;
-			%Straight Lines [id:da2856334310702111] 
-			\draw    (130.5,118.83) -- (95.08,118.83) ;
-			\draw [shift={(93.08,118.83)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-			%Straight Lines [id:da6963451965198226] 
-			\draw    (168.5,118.83) -- (203,118.83) ;
-			\draw [shift={(205,118.83)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-			
-			% Text Node
-			\draw (136.53,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle A$};
-			% Text Node
-			\draw (98.13,163) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle X$};
-			% Text Node
-			\draw (225.93,163) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle Y$};
-			% Text Node
-			\draw (114.25,107) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f$};
-			% Text Node
-			\draw (174.75,110) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle g$};
-		\end{tikzpicture}
-	\end{center}
-	
-	同伦推出的例子可以启发一般的同伦余极限. 设 $T\colon I\to \mathsf {Top}$ 为拓扑空间的图表. 对指标范畴 $I$ 每个长为 $n$ 的态射链 $i_0\to i_1\to\cdots\to i_n$, 以及每个点 $a\in T(i_0)$, 普通的余极限会粗暴地将 $a$ 经过这些映射所到的每个点粘在一起, 而同伦余极限则是在这些点之间连上一个拓扑 $n$-单形 $|\Delta^n|$.
-	具体地, 先由 $T$ 构造一个自然的单纯空间
-	$\mathsf s T\colon \Delta^{\op} \to\mathsf {Top}$, 使得 $$\mathsf s T_n = \coprod_{i_0\to i_1\to\cdots\to i_n} T(i_0).$$
-	对于单纯空间 $X\colon \Delta^{\op} \to\mathsf {Top}$, 定义其\emph{几何实现}为如下的余等化子,
-	$$
-	|X|:= \operatorname{coeq}\Big[
-	\coprod_{[n]\to [k]} X_k\times |\Delta^n|
-	\rightrightarrows
-	\coprod_{n}X_n\times |\Delta^n|
-	\Big]
-	$$
-	其中两个映射分别为
-	$$
-	\begin{aligned}
-		\coprod_{\sigma\colon  [n] \to [k]}& (\sigma^*\colon X_k \to X_n)\times |\Delta^n|,\\
-		\coprod_{\sigma\colon  [n] \to [k]}& X_k\times (|\sigma|\colon |\Delta^n|\to |\Delta^k|).
-	\end{aligned}
-	$$
-	那么 $T$ 的\emph{同伦余极限}可构造为
-	$$
-	\operatorname{hocolim}T := |\mathsf sT|.
-	$$
-	
-	同伦极限的一个例子是同伦拉回. 两个映射 $f\colon X\to A$, $g\colon Y\to A$ 的同伦拉回可构造为 $X\times A^{\mathbb I}\times Y$ 的子空间
-	$$
-	\big\{ (x,\gamma,y)\in X\times A^{\mathbb I}\times Y\mid  \gamma(0)=f(x),\gamma(1)=g(y)\big\}.
-	$$
-	同伦拉回中的一个点由 $X$ 的点 $x$, $Y$ 的点 $y$ 以及 $f(x)$ 到 $g(y)$ 的一条道路构成.
-	\begin{center}
-		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-		
-		
-		\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-		
-		\begin{tikzpicture}[x=0.6pt,y=0.6pt,yscale=-1,xscale=1]
-			%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-			
-			%Shape: Square [id:dp9029850536154158] 
-			\draw   (80,130) -- (120,130) -- (120,170) -- (80,170) -- cycle ;
-			%Shape: Square [id:dp04010633466224678] 
-			\draw   (160,50) -- (200,50) -- (200,90) -- (160,90) -- cycle ;
-			%Shape: Circle [id:dp8217969120991764] 
-			\draw   (150,150) .. controls (150,133.43) and (163.43,120) .. (180,120) .. controls (196.57,120) and (210,133.43) .. (210,150) .. controls (210,166.57) and (196.57,180) .. (180,180) .. controls (163.43,180) and (150,166.57) .. (150,150) -- cycle ;
-			%Curve Lines [id:da9149134742462921] 
-			\draw    (170,160) .. controls (183.75,158) and (180.75,144.25) .. (190,140) ;
-			%Shape: Circle [id:dp3191495362532544] 
-			\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (93,154.88) .. controls (93,153.84) and (93.84,153) .. (94.88,153) .. controls (95.91,153) and (96.75,153.84) .. (96.75,154.88) .. controls (96.75,155.91) and (95.91,156.75) .. (94.88,156.75) .. controls (93.84,156.75) and (93,155.91) .. (93,154.88) -- cycle ;
-			%Shape: Circle [id:dp6370015580564639] 
-			\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (186.5,75.88) .. controls (186.5,74.84) and (187.34,74) .. (188.38,74) .. controls (189.41,74) and (190.25,74.84) .. (190.25,75.88) .. controls (190.25,76.91) and (189.41,77.75) .. (188.38,77.75) .. controls (187.34,77.75) and (186.5,76.91) .. (186.5,75.88) -- cycle ;
-			%Shape: Circle [id:dp21083479803073035] 
-			\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (168.13,160) .. controls (168.13,158.96) and (168.96,158.13) .. (170,158.13) .. controls (171.04,158.13) and (171.88,158.96) .. (171.88,160) .. controls (171.88,161.04) and (171.04,161.88) .. (170,161.88) .. controls (168.96,161.88) and (168.13,161.04) .. (168.13,160) -- cycle ;
-			%Shape: Circle [id:dp6826214678369391] 
-			\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (188.13,140) .. controls (188.13,138.96) and (188.96,138.13) .. (190,138.13) .. controls (191.04,138.13) and (191.88,138.96) .. (191.88,140) .. controls (191.88,141.04) and (191.04,141.88) .. (190,141.88) .. controls (188.96,141.88) and (188.13,141.04) .. (188.13,140) -- cycle ;
-			%Curve Lines [id:da8630666727441021] 
-			\draw    (99.25,157.25) .. controls (118.75,166.76) and (138.49,166.76) .. (160.08,162.35) ;
-			\draw [shift={(161.75,162)}, rotate = 167.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-			%Curve Lines [id:da25052543255059834] 
-			\draw    (191,80.75) .. controls (198,94.5) and (199.41,115.47) .. (193.65,130.85) ;
-			\draw [shift={(193,132.5)}, rotate = 292.75] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-			
-			% Text Node
-			\draw (195.75,178) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle A$};
-			% Text Node
-			\draw (92,174) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle X$};
-			% Text Node
-			\draw (206,62) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle Y$};
-			% Text Node
-			\draw (128.5,167) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f$};
-			% Text Node
-			\draw (199.5,94.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle g$};
-			% Text Node
-			\draw (182.25,145.75) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \gamma $};
-			
-			
-		\end{tikzpicture}
-	\end{center}
-	一般地, 设 $T\colon I\to \mathsf {Top}$ 为拓扑空间的图表, 对指标范畴 $I$ 每个长为 $n$ 的态射链 $i_0\to i_1\to\cdots\to i_n$, 以及每个点 $a\in T(i_n)$, 普通的极限只允许 $T(i_0),\cdots,T(i_n)$ 的各点恰好落在 $a$ 上, 而同伦极限允许它们落在 $T(i_n)$ 中的一个 $n$-单形的顶点. 具体地, 构造自然的余单纯空间 $\mathsf cT\colon \Delta \to \mathsf {Top}$, 使得
-	$$
-	\mathsf cT_n = \prod_{i_0\to \cdots\to i_n} T(i_n).
-	$$
-	对于余单纯空间 $X\colon \Delta\to\mathsf {Top}$, 定义其\emph{全体} (totalization)\footnotemark{} $\operatorname{Tot}X$ 为如下的等化子,
-	$$
-	\operatorname{Tot}X := \operatorname{eq}\Big[
-	\prod_{n}X_n^{|\Delta^n|}
-	\rightrightarrows
-	\prod_{[n]\to [k]} X_k^{|\Delta^n|}
-	\Big].
-	$$
-	
-	同伦极限和同伦余极限\emph{表现}了 $\infty$-范畴中的极限和余极限. 见 \cite{HTT} 定理 4.2.4.1.
-\end{remark}
-\footnotetext{几何实现是一种左 Kan 扩张, 而 ``全体'' 是一种右 Kan 扩张. 记 $\mathsf{cosTop}$ 为余单纯空间的范畴, 则余单纯空间 $X$ 的全体也可表示为 $\operatorname{Hom}_{\mathsf{cosTop}}(|\Delta|,X)$, 其中 $|\Delta|\colon \Delta\to \mathsf {Top}$ 将 $[n]$ 对应到拓扑 $n$-单形.}
-
-\begin{example}
-	{}
-	对于 $I = \varnothing$, 空图表 $F\colon I\to \mathcal C$ 的极限即是 $\mathcal C$ 的终对象.
-\end{example}
-
-\begin{example}
-	{(推出, 拉回)}
-	考虑 $I = \Lambda_2^2$ (见定义 \ref{simplicial-set-horn} 及其后的插图), 则 $F\colon I\to X$ 等同于两个态射 $x\to z$, $y\to z$. 称 $F$ 的极限为 $\infty$-\emph{拉回}, 简称\emph{拉回}, 记为 $x\times_z y$.
-	对偶地, 形如 $\Lambda_0^2$ 的图的余极限称为 $\infty$-\emph{推出}, 简称\emph{推出}.
-	
-	单纯集映射 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiWSJdLFswLDEsIloiXSxbMCwyXSxbMCwxXV0=
-	$\begin{tikzcd}[ampersand replacement=\&,sep=small]
-		X \& Y \\
-		Z
-		\arrow[from=1-1, to=2-1]
-		\arrow[from=1-1, to=1-2]
-	\end{tikzcd}$ 的\emph{同伦推出}为 $Y\sqcup_{\{0\}\times X}(\Delta^1\times X)\sqcup_{\{1\}\times X}Z$.
-\end{example}
-
-\begin{definition}
-	{(环路空间)}
-	
-\end{definition}
-
-\subsection{$\operatorname{Hom}$ 函子, 预层与 $\infty$-米田引理}
-
-\philoquote{Perhaps the main technical challenge in extending classical categorical results to the $\infty$-categorical context is in merely \emph{defining} the Yoneda embedding.}{Emily Riehl \& Dominic Verity,\\\emph{The Comprehension Construction}}
-
-我们希望定义 $\infty$-版本的预层范畴, 并建立米田引理. 参考卷 1 注 \ref{t1-Yoneda-embedding-adjoint-Hom}, 我们首先需要一个函子 $\operatorname{Hom}\colon \mathcal C^\op\times\mathcal C\to \infGpdinfcat$. 这个函子同样可借助单纯范畴构造. 注意这并非 $\infty$-范畴理论中陈述米田引理的唯一方法.
 
 
-\begin{definition}
-	{(预层 $\infty$-范畴)}
-	设 $\mathcal C$ 为 $\infty$-范畴. 定义 $$\widehat {\mathcal C} := \mathsf {Fun}(\mathcal C^\op,\infGpdinfcat)$$
-	为 $\mathcal C$ 上的\emph{预层 $\infty$-范畴}.
-\end{definition}
+\section{Ind 完备化}
 
 \begin{prop}
 	{}
-	
+	对于范畴 $\mathcal C$ 上的预层 $F$, 如下条件等价:
+	\begin{itemize}
+		\item $F\in\operatorname{Ind}(\mathcal C)$;
+		\item $\mathcal C_{/F}$ 为滤范畴.
+	\end{itemize}
+	进一步, 若 $\mathcal C^\op$ 具有有限极限, 上述条件还等价于
+	\begin{itemize}
+		\item $F\colon \mathcal C^\op\to\Grpdinf$ 保持有限极限.
+	\end{itemize}
 \end{prop}
 
-\todo{自由余完备化}
+\begin{prop}
+	{(关于滤余极限的完备化, \tomeun\ref{t1-completion-wrt-filtered-colimits})}
+	设 $\mathcal C$ 为小 $\infty$-范畴, $\mathcal D$ 为具有滤余极限的范畴,
+	则函子 $\mathcal C\to\mathcal D$ 等同于保持滤余极限的函子 $\operatorname{Ind}(\mathcal C)\to\mathcal D$.
+\end{prop}
 
-%\section{$\infty$-范畴: 公理化}
-
-\section{$n$-范畴}
+\section{可表现 $\infty$-范畴}
 
 \begin{definition}
-	[label={local-objects-infinity-category}]
-	{(局部对象)}
-	设 $\mathcal C$ 为 $\infty$-范畴, $S$ 为 $\mathcal C$ 中一族态射的集合, 称 $\mathcal C$ 的对象 $x$ 为 \emph{$S$-局部对象}是指对 $S$ 中任意态射 $f\colon a\to b$,
-	\[
-	f^*\colon \operatorname{Hom}_{\mathcal C}(b,x) \to \operatorname{Hom}_{\mathcal C}(a,x)
-	\]
-	为 $\infty$-群胚的等价.
-	%这是定义 \ref{local-objects} 在 $\infty$-范畴中的类比.
+	{(可达 $\infty$-范畴)}
+	设 $\mathcal C$ 为 $\infty$-范畴, $\lambda$ 为正则基数.
+	若存在小 $\infty$-范畴 $\mathcal D$ 使得 $\mathcal C\simeq\operatorname{Ind}_{\lambda}(\mathcal D)$,
+	则称 $\mathcal C$ 为 \emph{$\lambda$-可达范畴}.
 \end{definition}
 
 \begin{definition}
-	{(球面)}
-	归纳定义 $\infGpdinfcat$ 的 \emph{$n$ 维球面} $S^n\,(n\geq -1)$ 如下:
-	\begin{itemize}
-		\item $S^{-1}=\varnothing$;
-		\item 对 $n\geq -1$, $S^{n+1}$ 是如图所示的推出.
-		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJTXntufSJdLFswLDEsIioiXSxbMSwwLCIqIl0sWzEsMSwiU157bisxfSJdLFswLDFdLFsxLDNdLFswLDJdLFsyLDNdXQ==
-	\end{itemize}
-	\vspace{-6.5em}
-	\begin{flushright}
-		$\begin{tikzcd}[ampersand replacement=\&,column sep=small]
-			{S^{n}} \& {*} \\
-			{*} \& {S^{n+1}}
-			\arrow[from=1-1, to=2-1]
-			\arrow[from=2-1, to=2-2]
-			\arrow[from=1-1, to=1-2]
-			\arrow[from=1-2, to=2-2]
-		\end{tikzcd}$
-	\end{flushright}
+	{(可表现 $\infty$-范畴)}
+	设 $\mathcal C$ 为 $\infty$-范畴, 若 $\mathcal C$ 为可达 $\infty$-范畴, 且具有小余极限, 则称之为\emph{可表现 $\infty$-范畴}.
 \end{definition}
-
-\begin{definition}
-	{($n$-群胚)}
-	对整数 $n\geq -2$, 定义 \emph{$n$-群胚}为 $\infGpdinfcat$ 中关于 $\{S^{n+1}\to *\}$ 的局部对象 (定义 \ref{local-objects-infinity-category}).
-\end{definition}
-
-
-
-
-% https://ncatlab.org/nlab/show/(0,1)-category
-
-% 介绍 (0,1)-topos = Heyting algebra
-
-\todo{}
-
-%\section{$\infty$-层 $\infty$-\topos{}及其表现}
-%
-%$\infty$-层是层在 $\infty$-范畴中的类比. 正如层构成\topos{}, $\infty$-层也构成 $\infty$-\topos{}.
-%
-%% https://ncatlab.org/nlab/show/presentations+of+%28infinity%2C1%29-sheaf+%28infinity%2C1%29-toposes

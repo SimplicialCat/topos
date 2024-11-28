@@ -6,12 +6,13 @@
 
 \tcbuselibrary{breakable}
 
+\def\remarkcolor{blue!10!white}
 \newtcolorbox[
     auto counter,
     number within=section,
 ]{remark}[2][]{
-    colback=blue!10!white,
-    colframe=blue!10!white,
+    colback=\remarkcolor,
+    colframe=\remarkcolor,
     coltitle=black,
     breakable,
     title={\textsf{注~\thetcbcounter} #2},

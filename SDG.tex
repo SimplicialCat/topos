@@ -7,7 +7,7 @@ Ingo Blechschmidt 的博士论文 \cite{ILAG} 指出, 在函子观点下, 我们
 
 \begin{definition}
 	[label={affine-line}]
-	{(仿射直线, 仿射空间)}
+	{(仿射直线与仿射空间, 函子定义)}
 	定义\emph{仿射直线} (affine line) $\mathbb A^1$ 为遗忘函子
 	$$
 	\mathbb A^1\colon \mathsf {Ring}\to\mathsf {Set},A\mapsto A.
@@ -86,7 +86,7 @@ A\mapsto \{x\in A\mid \text{$x$ 可逆}\}.
 $$
 
 \begin{prop}
-	{}
+	{($\mathbb A^1$ 是 ``域'')}
 	$\mathbb A^1$ 是一个 ``域''. 这句话的意思是如下公式成立,
 	$$
 	\forall x\in \mathbb A^1\, \big( x\neq 0\Rightarrow\internalprop{\text{$x$ 可逆}}\big).
@@ -101,8 +101,8 @@ $$
 \begin{proof}
 	
 	由层语义 (定义 \ref{sheaf-semantics-inductive}),
-	$A\forces (x_0\neq 0)$ 的含义是对任意环同态 $\varphi\colon A\to B$, 若 $\varphi(x_0)=0$, 则 $B=0$ (零环).
-	令 $B$ 
+	对于 $x_0\in \mathbb A^1(A)=A$, $A\forces (x_0\neq 0)$ 的含义是对任意环同态 $\varphi\colon A\to B$, 若 $\varphi(x_0)=0$, 则 $B=0$ (零环).
+	令 $B=A/(x_0)$, 考虑投影映射 $\varphi \colon A\to B$, 得 $B=0$, 即 $(x_0)$ 是 $A$ 的单位理想, $x_0$ 在 $A$ 中可逆.
 	
 %	只需证明
 %	\begin{itemize}
@@ -113,7 +113,7 @@ $$
 %	\end{itemize}
 \end{proof}
 
-\todo{仿射概形在哪里讲}
+%\todo{仿射概形在哪里讲}
 
 \begin{definition}
 	{(射影空间, 内语言定义)}
@@ -129,10 +129,17 @@ $$
 	$$
 	x\sim x'\quad\text{当且仅当}\quad \exists \lambda \in \mathbb G_m\,x'=\lambda x.
 	$$
+	%由此定义, 要将 $\mathbb P^n$ 写成函子有些困难.
+%	可以证明 $\mathbb P^n$ 作为函子 $\mathsf {Ring}\to\mathsf {Set}$ 同构于
+%	$$
+%	A\mapsto\{
+%	
+%	\}
+%	$$
 \end{definition}
 
 \begin{definition}
-	{(仿射概形)}
+	{(仿射概形, 函子定义)}
 	定义\emph{仿射概形}为可表函子 $\mathsf {Ring}\to\mathsf {Set}$. 对于环 $A$, 记
 	$$
 	\operatorname{Spec}A = \operatorname{Hom}(A,-)\colon \mathsf {Ring}\to \mathsf {Set}.
@@ -158,7 +165,7 @@ $$
 
 \subsection{综合微分几何的理论}
 
-我们首先在本小节叙述一种偏向语法的 (或公理化的) 理论, 而暂时不关心其模型. 我们将看到这种理论比通常的微分几何更加符合直观.
+我们首先在本小节叙述一种偏向语法的, ``公理化'' 的理论, 而暂时不关心其模型. 我们将看到这种理论的语法比通常的微分几何更加符合直观.
 
 \begin{axiom}
 	{(空间)}

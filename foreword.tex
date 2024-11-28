@@ -1,17 +1,34 @@
 \chapter{前言}
 
-\todo{重写}
+%\todo{重写}
 
 \philoquote{[A] ``set 
 	theory'' for geometry should apply not only to abstract sets divorced from time, space, 
 	ring of definition, etc., but also to more general sets which do in fact develop along 
 	such parameters. For such sets, usually logic is ``intuitionistic'' (in its formal properties) usually the axiom of choice is false, and usually a set is not determined by its points defined over 1 only.}{William Lawvere, \emph{Quantifiers and Sheaves}}
 
-每一个\topos{} (topos) 都是一个数学宇宙. 集合范畴 $\mathsf {Set}$ 是最简单和最重要的\topos{}, 对应着 ``通常数学'' 的宇宙. 一般的\topos{}从外部看有远比集合范畴丰富的结构, 其范畴论性质却与 $\mathsf {Set}$ 几乎相同. 逻辑学上, 每个\topos{}都提供了一种语言以完全在范畴 ``内部'' 进行推理, 仿佛所处理的对象是普通集合一样. 对于熟悉的数学对象, \topos{}也可给我们新的视角; 一些关系在特定\topos{}的语言中很简洁, 而在通常数学语言中则不然. 拓扑空间 $X$ 上的层构成一个\topos{} $\operatorname{Sh}(X)$; 由此, \topos{}可视为空间的概念的推广. \topos{}理论的经典文献 \textit{Sketches of an Elephant} \cite{Elephant} 的开头列举了意象更多的解读方式, 表明人们对它的理解正如盲人摸象一样.
+每一个\topos{} (topos) 都是一个数学宇宙. 集合范畴 $\mathsf {Set}$ 是最简单和最重要的\topos{}, 对应着 ``通常数学'' 的宇宙. 一般的\topos{}从外部看有远比集合范畴丰富的结构, 其范畴论性质却与 $\mathsf {Set}$ 几乎相同. 逻辑学上, 每个\topos{}都提供了一种语言以完全在范畴 ``内部'' 进行推理, 仿佛所处理的对象是普通集合一样. 对于熟悉的数学对象, \topos{}也可给我们新的视角; 一些关系在特定\topos{}的语言中很简洁, 而在通常数学语言中则不然. 拓扑空间 $X$ 上的层构成一个\topos{} $\operatorname{Sh}(X)$; 由此, \topos{}可视为空间的概念的推广.
+%\topos{}理论的经典文献 \textit{Sketches of an Elephant} \cite{Elephant} 的开头列举了意象更多的解读方式, 表明人们对它的理解正如盲人摸象一样.
 
-本书对数学没有原创性的贡献, 其中几乎所有结果在 20 世纪已经为该领域的专家所熟知. 但是大部分内容几乎找不到成体系的中文资料 (除了李文威老师的\emph{代数学方法} \cite{lww2}), 这是我编写本书的动机之一. 内容的编排原则大致是使初学者最易接受, 并且提供启发性的观点, 从而使人能更快入门去看更多的资料. 本书收录的论证都是十分简单而直观的; 阅读本书虽不能让人成为本领域的专家, 但能让人发现一些事情并非想象的那样困难, 在将玄妙的概念祛魅的过程中产生信心和乐趣. 书中许多内容的含入仅仅是由于个人的品味, 例子的选取受到了本人的微分几何与代数拓扑背景的影响. 一些证明出自本人的思考, 因此错漏是难免的. 限于水平, 书中许多细节无法深究, 包括有关集合论的 ``小'' 性的问题, 以及其它涉及到数学基础的问题. 许多术语没有通行的中文版本, 姑且使用了本人的翻译.
+%\section{\topos{}理论简史}
 
-在编写本书的过程中, 我得到了 Olivia Caramello 教授, 以及杨家同, 陈潇扬等友人的帮助和鼓励. 在本书参考的文献中, 最重要的是一个名叫 \nlab 的网站, 而其中最主要的贡献者是 Urs Schreiber 教授. 向他们表达诚挚的感谢.
+%本节用尽可能简要的语言概括\topos{}的历史.
+
+\topos{}的概念主要经过了两批数学家的发展. 时间上较早的是以 Alexander Grothendieck, Jean-Louis Verdier 为首的代数几何的学派; 他们在 1960 年代著名的 ``代数几何学研讨班'' (Séminaire de Géometrie Algébrique, SGA) 中发展了现在称为 ``Grothendieck \topos{}'' 的概念, 作为一种广义的空间, 用来研究代数几何中涌现的各种上同调理论. 而在 1970 年左右, 以 William Lawvere, Myles Tierney 为代表的一众范畴逻辑学家, 在研究范畴论作为数学基础的过程中, 发展了现在称为\topos{}的概念, 揭示了其与逻辑的关系. 1980-2000 年之间出现了一些在不同方面谈论\topos{}理论的著作, 如 Ieke Moerdijk 与 Gonzalo Reyes 的 \emph{Models for Smooth Infinitesimal Analysis} \cite{MSIA}, Saunders Maclane 与 Ieke Moerdijk 的 \emph{Sheaves in Geometry and Logic} \cite{SGL}, Francis Borceux 的三卷 \emph{Handbook of Categorical Algebra} \cite{HCA1},\cite{HCA2},\cite{HCA3}, 进一步展现出这个概念在数学诸多分支的重要地位. 人们意识到, \topos{}的概念正如一头大象, 无论从几何, 逻辑中的哪个侧面去了解它, 只能得到片面的观点; 它的覆盖面如此之广, 以至于迄今为止只有 Peter Johnstone 一千多页的 \textit{Sketches of an Elephant} \cite{Elephant} 曾试图呈现\topos{}理论的全貌.
+
+% Lawvere 还致力于用\topos{}的语言 (``综合微分几何'') 表述物理的直观, 以绕过分析学上的困难.
+
+% Lawvere continues to work on his 50-year quest for a rigorous flexible base for physical ideas, free of unnecessary analytic complications.
+
+%\section{本书的编排原则}
+
+本书对数学没有原创性的贡献, 其中几乎所有结果在 20 世纪已经为该领域的专家所熟知. 但是大部分内容找不到成体系的中文资料 (除了李文威老师的\emph{代数学方法} \cite{lww2}), 这是我编写本书的动机之一. 内容的编排原则大致是使初学者最易接受, 并且提供启发性的观点, 从而使人能更快入门去看更多的资料. 本书收录的论证都是十分简单而直观的; 阅读本书虽不能让人成为本领域的专家, 但能让人发现一些事情并非想象的那样困难, 在将玄妙的概念祛魅的过程中产生信心和乐趣. 书中许多内容的含入仅仅是由于个人的品味, 例子的选取受到了本人的微分几何与代数拓扑背景的影响. 一些证明出自本人的思考, 因此错漏是难免的. 限于水平, 书中许多细节无法深究, 包括有关集合论的 ``小'' 性的问题, 以及其它涉及到数学基础的问题. 许多术语没有通行的中文版本, 姑且使用了本人的翻译, 书后附有一个简短的术语表.
+
+\section*{致谢}
+
+在编写本书的过程中, 我得到了 Olivia Caramello 教授, Laurent Lafforgue 教授, 以及杨家同, 陈潇扬等友人的帮助和鼓励.
+%在本书参考的文献中, 最重要的是一个名叫 \nlab 的网站, 而其中最主要的贡献者是 Urs Schreiber 教授.
+向他们表达诚挚的感谢.
 
 %\section*{内容提要}
 

@@ -144,7 +144,7 @@
       \verb 2111.03685
       \endverb
     \endentry
-    \entry{HCA2}{book}{}
+    \entry{HCA1}{book}{}
       \name{author}{1}{}{%
         {{hash=c9259674b0e31a3252b2a81d66e21923}{%
            family={Borceux},
@@ -162,6 +162,31 @@
       \strng{authornamehash}{c9259674b0e31a3252b2a81d66e21923}
       \strng{authorfullhash}{c9259674b0e31a3252b2a81d66e21923}
       \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Handbook of Categorical Algebra 1}
+      \field{year}{1994}
+    \endentry
+    \entry{HCA2}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c9259674b0e31a3252b2a81d66e21923}{%
+           family={Borceux},
+           familyi={B\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge Univrsity Press}%
+      }
+      \strng{namehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{fullhash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{bibnamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authorbibnamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authornamehash}{c9259674b0e31a3252b2a81d66e21923}
+      \strng{authorfullhash}{c9259674b0e31a3252b2a81d66e21923}
+      \field{extraname}{2}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
@@ -186,7 +211,7 @@
       \strng{authorbibnamehash}{c9259674b0e31a3252b2a81d66e21923}
       \strng{authornamehash}{c9259674b0e31a3252b2a81d66e21923}
       \strng{authorfullhash}{c9259674b0e31a3252b2a81d66e21923}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
@@ -614,30 +639,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Sheaves in Geometry and Logic}
       \field{year}{1994}
-    \endentry
-    \entry{SDG-Lavendhomme}{book}{}
-      \name{author}{1}{}{%
-        {{hash=561738f42d7a27e3061195f72a968645}{%
-           family={Lavendhomme},
-           familyi={L\bibinitperiod},
-           given={René},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer New York, NY}%
-      }
-      \strng{namehash}{561738f42d7a27e3061195f72a968645}
-      \strng{fullhash}{561738f42d7a27e3061195f72a968645}
-      \strng{bibnamehash}{561738f42d7a27e3061195f72a968645}
-      \strng{authorbibnamehash}{561738f42d7a27e3061195f72a968645}
-      \strng{authornamehash}{561738f42d7a27e3061195f72a968645}
-      \strng{authorfullhash}{561738f42d7a27e3061195f72a968645}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Basic Concepts of Synthetic Differential Geometry}
-      \field{year}{1996}
     \endentry
     \entry{FSAT}{article}{}
       \name{author}{1}{}{%
